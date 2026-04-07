@@ -9,89 +9,33 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 60px 14px 60px; }
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    padding:22px 40px 16px 40px;
+    display:flex; flex-direction:column;
+  }
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:6px; }
+  .header-title { font-size:32px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
 
-  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
-  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
-  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:14px; }
+  /* 主内容区 */
+  .content { flex:1; position:relative; }
 
-  /* S形时间轴 */
-  .snake { position:relative; width:1160px; height:580px; }
-
-  /* 圆弧（大圆角矩形模拟蛇形路径） */
-  .arc {
-    position:absolute;
-    border-radius:50%;
-    border:28px solid;
-  }
-  /* 左上弧（2021→2022，顺时针右半圆） */
-  .arc-1 {
-    width:240px; height:240px;
-    left:80px; top:80px;
-    border-color: #6a9ad0;
-    border-left-color: transparent;
-    border-top-color: transparent;
-    transform: rotate(0deg);
-  }
-  /* 右上弧（2022→2023，逆时针左半圆） */
-  .arc-2 {
-    width:240px; height:240px;
-    right:80px; top:80px;
-    border-color: #1a3a9e;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    transform: rotate(0deg);
-  }
-  /* 底部弧（2024→2025，右半圆） */
-  .arc-3 {
-    width:240px; height:240px;
-    left:80px; bottom:60px;
-    border-color: #c8d4e8;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    transform: rotate(0deg);
-  }
-
-  /* 节点 */
-  .node {
-    position:absolute;
-    display:flex; flex-direction:column; align-items:center;
-  }
+  /* 节点通用 */
+  .node { position:absolute; display:flex; flex-direction:column; align-items:center; width:160px; }
   .node-circle {
-    width:90px; height:90px; border-radius:50%;
+    width:72px; height:72px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    font-size:18px; font-weight:900; color:#fff;
-    flex-shrink:0; position:relative; z-index:5;
+    position:relative; z-index:5;
   }
-  .nc-dark { background:#1a3a9e; }
-  .nc-mid { background:#4a7ac8; }
-  .nc-light { background:#6a9ad0; }
-  .nc-pale { background:#8ab0d8; }
-  .nc-gray { background:#c8d4e8; }
-
-  /* 节点内图标 */
-  .node-icon {
-    width:60px; height:60px; border-radius:50%;
-    border:2px solid rgba(255,255,255,0.6);
-    display:flex; align-items:center; justify-content:center;
-    position:absolute; z-index:6;
-  }
-  .node-icon svg { width:28px; height:28px; stroke:#fff; fill:none; stroke-width:1.8; }
-
-  /* 标签 */
-  .tag {
-    position:absolute; z-index:6;
-    background:rgba(255,255,255,0.9);
-    border:1.5px solid currentColor;
-    border-radius:20px; padding:4px 16px;
+  .node-year { font-size:22px; font-weight:900; color:#1a3a9e; line-height:1.2; }
+  .node-desc { font-size:11px; color:#555; line-height:1.7; text-align:left; width:150px; }
+  .node-tag {
+    padding:5px 18px; border-radius:20px;
     font-size:13px; font-weight:700;
     white-space:nowrap;
   }
-
-  /* 年份+文字 */
-  .year-label { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
-  .year-desc { font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center; }
 </style>
 </head>
 <body>
@@ -102,90 +46,110 @@
   </div>
   <div class="header-line"></div>
 
-  <div class="snake">
-    <!-- 弧形路径 -->
-    <!-- 弧1：2021→2022（左侧，向右下弯） -->
-    <div style="position:absolute; left:150px; top:130px; width:220px; height:220px;
-      border:28px solid #6a9ad0; border-radius:50%;
-      border-right-color:transparent; border-top-color:transparent;
-      transform:rotate(45deg); z-index:1;"></div>
+  <div class="content">
+    <!-- SVG 层：U形箭头 + 连接线 -->
+    <svg style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;" viewBox="0 0 1200 570" preserveAspectRatio="none">
+      <!-- U形箭头1（2021→2022）：浅蓝色，从下方节点向上弯到上方节点 -->
+      <!-- 路径：从左下节点中心出发，向右，U形向上，到左上节点中心 -->
+      <path d="M 116 430 L 116 340 Q 116 280 176 280 L 264 280 Q 324 280 324 340 L 324 430"
+        fill="none" stroke="#a0bcd8" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 箭头头部（向下，在2021节点上方） -->
+      <polygon points="116,440 100,410 132,410" fill="#a0bcd8"/>
 
-    <!-- 弧2：2022→2023（中间，向左下弯） -->
-    <div style="position:absolute; left:490px; top:130px; width:220px; height:220px;
-      border:28px solid #1a3a9e; border-radius:50%;
-      border-left-color:transparent; border-top-color:transparent;
-      transform:rotate(-45deg); z-index:1;"></div>
+      <!-- U形箭头2（2022→2023）：深蓝色，从上方节点向下弯到下方节点 -->
+      <path d="M 356 200 L 356 290 Q 356 350 416 350 L 504 350 Q 564 350 564 290 L 564 200"
+        fill="none" stroke="#1a3a9e" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 箭头头部（向下，在2023节点上方） -->
+      <polygon points="564,190 548,220 580,220" fill="#1a3a9e"/>
 
-    <!-- 弧3：2024→2025（右侧，向左上弯） -->
-    <div style="position:absolute; left:830px; top:130px; width:220px; height:220px;
-      border:28px solid #c8d4e8; border-radius:50%;
-      border-right-color:transparent; border-top-color:transparent;
-      transform:rotate(45deg); z-index:1;"></div>
+      <!-- U形箭头3（2023→2024）：浅灰蓝，从下方节点向上弯到上方节点 -->
+      <path d="M 596 430 L 596 340 Q 596 280 656 280 L 744 280 Q 804 280 804 340 L 804 430"
+        fill="none" stroke="#b8c8d8" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 箭头头部（向下，在2023节点上方） -->
+      <polygon points="596,440 580,410 612,410" fill="#b8c8d8"/>
 
-    <!-- 节点1：2021年（左下） -->
-    <div style="position:absolute; left:120px; bottom:60px; display:flex; flex-direction:column; align-items:center; z-index:5;">
-      <div class="nc-light node-circle" style="background:#6a9ad0; width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative;">
-        <div style="width:60px; height:60px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
+      <!-- U形箭头4（2024→2025）：浅灰，从上方节点向下弯到下方节点 -->
+      <path d="M 836 200 L 836 290 Q 836 350 896 350 L 984 350 Q 1044 350 1044 290 L 1044 200"
+        fill="none" stroke="#c8d0d8" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 箭头头部（向下，在2025节点上方） -->
+      <polygon points="1044,190 1028,220 1060,220" fill="#c8d0d8"/>
+    </svg>
+
+    <!-- 节点1：2021年（下方，左侧） -->
+    <!-- 圆形图标 -->
+    <div style="position:absolute; left:80px; top:380px; z-index:10;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#a0bcd8; display:flex; align-items:center; justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       </div>
-      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-top:8px;">2021年</div>
-      <div style="font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
     </div>
-    <!-- 标签2021 -->
-    <div style="position:absolute; left:130px; bottom:170px; z-index:6; background:rgba(255,255,255,0.9); border:1.5px solid #6a9ad0; border-radius:20px; padding:4px 16px; font-size:13px; font-weight:700; color:#6a9ad0;">市场化名词</div>
+    <!-- 年份+文字（下方） -->
+    <div style="position:absolute; left:20px; top:460px; z-index:10;">
+      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px;">2021年</div>
+      <div style="font-size:11px; color:#555; line-height:1.7; width:150px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <!-- 标签（上方，在U形弧顶部） -->
+    <div style="position:absolute; left:50px; top:252px; z-index:10; background:#a0bcd8; border-radius:20px; padding:5px 18px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap;">市场化名词</div>
 
-    <!-- 节点2：2022年（左上） -->
-    <div style="position:absolute; left:120px; top:60px; display:flex; flex-direction:column; align-items:center; z-index:5;">
+    <!-- 节点2：2022年（上方） -->
+    <!-- 年份+文字（上方） -->
+    <div style="position:absolute; left:280px; top:30px; z-index:10;">
       <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px;">2022年</div>
-      <div style="font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center; margin-bottom:8px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
-      <div style="background:#6a9ad0; width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <div style="width:60px; height:60px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
+      <div style="font-size:11px; color:#555; line-height:1.7; width:150px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <!-- 圆形图标 -->
+    <div style="position:absolute; left:320px; top:200px; z-index:10;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#a0bcd8; display:flex; align-items:center; justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       </div>
     </div>
-    <!-- 标签2022 -->
-    <div style="position:absolute; left:130px; top:200px; z-index:6; background:rgba(255,255,255,0.9); border:1.5px solid #6a9ad0; border-radius:20px; padding:4px 16px; font-size:13px; font-weight:700; color:#6a9ad0;">市场化名词</div>
+    <!-- 标签（下方，在U形弧底部） -->
+    <div style="position:absolute; left:290px; top:330px; z-index:10; background:#a0bcd8; border-radius:20px; padding:5px 18px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap;">市场化名词</div>
 
-    <!-- 节点3：2023年（中下） -->
-    <div style="position:absolute; left:490px; bottom:60px; display:flex; flex-direction:column; align-items:center; z-index:5;">
-      <div style="background:#1a3a9e; width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <div style="width:60px; height:60px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
+    <!-- 节点3：2023年（下方，中间） -->
+    <!-- 圆形图标 -->
+    <div style="position:absolute; left:560px; top:380px; z-index:10;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       </div>
-      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-top:8px;">2023年</div>
-      <div style="font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
     </div>
-    <!-- 标签2023 -->
-    <div style="position:absolute; left:490px; bottom:170px; z-index:6; background:rgba(255,255,255,0.9); border:1.5px solid #1a3a9e; border-radius:20px; padding:4px 16px; font-size:13px; font-weight:700; color:#1a3a9e;">市场化名词</div>
+    <!-- 年份+文字（下方） -->
+    <div style="position:absolute; left:500px; top:460px; z-index:10;">
+      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px;">2023年</div>
+      <div style="font-size:11px; color:#555; line-height:1.7; width:150px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <!-- 标签（上方） -->
+    <div style="position:absolute; left:530px; top:252px; z-index:10; background:#1a3a9e; border-radius:20px; padding:5px 18px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap;">市场化名词</div>
 
-    <!-- 节点4：2024年（中上） -->
-    <div style="position:absolute; left:490px; top:60px; display:flex; flex-direction:column; align-items:center; z-index:5;">
+    <!-- 节点4：2024年（上方） -->
+    <!-- 年份+文字（上方） -->
+    <div style="position:absolute; left:760px; top:30px; z-index:10;">
       <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px;">2024年</div>
-      <div style="font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center; margin-bottom:8px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
-      <div style="background:#1a3a9e; width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <div style="width:60px; height:60px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
+      <div style="font-size:11px; color:#555; line-height:1.7; width:150px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <!-- 圆形图标 -->
+    <div style="position:absolute; left:800px; top:200px; z-index:10;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#b8c8d8; display:flex; align-items:center; justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       </div>
     </div>
-    <!-- 标签2024 -->
-    <div style="position:absolute; left:490px; top:200px; z-index:6; background:rgba(255,255,255,0.9); border:1.5px solid #1a3a9e; border-radius:20px; padding:4px 16px; font-size:13px; font-weight:700; color:#1a3a9e;">市场化名词</div>
+    <!-- 标签（下方） -->
+    <div style="position:absolute; left:770px; top:330px; z-index:10; background:#b8c8d8; border-radius:20px; padding:5px 18px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap;">市场化名词</div>
 
-    <!-- 节点5：2025年（右下） -->
-    <div style="position:absolute; right:60px; bottom:60px; display:flex; flex-direction:column; align-items:center; z-index:5;">
-      <div style="background:#c8d4e8; width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <div style="width:60px; height:60px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
+    <!-- 节点5：2025年（下方，右侧） -->
+    <!-- 圆形图标 -->
+    <div style="position:absolute; left:1040px; top:380px; z-index:10;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#c8d0d8; display:flex; align-items:center; justify-content:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
       </div>
-      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-top:8px;">2025年</div>
-      <div style="font-size:10px; color:#555; line-height:1.7; max-width:150px; text-align:center;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
     </div>
-    <!-- 标签2025 -->
-    <div style="position:absolute; right:60px; bottom:170px; z-index:6; background:rgba(255,255,255,0.9); border:1.5px solid #c8d4e8; border-radius:20px; padding:4px 16px; font-size:13px; font-weight:700; color:#8899aa;">市场化名词</div>
+    <!-- 年份+文字（下方） -->
+    <div style="position:absolute; left:980px; top:460px; z-index:10;">
+      <div style="font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px;">2025年</div>
+      <div style="font-size:11px; color:#555; line-height:1.7; width:150px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <!-- 标签（上方） -->
+    <div style="position:absolute; left:1010px; top:252px; z-index:10; background:#c8d0d8; border-radius:20px; padding:5px 18px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap;">市场化名词</div>
+
   </div>
 </div>
 </body>

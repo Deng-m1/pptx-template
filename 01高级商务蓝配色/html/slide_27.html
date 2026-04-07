@@ -9,25 +9,25 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 16px 50px; display:flex; flex-direction:column; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 30px 16px 30px; display:flex; flex-direction:column; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
   .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
 
-  .content { display:flex; flex:1; gap:0; }
+  .content { display:flex; flex:1; gap:0; padding-top:8px; overflow:hidden; }
 
   /* 左侧大标题 */
-  .left-title { width:180px; display:flex; align-items:center; flex-shrink:0; }
+  .left-title { width:170px; display:flex; align-items:center; flex-shrink:0; }
   .left-title-text { font-size:32px; font-weight:900; color:#1a3a9e; line-height:1.2; }
 
   /* 时间轴主体 */
   .tl-main { flex:1; display:flex; flex-direction:column; justify-content:center; }
 
   /* 上方文字行 */
-  .top-texts { display:flex; margin-bottom:6px; }
-  .top-item { flex:1; display:flex; flex-direction:column; align-items:center; }
+  .top-texts { display:flex; height:260px; flex-shrink:0; margin-bottom:0; }
+  .top-item { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:8px; }
   .top-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-bottom:4px; }
   .top-text-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:3px; text-align:center; }
   .top-text-desc { font-size:10px; color:#555; line-height:1.5; text-align:center; max-width:110px; }
@@ -35,26 +35,26 @@
   .top-item.even { visibility:hidden; }
 
   /* 轴线+节点行 */
-  .axis-row { display:flex; align-items:center; position:relative; }
+  .axis-row { display:flex; align-items:center; position:relative; flex-shrink:0; height:80px; }
   .start-arrow { display:flex; align-items:center; gap:0; flex-shrink:0; margin-right:0; }
   .start-arrow-inner {
     width:32px; height:32px; background:#c8d4e8; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-size:18px; font-weight:900; color:#1a3a9e;
   }
-  .axis-line { flex:1; height:5px; background:#1a3a9e; }
+  .axis-line { flex:1; height:8px; background:#c8d8e8; }
   .axis-arrow { width:0; height:0;
-    border-top:11px solid transparent;
-    border-bottom:11px solid transparent;
-    border-left:20px solid #1a3a9e; }
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+    border-left:22px solid #c8d8e8; }
 
   .node-wrap { position:relative; flex-shrink:0; }
   .node {
-    width:64px; height:64px; border-radius:50%;
+    width:72px; height:72px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-size:15px; font-weight:900; color:#fff;
     position:relative; z-index:2;
-    margin:0 -2px;
+    flex-shrink:0;
   }
   .n1,.n2 { background:#1a3a9e; }
   .n3,.n4 { background:#4a7ac8; }
@@ -63,8 +63,8 @@
   .n9,.n10 { background:#a8c4e8; }
 
   /* 下方文字行 */
-  .bot-texts { display:flex; margin-top:6px; }
-  .bot-item { flex:1; display:flex; flex-direction:column; align-items:center; }
+  .bot-texts { display:flex; height:260px; flex-shrink:0; margin-top:0; }
+  .bot-item { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding-top:8px; }
   .bot-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-top:4px; }
   .bot-text-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:3px; text-align:center; }
   .bot-text-desc { font-size:10px; color:#555; line-height:1.5; text-align:center; max-width:110px; }

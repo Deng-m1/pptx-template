@@ -9,17 +9,17 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 30px 14px 30px; display:flex; flex-direction:column; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
   .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
   .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
 
-  .body { display:flex; gap:20px; height:580px; }
+  .body { display:flex; gap:20px; flex:1; overflow:hidden; }
 
   /* 左侧主体 */
-  .left { flex:1; position:relative; }
+  .left { flex:1; position:relative; display:flex; flex-direction:column; }
   .left-top { margin-bottom:10px; }
   .left-main-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
   .left-desc { font-size:11px; color:#555; line-height:1.7; max-width:360px; }
@@ -30,7 +30,7 @@
   }
 
   /* 阶梯卡片 */
-  .steps { position:relative; height:400px; }
+  .steps { position:relative; flex:1; }
   .step {
     position:absolute; width:220px;
     display:flex; flex-direction:column;
@@ -59,7 +59,7 @@
   .tl-label { position:absolute; bottom:0; font-size:12px; color:#555; transform:translateX(-50%); }
 
   /* 右侧列表 */
-  .right { width:260px; display:flex; flex-direction:column; gap:12px; justify-content:flex-start; padding-top:10px; }
+  .right { width:260px; display:flex; flex-direction:column; gap:8px; justify-content:flex-start; padding-top:10px; overflow:hidden; }
   .right-col { display:flex; flex-direction:column; gap:6px; }
   .right-year { font-size:14px; font-weight:900; color:#1a3a9e; border-bottom:1.5px solid #1a3a9e; padding-bottom:4px; margin-bottom:4px; }
   .right-item { display:flex; align-items:flex-start; gap:6px; }
@@ -88,7 +88,7 @@
       <!-- 阶梯卡片（从左下到右上） -->
       <div class="steps">
         <!-- step1: 左下 -->
-        <div class="step" style="left:0; bottom:60px;">
+        <div class="step" style="left:0; bottom:50px;">
           <div class="step-icon-row">
             <div class="step-icon">
               <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
@@ -130,7 +130,7 @@
           <div class="step-bar bar-mid"></div>
         </div>
         <!-- step4 -->
-        <div class="step" style="left:660px; bottom:240px;">
+        <div class="step" style="left:620px; bottom:220px;">
           <div class="step-icon-row">
             <div class="step-icon">
               <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
@@ -233,37 +233,7 @@
           </div>
         </div>
       </div>
-      <div class="right-col">
-        <div class="right-year">2026年</div>
-        <div class="right-item">
-          <div class="right-dot"></div>
-          <div>
-            <div class="right-item-title">公司业绩提升</div>
-            <div class="right-item-desc">项目建设进度安排是每项目可行性研究中的一个重要组成部分。</div>
-          </div>
-        </div>
-        <div class="right-item">
-          <div class="right-dot right-dot-light"></div>
-          <div>
-            <div class="right-item-title">市场人员储备</div>
-            <div class="right-item-desc">项目建设进度安排是每项目可行性研究中的一个重要组成部分。</div>
-          </div>
-        </div>
-        <div class="right-item">
-          <div class="right-dot right-dot-light"></div>
-          <div>
-            <div class="right-item-title">项目流程管理</div>
-            <div class="right-item-desc">项目建设进度安排是每项目可行性研究中的一个重要组成部分。</div>
-          </div>
-        </div>
-        <div class="right-item">
-          <div class="right-dot right-dot-light"></div>
-          <div>
-            <div class="right-item-title">部门提升计划</div>
-            <div class="right-item-desc">项目建设进度安排是每项目可行性研究中的一个重要组成部分。</div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

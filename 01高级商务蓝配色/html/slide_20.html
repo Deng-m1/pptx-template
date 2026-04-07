@@ -9,169 +9,174 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; display:flex; flex-direction:column; }
-
-  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
-  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
-  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
-
-  /* 时间轴区 */
-  .timeline { display:flex; align-items:flex-start; margin-bottom:14px; }
-  .tl-item { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; }
-  .tl-label { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:4px; }
-  /* 箭头 */
-  .tl-arrow {
-    width:100%; height:36px; position:relative;
-    display:flex; align-items:center;
+  .slide {
+    width:1280px; height:720px; background:#fff;
+    padding:22px 50px 20px 50px;
+    display:flex; flex-direction:column;
   }
-  .tl-arrow-inner {
-    width:calc(100% - 4px); height:36px;
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+
+  /* 顶部标题 */
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:6px; }
+  .header-title { font-size:32px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:16px; font-weight:700; color:#3a6aaa; font-style:italic; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:14px; }
+
+  /* 箭头流程区 */
+  .flow-section { margin-bottom:14px; }
+  .flow-labels { display:flex; margin-bottom:5px; }
+  .flow-label { flex:1; text-align:center; font-size:13px; font-weight:700; color:#1a3a9e; }
+  .flow-label.wide { flex:2; }
+
+  .arrows { display:flex; align-items:stretch; height:52px; }
+  .arrow-item {
+    flex:1; position:relative;
     display:flex; align-items:center; justify-content:center;
-    font-size:14px; font-weight:900; color:#fff;
+    font-size:15px; font-weight:900; color:#fff;
+    background:#1a3a9e;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+    margin-right:2px;
+    z-index:1;
   }
-  .tl-arrow-inner.first {
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  .arrow-item:first-child {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
   }
-  .tl-arrow-inner.dark { background:#1a3a9e; }
-  .tl-arrow-inner.mid { background:#4a7ac8; }
-  .tl-arrow-inner.light { background:#a8c4e8; color:#1a3a9e; }
-  .tl-date { font-size:12px; color:#555; margin-top:4px; }
+  .arrow-item.light { background:#b8cde8; color:#1a3a9e; }
+  .arrow-item.wide { flex:2; }
 
-  /* 甘特图 */
-  .gantt { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:10px; }
+  .flow-dates { display:flex; margin-top:5px; }
+  .flow-date { flex:1; text-align:center; font-size:12px; color:#555; }
+  .flow-date.wide { flex:2; }
+
+  /* 甘特图容器 */
+  .gantt-wrap { flex:1; display:flex; flex-direction:column; min-height:0; }
+  .gantt-inner { border:1px solid #c8d4e8; border-radius:3px; overflow:hidden; flex:1; }
+
+  .gantt { width:100%; border-collapse:collapse; height:100%; }
+  .gantt thead tr { height:38px; }
   .gantt th {
     background:#1a3a9e; color:#fff;
-    text-align:center; padding:6px 2px;
-    font-size:12px; font-weight:700;
-    border:1px solid #fff;
+    text-align:center; font-size:14px; font-weight:700;
+    border-right:1px solid rgba(255,255,255,0.25);
   }
-  .gantt th.label-col { width:100px; }
+  .gantt th:first-child { width:110px; }
+  .gantt tbody tr { height:56px; }
   .gantt td {
-    border:1px solid #dde3ef;
-    padding:4px 4px; height:44px;
-    vertical-align:middle; text-align:left;
+    border-right:1px solid #d4dcee;
+    border-bottom:1px solid #d4dcee;
+    padding:0; position:relative;
   }
   .gantt td.label {
-    font-size:13px; font-weight:700; color:#1a3a9e;
-    background:#eef2fa; padding-left:10px;
+    font-size:14px; font-weight:700; color:#1a3a9e;
+    background:#eef2fa; padding-left:14px;
+    border-right:2px solid #1a3a9e;
   }
-  .gantt tr:nth-child(odd) td { background:#f5f7fc; }
-  .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(even) td { background:#f5f8fc; }
+  .gantt tr:nth-child(even) td.label { background:#e6ecf7; }
+
   .bar {
-    display:inline-block; height:20px; border-radius:3px;
-    vertical-align:middle;
+    position:absolute; top:50%; transform:translateY(-50%);
+    height:24px; border-radius:12px;
   }
   .bar-dark { background:#1a3a9e; }
-  .bar-light { background:#a8c4e8; }
+  .bar-light { background:#b8cde8; }
 
   /* 底部说明框 */
   .footer-box {
     background:#1a3a9e; border-radius:4px;
-    padding:10px 20px;
-    font-size:12px; color:rgba(255,255,255,0.9);
+    padding:12px 24px; margin-top:14px;
+    font-size:13px; color:rgba(255,255,255,0.92);
     line-height:1.7; text-align:center;
   }
 </style>
 </head>
 <body>
 <div class="slide">
+  <!-- 标题 -->
   <div class="header">
     <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
     <div class="header-sub">Work Arrangement</div>
   </div>
   <div class="header-line"></div>
 
-  <!-- 时间轴 -->
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-label">筹备期</div>
-      <div class="tl-arrow">
-        <div class="tl-arrow-inner first dark">市场调研</div>
-      </div>
-      <div class="tl-date">2024.4</div>
+  <!-- 箭头流程 -->
+  <div class="flow-section">
+    <div class="flow-labels">
+      <div class="flow-label">筹备期</div>
+      <div class="flow-label">启动期</div>
+      <div class="flow-label wide">执行期</div>
+      <div class="flow-label">优化期</div>
+      <div class="flow-label">复盘期</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-label">启动期</div>
-      <div class="tl-arrow">
-        <div class="tl-arrow-inner dark">品牌推广</div>
-      </div>
-      <div class="tl-date">2024.5</div>
+    <div class="arrows">
+      <div class="arrow-item" style="clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%);">市场调研</div>
+      <div class="arrow-item">品牌推广</div>
+      <div class="arrow-item wide light">具体执行</div>
+      <div class="arrow-item">任务优化</div>
+      <div class="arrow-item" style="margin-right:0;">项目复盘</div>
     </div>
-    <div class="tl-item" style="flex:2;">
-      <div class="tl-label">执行期</div>
-      <div class="tl-arrow">
-        <div class="tl-arrow-inner light" style="width:100%;">具体执行</div>
-      </div>
-      <div class="tl-date">2024.8</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-label">优化期</div>
-      <div class="tl-arrow">
-        <div class="tl-arrow-inner dark">任务优化</div>
-      </div>
-      <div class="tl-date">2024.9</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-label">复盘期</div>
-      <div class="tl-arrow">
-        <div class="tl-arrow-inner dark">项目复盘</div>
-      </div>
-      <div class="tl-date">2024.10</div>
+    <div class="flow-dates">
+      <div class="flow-date">2024.4</div>
+      <div class="flow-date">2024.5</div>
+      <div class="flow-date wide">2024.8</div>
+      <div class="flow-date">2024.9</div>
+      <div class="flow-date">2024.10</div>
     </div>
   </div>
 
   <!-- 甘特图 -->
-  <table class="gantt">
-    <thead>
-      <tr>
-        <th class="label-col"></th>
-        <th>Apr</th><th>May</th><th>Jun</th><th>Jul</th>
-        <th>Aug</th><th>Sep</th><th>Oct</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="label">市场调研</td>
-        <td colspan="2" style="padding:0 6px;">
-          <div class="bar bar-dark" style="width:90%;"></div>
-        </td>
-        <td></td><td></td><td></td><td></td><td></td>
-      </tr>
-      <tr>
-        <td class="label">品牌推广</td>
-        <td></td>
-        <td colspan="2" style="padding:0 6px;">
-          <div class="bar bar-dark" style="width:85%;"></div>
-        </td>
-        <td></td><td></td><td></td><td></td>
-      </tr>
-      <tr>
-        <td class="label">具体执行</td>
-        <td></td><td></td>
-        <td colspan="3" style="padding:0 6px;">
-          <div class="bar bar-light" style="width:90%;"></div>
-        </td>
-        <td></td><td></td>
-      </tr>
-      <tr>
-        <td class="label">任务优化</td>
-        <td></td><td></td><td></td><td></td>
-        <td colspan="2" style="padding:0 6px;">
-          <div class="bar bar-dark" style="width:85%;"></div>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="label">项目复盘</td>
-        <td></td><td></td><td></td><td></td><td></td>
-        <td colspan="2" style="padding:0 6px;">
-          <div class="bar bar-dark" style="width:90%;"></div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="gantt-wrap">
+    <div class="gantt-inner">
+      <table class="gantt">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Apr</th><th>May</th><th>Jun</th><th>Jul</th>
+            <th>Aug</th><th>Sep</th><th>Oct</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">市场调研</td>
+            <td colspan="2" style="position:relative;">
+              <div class="bar bar-dark" style="left:5%;width:82%;"></div>
+            </td>
+            <td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label">品牌推广</td>
+            <td></td>
+            <td colspan="2" style="position:relative;">
+              <div class="bar bar-dark" style="left:10%;width:78%;"></div>
+            </td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label">具体执行</td>
+            <td></td><td></td>
+            <td colspan="3" style="position:relative;">
+              <div class="bar bar-light" style="left:4%;width:88%;"></div>
+            </td>
+            <td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label">任务优化</td>
+            <td></td><td></td><td></td><td></td>
+            <td colspan="2" style="position:relative;">
+              <div class="bar bar-dark" style="left:8%;width:80%;"></div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="label">项目复盘</td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td colspan="2" style="position:relative;">
+              <div class="bar bar-dark" style="left:10%;width:85%;"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <!-- 底部说明 -->
   <div class="footer-box">
