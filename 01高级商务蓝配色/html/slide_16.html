@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_16</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; position:relative; background:#fff; padding:28px 50px 20px 50px; }
+
+  /* 顶部标题区 */
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:6px; }
+  .header-title { font-size:36px; font-weight:900; color:#1a3a9e; letter-spacing:1px; }
+  .header-sub { font-size:18px; font-weight:700; color:#3a6aaa; letter-spacing:1px; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:14px; }
+
+  /* 甘特图表格 */
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt th {
+    background:#1a3a9e; color:#fff;
+    text-align:center; padding:7px 2px;
+    font-size:13px; font-weight:700;
+    border:1px solid #fff;
+  }
+  .gantt th.label-col { width:120px; background:#1a3a9e; }
+  .gantt td {
+    border:1px solid #dde3ef;
+    padding:4px 2px;
+    text-align:center;
+    height:44px;
+    vertical-align:middle;
+  }
+  .gantt td.label {
+    text-align:left; padding-left:10px;
+    font-size:13px; color:#1a3a9e;
+    background:#f0f3fa;
+    white-space:nowrap;
+  }
+  .gantt td.label.bold { font-weight:900; color:#1a3a9e; background:#e8ecf8; }
+  .gantt tr:nth-child(odd) td { background:#f8f9fd; }
+  .gantt tr:nth-child(odd) td.label { background:#eef1f9; }
+  .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(even) td.label { background:#f4f6fc; }
+
+  /* 任务条容器（跨多列用绝对定位模拟） */
+  .bar-cell { position:relative; padding:0; }
+  .bar {
+    display:inline-block;
+    height:22px; border-radius:11px;
+    vertical-align:middle;
+  }
+  .bar-dark { background:#1a3a9e; }
+  .bar-mid { background:#4a7ac8; }
+  .bar-light { background:#a8c4e8; }
+  .bar-label {
+    font-size:11px; color:#555; margin-left:6px;
+    vertical-align:middle; white-space:nowrap;
+  }
+  /* 跨列的任务条用绝对定位 */
+  .gantt td.bar-td { position:relative; overflow:visible; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <table class="gantt">
+    <thead>
+      <tr>
+        <th class="label-col"></th>
+        <th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th>
+        <th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th><th>12月</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 项目计划（加粗）跨1~3月 -->
+      <tr>
+        <td class="label bold">项目计划</td>
+        <td colspan="2" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-dark" style="width:100%;"></div>
+            <span class="bar-label">1月1日——3月3日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <!-- 市场研究 跨1~2月 -->
+      <tr>
+        <td class="label">市场研究</td>
+        <td colspan="1" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-dark" style="width:90%;"></div>
+            <span class="bar-label">1月1日——2月2日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <!-- 项目范围界定（加粗）跨3月 -->
+      <tr>
+        <td class="label bold">项目范围界定</td>
+        <td></td>
+        <td colspan="1" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-light" style="width:60%;border-radius:11px;"></div>
+            <span class="bar-label">2月2日——3月3日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <!-- 资源分配 跨3~8月 -->
+      <tr>
+        <td class="label">资源分配</td>
+        <td></td><td></td>
+        <td colspan="6" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-dark" style="width:85%;"></div>
+            <span class="bar-label">3月3日——8月8日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td><td></td>
+      </tr>
+      <!-- 项目启动（加粗）跨3~5月 -->
+      <tr>
+        <td class="label bold">项目启动</td>
+        <td></td><td></td>
+        <td colspan="3" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-light" style="width:80%;"></div>
+            <span class="bar-label">3月3日——5月5日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <!-- 开发阶段 跨5~8月 -->
+      <tr>
+        <td class="label">开发阶段</td>
+        <td></td><td></td><td></td><td></td>
+        <td colspan="4" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-mid" style="width:80%;"></div>
+            <span class="bar-label">5月5日——8月8日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td>
+      </tr>
+      <!-- 产品品控 跨8~9月 -->
+      <tr>
+        <td class="label">产品品控</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <div class="bar bar-light" style="width:55%;"></div>
+            <span class="bar-label">8月8日——9月9日</span>
+          </div>
+        </td>
+        <td></td><td></td><td></td>
+      </tr>
+      <!-- 合规检查 跨9~12月 -->
+      <tr>
+        <td class="label">合规检查</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td style="padding:0 4px;font-size:11px;color:#555;white-space:nowrap;">9月9日——12月12日</td>
+        <td colspan="3" style="padding:0 4px;">
+          <div class="bar bar-light" style="width:100%;"></div>
+        </td>
+      </tr>
+      <!-- 项目结束（加粗）跨10~11月 -->
+      <tr>
+        <td class="label bold">项目结束</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2" style="padding:0 4px;">
+          <div style="display:flex;align-items:center;">
+            <span style="font-size:11px;color:#1a3a9e;font-weight:700;white-space:nowrap;margin-right:6px;">10月10日——11月11日</span>
+            <div class="bar bar-light" style="width:60%;"></div>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <!-- 项目复盘 跨10~11月 -->
+      <tr>
+        <td class="label">项目复盘</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td style="font-size:11px;color:#555;white-space:nowrap;padding:0 4px;">10月20日——11月30日</td>
+        <td colspan="2" style="padding:0 4px;">
+          <div class="bar bar-light" style="width:80%;"></div>
+        </td>
+      </tr>
+      <!-- 项目总结 跨11~12月 -->
+      <tr>
+        <td class="label">项目总结</td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td style="font-size:11px;color:#555;white-space:nowrap;padding:0 4px;">11月11日——12月12日</td>
+        <td style="padding:0 4px;">
+          <div class="bar bar-light" style="width:90%;"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_22</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+  .sub-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:10px; }
+
+  /* 甘特表格 */
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt th {
+    text-align:center; padding:10px 4px;
+    font-size:15px; font-weight:700;
+    border:1px solid #dde3ef;
+  }
+  .gantt th.label-col { width:180px; background:#fff; border:none; }
+  .gantt th.w1 { background:#c8d8ee; color:#1a3a9e; }
+  .gantt th.w2 { background:#7aaad4; color:#fff; }
+  .gantt th.w3 { background:#4a7ac8; color:#fff; }
+  .gantt th.w4 { background:#8899aa; color:#fff; }
+
+  .gantt td {
+    border:1px solid #e8ecf4;
+    padding:0; height:88px;
+    vertical-align:middle;
+  }
+  .gantt td.label-td {
+    background:#1a3a9e; padding:8px 12px;
+    border:1px solid #fff;
+  }
+  .label-num { font-size:20px; font-weight:900; color:#fff; }
+  .label-name { font-size:15px; font-weight:700; color:#fff; margin:2px 0; }
+  .label-desc { font-size:11px; color:rgba(255,255,255,0.8); }
+
+  .gantt td.bar-td { padding:4px 8px; background:#f5f7fc; }
+  .gantt tr:nth-child(even) td.bar-td { background:#fff; }
+  .milestone { font-size:11px; color:#888; margin-bottom:4px; padding-left:2px; }
+  .prog-row { display:flex; align-items:center; gap:0; height:24px; }
+  .bar-done { height:24px; border-radius:12px 0 0 12px; background:#1a3a9e; }
+  .check-icon {
+    width:28px; height:28px; border-radius:50%;
+    background:#1a3a9e; border:2px solid #fff;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; z-index:1; margin:0 -4px;
+  }
+  .check-icon::after { content:'✓'; color:#fff; font-size:13px; font-weight:900; }
+  .bar-remain { height:24px; border-radius:0 12px 12px 0; background:#c8d8ee; flex:1; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="sub-title">项目进度规划表</div>
+
+  <table class="gantt">
+    <thead>
+      <tr>
+        <th class="label-col"></th>
+        <th class="w1">第一周</th>
+        <th class="w2">第二周</th>
+        <th class="w3">第三周</th>
+        <th class="w4">第四周</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label-td">
+          <div class="label-num">01</div>
+          <div class="label-name">工作任务</div>
+          <div class="label-desc">和工作具体安排</div>
+        </td>
+        <td class="bar-td" colspan="4">
+          <div class="milestone">项目关键节点</div>
+          <div class="prog-row">
+            <div class="bar-done" style="width:38%;"></div>
+            <div class="check-icon"></div>
+            <div class="bar-remain"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td">
+          <div class="label-num">02</div>
+          <div class="label-name">工作任务</div>
+          <div class="label-desc">和工作具体安排</div>
+        </td>
+        <td class="bar-td" colspan="4">
+          <div class="milestone">项目关键节点</div>
+          <div class="prog-row">
+            <div class="bar-done" style="width:55%;"></div>
+            <div class="check-icon"></div>
+            <div class="bar-remain"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td">
+          <div class="label-num">03</div>
+          <div class="label-name">工作任务</div>
+          <div class="label-desc">和工作具体安排</div>
+        </td>
+        <td class="bar-td" colspan="4">
+          <div class="milestone">项目关键节点</div>
+          <div class="prog-row">
+            <div class="bar-done" style="width:30%;"></div>
+            <div class="check-icon"></div>
+            <div class="bar-remain"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td">
+          <div class="label-num">04</div>
+          <div class="label-name">工作任务</div>
+          <div class="label-desc">和工作具体安排</div>
+        </td>
+        <td class="bar-td" colspan="4">
+          <div class="milestone">项目关键节点</div>
+          <div class="prog-row">
+            <div class="bar-done" style="width:68%;"></div>
+            <div class="check-icon"></div>
+            <div class="bar-remain"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td">
+          <div class="label-num">05</div>
+          <div class="label-name">工作任务</div>
+          <div class="label-desc">和工作具体安排</div>
+        </td>
+        <td class="bar-td" colspan="4">
+          <div class="milestone">项目关键节点</div>
+          <div class="prog-row">
+            <div class="bar-done" style="width:50%;"></div>
+            <div class="check-icon"></div>
+            <div class="bar-remain"></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

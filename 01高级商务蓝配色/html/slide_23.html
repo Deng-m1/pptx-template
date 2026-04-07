@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_23</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; display:flex; flex-direction:column; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+  .sub-title { font-size:24px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+
+  /* 甘特表格 */
+  .gantt-wrap { flex:1; overflow:hidden; }
+  .gantt { width:100%; border-collapse:collapse; font-size:11px; }
+  .gantt th {
+    text-align:center; padding:5px 1px;
+    font-size:11px; font-weight:700;
+    border:1px solid #dde3ef;
+    background:#1a3a9e; color:#fff;
+    min-width:28px;
+  }
+  .gantt th.label-col { width:90px; background:#1a3a9e; }
+  .gantt td {
+    border:1px solid #e8ecf4;
+    padding:2px 1px; height:38px;
+    vertical-align:middle; text-align:center;
+  }
+  .gantt td.label {
+    text-align:left; padding-left:8px;
+    font-size:12px; color:#333; background:#eef2fa;
+  }
+  .gantt tr:nth-child(odd) td { background:#f5f7fc; }
+  .gantt tr:nth-child(odd) td.label { background:#eef2fa; }
+  .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(even) td.label { background:#e8edf8; }
+
+  .bar-cell { padding:1px 1px; }
+  .bar { height:20px; border-radius:3px; display:inline-block; vertical-align:middle; }
+  .bar-dark { background:#1a3a9e; }
+  .bar-light { background:#a8c4e8; }
+
+  /* 底部4卡 */
+  .bottom-row { display:flex; gap:12px; margin-top:8px; flex-shrink:0; }
+  .card { flex:1; border-radius:6px; padding:10px 14px; }
+  .card-1 { background:#1a3a9e; }
+  .card-2 { background:#4a7ac8; }
+  .card-3 { background:#a8c4e8; }
+  .card-4 { background:#d4dff0; }
+  .card-title { font-size:15px; font-weight:900; margin-bottom:4px; }
+  .card-1 .card-title, .card-2 .card-title { color:#fff; }
+  .card-3 .card-title, .card-4 .card-title { color:#1a3a9e; }
+  .card-desc { font-size:10px; line-height:1.6; }
+  .card-1 .card-desc, .card-2 .card-desc { color:rgba(255,255,255,0.85); }
+  .card-3 .card-desc, .card-4 .card-desc { color:#444; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="sub-title">项目进度规划表</div>
+
+  <div class="gantt-wrap">
+    <table class="gantt">
+      <thead>
+        <tr>
+          <th class="label-col">工作任务</th>
+          <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+          <th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th>
+          <th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th>
+          <th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">工作任务01</td>
+          <td colspan="2" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务02</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="6" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="2" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务03</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务04</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务05</td>
+          <td></td><td></td><td></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="6" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务06</td>
+          <td></td><td></td><td></td><td></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务07</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">工作任务08</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-row">
+    <div class="card card-1">
+      <div class="card-title">工作重点A</div>
+      <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+    </div>
+    <div class="card card-2">
+      <div class="card-title">工作重点B</div>
+      <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+    </div>
+    <div class="card card-3">
+      <div class="card-title">工作重点C</div>
+      <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+    </div>
+    <div class="card card-4">
+      <div class="card-title">工作重点D</div>
+      <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

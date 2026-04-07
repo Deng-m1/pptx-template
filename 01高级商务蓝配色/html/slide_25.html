@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_25</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; display:flex; flex-direction:column; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+
+  .gantt-wrap { flex:1; overflow:hidden; }
+  .gantt { width:100%; border-collapse:collapse; font-size:11px; }
+  .gantt th {
+    text-align:center; padding:4px 1px;
+    font-size:11px; font-weight:700;
+    border:1px solid #dde3ef;
+  }
+  .gantt th.label-col { width:90px; background:#1a3a9e; color:#fff; }
+  .gantt th.day-h { background:#1a3a9e; color:#fff; min-width:28px; }
+  .gantt th.week-h { background:#4a7ac8; color:#fff; font-size:13px; }
+  .gantt td {
+    border:1px solid #e8ecf4;
+    padding:2px 1px; height:52px;
+    vertical-align:middle; text-align:center;
+  }
+  .gantt td.label {
+    text-align:left; padding-left:8px;
+    font-size:12px; color:#333; background:#eef2fa;
+  }
+  .gantt tr:nth-child(odd) td { background:#f5f7fc; }
+  .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(odd) td.label { background:#eef2fa; }
+  .bar {
+    height:26px; border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:700; color:#fff; white-space:nowrap; padding:0 6px;
+  }
+  .bar-dark { background:#1a3a9e; }
+  .bar-gray { background:#8899aa; }
+
+  .bottom-row {
+    display:flex; margin-top:8px; flex-shrink:0;
+    border:1.5px solid #1a3a9e; border-radius:6px; overflow:hidden;
+  }
+  .bottom-left { flex:1; padding:12px 16px; border-right:1.5px solid #1a3a9e; }
+  .bottom-left-title { font-size:17px; font-weight:900; color:#1a3a9e; margin-bottom:5px; }
+  .bottom-left-desc { font-size:10px; color:#444; line-height:1.7; }
+  .bottom-right { flex:2; padding:10px 18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px 16px; align-items:center; }
+  .dept-item { display:flex; align-items:center; gap:10px; }
+  .dept-icon {
+    width:38px; height:38px; border-radius:50%;
+    border:2px solid #1a3a9e;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .dept-name { font-size:14px; font-weight:700; color:#1a3a9e; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="gantt-wrap">
+    <table class="gantt">
+      <thead>
+        <tr>
+          <th class="label-col" rowspan="2">任务 #</th>
+          <th class="day-h">M</th><th class="day-h">T</th><th class="day-h">W</th><th class="day-h">T</th><th class="day-h">F</th><th class="day-h">S</th><th class="day-h">S</th>
+          <th class="day-h">M</th><th class="day-h">T</th><th class="day-h">W</th><th class="day-h">T</th><th class="day-h">F</th><th class="day-h">S</th><th class="day-h">S</th>
+          <th class="day-h">M</th><th class="day-h">T</th><th class="day-h">W</th><th class="day-h">T</th><th class="day-h">F</th><th class="day-h">S</th><th class="day-h">S</th>
+          <th class="day-h">M</th><th class="day-h">T</th><th class="day-h">W</th><th class="day-h">T</th><th class="day-h">F</th><th class="day-h">S</th><th class="day-h">S</th>
+        </tr>
+        <tr>
+          <th class="week-h" colspan="7">第一周</th>
+          <th class="week-h" colspan="7">第二周</th>
+          <th class="week-h" colspan="7">第三周</th>
+          <th class="week-h" colspan="7">第四周</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">任务 1</td>
+          <td colspan="10" style="padding:0 4px;"><div class="bar bar-dark">1月1日-1月13日</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">任务 2</td>
+          <td></td><td></td>
+          <td colspan="7" style="padding:0 4px;"><div class="bar bar-gray">1月1日-1月13日</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">任务 3</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="9" style="padding:0 4px;"><div class="bar bar-dark">1月1日-1月13日</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">任务 4</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="10" style="padding:0 4px;"><div class="bar bar-gray">1月1日-1月13日</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">任务 5</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="14" style="padding:0 4px;"><div class="bar bar-dark">1月1日-1月13日</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label">任务 6</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          <td colspan="7" style="padding:0 4px;"><div class="bar bar-gray">1月1日-1月13日</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bottom-left">
+      <div class="bottom-left-title">项目进度流程安排</div>
+      <div class="bottom-left-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+    </div>
+    <div class="bottom-right">
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><circle cx="9" cy="9" r="3"/><path d="M3 20c0-4 3-7 6-7s6 3 6 7"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 20c0-3-2.5-5.5-5-6"/></svg>
+        </div>
+        <div class="dept-name">策划部</div>
+      </div>
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5c0 3-2 5-5 7-3-2-5-4-5-7a5 5 0 0 1 5-5z"/><path d="M12 14v8"/></svg>
+        </div>
+        <div class="dept-name">设计部</div>
+      </div>
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="dept-name">采购部</div>
+      </div>
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="dept-name">销售部</div>
+      </div>
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <div class="dept-name">商务部</div>
+      </div>
+      <div class="dept-item">
+        <div class="dept-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="dept-name">工程部</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

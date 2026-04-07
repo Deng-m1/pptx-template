@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_18</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:24px 50px 16px 50px; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+  /* 甘特表格 */
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt th {
+    text-align:center; padding:6px 2px;
+    font-size:13px; font-weight:900;
+    border:1px solid #c8d4ea;
+  }
+  .gantt th.label-col { width:130px; background:#fff; border:none; }
+  .gantt th.month-normal { background:#c8d4ea; color:#1a3a9e; }
+  .gantt th.month-highlight { background:#1a3a9e; color:#fff; }
+  .gantt td {
+    border:1px solid #dde3ef;
+    padding:3px 2px; height:52px;
+    vertical-align:middle; text-align:center;
+    background:#eef2fa;
+  }
+  .gantt td.label-td {
+    text-align:center; padding:0;
+    background:transparent; border:none;
+  }
+  .label-pill {
+    display:inline-block;
+    background:#c8d4ea; color:#1a3a9e;
+    font-size:13px; font-weight:700;
+    padding:8px 0; width:120px;
+    border-radius:6px; text-align:center;
+  }
+  /* 箭头形状（chevron）用 clip-path */
+  .chevron-cell { padding:0 2px; }
+  .chevron {
+    display:inline-block;
+    height:30px; line-height:30px;
+    padding:0 16px 0 10px;
+    font-size:12px; font-weight:700; color:#fff;
+    white-space:nowrap;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%);
+    text-align:center;
+  }
+  .chev-dark { background:#1a3a9e; }
+  .chev-mid { background:#4a7ac8; }
+  .chev-light { background:#a8c4e8; color:#1a3a9e; }
+  .chev-gray { background:#c8d4e8; color:#1a3a9e; }
+  .chev-first {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+    padding-left:14px;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <table class="gantt">
+    <thead>
+      <tr>
+        <th class="label-col"></th>
+        <th class="month-highlight">1月</th>
+        <th class="month-highlight">2月</th>
+        <th class="month-normal">3月</th>
+        <th class="month-normal">4月</th>
+        <th class="month-normal">5月</th>
+        <th class="month-normal">6月</th>
+        <th class="month-normal">7月</th>
+        <th class="month-normal">8月</th>
+        <th class="month-normal">9月</th>
+        <th class="month-normal">10月</th>
+        <th class="month-normal">11月</th>
+        <th class="month-highlight">12月</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务01</div></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-gray chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务02</div></td>
+        <td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-mid chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-gray chev-first" style="width:100%;">重点工作任务</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务03</div></td>
+        <td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务04</div></td>
+        <td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务</div>
+        </td>
+        <td></td><td></td><td></td><td></td>
+        <td colspan="3" class="chevron-cell">
+          <div class="chevron chev-gray chev-first" style="width:100%;">Type the stage information</div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务05</div></td>
+        <td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-mid chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-mid chev-first" style="width:100%;">重点工作任务</div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务06</div></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-light chev-first" style="width:100%;">重点工作任务</div>
+        </td>
+        <td></td>
+        <td class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;"></div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务07</div></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-mid chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-gray chev-first" style="width:100%;">重点工作任务</div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务08</div></td>
+        <td></td><td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-light chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td>
+        <td class="chevron-cell">
+          <div class="chevron chev-dark chev-first" style="width:100%;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label-td"><div class="label-pill">工作任务09</div></td>
+        <td></td><td></td><td></td><td></td>
+        <td colspan="2" class="chevron-cell">
+          <div class="chevron chev-mid chev-first" style="width:100%;">重点工作任务以及阶段目标</div>
+        </td>
+        <td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

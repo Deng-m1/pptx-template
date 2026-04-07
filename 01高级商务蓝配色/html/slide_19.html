@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_19</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:24px 50px 16px 50px; display:flex; flex-direction:column; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+  .content-row { display:flex; gap:20px; flex:1; overflow:hidden; }
+
+  /* 左侧甘特表 */
+  .gantt-wrap { flex:1; overflow:hidden; }
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt th {
+    text-align:center; padding:6px 2px;
+    font-size:12px; font-weight:700;
+    border:1px solid #dde3ef;
+  }
+  .gantt th.label-col { width:80px; background:#fff; }
+  .gantt th.proj { background:#1a3a9e; color:#fff; }
+  .gantt td {
+    border:1px solid #dde3ef;
+    padding:4px 6px; height:42px;
+    vertical-align:middle; text-align:center;
+    font-size:12px; color:#333;
+  }
+  .gantt td.month-label {
+    text-align:center; font-weight:400; color:#555;
+    background:#fff;
+  }
+  .gantt tr:nth-child(odd) td { background:#f5f7fc; }
+  .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(odd) td.month-label { background:#f5f7fc; }
+
+  /* 右侧说明卡 */
+  .cards { width:320px; display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+  .card { border-radius:8px; padding:14px 16px; flex:1; }
+  .card-1 { background:#1a3a9e; }
+  .card-2 { background:#4a7ac8; }
+  .card-3 { background:#a8c4e8; }
+  .card-4 { background:#d4dff0; }
+  .card-title { font-size:20px; font-weight:900; margin-bottom:6px; }
+  .card-1 .card-title, .card-2 .card-title { color:#fff; }
+  .card-3 .card-title, .card-4 .card-title { color:#1a3a9e; }
+  .card-desc { font-size:11px; line-height:1.7; }
+  .card-1 .card-desc, .card-2 .card-desc { color:rgba(255,255,255,0.85); }
+  .card-3 .card-desc, .card-4 .card-desc { color:#333; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="content-row">
+    <div class="gantt-wrap">
+      <table class="gantt">
+        <thead>
+          <tr>
+            <th class="label-col"></th>
+            <th class="proj">公司项目A</th>
+            <th class="proj">公司项目B</th>
+            <th class="proj">公司项目C</th>
+            <th class="proj">公司项目D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="month-label">1月</td>
+            <td>项目立项</td><td></td><td>项目立项</td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">2月</td>
+            <td></td><td>项目立项</td><td></td><td>项目立项</td>
+          </tr>
+          <tr>
+            <td class="month-label">3月</td>
+            <td>市场调研</td><td></td><td>市场调研</td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">4月</td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">5月</td>
+            <td>成本预算</td><td>市场调研</td><td></td><td>市场调研</td>
+          </tr>
+          <tr>
+            <td class="month-label">6月</td>
+            <td></td><td></td><td>成本预算</td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">7月</td>
+            <td>策划设计</td><td></td><td></td><td>成本预算</td>
+          </tr>
+          <tr>
+            <td class="month-label">8月</td>
+            <td></td><td>成品预算</td><td>策划设计</td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">9月</td>
+            <td>产品投放</td><td></td><td></td><td>策划设计</td>
+          </tr>
+          <tr>
+            <td class="month-label">10月</td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="month-label">11月</td>
+            <td>用户反馈</td><td></td><td></td><td>产品投放</td>
+          </tr>
+          <tr>
+            <td class="month-label">12月</td>
+            <td></td><td>策划设计</td><td>产品投放</td><td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards">
+      <div class="card card-1">
+        <div class="card-title">公司项目A</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="card card-2">
+        <div class="card-title">公司项目B</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="card card-3">
+        <div class="card-title">公司项目C</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="card card-4">
+        <div class="card-title">公司项目D</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

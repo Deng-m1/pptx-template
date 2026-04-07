@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_21</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+  /* 甘特表格 */
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt th {
+    text-align:center; padding:7px 4px;
+    font-size:14px; font-weight:700;
+    border:1px solid #dde3ef;
+  }
+  .gantt th.label-col { width:50px; background:#fff; border:none; }
+  .gantt th.task-col { width:110px; background:#fff; border:none; }
+  .gantt th.q1 { background:#a8c4e8; color:#1a3a9e; }
+  .gantt th.q2 { background:#7aaad4; color:#fff; }
+  .gantt th.q3 { background:#4a7ac8; color:#fff; }
+  .gantt th.q4 { background:#c8d4e8; color:#1a3a9e; }
+
+  .gantt td {
+    border:1px solid #e8ecf4;
+    padding:3px 4px; height:46px;
+    vertical-align:middle;
+  }
+  .gantt td.proj-label {
+    text-align:center; font-size:12px; font-weight:700;
+    color:#fff; background:#1a3a9e;
+    writing-mode:vertical-rl; text-orientation:mixed;
+    letter-spacing:2px; padding:0;
+    border:1px solid #fff;
+  }
+  .gantt td.task-label {
+    text-align:center; font-size:13px; font-weight:700;
+    color:#fff; background:#1a3a9e;
+    padding:4px 6px; border:1px solid #fff;
+  }
+  .gantt tr:nth-child(odd) td.bar-td { background:#f5f7fc; }
+  .gantt tr:nth-child(even) td.bar-td { background:#fff; }
+
+  /* 任务条 */
+  .bar-td { padding:0 4px; }
+  .bar-row { display:flex; align-items:center; gap:3px; height:100%; }
+  .bar {
+    height:22px; border-radius:3px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; color:#fff; font-weight:600;
+    white-space:nowrap; padding:0 6px;
+  }
+  .bar-dark { background:#1a3a9e; }
+  .bar-mid { background:#4a7ac8; }
+  .bar-light { background:#a8c4e8; color:#1a3a9e; }
+  .bar-dot { width:8px; height:22px; border-radius:3px; background:#1a3a9e; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-甘特图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <table class="gantt">
+    <thead>
+      <tr>
+        <th class="label-col"></th>
+        <th class="task-col"></th>
+        <th class="q1">第一季度</th>
+        <th class="q2">第二季度</th>
+        <th class="q3">第三季度</th>
+        <th class="q4">第四季度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 公司项目A -->
+      <tr>
+        <td class="proj-label" rowspan="3">公司项目A</td>
+        <td class="task-label">工作任务 01</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:80%;">重点工作任务以及阶段目标</div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:60%;">重点工作任务</div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:30%;"></div></div></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 02</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar-dot"></div><div class="bar-dot"></div><div class="bar bar-dark" style="width:30%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-mid" style="width:60%;">重点工作任务</div><div class="bar-dot"></div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 03</td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar-dot"></div><div class="bar bar-dark" style="width:25%;"></div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:65%;">重点工作任务</div></div></td>
+      </tr>
+      <!-- 公司项目B -->
+      <tr>
+        <td class="proj-label" rowspan="3">公司项目B</td>
+        <td class="task-label">工作任务 01</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:80%;">重点工作任务以及阶段目标</div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:60%;">重点工作任务</div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-light" style="width:30%;"></div></div></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 02</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-light" style="width:25%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-mid" style="width:65%;">重点工作任务以及阶段目标</div><div class="bar-dot"></div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 03</td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar-dot"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-light" style="width:30%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:65%;">重点工作任务</div></div></td>
+      </tr>
+      <!-- 公司项目C -->
+      <tr>
+        <td class="proj-label" rowspan="3">公司项目C</td>
+        <td class="task-label">工作任务 01</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:80%;">重点工作任务以及阶段目标</div></div></td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:60%;">重点工作任务</div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-light" style="width:28%;"></div></div></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 02</td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-light" style="width:25%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-mid" style="width:70%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar-dot"></div></div></td>
+        <td class="bar-td"></td>
+      </tr>
+      <tr>
+        <td class="task-label">工作任务 03</td>
+        <td class="bar-td"></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar-dot"></div><div class="bar bar-dark" style="width:20%;"></div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-mid" style="width:40%;">重点工作任务</div></div></td>
+        <td class="bar-td"><div class="bar-row"><div class="bar bar-dark" style="width:65%;">重点工作任务</div></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
