@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; padding: 14px 30px; gap: 12px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .col-header { padding: 12px 16px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .col-title { font-size: 18px; font-weight: 700; color: white; }
+  .col-icon { width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .chart-area { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; flex: 1; display: flex; flex-direction: column; }
+  .chart-y-label { font-size: 10px; color: #888; }
+  .sales-table { border: 1.5px solid #dde4f0; border-radius: 4px; overflow: hidden; }
+  .table-header { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .table-title { font-size: 14px; font-weight: 700; color: white; }
+  .table-icon { font-size: 16px; }
+  .table-row { padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; }
+  .row-label { font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; }
+  .row-arrow { color: #1a3a6b; font-size: 10px; }
+  .row-num { font-size: 16px; font-weight: 700; color: #1a3a6b; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">门店业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <!-- Column A -->
+    <div class="col">
+      <div class="col-header" style="background:#1a3a6b;">
+        <span class="col-title">公司产品A</span>
+        <div class="col-icon">🔄</div>
+      </div>
+      <div class="chart-area">
+        <svg width="100%" height="100%" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid meet">
+          <text x="20" y="20" font-size="10" fill="#888">10</text>
+          <text x="20" y="70" font-size="10" fill="#888">5</text>
+          <text x="20" y="115" font-size="10" fill="#888">0</text>
+          <line x1="35" y1="110" x2="350" y2="110" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="65" x2="350" y2="65" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="15" x2="350" y2="15" stroke="#eee" stroke-width="1"/>
+          <!-- Bars and line -->
+          <rect x="40" y="55" width="18" height="55" fill="#1a3a6b"/>
+          <rect x="70" y="70" width="18" height="40" fill="#8ab0d0"/>
+          <rect x="100" y="45" width="18" height="65" fill="#1a3a6b"/>
+          <rect x="130" y="65" width="18" height="45" fill="#8ab0d0"/>
+          <rect x="160" y="50" width="18" height="60" fill="#1a3a6b"/>
+          <rect x="190" y="75" width="18" height="35" fill="#8ab0d0"/>
+          <rect x="220" y="55" width="18" height="55" fill="#1a3a6b"/>
+          <rect x="250" y="60" width="18" height="50" fill="#8ab0d0"/>
+          <rect x="280" y="40" width="18" height="70" fill="#1a3a6b"/>
+          <rect x="310" y="50" width="18" height="60" fill="#8ab0d0"/>
+          <!-- Line -->
+          <polyline points="49,50 79,65 109,40 139,60 169,45 199,70 229,50 259,55 289,35 319,45" fill="none" stroke="#3a6abf" stroke-width="2"/>
+          <!-- X labels -->
+          <text x="49" y="130" font-size="9" fill="#888" text-anchor="middle">1月</text>
+          <text x="79" y="130" font-size="9" fill="#888" text-anchor="middle">2月</text>
+          <text x="109" y="130" font-size="9" fill="#888" text-anchor="middle">3月</text>
+          <text x="139" y="130" font-size="9" fill="#888" text-anchor="middle">4月</text>
+          <text x="169" y="130" font-size="9" fill="#888" text-anchor="middle">5月</text>
+          <text x="199" y="130" font-size="9" fill="#888" text-anchor="middle">6月</text>
+          <text x="229" y="130" font-size="9" fill="#888" text-anchor="middle">7月</text>
+          <text x="259" y="130" font-size="9" fill="#888" text-anchor="middle">8月</text>
+          <text x="289" y="130" font-size="9" fill="#888" text-anchor="middle">9月</text>
+          <text x="319" y="130" font-size="9" fill="#888" text-anchor="middle">10月</text>
+        </svg>
+      </div>
+      <div class="sales-table">
+        <div class="table-header" style="background:#1a3a6b;">
+          <span class="table-title">各个门店销售情况</span>
+          <span class="table-icon">✅</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店1</span>
+          <span class="row-num">33660元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店2</span>
+          <span class="row-num">13780元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店3</span>
+          <span class="row-num">45560元</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Column B -->
+    <div class="col">
+      <div class="col-header" style="background:#3a6abf;">
+        <span class="col-title">公司产品B</span>
+        <div class="col-icon">🔄</div>
+      </div>
+      <div class="chart-area">
+        <svg width="100%" height="100%" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid meet">
+          <text x="20" y="20" font-size="10" fill="#888">100%</text>
+          <text x="20" y="70" font-size="10" fill="#888">50%</text>
+          <text x="20" y="115" font-size="10" fill="#888">0%</text>
+          <line x1="35" y1="110" x2="350" y2="110" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="65" x2="350" y2="65" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="15" x2="350" y2="15" stroke="#eee" stroke-width="1"/>
+          <polyline points="40,20 70,25 100,18 130,30 160,22 190,28 220,20 250,25 280,18 310,22 340,20" fill="none" stroke="#1a3a6b" stroke-width="2"/>
+          <polyline points="40,60 70,65 100,55 130,70 160,58 190,68 220,60 250,65 280,55 310,62 340,58" fill="none" stroke="#8ab0d0" stroke-width="2"/>
+          <text x="49" y="130" font-size="9" fill="#888" text-anchor="middle">1月</text>
+          <text x="79" y="130" font-size="9" fill="#888" text-anchor="middle">2月</text>
+          <text x="109" y="130" font-size="9" fill="#888" text-anchor="middle">3月</text>
+          <text x="139" y="130" font-size="9" fill="#888" text-anchor="middle">4月</text>
+          <text x="169" y="130" font-size="9" fill="#888" text-anchor="middle">5月</text>
+          <text x="199" y="130" font-size="9" fill="#888" text-anchor="middle">6月</text>
+          <text x="229" y="130" font-size="9" fill="#888" text-anchor="middle">7月</text>
+          <text x="259" y="130" font-size="9" fill="#888" text-anchor="middle">8月</text>
+          <text x="289" y="130" font-size="9" fill="#888" text-anchor="middle">9月</text>
+          <text x="319" y="130" font-size="9" fill="#888" text-anchor="middle">10月</text>
+          <text x="349" y="130" font-size="9" fill="#888" text-anchor="middle">11月</text>
+        </svg>
+      </div>
+      <div class="sales-table">
+        <div class="table-header" style="background:#3a6abf;">
+          <span class="table-title">各个门店销售情况</span>
+          <span class="table-icon">✅</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店1</span>
+          <span class="row-num">12330元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店2</span>
+          <span class="row-num">41320元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店3</span>
+          <span class="row-num">34230元</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Column C -->
+    <div class="col">
+      <div class="col-header" style="background:#6a9ac4;">
+        <span class="col-title">公司产品C</span>
+        <div class="col-icon">🔄</div>
+      </div>
+      <div class="chart-area">
+        <svg width="100%" height="100%" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid meet">
+          <text x="20" y="20" font-size="10" fill="#888">100%</text>
+          <text x="20" y="70" font-size="10" fill="#888">50%</text>
+          <text x="20" y="115" font-size="10" fill="#888">0%</text>
+          <line x1="35" y1="110" x2="350" y2="110" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="65" x2="350" y2="65" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="15" x2="350" y2="15" stroke="#eee" stroke-width="1"/>
+          <!-- Stacked bars -->
+          <rect x="40" y="30" width="22" height="80" fill="#1a3a6b"/>
+          <rect x="40" y="15" width="22" height="15" fill="#8ab0d0"/>
+          <rect x="70" y="25" width="22" height="85" fill="#1a3a6b"/>
+          <rect x="70" y="15" width="22" height="10" fill="#8ab0d0"/>
+          <rect x="100" y="20" width="22" height="90" fill="#1a3a6b"/>
+          <rect x="100" y="15" width="22" height="5" fill="#8ab0d0"/>
+          <rect x="130" y="30" width="22" height="80" fill="#1a3a6b"/>
+          <rect x="130" y="18" width="22" height="12" fill="#8ab0d0"/>
+          <rect x="160" y="25" width="22" height="85" fill="#1a3a6b"/>
+          <rect x="160" y="15" width="22" height="10" fill="#8ab0d0"/>
+          <rect x="190" y="30" width="22" height="80" fill="#1a3a6b"/>
+          <rect x="190" y="18" width="22" height="12" fill="#8ab0d0"/>
+          <rect x="220" y="25" width="22" height="85" fill="#1a3a6b"/>
+          <rect x="220" y="15" width="22" height="10" fill="#8ab0d0"/>
+          <rect x="250" y="20" width="22" height="90" fill="#1a3a6b"/>
+          <rect x="250" y="15" width="22" height="5" fill="#8ab0d0"/>
+          <rect x="280" y="30" width="22" height="80" fill="#1a3a6b"/>
+          <rect x="280" y="18" width="22" height="12" fill="#8ab0d0"/>
+          <rect x="310" y="25" width="22" height="85" fill="#1a3a6b"/>
+          <rect x="310" y="15" width="22" height="10" fill="#8ab0d0"/>
+          <text x="51" y="130" font-size="9" fill="#888" text-anchor="middle">1月</text>
+          <text x="81" y="130" font-size="9" fill="#888" text-anchor="middle">2月</text>
+          <text x="111" y="130" font-size="9" fill="#888" text-anchor="middle">3月</text>
+          <text x="141" y="130" font-size="9" fill="#888" text-anchor="middle">4月</text>
+          <text x="171" y="130" font-size="9" fill="#888" text-anchor="middle">5月</text>
+          <text x="201" y="130" font-size="9" fill="#888" text-anchor="middle">6月</text>
+          <text x="231" y="130" font-size="9" fill="#888" text-anchor="middle">7月</text>
+          <text x="261" y="130" font-size="9" fill="#888" text-anchor="middle">8月</text>
+          <text x="291" y="130" font-size="9" fill="#888" text-anchor="middle">9月</text>
+          <text x="321" y="130" font-size="9" fill="#888" text-anchor="middle">10月</text>
+        </svg>
+      </div>
+      <div class="sales-table">
+        <div class="table-header" style="background:#6a9ac4;">
+          <span class="table-title">各个门店销售情况</span>
+          <span class="table-icon">✅</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店1</span>
+          <span class="row-num">12330元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店2</span>
+          <span class="row-num">41320元</span>
+        </div>
+        <div class="table-row">
+          <span class="row-label"><span class="row-arrow">▶</span> 门店3</span>
+          <span class="row-num">34230元</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

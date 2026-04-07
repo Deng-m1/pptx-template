@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .top-cards { display: flex; gap: 10px; height: 200px; }
+  .card { flex: 1; padding: 20px; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-num { font-size: 44px; font-weight: 900; color: white; }
+  .card-label { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .card-desc { font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+  .bottom-row { flex: 1; display: flex; gap: 12px; }
+  .donut-panel { width: 320px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; display: flex; flex-direction: column; }
+  .chart-panel { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; display: flex; flex-direction: column; }
+  .panel-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 8px; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="top-cards">
+      <div class="card" style="background:#1a3a6b;">
+        <div class="card-num">+55670</div>
+        <div>
+          <div class="card-label">项目成果A</div>
+          <div class="card-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        </div>
+      </div>
+      <div class="card" style="background:#3a6abf;">
+        <div class="card-num">+77670</div>
+        <div>
+          <div class="card-label">项目成果B</div>
+          <div class="card-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        </div>
+      </div>
+      <div class="card" style="background:#6a9ac4;">
+        <div class="card-num">+23670</div>
+        <div>
+          <div class="card-label">项目成果C</div>
+          <div class="card-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        </div>
+      </div>
+      <div class="card" style="background:#9ab8d4;">
+        <div class="card-num">+75670</div>
+        <div>
+          <div class="card-label">项目成果D</div>
+          <div class="card-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="donut-panel">
+        <div class="panel-title">销售占比</div>
+        <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#e8edf5" stroke-width="28"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#1a3a6b" stroke-width="28"
+              stroke-dasharray="212 259" stroke-dashoffset="-118" stroke-linecap="butt"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#3a6abf" stroke-width="28"
+              stroke-dasharray="118 353" stroke-dashoffset="-330" stroke-linecap="butt"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#8ab0d0" stroke-width="28"
+              stroke-dasharray="71 400" stroke-dashoffset="-448" stroke-linecap="butt"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#c0d4e8" stroke-width="28"
+              stroke-dasharray="70 401" stroke-dashoffset="-519" stroke-linecap="butt"/>
+            <text x="100" y="95" text-anchor="middle" font-size="16" font-weight="900" fill="#1a3a6b">销售</text>
+            <text x="100" y="115" text-anchor="middle" font-size="16" font-weight="900" fill="#1a3a6b">占比</text>
+          </svg>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>成果A</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>成果B</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>成果C</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>成果D</div>
+        </div>
+      </div>
+      <div class="chart-panel">
+        <div class="panel-title">公司项目月度销售表</div>
+        <svg width="100%" height="100%" viewBox="0 0 820 260" preserveAspectRatio="xMidYMid meet">
+          <!-- Y axis -->
+          <text x="30" y="20" font-size="11" fill="#888" text-anchor="middle">10000</text>
+          <text x="30" y="80" font-size="11" fill="#888" text-anchor="middle">8000</text>
+          <text x="30" y="120" font-size="11" fill="#888" text-anchor="middle">6000</text>
+          <text x="30" y="160" font-size="11" fill="#888" text-anchor="middle">4000</text>
+          <text x="30" y="200" font-size="11" fill="#888" text-anchor="middle">2000</text>
+          <text x="30" y="230" font-size="11" fill="#888" text-anchor="middle">0</text>
+          <!-- Grid -->
+          <line x1="50" y1="15" x2="810" y2="15" stroke="#eee" stroke-width="1"/>
+          <line x1="50" y1="75" x2="810" y2="75" stroke="#eee" stroke-width="1"/>
+          <line x1="50" y1="115" x2="810" y2="115" stroke="#eee" stroke-width="1"/>
+          <line x1="50" y1="155" x2="810" y2="155" stroke="#eee" stroke-width="1"/>
+          <line x1="50" y1="195" x2="810" y2="195" stroke="#eee" stroke-width="1"/>
+          <line x1="50" y1="225" x2="810" y2="225" stroke="#eee" stroke-width="1"/>
+          <!-- Month groups: 4 bars each, 12 months -->
+          <!-- Each group: A(dark blue), B(medium blue), C(light blue), D(navy) -->
+          <!-- Month 1 -->
+          <rect x="55" y="105" width="12" height="120" fill="#1a3a6b"/>
+          <rect x="70" y="135" width="12" height="90" fill="#3a6abf"/>
+          <rect x="85" y="155" width="12" height="70" fill="#8ab0d0"/>
+          <rect x="100" y="165" width="12" height="60" fill="#1a2a4a"/>
+          <!-- Month 2 -->
+          <rect x="120" y="95" width="12" height="130" fill="#1a3a6b"/>
+          <rect x="135" y="125" width="12" height="100" fill="#3a6abf"/>
+          <rect x="150" y="145" width="12" height="80" fill="#8ab0d0"/>
+          <rect x="165" y="155" width="12" height="70" fill="#1a2a4a"/>
+          <!-- Month 3 -->
+          <rect x="185" y="75" width="12" height="150" fill="#1a3a6b"/>
+          <rect x="200" y="115" width="12" height="110" fill="#3a6abf"/>
+          <rect x="215" y="135" width="12" height="90" fill="#8ab0d0"/>
+          <rect x="230" y="145" width="12" height="80" fill="#1a2a4a"/>
+          <!-- Month 4 -->
+          <rect x="250" y="65" width="12" height="160" fill="#1a3a6b"/>
+          <rect x="265" y="45" width="12" height="180" fill="#3a6abf"/>
+          <rect x="280" y="55" width="12" height="170" fill="#8ab0d0"/>
+          <rect x="295" y="75" width="12" height="150" fill="#1a2a4a"/>
+          <!-- Month 5 -->
+          <rect x="315" y="45" width="12" height="180" fill="#1a3a6b"/>
+          <rect x="330" y="65" width="12" height="160" fill="#3a6abf"/>
+          <rect x="345" y="75" width="12" height="150" fill="#8ab0d0"/>
+          <rect x="360" y="85" width="12" height="140" fill="#1a2a4a"/>
+          <!-- Month 6 -->
+          <rect x="380" y="55" width="12" height="170" fill="#1a3a6b"/>
+          <rect x="395" y="75" width="12" height="150" fill="#3a6abf"/>
+          <rect x="410" y="85" width="12" height="140" fill="#8ab0d0"/>
+          <rect x="425" y="95" width="12" height="130" fill="#1a2a4a"/>
+          <!-- Month 7 -->
+          <rect x="445" y="105" width="12" height="120" fill="#1a3a6b"/>
+          <rect x="460" y="125" width="12" height="100" fill="#3a6abf"/>
+          <rect x="475" y="45" width="12" height="180" fill="#8ab0d0"/>
+          <rect x="490" y="75" width="12" height="150" fill="#1a2a4a"/>
+          <!-- Month 8 -->
+          <rect x="510" y="85" width="12" height="140" fill="#1a3a6b"/>
+          <rect x="525" y="105" width="12" height="120" fill="#3a6abf"/>
+          <rect x="540" y="115" width="12" height="110" fill="#8ab0d0"/>
+          <rect x="555" y="95" width="12" height="130" fill="#1a2a4a"/>
+          <!-- Month 9 -->
+          <rect x="575" y="75" width="12" height="150" fill="#1a3a6b"/>
+          <rect x="590" y="95" width="12" height="130" fill="#3a6abf"/>
+          <rect x="605" y="105" width="12" height="120" fill="#8ab0d0"/>
+          <rect x="620" y="115" width="12" height="110" fill="#1a2a4a"/>
+          <!-- Month 10 -->
+          <rect x="640" y="65" width="12" height="160" fill="#1a3a6b"/>
+          <rect x="655" y="85" width="12" height="140" fill="#3a6abf"/>
+          <rect x="670" y="95" width="12" height="130" fill="#8ab0d0"/>
+          <rect x="685" y="105" width="12" height="120" fill="#1a2a4a"/>
+          <!-- Month 11 -->
+          <rect x="705" y="55" width="12" height="170" fill="#1a3a6b"/>
+          <rect x="720" y="75" width="12" height="150" fill="#3a6abf"/>
+          <rect x="735" y="85" width="12" height="140" fill="#8ab0d0"/>
+          <rect x="750" y="95" width="12" height="130" fill="#1a2a4a"/>
+          <!-- Month 12 -->
+          <rect x="770" y="45" width="12" height="180" fill="#1a3a6b"/>
+          <rect x="785" y="65" width="12" height="160" fill="#3a6abf"/>
+          <rect x="800" y="75" width="12" height="150" fill="#8ab0d0"/>
+          <!-- X labels -->
+          <text x="83" y="245" font-size="10" fill="#555" text-anchor="middle">1月</text>
+          <text x="148" y="245" font-size="10" fill="#555" text-anchor="middle">2月</text>
+          <text x="213" y="245" font-size="10" fill="#555" text-anchor="middle">3月</text>
+          <text x="278" y="245" font-size="10" fill="#555" text-anchor="middle">4月</text>
+          <text x="343" y="245" font-size="10" fill="#555" text-anchor="middle">5月</text>
+          <text x="408" y="245" font-size="10" fill="#555" text-anchor="middle">6月</text>
+          <text x="473" y="245" font-size="10" fill="#555" text-anchor="middle">7月</text>
+          <text x="538" y="245" font-size="10" fill="#555" text-anchor="middle">8月</text>
+          <text x="603" y="245" font-size="10" fill="#555" text-anchor="middle">9月</text>
+          <text x="668" y="245" font-size="10" fill="#555" text-anchor="middle">10月</text>
+          <text x="733" y="245" font-size="10" fill="#555" text-anchor="middle">11月</text>
+          <text x="798" y="245" font-size="10" fill="#555" text-anchor="middle">12月</text>
+        </svg>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>项目成果A</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>项目成果B</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>项目成果C</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#1a2a4a;"></div>项目成果D</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

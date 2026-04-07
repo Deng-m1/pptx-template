@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
+  .top-stats { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px 20px; display: flex; gap: 0; }
+  .stat-item { flex: 1; padding: 0 20px; border-right: 1px solid #eee; }
+  .stat-item:last-child { border-right: none; }
+  .stat-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .stat-num { font-size: 36px; font-weight: 900; color: #1a3a6b; }
+  .stat-tag { padding: 3px 10px; border-radius: 2px; font-size: 12px; font-weight: 700; color: white; }
+  .stat-sub { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-bottom: 6px; }
+  .stat-pct { font-weight: 700; }
+  .progress-bar { height: 5px; background: #e8edf5; border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 3px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">平台数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="sub-title">平台运营数据每周分析</div>
+    <div class="top-stats">
+      <div class="stat-item">
+        <div class="stat-row">
+          <span class="stat-num">28篇</span>
+          <span class="stat-tag" style="background:#1a3a6b;">笔记发文</span>
+        </div>
+        <div class="stat-sub">
+          <span>环比增长</span>
+          <span class="stat-pct" style="color:#1a3a6b;">+20%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#1a3a6b;"></div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-row">
+          <span class="stat-num">+773</span>
+          <span class="stat-tag" style="background:#3a6abf;">新增粉丝</span>
+        </div>
+        <div class="stat-sub">
+          <span>环比增长</span>
+          <span class="stat-pct" style="color:#3a6abf;">+20%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#3a6abf;"></div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-row">
+          <span class="stat-num">-19</span>
+          <span class="stat-tag" style="background:#8ab0d0;">流失粉丝</span>
+        </div>
+        <div class="stat-sub">
+          <span>环比增长</span>
+          <span class="stat-pct" style="color:#8ab0d0;">-10%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:10%; background:#8ab0d0;"></div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-row">
+          <span class="stat-num">336单</span>
+          <span class="stat-tag" style="background:#1a3a6b;">店铺销售</span>
+        </div>
+        <div class="stat-sub">
+          <span>环比增长</span>
+          <span class="stat-pct" style="color:#1a3a6b;">+20%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#1a3a6b;"></div></div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">产品周销售总额</div>
+      <svg width="100%" height="100%" viewBox="0 0 1160 340" preserveAspectRatio="xMidYMid meet">
+        <!-- Y axis -->
+        <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">600</text>
+        <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">500</text>
+        <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">400</text>
+        <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">300</text>
+        <text x="30" y="260" font-size="10" fill="#888" text-anchor="end">200</text>
+        <text x="30" y="310" font-size="10" fill="#888" text-anchor="end">100</text>
+        <!-- Grid -->
+        <line x1="40" y1="315" x2="1150" y2="315" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="255" x2="1150" y2="255" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="195" x2="1150" y2="195" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="135" x2="1150" y2="135" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="75" x2="1150" y2="75" stroke="#eee" stroke-width="1"/>
+        <!-- Dotted trend line -->
+        <polyline points="80,215 240,115 400,95 560,215 720,215 880,195 1040,95" fill="none" stroke="#3a6abf" stroke-width="1.5" stroke-dasharray="5,5"/>
+        <!-- 周一: 3 bars -->
+        <rect x="50" y="115" width="40" height="200" fill="#1a3a6b"/>
+        <rect x="95" y="195" width="40" height="120" fill="#8ab0d0"/>
+        <rect x="140" y="175" width="40" height="140" fill="#c0d4e8"/>
+        <!-- 周二 -->
+        <rect x="210" y="75" width="40" height="240" fill="#1a3a6b"/>
+        <rect x="255" y="55" width="40" height="260" fill="#8ab0d0"/>
+        <rect x="300" y="135" width="40" height="180" fill="#c0d4e8"/>
+        <!-- 周三 -->
+        <rect x="370" y="55" width="40" height="260" fill="#1a3a6b"/>
+        <rect x="415" y="75" width="40" height="240" fill="#8ab0d0"/>
+        <rect x="460" y="195" width="40" height="120" fill="#c0d4e8"/>
+        <!-- 周四 -->
+        <rect x="530" y="75" width="40" height="240" fill="#1a3a6b"/>
+        <rect x="575" y="195" width="40" height="120" fill="#8ab0d0"/>
+        <rect x="620" y="255" width="40" height="60" fill="#c0d4e8"/>
+        <!-- 周五 -->
+        <rect x="690" y="115" width="40" height="200" fill="#1a3a6b"/>
+        <rect x="735" y="175" width="40" height="140" fill="#8ab0d0"/>
+        <rect x="780" y="135" width="40" height="180" fill="#c0d4e8"/>
+        <!-- 周六 -->
+        <rect x="850" y="175" width="40" height="140" fill="#1a3a6b"/>
+        <rect x="895" y="55" width="40" height="260" fill="#8ab0d0"/>
+        <rect x="940" y="195" width="40" height="120" fill="#c0d4e8"/>
+        <!-- 周日 -->
+        <rect x="1010" y="55" width="40" height="260" fill="#1a3a6b"/>
+        <rect x="1055" y="175" width="40" height="140" fill="#8ab0d0"/>
+        <rect x="1100" y="135" width="40" height="180" fill="#c0d4e8"/>
+        <!-- X labels -->
+        <text x="95" y="330" font-size="11" fill="#555" text-anchor="middle">周一</text>
+        <text x="255" y="330" font-size="11" fill="#555" text-anchor="middle">周二</text>
+        <text x="415" y="330" font-size="11" fill="#555" text-anchor="middle">周三</text>
+        <text x="575" y="330" font-size="11" fill="#555" text-anchor="middle">周四</text>
+        <text x="735" y="330" font-size="11" fill="#555" text-anchor="middle">周五</text>
+        <text x="895" y="330" font-size="11" fill="#555" text-anchor="middle">周六</text>
+        <text x="1055" y="330" font-size="11" fill="#555" text-anchor="middle">周日</text>
+      </svg>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
+  .top-row { display: flex; gap: 12px; height: 220px; }
+  .big-stat { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 20px 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .big-num { font-size: 52px; font-weight: 900; color: #1a3a6b; }
+  .big-label { font-size: 14px; color: #555; margin-top: 4px; }
+  .big-growth { font-size: 16px; font-weight: 700; color: #1a3a6b; }
+  .growth-arrow { color: #1a3a6b; }
+  .arrow-svg { position: absolute; right: 20px; bottom: 20px; }
+  .donut-row { display: flex; gap: 12px; }
+  .donut-item { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; align-items: center; }
+  .donut-label { font-size: 12px; color: #555; margin-top: 6px; }
+  .bottom-row { flex: 1; display: flex; gap: 12px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .desc-box { width: 380px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .desc-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
+  .desc-text { font-size: 12px; color: #555; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">平台数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="sub-title">各个平台销售业绩分析</div>
+    <div class="top-row">
+      <!-- Big stat with arrow -->
+      <div class="big-stat">
+        <div>
+          <div class="big-num">30,666,000</div>
+          <div class="big-label">全平台直播带货金额</div>
+        </div>
+        <div class="big-growth"><span class="growth-arrow">▲</span> 30%</div>
+        <svg class="arrow-svg" width="100" height="80" viewBox="0 0 100 80">
+          <path d="M 10,70 Q 30,60 50,40 Q 70,20 90,5" fill="none" stroke="#1a3a6b" stroke-width="4"/>
+          <polygon points="85,2 98,8 88,18" fill="#1a3a6b"/>
+        </svg>
+      </div>
+      <!-- 3 donut charts -->
+      <div class="donut-row" style="flex:2;">
+        <div class="donut-item">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#e8edf5" stroke-width="18"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#1a3a6b" stroke-width="18"
+              stroke-dasharray="69 277" stroke-dashoffset="-69" stroke-linecap="butt"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#8ab0d0" stroke-width="18"
+              stroke-dasharray="207 139" stroke-dashoffset="-138" stroke-linecap="butt"/>
+            <text x="75" y="68" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">20%</text>
+            <text x="75" y="88" text-anchor="middle" font-size="11" fill="#888">销售占比</text>
+          </svg>
+          <div class="donut-label">电商平台A</div>
+        </div>
+        <div class="donut-item">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#e8edf5" stroke-width="18"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#1a3a6b" stroke-width="18"
+              stroke-dasharray="104 242" stroke-dashoffset="-104" stroke-linecap="butt"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#8ab0d0" stroke-width="18"
+              stroke-dasharray="173 173" stroke-dashoffset="-208" stroke-linecap="butt"/>
+            <text x="75" y="68" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">30%</text>
+            <text x="75" y="88" text-anchor="middle" font-size="11" fill="#888">销售占比</text>
+          </svg>
+          <div class="donut-label">电商平台B</div>
+        </div>
+        <div class="donut-item">
+          <svg width="150" height="150" viewBox="0 0 150 150">
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#e8edf5" stroke-width="18"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#1a3a6b" stroke-width="18"
+              stroke-dasharray="173 173" stroke-dashoffset="-173" stroke-linecap="butt"/>
+            <circle cx="75" cy="75" r="55" fill="none" stroke="#8ab0d0" stroke-width="18"
+              stroke-dasharray="104 242" stroke-dashoffset="-346" stroke-linecap="butt"/>
+            <text x="75" y="68" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">50%</text>
+            <text x="75" y="88" text-anchor="middle" font-size="11" fill="#888">销售占比</text>
+          </svg>
+          <div class="donut-label">电商平台C</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="chart-box">
+        <svg width="100%" height="100%" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid meet">
+          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">125</text>
+          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">100</text>
+          <text x="30" y="130" font-size="10" fill="#888" text-anchor="end">75</text>
+          <text x="30" y="180" font-size="10" fill="#888" text-anchor="end">50</text>
+          <text x="30" y="225" font-size="10" fill="#888" text-anchor="end">25</text>
+          <text x="30" y="250" font-size="10" fill="#888" text-anchor="end">0</text>
+          <line x1="40" y1="245" x2="590" y2="245" stroke="#eee" stroke-width="1"/>
+          <!-- 6 groups of 3 bars each (2021-2026) -->
+          <rect x="50" y="195" width="18" height="50" fill="#1a3a6b"/>
+          <rect x="72" y="205" width="18" height="40" fill="#3a6abf"/>
+          <rect x="94" y="235" width="18" height="10" fill="#8ab0d0"/>
+          <rect x="140" y="175" width="18" height="70" fill="#1a3a6b"/>
+          <rect x="162" y="185" width="18" height="60" fill="#3a6abf"/>
+          <rect x="184" y="215" width="18" height="30" fill="#8ab0d0"/>
+          <rect x="230" y="140" width="18" height="105" fill="#1a3a6b"/>
+          <rect x="252" y="155" width="18" height="90" fill="#3a6abf"/>
+          <rect x="274" y="195" width="18" height="50" fill="#8ab0d0"/>
+          <rect x="320" y="50" width="18" height="195" fill="#1a3a6b"/>
+          <rect x="342" y="70" width="18" height="175" fill="#3a6abf"/>
+          <rect x="364" y="120" width="18" height="125" fill="#8ab0d0"/>
+          <rect x="410" y="120" width="18" height="125" fill="#1a3a6b"/>
+          <rect x="432" y="140" width="18" height="105" fill="#3a6abf"/>
+          <rect x="454" y="175" width="18" height="70" fill="#8ab0d0"/>
+          <rect x="500" y="100" width="18" height="145" fill="#1a3a6b"/>
+          <rect x="522" y="120" width="18" height="125" fill="#3a6abf"/>
+          <rect x="544" y="155" width="18" height="90" fill="#8ab0d0"/>
+          <text x="82" y="260" font-size="10" fill="#555" text-anchor="middle">2021</text>
+          <text x="172" y="260" font-size="10" fill="#555" text-anchor="middle">2022</text>
+          <text x="262" y="260" font-size="10" fill="#555" text-anchor="middle">2023</text>
+          <text x="352" y="260" font-size="10" fill="#555" text-anchor="middle">2024</text>
+          <text x="442" y="260" font-size="10" fill="#555" text-anchor="middle">2025</text>
+          <text x="532" y="260" font-size="10" fill="#555" text-anchor="middle">2026</text>
+        </svg>
+      </div>
+      <div class="desc-box">
+        <div class="desc-title">电商平台销售概述</div>
+        <div class="desc-text">我们在主要电商平台（如京东、淘宝、天猫）的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，占据了总销售额的约70%。</div>
+        <div class="desc-text">在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续广告投放和促销活动，以及产品品质的保证。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

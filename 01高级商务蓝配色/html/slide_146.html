@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 20px 40px 16px; gap: 12px; }
+  .title-area { text-align: center; }
+  .main-title { font-size: 26px; font-weight: 900; color: #1a3a6b; margin-bottom: 8px; }
+  .sub-desc { font-size: 13px; color: #666; line-height: 1.7; }
+  .content-area { flex: 1; display: flex; align-items: center; gap: 0; }
+  .left-items { display: flex; flex-direction: column; gap: 20px; width: 280px; }
+  .right-items { display: flex; flex-direction: column; gap: 20px; width: 280px; }
+  .item { display: flex; align-items: center; gap: 12px; }
+  .item.right { flex-direction: row-reverse; }
+  .item-pill { background: #f0f3f8; border-radius: 30px; padding: 10px 16px; flex: 1; }
+  .item-title { font-size: 16px; font-weight: 700; color: #1a3a6b; margin-bottom: 4px; }
+  .item-desc { font-size: 11px; color: #666; line-height: 1.5; }
+  .item-num { width: 44px; height: 44px; border-radius: 50%; background: #1a3a6b; color: white; font-size: 18px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .item-num.light { background: #6a9ac4; }
+  .center-chart { flex: 1; display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">工作汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="title-area">
+      <div class="main-title">品牌营销策划方案1.0</div>
+      <div class="sub-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并<br>使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+    </div>
+    <div class="content-area">
+      <div class="left-items">
+        <div class="item">
+          <div class="item-pill">
+            <div class="item-title">市场调研</div>
+            <div class="item-desc">结合需求进行分析，深入理解产品需求。结合需求进行分析。</div>
+          </div>
+          <div class="item-num">01</div>
+        </div>
+        <div class="item">
+          <div class="item-pill">
+            <div class="item-title">方案策划</div>
+            <div class="item-desc">结合需求进行分析，深入理解产品需求。结合需求进行分析。</div>
+          </div>
+          <div class="item-num">02</div>
+        </div>
+      </div>
+      <div class="center-chart">
+        <svg width="300" height="300" viewBox="0 0 300 300">
+          <!-- Background circle -->
+          <circle cx="150" cy="150" r="130" fill="#f0f3f8"/>
+          <!-- 4 quadrant segments -->
+          <!-- Top-left: 调研 (dark blue) -->
+          <path d="M 150,150 L 20,150 A 130,130 0 0,1 150,20 Z" fill="#1a3a6b"/>
+          <!-- Top-right: 设计 (dark blue) -->
+          <path d="M 150,150 L 150,20 A 130,130 0 0,1 280,150 Z" fill="#1a3a6b"/>
+          <!-- Bottom-right: 投放 (light blue) -->
+          <path d="M 150,150 L 280,150 A 130,130 0 0,1 150,280 Z" fill="#6a9ac4"/>
+          <!-- Bottom-left: 方案 (medium blue) -->
+          <path d="M 150,150 L 150,280 A 130,130 0 0,1 20,150 Z" fill="#3a6abf"/>
+          <!-- Center white circle -->
+          <circle cx="150" cy="150" r="45" fill="white"/>
+          <!-- Gap lines -->
+          <line x1="150" y1="20" x2="150" y2="280" stroke="white" stroke-width="3"/>
+          <line x1="20" y1="150" x2="280" y2="150" stroke="white" stroke-width="3"/>
+          <!-- Labels -->
+          <text x="95" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">调研</text>
+          <text x="205" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">设计</text>
+          <text x="95" y="210" text-anchor="middle" font-size="20" font-weight="900" fill="white">方案</text>
+          <text x="205" y="210" text-anchor="middle" font-size="20" font-weight="900" fill="white">投放</text>
+        </svg>
+      </div>
+      <div class="right-items">
+        <div class="item right">
+          <div class="item-pill">
+            <div class="item-title">产品设计</div>
+            <div class="item-desc">结合需求进行分析，深入理解产品需求。结合需求进行分析。</div>
+          </div>
+          <div class="item-num light">03</div>
+        </div>
+        <div class="item right">
+          <div class="item-pill">
+            <div class="item-title">投放市场</div>
+            <div class="item-desc">结合需求进行分析，深入理解产品需求。结合需求进行分析。</div>
+          </div>
+          <div class="item-num light">04</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

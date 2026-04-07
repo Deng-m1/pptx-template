@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 24px; gap: 8px; }
+  .top-row { display: flex; gap: 12px; align-items: flex-start; }
+  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; white-space: nowrap; }
+  .sub-desc { font-size: 12px; color: #555; line-height: 1.7; flex: 1; }
+  .main-row { flex: 1; display: flex; gap: 12px; }
+  .left-col { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .stat-boxes { display: flex; gap: 10px; }
+  .stat-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px 16px; }
+  .stat-box-label { font-size: 13px; color: #888; margin-bottom: 4px; }
+  .stat-box-num { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .charts-row { flex: 1; display: flex; gap: 10px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 12px; color: #888; text-align: center; margin-bottom: 6px; }
+  .legend { display: flex; gap: 10px; justify-content: center; margin-top: 4px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #555; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+  .right-col { width: 360px; display: flex; flex-direction: column; gap: 10px; }
+  .info-card { flex: 1; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; }
+  .card-title { font-size: 16px; font-weight: 700; color: white; }
+  .card-icon { font-size: 24px; }
+  .card-text { font-size: 12px; color: rgba(255,255,255,0.9); line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">个人业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="top-row">
+      <span class="sub-title">个人上半年销售报告概述</span>
+      <div style="width:16px;"></div>
+      <div class="sub-desc">报告旨在总结我在过去半年内的销售表现，并分析关键趋势及其对业务的影响。在此期间，我致力于达成销售目标，不断优化销售策略以提升个人和团队绩效。</div>
+    </div>
+    <div class="main-row">
+      <div class="left-col">
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <div class="stat-box-label">产品总销售额</div>
+            <div class="stat-box-num">250,000+</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">产品总销量</div>
+            <div class="stat-box-num">500+</div>
+          </div>
+        </div>
+        <div class="charts-row">
+          <div class="chart-box">
+            <div class="chart-title">月度销售总额</div>
+            <svg width="100%" height="100%" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+              <line x1="25" y1="185" x2="270" y2="185" stroke="#eee" stroke-width="1"/>
+              <!-- 6 months, 3 bars each -->
+              <rect x="30" y="80" width="18" height="105" fill="#1a3a6b"/>
+              <rect x="50" y="110" width="18" height="75" fill="#3a6abf"/>
+              <rect x="70" y="140" width="18" height="45" fill="#8ab0d0"/>
+              <rect x="100" y="60" width="18" height="125" fill="#1a3a6b"/>
+              <rect x="120" y="90" width="18" height="95" fill="#3a6abf"/>
+              <rect x="140" y="120" width="18" height="65" fill="#8ab0d0"/>
+              <rect x="170" y="70" width="18" height="115" fill="#1a3a6b"/>
+              <rect x="190" y="100" width="18" height="85" fill="#3a6abf"/>
+              <rect x="210" y="130" width="18" height="55" fill="#8ab0d0"/>
+              <rect x="240" y="50" width="18" height="135" fill="#1a3a6b"/>
+              <rect x="260" y="80" width="18" height="105" fill="#3a6abf"/>
+              <text x="58" y="198" font-size="9" fill="#555" text-anchor="middle">1月</text>
+              <text x="128" y="198" font-size="9" fill="#555" text-anchor="middle">2月</text>
+              <text x="198" y="198" font-size="9" fill="#555" text-anchor="middle">3月</text>
+              <text x="268" y="198" font-size="9" fill="#555" text-anchor="middle">4月</text>
+            </svg>
+            <div class="legend">
+              <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>产品A</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>产品B</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>产品C</div>
+            </div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-title">月度销售总销量</div>
+            <svg width="100%" height="100%" viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet">
+              <line x1="25" y1="185" x2="270" y2="185" stroke="#eee" stroke-width="1"/>
+              <rect x="30" y="40" width="18" height="145" fill="#1a3a6b"/>
+              <rect x="50" y="70" width="18" height="115" fill="#3a6abf"/>
+              <rect x="70" y="120" width="18" height="65" fill="#8ab0d0"/>
+              <rect x="100" y="90" width="18" height="95" fill="#1a3a6b"/>
+              <rect x="120" y="110" width="18" height="75" fill="#3a6abf"/>
+              <rect x="140" y="140" width="18" height="45" fill="#8ab0d0"/>
+              <rect x="170" y="30" width="18" height="155" fill="#1a3a6b"/>
+              <rect x="190" y="60" width="18" height="125" fill="#3a6abf"/>
+              <rect x="210" y="100" width="18" height="85" fill="#8ab0d0"/>
+              <rect x="240" y="70" width="18" height="115" fill="#1a3a6b"/>
+              <rect x="260" y="90" width="18" height="95" fill="#3a6abf"/>
+              <text x="58" y="198" font-size="9" fill="#555" text-anchor="middle">1月</text>
+              <text x="128" y="198" font-size="9" fill="#555" text-anchor="middle">2月</text>
+              <text x="198" y="198" font-size="9" fill="#555" text-anchor="middle">3月</text>
+              <text x="268" y="198" font-size="9" fill="#555" text-anchor="middle">4月</text>
+            </svg>
+            <div class="legend">
+              <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>产品A</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>产品B</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>产品C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="info-card" style="background:#1a3a6b;">
+          <div class="card-header">
+            <span class="card-title">个人优点：</span>
+            <span class="card-icon">👥</span>
+          </div>
+          <div class="card-text">在过去的半年里，我积极参与销售活动，通过坚定的决心和努力工作，成功达成了个人销售指标。我具备良好的沟通技巧和扎实的产品知识，能够有效地理解客户需求并提供定制化的解决方案。通过建立良好的客户关系，我不仅增加了销售额，还提高了客户满意度和忠诚度。此外，我能够在快节奏和竞争激烈的市场环境中保持冷静，灵活应对各种挑战和变化。</div>
+        </div>
+        <div class="info-card" style="background:#6a9ac4;">
+          <div class="card-header">
+            <span class="card-title">个人缺点：</span>
+            <span class="card-icon">📋</span>
+          </div>
+          <div class="card-text">然而，我也意识到自己在销售过程中仍有改进空间。有时候，我可能过于专注于个别高价值客户，而忽略了潜在的长期合作机会。在一些复杂的销售情境中，我可能会遇到难以逾越的沟通障碍，需要进一步提升跨部门合作的能力。此外，虽然我在销售技巧方面有所成就，但仍需持续学习和提升，以应对市场上的新挑战和竞争压力。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

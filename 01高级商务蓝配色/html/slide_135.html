@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 24px; gap: 8px; }
+  .top-row { display: flex; gap: 12px; align-items: flex-start; }
+  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; white-space: nowrap; }
+  .sub-desc { font-size: 12px; color: #555; line-height: 1.7; flex: 1; }
+  .charts-row { flex: 1; display: flex; gap: 12px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 8px; }
+  .bottom-cards { display: flex; gap: 10px; height: 110px; }
+  .stat-card { flex: 1; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+  .card-num { font-size: 26px; font-weight: 900; color: white; }
+  .card-label { font-size: 13px; color: rgba(255,255,255,0.85); }
+  .card-sub { font-size: 11px; color: rgba(255,255,255,0.75); }
+  .card-arrow { position: absolute; right: 12px; bottom: 12px; opacity: 0.4; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">个人业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="top-row">
+      <span class="sub-title">个人年度销售报告概述</span>
+      <div style="width:16px;"></div>
+      <div class="sub-desc">报告旨在总结我在过去一年内的销售表现，并分析关键趋势及其对业务的影响。在此期间，我致力于达成销售目标，不断优化销售策略以提升个人和团队绩效。</div>
+    </div>
+    <div class="charts-row">
+      <div class="chart-box">
+        <div class="chart-title">年度总销售额</div>
+        <svg width="100%" height="100%" viewBox="0 0 550 280" preserveAspectRatio="xMidYMid meet">
+          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">125</text>
+          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">100</text>
+          <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">75</text>
+          <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">50</text>
+          <text x="30" y="250" font-size="10" fill="#888" text-anchor="end">25</text>
+          <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
+          <line x1="35" y1="265" x2="530" y2="265" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="205" x2="530" y2="205" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="145" x2="530" y2="145" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="85" x2="530" y2="85" stroke="#eee" stroke-width="1"/>
+          <rect x="60" y="65" width="90" height="200" fill="#1a3a6b"/>
+          <rect x="185" y="215" width="90" height="50" fill="#1a3a6b"/>
+          <rect x="310" y="155" width="90" height="110" fill="#1a3a6b"/>
+          <rect x="435" y="70" width="90" height="195" fill="#1a3a6b"/>
+          <text x="105" y="280" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
+          <text x="230" y="280" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
+          <text x="355" y="280" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
+          <text x="480" y="280" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+        </svg>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">年度总销量</div>
+        <svg width="100%" height="100%" viewBox="0 0 550 280" preserveAspectRatio="xMidYMid meet">
+          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">100</text>
+          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">80</text>
+          <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">60</text>
+          <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">40</text>
+          <text x="30" y="250" font-size="10" fill="#888" text-anchor="end">20</text>
+          <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
+          <line x1="35" y1="265" x2="530" y2="265" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="205" x2="530" y2="205" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="145" x2="530" y2="145" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="85" x2="530" y2="85" stroke="#eee" stroke-width="1"/>
+          <!-- Smooth curve: Q1=80, Q2=25, Q3=55, Q4=30 -->
+          <!-- y = 265 - val*2.65 -->
+          <!-- 80->53, 25->199, 55->119, 30->185 -->
+          <path d="M 105,53 C 165,53 165,199 230,199 C 295,199 295,119 355,119 C 415,119 415,185 480,185" fill="none" stroke="#1a3a6b" stroke-width="3"/>
+          <circle cx="105" cy="53" r="5" fill="#1a3a6b"/>
+          <circle cx="230" cy="199" r="5" fill="#1a3a6b"/>
+          <circle cx="355" cy="119" r="5" fill="#1a3a6b"/>
+          <circle cx="480" cy="185" r="5" fill="#1a3a6b"/>
+          <text x="105" y="280" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
+          <text x="230" y="280" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
+          <text x="355" y="280" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
+          <text x="480" y="280" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+        </svg>
+      </div>
+    </div>
+    <div class="bottom-cards">
+      <div class="stat-card" style="background:#1a3a6b;">
+        <div class="card-num">320,000</div>
+        <div class="card-label">第一季度销售总额</div>
+        <div class="card-sub">环比增长10%</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <div class="stat-card" style="background:#3a6abf;">
+        <div class="card-num">120,000</div>
+        <div class="card-label">第一季度销售总额</div>
+        <div class="card-sub">环比增长10%</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <div class="stat-card" style="background:#6a9ac4;">
+        <div class="card-num">200,000</div>
+        <div class="card-label">第一季度销售总额</div>
+        <div class="card-sub">环比增长10%</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <div class="stat-card" style="background:#9ab8d4;">
+        <div class="card-num">280,000</div>
+        <div class="card-label">第一季度销售总额</div>
+        <div class="card-sub">环比增长10%</div>
+        <div class="card-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

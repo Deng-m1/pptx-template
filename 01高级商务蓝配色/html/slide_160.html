@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #e8edf5; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; align-items: center; justify-content: center; }
+  .bubble-container { position: relative; width: 980px; }
+  .bubble { background: #1a3a6b; border-radius: 16px; padding: 60px 80px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  /* Speech bubble tail at bottom-left */
+  .bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -36px;
+    left: 80px;
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 36px solid transparent;
+    border-top: 36px solid #1a3a6b;
+  }
+  .thank-you { font-size: 100px; font-weight: 900; color: white; letter-spacing: 6px; }
+  .desc { font-size: 16px; color: rgba(255,255,255,0.85); text-align: center; line-height: 1.8; max-width: 800px; }
+  .info { font-size: 18px; color: rgba(255,255,255,0.9); margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bubble-container">
+    <div class="bubble">
+      <div class="thank-you">THANK YOU</div>
+      <div class="desc">Here you can describe the main work report content. Here you can describe the main work report content. Here you can describe the main work report content. Here you can describe the main work report content.</div>
+      <div class="info">汇报人：小序&nbsp;&nbsp;&nbsp;&nbsp;汇报时间：8888年88月88日</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

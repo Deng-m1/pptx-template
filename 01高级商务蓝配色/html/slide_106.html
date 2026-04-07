@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  
+  .body { flex: 1; display: flex; padding: 14px 30px 14px; gap: 14px; }
+  
+  /* Left panel */
+  .left-panel { width: 460px; border: 1.5px solid #dde4f0; border-radius: 4px; display: flex; flex-direction: column; }
+  .panel-header { background: #1a3a6b; color: white; font-size: 16px; font-weight: 700; padding: 10px 16px; }
+  .panel-body { flex: 1; padding: 14px; display: flex; flex-direction: column; align-items: center; }
+  .chart-title { font-size: 14px; color: #888; margin-bottom: 10px; align-self: flex-start; }
+  
+  /* Right panel */
+  .right-panel { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; display: flex; flex-direction: column; }
+  
+  /* Legend */
+  .legend { display: flex; gap: 16px; margin-top: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+  
+  /* Bottom stat */
+  .bottom-stat { background: #1a3a6b; padding: 12px 16px; display: flex; align-items: center; gap: 10px; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.8); }
+  .stat-num { font-size: 28px; font-weight: 900; color: white; }
+  .stat-arrow { color: #e74c3c; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">产品销售业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  
+  <div class="body">
+    <!-- Left panel: pie chart -->
+    <div class="left-panel">
+      <div class="panel-header">产品2024年度销售成果展示</div>
+      <div class="panel-body">
+        <div class="chart-title">本项目产品年度销售额季度占比</div>
+        <!-- Pie chart SVG -->
+        <svg width="280" height="240" viewBox="0 0 280 240">
+          <!-- Pie chart (20%, 20%, 30%, 30%) -->
+          <!-- Q1: 20% = 72deg, dark blue -->
+          <path d="M 140,120 L 140,20 A 100,100 0 0,1 220.7,70 Z" fill="#1a3a6b"/>
+          <!-- Q2: 20% = 72deg, medium blue -->
+          <path d="M 140,120 L 220.7,70 A 100,100 0 0,1 220.7,170 Z" fill="#3a6abf"/>
+          <!-- Q3: 30% = 108deg, light blue -->
+          <path d="M 140,120 L 220.7,170 A 100,100 0 0,1 59.3,170 Z" fill="#8ab0d0"/>
+          <!-- Q4: 30% = 108deg, lighter -->
+          <path d="M 140,120 L 59.3,170 A 100,100 0 1,1 140,20 Z" fill="#c0d4e8"/>
+          <!-- Labels -->
+          <text x="175" y="75" font-size="14" font-weight="700" fill="white">20%</text>
+          <text x="195" y="135" font-size="14" font-weight="700" fill="white">20%</text>
+          <text x="85" y="185" font-size="14" font-weight="700" fill="#555">30%</text>
+          <text x="60" y="100" font-size="14" font-weight="700" fill="#555">30%</text>
+        </svg>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>第一季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>第二季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>第三季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>第四季度</div>
+        </div>
+      </div>
+      <div class="bottom-stat">
+        <div>
+          <div class="stat-label"><span class="stat-arrow">▲</span> 年度销售目标 同比增长20%</div>
+          <div class="stat-num">¥337400</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right panel: bar chart -->
+    <div class="right-panel">
+      <div class="panel-header">项目产品2024年月度销售成果展示</div>
+      <div style="padding:14px; flex:1; display:flex; flex-direction:column;">
+        <div style="font-size:14px; color:#888; text-align:center; margin-bottom:10px;">2024年月度销售成果展示</div>
+        <!-- Bar chart SVG -->
+        <svg width="100%" height="100%" viewBox="0 0 700 340" preserveAspectRatio="xMidYMid meet">
+          <!-- Y axis labels -->
+          <text x="25" y="20" font-size="12" fill="#888" text-anchor="middle">14</text>
+          <text x="25" y="60" font-size="12" fill="#888" text-anchor="middle">12</text>
+          <text x="25" y="100" font-size="12" fill="#888" text-anchor="middle">10</text>
+          <text x="25" y="140" font-size="12" fill="#888" text-anchor="middle">8</text>
+          <text x="25" y="180" font-size="12" fill="#888" text-anchor="middle">6</text>
+          <text x="25" y="220" font-size="12" fill="#888" text-anchor="middle">4</text>
+          <text x="25" y="260" font-size="12" fill="#888" text-anchor="middle">2</text>
+          <text x="25" y="300" font-size="12" fill="#888" text-anchor="middle">0</text>
+          <!-- Grid lines -->
+          <line x1="45" y1="15" x2="690" y2="15" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="55" x2="690" y2="55" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="95" x2="690" y2="95" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="135" x2="690" y2="135" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="175" x2="690" y2="175" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="215" x2="690" y2="215" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="255" x2="690" y2="255" stroke="#eee" stroke-width="1"/>
+          <line x1="45" y1="295" x2="690" y2="295" stroke="#eee" stroke-width="1"/>
+          <!-- Bars: data = 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11, 12.1, 13.2 -->
+          <!-- Scale: 14 max = 280px height, each unit = 20px -->
+          <!-- Colors alternate: dark blue, dark blue, light blue, dark blue... -->
+          <rect x="55" y="273" width="40" height="22" fill="#1a3a6b"/>
+          <text x="75" y="268" font-size="10" fill="#555" text-anchor="middle">1.1</text>
+          <rect x="108" y="251" width="40" height="44" fill="#1a3a6b"/>
+          <text x="128" y="246" font-size="10" fill="#555" text-anchor="middle">2.2</text>
+          <rect x="161" y="229" width="40" height="66" fill="#1a3a6b"/>
+          <text x="181" y="224" font-size="10" fill="#555" text-anchor="middle">3.3</text>
+          <rect x="214" y="207" width="40" height="88" fill="#b0c8e0"/>
+          <text x="234" y="202" font-size="10" fill="#555" text-anchor="middle">4.4</text>
+          <rect x="267" y="185" width="40" height="110" fill="#1a3a6b"/>
+          <text x="287" y="180" font-size="10" fill="#555" text-anchor="middle">5.5</text>
+          <rect x="320" y="163" width="40" height="132" fill="#1a3a6b"/>
+          <text x="340" y="158" font-size="10" fill="#555" text-anchor="middle">6.6</text>
+          <rect x="373" y="141" width="40" height="154" fill="#8a9aaa"/>
+          <text x="393" y="136" font-size="10" fill="#555" text-anchor="middle">7.7</text>
+          <rect x="426" y="119" width="40" height="176" fill="#1a3a6b"/>
+          <text x="446" y="114" font-size="10" fill="#555" text-anchor="middle">8.8</text>
+          <rect x="479" y="97" width="40" height="198" fill="#1a3a6b"/>
+          <text x="499" y="92" font-size="10" fill="#555" text-anchor="middle">9.9</text>
+          <rect x="532" y="75" width="40" height="220" fill="#1a3a6b"/>
+          <text x="552" y="70" font-size="10" fill="#555" text-anchor="middle">11</text>
+          <rect x="585" y="53" width="40" height="242" fill="#b0c8e0"/>
+          <text x="605" y="48" font-size="10" fill="#555" text-anchor="middle">12.1</text>
+          <rect x="638" y="31" width="40" height="264" fill="#1a3a6b"/>
+          <text x="658" y="26" font-size="10" fill="#555" text-anchor="middle">13.2</text>
+          <!-- X axis labels -->
+          <text x="75" y="315" font-size="11" fill="#555" text-anchor="middle">1月</text>
+          <text x="128" y="315" font-size="11" fill="#555" text-anchor="middle">2月</text>
+          <text x="181" y="315" font-size="11" fill="#555" text-anchor="middle">3月</text>
+          <text x="234" y="315" font-size="11" fill="#555" text-anchor="middle">4月</text>
+          <text x="287" y="315" font-size="11" fill="#555" text-anchor="middle">5月</text>
+          <text x="340" y="315" font-size="11" fill="#555" text-anchor="middle">6月</text>
+          <text x="393" y="315" font-size="11" fill="#555" text-anchor="middle">7月</text>
+          <text x="446" y="315" font-size="11" fill="#555" text-anchor="middle">8月</text>
+          <text x="499" y="315" font-size="11" fill="#555" text-anchor="middle">9月</text>
+          <text x="552" y="315" font-size="11" fill="#555" text-anchor="middle">10月</text>
+          <text x="605" y="315" font-size="11" fill="#555" text-anchor="middle">11月</text>
+          <text x="658" y="315" font-size="11" fill="#555" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+      <div style="padding:10px 14px; background:#e8f0f8; display:flex; align-items:center; gap:10px;">
+        <svg width="30" height="30" viewBox="0 0 30 30">
+          <circle cx="15" cy="15" r="14" fill="#1a3a6b" opacity="0.2"/>
+          <path d="M 15,5 A 10,10 0 0,1 25,15 L 15,15 Z" fill="#1a3a6b"/>
+        </svg>
+        <span style="font-size:12px; color:#555;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; }
+  .content-area { flex: 1; display: flex; align-items: center; padding: 14px 30px; gap: 20px; }
+  .left-items { width: 320px; display: flex; flex-direction: column; gap: 14px; }
+  .right-items { width: 320px; display: flex; flex-direction: column; gap: 14px; }
+  .item { display: flex; align-items: flex-start; gap: 12px; }
+  .item.right { flex-direction: row-reverse; }
+  .item-icon { width: 44px; height: 44px; border-radius: 50%; background: #e8edf5; border: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .item-content { flex: 1; }
+  .item-title { font-size: 16px; font-weight: 700; color: #1a3a6b; margin-bottom: 4px; }
+  .item-desc { font-size: 11px; color: #666; line-height: 1.6; }
+  .center-circle { width: 280px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .footer-bar { height: 55px; background: #1a3a6b; display: flex; align-items: center; padding: 0 40px; gap: 16px; }
+  .footer-label { font-size: 18px; font-weight: 900; color: white; }
+  .footer-text { font-size: 13px; color: rgba(255,255,255,0.9); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">工作汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="content-area">
+      <div class="left-items">
+        <div class="item">
+          <div class="item-icon">📋</div>
+          <div class="item-content">
+            <div class="item-title">销售业绩提升</div>
+            <div class="item-desc">在上个季度，我实现了个人销售目标的超额完成，达到了122%的销售业绩增长。</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">📋</div>
+          <div class="item-content">
+            <div class="item-title">新客户开发</div>
+            <div class="item-desc">在过去三个月里，我通过积极的市场调研和开拓工作，成功签约了10个新客户。</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">📋</div>
+          <div class="item-content">
+            <div class="item-title">客户满意度提升</div>
+            <div class="item-desc">及时的售后服务和问题解决，成功提升了客户满意度，增强了客户的忠诚度。</div>
+          </div>
+        </div>
+      </div>
+      <div class="center-circle">
+        <svg width="280" height="380" viewBox="0 0 280 380">
+          <!-- Outer dashed circle -->
+          <circle cx="140" cy="190" r="130" fill="none" stroke="#c0d4e8" stroke-width="2" stroke-dasharray="8,6"/>
+          <!-- Middle circle -->
+          <circle cx="140" cy="190" r="100" fill="#e8edf5"/>
+          <!-- Inner circle -->
+          <circle cx="140" cy="190" r="70" fill="#c0d4e8"/>
+          <!-- Center dark blue circle -->
+          <circle cx="140" cy="190" r="50" fill="#1a3a6b"/>
+          <!-- Center text -->
+          <text x="140" y="182" text-anchor="middle" font-size="16" font-weight="900" fill="white">工作</text>
+          <text x="140" y="202" text-anchor="middle" font-size="16" font-weight="900" fill="white">成果</text>
+          <text x="140" y="222" text-anchor="middle" font-size="16" font-weight="900" fill="white">展示</text>
+          <!-- Connection lines to items -->
+          <line x1="40" y1="130" x2="90" y2="155" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="40" y1="190" x2="90" y2="190" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="40" y1="250" x2="90" y2="225" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="240" y1="130" x2="190" y2="155" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="240" y1="190" x2="190" y2="190" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="240" y1="250" x2="190" y2="225" stroke="#c0d4e8" stroke-width="1" stroke-dasharray="4,3"/>
+        </svg>
+      </div>
+      <div class="right-items">
+        <div class="item right">
+          <div class="item-icon">📋</div>
+          <div class="item-content" style="text-align:right;">
+            <div class="item-title">团队合作不足与改进</div>
+            <div class="item-desc">计划制订得不合理，脱离客观实际，盲目寻找客户，有时候会错过很多准客户。</div>
+          </div>
+        </div>
+        <div class="item right">
+          <div class="item-icon">📋</div>
+          <div class="item-content" style="text-align:right;">
+            <div class="item-title">团队合作与协作</div>
+            <div class="item-desc">我始终乐于分享经验和资源，与团队成员共同解决问题，为团队的整体目标贡献了力量。</div>
+          </div>
+        </div>
+        <div class="item right">
+          <div class="item-icon">📋</div>
+          <div class="item-content" style="text-align:right;">
+            <div class="item-title">团队合作目标</div>
+            <div class="item-desc">我始终乐于分享经验和资源，与团队成员共同解决问题，为团队的整体目标贡献了力量。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span class="footer-label">未来展望：</span>
+      <span class="footer-text">在未来的工作中，我将继续保持良好的工作态度和高效的工作效率，不断学习和提升自我，以更好地服务客户、实现个人和团队的销售目标！</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

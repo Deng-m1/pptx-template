@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  
+  .body { flex: 1; display: flex; padding: 14px 30px 14px; gap: 14px; }
+  
+  /* Left panel */
+  .left-panel { width: 380px; border: 1.5px solid #dde4f0; border-radius: 4px; display: flex; flex-direction: column; }
+  .panel-body { flex: 1; padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  
+  /* Right panel */
+  .right-panel { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .product-cards { display: flex; gap: 10px; }
+  .product-card { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; overflow: hidden; }
+  .card-header { padding: 8px 12px; font-size: 14px; font-weight: 700; color: white; }
+  .card-body { padding: 10px 12px; }
+  .card-num { font-size: 26px; font-weight: 900; color: #1a3a6b; }
+  .card-label { font-size: 11px; color: #888; margin-top: 2px; }
+  
+  /* Chart area */
+  .chart-area { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 8px; }
+  
+  /* Bottom stat */
+  .bottom-stat { background: #1a3a6b; padding: 12px 16px; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 4px; }
+  .stat-num { font-size: 28px; font-weight: 900; color: white; }
+  .stat-sub { font-size: 12px; color: rgba(255,255,255,0.7); }
+  
+  /* Legend */
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">产品销售业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  
+  <div class="body">
+    <!-- Left panel: pie chart -->
+    <div class="left-panel">
+      <div class="panel-body">
+        <svg width="260" height="240" viewBox="0 0 260 240">
+          <!-- Pie: 20%, 15%, 35%, 30% -->
+          <!-- Q1: 20% = 72deg, dark blue -->
+          <path d="M 130,120 L 130,20 A 100,100 0 0,1 205.1,70 Z" fill="#1a3a6b"/>
+          <!-- Q2: 15% = 54deg, medium blue -->
+          <path d="M 130,120 L 205.1,70 A 100,100 0 0,1 225.1,145.7 Z" fill="#3a6abf"/>
+          <!-- Q3: 35% = 126deg, light blue -->
+          <path d="M 130,120 L 225.1,145.7 A 100,100 0 0,1 54.9,145.7 Z" fill="#8ab0d0"/>
+          <!-- Q4: 30% = 108deg, lighter -->
+          <path d="M 130,120 L 54.9,145.7 A 100,100 0 0,1 130,20 Z" fill="#c0d4e8"/>
+          <!-- Labels -->
+          <text x="165" y="75" font-size="14" font-weight="700" fill="white">20%</text>
+          <text x="195" y="125" font-size="14" font-weight="700" fill="white">15%</text>
+          <text x="130" y="195" font-size="14" font-weight="700" fill="white">35%</text>
+          <text x="50" y="100" font-size="14" font-weight="700" fill="#555">30%</text>
+        </svg>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>公司产品A</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>公司产品B</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>公司产品C</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>公司产品D</div>
+        </div>
+      </div>
+      <div class="bottom-stat">
+        <div class="stat-label">年度总销量</div>
+        <div class="stat-num">58,362万元</div>
+        <div class="stat-sub">较去年增加25%</div>
+      </div>
+    </div>
+    
+    <!-- Right panel -->
+    <div class="right-panel">
+      <!-- Product cards -->
+      <div class="product-cards">
+        <div class="product-card">
+          <div class="card-header" style="background:#1a3a6b;">公司产品A</div>
+          <div class="card-body">
+            <div class="card-num">200<span style="font-size:14px;">万元</span></div>
+            <div class="card-label">年度销售额</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-header" style="background:#3a6abf;">公司产品B</div>
+          <div class="card-body">
+            <div class="card-num">150<span style="font-size:14px;">万元</span></div>
+            <div class="card-label">年度销售额</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-header" style="background:#6a9ac4;">公司产品C</div>
+          <div class="card-body">
+            <div class="card-num">350<span style="font-size:14px;">万元</span></div>
+            <div class="card-label">年度销售额</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-header" style="background:#9ab8d4;">公司产品D</div>
+          <div class="card-body">
+            <div class="card-num">300<span style="font-size:14px;">万元</span></div>
+            <div class="card-label">年度销售额</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Grouped bar chart -->
+      <div class="chart-area">
+        <div class="chart-title">公司产品季度销售图表示例</div>
+        <svg width="100%" height="100%" viewBox="0 0 800 280" preserveAspectRatio="xMidYMid meet">
+          <!-- Y axis -->
+          <text x="20" y="20" font-size="12" fill="#888" text-anchor="middle">6</text>
+          <text x="20" y="75" font-size="12" fill="#888" text-anchor="middle">4</text>
+          <text x="20" y="130" font-size="12" fill="#888" text-anchor="middle">2</text>
+          <text x="20" y="185" font-size="12" fill="#888" text-anchor="middle">0</text>
+          <!-- Grid lines -->
+          <line x1="35" y1="15" x2="780" y2="15" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="70" x2="780" y2="70" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="125" x2="780" y2="125" stroke="#eee" stroke-width="1"/>
+          <line x1="35" y1="180" x2="780" y2="180" stroke="#eee" stroke-width="1"/>
+          <!-- Q1 bars: A=4, B=2.5, C=2, D=1.5 -->
+          <rect x="50" y="40" width="28" height="140" fill="#1a3a6b"/>
+          <rect x="82" y="95" width="28" height="85" fill="#3a6abf"/>
+          <rect x="114" y="110" width="28" height="70" fill="#8ab0d0"/>
+          <rect x="146" y="125" width="28" height="55" fill="#c0d4e8"/>
+          <!-- Q2 bars: A=2.5, B=4, C=1.5, D=1 -->
+          <rect x="240" y="95" width="28" height="85" fill="#1a3a6b"/>
+          <rect x="272" y="40" width="28" height="140" fill="#3a6abf"/>
+          <rect x="304" y="125" width="28" height="55" fill="#8ab0d0"/>
+          <rect x="336" y="145" width="28" height="35" fill="#c0d4e8"/>
+          <!-- Q3 bars: A=3.5, B=2, C=3, D=3 -->
+          <rect x="430" y="55" width="28" height="125" fill="#1a3a6b"/>
+          <rect x="462" y="110" width="28" height="70" fill="#3a6abf"/>
+          <rect x="494" y="75" width="28" height="105" fill="#8ab0d0"/>
+          <rect x="526" y="75" width="28" height="105" fill="#c0d4e8"/>
+          <!-- Q4 bars: A=4, B=2.5, C=4.5, D=5 -->
+          <rect x="620" y="40" width="28" height="140" fill="#1a3a6b"/>
+          <rect x="652" y="95" width="28" height="85" fill="#3a6abf"/>
+          <rect x="684" y="25" width="28" height="155" fill="#8ab0d0"/>
+          <rect x="716" y="5" width="28" height="175" fill="#c0d4e8"/>
+          <!-- X labels -->
+          <text x="120" y="200" font-size="12" fill="#555" text-anchor="middle">第一季度</text>
+          <text x="310" y="200" font-size="12" fill="#555" text-anchor="middle">第二季度</text>
+          <text x="500" y="200" font-size="12" fill="#555" text-anchor="middle">第三季度</text>
+          <text x="690" y="200" font-size="12" fill="#555" text-anchor="middle">第四季度</text>
+        </svg>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>公司产品A</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>公司产品B</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>公司产品C</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>公司产品D</div>
+        </div>
+      </div>
+      
+      <!-- Bottom text -->
+      <div style="background:#1a3a6b; padding:10px 16px; border-radius:0 0 4px 4px;">
+        <span style="font-size:12px; color:white;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .banner { background: #1a3a6b; border-radius: 4px; padding: 16px 24px; position: relative; overflow: hidden; }
+  .banner-text { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.8; }
+  .banner-arrow { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); }
+  .bottom-row { flex: 1; display: flex; gap: 14px; }
+  .left-panel { width: 280px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .panel-title { background: #6a9ac4; padding: 6px 16px; border-radius: 2px; font-size: 14px; font-weight: 700; color: white; }
+  .donut-label { background: #1a3a6b; padding: 5px 12px; border-radius: 2px; font-size: 12px; font-weight: 700; color: white; }
+  .panel-desc { font-size: 11px; color: #666; line-height: 1.7; text-align: center; }
+  .right-panel { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; position: relative; display: flex; flex-direction: column; }
+  .top-info { display: flex; gap: 12px; margin-bottom: 12px; }
+  .info-card { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px 14px; display: flex; gap: 10px; align-items: center; }
+  .info-icon { width: 36px; height: 36px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .info-content { flex: 1; }
+  .info-title { font-size: 14px; font-weight: 700; color: #1a3a6b; }
+  .info-desc { font-size: 11px; color: #666; line-height: 1.5; }
+  .info-num-card { background: #1a3a6b; border-radius: 4px; padding: 10px 16px; display: flex; flex-direction: column; justify-content: center; }
+  .info-num-label { font-size: 12px; color: rgba(255,255,255,0.8); }
+  .info-num { font-size: 28px; font-weight: 900; color: white; }
+  .callout { position: absolute; background: #6a9ac4; color: white; padding: 6px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+  .callout::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">个人业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="banner">
+      <div class="banner-text">在七至十一月期间，我们通过持续的市场调研和客户反馈机制，不断优化产品和服务，稳定了销售额并提升了客户忠诚度。团队的执行能力和创新意识得到了有效发挥，为公司的长期发展奠定了坚实基础。</div>
+      <div class="banner-arrow">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <path d="M 5,45 Q 20,30 40,10 Q 50,5 55,5" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="3"/>
+          <polygon points="50,2 60,8 52,16" fill="rgba(255,255,255,0.7)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="left-panel">
+        <div class="panel-title">总业绩完成情况</div>
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#e8edf5" stroke-width="22"/>
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#1a3a6b" stroke-width="22"
+            stroke-dasharray="285 154" stroke-dashoffset="-77" stroke-linecap="butt"/>
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#8ab0d0" stroke-width="22"
+            stroke-dasharray="154 285" stroke-dashoffset="-362" stroke-linecap="butt"/>
+          <text x="90" y="83" text-anchor="middle" font-size="30" font-weight="900" fill="#1a3a6b">65%</text>
+        </svg>
+        <div class="donut-label">总业绩超额完成</div>
+        <div class="panel-desc">三月份的业绩达到了年度峰值，这反映了我们在市场定位和产品推广方面的精准策略。通过强化与关键客户的合作关系，以及灵活应对市场需求变化，我们成功地扩大了市场份额。</div>
+      </div>
+      <div class="right-panel">
+        <div class="top-info">
+          <div class="info-card">
+            <div class="info-icon">📊</div>
+            <div class="info-content">
+              <div class="info-title">三月份业绩18万</div>
+              <div class="info-desc">三月份的业绩达到了年度峰值，这反映了我们在市场定位和产品推广方面的精准策略。</div>
+            </div>
+          </div>
+          <div class="info-num-card">
+            <div class="info-num-label">销售额：每月保持在17万左右的稳定水平。</div>
+            <div class="info-num">17万</div>
+          </div>
+        </div>
+        <!-- Callout -->
+        <div class="callout" style="top:90px; left:25%;">历史新高</div>
+        <svg width="100%" height="100%" viewBox="0 0 840 280" preserveAspectRatio="xMidYMid meet">
+          <text x="25" y="20" font-size="10" fill="#888" text-anchor="end">20</text>
+          <text x="25" y="80" font-size="10" fill="#888" text-anchor="end">15</text>
+          <text x="25" y="140" font-size="10" fill="#888" text-anchor="end">10</text>
+          <text x="25" y="200" font-size="10" fill="#888" text-anchor="end">5</text>
+          <text x="25" y="250" font-size="10" fill="#888" text-anchor="end">0</text>
+          <line x1="30" y1="245" x2="830" y2="245" stroke="#eee" stroke-width="1"/>
+          <line x1="30" y1="185" x2="830" y2="185" stroke="#eee" stroke-width="1"/>
+          <line x1="30" y1="125" x2="830" y2="125" stroke="#eee" stroke-width="1"/>
+          <line x1="30" y1="65" x2="830" y2="65" stroke="#eee" stroke-width="1"/>
+          <!-- Reference line at 17万 -->
+          <line x1="30" y1="175" x2="830" y2="175" stroke="#8ab0d0" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <!-- Line chart: 14,15,18,16,9,12,10,14,9,16,5 (12 months) -->
+          <!-- Scale: max=20, range=245px, 1unit=245/20=12.25px, y = 245 - val*12.25 -->
+          <!-- 14->73, 15->61, 18->24, 16->49, 9->135, 12->98, 10->123, 14->73, 9->135, 16->49, 5->184, 12->98 -->
+          <polyline points="50,73 120,61 190,24 260,49 330,135 400,98 470,123 540,73 610,135 680,49 750,184 820,98" fill="none" stroke="#1a3a6b" stroke-width="3"/>
+          <!-- Data points -->
+          <circle cx="50" cy="73" r="5" fill="#1a3a6b"/>
+          <circle cx="120" cy="61" r="5" fill="#1a3a6b"/>
+          <circle cx="190" cy="24" r="5" fill="#1a3a6b"/>
+          <circle cx="260" cy="49" r="5" fill="#1a3a6b"/>
+          <circle cx="330" cy="135" r="5" fill="#1a3a6b"/>
+          <circle cx="400" cy="98" r="5" fill="#1a3a6b"/>
+          <circle cx="470" cy="123" r="5" fill="#1a3a6b"/>
+          <circle cx="540" cy="73" r="5" fill="#1a3a6b"/>
+          <circle cx="610" cy="135" r="5" fill="#1a3a6b"/>
+          <circle cx="680" cy="49" r="5" fill="#1a3a6b"/>
+          <circle cx="750" cy="184" r="5" fill="#1a3a6b"/>
+          <circle cx="820" cy="98" r="5" fill="#1a3a6b"/>
+          <!-- X labels -->
+          <text x="50" y="260" font-size="10" fill="#555" text-anchor="middle">1月</text>
+          <text x="120" y="260" font-size="10" fill="#555" text-anchor="middle">2月</text>
+          <text x="190" y="260" font-size="10" fill="#555" text-anchor="middle">3月</text>
+          <text x="260" y="260" font-size="10" fill="#555" text-anchor="middle">4月</text>
+          <text x="330" y="260" font-size="10" fill="#555" text-anchor="middle">5月</text>
+          <text x="400" y="260" font-size="10" fill="#555" text-anchor="middle">6月</text>
+          <text x="470" y="260" font-size="10" fill="#555" text-anchor="middle">7月</text>
+          <text x="540" y="260" font-size="10" fill="#555" text-anchor="middle">8月</text>
+          <text x="610" y="260" font-size="10" fill="#555" text-anchor="middle">9月</text>
+          <text x="680" y="260" font-size="10" fill="#555" text-anchor="middle">10月</text>
+          <text x="750" y="260" font-size="10" fill="#555" text-anchor="middle">11月</text>
+          <text x="820" y="260" font-size="10" fill="#555" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

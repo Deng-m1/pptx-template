@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; position: relative; }
+  .top-bar { height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 50px; }
+  .top-left { font-size: 14px; color: #333; }
+  .top-left strong { font-weight: 900; }
+  .logo-box { background: #1a3a6b; color: white; font-size: 18px; font-weight: 900; padding: 10px 30px; }
+  .content-area { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; }
+  .circle-bg { position: absolute; left: 80px; top: 50%; transform: translateY(-50%); width: 280px; height: 280px; border-radius: 50%; background: #b8c8dc; opacity: 0.7; }
+  .text-area { position: relative; z-index: 1; text-align: center; }
+  .thank-you { font-size: 110px; font-weight: 900; color: #333; letter-spacing: 6px; }
+  .desc { font-size: 15px; color: #555; margin-top: 10px; }
+  .bottom-bar { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 50px; border-top: 1.5px solid #e0e0e0; }
+  .reporter { }
+  .reporter-name { font-size: 22px; font-weight: 700; color: #333; }
+  .reporter-en { font-size: 13px; color: #888; }
+  .time { font-size: 16px; color: #333; }
+  .time strong { color: #1a3a6b; font-size: 20px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-bar">
+    <div class="top-left"><strong>WORK REPORT</strong> GENERIC SUMMARY TEMPLATE</div>
+    <div class="logo-box">LOGO</div>
+  </div>
+  <div class="content-area">
+    <div class="circle-bg"></div>
+    <div class="text-area">
+      <div class="thank-you">THANK YOU</div>
+      <div class="desc">Here you can describe the main work report content.</div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="reporter">
+      <div class="reporter-name">汇报人：小序</div>
+      <div class="reporter-en">Reporting person: XIAOXU</div>
+    </div>
+    <div class="time">汇报时间：<strong>8888年88月88日</strong></div>
+  </div>
+</div>
+</body>
+</html>

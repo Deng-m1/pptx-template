@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; padding: 14px 24px; gap: 12px; }
+  .dept-col { flex: 1; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .dept-col.normal { border: 1.5px solid #dde4f0; }
+  .dept-col.highlight { background: #1a3a6b; }
+  .dept-header { display: flex; justify-content: space-between; align-items: center; }
+  .dept-name { font-size: 18px; font-weight: 700; }
+  .dept-col.normal .dept-name { color: #1a3a6b; }
+  .dept-col.highlight .dept-name { color: white; }
+  .dept-icon { font-size: 24px; }
+  .divider { border: none; border-top: 1px solid; }
+  .dept-col.normal .divider { border-color: #eee; }
+  .dept-col.highlight .divider { border-color: rgba(255,255,255,0.3); }
+  .dept-desc { font-size: 12px; line-height: 1.7; }
+  .dept-col.normal .dept-desc { color: #666; }
+  .dept-col.highlight .dept-desc { color: rgba(255,255,255,0.85); }
+  .dept-num { font-size: 40px; font-weight: 900; }
+  .dept-col.normal .dept-num { color: #1a3a6b; }
+  .dept-col.highlight .dept-num { color: white; }
+  .dept-num-label { font-size: 12px; }
+  .dept-col.normal .dept-num-label { color: #888; }
+  .dept-col.highlight .dept-num-label { color: rgba(255,255,255,0.75); }
+  .chart-area { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
+  .dept-col.highlight .chart-area svg text { fill: rgba(255,255,255,0.7) !important; }
+  .bottom-arrow { width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; align-self: center; margin-top: 4px; }
+  .dept-col.normal .bottom-arrow { border-top: 14px solid #dde4f0; }
+  .dept-col.highlight .bottom-arrow { border-top: 14px solid #1a3a6b; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">部门销售业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <!-- 设计一部 -->
+    <div class="dept-col normal">
+      <div class="dept-header">
+        <span class="dept-name">设计一部</span>
+        <span class="dept-icon">📊</span>
+      </div>
+      <hr class="divider">
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="dept-num">¥ 48320</div>
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="chart-area">
+        <svg width="100%" height="160" viewBox="0 0 380 160" preserveAspectRatio="xMidYMid meet">
+          <line x1="0" y1="155" x2="380" y2="155" stroke="#eee" stroke-width="1"/>
+          <text x="0" y="155" font-size="8" fill="#888">0</text>
+          <text x="0" y="115" font-size="8" fill="#888">2</text>
+          <text x="0" y="75" font-size="8" fill="#888">4</text>
+          <text x="0" y="35" font-size="8" fill="#888">6</text>
+          <!-- 12 months, 2 bars each -->
+          <rect x="8" y="90" width="12" height="65" fill="#1a3a6b"/>
+          <rect x="22" y="110" width="12" height="45" fill="#8ab0d0"/>
+          <rect x="38" y="70" width="12" height="85" fill="#1a3a6b"/>
+          <rect x="52" y="100" width="12" height="55" fill="#8ab0d0"/>
+          <rect x="68" y="50" width="12" height="105" fill="#1a3a6b"/>
+          <rect x="82" y="80" width="12" height="75" fill="#8ab0d0"/>
+          <rect x="98" y="80" width="12" height="75" fill="#1a3a6b"/>
+          <rect x="112" y="110" width="12" height="45" fill="#8ab0d0"/>
+          <rect x="128" y="60" width="12" height="95" fill="#1a3a6b"/>
+          <rect x="142" y="90" width="12" height="65" fill="#8ab0d0"/>
+          <rect x="158" y="40" width="12" height="115" fill="#1a3a6b"/>
+          <rect x="172" y="70" width="12" height="85" fill="#8ab0d0"/>
+          <rect x="188" y="70" width="12" height="85" fill="#1a3a6b"/>
+          <rect x="202" y="100" width="12" height="55" fill="#8ab0d0"/>
+          <rect x="218" y="50" width="12" height="105" fill="#1a3a6b"/>
+          <rect x="232" y="80" width="12" height="75" fill="#8ab0d0"/>
+          <rect x="248" y="80" width="12" height="75" fill="#1a3a6b"/>
+          <rect x="262" y="110" width="12" height="45" fill="#8ab0d0"/>
+          <rect x="278" y="60" width="12" height="95" fill="#1a3a6b"/>
+          <rect x="292" y="90" width="12" height="65" fill="#8ab0d0"/>
+          <rect x="308" y="40" width="12" height="115" fill="#1a3a6b"/>
+          <rect x="322" y="70" width="12" height="85" fill="#8ab0d0"/>
+          <rect x="338" y="60" width="12" height="95" fill="#1a3a6b"/>
+          <rect x="352" y="90" width="12" height="65" fill="#8ab0d0"/>
+          <!-- X labels -->
+          <text x="15" y="165" font-size="7" fill="#888" text-anchor="middle">1月</text>
+          <text x="45" y="165" font-size="7" fill="#888" text-anchor="middle">2月</text>
+          <text x="75" y="165" font-size="7" fill="#888" text-anchor="middle">3月</text>
+          <text x="105" y="165" font-size="7" fill="#888" text-anchor="middle">4月</text>
+          <text x="135" y="165" font-size="7" fill="#888" text-anchor="middle">5月</text>
+          <text x="165" y="165" font-size="7" fill="#888" text-anchor="middle">6月</text>
+          <text x="195" y="165" font-size="7" fill="#888" text-anchor="middle">7月</text>
+          <text x="225" y="165" font-size="7" fill="#888" text-anchor="middle">8月</text>
+          <text x="255" y="165" font-size="7" fill="#888" text-anchor="middle">9月</text>
+          <text x="285" y="165" font-size="7" fill="#888" text-anchor="middle">10月</text>
+          <text x="315" y="165" font-size="7" fill="#888" text-anchor="middle">11月</text>
+          <text x="345" y="165" font-size="7" fill="#888" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+      <div class="bottom-arrow"></div>
+    </div>
+    <!-- 设计一部 (highlighted) -->
+    <div class="dept-col highlight">
+      <div class="dept-header">
+        <span class="dept-name">设计一部</span>
+      </div>
+      <hr class="divider">
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="dept-num">¥ 52350</div>
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="chart-area">
+        <svg width="100%" height="160" viewBox="0 0 380 160" preserveAspectRatio="xMidYMid meet">
+          <line x1="0" y1="155" x2="380" y2="155" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <rect x="8" y="80" width="12" height="75" fill="rgba(255,255,255,0.9)"/>
+          <rect x="22" y="100" width="12" height="55" fill="rgba(255,255,255,0.5)"/>
+          <rect x="38" y="60" width="12" height="95" fill="rgba(255,255,255,0.9)"/>
+          <rect x="52" y="90" width="12" height="65" fill="rgba(255,255,255,0.5)"/>
+          <rect x="68" y="40" width="12" height="115" fill="rgba(255,255,255,0.9)"/>
+          <rect x="82" y="70" width="12" height="85" fill="rgba(255,255,255,0.5)"/>
+          <rect x="98" y="70" width="12" height="85" fill="rgba(255,255,255,0.9)"/>
+          <rect x="112" y="100" width="12" height="55" fill="rgba(255,255,255,0.5)"/>
+          <rect x="128" y="50" width="12" height="105" fill="rgba(255,255,255,0.9)"/>
+          <rect x="142" y="80" width="12" height="75" fill="rgba(255,255,255,0.5)"/>
+          <rect x="158" y="30" width="12" height="125" fill="rgba(255,255,255,0.9)"/>
+          <rect x="172" y="60" width="12" height="95" fill="rgba(255,255,255,0.5)"/>
+          <rect x="188" y="60" width="12" height="95" fill="rgba(255,255,255,0.9)"/>
+          <rect x="202" y="90" width="12" height="65" fill="rgba(255,255,255,0.5)"/>
+          <rect x="218" y="40" width="12" height="115" fill="rgba(255,255,255,0.9)"/>
+          <rect x="232" y="70" width="12" height="85" fill="rgba(255,255,255,0.5)"/>
+          <rect x="248" y="70" width="12" height="85" fill="rgba(255,255,255,0.9)"/>
+          <rect x="262" y="100" width="12" height="55" fill="rgba(255,255,255,0.5)"/>
+          <rect x="278" y="50" width="12" height="105" fill="rgba(255,255,255,0.9)"/>
+          <rect x="292" y="80" width="12" height="75" fill="rgba(255,255,255,0.5)"/>
+          <rect x="308" y="30" width="12" height="125" fill="rgba(255,255,255,0.9)"/>
+          <rect x="322" y="60" width="12" height="95" fill="rgba(255,255,255,0.5)"/>
+          <rect x="338" y="50" width="12" height="105" fill="rgba(255,255,255,0.9)"/>
+          <rect x="352" y="80" width="12" height="75" fill="rgba(255,255,255,0.5)"/>
+          <text x="15" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">1月</text>
+          <text x="45" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">2月</text>
+          <text x="75" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">3月</text>
+          <text x="105" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">4月</text>
+          <text x="135" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">5月</text>
+          <text x="165" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">6月</text>
+          <text x="195" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">7月</text>
+          <text x="225" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">8月</text>
+          <text x="255" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">9月</text>
+          <text x="285" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">10月</text>
+          <text x="315" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">11月</text>
+          <text x="345" y="165" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+      <div class="bottom-arrow"></div>
+    </div>
+    <!-- 设计三部 -->
+    <div class="dept-col normal">
+      <div class="dept-header">
+        <span class="dept-name">设计三部</span>
+        <span class="dept-icon">📊</span>
+      </div>
+      <hr class="divider">
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="dept-num">¥ 45620</div>
+      <div class="dept-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性。</div>
+      <div class="chart-area">
+        <svg width="100%" height="160" viewBox="0 0 380 160" preserveAspectRatio="xMidYMid meet">
+          <line x1="0" y1="155" x2="380" y2="155" stroke="#eee" stroke-width="1"/>
+          <rect x="8" y="85" width="12" height="70" fill="#1a3a6b"/>
+          <rect x="22" y="105" width="12" height="50" fill="#8ab0d0"/>
+          <rect x="38" y="65" width="12" height="90" fill="#1a3a6b"/>
+          <rect x="52" y="95" width="12" height="60" fill="#8ab0d0"/>
+          <rect x="68" y="45" width="12" height="110" fill="#1a3a6b"/>
+          <rect x="82" y="75" width="12" height="80" fill="#8ab0d0"/>
+          <rect x="98" y="75" width="12" height="80" fill="#1a3a6b"/>
+          <rect x="112" y="105" width="12" height="50" fill="#8ab0d0"/>
+          <rect x="128" y="55" width="12" height="100" fill="#1a3a6b"/>
+          <rect x="142" y="85" width="12" height="70" fill="#8ab0d0"/>
+          <rect x="158" y="35" width="12" height="120" fill="#1a3a6b"/>
+          <rect x="172" y="65" width="12" height="90" fill="#8ab0d0"/>
+          <rect x="188" y="65" width="12" height="90" fill="#1a3a6b"/>
+          <rect x="202" y="95" width="12" height="60" fill="#8ab0d0"/>
+          <rect x="218" y="45" width="12" height="110" fill="#1a3a6b"/>
+          <rect x="232" y="75" width="12" height="80" fill="#8ab0d0"/>
+          <rect x="248" y="75" width="12" height="80" fill="#1a3a6b"/>
+          <rect x="262" y="105" width="12" height="50" fill="#8ab0d0"/>
+          <rect x="278" y="55" width="12" height="100" fill="#1a3a6b"/>
+          <rect x="292" y="85" width="12" height="70" fill="#8ab0d0"/>
+          <rect x="308" y="35" width="12" height="120" fill="#1a3a6b"/>
+          <rect x="322" y="65" width="12" height="90" fill="#8ab0d0"/>
+          <rect x="338" y="55" width="12" height="100" fill="#1a3a6b"/>
+          <rect x="352" y="85" width="12" height="70" fill="#8ab0d0"/>
+          <text x="15" y="165" font-size="7" fill="#888" text-anchor="middle">1月</text>
+          <text x="45" y="165" font-size="7" fill="#888" text-anchor="middle">2月</text>
+          <text x="75" y="165" font-size="7" fill="#888" text-anchor="middle">3月</text>
+          <text x="105" y="165" font-size="7" fill="#888" text-anchor="middle">4月</text>
+          <text x="135" y="165" font-size="7" fill="#888" text-anchor="middle">5月</text>
+          <text x="165" y="165" font-size="7" fill="#888" text-anchor="middle">6月</text>
+          <text x="195" y="165" font-size="7" fill="#888" text-anchor="middle">7月</text>
+          <text x="225" y="165" font-size="7" fill="#888" text-anchor="middle">8月</text>
+          <text x="255" y="165" font-size="7" fill="#888" text-anchor="middle">9月</text>
+          <text x="285" y="165" font-size="7" fill="#888" text-anchor="middle">10月</text>
+          <text x="315" y="165" font-size="7" fill="#888" text-anchor="middle">11月</text>
+          <text x="345" y="165" font-size="7" fill="#888" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+      <div class="bottom-arrow"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

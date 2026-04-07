@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 12px 24px; gap: 10px; }
+  .top-cards { display: flex; gap: 10px; height: 70px; }
+  .stat-card { flex: 1; border-radius: 4px; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+  .card-pct { font-size: 28px; font-weight: 900; color: white; }
+  .card-info { display: flex; flex-direction: column; }
+  .card-label { font-size: 12px; color: rgba(255,255,255,0.85); }
+  .main-chart { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 6px; }
+  .bottom-charts { display: flex; gap: 10px; height: 190px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; }
+  .chart-box-title { font-size: 12px; color: #888; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">区域销售业绩汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="top-cards">
+      <div class="stat-card" style="background:#1a3a6b;">
+        <div class="card-info">
+          <span class="card-label">华东区域</span>
+          <span class="card-label">销售占比</span>
+        </div>
+        <span class="card-pct">35%</span>
+      </div>
+      <div class="stat-card" style="background:#3a6abf;">
+        <div class="card-info">
+          <span class="card-label">华北区域</span>
+          <span class="card-label">销售占比</span>
+        </div>
+        <span class="card-pct">15%</span>
+      </div>
+      <div class="stat-card" style="background:#6a9ac4;">
+        <div class="card-info">
+          <span class="card-label">华南区域</span>
+          <span class="card-label">销售占比</span>
+        </div>
+        <span class="card-pct">25%</span>
+      </div>
+      <div class="stat-card" style="background:#9ab8d4;">
+        <div class="card-info">
+          <span class="card-label">华中区域</span>
+          <span class="card-label">销售占比</span>
+        </div>
+        <span class="card-pct">25%</span>
+      </div>
+    </div>
+    <div class="main-chart">
+      <div class="chart-title">全年销售总额明细</div>
+      <svg width="100%" height="100%" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid meet">
+        <text x="30" y="20" font-size="9" fill="#888" text-anchor="end">50</text>
+        <text x="30" y="70" font-size="9" fill="#888" text-anchor="end">40</text>
+        <text x="30" y="120" font-size="9" fill="#888" text-anchor="end">30</text>
+        <text x="30" y="170" font-size="9" fill="#888" text-anchor="end">20</text>
+        <text x="30" y="210" font-size="9" fill="#888" text-anchor="end">10</text>
+        <text x="30" y="230" font-size="9" fill="#888" text-anchor="end">0</text>
+        <line x1="35" y1="225" x2="1190" y2="225" stroke="#eee" stroke-width="1"/>
+        <line x1="35" y1="165" x2="1190" y2="165" stroke="#eee" stroke-width="1"/>
+        <line x1="35" y1="105" x2="1190" y2="105" stroke="#eee" stroke-width="1"/>
+        <!-- Area chart (light blue) -->
+        <path d="M 40,105 L 130,75 L 220,90 L 310,90 L 400,90 L 490,90 L 580,90 L 670,75 L 760,90 L 850,30 L 940,30 L 1030,75 L 1120,30 L 1120,225 L 40,225 Z" fill="#c0d4e8" opacity="0.7"/>
+        <!-- Bar chart (dark blue) -->
+        <rect x="55" y="105" width="30" height="120" fill="#1a3a6b"/>
+        <rect x="145" y="75" width="30" height="150" fill="#1a3a6b"/>
+        <rect x="235" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="325" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="415" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="505" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="595" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="685" y="90" width="30" height="135" fill="#1a3a6b"/>
+        <rect x="775" y="105" width="30" height="120" fill="#1a3a6b"/>
+        <rect x="865" y="30" width="30" height="195" fill="#1a3a6b"/>
+        <rect x="955" y="45" width="30" height="180" fill="#1a3a6b"/>
+        <rect x="1045" y="30" width="30" height="195" fill="#1a3a6b"/>
+        <!-- Trend line -->
+        <polyline points="70,120 160,100 250,110 340,110 430,110 520,110 610,110 700,100 790,115 880,60 970,70 1060,60 1150,60" fill="none" stroke="#6a9ac4" stroke-width="2"/>
+        <circle cx="70" cy="120" r="4" fill="#6a9ac4"/>
+        <circle cx="160" cy="100" r="4" fill="#6a9ac4"/>
+        <circle cx="250" cy="110" r="4" fill="#6a9ac4"/>
+        <circle cx="340" cy="110" r="4" fill="#6a9ac4"/>
+        <circle cx="430" cy="110" r="4" fill="#6a9ac4"/>
+        <circle cx="520" cy="110" r="4" fill="#6a9ac4"/>
+        <circle cx="610" cy="110" r="4" fill="#6a9ac4"/>
+        <circle cx="700" cy="100" r="4" fill="#6a9ac4"/>
+        <circle cx="790" cy="115" r="4" fill="#6a9ac4"/>
+        <circle cx="880" cy="60" r="4" fill="#6a9ac4"/>
+        <circle cx="970" cy="70" r="4" fill="#6a9ac4"/>
+        <circle cx="1060" cy="60" r="4" fill="#6a9ac4"/>
+        <!-- X labels -->
+        <text x="70" y="238" font-size="9" fill="#555" text-anchor="middle">1月</text>
+        <text x="160" y="238" font-size="9" fill="#555" text-anchor="middle">2月</text>
+        <text x="250" y="238" font-size="9" fill="#555" text-anchor="middle">3月</text>
+        <text x="340" y="238" font-size="9" fill="#555" text-anchor="middle">4月</text>
+        <text x="430" y="238" font-size="9" fill="#555" text-anchor="middle">5月</text>
+        <text x="520" y="238" font-size="9" fill="#555" text-anchor="middle">6月</text>
+        <text x="610" y="238" font-size="9" fill="#555" text-anchor="middle">7月</text>
+        <text x="700" y="238" font-size="9" fill="#555" text-anchor="middle">8月</text>
+        <text x="790" y="238" font-size="9" fill="#555" text-anchor="middle">9月</text>
+        <text x="880" y="238" font-size="9" fill="#555" text-anchor="middle">10月</text>
+        <text x="970" y="238" font-size="9" fill="#555" text-anchor="middle">11月</text>
+        <text x="1060" y="238" font-size="9" fill="#555" text-anchor="middle">12月</text>
+      </svg>
+    </div>
+    <div class="bottom-charts">
+      <div class="chart-box">
+        <div class="chart-box-title">线上销售总额</div>
+        <svg width="100%" height="100%" viewBox="0 0 580 160" preserveAspectRatio="xMidYMid meet">
+          <text x="20" y="20" font-size="9" fill="#888" text-anchor="end">5</text>
+          <text x="20" y="100" font-size="9" fill="#888" text-anchor="end">2</text>
+          <text x="20" y="150" font-size="9" fill="#888" text-anchor="end">0</text>
+          <path d="M 25,90 L 70,60 L 115,80 L 160,50 L 205,70 L 250,50 L 295,60 L 340,40 L 385,60 L 430,50 L 475,40 L 520,60 L 520,150 L 25,150 Z" fill="#1a3a6b" opacity="0.85"/>
+          <polyline points="25,90 70,60 115,80 160,50 205,70 250,50 295,60 340,40 385,60 430,50 475,40 520,60" fill="none" stroke="#1a3a6b" stroke-width="2"/>
+          <text x="47" y="163" font-size="8" fill="#888" text-anchor="middle">1月</text>
+          <text x="92" y="163" font-size="8" fill="#888" text-anchor="middle">2月</text>
+          <text x="137" y="163" font-size="8" fill="#888" text-anchor="middle">3月</text>
+          <text x="182" y="163" font-size="8" fill="#888" text-anchor="middle">4月</text>
+          <text x="227" y="163" font-size="8" fill="#888" text-anchor="middle">5月</text>
+          <text x="272" y="163" font-size="8" fill="#888" text-anchor="middle">6月</text>
+          <text x="317" y="163" font-size="8" fill="#888" text-anchor="middle">7月</text>
+          <text x="362" y="163" font-size="8" fill="#888" text-anchor="middle">8月</text>
+          <text x="407" y="163" font-size="8" fill="#888" text-anchor="middle">9月</text>
+          <text x="452" y="163" font-size="8" fill="#888" text-anchor="middle">10月</text>
+          <text x="497" y="163" font-size="8" fill="#888" text-anchor="middle">11月</text>
+          <text x="542" y="163" font-size="8" fill="#888" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">线下销售总额</div>
+        <svg width="100%" height="100%" viewBox="0 0 580 160" preserveAspectRatio="xMidYMid meet">
+          <text x="20" y="20" font-size="9" fill="#888" text-anchor="end">5</text>
+          <text x="20" y="100" font-size="9" fill="#888" text-anchor="end">2</text>
+          <text x="20" y="150" font-size="9" fill="#888" text-anchor="end">0</text>
+          <path d="M 25,80 L 70,50 L 115,70 L 160,60 L 205,80 L 250,60 L 295,70 L 340,50 L 385,70 L 430,60 L 475,50 L 520,70 L 520,150 L 25,150 Z" fill="#6a9ac4" opacity="0.85"/>
+          <polyline points="25,80 70,50 115,70 160,60 205,80 250,60 295,70 340,50 385,70 430,60 475,50 520,70" fill="none" stroke="#6a9ac4" stroke-width="2"/>
+          <text x="47" y="163" font-size="8" fill="#888" text-anchor="middle">1月</text>
+          <text x="92" y="163" font-size="8" fill="#888" text-anchor="middle">2月</text>
+          <text x="137" y="163" font-size="8" fill="#888" text-anchor="middle">3月</text>
+          <text x="182" y="163" font-size="8" fill="#888" text-anchor="middle">4月</text>
+          <text x="227" y="163" font-size="8" fill="#888" text-anchor="middle">5月</text>
+          <text x="272" y="163" font-size="8" fill="#888" text-anchor="middle">6月</text>
+          <text x="317" y="163" font-size="8" fill="#888" text-anchor="middle">7月</text>
+          <text x="362" y="163" font-size="8" fill="#888" text-anchor="middle">8月</text>
+          <text x="407" y="163" font-size="8" fill="#888" text-anchor="middle">9月</text>
+          <text x="452" y="163" font-size="8" fill="#888" text-anchor="middle">10月</text>
+          <text x="497" y="163" font-size="8" fill="#888" text-anchor="middle">11月</text>
+          <text x="542" y="163" font-size="8" fill="#888" text-anchor="middle">12月</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

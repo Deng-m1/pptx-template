@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; position: relative; }
+  .bottom-cards { display: flex; gap: 10px; height: 110px; }
+  .platform-card { flex: 1; border-radius: 4px; overflow: hidden; }
+  .card-header { padding: 8px 12px; display: flex; align-items: center; gap: 8px; }
+  .card-icon { font-size: 14px; }
+  .card-name { font-size: 14px; font-weight: 700; color: white; }
+  .card-body { padding: 8px 12px; display: flex; gap: 16px; }
+  .card-stat { display: flex; flex-direction: column; }
+  .card-num { font-size: 18px; font-weight: 900; color: #1a3a6b; }
+  .card-label { font-size: 10px; color: #888; }
+  .card-divider { width: 1px; background: #dde4f0; }
+  .callout { position: absolute; background: #1a3a6b; color: white; padding: 10px 14px; border-radius: 4px; font-size: 11px; line-height: 1.6; max-width: 200px; }
+  .callout::after { content: ''; position: absolute; bottom: -8px; left: 20px; border: 8px solid transparent; border-top-color: #1a3a6b; border-bottom: 0; }
+  .callout2 { position: absolute; background: #e8f0f8; color: #333; padding: 10px 14px; border-radius: 4px; font-size: 11px; line-height: 1.6; max-width: 200px; border: 1px solid #dde4f0; }
+  .callout2::after { content: ''; position: absolute; bottom: -8px; left: 20px; border: 8px solid transparent; border-top-color: #dde4f0; border-bottom: 0; }
+  .callout-title { font-weight: 700; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">平台数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="sub-title">各个平台销售业绩分析</div>
+    <div class="chart-box">
+      <!-- Callout 1 -->
+      <div class="callout" style="top:10px; left:80px;">
+        <div class="callout-title">电商平台数据概述：</div>
+        我们在主要电商平台的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，占据了总销售额的70%。在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续广告投放和促销活动，以及产品品质的保证。
+      </div>
+      <!-- Callout 2 -->
+      <div class="callout2" style="top:10px; right:80px;">
+        <div class="callout-title" style="color:#1a3a6b;">社交媒体平台概述：</div>
+        社交媒体平台（如微博、微信、抖音等）在推广品牌和产品方面发挥了重要作用。我们通过这些平台的内容营销和精准广告投放。
+      </div>
+      <svg width="100%" height="100%" viewBox="0 0 1180 320" preserveAspectRatio="xMidYMid meet">
+        <!-- Y axis -->
+        <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">125</text>
+        <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">100</text>
+        <text x="30" y="130" font-size="10" fill="#888" text-anchor="end">75</text>
+        <text x="30" y="180" font-size="10" fill="#888" text-anchor="end">50</text>
+        <text x="30" y="230" font-size="10" fill="#888" text-anchor="end">25</text>
+        <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
+        <!-- Grid -->
+        <line x1="40" y1="265" x2="1170" y2="265" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="225" x2="1170" y2="225" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="175" x2="1170" y2="175" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="125" x2="1170" y2="125" stroke="#eee" stroke-width="1"/>
+        <line x1="40" y1="75" x2="1170" y2="75" stroke="#eee" stroke-width="1"/>
+        <!-- 2021 -->
+        <rect x="55" y="205" width="40" height="60" fill="#1a3a6b"/>
+        <rect x="100" y="215" width="40" height="50" fill="#3a6abf"/>
+        <rect x="145" y="235" width="40" height="30" fill="#8ab0d0"/>
+        <!-- 2022 -->
+        <rect x="230" y="165" width="40" height="100" fill="#1a3a6b"/>
+        <rect x="275" y="155" width="40" height="110" fill="#3a6abf"/>
+        <rect x="320" y="195" width="40" height="70" fill="#8ab0d0"/>
+        <!-- 2023 -->
+        <rect x="405" y="115" width="40" height="150" fill="#1a3a6b"/>
+        <rect x="450" y="135" width="40" height="130" fill="#3a6abf"/>
+        <rect x="495" y="165" width="40" height="100" fill="#8ab0d0"/>
+        <!-- 2024 -->
+        <rect x="580" y="55" width="40" height="210" fill="#1a3a6b"/>
+        <rect x="625" y="75" width="40" height="190" fill="#3a6abf"/>
+        <rect x="670" y="115" width="40" height="150" fill="#8ab0d0"/>
+        <!-- 2025 -->
+        <rect x="755" y="115" width="40" height="150" fill="#1a3a6b"/>
+        <rect x="800" y="135" width="40" height="130" fill="#3a6abf"/>
+        <rect x="845" y="155" width="40" height="110" fill="#8ab0d0"/>
+        <!-- 2026 -->
+        <rect x="930" y="95" width="40" height="170" fill="#1a3a6b"/>
+        <rect x="975" y="75" width="40" height="190" fill="#3a6abf"/>
+        <rect x="1020" y="115" width="40" height="150" fill="#8ab0d0"/>
+        <!-- X labels -->
+        <text x="120" y="285" font-size="11" fill="#555" text-anchor="middle">2021</text>
+        <text x="295" y="285" font-size="11" fill="#555" text-anchor="middle">2022</text>
+        <text x="470" y="285" font-size="11" fill="#555" text-anchor="middle">2023</text>
+        <text x="645" y="285" font-size="11" fill="#555" text-anchor="middle">2024</text>
+        <text x="820" y="285" font-size="11" fill="#555" text-anchor="middle">2025</text>
+        <text x="995" y="285" font-size="11" fill="#555" text-anchor="middle">2026</text>
+      </svg>
+    </div>
+    <div class="bottom-cards">
+      <div class="platform-card" style="border:1.5px solid #dde4f0;">
+        <div class="card-header" style="background:#1a3a6b;">
+          <span class="card-icon">📷</span>
+          <span class="card-name">电商平台A</span>
+        </div>
+        <div class="card-body">
+          <div class="card-stat">
+            <div class="card-num">8,666,000</div>
+            <div class="card-label">全年总销售额</div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-stat">
+            <div class="card-num">1500</div>
+            <div class="card-label">全年总销量</div>
+          </div>
+        </div>
+      </div>
+      <div class="platform-card" style="border:1.5px solid #dde4f0;">
+        <div class="card-header" style="background:#3a6abf;">
+          <span class="card-icon">📷</span>
+          <span class="card-name">电商平台B</span>
+        </div>
+        <div class="card-body">
+          <div class="card-stat">
+            <div class="card-num">7,333,000</div>
+            <div class="card-label">全年总销售额</div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-stat">
+            <div class="card-num">1700</div>
+            <div class="card-label">全年总销量</div>
+          </div>
+        </div>
+      </div>
+      <div class="platform-card" style="border:1.5px solid #dde4f0;">
+        <div class="card-header" style="background:#6a9ac4;">
+          <span class="card-icon">📷</span>
+          <span class="card-name">电商平台C</span>
+        </div>
+        <div class="card-body">
+          <div class="card-stat">
+            <div class="card-num">5,666,000</div>
+            <div class="card-label">全年总销售额</div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-stat">
+            <div class="card-num">750</div>
+            <div class="card-label">全年总销量</div>
+          </div>
+        </div>
+      </div>
+      <div class="platform-card" style="border:1.5px solid #dde4f0;">
+        <div class="card-header" style="background:#9ab8d4;">
+          <span class="card-icon">📷</span>
+          <span class="card-name">电商平台D</span>
+        </div>
+        <div class="card-body">
+          <div class="card-stat">
+            <div class="card-num">6,222,000</div>
+            <div class="card-label">全年总销售额</div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-stat">
+            <div class="card-num">650</div>
+            <div class="card-label">全年总销量</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

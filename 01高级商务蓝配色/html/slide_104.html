@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  
+  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 30px 0; }
+  
+  /* Main circles area */
+  .circles-area { flex: 1; position: relative; }
+  
+  .circle-item { position: absolute; display: flex; flex-direction: column; align-items: center; }
+  .circle { width: 180px; height: 180px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .circle-letter { font-size: 48px; font-weight: 900; color: white; line-height: 1; }
+  .circle-name { font-size: 16px; font-weight: 700; color: white; }
+  .circle-sub { font-size: 13px; color: white; opacity: 0.9; }
+  
+  .desc-box { border: 1.5px dashed #ccc; padding: 10px 12px; width: 160px; }
+  .desc-box p { font-size: 11px; color: #555; line-height: 1.6; }
+  
+  /* Arrow between circles */
+  .arrow-svg { position: absolute; }
+  
+  /* Bottom bar */
+  .bottom-bar { height: 80px; background: #1a3a6b; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 0 40px; }
+  .bottom-bar p { font-size: 16px; color: white; text-align: center; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">AIDMA模型 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  
+  <div class="body">
+    <div class="circles-area">
+      <!-- SVG arrows -->
+      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 1220 440">
+        <!-- A→I (down-right) -->
+        <path d="M 200,180 Q 280,280 360,180" fill="none" stroke="#2E5C8A" stroke-width="2.5" marker-end="url(#a1)"/>
+        <!-- I→D (up-right) -->
+        <path d="M 560,280 Q 640,180 720,280" fill="none" stroke="#5a8ab4" stroke-width="2.5" marker-end="url(#a2)"/>
+        <!-- D→M (down-right) -->
+        <path d="M 920,180 Q 1000,280 1080,180" fill="none" stroke="#8ab0d0" stroke-width="2.5" marker-end="url(#a3)"/>
+        <defs>
+          <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#2E5C8A"/>
+          </marker>
+          <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#5a8ab4"/>
+          </marker>
+          <marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#8ab0d0"/>
+          </marker>
+        </defs>
+      </svg>
+      
+      <!-- A: Attention - top left -->
+      <div class="circle-item" style="left:20px; top:20px;">
+        <div class="circle" style="background:#1a3a6b;">
+          <div class="circle-letter">A</div>
+          <div class="circle-name">Attention</div>
+          <div class="circle-sub">（引起注意）</div>
+        </div>
+        <div class="desc-box" style="margin-top:10px;">
+          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
+        </div>
+      </div>
+      
+      <!-- I: Interest - bottom second -->
+      <div class="circle-item" style="left:260px; top:140px;">
+        <div class="circle" style="background:#3a6abf;">
+          <div class="circle-letter">I</div>
+          <div class="circle-name">Interest</div>
+          <div class="circle-sub">（引起兴趣）</div>
+        </div>
+        <div class="desc-box" style="margin-top:10px;">
+          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
+        </div>
+      </div>
+      
+      <!-- D: Desire - top middle -->
+      <div class="circle-item" style="left:500px; top:20px;">
+        <div class="circle" style="background:#6a9ac4;">
+          <div class="circle-letter">D</div>
+          <div class="circle-name">Desire</div>
+          <div class="circle-sub">（唤起欲望）</div>
+        </div>
+        <div class="desc-box" style="margin-top:10px;">
+          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
+        </div>
+      </div>
+      
+      <!-- M: Memory - bottom fourth -->
+      <div class="circle-item" style="left:740px; top:140px;">
+        <div class="circle" style="background:#8ab0d0;">
+          <div class="circle-letter">M</div>
+          <div class="circle-name">Memory</div>
+          <div class="circle-sub">（留下记忆）</div>
+        </div>
+        <div class="desc-box" style="margin-top:10px;">
+          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
+        </div>
+      </div>
+      
+      <!-- A: Action - top right -->
+      <div class="circle-item" style="left:980px; top:20px;">
+        <div class="circle" style="background:#b0b8c0;">
+          <div class="circle-letter">A</div>
+          <div class="circle-name">Action</div>
+          <div class="circle-sub">（购买行动）</div>
+        </div>
+        <div class="desc-box" style="margin-top:10px;">
+          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-bar">
+      <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

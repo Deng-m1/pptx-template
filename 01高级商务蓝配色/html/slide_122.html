@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
+  .top-cards { display: flex; gap: 10px; height: 120px; }
+  .platform-card { flex: 1; border-radius: 4px; padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card-badge { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: white; margin-bottom: 6px; }
+  .card-num { font-size: 32px; font-weight: 900; color: white; }
+  .card-name { font-size: 13px; color: rgba(255,255,255,0.85); }
+  .card-desc { font-size: 11px; color: rgba(255,255,255,0.75); }
+  .bottom-row { flex: 1; display: flex; gap: 12px; }
+  .left-charts { width: 380px; display: flex; flex-direction: column; gap: 10px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 6px; }
+  .right-chart { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .slider-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .slider-label { font-size: 11px; color: #555; width: 60px; flex-shrink: 0; }
+  .slider-track { flex: 1; height: 4px; background: #e8edf5; border-radius: 2px; position: relative; }
+  .slider-fill { height: 100%; background: #1a3a6b; border-radius: 2px; }
+  .slider-thumb { width: 14px; height: 14px; border-radius: 50%; background: #1a3a6b; position: absolute; top: -5px; }
+  .slider-val { font-size: 11px; color: #888; width: 50px; text-align: right; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">平台数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="top-cards">
+      <div class="platform-card" style="background:#1a3a6b;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="card-badge">A</div>
+          <div class="card-num">543,654</div>
+        </div>
+        <div>
+          <div class="card-name">电商平台A</div>
+          <div class="card-desc">该平台销售额占销售总额55%，同比增长20%。</div>
+        </div>
+      </div>
+      <div class="platform-card" style="background:#3a6abf;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="card-badge">B</div>
+          <div class="card-num">363,098</div>
+        </div>
+        <div>
+          <div class="card-name">电商平台A</div>
+          <div class="card-desc">该平台销售额占销售总额25%，同比增长10%。</div>
+        </div>
+      </div>
+      <div class="platform-card" style="background:#8ab0d0;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="card-badge">C</div>
+          <div class="card-num">127,432</div>
+        </div>
+        <div>
+          <div class="card-name">电商平台A</div>
+          <div class="card-desc">该平台销售额占销售总额20%，同比增长50%。</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="left-charts">
+        <div class="chart-box">
+          <div class="chart-title">全平台半年销售总量</div>
+          <svg width="100%" height="100%" viewBox="0 0 340 160" preserveAspectRatio="xMidYMid meet">
+            <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">1000</text>
+            <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">500</text>
+            <text x="30" y="135" font-size="10" fill="#888" text-anchor="end">0</text>
+            <line x1="35" y1="130" x2="330" y2="130" stroke="#eee" stroke-width="1"/>
+            <line x1="35" y1="75" x2="330" y2="75" stroke="#eee" stroke-width="1"/>
+            <rect x="45" y="90" width="35" height="40" fill="#1a3a6b"/>
+            <rect x="95" y="95" width="35" height="35" fill="#1a3a6b"/>
+            <rect x="145" y="80" width="35" height="50" fill="#1a3a6b"/>
+            <rect x="195" y="65" width="35" height="65" fill="#8ab0d0"/>
+            <rect x="245" y="45" width="35" height="85" fill="#1a3a6b"/>
+            <rect x="295" y="25" width="35" height="105" fill="#888"/>
+            <text x="62" y="148" font-size="10" fill="#555" text-anchor="middle">1月</text>
+            <text x="112" y="148" font-size="10" fill="#555" text-anchor="middle">2月</text>
+            <text x="162" y="148" font-size="10" fill="#555" text-anchor="middle">3月</text>
+            <text x="212" y="148" font-size="10" fill="#555" text-anchor="middle">4月</text>
+            <text x="262" y="148" font-size="10" fill="#555" text-anchor="middle">5月</text>
+            <text x="312" y="148" font-size="10" fill="#555" text-anchor="middle">6月</text>
+          </svg>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">产品销量与剩余库存</div>
+          <div style="padding:8px 4px;">
+            <div class="slider-row">
+              <span class="slider-label">公司产品A</span>
+              <div class="slider-track">
+                <div class="slider-fill" style="width:45%;"></div>
+                <div class="slider-thumb" style="left:calc(45% - 7px);"></div>
+              </div>
+              <span class="slider-val">134/300</span>
+            </div>
+            <div class="slider-row">
+              <span class="slider-label">公司产品B</span>
+              <div class="slider-track">
+                <div class="slider-fill" style="width:45%;"></div>
+                <div class="slider-thumb" style="left:calc(45% - 7px); background:#3a6abf;"></div>
+              </div>
+              <span class="slider-val">134/300</span>
+            </div>
+            <div class="slider-row">
+              <span class="slider-label">公司产品C</span>
+              <div class="slider-track">
+                <div class="slider-fill" style="width:45%; background:#8ab0d0;"></div>
+                <div class="slider-thumb" style="left:calc(45% - 7px); background:#8ab0d0;"></div>
+              </div>
+              <span class="slider-val">134/300</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-chart">
+        <div class="chart-title">全平台半年总销售额</div>
+        <svg width="100%" height="100%" viewBox="0 0 740 340" preserveAspectRatio="xMidYMid meet">
+          <!-- Y axis -->
+          <text x="30" y="20" font-size="11" fill="#888" text-anchor="end">300</text>
+          <text x="30" y="80" font-size="11" fill="#888" text-anchor="end">275</text>
+          <text x="30" y="140" font-size="11" fill="#888" text-anchor="end">250</text>
+          <text x="30" y="200" font-size="11" fill="#888" text-anchor="end">225</text>
+          <text x="30" y="260" font-size="11" fill="#888" text-anchor="end">200</text>
+          <text x="30" y="320" font-size="11" fill="#888" text-anchor="end">0</text>
+          <!-- Grid -->
+          <line x1="40" y1="315" x2="730" y2="315" stroke="#eee" stroke-width="1"/>
+          <line x1="40" y1="255" x2="730" y2="255" stroke="#eee" stroke-width="1"/>
+          <line x1="40" y1="195" x2="730" y2="195" stroke="#eee" stroke-width="1"/>
+          <line x1="40" y1="135" x2="730" y2="135" stroke="#eee" stroke-width="1"/>
+          <line x1="40" y1="75" x2="730" y2="75" stroke="#eee" stroke-width="1"/>
+          <!-- Stacked area chart -->
+          <!-- Layer 1 (bottom dark blue) -->
+          <path d="M 50,280 L 170,260 L 290,220 L 410,120 L 530,185 L 650,230 L 650,315 L 50,315 Z" fill="#1a3a6b" opacity="0.9"/>
+          <!-- Layer 2 (medium blue) -->
+          <path d="M 50,230 L 170,200 L 290,160 L 410,80 L 530,140 L 650,180 L 650,280 L 50,280 Z" fill="#3a6abf" opacity="0.8"/>
+          <!-- Layer 3 (light blue) -->
+          <path d="M 50,200 L 170,160 L 290,120 L 410,50 L 530,110 L 650,150 L 650,230 L 50,230 Z" fill="#8ab0d0" opacity="0.8"/>
+          <!-- X labels -->
+          <text x="50" y="330" font-size="11" fill="#555" text-anchor="middle">1月</text>
+          <text x="170" y="330" font-size="11" fill="#555" text-anchor="middle">2月</text>
+          <text x="290" y="330" font-size="11" fill="#555" text-anchor="middle">3月</text>
+          <text x="410" y="330" font-size="11" fill="#555" text-anchor="middle">4月</text>
+          <text x="530" y="330" font-size="11" fill="#555" text-anchor="middle">5月</text>
+          <text x="650" y="330" font-size="11" fill="#555" text-anchor="middle">6月</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

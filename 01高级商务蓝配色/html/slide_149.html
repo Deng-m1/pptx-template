@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; padding: 16px 30px; gap: 0; }
+  .left-label { width: 80px; display: flex; align-items: center; justify-content: center; }
+  .left-label-text { font-size: 28px; font-weight: 900; color: #1a3a6b; writing-mode: vertical-lr; text-orientation: mixed; transform: rotate(180deg); border: 2px solid #1a3a6b; padding: 12px 8px; }
+  .matrix { flex: 1; display: flex; flex-direction: column; gap: 0; }
+  /* Header row */
+  .header-row { display: flex; height: 44px; }
+  .row-type-cell { width: 130px; flex-shrink: 0; }
+  .col-headers { flex: 1; display: flex; gap: 4px; }
+  .col-header { flex: 1; text-align: center; font-size: 15px; font-weight: 700; color: #1a3a6b; display: flex; align-items: center; justify-content: center; border: 1.5px solid #1a3a6b; border-radius: 2px; }
+  .col-header.dark { background: #1a3a6b; color: white; }
+  .col-header.medium { background: #3a6abf; color: white; }
+  .col-header.light { background: #e8edf5; color: #1a3a6b; }
+  /* Data rows */
+  .data-section { flex: 1; display: flex; gap: 0; }
+  .row-type { width: 130px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .row-type.dark { background: #1a3a6b; }
+  .row-type.gray { background: #333; }
+  .row-type-icon { font-size: 28px; color: white; }
+  .row-type-label { font-size: 15px; color: white; font-weight: 700; }
+  .cols-data { flex: 1; display: flex; gap: 4px; }
+  .data-col { flex: 1; border: 1.5px solid #dde4f0; display: flex; flex-direction: column; align-items: center; padding: 10px 8px; gap: 6px; }
+  .data-col.highlighted { border-color: #1a3a6b; border-width: 2px; }
+  .attract-label { font-size: 16px; font-weight: 700; color: #1a3a6b; }
+  .arrow-down { width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 16px solid #3a6abf; }
+  .brand-list { font-size: 11px; color: #555; line-height: 1.8; }
+  /* Bottom section */
+  .bottom-section { display: flex; gap: 0; }
+  .bottom-type { width: 130px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: #222; }
+  .period-headers { flex: 1; display: flex; gap: 4px; }
+  .period-header { flex: 1; background: #333; color: white; font-size: 15px; font-weight: 700; text-align: center; padding: 8px; display: flex; align-items: center; justify-content: center; }
+  .period-header.dark { background: #1a3a6b; }
+  .satisfy-col { flex: 1; border: 1.5px solid #dde4f0; display: flex; flex-direction: column; align-items: center; padding: 10px 8px; gap: 6px; }
+  .satisfy-label { font-size: 16px; font-weight: 700; color: #1a3a6b; }
+  .divider { height: 4px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">工作汇报 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="left-label">
+      <div class="left-label-text">用户态度</div>
+    </div>
+    <div class="matrix">
+      <!-- Column headers -->
+      <div class="header-row">
+        <div class="row-type-cell"></div>
+        <div class="col-headers">
+          <div class="col-header dark">视觉认知</div>
+          <div class="col-header medium">理解思考</div>
+          <div class="col-header light">分析学习</div>
+          <div class="col-header light">付诸实践</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- Top data section: 用户心智 -->
+      <div class="data-section" style="flex:1;">
+        <div class="row-type dark">
+          <div class="row-type-icon">🎯</div>
+          <div class="row-type-label">用户心智</div>
+        </div>
+        <div class="cols-data">
+          <div class="data-col highlighted">
+            <div class="attract-label">吸引性</div>
+            <div class="arrow-down"></div>
+            <div class="brand-list">·品牌效益<br>·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="data-col">
+            <div class="attract-label">吸引性</div>
+            <div class="arrow-down"></div>
+            <div class="brand-list">·品牌效益<br>·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="data-col highlighted">
+            <div class="attract-label">吸引性</div>
+            <div class="arrow-down"></div>
+            <div class="brand-list">·品牌效益<br>·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="data-col">
+            <div class="attract-label">吸引性</div>
+            <div class="arrow-down"></div>
+            <div class="brand-list">·品牌效益<br>·品牌效益<br>·品牌效益</div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- Period headers row -->
+      <div style="display:flex; gap:4px; height:36px;">
+        <div style="width:130px; flex-shrink:0;"></div>
+        <div class="period-headers">
+          <div class="period-header dark" style="flex:2;">短期</div>
+          <div class="period-header dark" style="flex:2;">长期</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- Bottom data section: 用户情感 -->
+      <div class="data-section" style="flex:1;">
+        <div class="row-type gray">
+          <div class="row-type-icon">🎯</div>
+          <div class="row-type-label">用户情感</div>
+        </div>
+        <div class="cols-data">
+          <div class="satisfy-col">
+            <div class="satisfy-label">满意度</div>
+            <div class="brand-list">·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="satisfy-col">
+            <div class="satisfy-label">满意度</div>
+            <div class="brand-list">·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="satisfy-col highlighted">
+            <div class="satisfy-label">满意度</div>
+            <div class="brand-list">·品牌效益<br>·品牌效益</div>
+          </div>
+          <div class="satisfy-col">
+            <div class="satisfy-label">满意度</div>
+            <div class="brand-list">·品牌效益<br>·品牌效益</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

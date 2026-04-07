@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; }
+  .sub-title { font-size: 22px; font-weight: 900; color: #1a3a6b; margin-bottom: 12px; }
+  .content-row { flex: 1; display: flex; gap: 12px; }
+  /* Left text panel */
+  .left-text { width: 240px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .text-intro { font-size: 11px; color: #555; line-height: 1.7; }
+  .tag { display: inline-block; padding: 3px 10px; font-size: 12px; font-weight: 700; color: white; border-radius: 2px; margin-bottom: 6px; }
+  .text-body { font-size: 11px; color: #555; line-height: 1.7; }
+  /* Center charts */
+  .center-charts { flex: 1; display: flex; gap: 12px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
+  .chart-year { font-size: 28px; font-weight: 900; color: #1a3a6b; }
+  .chart-sub { font-size: 12px; color: #888; margin-bottom: 10px; }
+  /* Right stats */
+  .right-stats { width: 200px; display: flex; flex-direction: column; gap: 8px; }
+  .stat-card { flex: 1; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; }
+  .stat-name { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .stat-row { display: flex; align-items: center; gap: 6px; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.8); }
+  .stat-pct { font-size: 22px; font-weight: 900; color: white; }
+  .stat-arrow { color: #4aff80; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">数据分析 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <div class="sub-title">产品销售年度分析报告</div>
+    <div class="content-row">
+      <!-- Left text -->
+      <div class="left-text">
+        <div class="text-intro">本报告旨在分析公司在2023年和2024年的产品销售情况，并探讨销售趋势和关键因素的变化。</div>
+        <div>
+          <div class="tag" style="background:#1a3a6b;">销售量增长</div>
+          <div class="text-body">2024年相比于2023年，公司产品整体销售量显著增长。这主要归因于市场对我们产品的接受度提高，以及销售团队的努力和市场推广策略的有效执行。具体来说，我们在目标市场中获得了更多的市场份额，这直接推动了销量的增长。</div>
+        </div>
+        <div>
+          <div class="tag" style="background:#3a6abf;">市场拓展</div>
+          <div class="text-body">2024年我们成功进入了几个新市场，这对整体销售表现产生了积极影响。新市场的开拓为公司带来了新的增长机会，并且增强了我们的市场影响力。这些市场的开拓表明了公司在市场扩展方面的成功策略和执行能力。</div>
+        </div>
+      </div>
+      <!-- Center: 2 bar charts -->
+      <div class="center-charts">
+        <div class="chart-box">
+          <div class="chart-year">2023年</div>
+          <div class="chart-sub">季度产品销量对比</div>
+          <div style="flex:1; position:relative;">
+            <!-- Callout -->
+            <div style="position:absolute; top:0; left:60%; background:#1a3a6b; color:white; font-size:11px; padding:4px 8px; border-radius:3px; white-space:nowrap;">第二季度业绩<br>销售遇到峰值</div>
+            <svg width="100%" height="100%" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
+              <!-- Bars: Q1=3, Q2=4, Q3=3.5, Q4=2 (3 series each) -->
+              <rect x="20" y="80" width="18" height="100" fill="#1a3a6b"/>
+              <rect x="42" y="100" width="18" height="80" fill="#3a6abf"/>
+              <rect x="64" y="120" width="18" height="60" fill="#8ab0d0"/>
+              <rect x="90" y="40" width="18" height="140" fill="#1a3a6b"/>
+              <rect x="112" y="60" width="18" height="120" fill="#3a6abf"/>
+              <rect x="134" y="80" width="18" height="100" fill="#8ab0d0"/>
+              <rect x="160" y="60" width="18" height="120" fill="#1a3a6b"/>
+              <rect x="182" y="80" width="18" height="100" fill="#3a6abf"/>
+              <rect x="204" y="100" width="18" height="80" fill="#8ab0d0"/>
+              <rect x="230" y="100" width="18" height="80" fill="#1a3a6b"/>
+              <rect x="252" y="120" width="18" height="60" fill="#3a6abf"/>
+              <rect x="274" y="140" width="18" height="40" fill="#8ab0d0"/>
+              <text x="52" y="192" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
+              <text x="122" y="192" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
+              <text x="192" y="192" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
+              <text x="262" y="192" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+            </svg>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-year">2024年</div>
+          <div class="chart-sub">季度产品销量对比</div>
+          <div style="flex:1; position:relative;">
+            <div style="position:absolute; top:30%; left:20%; background:#6a9ac4; color:white; font-size:11px; padding:4px 8px; border-radius:3px; white-space:nowrap;">第一季度业绩<br>销售遇到难点</div>
+            <svg width="100%" height="100%" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
+              <rect x="20" y="120" width="18" height="60" fill="#1a3a6b"/>
+              <rect x="42" y="140" width="18" height="40" fill="#3a6abf"/>
+              <rect x="64" y="150" width="18" height="30" fill="#8ab0d0"/>
+              <rect x="90" y="80" width="18" height="100" fill="#1a3a6b"/>
+              <rect x="112" y="100" width="18" height="80" fill="#3a6abf"/>
+              <rect x="134" y="120" width="18" height="60" fill="#8ab0d0"/>
+              <rect x="160" y="60" width="18" height="120" fill="#1a3a6b"/>
+              <rect x="182" y="80" width="18" height="100" fill="#3a6abf"/>
+              <rect x="204" y="100" width="18" height="80" fill="#8ab0d0"/>
+              <rect x="230" y="40" width="18" height="140" fill="#1a3a6b"/>
+              <rect x="252" y="60" width="18" height="120" fill="#3a6abf"/>
+              <rect x="274" y="80" width="18" height="100" fill="#8ab0d0"/>
+              <text x="52" y="192" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
+              <text x="122" y="192" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
+              <text x="192" y="192" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
+              <text x="262" y="192" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Right stats -->
+      <div class="right-stats">
+        <div class="stat-card" style="background:#1a3a6b;">
+          <div class="stat-name">第一季度</div>
+          <div class="stat-row">
+            <span class="stat-label">同比增长</span>
+            <span class="stat-arrow">▲</span>
+            <span class="stat-pct">30%</span>
+          </div>
+        </div>
+        <div class="stat-card" style="background:#3a6abf;">
+          <div class="stat-name">第二季度</div>
+          <div class="stat-row">
+            <span class="stat-label">同比增长</span>
+            <span class="stat-arrow">▲</span>
+            <span class="stat-pct">20%</span>
+          </div>
+        </div>
+        <div class="stat-card" style="background:#6a9ac4;">
+          <div class="stat-name">第三季度</div>
+          <div class="stat-row">
+            <span class="stat-label">同比增长</span>
+            <span class="stat-arrow">▲</span>
+            <span class="stat-pct">15%</span>
+          </div>
+        </div>
+        <div class="stat-card" style="background:#9ab8d4;">
+          <div class="stat-name">第四季度</div>
+          <div class="stat-row">
+            <span class="stat-label">同比增长</span>
+            <span class="stat-arrow">▲</span>
+            <span class="stat-pct">20%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
