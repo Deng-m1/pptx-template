@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_42</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:18px 36px 0 36px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+.page-title { font-size:24px; font-weight:900; color:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 5列箭头表头 */
+.arrow-heads { display:flex; gap:3px; margin-bottom:6px; flex-shrink:0; }
+.arrow-head {
+  flex:1; height:46px; display:flex; align-items:center; padding-left:16px; gap:10px;
+  clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+  position:relative;
+}
+.ah1 { background:#1a3a9e; }
+.ah2 { background:#2a4aae; }
+.ah3 { background:#4a6ab8; }
+.ah4 { background:#6a8ac8; }
+.ah5 { background:#9aaad8; }
+.ah-num { width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; color:#fff; flex-shrink:0; }
+.ah-text { font-size:15px; font-weight:900; color:#fff; }
+
+/* 5列内容区 */
+.cols-row { flex:1; display:flex; gap:3px; overflow:hidden; }
+.col-body { flex:1; display:flex; flex-direction:column; padding:10px 8px; overflow:hidden; }
+.col-desc { font-size:10px; color:#333; line-height:1.7; }
+
+/* 列2：3阶段矩形 */
+.stage-list { display:flex; flex-direction:column; gap:6px; margin-top:8px; }
+.stage-item {
+  padding:7px 10px; font-size:11px; font-weight:700; color:#fff;
+  border-radius:2px; display:flex; align-items:center; gap:6px;
+}
+.si1 { background:#1a3a9e; }
+.si2 { background:#4a6ab8; }
+.si3 { background:#7a9ac8; }
+.stage-arrow { font-size:14px; color:#fff; }
+.stage-text { font-size:10px; }
+
+/* 列4：同心圆 */
+.concentric { display:flex; justify-content:center; align-items:center; flex:1; }
+.cc-wrap { position:relative; width:140px; height:140px; display:flex; align-items:center; justify-content:center; }
+.cc3 { position:absolute; width:140px; height:140px; border-radius:50%; background:rgba(26,58,158,0.15); display:flex; align-items:center; justify-content:center; }
+.cc2 { position:absolute; width:100px; height:100px; border-radius:50%; background:rgba(26,58,158,0.35); display:flex; align-items:center; justify-content:center; }
+.cc1 { position:absolute; width:64px; height:64px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center; font-size:10px; color:#fff; font-weight:700; text-align:center; }
+.cc-label { position:absolute; font-size:10px; color:#1a3a9e; font-weight:700; }
+.cc-l1 { top:8px; }
+.cc-l2 { top:28px; }
+.cc-l3 { top:50%; transform:translateY(-50%); }
+
+/* 列5：底部标签 */
+.tag-row { display:flex; gap:4px; flex-wrap:wrap; margin-top:auto; }
+.tag {
+  padding:4px 8px; border:1.5px solid #1a3a9e; border-radius:2px;
+  font-size:10px; color:#1a3a9e; font-weight:700;
+}
+.tag-arrow { font-size:12px; color:#1a3a9e; }
+
+/* 底部月份标签 */
+.month-row { display:flex; gap:3px; flex-shrink:0; }
+.month-cell {
+  flex:1; height:38px; display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:700; color:#fff; border-radius:2px;
+}
+.mc1 { background:#1a3a9e; }
+.mc2 { background:#2a4aae; }
+.mc3 { background:#4a6ab8; }
+.mc4 { background:#6a8ac8; }
+.mc5 { background:#9aaad8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="page-title">产品开发设计基本流程</div>
+
+  <div class="body">
+    <!-- 5列箭头表头 -->
+    <div class="arrow-heads">
+      <div class="arrow-head ah1"><div class="ah-num">1</div><div class="ah-text">用户调研</div></div>
+      <div class="arrow-head ah2"><div class="ah-num">2</div><div class="ah-text">产品策划</div></div>
+      <div class="arrow-head ah3"><div class="ah-num">3</div><div class="ah-text">产品设计</div></div>
+      <div class="arrow-head ah4"><div class="ah-num">4</div><div class="ah-text">产品开发</div></div>
+      <div class="arrow-head ah5"><div class="ah-num">5</div><div class="ah-text">产品投放</div></div>
+    </div>
+
+    <!-- 5列内容 -->
+    <div class="cols-row">
+      <!-- 列1：文字+底部标签 -->
+      <div class="col-body">
+        <div class="col-desc">产品功能设计注重的是产品的性能和质量，要求在产品设计中充分考虑顾客要求，体现产品的经济价值，并以此为原则，保证高品质设计，包括：配合度精确、性能优良而稳定、耐用性能以及售后维护的便利程度。技术手段：价值工程、装配过程模拟、装配设计、质量功能选择和计算机辅助设计等。</div>
+        <div class="tag-row" style="margin-top:auto;">
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div>
+        </div>
+      </div>
+      <!-- 列2：文字+3阶段 -->
+      <div class="col-body">
+        <div class="col-desc">产品功能设计注重的是产品的性能和质量，要求在产品设计中充分考虑顾客要求，体现产品的经济价值，并以此为原则，保证高品质设计。</div>
+        <div class="stage-list">
+          <div class="stage-item si1"><span class="stage-arrow">▶</span><div><div style="font-size:12px;font-weight:900;">第一阶段</div><div class="stage-text">产品市场定位</div></div></div>
+          <div class="stage-item si2"><span class="stage-arrow">▶</span><div><div style="font-size:12px;font-weight:900;">第二阶段</div><div class="stage-text">产品视觉设计</div></div></div>
+          <div class="stage-item si3"><span class="stage-arrow">▶</span><div><div style="font-size:12px;font-weight:900;">第三阶段</div><div class="stage-text">产品线下投放</div></div></div>
+        </div>
+      </div>
+      <!-- 列3：文字+底部标签 -->
+      <div class="col-body">
+        <div class="col-desc">产品功能设计注重的是产品的性能和质量，要求在产品设计中充分考虑顾客要求，体现产品的经济价值，并以此为原则，保证高品质设计，包括：配合度精确、性能优良而稳定、耐用性能以及售后维护的便利程度。技术手段：价值工程、装配过程模拟、装配设计、质量功能选择和计算机辅助设计等。</div>
+        <div class="tag-row" style="margin-top:auto;">
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div>
+        </div>
+      </div>
+      <!-- 列4：文字+同心圆 -->
+      <div class="col-body">
+        <div class="col-desc">产品功能设计注重的是产品的性能和质量，要求在产品设计中充分考虑顾客要求，体现产品的经济价值，并以此为原则，保证高品质设计。</div>
+        <div class="concentric">
+          <div class="cc-wrap">
+            <div class="cc3"><div class="cc2"><div class="cc1">市场名词</div></div></div>
+            <div class="cc-label cc-l1" style="top:6px;">市场名词</div>
+            <div class="cc-label cc-l2" style="top:26px;">市场名词</div>
+          </div>
+        </div>
+      </div>
+      <!-- 列5：文字+底部标签 -->
+      <div class="col-body">
+        <div class="col-desc">产品功能设计注重的是产品的性能和质量，要求在产品设计中充分考虑顾客要求，体现产品的经济价值，并以此为原则，保证高品质设计，包括：配合度精确、性能优良而稳定、耐用性能以及售后维护的便利程度。技术手段：价值工程、装配过程模拟、装配设计、质量功能选择和计算机辅助设计等。</div>
+        <div class="tag-row" style="margin-top:auto;">
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div><div class="tag-arrow">→</div>
+          <div class="tag">市场化名词</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部月份标签 -->
+    <div class="month-row">
+      <div class="month-cell mc1">2024年3月</div>
+      <div class="month-cell mc2">2024年4月</div>
+      <div class="month-cell mc3">2024年5月</div>
+      <div class="month-cell mc4">2024年6月</div>
+      <div class="month-cell mc5">2024年7月</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_46</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 14px 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; gap:14px; overflow:hidden; }
+
+/* 左侧区域：中心圆 + 3个节点 */
+.left-area { width:480px; flex-shrink:0; position:relative; display:flex; align-items:center; }
+
+/* 中心大圆 */
+.center-circle {
+  width:150px; height:150px; border-radius:50%;
+  border:3px solid #1a3a9e;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; font-weight:900; color:#1a3a9e; text-align:center;
+  line-height:1.4; flex-shrink:0;
+  position:absolute; left:0; top:50%; transform:translateY(-50%);
+}
+
+/* 节点列 */
+.nodes-col { position:absolute; left:170px; top:0; bottom:0; display:flex; flex-direction:column; justify-content:space-around; width:280px; }
+
+.node-row { display:flex; align-items:center; gap:10px; }
+
+/* 连接线（从中心圆到节点） */
+.conn-line { width:20px; height:2px; background:#1a3a9e; flex-shrink:0; }
+
+/* 节点圆形 */
+.node-circle {
+  width:100px; height:100px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.nc1 { background:#1a3a9e; }
+.nc2 { background:#3a5ab8; }
+.nc3 { background:#c0cce8; }
+.nc-num { font-size:13px; font-weight:900; color:rgba(255,255,255,0.7); }
+.nc-title { font-size:18px; font-weight:900; color:#fff; }
+.nc3 .nc-num { color:rgba(255,255,255,0.7); }
+.nc3 .nc-title { color:#fff; }
+
+/* 节点到卡片的箭头 */
+.node-arrow { width:30px; height:2px; background:#1a3a9e; flex-shrink:0; position:relative; }
+.node-arrow::after { content:''; position:absolute; right:-6px; top:-4px;
+  border:5px solid transparent; border-left-color:#1a3a9e; }
+
+/* 右侧文字卡片区 */
+.cards-col { flex:1; display:flex; flex-direction:column; justify-content:space-around; }
+
+.text-card {
+  border:1.5px solid #c0cce8; border-radius:4px; padding:12px 14px;
+  display:flex; flex-direction:column; gap:5px;
+}
+.tc-title { font-size:16px; font-weight:900; color:#1a3a9e; }
+.tc-desc { font-size:11px; color:#555; line-height:1.7; }
+
+/* 最右侧深蓝大卡片 */
+.right-big-card {
+  width:280px; flex-shrink:0; background:#1a3a9e; border-radius:6px;
+  padding:20px 18px; display:flex; flex-direction:column; gap:10px;
+  overflow:hidden;
+}
+.rbc-top { display:flex; align-items:flex-start; justify-content:space-between; }
+.rbc-num { font-size:60px; font-weight:900; color:#fff; line-height:1; }
+.rbc-icon { width:50px; height:50px; border-radius:50%; border:2px solid rgba(255,255,255,0.6);
+  display:flex; align-items:center; justify-content:center; font-size:22px; }
+.rbc-desc { font-size:11px; color:rgba(255,255,255,0.85); line-height:1.7; }
+.rbc-tags { display:flex; gap:6px; }
+.rbc-tag { padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; color:#1a3a9e; }
+.tag1 { background:rgba(255,255,255,0.9); }
+.tag2 { background:rgba(255,255,255,0.5); color:#fff; }
+.tag3 { background:rgba(255,255,255,0.3); color:#fff; }
+.rbc-desc2 { font-size:11px; color:rgba(255,255,255,0.85); line-height:1.7; }
+
+/* 底部柱状图 */
+.bar-chart { display:flex; align-items:flex-end; gap:4px; height:50px; margin-top:auto; }
+.bar { flex:1; background:rgba(255,255,255,0.4); border-radius:2px 2px 0 0; }
+.bar.active { background:rgba(255,255,255,0.9); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 左侧区域 -->
+    <div class="left-area">
+      <div class="center-circle">项目活动<br>策划流程</div>
+      <div class="nodes-col">
+        <!-- 节点1 -->
+        <div class="node-row">
+          <div class="conn-line"></div>
+          <div class="node-circle nc1">
+            <div class="nc-num">01</div>
+            <div class="nc-title">设计</div>
+          </div>
+          <div class="node-arrow"></div>
+        </div>
+        <!-- 节点2 -->
+        <div class="node-row">
+          <div class="conn-line"></div>
+          <div class="node-circle nc2">
+            <div class="nc-num">02</div>
+            <div class="nc-title">策划</div>
+          </div>
+          <div class="node-arrow"></div>
+        </div>
+        <!-- 节点3 -->
+        <div class="node-row">
+          <div class="conn-line"></div>
+          <div class="node-circle nc3">
+            <div class="nc-num">03</div>
+            <div class="nc-title">采购</div>
+          </div>
+          <div class="node-arrow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间文字卡片 -->
+    <div class="cards-col">
+      <div class="text-card">
+        <div class="tc-title">第一阶段</div>
+        <div class="tc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分其任务。</div>
+      </div>
+      <div class="text-card">
+        <div class="tc-title">第二阶段</div>
+        <div class="tc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分其任务。</div>
+      </div>
+      <div class="text-card">
+        <div class="tc-title">第三阶段</div>
+        <div class="tc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分其任务。</div>
+      </div>
+    </div>
+
+    <!-- 最右侧深蓝大卡片 -->
+    <div class="right-big-card">
+      <div class="rbc-top">
+        <div class="rbc-num">68%</div>
+        <div class="rbc-icon">🛒</div>
+      </div>
+      <div class="rbc-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      <div class="rbc-tags">
+        <div class="rbc-tag tag1">市场化名词</div>
+        <div class="rbc-tag tag2">市场化名词</div>
+        <div class="rbc-tag tag3">市场化名词</div>
+      </div>
+      <div class="rbc-desc2">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      <div class="bar-chart">
+        <div class="bar" style="height:30%"></div>
+        <div class="bar" style="height:50%"></div>
+        <div class="bar active" style="height:70%"></div>
+        <div class="bar" style="height:45%"></div>
+        <div class="bar active" style="height:90%"></div>
+        <div class="bar" style="height:60%"></div>
+        <div class="bar" style="height:40%"></div>
+        <div class="bar active" style="height:80%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:35%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

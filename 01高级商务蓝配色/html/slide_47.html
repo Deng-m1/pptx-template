@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_47</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 14px 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; gap:16px; overflow:hidden; }
+
+/* 左侧区域（含金字塔+说明+底部月份） */
+.left-area { width:760px; flex-shrink:0; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 上部：左文字+金字塔+右文字 */
+.pyramid-section { flex:1; display:flex; gap:0; overflow:hidden; }
+
+/* 左侧文字列 */
+.left-text { width:160px; flex-shrink:0; display:flex; flex-direction:column; justify-content:flex-start; padding-top:10px; gap:8px; }
+.lt-label { display:inline-block; background:#1a3a9e; color:#fff; font-size:12px; font-weight:700; padding:3px 8px; border-radius:2px; }
+.lt-desc { font-size:10px; color:#555; line-height:1.7; }
+.lt-pct { font-size:48px; font-weight:900; color:#1a3a9e; line-height:1; }
+.lt-arrow { font-size:28px; color:#1a3a9e; }
+
+/* 右侧文字列 */
+.right-text { width:160px; flex-shrink:0; display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-start; padding-top:10px; gap:8px; text-align:right; }
+
+/* 金字塔区域 */
+.pyramid-area { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:0; position:relative; }
+
+/* 灰色三角背景 */
+.pyramid-bg {
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:0; height:0;
+  border-left:220px solid transparent;
+  border-right:220px solid transparent;
+  border-bottom:360px solid #e8ecf4;
+  z-index:0;
+}
+
+/* 金字塔层 */
+.pyramid-layers { display:flex; flex-direction:column; align-items:center; width:100%; position:relative; z-index:1; }
+.pyr-layer {
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:900; color:#fff;
+  margin-bottom:3px; border-radius:2px;
+}
+.pl1 { width:420px; height:62px; background:#1a3a9e; }
+.pl2 { width:320px; height:62px; background:#2a4aae; }
+.pl3 { width:220px; height:62px; background:#6a8ac8; }
+.pl4 { width:140px; height:62px; background:#9aaad8; }
+
+/* 底部月份箭头 */
+.month-row { height:42px; flex-shrink:0; display:flex; gap:4px; margin-top:8px; }
+.month-arrow {
+  flex:1; height:42px; background:#d0d8e8; display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:700; color:#1a3a9e;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+.month-arrow:first-child { clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); }
+
+/* 右侧列表卡片 */
+.right-cards { flex:1; display:flex; flex-direction:column; gap:8px; overflow:hidden; }
+.list-card {
+  flex:1; border:1.5px solid #c0cce8; border-radius:4px; padding:10px 12px;
+  display:flex; flex-direction:column; gap:4px; overflow:hidden;
+}
+.lc-title { font-size:15px; font-weight:900; color:#1a3a9e; }
+.lc-desc { font-size:10px; color:#555; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 左侧区域 -->
+    <div class="left-area">
+      <div class="pyramid-section">
+        <!-- 左侧文字 -->
+        <div class="left-text">
+          <div class="lt-label">项目重点工作</div>
+          <div class="lt-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+          <div class="lt-pct">66%</div>
+          <div class="lt-arrow">↑</div>
+        </div>
+
+        <!-- 金字塔 -->
+        <div class="pyramid-area">
+          <div class="pyramid-bg"></div>
+          <div class="pyramid-layers">
+            <div class="pyr-layer pl4">04- 产品投放</div>
+            <div class="pyr-layer pl3">03- 策划设计</div>
+            <div class="pyr-layer pl2">02- 品牌推广</div>
+            <div class="pyr-layer pl1">01- 市场调研</div>
+          </div>
+        </div>
+
+        <!-- 右侧文字 -->
+        <div class="right-text">
+          <div class="lt-label">项目重点工作</div>
+          <div class="lt-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+          <div class="lt-pct">16%</div>
+          <div class="lt-arrow">↑</div>
+        </div>
+      </div>
+
+      <!-- 底部月份箭头 -->
+      <div class="month-row">
+        <div class="month-arrow">2024年1月</div>
+        <div class="month-arrow">2024年2月</div>
+        <div class="month-arrow">2024年3月</div>
+        <div class="month-arrow">2024年4月</div>
+      </div>
+    </div>
+
+    <!-- 右侧列表卡片 -->
+    <div class="right-cards">
+      <div class="list-card">
+        <div class="lc-title">01- 市场调研</div>
+        <div class="lc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="list-card">
+        <div class="lc-title">02- 品牌推广</div>
+        <div class="lc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="list-card">
+        <div class="lc-title">03- 策划设计</div>
+        <div class="lc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="list-card">
+        <div class="lc-title">04- 产品投放</div>
+        <div class="lc-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

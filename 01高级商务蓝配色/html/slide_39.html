@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_39</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 0 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:12px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 顶部宽箭头+节点 */
+.arrow-row { position:relative; height:80px; margin-bottom:8px; }
+.arrow-bg {
+  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+  height:52px; background:#1a3a9e; border-radius:4px 0 0 4px;
+}
+.arrow-tip {
+  position:absolute; right:0; top:50%; transform:translateY(-50%);
+  width:0; height:0;
+  border-top:34px solid transparent;
+  border-bottom:34px solid transparent;
+  border-left:40px solid #1a3a9e;
+}
+.nodes-row { position:absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; }
+.node-wrap { flex:1; display:flex; justify-content:center; }
+.node-circle {
+  width:60px; height:60px; border-radius:50%; background:#fff;
+  border:3px solid #1a3a9e; display:flex; align-items:center; justify-content:center;
+  font-size:22px; font-weight:900; color:#1a3a9e; z-index:2;
+}
+
+/* 5列卡片区 */
+.cards-row { flex:1; display:flex; gap:4px; overflow:hidden; }
+.card-col { flex:1; display:flex; flex-direction:column; border-right:1px dashed #c0cce8; padding:0 8px; overflow:hidden; }
+.card-col:last-child { border-right:none; }
+
+/* 下箭头 */
+.down-arrow { display:flex; justify-content:center; margin-bottom:8px; }
+.down-arrow-icon { width:0; height:0; border-left:12px solid transparent; border-right:12px solid transparent; border-top:18px solid #1a3a9e; }
+
+/* 标题条 */
+.title-bar {
+  display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:4px; margin-bottom:10px;
+}
+.tb-check { width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.tb-check svg { width:12px; height:12px; stroke:#fff; fill:none; stroke-width:2.5; }
+.tb-text { font-size:15px; font-weight:900; color:#fff; }
+.tb1 { background:#1a3a9e; }
+.tb2 { background:#2a4aae; }
+.tb3 { background:#3a5ab8; }
+.tb4 { background:#8aaac8; }
+.tb5 { background:#1a3a9e; }
+
+.card-desc { font-size:10px; color:#444; line-height:1.7; margin-bottom:8px; }
+
+/* 底部阶段标签 */
+.stage-row { display:flex; gap:4px; flex-shrink:0; margin-top:auto; }
+.stage-label {
+  flex:1; height:42px; display:flex; align-items:center; justify-content:center;
+  font-size:15px; font-weight:900; color:#fff;
+}
+.sl-dark { background:#1a3a9e; }
+.sl-light { background:#8aaac8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="page-title">项目活动策划执行流程</div>
+
+  <div class="body">
+    <!-- 顶部宽箭头+节点 -->
+    <div class="arrow-row">
+      <div class="arrow-bg"></div>
+      <div class="arrow-tip"></div>
+      <div class="nodes-row">
+        <div class="node-wrap"><div class="node-circle">01</div></div>
+        <div class="node-wrap"><div class="node-circle">02</div></div>
+        <div class="node-wrap"><div class="node-circle">03</div></div>
+        <div class="node-wrap"><div class="node-circle">04</div></div>
+        <div class="node-wrap"><div class="node-circle">05</div></div>
+      </div>
+    </div>
+
+    <!-- 5列卡片 -->
+    <div class="cards-row">
+      <div class="card-col">
+        <div class="down-arrow"><div class="down-arrow-icon"></div></div>
+        <div class="title-bar tb1">
+          <div class="tb-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <div class="tb-text">市场调研</div>
+        </div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务。</div>
+      </div>
+      <div class="card-col">
+        <div class="down-arrow"><div class="down-arrow-icon" style="border-top-color:#2a4aae;"></div></div>
+        <div class="title-bar tb2">
+          <div class="tb-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <div class="tb-text">策划设计</div>
+        </div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务。</div>
+      </div>
+      <div class="card-col">
+        <div class="down-arrow"><div class="down-arrow-icon" style="border-top-color:#3a5ab8;"></div></div>
+        <div class="title-bar tb3">
+          <div class="tb-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <div class="tb-text">采购安装</div>
+        </div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务。</div>
+      </div>
+      <div class="card-col">
+        <div class="down-arrow"><div class="down-arrow-icon" style="border-top-color:#7a9ac8;"></div></div>
+        <div class="title-bar tb4">
+          <div class="tb-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <div class="tb-text">现场执行</div>
+        </div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务。</div>
+      </div>
+      <div class="card-col">
+        <div class="down-arrow"><div class="down-arrow-icon"></div></div>
+        <div class="title-bar tb5">
+          <div class="tb-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          <div class="tb-text">后续跟进</div>
+        </div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务。</div>
+      </div>
+    </div>
+
+    <!-- 底部阶段标签 -->
+    <div class="stage-row">
+      <div class="stage-label sl-dark" style="flex:2;">筹备阶段</div>
+      <div class="stage-label sl-light" style="flex:3;">执行阶段</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

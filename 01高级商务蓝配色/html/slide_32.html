@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_32</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:12px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 顶部7个箭头月份 */
+.month-row { display:flex; align-items:center; gap:0; margin-bottom:14px; }
+.month-label { font-size:14px; font-weight:900; color:#1a3a9e; margin-right:10px; white-space:nowrap; }
+.month-arrow-wrap { display:flex; gap:3px; flex:1; }
+.month-arrow {
+  flex:1; height:52px; position:relative;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.ma1 { background:#1a3a9e; }
+.ma2 { background:#2a4aae; }
+.ma3 { background:#4a6ab8; }
+.ma4 { background:#1a1a2a; }
+.ma5 { background:#6a8ab8; }
+.ma6 { background:#8aaac8; }
+.ma7 { background:#aabcd8; }
+.month-num { font-size:22px; font-weight:900; color:#fff; line-height:1; }
+.month-unit { font-size:11px; color:rgba(255,255,255,0.9); }
+
+/* 主体两行 */
+.main-area { flex:1; display:flex; flex-direction:column; gap:0; position:relative; }
+.project-row { flex:1; display:flex; align-items:stretch; border-bottom:1px solid #e0e4f0; }
+.proj-label { width:90px; display:flex; flex-direction:column; justify-content:flex-start; padding-top:8px; }
+.proj-name { font-size:16px; font-weight:900; color:#1a3a9e; }
+.proj-desc { font-size:10px; color:#555; line-height:1.6; margin-top:4px; }
+.proj-cols { flex:1; display:flex; gap:3px; }
+.proj-col { flex:1; display:flex; flex-direction:column; justify-content:space-between; padding:8px 6px; border-left:1px dashed #c0c8d8; position:relative; }
+.col-text { font-size:10px; color:#444; line-height:1.6; }
+.col-check { display:flex; justify-content:center; margin-top:4px; }
+.check-icon { width:22px; height:22px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center; }
+.check-icon svg { width:12px; height:12px; stroke:#fff; fill:none; stroke-width:2.5; }
+
+/* 弹出卡片（88%） */
+.popup-card {
+  position:absolute; top:-10px; left:50%; transform:translateX(-50%);
+  width:280px; background:#fff; border:2px solid #1a3a9e; border-radius:8px;
+  padding:16px 20px; z-index:10;
+  box-shadow:0 4px 16px rgba(26,58,158,0.15);
+}
+.popup-pct { font-size:52px; font-weight:900; color:#1a3a9e; line-height:1; }
+.popup-icon { position:absolute; top:16px; right:16px; width:40px; height:40px; border-radius:50%; border:2px solid #1a3a9e; display:flex; align-items:center; justify-content:center; }
+.popup-icon svg { width:22px; height:22px; stroke:#1a3a9e; fill:none; stroke-width:1.8; }
+.popup-desc { font-size:11px; color:#444; line-height:1.6; margin-top:6px; }
+/* 弹出卡片上方的连接线 */
+.popup-line {
+  position:absolute; top:-30px; left:50%; transform:translateX(-50%);
+  width:2px; height:30px; background:#1a3a9e;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 顶部月份箭头 -->
+    <div class="month-row">
+      <div class="month-label">项目阶段目标</div>
+      <div style="width:40px;height:36px;background:#1a3a9e;clip-path:polygon(0 30%,80% 30%,80% 0,100% 50%,80% 100%,80% 70%,0 70%);margin-right:6px;"></div>
+      <div class="month-arrow-wrap">
+        <div class="month-arrow ma1"><div class="month-num">1</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma2"><div class="month-num">2</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma3"><div class="month-num">3</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma4"><div class="month-num">4</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma5"><div class="month-num">5</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma6"><div class="month-num">6</div><div class="month-unit">月</div></div>
+        <div class="month-arrow ma7"><div class="month-num">7</div><div class="month-unit">月</div></div>
+      </div>
+    </div>
+
+    <!-- 主体两行 -->
+    <div class="main-area">
+      <!-- 公司项目A -->
+      <div class="project-row">
+        <div class="proj-label">
+          <div class="proj-name">公司项目A</div>
+          <div class="proj-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        </div>
+        <div class="proj-cols">
+          <div class="proj-col" style="border-left:none;">
+            <!-- 空列 -->
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col" style="position:relative;">
+            <!-- 弹出卡片 -->
+            <div class="popup-card">
+              <div class="popup-line"></div>
+              <div class="popup-pct">88%</div>
+              <div class="popup-icon">
+                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+              <div class="popup-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+            </div>
+          </div>
+          <div class="proj-col"></div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公司项目B -->
+      <div class="project-row" style="border-bottom:none;">
+        <div class="proj-label">
+          <div class="proj-name">公司项目B</div>
+          <div class="proj-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        </div>
+        <div class="proj-cols">
+          <div class="proj-col" style="border-left:none;">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+          <div class="proj-col">
+            <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+            <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

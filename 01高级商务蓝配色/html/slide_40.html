@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_40</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 0 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 上半部分：两个卡片+中心圆 */
+.top-section { display:flex; align-items:center; gap:0; height:220px; }
+.top-card {
+  flex:1; border:1.5px solid #c0cce8; border-radius:8px; padding:16px 20px;
+  display:flex; flex-direction:column; gap:8px; position:relative;
+}
+.top-card-title { display:flex; align-items:center; justify-content:space-between; }
+.top-card-title-text { font-size:20px; font-weight:900; color:#1a3a9e; }
+.top-card-icon { width:44px; height:44px; border-radius:50%; border:2px solid #1a3a9e; display:flex; align-items:center; justify-content:center; }
+.top-card-icon svg { width:22px; height:22px; stroke:#1a3a9e; fill:none; stroke-width:1.8; }
+.top-card-desc { font-size:11px; color:#444; line-height:1.7; }
+
+/* 连接线（SVG） */
+.center-svg { width:200px; flex-shrink:0; }
+
+/* 中心圆 */
+.center-circle {
+  width:160px; height:160px; border-radius:50%; background:#1a3a9e;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  margin:0 20px;
+}
+.center-text { font-size:20px; font-weight:900; color:#fff; text-align:center; line-height:1.4; }
+
+/* 下半部分：4个梯形 */
+.bottom-section { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+.trapezoids { flex:1; display:flex; align-items:stretch; gap:4px; padding-top:24px; }
+.trap-item { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; }
+.trap-num {
+  width:40px; height:40px; border-radius:50%; background:#fff;
+  border:2.5px solid; display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:900; position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+  z-index:2;
+}
+/* 倒梯形色块（上宽下窄） */
+.trap-block {
+  width:100%; padding:30px 20px 14px;
+  clip-path:polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+  flex:1;
+}
+.trap1 { background:#1a3a9e; }
+.trap2 { background:#3a5ab8; }
+.trap3 { background:#6a8ab8; }
+.trap4 { background:#9aaac8; }
+.trap-title { font-size:15px; font-weight:900; color:#fff; margin-bottom:6px; }
+.trap-desc { font-size:10px; color:rgba(255,255,255,0.9); line-height:1.6; }
+
+/* 月份标签 */
+.month-labels { display:flex; gap:4px; flex-shrink:0; }
+.month-label {
+  flex:1; height:40px; display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:700; color:#fff;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+.ml1 { background:#1a3a9e; }
+.ml2 { background:#3a5ab8; }
+.ml3 { background:#6a8ab8; }
+.ml4 { background:#9aaac8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 上半部分 -->
+    <div class="top-section">
+      <div class="top-card">
+        <div class="top-card-title">
+          <div class="top-card-title-text">工作重点</div>
+          <div class="top-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+        </div>
+        <div class="top-card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+
+      <!-- 中心圆+SVG连接线 -->
+      <div style="position:relative;width:200px;height:100%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="200" height="180" style="position:absolute;">
+          <!-- 左上到圆心 -->
+          <line x1="0" y1="40" x2="100" y2="90" stroke="#1a3a9e" stroke-width="1.5"/>
+          <!-- 左下到圆心 -->
+          <line x1="0" y1="140" x2="100" y2="90" stroke="#1a3a9e" stroke-width="1.5"/>
+          <!-- 右上到圆心 -->
+          <line x1="200" y1="40" x2="100" y2="90" stroke="#1a3a9e" stroke-width="1.5"/>
+          <!-- 右下到圆心 -->
+          <line x1="200" y1="140" x2="100" y2="90" stroke="#1a3a9e" stroke-width="1.5"/>
+        </svg>
+        <div class="center-circle">
+          <div class="center-text">项目活动<br>策划流程</div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-title">
+          <div class="top-card-title-text">工作重点</div>
+          <div class="top-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+        </div>
+        <div class="top-card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+    </div>
+
+    <!-- 下半部分：4个梯形 -->
+    <div class="bottom-section">
+      <div class="trapezoids">
+        <div class="trap-item">
+          <div class="trap-num" style="border-color:#1a3a9e;color:#1a3a9e;">01</div>
+          <div class="trap-block trap1">
+            <div class="trap-title">项目第一阶段</div>
+            <div class="trap-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          </div>
+        </div>
+        <div class="trap-item">
+          <div class="trap-num" style="border-color:#3a5ab8;color:#3a5ab8;">02</div>
+          <div class="trap-block trap2">
+            <div class="trap-title">项目第二阶段</div>
+            <div class="trap-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          </div>
+        </div>
+        <div class="trap-item">
+          <div class="trap-num" style="border-color:#6a8ab8;color:#6a8ab8;">03</div>
+          <div class="trap-block trap3">
+            <div class="trap-title">项目第三阶段</div>
+            <div class="trap-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          </div>
+        </div>
+        <div class="trap-item">
+          <div class="trap-num" style="border-color:#9aaac8;color:#9aaac8;">04</div>
+          <div class="trap-block trap4">
+            <div class="trap-title">项目第四阶段</div>
+            <div class="trap-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          </div>
+        </div>
+      </div>
+      <div class="month-labels">
+        <div class="month-label ml1">2024年3月</div>
+        <div class="month-label ml2">2024年4月</div>
+        <div class="month-label ml3">2024年5月</div>
+        <div class="month-label ml4">2024年6月</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

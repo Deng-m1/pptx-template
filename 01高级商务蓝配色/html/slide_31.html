@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_31</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px;
+  display:flex; flex-direction:column; }
+
+/* 顶部标题栏 */
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:12px; }
+
+/* 主体内容 */
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 4列箭头表头 */
+.col-headers { display:flex; gap:4px; margin-bottom:10px; }
+.col-header {
+  flex:1; height:62px; position:relative;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+}
+.col-header:first-child {
+  clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+}
+.col-h1 { background:#8aaac8; }
+.col-h2 { background:#5a7ab8; }
+.col-h3 { background:#3a5aae; }
+.col-h4 { background:#1a3a9e; }
+.col-header-date { font-size:16px; font-weight:900; color:#fff; letter-spacing:0.5px; }
+.col-header-sub { font-size:9px; font-weight:700; color:rgba(255,255,255,0.85); letter-spacing:1px; margin-top:2px; }
+
+/* 任务卡片区 */
+.tasks-area { flex:1; display:flex; gap:4px; overflow:hidden; }
+.task-col { flex:1; display:flex; flex-direction:column; gap:6px; }
+.task-card {
+  flex:1; border-radius:4px; padding:10px 12px;
+  display:flex; flex-direction:column; justify-content:space-between; position:relative;
+}
+.tc-dark { background:#3a5aae; }
+.tc-mid { background:#5a7ab8; }
+.tc-light { background:#8aaac8; }
+.tc-gray { background:#aabcd8; }
+.task-title { font-size:13px; font-weight:900; color:#fff; }
+.task-desc { font-size:10px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:4px; }
+.task-check {
+  position:absolute; top:8px; right:10px;
+  width:20px; height:20px; border-radius:50%; border:2px solid rgba(255,255,255,0.7);
+  display:flex; align-items:center; justify-content:center;
+}
+.task-check svg { width:11px; height:11px; stroke:#fff; fill:none; stroke-width:2.5; }
+
+/* 底部箭头标签 */
+.bottom-labels { display:flex; gap:4px; margin-top:8px; }
+.bottom-label {
+  flex:1; height:36px;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:700; color:#fff;
+}
+.bl1 { background:#1a3a9e; }
+.bl2 { background:#5a7ab8; }
+.bl3 { background:#8aaac8; }
+.bl4 { background:#aabcd8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="page-title">项目进度时间安排</div>
+
+  <div class="body">
+    <!-- 4列箭头表头 -->
+    <div class="col-headers">
+      <div class="col-header col-h1">
+        <div class="col-header-date">2024年1月-3月</div>
+        <div class="col-header-sub">PRIORITIES FOR THE FIRST QUARTER</div>
+      </div>
+      <div class="col-header col-h2">
+        <div class="col-header-date">2024年3月-6月</div>
+        <div class="col-header-sub">PRIORITIES FOR THE FIRST QUARTER</div>
+      </div>
+      <div class="col-header col-h3">
+        <div class="col-header-date">2024年6月-9月</div>
+        <div class="col-header-sub">PRIORITIES FOR THE FIRST QUARTER</div>
+      </div>
+      <div class="col-header col-h4">
+        <div class="col-header-date">2024年9月-12月</div>
+        <div class="col-header-sub">PRIORITIES FOR THE FIRST QUARTER</div>
+      </div>
+    </div>
+
+    <!-- 任务卡片区 -->
+    <div class="tasks-area">
+      <!-- 第1列 -->
+      <div class="task-col">
+        <div class="task-card tc-dark">
+          <div>
+            <div class="task-title">工作任务01</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card tc-mid">
+          <div>
+            <div class="task-title">工作任务02</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card tc-light">
+          <div>
+            <div class="task-title">工作任务03</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+      </div>
+      <!-- 第2列 -->
+      <div class="task-col">
+        <div class="task-card tc-mid">
+          <div>
+            <div class="task-title">工作任务01</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card tc-light">
+          <div>
+            <div class="task-title">工作任务02</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card tc-gray">
+          <div>
+            <div class="task-title">工作任务03</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+      </div>
+      <!-- 第3列 -->
+      <div class="task-col">
+        <div class="task-card tc-light">
+          <div>
+            <div class="task-title">工作任务01</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card tc-gray">
+          <div>
+            <div class="task-title">工作任务02</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+      </div>
+      <!-- 第4列 -->
+      <div class="task-col">
+        <div class="task-card tc-gray">
+          <div>
+            <div class="task-title">工作任务01</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card" style="background:#8a9ab8;">
+          <div>
+            <div class="task-title">工作任务02</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+        <div class="task-card" style="background:#c0c8d8;">
+          <div>
+            <div class="task-title">工作任务03</div>
+            <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+          </div>
+          <div class="task-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部箭头标签 -->
+    <div class="bottom-labels">
+      <div class="bottom-label bl1">第一季度工作重点</div>
+      <div class="bottom-label bl2">第二季度工作重点</div>
+      <div class="bottom-label bl3">第三季度工作重点</div>
+      <div class="bottom-label bl4">第四季度工作重点</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

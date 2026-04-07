@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_41</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 0 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 顶部5列月份标签 */
+.month-row { display:flex; gap:3px; margin-bottom:6px; flex-shrink:0; }
+.month-cell {
+  flex:1; height:44px; display:flex; align-items:center; justify-content:center;
+  font-size:15px; font-weight:700; color:#fff; border-radius:3px;
+}
+.mc1 { background:#1a3a9e; }
+.mc2 { background:#2a4aae; }
+.mc3 { background:#3a5ab8; }
+.mc4 { background:#7a9ac8; }
+.mc5 { background:#aabcd8; }
+
+/* 中间5列内容卡片 */
+.cards-row { display:flex; gap:3px; height:260px; flex-shrink:0; }
+.card-col {
+  flex:1; border:1.5px solid #c0cce8; border-radius:4px;
+  padding:12px 10px; display:flex; flex-direction:column; gap:6px;
+  overflow:hidden;
+}
+.card-title { font-size:14px; font-weight:900; color:#1a3a9e; }
+.card-check { display:flex; align-items:center; gap:4px; }
+.card-check-icon { width:18px; height:18px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.card-check-icon::after { content:'✓'; color:#fff; font-size:10px; }
+.card-desc { font-size:10px; color:#555; line-height:1.6; }
+
+/* 相交圆 */
+.venn { display:flex; justify-content:center; align-items:center; flex:1; }
+.venn-wrap { position:relative; width:120px; height:60px; }
+.venn-c1 {
+  position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:70px; height:70px; border-radius:50%; background:rgba(26,58,158,0.35);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; color:#fff; font-weight:700;
+}
+.venn-c2 {
+  position:absolute; right:0; top:50%; transform:translateY(-50%);
+  width:70px; height:70px; border-radius:50%; background:rgba(26,58,158,0.55);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; color:#fff; font-weight:700;
+}
+
+/* 底部区域：倒梯形聚焦 + 大数字卡片 */
+.bottom-row { flex:1; display:flex; gap:3px; overflow:hidden; position:relative; min-height:0; }
+
+/* 左侧大数字卡片 */
+.big-card {
+  width:220px; flex-shrink:0; border:2px solid #1a3a9e; border-radius:4px;
+  padding:16px 14px; display:flex; flex-direction:column; gap:6px;
+}
+.big-num { font-size:52px; font-weight:900; color:#1a3a9e; line-height:1; }
+.big-desc { font-size:10px; color:#555; line-height:1.6; }
+
+/* 中间5列倒梯形 */
+.funnel-area { flex:1; display:flex; gap:3px; align-items:flex-start; padding-top:8px; }
+.funnel-col { flex:1; display:flex; flex-direction:column; align-items:center; }
+.funnel-block {
+  width:100%; background:#1a3a9e;
+  clip-path:polygon(0 0, 100% 0, 70% 100%, 30% 100%);
+}
+.fc1 { background:#1a3a9e; height:120px; }
+.fc2 { background:#2a4aae; height:110px; }
+.fc3 { background:#3a5ab8; height:100px; }
+.fc4 { background:#7a9ac8; height:90px; }
+.fc5 { background:#aabcd8; height:80px; }
+
+/* 底部节点行 */
+.node-row { display:flex; gap:3px; flex-shrink:0; height:44px; }
+.node-cell {
+  flex:1; display:flex; align-items:center; justify-content:center;
+}
+.node-circle {
+  width:36px; height:36px; border-radius:50%; border:2.5px solid;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; background:#fff;
+}
+.n1 { border-color:#1a3a9e; color:#1a3a9e; }
+.n2 { border-color:#2a4aae; color:#2a4aae; }
+.n3 { border-color:#3a5ab8; color:#3a5ab8; }
+.n4 { border-color:#7a9ac8; color:#7a9ac8; }
+.n5 { border-color:#aabcd8; color:#aabcd8; }
+
+/* 右侧大数字卡片 */
+.big-card-right {
+  width:220px; flex-shrink:0; border:2px solid #aabcd8; border-radius:4px;
+  padding:16px 14px; display:flex; flex-direction:column; gap:6px;
+}
+.big-num-right { font-size:52px; font-weight:900; color:#1a3a9e; line-height:1; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 顶部月份标签 -->
+    <div class="month-row">
+      <div class="month-cell mc1">2024年3月</div>
+      <div class="month-cell mc2">2024年3月</div>
+      <div class="month-cell mc3">2024年3月</div>
+      <div class="month-cell mc4">2024年3月</div>
+      <div class="month-cell mc5">2024年3月</div>
+    </div>
+
+    <!-- 中间5列内容卡片 -->
+    <div class="cards-row">
+      <!-- 列1：文字 -->
+      <div class="card-col">
+        <div class="card-check"><div class="card-check-icon"></div><div class="card-title">项目第一阶段</div></div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+      </div>
+      <!-- 列2：相交圆 -->
+      <div class="card-col">
+        <div class="card-check"><div class="card-check-icon"></div><div class="card-title">项目第二阶段</div></div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        <div class="venn">
+          <div class="venn-wrap">
+            <div class="venn-c1">名词</div>
+            <div class="venn-c2">名词</div>
+          </div>
+        </div>
+      </div>
+      <!-- 列3：文字 -->
+      <div class="card-col">
+        <div class="card-check"><div class="card-check-icon"></div><div class="card-title">项目第三阶段</div></div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+      </div>
+      <!-- 列4：相交圆 -->
+      <div class="card-col">
+        <div class="card-check"><div class="card-check-icon"></div><div class="card-title">项目第四阶段</div></div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        <div class="venn">
+          <div class="venn-wrap">
+            <div class="venn-c1">名词</div>
+            <div class="venn-c2">名词</div>
+          </div>
+        </div>
+      </div>
+      <!-- 列5：文字 -->
+      <div class="card-col">
+        <div class="card-check"><div class="card-check-icon"></div><div class="card-title">项目第五阶段</div></div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
+      </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <div class="bottom-row">
+      <!-- 左侧大数字卡片 -->
+      <div class="big-card">
+        <div class="big-num">78%</div>
+        <div class="big-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+
+      <!-- 中间倒梯形漏斗 + 底部节点 -->
+      <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;">
+        <div class="funnel-area" style="flex:1;min-height:0;">
+          <div class="funnel-col"><div class="funnel-block fc1"></div></div>
+          <div class="funnel-col"><div class="funnel-block fc2"></div></div>
+          <div class="funnel-col"><div class="funnel-block fc3"></div></div>
+          <div class="funnel-col"><div class="funnel-block fc4"></div></div>
+          <div class="funnel-col"><div class="funnel-block fc5"></div></div>
+        </div>
+        <div class="node-row">
+          <div class="node-cell"><div class="node-circle n1">01</div></div>
+          <div class="node-cell"><div class="node-circle n2">02</div></div>
+          <div class="node-cell"><div class="node-circle n3">03</div></div>
+          <div class="node-cell"><div class="node-circle n4">04</div></div>
+          <div class="node-cell"><div class="node-circle n5">05</div></div>
+        </div>
+      </div>
+
+      <!-- 右侧大数字卡片 -->
+      <div class="big-card-right">
+        <div class="big-num-right">68%</div>
+        <div class="big-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

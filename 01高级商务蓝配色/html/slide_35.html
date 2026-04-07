@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_35</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 0 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* Q节点行 */
+.q-row { display:flex; align-items:center; gap:0; margin-bottom:10px; position:relative; }
+.q-line {
+  position:absolute; top:50%; left:5%; right:5%; height:2px;
+  background:linear-gradient(to right, #1a3a9e, #8aaac8);
+  z-index:0;
+}
+.q-col { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; z-index:1; }
+.q-label { font-size:12px; font-weight:700; color:#1a3a9e; margin-bottom:4px; }
+.q-circle {
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; font-weight:900; color:#fff;
+}
+.q1c { background:#1a3a9e; }
+.q2c { background:#3a5aae; }
+.q3c { background:#7a9ac8; }
+.q4c { background:#aabcd8; }
+.q-date { font-size:11px; color:#555; margin-top:4px; font-weight:700; }
+
+/* 任务列表区 */
+.tasks-area { flex:1; display:flex; gap:0; overflow:hidden; min-height:0; }
+.task-col { flex:1; padding:0 8px; border-right:1px dashed #c0cce8; }
+.task-col:last-child { border-right:none; }
+.task-item { padding:8px 0; border-bottom:1px dashed #e0e4f0; }
+.task-item:last-child { border-bottom:none; }
+.task-dot-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.task-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.td1 { background:#1a3a9e; }
+.td2 { background:#3a5aae; }
+.td3 { background:#7a9ac8; }
+.td4 { background:#aabcd8; }
+.task-name { font-size:13px; font-weight:900; color:#1a3a9e; }
+.task-desc { font-size:10px; color:#666; line-height:1.6; }
+
+/* 底部时间线 */
+.bottom-tl { display:flex; align-items:center; gap:0; margin-top:10px; padding:0 2%; position:relative; }
+.btl-line { flex:1; height:2px; background:linear-gradient(to right, #1a3a9e, #8aaac8); }
+.btl-node { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+.btl-n1 { background:#1a3a9e; }
+.btl-n2 { background:#3a5aae; }
+.btl-n3 { background:#7a9ac8; }
+.btl-n4 { background:#aabcd8; }
+.btl-arrow { width:0; height:0; border-top:7px solid transparent; border-bottom:7px solid transparent; border-left:14px solid #8aaac8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- Q节点行 -->
+    <div class="q-row">
+      <div class="q-line"></div>
+      <div class="q-col">
+        <div class="q-label">第一季度工作重点</div>
+        <div class="q-circle q1c">Q1</div>
+        <div class="q-date">2024年1月-2024年3月</div>
+      </div>
+      <div class="q-col">
+        <div class="q-label">第二季度工作重点</div>
+        <div class="q-circle q2c">Q2</div>
+        <div class="q-date">2024年4月-2024年6月</div>
+      </div>
+      <div class="q-col">
+        <div class="q-label">第三季度工作重点</div>
+        <div class="q-circle q3c">Q3</div>
+        <div class="q-date">2024年7月-2024年9月</div>
+      </div>
+      <div class="q-col">
+        <div class="q-label">第四季度工作重点</div>
+        <div class="q-circle q4c">Q4</div>
+        <div class="q-date">2024年10月-2024年12月</div>
+      </div>
+    </div>
+
+    <!-- 任务列表区 -->
+    <div class="tasks-area">
+      <!-- Q1 -->
+      <div class="task-col">
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td1"></div><div class="task-name">工作重点任务01</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td1"></div><div class="task-name">工作重点任务02</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td1"></div><div class="task-name">工作重点任务03</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td1"></div><div class="task-name">工作重点任务04</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+      </div>
+      <!-- Q2 -->
+      <div class="task-col">
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td2"></div><div class="task-name">工作重点任务01</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td2"></div><div class="task-name">工作重点任务02</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td2"></div><div class="task-name">工作重点任务03</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td2"></div><div class="task-name">工作重点任务04</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+      </div>
+      <!-- Q3 -->
+      <div class="task-col">
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td3"></div><div class="task-name">工作重点任务01</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td3"></div><div class="task-name">工作重点任务02</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td3"></div><div class="task-name">工作重点任务03</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td3"></div><div class="task-name">工作重点任务04</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+      </div>
+      <!-- Q4 -->
+      <div class="task-col">
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td4"></div><div class="task-name">工作重点任务01</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td4"></div><div class="task-name">工作重点任务02</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td4"></div><div class="task-name">工作重点任务03</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+        <div class="task-item">
+          <div class="task-dot-row"><div class="task-dot td4"></div><div class="task-name">工作重点任务04</div></div>
+          <div class="task-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部时间线 -->
+    <div class="bottom-tl">
+      <div class="btl-node btl-n1"></div>
+      <div class="btl-line"></div>
+      <div class="btl-node btl-n2"></div>
+      <div class="btl-line"></div>
+      <div class="btl-node btl-n3"></div>
+      <div class="btl-line"></div>
+      <div class="btl-node btl-n4"></div>
+      <div class="btl-line"></div>
+      <div class="btl-arrow"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

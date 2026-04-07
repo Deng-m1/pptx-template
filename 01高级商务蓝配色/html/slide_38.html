@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_38</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 0 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+.page-title { font-size:28px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
+.page-desc { font-size:11px; color:#444; line-height:1.7; margin-bottom:8px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 上方节点标题行 */
+.nodes-row { display:flex; gap:6px; margin-bottom:6px; }
+.node-item { flex:1; display:flex; align-items:center; gap:8px; }
+.node-circle {
+  width:52px; height:52px; border-radius:50%; border:3px solid #1a3a9e; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; font-weight:900; color:#1a3a9e; background:#fff;
+}
+.node-title { font-size:15px; font-weight:900; color:#1a3a9e; }
+.node-sub { font-size:9px; color:#888; letter-spacing:1px; }
+
+/* 阶梯区域 */
+.stair-area { flex:1; display:flex; align-items:flex-end; gap:6px; }
+
+/* 每列 */
+.sc { flex:1; display:flex; flex-direction:column; border-radius:4px 4px 0 0; padding:12px 14px; overflow:hidden; }
+.sc1 { background:#1a3a9e; }
+.sc2 { background:#d8e4f0; }
+.sc3 { background:#c0d0e8; }
+.sc4 { background:#e8eef8; }
+.sc5 { background:#1a3a9e; }
+
+.sc-desc { font-size:10px; line-height:1.7; }
+.sc-desc-white { color:rgba(255,255,255,0.9); }
+.sc-desc-dark { color:#444; }
+
+/* 柱状图 */
+.bar-chart { display:flex; align-items:flex-end; gap:4px; height:80px; margin-top:auto; padding-top:8px; }
+.bar { flex:1; border-radius:2px 2px 0 0; }
+
+/* 同心圆 */
+.concentric { display:flex; align-items:center; justify-content:center; margin-top:auto; padding:8px 0; }
+.cc-outer { width:88px; height:88px; border-radius:50%; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; }
+.cc-mid { width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; }
+.cc-inner { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.4); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:900; color:#fff; }
+
+/* 底部日期栏 */
+.date-row { display:flex; gap:6px; height:40px; flex-shrink:0; }
+.date-cell { flex:1; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#fff; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="page-title">项目进度流程规划</div>
+  <div class="page-desc">品牌策划 (Brand planning) 是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+
+  <div class="body">
+    <!-- 上方节点标题行 -->
+    <div class="nodes-row">
+      <div class="node-item">
+        <div class="node-circle" style="border-color:#1a3a9e;color:#1a3a9e;">01</div>
+        <div><div class="node-title" style="color:#1a3a9e;">市场调研</div><div class="node-sub">BRAND PLANNING</div></div>
+      </div>
+      <div class="node-item">
+        <div class="node-circle" style="border-color:#3a5ab8;color:#3a5ab8;">02</div>
+        <div><div class="node-title" style="color:#3a5ab8;">品牌策划</div><div class="node-sub">BRAND PLANNING</div></div>
+      </div>
+      <div class="node-item">
+        <div class="node-circle" style="border-color:#1a3a9e;color:#1a3a9e;">03</div>
+        <div><div class="node-title" style="color:#1a3a9e;">品牌设计</div><div class="node-sub">BRAND PLANNING</div></div>
+      </div>
+      <div class="node-item">
+        <div class="node-circle" style="border-color:#6a8ab8;color:#6a8ab8;">04</div>
+        <div><div class="node-title" style="color:#6a8ab8;">产品投放</div><div class="node-sub">BRAND PLANNING</div></div>
+      </div>
+      <div class="node-item">
+        <div class="node-circle" style="border-color:#9aaac8;color:#9aaac8;">05</div>
+        <div><div class="node-title" style="color:#9aaac8;">项目复盘</div><div class="node-sub">BRAND PLANNING</div></div>
+      </div>
+    </div>
+
+    <!-- 阶梯区域：从左到右高度递增 -->
+    <div class="stair-area">
+      <!-- 列1 最矮 -->
+      <div class="sc sc1" style="height:120px;">
+        <div class="sc-desc sc-desc-white">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
+      </div>
+      <!-- 列2 -->
+      <div class="sc sc2" style="height:190px;">
+        <div class="sc-desc sc-desc-dark">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
+      </div>
+      <!-- 列3 最高 -->
+      <div class="sc sc3" style="height:260px;">
+        <div class="sc-desc sc-desc-dark">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
+      </div>
+      <!-- 列4 带柱状图 -->
+      <div class="sc sc4" style="height:220px;">
+        <div class="sc-desc sc-desc-dark">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="bar-chart">
+          <div class="bar" style="height:40%;background:#c0cce8;"></div>
+          <div class="bar" style="height:60%;background:#8aaac8;"></div>
+          <div class="bar" style="height:80%;background:#6a8ab8;"></div>
+          <div class="bar" style="height:100%;background:#1a3a9e;"></div>
+          <div class="bar" style="height:70%;background:#8aaac8;"></div>
+          <div class="bar" style="height:50%;background:#c0cce8;"></div>
+          <div class="bar" style="height:90%;background:#3a5ab8;"></div>
+        </div>
+      </div>
+      <!-- 列5 带同心圆 -->
+      <div class="sc sc5" style="height:300px;">
+        <div class="sc-desc sc-desc-white">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div class="concentric">
+          <div class="cc-outer">
+            <div class="cc-mid">
+              <div class="cc-inner">2024</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:10px;font-size:10px;color:rgba(255,255,255,0.8);">
+          <span>2022</span><span>2023</span><span style="color:#fff;font-weight:700;">2024</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部日期栏 -->
+    <div class="date-row">
+      <div class="date-cell" style="background:#1a3a9e;">2024年3月</div>
+      <div class="date-cell" style="background:#3a5ab8;">2024年4月</div>
+      <div class="date-cell" style="background:#1a3a9e;">2024年5月</div>
+      <div class="date-cell" style="background:#6a8ab8;">2024年6月</div>
+      <div class="date-cell" style="background:#9aaac8;">2024年7月</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_50</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 14px 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+
+.sub-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; flex-direction:column; gap:0; overflow:hidden; }
+
+/* 行 */
+.row { display:flex; gap:6px; flex:1; overflow:hidden; }
+
+/* 行间箭头 */
+.row-arrow { height:30px; flex-shrink:0; display:flex; align-items:center; justify-content:flex-end; padding-right:0; }
+.ra-icon { width:30px; height:30px; border-radius:50%; background:#c0cce8; display:flex; align-items:center; justify-content:center; font-size:16px; color:#fff; margin-right:0; }
+
+/* 卡片 */
+.step-card {
+  flex:1; border-radius:6px; overflow:hidden; display:flex; flex-direction:column;
+}
+.card-header {
+  padding:10px 12px; display:flex; align-items:center; gap:10px; flex-shrink:0;
+}
+.ch-dark { background:#1a3a9e; }
+.ch-light { background:#7a9ac8; }
+.card-icon { width:36px; height:36px; border-radius:50%; border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.card-step { font-size:14px; font-weight:900; color:#fff; }
+.card-body { flex:1; background:#f0f3fa; padding:10px 12px; overflow:hidden; }
+.cb-text { font-size:10px; color:#555; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="sub-title">项目进度基本流程</div>
+
+  <div class="body">
+    <!-- 第一行：步骤1~5，从左到右 -->
+    <div class="row">
+      <div class="step-card">
+        <div class="card-header ch-dark">
+          <div class="card-icon">🔄</div>
+          <div class="card-step">步骤1</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-light">
+          <div class="card-icon">✅</div>
+          <div class="card-step">步骤2</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-dark">
+          <div class="card-icon">⚙</div>
+          <div class="card-step">步骤3</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-light">
+          <div class="card-icon">📋</div>
+          <div class="card-step">步骤4</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-dark">
+          <div class="card-icon">🔍</div>
+          <div class="card-step">步骤5</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+    </div>
+
+    <!-- 行间向下箭头 -->
+    <div class="row-arrow">
+      <div class="ra-icon">↓</div>
+    </div>
+
+    <!-- 第二行：步骤6~10，从右到左（步骤10在左，步骤6在右） -->
+    <div class="row">
+      <div class="step-card">
+        <div class="card-header ch-light">
+          <div class="card-icon">💎</div>
+          <div class="card-step">步骤10</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-dark">
+          <div class="card-icon">📁</div>
+          <div class="card-step">步骤9</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-light">
+          <div class="card-icon">🛡</div>
+          <div class="card-step">步骤8</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-dark">
+          <div class="card-icon">🖼</div>
+          <div class="card-step">步骤7</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+      <div class="step-card">
+        <div class="card-header ch-light">
+          <div class="card-icon">🔎</div>
+          <div class="card-step">步骤6</div>
+        </div>
+        <div class="card-body"><div class="cb-text">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

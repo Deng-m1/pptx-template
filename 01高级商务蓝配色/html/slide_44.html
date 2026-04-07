@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_44</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 0 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+
+.body { flex:1; display:flex; flex-direction:column; gap:6px; overflow:hidden; }
+
+/* 表头行 */
+.thead-row {
+  display:flex; align-items:center; background:#f0f2f8; border-radius:3px;
+  height:40px; flex-shrink:0;
+}
+.th-label { width:110px; flex-shrink:0; text-align:center; font-size:13px; font-weight:900; color:#1a3a9e; }
+.th-cell { flex:1; text-align:center; font-size:13px; font-weight:700; color:#1a3a9e; padding:0 8px; }
+.th-result { width:110px; flex-shrink:0; text-align:center; font-size:13px; font-weight:900; color:#1a3a9e; }
+
+/* 项目行 */
+.proj-row { flex:1; display:flex; align-items:stretch; gap:4px; min-height:0; }
+
+/* 左侧箭头标签 */
+.proj-label {
+  width:110px; flex-shrink:0;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; color:#fff;
+}
+.pl-a { background:#1a3a9e; }
+.pl-b { background:#4a6ab8; }
+.pl-c { background:#7a9ac8; }
+
+/* 内容卡片 */
+.proj-card {
+  flex:1; padding:12px 12px; background:#f8f9fc; border-radius:3px;
+  display:flex; flex-direction:column; gap:4px; overflow:hidden;
+}
+.card-title { font-size:14px; font-weight:900; color:#1a3a9e; }
+.card-en { font-size:11px; font-weight:700; color:#3a6aaa; margin-bottom:4px; }
+.card-desc { font-size:10px; color:#444; line-height:1.7; }
+
+/* 右侧成果标签 */
+.proj-result {
+  width:110px; flex-shrink:0;
+  clip-path:polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; color:#fff; text-align:center;
+}
+.pr-a { background:#1a3a9e; }
+.pr-b { background:#4a6ab8; }
+.pr-c { background:#7a9ac8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 表头行 -->
+    <div class="thead-row">
+      <div class="th-label">立项</div>
+      <div class="th-cell">第一阶段（2024.3-2024.6）</div>
+      <div class="th-cell">第二阶段（2024.3-2024.6）</div>
+      <div class="th-cell">第三阶段（2024.3-2024.6）</div>
+      <div class="th-result">项目复盘</div>
+    </div>
+
+    <!-- 公司项目A -->
+    <div class="proj-row">
+      <div class="proj-label pl-a">公司项目A</div>
+      <div class="proj-card">
+        <div class="card-title">品牌策划 Brand planning</div>
+        <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">品牌设计 Brand design</div>
+        <div class="card-desc">品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的规范沟通，它是一个协助企业发展的形象实体，不仅助助企业正确地把握品牌方向。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">项目执行 Project execution</div>
+        <div class="card-desc">项目执行是指正式开始为完成项目而进行的活动或努力的工作过程。由于项目产品（最终可交付成果）是在这个过程中产生的，所以该过程是项目管理应用领域中最为重要的环节。</div>
+      </div>
+      <div class="proj-result pr-a">项目成果A</div>
+    </div>
+
+    <!-- 公司项目B -->
+    <div class="proj-row">
+      <div class="proj-label pl-b">公司项目B</div>
+      <div class="proj-card">
+        <div class="card-title">品牌策划 Brand planning</div>
+        <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">品牌设计 Brand design</div>
+        <div class="card-desc">品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的规范沟通，它是一个协助企业发展的形象实体，不仅助助企业正确地把握品牌方向。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">项目执行 Project execution</div>
+        <div class="card-desc">项目执行是指正式开始为完成项目而进行的活动或努力的工作过程。由于项目产品（最终可交付成果）是在这个过程中产生的，所以该过程是项目管理应用领域中最为重要的环节。</div>
+      </div>
+      <div class="proj-result pr-b">项目成果B</div>
+    </div>
+
+    <!-- 公司项目C -->
+    <div class="proj-row">
+      <div class="proj-label pl-c">公司项目C</div>
+      <div class="proj-card">
+        <div class="card-title">品牌策划 Brand planning</div>
+        <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">品牌设计 Brand design</div>
+        <div class="card-desc">品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的规范沟通，它是一个协助企业发展的形象实体，不仅助助企业正确地把握品牌方向。</div>
+      </div>
+      <div class="proj-card">
+        <div class="card-title">项目执行 Project execution</div>
+        <div class="card-desc">项目执行是指正式开始为完成项目而进行的活动或努力的工作过程。由于项目产品（最终可交付成果）是在这个过程中产生的，所以该过程是项目管理应用领域中最为重要的环节。</div>
+      </div>
+      <div class="proj-result pr-c">项目成果C</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

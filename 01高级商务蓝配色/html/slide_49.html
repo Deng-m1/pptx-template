@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_49</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 14px 30px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+
+.sub-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:10px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 5列容器 */
+.cols { flex:1; display:flex; gap:4px; overflow:hidden; }
+
+/* 每列 */
+.col { flex:1; display:flex; flex-direction:column; align-items:center; overflow:hidden; }
+
+/* 表头标签 */
+.col-header {
+  width:100%; height:36px; display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; color:#fff; border-radius:3px; flex-shrink:0;
+}
+.ch1 { background:#1a3a9e; }
+.ch2 { background:#3a5ab8; }
+.ch3 { background:#6a8ac8; }
+.ch4 { background:#555; }
+.ch5 { background:#1a3a9e; }
+
+/* pin图标区域 */
+.pin-area { width:100%; height:80px; flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; position:relative; }
+
+/* 水平时间轴（通过伪元素实现，只在第一列和最后一列有特殊处理） */
+.pin-area::before {
+  content:''; position:absolute; top:50%; left:0; right:0; height:2px; background:#d0d8e8; z-index:0;
+}
+
+/* pin图标 */
+.pin-icon {
+  width:36px; height:44px; position:relative; z-index:1; flex-shrink:0;
+  display:flex; flex-direction:column; align-items:center;
+}
+.pin-circle {
+  width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:900; color:#fff;
+}
+.pc1 { background:#1a3a9e; }
+.pc2 { background:#3a5ab8; }
+.pc3 { background:#6a8ac8; }
+.pc4 { background:#888; }
+.pc5 { background:#1a3a9e; }
+.pin-tail { width:2px; height:8px; background:inherit; }
+.pin-dot { width:8px; height:8px; border-radius:50%; background:#1a3a9e; margin-top:2px; }
+
+/* 双箭头 */
+.dbl-arrow { font-size:18px; color:#888; margin:4px 0; flex-shrink:0; }
+
+/* 文字卡片 */
+.text-card {
+  flex:1; width:100%; border:1.5px solid #d0d8e8; border-radius:4px; padding:10px 10px;
+  display:flex; flex-direction:column; gap:4px; overflow:hidden; background:#f8f9fc;
+}
+.tc-title { font-size:13px; font-weight:900; color:#1a3a9e; }
+.tc-desc { font-size:10px; color:#555; line-height:1.7; flex:1; overflow:hidden; }
+
+/* 底部小箭头标签 */
+.tag-row { width:100%; display:flex; gap:2px; flex-shrink:0; margin-top:6px; }
+.tag-arrow {
+  flex:1; height:22px; display:flex; align-items:center; justify-content:center;
+  font-size:10px; font-weight:700; color:#fff; background:#1a3a9e;
+  clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+}
+.tag-arrow:not(:first-child) {
+  clip-path:polygon(8px 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 16px 50%);
+}
+.tag-arrow.light { background:#9aaad8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+  <div class="sub-title">项目进度基本流程</div>
+
+  <div class="body">
+    <div class="cols">
+      <!-- 列1：设计策划 -->
+      <div class="col">
+        <div class="col-header ch1">设计策划</div>
+        <div class="pin-area">
+          <div class="pin-icon">
+            <div class="pin-circle pc1">1</div>
+            <div class="pin-dot"></div>
+          </div>
+        </div>
+        <div class="dbl-arrow">≫</div>
+        <div class="text-card">
+          <div class="tc-title">策划工作重点</div>
+          <div class="tc-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-arrow">逻辑</div>
+          <div class="tag-arrow">文案</div>
+          <div class="tag-arrow">校对</div>
+        </div>
+      </div>
+
+      <!-- 列2：空间设计 -->
+      <div class="col">
+        <div class="col-header ch2">空间设计</div>
+        <div class="pin-area">
+          <div class="pin-icon">
+            <div class="pin-circle pc2">2</div>
+            <div class="pin-dot"></div>
+          </div>
+        </div>
+        <div class="dbl-arrow">≫</div>
+        <div class="text-card">
+          <div class="tc-title">空间设计工作重点</div>
+          <div class="tc-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-arrow">动线</div>
+          <div class="tag-arrow">展陈</div>
+          <div class="tag-arrow light">效果图</div>
+        </div>
+      </div>
+
+      <!-- 列3：平面设计 -->
+      <div class="col">
+        <div class="col-header ch3">平面设计</div>
+        <div class="pin-area">
+          <div class="pin-icon">
+            <div class="pin-circle pc3">3</div>
+            <div class="pin-dot"></div>
+          </div>
+        </div>
+        <div class="dbl-arrow">≫</div>
+        <div class="text-card">
+          <div class="tc-title">平面设计工作重点</div>
+          <div class="tc-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-arrow">标志</div>
+          <div class="tag-arrow">色系</div>
+          <div class="tag-arrow light">排版</div>
+        </div>
+      </div>
+
+      <!-- 列4：插画设计 -->
+      <div class="col">
+        <div class="col-header ch4">插画设计</div>
+        <div class="pin-area">
+          <div class="pin-icon">
+            <div class="pin-circle pc4">4</div>
+            <div class="pin-dot" style="background:#888;"></div>
+          </div>
+        </div>
+        <div class="dbl-arrow">≫</div>
+        <div class="text-card">
+          <div class="tc-title">插画设计工作重点</div>
+          <div class="tc-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-arrow" style="background:#888;">IP形象</div>
+          <div class="tag-arrow" style="background:#888;">人文</div>
+          <div class="tag-arrow" style="background:#888;">元素</div>
+        </div>
+      </div>
+
+      <!-- 列5：制作安装 -->
+      <div class="col">
+        <div class="col-header ch5">制作安装</div>
+        <div class="pin-area">
+          <div class="pin-icon">
+            <div class="pin-circle pc5">5</div>
+            <div class="pin-dot"></div>
+          </div>
+        </div>
+        <div class="dbl-arrow">≫</div>
+        <div class="text-card">
+          <div class="tc-title">安装工作重点</div>
+          <div class="tc-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-arrow">人工</div>
+          <div class="tag-arrow">材质</div>
+          <div class="tag-arrow light">时间</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

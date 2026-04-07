@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_43</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 0 0 0;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; padding:0 30px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+
+/* 顶部时间轴区 */
+.timeline-area { display:flex; flex-direction:column; flex-shrink:0; }
+
+/* 阶段名行 */
+.stage-names { display:flex; padding-left:100px; }
+.sn-cell { flex:1; text-align:center; font-size:12px; font-weight:700; color:#1a3a9e; padding:6px 0 2px; }
+
+/* 时间轴线+节点 */
+.tl-row { display:flex; align-items:center; padding-left:100px; position:relative; height:44px; }
+.tl-line {
+  position:absolute; left:100px; right:0; top:50%; height:2px;
+  background:linear-gradient(to right, #1a3a9e, #7a9ac8);
+}
+.tl-nodes { display:flex; width:100%; position:relative; z-index:1; }
+.tl-node { flex:1; display:flex; justify-content:center; }
+.tl-circle {
+  width:36px; height:36px; border-radius:50%; background:#fff; border:2.5px solid;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900;
+}
+.nc1 { border-color:#1a3a9e; color:#1a3a9e; }
+.nc2 { border-color:#2a4aae; color:#2a4aae; }
+.nc3 { border-color:#4a6ab8; color:#4a6ab8; }
+.nc4 { border-color:#6a8ac8; color:#6a8ac8; }
+.nc5 { border-color:#9aaad8; color:#9aaad8; }
+
+/* 内容卡片行 */
+.content-row { display:flex; padding-left:100px; margin-bottom:0; }
+.content-card {
+  flex:1; padding:10px 10px; font-size:10px; color:#fff; line-height:1.6; min-height:80px;
+}
+.cc-title { font-size:13px; font-weight:900; margin-bottom:4px; }
+.card-c1 { background:#1a3a9e; }
+.card-c2 { background:#4a6ab8; }
+.card-c3 { background:#7a9ac8; }
+.card-c4 { background:#555; }
+.card-c5 { background:#1a3a9e; }
+
+/* 任务列表区 */
+.tasks-section { flex:1; display:flex; overflow:hidden; }
+.row-label {
+  width:100px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:900; color:#1a3a9e; border-right:1px solid #e0e4f0;
+  border-top:1px solid #e0e4f0;
+}
+.tasks-grid { flex:1; display:flex; flex-direction:column; }
+.task-row { flex:1; display:flex; border-top:1px solid #e0e4f0; }
+.task-col { flex:1; padding:8px 10px; border-right:1px dashed #c0cce8; font-size:10px; color:#333; line-height:1.8; }
+.task-col:last-child { border-right:none; }
+.task-item { display:flex; gap:4px; }
+.task-letter { font-weight:700; color:#1a3a9e; }
+
+.tasks-wrapper { flex:1; display:flex; overflow:hidden; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 顶部时间轴 -->
+    <div class="timeline-area">
+      <div class="stage-names">
+        <div class="sn-cell">项目立项</div>
+        <div class="sn-cell">成本预算</div>
+        <div class="sn-cell">策划设计</div>
+        <div class="sn-cell">落地安装</div>
+        <div class="sn-cell">项目验收</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-line"></div>
+        <div class="tl-nodes">
+          <div class="tl-node"><div class="tl-circle nc1">1</div></div>
+          <div class="tl-node"><div class="tl-circle nc2">2</div></div>
+          <div class="tl-node"><div class="tl-circle nc3">3</div></div>
+          <div class="tl-node"><div class="tl-circle nc4">4</div></div>
+          <div class="tl-node"><div class="tl-circle nc5">5</div></div>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="content-card card-c1">
+          <div class="cc-title"></div>
+          指成立项目，执行实施。特别是大中型创业项目或行政收费项目。
+        </div>
+        <div class="content-card card-c2">
+          成本预算是把估算的总成本分配到各个工作细目，以建立预算、标准和检测系统的过程。
+        </div>
+        <div class="content-card card-c3">
+          平面设计，也称为视觉传达设计，是以"视觉"作为沟通和表现的方式。
+        </div>
+        <div class="content-card card-c4">
+          安装，汉语词汇，就是按照一定的方法、程序、规格把机械或器材固定在一定的位置。
+        </div>
+        <div class="content-card card-c5">
+          验收，按照一定标准进行检验而后收下或认可逐项验收。
+        </div>
+      </div>
+    </div>
+
+    <!-- 任务列表 -->
+    <div class="tasks-section">
+      <div class="tasks-wrapper">
+        <!-- 左侧标签列 -->
+        <div style="display:flex;flex-direction:column;width:100px;flex-shrink:0;">
+          <div class="row-label" style="flex:1;">公司项目A</div>
+          <div class="row-label" style="flex:1;">公司项目B</div>
+        </div>
+        <!-- 任务内容 -->
+        <div class="tasks-grid">
+          <!-- 项目A行 -->
+          <div class="task-row">
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+          </div>
+          <!-- 项目B行 -->
+          <div class="task-row">
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+            <div class="task-col">
+              <div class="task-item"><span class="task-letter">A.</span>重点工作01</div>
+              <div class="task-item"><span class="task-letter">B.</span>重点工作02</div>
+              <div class="task-item"><span class="task-letter">C.</span>重点工作03</div>
+              <div class="task-item"><span class="task-letter">D.</span>重点工作04</div>
+              <div class="task-item"><span class="task-letter">E.</span>重点工作05</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

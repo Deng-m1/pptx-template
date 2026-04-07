@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_37</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px;
+  display:flex; flex-direction:column; }
+
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; position:relative; }
+
+/* 上方卡片区（奇数步骤：1,3,5）*/
+.top-cards { height:220px; display:flex; align-items:flex-end; gap:0; }
+.card-slot { flex:1; display:flex; justify-content:center; }
+.card-slot.empty { }
+.popup-card {
+  width:90%; background:#fff; border:1.5px solid #c0cce8; border-radius:6px;
+  padding:12px 14px; position:relative;
+}
+.card-title-bar { background:#1a3a9e; color:#fff; font-size:13px; font-weight:900; padding:5px 10px; border-radius:3px; margin-bottom:8px; display:inline-block; }
+.card-title-bar-light { background:#8aaac8; }
+.card-desc { font-size:10px; color:#444; line-height:1.6; margin-bottom:8px; }
+.card-tags { display:flex; gap:6px; flex-wrap:wrap; }
+.card-tag { background:#e8eef8; color:#1a3a9e; font-size:10px; padding:3px 8px; border-radius:3px; }
+.card-tag-light { background:#f0f4f8; color:#6a8ab8; }
+/* 向下箭头 */
+.card-arrow-down {
+  position:absolute; bottom:-18px; left:50%; transform:translateX(-50%);
+  width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent;
+  border-top:18px solid #1a3a9e;
+}
+.card-arrow-down-light { border-top-color:#8aaac8; }
+
+/* 中间5步箭头流程 */
+.flow-row { height:80px; display:flex; align-items:center; gap:0; }
+.flow-step {
+  flex:1; height:72px; position:relative;
+  clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+  display:flex; align-items:center; padding:0 12px 0 16px; gap:10px;
+}
+.flow-step:first-child {
+  clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+}
+.fs1 { background:#1a3a9e; }
+.fs2 { background:#2a4aae; }
+.fs3 { background:#3a5ab8; }
+.fs4 { background:#6a8ab8; }
+.fs5 { background:#9aaac8; }
+.flow-num { font-size:24px; font-weight:900; color:rgba(255,255,255,0.5); flex-shrink:0; }
+.flow-content { display:flex; flex-direction:column; }
+.flow-title { font-size:15px; font-weight:900; color:#fff; }
+.flow-sub { font-size:9px; color:rgba(255,255,255,0.8); letter-spacing:1px; }
+.flow-date { font-size:10px; color:rgba(255,255,255,0.9); margin-top:2px; }
+
+/* 下方卡片区（偶数步骤：2,4）*/
+.bottom-cards { height:220px; display:flex; align-items:flex-start; gap:0; margin-top:18px; }
+/* 向上箭头 */
+.card-arrow-up {
+  position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+  width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent;
+  border-bottom:18px solid #2a4aae;
+}
+.card-arrow-up-light { border-bottom-color:#6a8ab8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-流程图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="body">
+    <!-- 上方卡片（步骤1,3,5） -->
+    <div class="top-cards">
+      <div class="card-slot">
+        <div class="popup-card">
+          <div class="card-arrow-down"></div>
+          <div class="card-title-bar">品牌调研 Brand planning</div>
+          <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+          <div class="card-tags">
+            <div class="card-tag">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-slot empty"></div>
+      <div class="card-slot">
+        <div class="popup-card">
+          <div class="card-arrow-down" style="border-top-color:#3a5ab8;"></div>
+          <div class="card-title-bar" style="background:#3a5ab8;">品牌设计 Brand planning</div>
+          <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+          <div class="card-tags">
+            <div class="card-tag" style="background:#e0eaf8;color:#3a5ab8;">平面设计</div>
+            <div class="card-tag-light">空间设计</div>
+            <div class="card-tag-light">产品设计</div>
+            <div class="card-tag-light">交互设计</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-slot empty"></div>
+      <div class="card-slot">
+        <div class="popup-card">
+          <div class="card-arrow-down card-arrow-down-light"></div>
+          <div class="card-title-bar card-title-bar-light">用户反馈 Brand planning</div>
+          <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+          <div class="card-tags">
+            <div class="card-tag-light">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+            <div class="card-tag-light">市场名词</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间5步流程 -->
+    <div class="flow-row">
+      <div class="flow-step fs1">
+        <div class="flow-num">01</div>
+        <div class="flow-content">
+          <div class="flow-title">品牌调研</div>
+          <div class="flow-sub">BRAND PLANNING</div>
+          <div class="flow-date">2024.3-2024.4</div>
+        </div>
+      </div>
+      <div class="flow-step fs2">
+        <div class="flow-num">02</div>
+        <div class="flow-content">
+          <div class="flow-title">品牌策划</div>
+          <div class="flow-sub">BRAND PLANNING</div>
+          <div class="flow-date">2024.3-2024.4</div>
+        </div>
+      </div>
+      <div class="flow-step fs3">
+        <div class="flow-num">03</div>
+        <div class="flow-content">
+          <div class="flow-title">品牌设计</div>
+          <div class="flow-sub">BRAND PLANNING</div>
+          <div class="flow-date">2024.3-2024.4</div>
+        </div>
+      </div>
+      <div class="flow-step fs4">
+        <div class="flow-num">04</div>
+        <div class="flow-content">
+          <div class="flow-title">市场投放</div>
+          <div class="flow-sub">BRAND PLANNING</div>
+          <div class="flow-date">2024.3-2024.4</div>
+        </div>
+      </div>
+      <div class="flow-step fs5">
+        <div class="flow-num">05</div>
+        <div class="flow-content">
+          <div class="flow-title">用户反馈</div>
+          <div class="flow-sub">BRAND PLANNING</div>
+          <div class="flow-date">2024.3-2024.4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 下方卡片（步骤2,4） -->
+    <div class="bottom-cards">
+      <div class="card-slot empty"></div>
+      <div class="card-slot">
+        <div class="popup-card" style="position:relative;">
+          <div class="card-arrow-up"></div>
+          <div class="card-title-bar" style="background:#2a4aae;">品牌调研 Brand planning</div>
+          <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+          <div class="card-tags">
+            <div class="card-tag" style="background:#e0eaf8;color:#2a4aae;">市场定位</div>
+            <div class="card-tag-light">设计风格</div>
+            <div class="card-tag-light">文案风格</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-slot empty"></div>
+      <div class="card-slot">
+        <div class="popup-card" style="position:relative;">
+          <div class="card-arrow-up card-arrow-up-light"></div>
+          <div class="card-title-bar" style="background:#6a8ab8;">市场投放 Brand planning</div>
+          <div class="card-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+          <div class="card-tags">
+            <div class="card-tag" style="background:#1a3a9e;color:#fff;">第一阶段</div>
+            <div class="card-tag-light">第二阶段</div>
+            <div class="card-tag-light">第三阶段</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-slot empty"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
