@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:10px 30px 0 30px;overflow:hidden;}
+.intro{margin-bottom:8px;}
+.intro-title{font-size:22px;font-weight:900;color:#1a3a7a;}
+.intro-text{font-size:11px;color:#555;line-height:1.5;max-width:600px;}
+/* 卡片区 */
+.cards{flex:1;display:flex;flex-direction:row;align-items:flex-end;gap:12px;padding-bottom:0;}
+.card{flex:1;display:flex;flex-direction:column;border-radius:4px 4px 0 0;overflow:hidden;position:relative;}
+.card-pct{font-size:13px;font-weight:700;color:#1a3a7a;text-align:right;padding:0 0 4px 0;}
+.card-pct span{font-size:28px;font-weight:900;}
+.card-inner{flex:1;padding:14px 14px 10px 14px;display:flex;flex-direction:column;gap:8px;}
+.card-tag{background:#1a3a7a;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:3px;display:inline-block;}
+.card-text{font-size:10.5px;color:#fff;line-height:1.5;}
+.card-icon{margin-top:auto;text-align:center;font-size:28px;color:rgba(255,255,255,0.7);}
+/* 底部时间轴 */
+.timeline{height:32px;display:flex;align-items:center;flex-shrink:0;margin:0 -30px;padding:0 30px;background:#fff;}
+.tl-label{font-size:12px;color:#333;font-weight:600;}
+.tl-line{flex:1;height:3px;background:#1a3a7a;margin:0 10px;position:relative;}
+.tl-arrow{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #1a3a7a;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作成果展示 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="intro">
+      <div class="intro-title">2024年工作成果展示</div>
+      <div class="intro-text">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除此外更重要的是定性的工作成果的衡量。</div>
+    </div>
+    <div class="cards">
+      <!-- 卡片1 60% 最矮 -->
+      <div class="card" style="height:68%;">
+        <div class="card-pct">项目进度<span>60%</span></div>
+        <div class="card-inner" style="background:#c8d8f0;">
+          <div class="card-tag" style="background:#1a3a7a;">项目名称</div>
+          <div class="card-text" style="color:#333;">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+          <div class="card-tag" style="background:#1a3a7a;">工作成果</div>
+          <div class="card-text" style="color:#333;">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+      </div>
+      <!-- 卡片2 60% 同高 -->
+      <div class="card" style="height:68%;">
+        <div class="card-pct">项目进度<span>60%</span></div>
+        <div class="card-inner" style="background:#c8d8f0;">
+          <div class="card-tag" style="background:#1a3a7a;">项目名称</div>
+          <div class="card-text" style="color:#333;">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+          <div class="card-tag" style="background:#1a3a7a;">工作成果</div>
+          <div class="card-text" style="color:#333;">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+      </div>
+      <!-- 卡片3 80% 中等高 -->
+      <div class="card" style="height:84%;">
+        <div class="card-pct">项目进度<span>80%</span></div>
+        <div class="card-inner" style="background:#3a6bc0;">
+          <div class="card-tag" style="background:#1a3a7a;">项目名称</div>
+          <div class="card-text">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+          <div class="card-tag" style="background:#1a3a7a;">工作成果</div>
+          <div class="card-text">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+          <div class="card-icon">🎯</div>
+        </div>
+      </div>
+      <!-- 卡片4 100% 最高 -->
+      <div class="card" style="height:100%;">
+        <div class="card-pct">项目进度<span>100%</span></div>
+        <div class="card-inner" style="background:#1a3a7a;">
+          <div class="card-tag" style="background:#2563c0;">项目名称</div>
+          <div class="card-text">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+          <div class="card-tag" style="background:#2563c0;">工作成果</div>
+          <div class="card-text">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。这里请放入您需要替换的文字内容。</div>
+          <div class="card-icon">🎯</div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部时间轴 -->
+    <div class="timeline">
+      <div class="tl-label">2024.3</div>
+      <div class="tl-line"></div>
+      <div class="tl-arrow"></div>
+      <div class="tl-label" style="margin-left:8px;">2024.6</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

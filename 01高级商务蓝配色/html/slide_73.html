@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;position:relative;}
+/* 顶部标题区 */
+.header{position:absolute;top:18px;left:30px;right:30px;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin-top:6px;}
+/* 页面标题 */
+.page-title{position:absolute;top:90px;left:30px;font-size:24px;font-weight:900;color:#1a3a7a;}
+.page-desc{position:absolute;top:124px;left:30px;width:480px;font-size:10.5px;color:#555;line-height:1.7;}
+/* 右上同心圆 */
+.concentric{position:absolute;top:70px;right:30px;width:200px;height:200px;}
+.concentric svg{width:100%;height:100%;}
+/* 左侧标签 */
+.left-tags{position:absolute;top:340px;left:30px;display:flex;flex-direction:column;gap:8px;}
+.tag-outline{border:1.5px solid #7baee0;color:#7baee0;font-size:12px;padding:5px 14px;border-radius:2px;}
+.tag-solid{background:#1a3a7a;color:#fff;font-size:12px;padding:5px 14px;border-radius:2px;}
+/* 3D阶梯 */
+.stair-area{position:absolute;left:160px;top:180px;width:680px;height:420px;}
+.stair-area svg{width:100%;height:100%;}
+/* 右下弹出卡片 */
+.popup-card{position:absolute;right:30px;top:340px;width:280px;border:1.5px solid #1a3a7a;border-radius:4px;padding:14px;}
+.popup-title{font-size:18px;font-weight:900;color:#1a3a7a;margin-bottom:6px;}
+.popup-desc{font-size:10.5px;color:#555;line-height:1.7;}
+/* 68%卡片 */
+.big-num-card{position:absolute;right:30px;bottom:30px;width:280px;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;display:flex;flex-direction:row;align-items:center;gap:10px;}
+.big-num{font-size:44px;font-weight:900;color:#1a3a7a;line-height:1;}
+.big-num-desc{font-size:10px;color:#555;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">逻辑架构 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="page-title">品牌营销逻辑策划报告</div>
+  <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+
+  <!-- 右上同心圆 -->
+  <div class="concentric">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="95" fill="#e8edf5" stroke="#ccc" stroke-width="1"/>
+      <circle cx="100" cy="100" r="68" fill="#b8cce4" stroke="#ccc" stroke-width="1"/>
+      <circle cx="100" cy="100" r="44" fill="#1a3a7a"/>
+      <text x="100" y="96" text-anchor="middle" fill="white" font-size="13" font-weight="bold" font-family="Microsoft YaHei">¥10,810,00</text>
+      <text x="100" y="125" text-anchor="middle" fill="#1a3a7a" font-size="11" font-family="Microsoft YaHei">¥16,810,00</text>
+      <text x="100" y="155" text-anchor="middle" fill="#555" font-size="11" font-family="Microsoft YaHei">¥22,810,00</text>
+    </svg>
+  </div>
+
+  <!-- 左侧标签 -->
+  <div class="left-tags">
+    <div class="tag-outline">市场化名词</div>
+    <div class="tag-solid">市场化名词</div>
+    <div class="tag-outline">市场化名词</div>
+  </div>
+
+  <!-- 3D阶梯 SVG -->
+  <div class="stair-area">
+    <svg viewBox="0 0 680 420" preserveAspectRatio="xMidYMid meet">
+      <!-- 阶梯：4步，从左下到右上，3D透视效果 -->
+      <!-- 步骤01（最低，最深蓝） -->
+      <polygon points="0,380 160,380 160,300 80,260 0,300" fill="#1a3a7a"/>
+      <polygon points="160,380 240,340 240,260 160,300" fill="#0d2654"/>
+      <polygon points="0,300 80,260 240,260 160,300" fill="#2a5298"/>
+      <text x="80" y="360" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial">01</text>
+
+      <!-- 步骤02 -->
+      <polygon points="160,380 320,380 320,220 240,180 160,220" fill="#2a5298" transform="translate(0,0)"/>
+      <polygon points="320,380 400,340 400,180 320,220" fill="#1a3a7a"/>
+      <polygon points="160,220 240,180 400,180 320,220" fill="#4a78c4"/>
+      <text x="240" y="320" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial">02</text>
+
+      <!-- 步骤03 -->
+      <polygon points="320,380 480,380 480,140 400,100 320,140" fill="#4a78c4"/>
+      <polygon points="480,380 560,340 560,100 480,140" fill="#2a5298"/>
+      <polygon points="320,140 400,100 560,100 480,140" fill="#7baee0"/>
+      <text x="400" y="280" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial">03</text>
+
+      <!-- 步骤04 -->
+      <polygon points="480,380 640,380 640,60 560,20 480,60" fill="#7baee0"/>
+      <polygon points="640,380 680,360 680,20 640,60" fill="#4a78c4"/>
+      <polygon points="480,60 560,20 680,20 640,60" fill="#b8cce4"/>
+      <!-- 箭头顶部 -->
+      <polygon points="520,20 600,-20 680,20 600,60" fill="#b8cce4"/>
+      <text x="560" y="240" text-anchor="middle" fill="white" font-size="32" font-weight="bold" font-family="Arial">04</text>
+    </svg>
+  </div>
+
+  <!-- 右下弹出卡片 -->
+  <div class="popup-card">
+    <div class="popup-title">03-品牌策划</div>
+    <div class="popup-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+  </div>
+
+  <!-- 68%卡片 -->
+  <div class="big-num-card">
+    <div class="big-num">68%</div>
+    <div class="big-num-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+  </div>
+</div>
+</body>
+</html>

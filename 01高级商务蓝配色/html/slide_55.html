@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;position:relative;overflow:hidden;}
+/* 鱼形SVG居中 */
+.fish-svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+/* 上方3列文字 */
+.top-labels{position:absolute;top:10px;left:0;right:0;display:flex;flex-direction:row;}
+.label-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 20px;}
+.label-title{font-size:14px;font-weight:700;color:#1a3a7a;text-align:center;}
+.label-en{font-size:12px;font-weight:600;color:#2563c0;text-align:center;}
+.label-item{font-size:11px;color:#555;text-align:center;}
+/* 下方3列文字 */
+.bottom-labels{position:absolute;bottom:10px;left:0;right:0;display:flex;flex-direction:row;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作汇报-鱼骨图 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 鱼形SVG -->
+    <svg class="fish-svg" width="900" height="280" viewBox="0 0 900 280">
+      <!-- 鱼身 -->
+      <ellipse cx="430" cy="140" rx="380" ry="90" fill="#b0bec5" opacity="0.85"/>
+      <!-- 鱼头（右侧圆形） -->
+      <circle cx="820" cy="140" r="65" fill="#90a4ae"/>
+      <!-- 鱼眼 -->
+      <circle cx="840" cy="120" r="10" fill="#fff"/>
+      <circle cx="843" cy="118" r="5" fill="#546e7a"/>
+      <!-- 鱼尾（左侧三角） -->
+      <polygon points="50,140 120,60 120,220" fill="#90a4ae"/>
+      <!-- 鱼刺（3对竖线） -->
+      <line x1="280" y1="60" x2="280" y2="220" stroke="#fff" stroke-width="3"/>
+      <line x1="480" y1="50" x2="480" y2="230" stroke="#fff" stroke-width="3"/>
+      <line x1="660" y1="60" x2="660" y2="220" stroke="#fff" stroke-width="3"/>
+      <!-- 主轴 -->
+      <line x1="120" y1="140" x2="755" y2="140" stroke="#fff" stroke-width="4"/>
+    </svg>
+
+    <!-- 上方3列标题+文字 -->
+    <div class="top-labels">
+      <div class="label-col">
+        <div class="label-title">品牌设计</div>
+        <div class="label-en">Brand design</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+      </div>
+      <div class="label-col">
+        <div class="label-title">品牌策划</div>
+        <div class="label-en">Brand planning</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+      </div>
+      <div class="label-col">
+        <div class="label-title">品牌推广</div>
+        <div class="label-en">Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+      </div>
+      <div class="label-col"></div><!-- 右侧鱼头占位 -->
+    </div>
+
+    <!-- 下方3列标题+文字 -->
+    <div class="bottom-labels">
+      <div class="label-col">
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-title">品牌设计</div>
+        <div class="label-en">Brand design</div>
+      </div>
+      <div class="label-col">
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-title">品牌策划</div>
+        <div class="label-en">Brand planning</div>
+      </div>
+      <div class="label-col">
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-item">品牌推广 Brand promotion</div>
+        <div class="label-title">品牌推广</div>
+        <div class="label-en">Brand promotion</div>
+      </div>
+      <div class="label-col"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

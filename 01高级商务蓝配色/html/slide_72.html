@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:8px 20px 8px 20px;overflow:hidden;}
+
+/* 顶部区域 */
+.top-row{display:flex;flex-direction:row;gap:16px;flex-shrink:0;margin-bottom:8px;align-items:flex-start;}
+.top-left{flex:1;}
+.page-title{font-size:26px;font-weight:900;color:#1a3a7a;margin-bottom:4px;}
+.page-desc{font-size:10.5px;color:#555;line-height:1.7;}
+.top-right{width:300px;flex-shrink:0;background:#1a3a7a;color:#fff;padding:12px 14px;border-radius:4px;font-size:10.5px;line-height:1.7;}
+
+/* 中间箭头区域 */
+.arrows-row{display:flex;flex-direction:row;gap:0;flex-shrink:0;margin-bottom:8px;align-items:stretch;}
+.arrows-left{flex:1;display:flex;flex-direction:row;gap:0;}
+.arrow-item{flex:1;position:relative;height:100px;}
+.arrow-item .arrow-shape{
+  position:absolute;inset:0;
+  clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%, 18px 50%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+}
+.arrow-item:first-child .arrow-shape{clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);}
+.arrow-num{font-size:22px;font-weight:900;color:rgba(255,255,255,0.5);}
+.arrow-cn{font-size:15px;font-weight:900;color:#fff;}
+.arrow-en{font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:0.5px;}
+/* 颜色渐变 */
+.arrow-item:nth-child(1) .arrow-shape{background:#1a3a7a;}
+.arrow-item:nth-child(2) .arrow-shape{background:#2a5298;}
+.arrow-item:nth-child(3) .arrow-shape{background:#4a78c4;}
+.arrow-item:nth-child(4) .arrow-shape{background:#8aaad8;}
+.arrow-item:nth-child(5) .arrow-shape{background:#b8cce4;}
+
+.arrows-right{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;}
+.big-num-card{flex:1;border:1.5px solid #dde4f0;border-radius:4px;padding:8px 14px;display:flex;flex-direction:row;align-items:center;gap:10px;}
+.big-num{font-size:38px;font-weight:900;color:#1a3a7a;line-height:1;}
+.big-num-desc{font-size:10px;color:#555;line-height:1.6;flex:1;}
+.big-num-icon{font-size:28px;color:#9aa8b8;}
+
+/* 底部区域 */
+.bottom-row{flex:1;display:flex;flex-direction:row;gap:8px;overflow:hidden;}
+.bottom-col{flex:1;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:6px;}
+.col-title{font-size:14px;font-weight:900;color:#1a3a7a;}
+.col-desc{font-size:10px;color:#555;line-height:1.7;flex:1;}
+.col-num{font-size:22px;font-weight:900;color:#fff;background:#1a3a7a;padding:6px 10px;border-radius:2px;margin-top:4px;}
+.col-num-desc{font-size:9px;color:#fff;background:#1a3a7a;padding:0 10px 6px 10px;border-radius:0 0 2px 2px;margin-top:-4px;}
+.bottom-right{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;}
+.big-num-card2{flex:1;border:1.5px solid #dde4f0;border-radius:4px;padding:8px 14px;display:flex;flex-direction:row;align-items:center;gap:10px;}
+.btns{display:flex;gap:6px;flex-wrap:wrap;}
+.btn-dark{background:#1a3a7a;color:#fff;font-size:11px;padding:5px 12px;border-radius:2px;}
+.btn-light{background:#7baee0;color:#fff;font-size:11px;padding:5px 12px;border-radius:2px;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">逻辑架构 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 顶部 -->
+    <div class="top-row">
+      <div class="top-left">
+        <div class="page-title">品牌营销逻辑策划报告</div>
+        <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      </div>
+      <div class="top-right">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    </div>
+
+    <!-- 中间箭头 -->
+    <div class="arrows-row">
+      <div class="arrows-left">
+        <div class="arrow-item">
+          <div class="arrow-shape">
+            <div class="arrow-num">01</div>
+            <div class="arrow-cn">品牌策划</div>
+            <div class="arrow-en">BRAND PLANNING</div>
+          </div>
+        </div>
+        <div class="arrow-item">
+          <div class="arrow-shape">
+            <div class="arrow-num">02</div>
+            <div class="arrow-cn">品牌策划</div>
+            <div class="arrow-en">BRAND PLANNING</div>
+          </div>
+        </div>
+        <div class="arrow-item">
+          <div class="arrow-shape">
+            <div class="arrow-num">03</div>
+            <div class="arrow-cn">品牌策划</div>
+            <div class="arrow-en">BRAND PLANNING</div>
+          </div>
+        </div>
+        <div class="arrow-item">
+          <div class="arrow-shape">
+            <div class="arrow-num">04</div>
+            <div class="arrow-cn">品牌策划</div>
+            <div class="arrow-en">BRAND PLANNING</div>
+          </div>
+        </div>
+        <div class="arrow-item">
+          <div class="arrow-shape">
+            <div class="arrow-num">05</div>
+            <div class="arrow-cn">品牌策划</div>
+            <div class="arrow-en">BRAND PLANNING</div>
+          </div>
+        </div>
+      </div>
+      <div class="arrows-right">
+        <div class="big-num-card">
+          <div class="big-num">78%</div>
+          <div class="big-num-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          <div class="big-num-icon">🛒</div>
+        </div>
+        <div class="big-num-card">
+          <div class="big-num">68%</div>
+          <div class="big-num-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+          <div class="big-num-icon">🛒</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="bottom-row">
+      <div class="bottom-col">
+        <div class="col-title">市场化名词 TITLE</div>
+        <div class="col-desc">品牌是给拥有者带来溢价、产生增值的一种无形的资产，他的载体是用以和其他竞争者的产品或服务相区分的名称、术语、象征。</div>
+        <div class="col-num">17,556,600</div>
+        <div class="col-num-desc">更深层次的表达是：能够做到口口相传的牌子才称得上品牌。</div>
+      </div>
+      <div class="bottom-col">
+        <div class="col-title">市场化名词 TITLE</div>
+        <div class="col-desc">品牌是给拥有者带来溢价、产生增值的一种无形的资产，他的载体是用以和其他竞争者的产品或服务相区分的名称、术语、象征。</div>
+        <div class="col-num">17,556,600</div>
+        <div class="col-num-desc">更深层次的表达是：能够做到口口相传的牌子才称得上品牌。</div>
+      </div>
+      <div class="bottom-col">
+        <div class="col-title">市场化名词 TITLE</div>
+        <div class="col-desc">品牌是给拥有者带来溢价、产生增值的一种无形的资产，他的载体是用以和其他竞争者的产品或服务相区分的名称、术语、象征。</div>
+        <div class="col-num">17,556,600</div>
+        <div class="col-num-desc">更深层次的表达是：能够做到口口相传的牌子才称得上品牌。</div>
+      </div>
+      <div class="bottom-right">
+        <div class="big-num-card2">
+          <div style="flex:1;">
+            <div style="font-size:38px;font-weight:900;color:#1a3a7a;line-height:1;">78%</div>
+            <div style="font-size:10px;color:#555;line-height:1.6;margin-top:4px;">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。</div>
+            <div class="btns" style="margin-top:8px;">
+              <div class="btn-dark">市场化名词</div>
+              <div class="btn-light">市场化名词</div>
+            </div>
+          </div>
+          <div style="font-size:32px;color:#9aa8b8;">🛒</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

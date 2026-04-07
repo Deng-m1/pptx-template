@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 10px 20px;overflow:hidden;}
+.center-title{font-size:30px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
+.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:10px;line-height:1.6;}
+
+/* 主内容区 */
+.main-row{flex:1;display:flex;flex-direction:row;gap:0;align-items:center;overflow:hidden;}
+
+/* 左侧文字 */
+.left-list{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;padding-right:10px;}
+.list-item{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+.item-header{display:flex;align-items:center;gap:8px;}
+.item-title{font-size:16px;font-weight:900;color:#1a3a7a;}
+.item-num{width:26px;height:26px;border-radius:50%;background:#1a3a7a;color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.item-desc{font-size:10.5px;color:#666;line-height:1.6;text-align:right;}
+
+/* 中间蝴蝶结图形 */
+.butterfly{flex:1;position:relative;height:100%;display:flex;align-items:center;justify-content:center;}
+.butterfly svg{width:100%;height:300px;}
+
+/* 右侧文字 */
+.right-list{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;padding-left:10px;}
+.right-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+.right-header{display:flex;align-items:center;gap:8px;}
+.right-title{font-size:16px;font-weight:900;color:#1a3a7a;}
+.right-desc{font-size:10.5px;color:#666;line-height:1.6;text-align:left;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">不足与改进 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="center-title">工作的不足与改进方案</div>
+    <div class="center-desc">工作中通过这些改进措施，我相信能够有效解决当前工作中存在的不足，提升个人和团队的综合工作效率和质量。工作中通过这些改进措施，我相信能够有效解决当前工作中存在的不足，提升个人和团队的综合工作效率和质量。</div>
+
+    <div class="main-row">
+      <!-- 左侧 -->
+      <div class="left-list">
+        <div class="list-item">
+          <div class="item-header">
+            <div class="item-title">沟通不畅</div>
+            <div class="item-num">1</div>
+          </div>
+          <div class="item-desc">在团队协作中，我的沟通效果有时不够清晰和及时，导致项目进展出现偏差。</div>
+        </div>
+        <div class="list-item">
+          <div class="item-header">
+            <div class="item-title">时间管理困难</div>
+            <div class="item-num">2</div>
+          </div>
+          <div class="item-desc">在高压工作环境下，我有时难以有效管理时间，导致一些重要任务的完成延迟。</div>
+        </div>
+        <div class="list-item">
+          <div class="item-header">
+            <div class="item-title">缺乏跨部门协作</div>
+            <div class="item-num">3</div>
+          </div>
+          <div class="item-desc">我在与其他部门的沟通和合作中，需要更多的主动性和积极性，以确保整体项目进展顺利。</div>
+        </div>
+      </div>
+
+      <!-- 中间蝴蝶结 SVG -->
+      <div class="butterfly">
+        <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet">
+          <!-- 左三角形（深蓝） -->
+          <polygon points="0,20 280,150 0,280" fill="#1a3a7a" opacity="0.85"/>
+          <!-- 右三角形（浅蓝） -->
+          <polygon points="600,20 320,150 600,280" fill="#7baee0" opacity="0.85"/>
+          <!-- 左圆 -->
+          <circle cx="130" cy="150" r="70" fill="#1a3a7a"/>
+          <text x="130" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">工作</text>
+          <text x="130" y="168" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">不足</text>
+          <!-- 右圆 -->
+          <circle cx="470" cy="150" r="70" fill="#4a7bc4"/>
+          <text x="470" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">改进</text>
+          <text x="470" y="168" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">方案</text>
+          <!-- 中间箭头 -->
+          <polygon points="270,140 330,140 330,130 360,150 330,170 330,160 270,160" fill="white"/>
+        </svg>
+      </div>
+
+      <!-- 右侧 -->
+      <div class="right-list">
+        <div class="right-item">
+          <div class="right-header">
+            <div class="item-num">1</div>
+            <div class="right-title">提升沟通技巧</div>
+          </div>
+          <div class="right-desc">参加沟通培训课程，学习如何清晰明了地传达信息，并建立定期沟通的机制，以确保团队理解一致。</div>
+        </div>
+        <div class="right-item">
+          <div class="right-header">
+            <div class="item-num">2</div>
+            <div class="right-title">优化时间管理</div>
+          </div>
+          <div class="right-desc">使用时间管理工具，设立明确的工作目标和截止日期，并定期评估进展，确保任务按时完成。</div>
+        </div>
+        <div class="right-item">
+          <div class="right-header">
+            <div class="item-num">3</div>
+            <div class="right-title">加强跨部门合作</div>
+          </div>
+          <div class="right-desc">主动寻求与其他部门的接触机会，参与跨部门项目组，并建立有效的合作关系和沟通渠道，以促进信息共享和协作。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

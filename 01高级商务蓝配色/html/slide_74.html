@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;position:relative;}
+.header{position:absolute;top:18px;left:30px;right:30px;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin-top:6px;}
+.page-title{position:absolute;top:90px;left:30px;font-size:24px;font-weight:900;color:#1a3a7a;}
+.page-desc{position:absolute;top:124px;left:30px;width:380px;font-size:10.5px;color:#555;line-height:1.7;}
+/* 标签 */
+.tags{position:absolute;top:170px;left:30px;display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;width:380px;}
+.tag-solid{background:#1a3a7a;color:#fff;font-size:11px;padding:4px 12px;border-radius:2px;}
+.tag-outline{border:1.5px solid #9aa8b8;color:#555;font-size:11px;padding:4px 12px;border-radius:2px;}
+/* 波浪SVG区域 */
+.wave-area{position:absolute;left:0;top:80px;width:900px;height:380px;}
+.wave-area svg{width:100%;height:100%;}
+/* 右侧弹出卡片 */
+.popup-card{position:absolute;right:30px;top:120px;width:300px;border:1.5px solid #1a3a7a;border-radius:4px;padding:14px;}
+.popup-title{font-size:16px;font-weight:900;color:#1a3a7a;margin-bottom:6px;}
+.popup-desc{font-size:10.5px;color:#555;line-height:1.7;}
+/* 80%卡片 */
+.big-num-area{position:absolute;right:30px;top:310px;width:300px;}
+.big-num{font-size:52px;font-weight:900;color:#1a3a7a;line-height:1;}
+.big-num-desc{font-size:10px;color:#555;line-height:1.6;}
+.big-num-en{font-size:9px;color:#888;line-height:1.6;margin-top:4px;font-style:italic;}
+/* 底部4卡片 */
+.bottom-cards{position:absolute;bottom:20px;left:30px;right:30px;display:flex;flex-direction:row;gap:10px;height:140px;}
+.bottom-card{flex:1;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;font-size:10.5px;color:#555;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">逻辑架构 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="page-title">品牌营销逻辑策划报告</div>
+  <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+  <div class="tags">
+    <div class="tag-solid">市场化名词</div>
+    <div class="tag-solid">市场化名词</div>
+    <div class="tag-solid">市场化名词</div>
+    <div class="tag-outline">市场化名词</div>
+    <div class="tag-outline">市场化名词</div>
+  </div>
+
+  <!-- 波浪路径 SVG -->
+  <div class="wave-area">
+    <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMid meet">
+      <!-- 灰色波浪（背景） -->
+      <path d="M 60,320 Q 160,200 280,280 Q 400,360 520,240 Q 640,120 760,200 Q 820,240 860,220" 
+            fill="none" stroke="#c8d8e8" stroke-width="60" stroke-linecap="round"/>
+      <!-- 蓝色波浪（前景） -->
+      <path d="M 60,300 Q 160,180 280,260 Q 400,340 520,220 Q 640,100 760,180 Q 820,220 860,200" 
+            fill="none" stroke="#4a78c4" stroke-width="50" stroke-linecap="round"/>
+      <!-- 深蓝波浪（顶部） -->
+      <path d="M 60,285 Q 160,165 280,245 Q 400,325 520,205 Q 640,85 760,165 Q 820,205 860,185" 
+            fill="none" stroke="#1a3a7a" stroke-width="30" stroke-linecap="round"/>
+
+      <!-- 节点01 -->
+      <circle cx="100" cy="295" r="36" fill="white" stroke="#1a3a7a" stroke-width="3"/>
+      <text x="100" y="300" text-anchor="middle" fill="#1a3a7a" font-size="20" font-weight="bold" font-family="Arial">01</text>
+
+      <!-- 节点02 -->
+      <circle cx="380" cy="250" r="36" fill="white" stroke="#4a78c4" stroke-width="3"/>
+      <text x="380" y="255" text-anchor="middle" fill="#4a78c4" font-size="20" font-weight="bold" font-family="Arial">02</text>
+
+      <!-- 节点03（高亮，深蓝） -->
+      <circle cx="660" cy="160" r="44" fill="#1a3a7a"/>
+      <text x="660" y="165" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Arial">03</text>
+      <!-- 连线到右侧卡片 -->
+      <line x1="700" y1="145" x2="860" y2="80" stroke="#1a3a7a" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </svg>
+  </div>
+
+  <!-- 右侧弹出卡片 -->
+  <div class="popup-card">
+    <div class="popup-title">03 – 品牌策划推广</div>
+    <div class="popup-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。</div>
+  </div>
+
+  <!-- 80%大数字 -->
+  <div class="big-num-area">
+    <div class="big-num">80%</div>
+    <div class="big-num-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    <div class="big-num-en">Brand planning is to make the corporate image and product brand form a personalized.</div>
+  </div>
+
+  <!-- 底部4卡片 -->
+  <div class="bottom-cards">
+    <div class="bottom-card">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    <div class="bottom-card">
+      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">01 – 品牌策划推广</div>
+      品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
+    </div>
+    <div class="bottom-card">
+      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">02 – 品牌策划推广</div>
+      品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
+    </div>
+    <div class="bottom-card" style="background:#e8edf5;">
+      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">03 – 品牌策划推广</div>
+      品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
+    </div>
+  </div>
+</div>
+</body>
+</html>

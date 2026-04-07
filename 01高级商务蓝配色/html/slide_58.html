@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 0 20px;overflow:hidden;}
+.center-title{text-align:center;font-size:20px;font-weight:900;color:#1a3a7a;margin-bottom:10px;flex-shrink:0;}
+/* 5列卡片 */
+.cards{flex:1;display:flex;flex-direction:row;gap:10px;overflow:hidden;}
+.card{flex:1;display:flex;flex-direction:column;border:1px solid #e0e8f0;border-radius:4px;overflow:hidden;}
+.card-icon-row{display:flex;justify-content:center;align-items:center;padding:12px 0 8px 0;}
+.card-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;}
+.card-title{font-size:13px;font-weight:700;text-align:center;padding:0 8px 6px 8px;}
+.card-tag{margin:0 10px 6px 10px;padding:3px 8px;font-size:11px;font-weight:700;color:#fff;border-radius:2px;text-align:center;}
+.card-list{flex:1;padding:0 10px;display:flex;flex-direction:column;gap:3px;}
+.card-list-item{font-size:10px;color:#555;display:flex;align-items:center;gap:4px;}
+.card-list-item::before{content:'•';color:#1a3a7a;}
+.card-pct{text-align:center;font-size:18px;font-weight:900;padding:6px 0 8px 0;}
+/* 底部时间轴 */
+.timeline{height:50px;display:flex;flex-direction:column;flex-shrink:0;margin:0 -20px;padding:0 20px;}
+.tl-nodes{display:flex;flex-direction:row;align-items:center;gap:0;height:28px;}
+.tl-node{flex:1;display:flex;align-items:center;justify-content:center;}
+.tl-dot{width:16px;height:16px;border-radius:50%;}
+.tl-line-seg{flex:1;height:3px;background:#ddd;}
+.tl-dates{display:flex;flex-direction:row;justify-content:space-between;font-size:11px;color:#333;padding:0 10px;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作成果展示 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="center-title">2024上半年工作成果展示</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon-row"><div class="card-icon" style="background:#1a3a7a;">★</div></div>
+        <div class="card-title" style="color:#1a3a7a;">完成领导安排的工作</div>
+        <div class="card-tag" style="background:#1a3a7a;">成果概述</div>
+        <div class="card-list">
+          <div class="card-list-item">完成领导安排的工作内容</div>
+          <div class="card-list-item">完成领导安排的工作内容</div>
+          <div class="card-list-item">完成领导安排的工作内容</div>
+        </div>
+        <div class="card-pct" style="color:#1a3a7a;">60%</div>
+      </div>
+      <div class="card">
+        <div class="card-icon-row"><div class="card-icon" style="background:#2d5fa8;">★</div></div>
+        <div class="card-title" style="color:#2d5fa8;">活动方案的策划内容</div>
+        <div class="card-tag" style="background:#2d5fa8;">成果概述</div>
+        <div class="card-list">
+          <div class="card-list-item">活动方案的策划内容</div>
+          <div class="card-list-item">活动方案的策划内容</div>
+          <div class="card-list-item">活动方案的策划内容</div>
+        </div>
+        <div class="card-pct" style="color:#2d5fa8;">70%</div>
+      </div>
+      <div class="card">
+        <div class="card-icon-row"><div class="card-icon" style="background:#5b8dd9;">★</div></div>
+        <div class="card-title" style="color:#5b8dd9;">图文美化的设计工作</div>
+        <div class="card-tag" style="background:#5b8dd9;">成果概述</div>
+        <div class="card-list">
+          <div class="card-list-item">图文美化的设计工作</div>
+          <div class="card-list-item">图文美化的设计工作</div>
+          <div class="card-list-item">图文美化的设计工作</div>
+        </div>
+        <div class="card-pct" style="color:#5b8dd9;">80%</div>
+      </div>
+      <div class="card">
+        <div class="card-icon-row"><div class="card-icon" style="background:#7baee0;">★</div></div>
+        <div class="card-title" style="color:#7baee0;">落地安装的现场监督</div>
+        <div class="card-tag" style="background:#7baee0;">成果概述</div>
+        <div class="card-list">
+          <div class="card-list-item">落地安装的现场监督</div>
+          <div class="card-list-item">落地安装的现场监督</div>
+          <div class="card-list-item">落地安装的现场监督</div>
+        </div>
+        <div class="card-pct" style="color:#7baee0;">90%</div>
+      </div>
+      <div class="card">
+        <div class="card-icon-row"><div class="card-icon" style="background:#a8c4e8;color:#333;">★</div></div>
+        <div class="card-title" style="color:#a8c4e8;">活动完成的收尾内容</div>
+        <div class="card-tag" style="background:#a8c4e8;color:#333;">成果概述</div>
+        <div class="card-list">
+          <div class="card-list-item">活动完成的收尾内容</div>
+          <div class="card-list-item">活动完成的收尾内容</div>
+          <div class="card-list-item">活动完成的收尾内容</div>
+        </div>
+        <div class="card-pct" style="color:#a8c4e8;">100%</div>
+      </div>
+    </div>
+    <!-- 底部时间轴 -->
+    <div class="timeline">
+      <div class="tl-nodes">
+        <div class="tl-dot" style="background:#1a3a7a;"></div>
+        <div class="tl-line-seg"></div>
+        <div class="tl-dot" style="background:#2d5fa8;"></div>
+        <div class="tl-line-seg"></div>
+        <div class="tl-dot" style="background:#5b8dd9;"></div>
+        <div class="tl-line-seg"></div>
+        <div class="tl-dot" style="background:#7baee0;"></div>
+        <div class="tl-line-seg"></div>
+        <div class="tl-dot" style="background:#a8c4e8;"></div>
+      </div>
+      <div class="tl-dates">
+        <span>2024.1</span><span>2024.2</span><span>2024.3</span><span>2024.4</span><span>2024.6</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

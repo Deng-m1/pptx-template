@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:8px 20px 0 20px;overflow:hidden;}
+.main-row{flex:1;display:flex;flex-direction:row;gap:12px;overflow:hidden;min-height:0;}
+.left-cards{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;}
+.side-card{flex:1;border:1.5px dashed #b0bec5;border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;}
+.side-card-header{display:flex;align-items:center;justify-content:space-between;}
+.side-card-tag{background:#1a3a7a;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:2px;}
+.side-card-icon{font-size:20px;color:#1a3a7a;}
+.side-card-text{font-size:10.5px;color:#555;line-height:1.5;}
+.center{flex:1;display:flex;flex-direction:column;align-items:center;min-height:0;}
+.pentagon{width:220px;height:80px;background:#1a3a7a;clip-path:polygon(5% 0%,95% 0%,100% 100%,0% 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pentagon-text{color:#fff;font-size:16px;font-weight:900;text-align:center;line-height:1.4;}
+.checklist{flex:1;width:100%;display:flex;flex-direction:column;gap:0;min-height:0;}
+.check-item{flex:1;display:flex;align-items:center;gap:12px;padding:0 14px;}
+.check-item:nth-child(odd){background:#1a3a7a;}
+.check-item:nth-child(even){background:#dce8f5;}
+.check-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.check-item:nth-child(odd) .check-icon{background:#fff;color:#1a3a7a;}
+.check-item:nth-child(even) .check-icon{background:#1a3a7a;color:#fff;}
+.check-text{font-size:14px;font-weight:700;}
+.check-item:nth-child(odd) .check-text{color:#fff;}
+.check-item:nth-child(even) .check-text{color:#1a3a7a;}
+.right-cards{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;}
+.timeline{height:32px;display:flex;align-items:center;flex-shrink:0;margin:4px 0 0 0;}
+.tl-label{font-size:12px;color:#333;font-weight:600;}
+.tl-line{flex:1;height:3px;background:#1a3a7a;margin:0 10px;}
+.tl-arrow{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #1a3a7a;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作成果展示 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="main-row">
+      <div class="left-cards">
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">主要业绩</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">成果展示</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">主要业绩</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+      </div>
+      <div class="center">
+        <div class="pentagon"><div class="pentagon-text">2024上半年<br>工作成果展示</div></div>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">完成领导安排的工作</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">活动方案的策划内容</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">图文美化的设计工作</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">落地安装的现场监督</div></div>
+          <div class="check-item"><div class="check-icon">✓</div><div class="check-text">活动完成的收尾内容</div></div>
+        </div>
+      </div>
+      <div class="right-cards">
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">成果展示</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">主要业绩</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+        <div class="side-card">
+          <div class="side-card-header"><div class="side-card-tag">成果展示</div><div class="side-card-icon">🏆</div></div>
+          <div class="side-card-text">这里请放入您需要替换的文字内容，这里请放入。这里请放入您需要替换的文字内容，这里请放入。</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-label">2024.3</div>
+      <div class="tl-line"></div>
+      <div class="tl-arrow"></div>
+      <div class="tl-label" style="margin-left:8px;">2024.6</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

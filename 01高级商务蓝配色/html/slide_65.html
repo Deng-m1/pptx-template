@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;position:relative;overflow:hidden;}
+
+/* 半圆（下半部分） */
+.semicircle{
+  position:absolute;
+  width:700px;height:350px;
+  border-radius:350px 350px 0 0;
+  background:linear-gradient(180deg,#4a7bc4 0%,#1a3a7a 100%);
+  bottom:0;left:50%;transform:translateX(-50%);
+}
+.sc-center{
+  position:absolute;
+  bottom:60px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.sc-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;}
+.sc-title{font-size:22px;font-weight:900;color:#fff;white-space:nowrap;}
+.sc-desc{font-size:11px;color:rgba(255,255,255,0.85);text-align:center;max-width:260px;line-height:1.5;}
+
+/* 5个节点（沿半圆边缘） */
+.node{
+  position:absolute;
+  width:48px;height:48px;border-radius:50%;
+  background:#1a3a7a;border:3px solid #7baee0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#fff;
+}
+
+/* 浮动卡片 */
+.float-card{
+  position:absolute;
+  background:#fff;border:1px solid #dce8f5;
+  border-radius:4px;padding:12px 14px;
+  width:260px;
+}
+.fc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.fc-title{font-size:14px;font-weight:900;color:#1a3a7a;}
+.fc-check{width:22px;height:22px;border-radius:50%;background:#1a3a7a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;}
+.fc-divider{height:1px;background:#e0e8f0;margin-bottom:6px;}
+.fc-desc{font-size:10.5px;color:#555;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作计划 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 半圆 -->
+    <div class="semicircle">
+      <div class="sc-center">
+        <div class="sc-icon">🏆</div>
+        <div class="sc-title">下半年工作计划</div>
+        <div class="sc-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量销售员的销售额及交易价格水平等。</div>
+      </div>
+    </div>
+
+    <!-- 5个节点（沿半圆弧边缘，从左到右：01在左下，02左中，03顶部，04右中，05右下） -->
+    <div class="node" style="left:calc(50% - 350px + 20px);bottom:20px;">01</div>
+    <div class="node" style="left:calc(50% - 350px + 140px);bottom:220px;">02</div>
+    <div class="node" style="left:calc(50% - 24px);bottom:330px;">03</div>
+    <div class="node" style="right:calc(50% - 350px + 140px);bottom:220px;">04</div>
+    <div class="node" style="right:calc(50% - 350px + 20px);bottom:20px;">05</div>
+
+    <!-- 4个浮动卡片（对应02/03/04/05，01在左下角没有卡片） -->
+    <!-- 01卡片 左下 -->
+    <div class="float-card" style="left:20px;bottom:80px;">
+      <div class="fc-header">
+        <div class="fc-title">提升个人专业技能</div>
+        <div class="fc-check">✓</div>
+      </div>
+      <div class="fc-divider"></div>
+      <div class="fc-desc">参与行业内的持续教育和培训计划，掌握最新的行业发展动态和技术趋势，以提升自身在专业领域的竞争力和能力。</div>
+    </div>
+
+    <!-- 02卡片 左中 -->
+    <div class="float-card" style="left:20px;top:80px;">
+      <div class="fc-header">
+        <div class="fc-title" style="color:#4a7bc4;">实现销售目标</div>
+        <div class="fc-check" style="background:#4a7bc4;">✓</div>
+      </div>
+      <div class="fc-divider"></div>
+      <div class="fc-desc">制定具体的销售计划和策略，通过积极的市场拓展、客户开发和维护，确保达到或超过设定的销售目标，为公司创造更大的业绩贡献。</div>
+    </div>
+
+    <!-- 03卡片 顶部中间 -->
+    <div class="float-card" style="left:50%;transform:translateX(-50%);top:60px;">
+      <div class="fc-header">
+        <div class="fc-title" style="color:#1a3a7a;">改善工作效率</div>
+        <div class="fc-check">✓</div>
+      </div>
+      <div class="fc-divider"></div>
+      <div class="fc-desc">分析和优化现有的工作流程和系统，引入适当的自动化工具和技术，以提高团队整体的工作效率和执行效能，减少重复性工作和时间浪费。</div>
+    </div>
+
+    <!-- 04卡片 右中 -->
+    <div class="float-card" style="right:20px;top:80px;">
+      <div class="fc-header">
+        <div class="fc-title" style="color:#4a7bc4;">加强团队协作</div>
+        <div class="fc-check" style="background:#4a7bc4;">✓</div>
+      </div>
+      <div class="fc-divider"></div>
+      <div class="fc-desc">建立有效的跨部门沟通机制和协作流程，定期组织跨部门会议和工作坊，促进各部门之间的信息共享和资源协作，提升团队整体的协同效率和效果。</div>
+    </div>
+
+    <!-- 05卡片 右下 -->
+    <div class="float-card" style="right:20px;bottom:80px;">
+      <div class="fc-header">
+        <div class="fc-title">提升客户满意度</div>
+        <div class="fc-check">✓</div>
+      </div>
+      <div class="fc-divider"></div>
+      <div class="fc-desc">设计并实施客户关系管理策略，通过高效的客户服务和个性化的解决方案，持续提升客户满意度和忠诚度，增加客户的重复购买率和推荐率。</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

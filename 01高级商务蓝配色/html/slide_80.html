@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:14px 30px 0 30px;flex-shrink:0;}
+.main-title{font-size:30px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:14px;color:#2563c0;font-weight:600;text-align:right;margin-top:-26px;}
+.divider{height:2px;background:#1a3a7a;margin-top:4px;}
+.body{flex:1;display:flex;flex-direction:row;padding:10px 20px 10px 20px;gap:16px;}
+/* 左侧标题+饼图 */
+.left-col{width:480px;display:flex;flex-direction:column;}
+.page-title{font-size:24px;font-weight:900;color:#1a3a7a;}
+.page-desc{font-size:10px;color:#666;line-height:1.6;margin-top:4px;}
+/* 中间标签列 */
+.mid-col{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;padding-top:50px;}
+.label-row{display:flex;flex-direction:row;align-items:center;gap:8px;}
+.label-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.label-tag{padding:6px 14px;border-radius:2px;font-size:13px;font-weight:700;color:#fff;min-width:160px;}
+.label-desc{font-size:9.5px;color:#555;line-height:1.5;}
+/* 右侧 */
+.right-col{width:300px;display:flex;flex-direction:column;gap:8px;}
+.pct-big{font-size:72px;font-weight:900;color:#1a3a7a;line-height:1;text-align:right;}
+.abc-row{display:flex;flex-direction:row;gap:6px;}
+.abc-tag{background:#1a3a7a;color:#fff;font-size:11px;padding:5px 10px;border-radius:2px;display:flex;flex-direction:row;align-items:center;gap:4px;flex:1;justify-content:center;}
+.abc-letter{font-size:14px;font-weight:900;}
+.desc-card{border:1.5px solid #dde4f0;border-radius:4px;padding:10px;flex:1;}
+.desc-card-text{font-size:10px;color:#333;line-height:1.6;}
+.tag-small{background:#1a3a7a;color:#fff;font-size:9px;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:4px;}
+.tag-small-gray{background:#8a9ab0;color:#fff;font-size:9px;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:4px;}
+/* 柱状图 */
+.bar-chart{display:flex;flex-direction:row;align-items:flex-end;gap:4px;height:80px;padding-top:8px;}
+.bar{width:20px;border-radius:2px 2px 0 0;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">逻辑架构 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 左侧：标题+饼图 -->
+    <div class="left-col">
+      <div class="page-title">品牌营销逻辑策划报告</div>
+      <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      <!-- 饼图SVG -->
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+        <svg width="320" height="320" viewBox="-160 -160 320 320">
+          <!-- 5个扇形（从深蓝到浅灰渐变） -->
+          <!-- 扇形1（01，深蓝，约72°） -->
+          <path d="M0,0 L0,-130 A130,130 0 0,1 123.7,-37.5 Z" fill="#1a3a7a"/>
+          <text x="55" y="-75" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">01</text>
+          <!-- 扇形2（02，中深蓝，约72°） -->
+          <path d="M0,0 L123.7,-37.5 A130,130 0 0,1 80.3,103.5 Z" fill="#2a5a9a"/>
+          <text x="95" y="30" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">02</text>
+          <!-- 扇形3（03，中蓝，约72°） -->
+          <path d="M0,0 L80.3,103.5 A130,130 0 0,1 -80.3,103.5 Z" fill="#4a78c4"/>
+          <text x="-10" y="120" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">03</text>
+          <!-- 扇形4（04，浅蓝，约72°） -->
+          <path d="M0,0 L-80.3,103.5 A130,130 0 0,1 -123.7,-37.5 Z" fill="#8ab0d0"/>
+          <text x="-110" y="30" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">04</text>
+          <!-- 扇形5（05，浅灰，约72°） -->
+          <path d="M0,0 L-123.7,-37.5 A130,130 0 0,1 0,-130 Z" fill="#b0c8e0"/>
+          <text x="-65" y="-75" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">05</text>
+          <!-- 中心圆 -->
+          <circle cx="0" cy="0" r="60" fill="#1a3a7a"/>
+          <text x="0" y="-8" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="Microsoft YaHei">品牌决策</text>
+          <text x="0" y="8" text-anchor="middle" fill="white" font-size="9" font-family="Microsoft YaHei">BRAND</text>
+          <text x="0" y="22" text-anchor="middle" fill="white" font-size="9" font-family="Microsoft YaHei">DECISION</text>
+          <!-- 中心图标 -->
+          <text x="0" y="-20" text-anchor="middle" font-size="18" fill="white">🌐</text>
+        </svg>
+      </div>
+    </div>
+    <!-- 中间：5行标签 -->
+    <div class="mid-col">
+      <div class="label-row">
+        <div class="label-tag" style="background:#1a3a7a;">品牌策划推广 #01</div>
+        <div class="label-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+      <div class="label-row">
+        <div class="label-tag" style="background:#2a5a9a;">品牌策划推广 #02</div>
+        <div class="label-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+      <div class="label-row">
+        <div class="label-tag" style="background:#4a78c4;">品牌策划推广 #03</div>
+        <div class="label-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+      <div class="label-row">
+        <div class="label-tag" style="background:#8ab0d0;">品牌策划推广 #04</div>
+        <div class="label-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+      <div class="label-row">
+        <div class="label-tag" style="background:#b0c8e0;">品牌策划推广 #05</div>
+        <div class="label-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+    </div>
+    <!-- 右侧 -->
+    <div class="right-col">
+      <div class="pct-big">80%</div>
+      <div class="abc-row">
+        <div class="abc-tag"><span class="abc-letter">A</span> 品牌<br>策划</div>
+        <div class="abc-tag"><span class="abc-letter">B</span> 品牌<br>策划</div>
+        <div class="abc-tag"><span class="abc-letter">C</span> 品牌<br>策划</div>
+      </div>
+      <div class="desc-card">
+        <div class="desc-card-text">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+        <div style="margin-top:8px;">
+          <div><span class="tag-small">市场化名词</span> <span style="font-size:9.5px;color:#555;">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</span></div>
+          <div style="margin-top:4px;"><span class="tag-small-gray">市场化名词</span> <span style="font-size:9.5px;color:#555;">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</span></div>
+        </div>
+        <!-- 柱状图 -->
+        <div class="bar-chart">
+          <div class="bar" style="height:40px;background:#1a3a7a;"></div>
+          <div class="bar" style="height:55px;background:#8ab0d0;"></div>
+          <div class="bar" style="height:30px;background:#1a3a7a;"></div>
+          <div class="bar" style="height:65px;background:#8ab0d0;"></div>
+          <div class="bar" style="height:45px;background:#1a3a7a;"></div>
+          <div class="bar" style="height:70px;background:#8ab0d0;"></div>
+          <div class="bar" style="height:50px;background:#1a3a7a;"></div>
+          <div class="bar" style="height:60px;background:#8ab0d0;"></div>
+          <div class="bar" style="height:35px;background:#1a3a7a;"></div>
+          <div class="bar" style="height:75px;background:#8ab0d0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

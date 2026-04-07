@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:row;padding:8px 20px 8px 20px;overflow:hidden;}
+.fishbone{flex:1;display:flex;flex-direction:column;}
+.section{display:flex;flex-direction:row;flex:1;}
+.col{flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:0 10px;position:relative;}
+.node{width:54px;height:54px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;align-self:center;}
+.col-title{font-size:14px;font-weight:700;color:#1a3a7a;margin-left:8px;align-self:center;}
+.col-item{font-size:11px;color:#333;padding:3px 0;display:flex;align-items:center;gap:6px;}
+.col-item::before{content:'•';color:#1a3a7a;}
+.col-item::after{content:'→';color:#1a3a7a;margin-left:auto;}
+.connector{flex:1;display:flex;align-items:flex-end;padding-bottom:0;}
+.main-axis{height:52px;background:#1a3a7a;display:flex;align-items:center;padding:0 20px;position:relative;flex-shrink:0;}
+.axis-arrow-left{width:0;height:0;border-top:26px solid transparent;border-bottom:26px solid transparent;border-right:40px solid #1a3a7a;position:absolute;left:-40px;top:0;}
+.axis-arrow-right{width:0;height:0;border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:40px solid #1a3a7a;position:absolute;right:-40px;top:0;}
+.axis-label{font-size:15px;font-weight:700;color:#fff;margin-left:auto;}
+.right-panel{width:200px;flex-shrink:0;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 10px 15px;}
+.rp-title{font-size:14px;font-weight:700;color:#1a3a7a;}
+.rp-text{font-size:10px;color:#555;line-height:1.5;margin-top:4px;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作汇报-鱼骨图 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="fishbone">
+      <!-- 上半部分3列 -->
+      <div class="section">
+        <div class="col">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div class="node" style="background:#1a3a7a;">01</div>
+            <div class="col-title">品牌策划</div>
+          </div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <svg width="100%" height="30" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+        </div>
+        <div class="col">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div class="node" style="background:#2d5fa8;">02</div>
+            <div class="col-title">品牌设计</div>
+          </div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <svg width="100%" height="30" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+        </div>
+        <div class="col">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div class="node" style="background:#5b8dd9;">03</div>
+            <div class="col-title">品牌推广</div>
+          </div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <svg width="100%" height="30" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+        </div>
+      </div>
+
+      <!-- 主轴 -->
+      <div style="position:relative;height:52px;flex-shrink:0;margin:0 -20px;">
+        <div class="main-axis" style="margin:0 40px;">
+          <div class="axis-arrow-left"></div>
+          <div class="axis-label">品牌策划</div>
+          <div class="axis-arrow-right"></div>
+        </div>
+      </div>
+
+      <!-- 下半部分3列 -->
+      <div class="section">
+        <div class="col">
+          <svg width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div class="col-item">品牌策划 Brand planning</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:auto;">
+            <div class="node" style="background:#a8c4e8;color:#333;">04</div>
+            <div class="col-title">品牌策划</div>
+          </div>
+        </div>
+        <div class="col">
+          <svg width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div class="col-item">品牌设计 Brand design</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:auto;">
+            <div class="node" style="background:#c0cfe8;color:#333;">05</div>
+            <div class="col-title">品牌设计</div>
+          </div>
+        </div>
+        <div class="col">
+          <svg width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div class="col-item">品牌推广 Brand promotion</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:auto;">
+            <div class="node" style="background:#d8e4f0;color:#333;">06</div>
+            <div class="col-title">品牌推广</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧说明 -->
+    <div class="right-panel">
+      <div>
+        <div class="rp-title">项目重点工作</div>
+        <div class="rp-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期订出实际项目进度表。</div>
+      </div>
+      <div>
+        <div class="rp-title">项目重点工作</div>
+        <div class="rp-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期订出实际项目进度表。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

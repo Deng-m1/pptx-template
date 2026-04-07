@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 10px 20px;overflow:hidden;}
+.center-title{font-size:30px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
+.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:10px;line-height:1.6;}
+.main-row{flex:1;display:flex;flex-direction:row;align-items:center;overflow:hidden;gap:0;}
+.left-list{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:18px;padding-right:10px;}
+.list-item{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+.item-header{display:flex;align-items:center;gap:8px;}
+.item-title{font-size:16px;font-weight:900;color:#1a3a7a;}
+.item-num{width:26px;height:26px;border-radius:50%;background:#1a3a7a;color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.item-desc{font-size:10.5px;color:#666;line-height:1.6;text-align:right;}
+.venn{flex:1;display:flex;align-items:center;justify-content:center;}
+.venn svg{width:100%;height:320px;}
+.right-list{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:18px;padding-left:10px;}
+.right-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+.right-header{display:flex;align-items:center;gap:8px;}
+.right-title{font-size:16px;font-weight:900;color:#1a3a7a;}
+.right-desc{font-size:10.5px;color:#666;line-height:1.6;text-align:left;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">不足与改进 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="center-title">工作的不足与改进方案</div>
+    <div class="center-desc">工作中通过这些改进措施，我相信能够有效解决当前工作中存在的不足，提升个人和团队的综合工作效率和质量。工作中通过这些改进措施，我相信能够有效解决当前工作中存在的不足，提升个人和团队的综合工作效率和质量。</div>
+    <div class="main-row">
+      <div class="left-list">
+        <div class="list-item">
+          <div class="item-header"><div class="item-title">缺乏领导力展示机会</div><div class="item-num">1</div></div>
+          <div class="item-desc">在过去的项目中，我未能充分展示领导和决策能力，导致团队在一些关键时刻缺乏有效的方向指导。</div>
+        </div>
+        <div class="list-item">
+          <div class="item-header"><div class="item-title">对新技术的适应性不足</div><div class="item-num">2</div></div>
+          <div class="item-desc">随着行业的快速变化，我未能及时学习和掌握最新的技术和工具，影响了工作的效率和创新性。</div>
+        </div>
+        <div class="list-item">
+          <div class="item-header"><div class="item-title">反馈接受能力有待加强</div><div class="item-num">3</div></div>
+          <div class="item-desc">虽然我努力在工作中接受反馈，但有时可能过于情绪化或者未能充分利用反馈来改进工作表现。</div>
+        </div>
+      </div>
+      <div class="venn">
+        <svg viewBox="0 0 580 320" preserveAspectRatio="xMidYMid meet">
+          <!-- 虚线外圆 -->
+          <circle cx="290" cy="160" r="150" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <!-- 左圆 -->
+          <circle cx="220" cy="160" r="120" fill="#1a3a7a" opacity="0.85"/>
+          <!-- 右圆 -->
+          <circle cx="360" cy="160" r="120" fill="#7baee0" opacity="0.7"/>
+          <!-- 左圆文字 -->
+          <text x="185" y="152" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">工作</text>
+          <text x="185" y="182" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">不足</text>
+          <!-- 右圆文字 -->
+          <text x="395" y="152" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">改进</text>
+          <text x="395" y="182" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">方案</text>
+          <!-- 中间箭头 -->
+          <polygon points="260,148 310,148 310,138 340,160 310,182 310,172 260,172" fill="white"/>
+        </svg>
+      </div>
+      <div class="right-list">
+        <div class="right-item">
+          <div class="right-header"><div class="item-num">1</div><div class="right-title">积极寻求领导机会</div></div>
+          <div class="right-desc">主动参与领导小组或项目管理培训，提升决策能力和领导技巧，确保在未来项目中能够有效引导团队。</div>
+        </div>
+        <div class="right-item">
+          <div class="right-header"><div class="item-num">2</div><div class="right-title">持续学习新技术</div></div>
+          <div class="right-desc">加强自我学习意识，定期参加行业研讨会和在线课程，掌握最新的工具和技术，以提高工作效率和创新能力。</div>
+        </div>
+        <div class="right-item">
+          <div class="right-header"><div class="item-num">3</div><div class="right-title">建立有效的反馈机制</div></div>
+          <div class="right-desc">积极寻求具体和建设性的反馈，保持开放的心态和专业态度，利用反馈指导自我改进和职业发展。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

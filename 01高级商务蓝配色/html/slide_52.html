@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;position:relative;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;letter-spacing:1px;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:row;padding:10px 20px 10px 20px;gap:0;overflow:hidden;}
+.fishbone{flex:1;display:flex;flex-direction:column;position:relative;}
+.section{display:flex;flex-direction:row;flex:1;gap:0;}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 10px;}
+.col-header{width:100%;padding:8px 12px;font-size:13px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%);}
+.col-item{width:90%;font-size:11px;color:#333;padding:4px 0;display:flex;align-items:center;justify-content:space-between;}
+.col-item span{color:#1a3a7a;}
+.main-axis{height:52px;background:#1a3a7a;display:flex;align-items:center;padding:0 20px;position:relative;flex-shrink:0;}
+.axis-right-label{font-size:15px;font-weight:700;color:#fff;margin-left:auto;}
+.axis-arrow{width:0;height:0;border-top:26px solid transparent;border-bottom:26px solid transparent;border-left:36px solid #1a3a7a;position:absolute;right:-36px;top:0;}
+.right-arc{width:160px;flex-shrink:0;display:flex;flex-direction:column;justify-content:space-between;padding:10px 0 10px 10px;}
+.arc-item{font-size:11px;color:#333;display:flex;align-items:center;gap:6px;}
+.arc-item::before{content:'←';color:#1a3a7a;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作汇报-鱼骨图 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <div class="fishbone">
+      <!-- 上半部分2列 -->
+      <div class="section">
+        <div class="col">
+          <div class="col-header" style="background:#1a3a7a;">品牌策划 Brand planning</div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <svg width="100%" height="30" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+        </div>
+        <div class="col">
+          <div class="col-header" style="background:#5b8dd9;">品牌策划 Brand planning</div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <svg width="100%" height="30" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+        </div>
+      </div>
+
+      <!-- 主轴 -->
+      <div style="position:relative;height:52px;flex-shrink:0;">
+        <div class="main-axis">
+          <div class="axis-right-label">品牌策划</div>
+        </div>
+        <div class="axis-arrow"></div>
+      </div>
+
+      <!-- 下半部分2列 -->
+      <div class="section">
+        <div class="col">
+          <svg width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-header" style="background:#7baee0;margin-top:auto;">品牌策划 Brand planning</div>
+        </div>
+        <div class="col">
+          <svg width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a7a" stroke-width="2"/></svg>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-item">品牌推广 Brand promotion <span>→</span></div>
+          <div class="col-header" style="background:#a8c4e8;margin-top:auto;">品牌策划 Brand planning</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧弧形分支 -->
+    <div style="width:200px;flex-shrink:0;display:flex;flex-direction:column;justify-content:space-between;padding:20px 0 20px 20px;position:relative;">
+      <!-- 上方弧形3项 -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="arc-item">品牌推广 Brand promotion</div>
+        <div class="arc-item">品牌推广 Brand promotion</div>
+        <div class="arc-item">品牌推广 Brand promotion</div>
+      </div>
+      <!-- SVG弧线 -->
+      <svg width="40" height="200" style="position:absolute;left:0;top:20px;">
+        <path d="M 30 20 Q 5 100 30 180" fill="none" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="20" x2="40" y2="20" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="100" x2="40" y2="100" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="180" x2="40" y2="180" stroke="#1a3a7a" stroke-width="2"/>
+      </svg>
+      <!-- 下方弧形3项 -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="arc-item">品牌推广 Brand promotion</div>
+        <div class="arc-item">品牌推广 Brand promotion</div>
+        <div class="arc-item">品牌推广 Brand promotion</div>
+      </div>
+      <svg width="40" height="200" style="position:absolute;left:0;bottom:20px;">
+        <path d="M 30 20 Q 5 100 30 180" fill="none" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="20" x2="40" y2="20" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="100" x2="40" y2="100" stroke="#1a3a7a" stroke-width="2"/>
+        <line x1="30" y1="180" x2="40" y2="180" stroke="#1a3a7a" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</div>
+</body>
+</html>

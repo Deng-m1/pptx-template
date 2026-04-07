@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:8px 20px 8px 20px;overflow:hidden;gap:8px;}
+
+/* 上半行 */
+.top-row{display:flex;flex-direction:row;gap:8px;flex:1;}
+
+/* 左上大卡 */
+.top-left{flex:1;background:#1a3a7a;border-radius:4px;padding:20px 24px;display:flex;flex-direction:row;align-items:center;gap:16px;}
+.tl-text{flex:1;}
+.tl-title{font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;}
+.tl-desc{font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;}
+.tl-pct{display:flex;flex-direction:row;align-items:center;gap:8px;}
+.tl-num{font-size:64px;font-weight:900;color:#fff;line-height:1;}
+.tl-arrow{font-size:48px;color:#fff;}
+
+/* 右上蓝卡 */
+.top-right{flex:1;background:#4a7bc4;border-radius:4px;padding:20px 24px;display:flex;flex-direction:row;align-items:center;gap:12px;}
+.tr-text{flex:1;}
+.tr-title{font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;}
+.tr-desc{font-size:11px;color:rgba(255,255,255,0.85);line-height:1.6;}
+.tr-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.tr-arrow{font-size:40px;color:#fff;}
+.tr-tags{display:flex;flex-direction:column;gap:6px;}
+.tr-tag{background:rgba(255,255,255,0.25);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:2px;text-align:center;}
+
+/* 下半行 */
+.bottom-row{display:flex;flex-direction:row;gap:8px;flex:1;}
+
+/* 左下4季度圆 */
+.bottom-left{flex:1;position:relative;display:flex;align-items:center;justify-content:center;}
+.q-circle{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.q-label{font-size:13px;font-weight:700;}
+.q-pct{font-size:22px;font-weight:900;}
+.q-center{position:absolute;width:120px;height:120px;border-radius:50%;background:#1a3a7a;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;text-align:center;padding:10px;line-height:1.5;z-index:2;}
+/* 分隔线 */
+.q-hline{position:absolute;width:80%;height:1px;background:#ccc;top:50%;left:10%;}
+.q-vline{position:absolute;height:80%;width:1px;background:#ccc;left:50%;top:10%;}
+.q-label-text{position:absolute;font-size:11px;color:#555;}
+
+/* 右下2×2卡片 */
+.bottom-right{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;}
+.grid-card{border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;}
+.gc-header{display:flex;align-items:center;justify-content:space-between;}
+.gc-title{font-size:14px;font-weight:900;color:#fff;}
+.gc-icon{font-size:18px;color:rgba(255,255,255,0.7);}
+.gc-desc{font-size:10px;color:rgba(255,255,255,0.85);line-height:1.5;flex:1;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作计划 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 上半行 -->
+    <div class="top-row">
+      <div class="top-left">
+        <div class="tl-text">
+          <div class="tl-title">工作业绩提升</div>
+          <div class="tl-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+        <div class="tl-pct">
+          <div class="tl-num">90%</div>
+          <div class="tl-arrow">↑</div>
+        </div>
+      </div>
+      <div class="top-right">
+        <div class="tr-text">
+          <div class="tr-title">提高学习能力</div>
+          <div class="tr-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+        <div class="tr-right">
+          <div class="tr-arrow">→</div>
+          <div class="tr-tags">
+            <div class="tr-tag">市场化名词</div>
+            <div class="tr-tag">市场化名词</div>
+            <div class="tr-tag">市场化名词</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 下半行 -->
+    <div class="bottom-row">
+      <!-- 左下4季度圆 -->
+      <div class="bottom-left">
+        <!-- 分隔线 -->
+        <div class="q-hline"></div>
+        <div class="q-vline"></div>
+        <!-- 中心圆 -->
+        <div class="q-center">这里请放入您需要替换的文字内容，这里请放入您需要。</div>
+        <!-- 4个季度圆 -->
+        <div class="q-circle" style="width:110px;height:110px;background:#1a3a7a;top:5%;left:5%;">
+          <div class="q-label" style="color:rgba(255,255,255,0.8);">第一季度</div>
+          <div class="q-pct" style="color:#fff;">10%</div>
+        </div>
+        <div class="q-circle" style="width:100px;height:100px;background:#7baee0;top:5%;right:5%;">
+          <div class="q-label" style="color:rgba(255,255,255,0.9);">第二季度</div>
+          <div class="q-pct" style="color:#fff;">30%</div>
+        </div>
+        <div class="q-circle" style="width:100px;height:100px;background:#b0cce8;bottom:5%;left:5%;">
+          <div class="q-label" style="color:#1a3a7a;">第三季度</div>
+          <div class="q-pct" style="color:#1a3a7a;">30%</div>
+        </div>
+        <div class="q-circle" style="width:110px;height:110px;background:#1a3a7a;bottom:5%;right:5%;">
+          <div class="q-label" style="color:rgba(255,255,255,0.8);">第四季度</div>
+          <div class="q-pct" style="color:#fff;">20%</div>
+        </div>
+        <!-- 说明文字 -->
+        <div class="q-label-text" style="top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;"></div>
+      </div>
+
+      <!-- 右下2×2卡片 -->
+      <div class="bottom-right">
+        <div class="grid-card" style="background:#1a3a7a;">
+          <div class="gc-header">
+            <div class="gc-title">01.提升工作技能</div>
+            <div class="gc-icon">🎯</div>
+          </div>
+          <div class="gc-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+        <div class="grid-card" style="background:#4a7bc4;">
+          <div class="gc-header">
+            <div class="gc-title">02.加强沟通协作</div>
+            <div class="gc-icon">🎯</div>
+          </div>
+          <div class="gc-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+        <div class="grid-card" style="background:#7baee0;">
+          <div class="gc-header">
+            <div class="gc-title">03.强化部门交流</div>
+            <div class="gc-icon">🎯</div>
+          </div>
+          <div class="gc-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+        <div class="grid-card" style="background:#b0cce8;">
+          <div class="gc-header">
+            <div class="gc-title" style="color:#1a3a7a;">04.提高工作效率</div>
+            <div class="gc-icon">🎯</div>
+          </div>
+          <div class="gc-desc" style="color:#1a3a7a;">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

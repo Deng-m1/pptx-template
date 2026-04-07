@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
+.header{padding:18px 30px 8px 30px;flex-shrink:0;}
+.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
+.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
+.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
+.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 10px 20px;overflow:hidden;}
+/* 上部3列S形区 */
+.s-row{flex:1;display:flex;flex-direction:row;gap:0;align-items:center;}
+.s-col{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;}
+/* 底部3列说明卡片 */
+.desc-row{display:flex;flex-direction:row;gap:12px;flex-shrink:0;height:140px;}
+.desc-card{flex:1;background:#dce8f5;border-radius:4px;padding:12px;display:flex;flex-direction:column;gap:6px;}
+.desc-text{font-size:10.5px;color:#333;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="main-title">工作成果展示 Powerpoint Template</div>
+    <div class="sub-title">Work Arrangement</div>
+    <div class="divider"></div>
+  </div>
+  <div class="body">
+    <!-- 上部3列S形箭头+圆形 -->
+    <div class="s-row">
+      <!-- S形1 深蓝 -->
+      <div class="s-col">
+        <svg width="360" height="240" viewBox="0 0 360 240">
+          <!-- 上方大箭头（深蓝，向右） -->
+          <path d="M 20 60 Q 180 10 340 60" fill="none" stroke="#1a3a7a" stroke-width="38" stroke-linecap="round"/>
+          <polygon points="340,40 360,60 340,80" fill="#1a3a7a"/>
+          <!-- 下方小箭头（浅蓝，向左） -->
+          <path d="M 340 180 Q 180 230 20 180" fill="none" stroke="#7baee0" stroke-width="22" stroke-linecap="round"/>
+          <polygon points="20,165 0,180 20,195" fill="#7baee0"/>
+        </svg>
+        <!-- 圆形节点 -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:row;align-items:center;gap:8px;">
+          <div style="width:90px;height:90px;border-radius:50%;background:#1a3a7a;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;text-align:center;line-height:1.3;">
+            成功推出<br>新产品线
+          </div>
+          <div style="width:44px;height:44px;border-radius:50%;background:#7baee0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:900;">01</div>
+        </div>
+      </div>
+      <!-- S形2 中蓝 -->
+      <div class="s-col">
+        <svg width="360" height="240" viewBox="0 0 360 240">
+          <path d="M 20 60 Q 180 10 340 60" fill="none" stroke="#2d5fa8" stroke-width="38" stroke-linecap="round"/>
+          <polygon points="340,40 360,60 340,80" fill="#2d5fa8"/>
+          <path d="M 340 180 Q 180 230 20 180" fill="none" stroke="#a8c4e8" stroke-width="22" stroke-linecap="round"/>
+          <polygon points="20,165 0,180 20,195" fill="#a8c4e8"/>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:row;align-items:center;gap:8px;">
+          <div style="width:90px;height:90px;border-radius:50%;background:#2d5fa8;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;text-align:center;line-height:1.3;">
+            提升<br>团队效率<br>与凝聚力
+          </div>
+          <div style="width:44px;height:44px;border-radius:50%;background:#a8c4e8;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:900;">02</div>
+        </div>
+      </div>
+      <!-- S形3 浅蓝 -->
+      <div class="s-col">
+        <svg width="360" height="240" viewBox="0 0 360 240">
+          <path d="M 20 60 Q 180 10 340 60" fill="none" stroke="#5b8dd9" stroke-width="38" stroke-linecap="round"/>
+          <polygon points="340,40 360,60 340,80" fill="#5b8dd9"/>
+          <path d="M 340 180 Q 180 230 20 180" fill="none" stroke="#c8d8f0" stroke-width="22" stroke-linecap="round"/>
+          <polygon points="20,165 0,180 20,195" fill="#c8d8f0"/>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:row;align-items:center;gap:8px;">
+          <div style="width:90px;height:90px;border-radius:50%;background:#5b8dd9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;text-align:center;line-height:1.3;">
+            优化供应链<br>与成本控制
+          </div>
+          <div style="width:44px;height:44px;border-radius:50%;background:#c8d8f0;display:flex;align-items:center;justify-content:center;color:#1a3a7a;font-size:18px;font-weight:900;">03</div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部说明卡片 -->
+    <div class="desc-row">
+      <div class="desc-card">
+        <div class="desc-text">作为项目经理，带领团队开发并推出新产品线。通过市场调研和竞争分析，确保产品符合市场需求和趋势。成功完成项目，首季达到销售目标的X%，增加公司收入，巩固市场地位。</div>
+      </div>
+      <div class="desc-card">
+        <div class="desc-text">作为团队领导，致力于提高团队的绩效和员工的职业发展。通过个性化的绩效管理和培训计划，显著提升了团队成员的工作满意度和绩效。同时，引入跨部门协作流程，促进了信息共享和团队合作精神。</div>
+      </div>
+      <div class="desc-card">
+        <div class="desc-text">主导公司供应链管理的改进项目，重点在于优化供应商选择和物流流程。通过与关键供应商紧密合作和采用新的库存管理系统，成功降低了采购成本并缩短了供应链的交货周期。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
