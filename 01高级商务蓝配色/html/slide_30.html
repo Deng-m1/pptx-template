@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_30</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 60px 14px 60px; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+
+  /* 蛇形路线容器 */
+  .snake { position:relative; width:1160px; height:580px; }
+
+  /* 蛇形路线（深蓝色宽条） */
+  /* 第一行：左→右 */
+  .road-h1 {
+    position:absolute; top:70px; left:60px; right:60px; height:60px;
+    background:#1a3a9e; border-radius:30px 0 0 30px;
+  }
+  /* 右转弯 */
+  .road-r1 {
+    position:absolute; top:70px; right:0; width:120px; height:280px;
+    background:#1a3a9e; border-radius:0 60px 60px 0;
+  }
+  /* 第二行：右→左 */
+  .road-h2 {
+    position:absolute; top:290px; left:60px; right:60px; height:60px;
+    background:#1a3a9e; border-radius:0 30px 30px 0;
+  }
+  /* 左转弯 */
+  .road-l1 {
+    position:absolute; top:290px; left:0; width:120px; height:280px;
+    background:#1a3a9e; border-radius:60px 0 0 60px;
+  }
+  /* 第三行：左→右 */
+  .road-h3 {
+    position:absolute; top:510px; left:60px; right:60px; height:60px;
+    background:#1a3a9e; border-radius:30px 30px 30px 30px;
+  }
+  /* 右箭头 */
+  .road-arrow {
+    position:absolute; top:528px; right:20px;
+    width:0; height:0;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    border-left:20px solid #fff;
+    z-index:10;
+  }
+
+  /* 节点 */
+  .node {
+    position:absolute; z-index:10;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .node-circle {
+    width:80px; height:80px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px; font-weight:900; color:#fff;
+    border:4px solid #fff;
+  }
+  .nc-dark { background:#1a3a9e; }
+  .nc-light { background:#6a9ad0; }
+
+  /* 日期标签 */
+  .date-tag {
+    position:absolute; z-index:11;
+    background:#1a3a9e; color:#fff;
+    padding:6px 14px; border-radius:4px;
+    font-size:14px; font-weight:700;
+  }
+
+  /* 虚线箭头 */
+  .dash-arrow {
+    position:absolute; z-index:11;
+    display:flex; align-items:center;
+    color:#fff; font-size:22px; letter-spacing:2px;
+  }
+
+  /* 文字描述 */
+  .desc-block {
+    position:absolute; z-index:12;
+  }
+  .desc-title { font-size:14px; font-weight:900; color:#1a3a9e; margin-bottom:3px; }
+  .desc-text { font-size:10px; color:#555; line-height:1.6; max-width:160px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="snake">
+    <!-- 蛇形路线 -->
+    <div class="road-h1"></div>
+    <div class="road-r1"></div>
+    <div class="road-h2"></div>
+    <div class="road-l1"></div>
+    <div class="road-h3"></div>
+    <div class="road-arrow"></div>
+
+    <!-- 节点1（01）：第一行左侧 -->
+    <div class="node" style="left:130px; top:60px;">
+      <div class="node-circle nc-light">01</div>
+    </div>
+    <div class="date-tag" style="left:60px; top:80px;">2024.3</div>
+
+    <!-- 虚线箭头1→2 -->
+    <div class="dash-arrow" style="left:240px; top:88px;">- - - - - - - - - →</div>
+
+    <!-- 节点2（02）：第一行右侧 -->
+    <div class="node" style="right:130px; top:60px;">
+      <div class="node-circle nc-light">02</div>
+    </div>
+    <div class="date-tag" style="right:60px; top:80px;">2024.5</div>
+
+    <!-- 节点3（03）：第二行右侧 -->
+    <div class="node" style="right:130px; top:280px;">
+      <div class="node-circle nc-dark">03</div>
+    </div>
+    <div class="date-tag" style="right:60px; top:300px;">2024.6</div>
+
+    <!-- 虚线箭头3→4（向左） -->
+    <div class="dash-arrow" style="left:240px; top:308px; transform:scaleX(-1);">- - - - - - - - - →</div>
+
+    <!-- 节点4（04）：第二行左侧 -->
+    <div class="node" style="left:130px; top:280px;">
+      <div class="node-circle nc-dark">04</div>
+    </div>
+    <div class="date-tag" style="left:60px; top:300px;">2024.8</div>
+
+    <!-- 节点5（05）：第三行左侧 -->
+    <div class="node" style="left:130px; top:500px;">
+      <div class="node-circle nc-light">05</div>
+    </div>
+    <div class="date-tag" style="left:60px; top:520px;">2024.9</div>
+
+    <!-- 虚线箭头5→6 -->
+    <div class="dash-arrow" style="left:240px; top:528px;">- - - - - - - - - →</div>
+
+    <!-- 节点6（06）：第三行右侧 -->
+    <div class="node" style="right:130px; top:500px;">
+      <div class="node-circle nc-light">06</div>
+    </div>
+    <div class="date-tag" style="right:60px; top:520px;">2024.10</div>
+
+    <!-- 描述文字 -->
+    <!-- 01下方 -->
+    <div class="desc-block" style="left:80px; top:160px;">
+      <div class="desc-title">01-市场调研</div>
+      <div class="desc-text">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+    <!-- 02下方 -->
+    <div class="desc-block" style="right:80px; top:160px; text-align:right;">
+      <div class="desc-title">02-品牌推广</div>
+      <div class="desc-text" style="text-align:right;">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+    <!-- 中间 -->
+    <div class="desc-block" style="left:480px; top:160px; text-align:center;">
+      <div class="desc-title">03-策划设计</div>
+      <div class="desc-text" style="text-align:center;">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+    <!-- 04下方 -->
+    <div class="desc-block" style="left:80px; top:380px;">
+      <div class="desc-title">04-产品投放</div>
+      <div class="desc-text">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+    <!-- 中间2 -->
+    <div class="desc-block" style="left:480px; top:380px; text-align:center;">
+      <div class="desc-title">05-细节优化</div>
+      <div class="desc-text" style="text-align:center;">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+    <!-- 06下方 -->
+    <div class="desc-block" style="right:80px; top:380px; text-align:right;">
+      <div class="desc-title">06-项目复盘</div>
+      <div class="desc-text" style="text-align:right;">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_26</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:720px; overflow:hidden;
+    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+    background:#fff; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 60px 20px 60px; }
+
+  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:16px; }
+
+  /* 时间轴整体 */
+  .timeline { display:flex; flex-direction:column; align-items:stretch; }
+
+  /* 上方节点行（圆形+年份） */
+  .nodes-row { display:flex; align-items:center; position:relative; height:80px; }
+  .node-spacer { flex:1; }
+  .node {
+    width:80px; height:80px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px; font-weight:900; color:#fff;
+    flex-shrink:0; position:relative; z-index:2;
+  }
+  .n1 { background:#1a3a9e; }
+  .n2 { background:#2e5cb8; }
+  .n3 { background:#6a9ad0; }
+  .n4 { background:#8ab0d8; }
+  .n5 { background:#9aabb8; }
+
+  /* 水平轴线 */
+  .axis-row { display:flex; align-items:center; height:10px; margin:-44px 40px 0 40px; position:relative; z-index:1; }
+  .axis-line { flex:1; height:5px; background:#1a3a9e; }
+  .axis-arrow {
+    width:0; height:0;
+    border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+    border-left:20px solid #1a3a9e;
+  }
+
+  /* 三角连接 */
+  .triangles-row { display:flex; align-items:flex-start; height:20px; margin-top:4px; }
+  .tri-spacer { flex:1; }
+  .tri {
+    width:0; height:0;
+    border-left:14px solid transparent;
+    border-right:14px solid transparent;
+    border-top:18px solid;
+    flex-shrink:0;
+  }
+  .tri-1 { border-top-color:#1a3a9e; }
+  .tri-2 { border-top-color:#2e5cb8; }
+  .tri-3 { border-top-color:#6a9ad0; }
+  .tri-4 { border-top-color:#8ab0d8; }
+  .tri-5 { border-top-color:#9aabb8; }
+
+  /* 卡片行 */
+  .cards-row { display:flex; gap:14px; margin-top:0; }
+  .card { flex:1; border-radius:4px; padding:16px 14px; height:340px; }
+  .c1 { background:#1a3a9e; }
+  .c2 { background:#2e5cb8; }
+  .c3 { background:#6a9ad0; }
+  .c4 { background:#8ab0d8; }
+  .c5 { background:#9aabb8; }
+
+  .card-icon {
+    width:50px; height:50px; border-radius:50%;
+    border:2px solid rgba(255,255,255,0.6);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:10px;
+  }
+  .card-icon svg { width:26px; height:26px; stroke:#fff; fill:none; stroke-width:1.8; }
+  .card-title { font-size:17px; font-weight:900; color:#fff; margin-bottom:6px; }
+  .card-desc { font-size:11px; color:rgba(255,255,255,0.85); line-height:1.8; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
+  </div>
+  <div class="header-line"></div>
+
+  <div class="timeline">
+    <!-- 节点圆 -->
+    <div class="nodes-row">
+      <div class="node n1">2020</div>
+      <div class="node-spacer"></div>
+      <div class="node n2">2021</div>
+      <div class="node-spacer"></div>
+      <div class="node n3">2022</div>
+      <div class="node-spacer"></div>
+      <div class="node n4">2023</div>
+      <div class="node-spacer"></div>
+      <div class="node n5">2024</div>
+    </div>
+
+    <!-- 轴线 -->
+    <div class="axis-row">
+      <div class="axis-line"></div>
+      <div class="axis-arrow"></div>
+    </div>
+
+    <!-- 三角 -->
+    <div class="triangles-row" style="margin-top:8px;">
+      <div class="tri tri-1"></div>
+      <div class="tri-spacer"></div>
+      <div class="tri tri-2"></div>
+      <div class="tri-spacer"></div>
+      <div class="tri tri-3"></div>
+      <div class="tri-spacer"></div>
+      <div class="tri tri-4"></div>
+      <div class="tri-spacer"></div>
+      <div class="tri tri-5"></div>
+    </div>
+
+    <!-- 卡片 -->
+    <div class="cards-row">
+      <div class="card c1">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <div class="card-title">工作成果</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+      <div class="card c2">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <div class="card-title">工作计划</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+      <div class="card c3">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 3-2 5-5 7-3-2-5-4-5-7a5 5 0 015-5z"/></svg>
+        </div>
+        <div class="card-title">工作成果</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+      <div class="card c4">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="card-title">工作计划</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+      <div class="card c5">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="card-title">工作成果</div>
+        <div class="card-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
