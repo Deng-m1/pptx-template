@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
+  .header { height: 80px; padding: 14px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; position: relative; }
+
+  /* 四角文字卡片 */
+  .corner-card { position: absolute; width: 260px; padding: 14px; border: 1.5px solid #dde4f0; border-radius: 4px; }
+  .corner-card p { font-size: 11px; color: #444; line-height: 1.6; }
+  .corner-card.dark { background: #1a3a6b; border-color: #1a3a6b; }
+  .corner-card.dark p { color: rgba(255,255,255,0.85); }
+  .corner-card-dot { width: 10px; height: 10px; border-radius: 50%; background: #1a3a6b; display: inline-block; margin-right: 6px; flex-shrink: 0; }
+
+  /* 顶部/底部标签 */
+  .top-tags { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; }
+  .bottom-tags { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; }
+  .tag { background: #1a3a6b; color: #fff; font-size: 13px; font-weight: 700; padding: 6px 18px; border-radius: 20px; }
+
+  /* 架构升级标签 */
+  .arch-tag { position: absolute; background: #f0f4fa; color: #1a3a6b; font-size: 14px; font-weight: 700; padding: 8px 20px; border-radius: 4px; }
+  .arch-tag-top { top: 50px; left: 50%; transform: translateX(-50%); }
+  .arch-tag-bottom { bottom: 50px; left: 50%; transform: translateX(-50%); }
+  .arch-tag-left { top: 50%; left: 280px; transform: translateY(-50%); }
+  .arch-tag-right { top: 50%; right: 280px; transform: translateY(-50%); }
+
+  /* 椭圆轨道 */
+  .orbit { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+  /* 圆形节点 */
+  .circle-node { position: absolute; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; }
+
+  /* 箭头 */
+  .arrow-left { position: absolute; top: 50%; left: 280px; transform: translateY(-50%); display: flex; align-items: center; gap: 6px; }
+  .arrow-right { position: absolute; top: 50%; right: 280px; transform: translateY(-50%); display: flex; align-items: center; gap: 6px; }
+  .arrow-symbol { font-size: 20px; color: #aaa; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header">
+    <span class="header-title">项目规划 Powerpoint Template</span>
+    <span class="header-sub">Work Arrangement</span>
+  </div>
+  <div class="body">
+    <!-- 四角文字卡片 -->
+    <div class="corner-card" style="top:14px; left:14px;">
+      <p><span class="corner-card-dot"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略，有利于建立"企业识别系统"</p>
+    </div>
+    <div class="corner-card dark" style="top:14px; right:14px;">
+      <p>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略，有利于建立"企业识别系统"</p>
+    </div>
+    <div class="corner-card" style="bottom:14px; left:14px;">
+      <p><span class="corner-card-dot"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略，有利于建立"企业识别系统"</p>
+    </div>
+    <div class="corner-card" style="bottom:14px; right:14px;">
+      <p><span class="corner-card-dot"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略，有利于建立"企业识别系统"</p>
+    </div>
+
+    <!-- 顶部标签 -->
+    <div class="top-tags">
+      <div class="tag">市场化名词</div>
+      <div class="tag">市场化名词</div>
+      <div class="tag">市场化名词</div>
+    </div>
+    <!-- 底部标签 -->
+    <div class="bottom-tags">
+      <div class="tag">市场化名词</div>
+      <div class="tag">市场化名词</div>
+      <div class="tag">市场化名词</div>
+    </div>
+
+    <!-- 顶部/底部架构升级标签 -->
+    <div class="arch-tag arch-tag-top">架构升级</div>
+    <div class="arch-tag arch-tag-bottom">架构升级</div>
+
+    <!-- 左侧箭头+架构升级 -->
+    <div class="arrow-left">
+      <div class="arch-tag" style="position:static;">架构升级</div>
+      <div class="arrow-symbol">→</div>
+    </div>
+    <!-- 右侧箭头+架构升级 -->
+    <div class="arrow-right">
+      <div class="arrow-symbol">→</div>
+      <div class="arch-tag" style="position:static;">架构升级</div>
+    </div>
+
+    <!-- 椭圆轨道 SVG -->
+    <svg class="orbit" width="580" height="320" viewBox="0 0 580 320">
+      <ellipse cx="290" cy="160" rx="280" ry="150" fill="none" stroke="#1a3a6b" stroke-width="2.5"/>
+    </svg>
+
+    <!-- 圆形节点：产品（左）-->
+    <div class="circle-node" style="width:90px;height:90px;background:#7aa0d4;top:50%;left:50%;margin-top:-45px;margin-left:-290px;font-size:16px;">产<br>品</div>
+    <!-- 圆形节点：布局（中左）-->
+    <div class="circle-node" style="width:100px;height:100px;background:#3a6abf;top:50%;left:50%;margin-top:-50px;margin-left:-100px;font-size:16px;">布局</div>
+    <!-- 圆形节点：品牌升级（中心，最大）-->
+    <div class="circle-node" style="width:130px;height:130px;background:#1a3a6b;top:50%;left:50%;margin-top:-65px;margin-left:-65px;font-size:14px;flex-direction:column;gap:4px;">
+      <div style="font-size:24px;">🏪</div>
+      <div>品牌升级</div>
+    </div>
+    <!-- 圆形节点：推荐（中右）-->
+    <div class="circle-node" style="width:100px;height:100px;background:#3a6abf;top:50%;left:50%;margin-top:-50px;margin-left:0px;font-size:16px;">推荐</div>
+    <!-- 圆形节点：用户（右）-->
+    <div class="circle-node" style="width:90px;height:90px;background:#7aa0d4;top:50%;left:50%;margin-top:-45px;margin-left:200px;font-size:16px;">用<br>户</div>
+  </div>
+</div>
+</body>
+</html>
