@@ -1,0 +1,671 @@
+{
+  "original": "slide_100.png",
+  "screenshot": "slide_100.png",
+  "ssim": 0.4763,
+  "pixel_diff_rate": 0.1789,
+  "similarity_score": 57.98,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_101.png",
+  "screenshot": "slide_101.png",
+  "ssim": 0.1557,
+  "pixel_diff_rate": 0.2003,
+  "similarity_score": 34.89,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_102.png",
+  "screenshot": "slide_102.png",
+  "ssim": 0.2723,
+  "pixel_diff_rate": 0.1625,
+  "similarity_score": 44.19,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_103.png",
+  "screenshot": "slide_103.png",
+  "ssim": 0.1148,
+  "pixel_diff_rate": 0.1638,
+  "similarity_score": 33.12,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_104.png",
+  "screenshot": "slide_104.png",
+  "ssim": 0.5284,
+  "pixel_diff_rate": 0.1454,
+  "similarity_score": 62.63,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_105.png",
+  "screenshot": "slide_105.png",
+  "ssim": 0.198,
+  "pixel_diff_rate": 0.2356,
+  "similarity_score": 36.8,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_106.png",
+  "screenshot": "slide_106.png",
+  "ssim": 0.0912,
+  "pixel_diff_rate": 0.2264,
+  "similarity_score": 29.59,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_107.png",
+  "screenshot": "slide_107.png",
+  "ssim": 0.1927,
+  "pixel_diff_rate": 0.1835,
+  "similarity_score": 37.99,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_108.png",
+  "screenshot": "slide_108.png",
+  "ssim": 0.1415,
+  "pixel_diff_rate": 0.1244,
+  "similarity_score": 36.17,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_109.png",
+  "screenshot": "slide_109.png",
+  "ssim": 0.2833,
+  "pixel_diff_rate": 0.2244,
+  "similarity_score": 43.1,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_110.png",
+  "screenshot": "slide_110.png",
+  "ssim": 0.0933,
+  "pixel_diff_rate": 0.2202,
+  "similarity_score": 29.93,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_111.png",
+  "screenshot": "slide_111.png",
+  "ssim": 0.1146,
+  "pixel_diff_rate": 0.2062,
+  "similarity_score": 31.83,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_112.png",
+  "screenshot": "slide_112.png",
+  "ssim": 0.2697,
+  "pixel_diff_rate": 0.1901,
+  "similarity_score": 43.18,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_113.png",
+  "screenshot": "slide_113.png",
+  "ssim": 0.2716,
+  "pixel_diff_rate": 0.1311,
+  "similarity_score": 45.08,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_114.png",
+  "screenshot": "slide_114.png",
+  "ssim": 0.1554,
+  "pixel_diff_rate": 0.216,
+  "similarity_score": 34.4,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_115.png",
+  "screenshot": "slide_115.png",
+  "ssim": 0.0497,
+  "pixel_diff_rate": 0.258,
+  "similarity_score": 25.74,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_116.png",
+  "screenshot": "slide_116.png",
+  "ssim": 0.3809,
+  "pixel_diff_rate": 0.1638,
+  "similarity_score": 51.75,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_117.png",
+  "screenshot": "slide_117.png",
+  "ssim": 0.2151,
+  "pixel_diff_rate": 0.1299,
+  "similarity_score": 41.16,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_118.png",
+  "screenshot": "slide_118.png",
+  "ssim": 0.4543,
+  "pixel_diff_rate": 0.138,
+  "similarity_score": 57.66,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_119.png",
+  "screenshot": "slide_119.png",
+  "ssim": 0.0575,
+  "pixel_diff_rate": 0.1841,
+  "similarity_score": 28.51,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_120.png",
+  "screenshot": "slide_120.png",
+  "ssim": 0.1283,
+  "pixel_diff_rate": 0.1062,
+  "similarity_score": 35.8,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_121.png",
+  "screenshot": "slide_121.png",
+  "ssim": 0.1452,
+  "pixel_diff_rate": 0.1643,
+  "similarity_score": 35.23,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_122.png",
+  "screenshot": "slide_122.png",
+  "ssim": 0.458,
+  "pixel_diff_rate": 0.1413,
+  "similarity_score": 57.82,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_123.png",
+  "screenshot": "slide_123.png",
+  "ssim": 0.2107,
+  "pixel_diff_rate": 0.2358,
+  "similarity_score": 37.68,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_124.png",
+  "screenshot": "slide_124.png",
+  "ssim": 0.2836,
+  "pixel_diff_rate": 0.1181,
+  "similarity_score": 46.31,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_125.png",
+  "screenshot": "slide_125.png",
+  "ssim": 0.3274,
+  "pixel_diff_rate": 0.1134,
+  "similarity_score": 49.52,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_126.png",
+  "screenshot": "slide_126.png",
+  "ssim": 0.3319,
+  "pixel_diff_rate": 0.1776,
+  "similarity_score": 47.9,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_127.png",
+  "screenshot": "slide_127.png",
+  "ssim": 0.2027,
+  "pixel_diff_rate": 0.2036,
+  "similarity_score": 38.08,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_128.png",
+  "screenshot": "slide_128.png",
+  "ssim": 0.4271,
+  "pixel_diff_rate": 0.1502,
+  "similarity_score": 55.39,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_129.png",
+  "screenshot": "slide_129.png",
+  "ssim": 0.5235,
+  "pixel_diff_rate": 0.1219,
+  "similarity_score": 62.99,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_130.png",
+  "screenshot": "slide_130.png",
+  "ssim": 0.2145,
+  "pixel_diff_rate": 0.182,
+  "similarity_score": 39.56,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_131.png",
+  "screenshot": "slide_131.png",
+  "ssim": 0.0639,
+  "pixel_diff_rate": 0.1511,
+  "similarity_score": 29.94,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_132.png",
+  "screenshot": "slide_132.png",
+  "ssim": 0.2583,
+  "pixel_diff_rate": 0.1444,
+  "similarity_score": 43.75,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_133.png",
+  "screenshot": "slide_133.png",
+  "ssim": 0.4106,
+  "pixel_diff_rate": 0.1701,
+  "similarity_score": 53.64,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_134.png",
+  "screenshot": "slide_134.png",
+  "ssim": 0.1776,
+  "pixel_diff_rate": 0.173,
+  "similarity_score": 37.24,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_135.png",
+  "screenshot": "slide_135.png",
+  "ssim": 0.4049,
+  "pixel_diff_rate": 0.1323,
+  "similarity_score": 54.38,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_136.png",
+  "screenshot": "slide_136.png",
+  "ssim": 0.1856,
+  "pixel_diff_rate": 0.1829,
+  "similarity_score": 37.51,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_137.png",
+  "screenshot": "slide_137.png",
+  "ssim": 0.3152,
+  "pixel_diff_rate": 0.2039,
+  "similarity_score": 45.94,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_138.png",
+  "screenshot": "slide_138.png",
+  "ssim": 0.0592,
+  "pixel_diff_rate": 0.265,
+  "similarity_score": 26.19,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_139.png",
+  "screenshot": "slide_139.png",
+  "ssim": 0.5473,
+  "pixel_diff_rate": 0.16,
+  "similarity_score": 63.51,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_140.png",
+  "screenshot": "slide_140.png",
+  "ssim": 0.2274,
+  "pixel_diff_rate": 0.1701,
+  "similarity_score": 40.81,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_141.png",
+  "screenshot": "slide_141.png",
+  "ssim": 0.2726,
+  "pixel_diff_rate": 0.1518,
+  "similarity_score": 44.53,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_142.png",
+  "screenshot": "slide_142.png",
+  "ssim": 0.0968,
+  "pixel_diff_rate": 0.1679,
+  "similarity_score": 31.74,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_143.png",
+  "screenshot": "slide_143.png",
+  "ssim": 0.1316,
+  "pixel_diff_rate": 0.2019,
+  "similarity_score": 33.15,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_144.png",
+  "screenshot": "slide_144.png",
+  "ssim": 0.2755,
+  "pixel_diff_rate": 0.1836,
+  "similarity_score": 43.78,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_145.png",
+  "screenshot": "slide_145.png",
+  "ssim": 0.2344,
+  "pixel_diff_rate": 0.2103,
+  "similarity_score": 40.1,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_146.png",
+  "screenshot": "slide_146.png",
+  "ssim": 0.2329,
+  "pixel_diff_rate": 0.1055,
+  "similarity_score": 43.14,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_147.png",
+  "screenshot": "slide_147.png",
+  "ssim": 0.393,
+  "pixel_diff_rate": 0.2124,
+  "similarity_score": 51.14,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_148.png",
+  "screenshot": "slide_148.png",
+  "ssim": 0.2027,
+  "pixel_diff_rate": 0.1769,
+  "similarity_score": 38.88,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_149.png",
+  "screenshot": "slide_149.png",
+  "ssim": -0.1088,
+  "pixel_diff_rate": 0.2629,
+  "similarity_score": 14.5,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_150.png",
+  "screenshot": "slide_150.png",
+  "ssim": 0.22,
+  "pixel_diff_rate": 0.2007,
+  "similarity_score": 39.38,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_151.png",
+  "screenshot": "slide_151.png",
+  "ssim": 0.2088,
+  "pixel_diff_rate": 0.2036,
+  "similarity_score": 38.5,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_152.png",
+  "screenshot": "slide_152.png",
+  "ssim": 0.3105,
+  "pixel_diff_rate": 0.1654,
+  "similarity_score": 46.78,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_153.png",
+  "screenshot": "slide_153.png",
+  "ssim": 0.2185,
+  "pixel_diff_rate": 0.118,
+  "similarity_score": 41.75,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_154.png",
+  "screenshot": "slide_154.png",
+  "ssim": 0.4156,
+  "pixel_diff_rate": 0.2223,
+  "similarity_score": 52.42,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_155.png",
+  "screenshot": "slide_155.png",
+  "ssim": 0.1173,
+  "pixel_diff_rate": 0.1594,
+  "similarity_score": 33.43,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_156.png",
+  "screenshot": "slide_156.png",
+  "ssim": 0.4319,
+  "pixel_diff_rate": 0.035,
+  "similarity_score": 59.18,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_157.png",
+  "screenshot": "slide_157.png",
+  "ssim": 0.4393,
+  "pixel_diff_rate": 0.2698,
+  "similarity_score": 52.66,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_158.png",
+  "screenshot": "slide_158.png",
+  "ssim": 0.2066,
+  "pixel_diff_rate": 0.0589,
+  "similarity_score": 42.69,
+  "grade": "D（需改进）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_159.png",
+  "screenshot": "slide_159.png",
+  "ssim": 0.5421,
+  "pixel_diff_rate": 0.2298,
+  "similarity_score": 61.05,
+  "grade": "C（一般）",
+  "status": "success",
+  "error": null
+}
+
+{
+  "original": "slide_160.png",
+  "screenshot": "slide_160.png",
+  "ssim": 0.7809,
+  "pixel_diff_rate": 0.1059,
+  "similarity_score": 81.49,
+  "grade": "B（良好）",
+  "status": "success",
+  "error": null
+}
+

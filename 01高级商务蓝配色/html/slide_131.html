@@ -2,123 +2,314 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 24px; gap: 8px; }
-  .top-row { display: flex; gap: 8px; align-items: flex-start; }
-  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; white-space: nowrap; }
-  .sub-desc { font-size: 12px; color: #555; line-height: 1.7; flex: 1; }
-  .main-row { flex: 1; display: flex; gap: 8px; }
-  .left-col { width: 220px; display: flex; flex-direction: column; gap: 8px; }
-  .text-block { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; font-size: 11px; color: #555; line-height: 1.7; }
-  .center-col { width: 300px; display: flex; flex-direction: column; gap: 8px; }
-  .blue-block { background: #1a3a6b; border-radius: 4px; padding: 14px; font-size: 12px; color: rgba(255,255,255,0.9); line-height: 1.7; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 12px; color: #888; margin-bottom: 6px; }
-  .quarter-table { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 10px 14px; }
-  .quarter-title { font-size: 14px; font-weight: 700; color: #1a3a6b; margin-bottom: 8px; }
-  .quarter-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .title {
+    position: absolute;
+    left: 48px;
+    top: 31px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .subtitle {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+  .page-subtitle {
+    position: absolute;
+    left: 52px;
+    top: 120px;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    color: #114a97;
+  }
+  .page-desc {
+    position: absolute;
+    left: 378px;
+    top: 116px;
+    width: 826px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #8c8c8c;
+  }
+  .panel {
+    position: absolute;
+    border: 1px solid #ededed;
+    background: #fff;
+  }
+  .left-top {
+    left: 47px;
+    top: 189px;
+    width: 342px;
+    height: 188px;
+    padding: 14px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #8a8a8a;
+  }
+  .center-top {
+    left: 406px;
+    top: 189px;
+    width: 306px;
+    height: 188px;
+    padding: 13px 18px;
+    background: #13469a;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .left-bottom {
+    left: 47px;
+    top: 391px;
+    width: 342px;
+    height: 294px;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .center-bottom {
+    left: 406px;
+    top: 391px;
+    width: 306px;
+    height: 294px;
+    padding: 22px 38px 0 38px;
+  }
+  .right-top {
+    left: 726px;
+    top: 189px;
+    width: 506px;
+    height: 241px;
+    padding: 17px 20px 0 18px;
+  }
+  .right-bottom {
+    left: 726px;
+    top: 444px;
+    width: 506px;
+    height: 241px;
+    padding: 17px 20px 0 18px;
+  }
+  .section-title {
+    font-size: 17px;
+    color: #777777;
+    margin: 22px 0 10px;
+  }
+  .light-rule {
+    width: 298px;
+    border-top: 1px solid #d8d8d8;
+  }
+  .quarter-title {
+    font-size: 18px;
+    color: #6f6f6f;
+    margin-bottom: 14px;
+  }
+  .quarter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    border-bottom: 1px dashed #d6d6d6;
+    font-size: 17px;
+    color: #6f6f6f;
+  }
   .quarter-row:last-child { border-bottom: none; }
-  .quarter-val { color: #3a6abf; font-weight: 700; }
-  .right-col { width: 320px; display: flex; flex-direction: column; gap: 8px; }
-  .stat-panel { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; gap: 10px; align-items: flex-start; }
-  .donut-wrap { flex-shrink: 0; }
-  .stat-content { flex: 1; }
-  .stat-num { font-size: 28px; font-weight: 900; color: #1a3a6b; }
-  .stat-label { font-size: 12px; color: #888; margin-bottom: 6px; }
-  .stat-bullets { font-size: 11px; color: #555; line-height: 1.7; }
-  .stat-bullet-title { color: #1a3a6b; font-weight: 700; }
+  .quarter-val {
+    font-size: 17px;
+    font-weight: 700;
+    color: #4f7eba;
+    letter-spacing: 0.5px;
+  }
+  .stat-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .ring-col {
+    width: 178px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ring-note {
+    margin-top: -2px;
+    font-size: 17px;
+    color: #8a8a8a;
+  }
+  .stat-main {
+    flex: 1;
+    padding-top: 7px;
+  }
+  .big-num-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 11px;
+  }
+  .big-num {
+    font-size: 54px;
+    line-height: 1;
+    font-weight: 700;
+    color: #114a97;
+    letter-spacing: 1px;
+  }
+  .big-label {
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+    color: #114a97;
+    white-space: nowrap;
+    margin-top: 11px;
+  }
+  .dash-rule {
+    width: 270px;
+    border-top: 1px dashed #c8c8c8;
+    margin-bottom: 13px;
+  }
+  .bullets {
+    font-size: 12px;
+    line-height: 1.72;
+    color: #9a9a9a;
+  }
+  .bullets p { margin-bottom: 7px; }
+  .bullets strong {
+    color: #114a97;
+    font-weight: 700;
+  }
+  svg text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">个人业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="title">个人业绩汇报 Powerpoint Template</div>
+  <div class="subtitle">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="page-subtitle">个人年度销售报告概述</div>
+  <div class="page-desc">报告旨在总结我在过去一年内的销售表现，并分析关键趋势及其对业务的影响。在此期间，我致力于达成销售目标，不断优化销售策略以提升个人和团队绩效。</div>
+
+  <div class="panel left-top">
+    过去一年是一个充满挑战和机遇的时期。我通过自身的努力和团队的支持，取得了一定的成绩，并认识到了自己的成长空间。未来，我将继续努力弥补个人销售能力中的不足，不断优化销售策略，以更好地服务客户、实现个人目标和促进企业的长期发展。
   </div>
-  <div class="body">
-    <div class="top-row">
-      <span class="sub-title">个人年度销售报告概述</span>
-      <div style="width:16px;"></div>
-      <div class="sub-desc">报告旨在总结我在过去一年内的销售表现，并分析关键趋势及其对业务的影响。在此期间，我致力于达成销售目标，不断优化销售策略以提升个人和团队绩效。</div>
+
+  <div class="panel center-top">
+    在过去的一年里，我积极参与销售活动，通过坚定的决心和努力工作，成功达成了个人销售指标。我具备良好的沟通技巧和扎实的产品知识，能够有效地理解客户需求并提供定制化的解决方案。通过建立良好的客户关系，我不仅增加了销售额，还提高了客户满意度和忠诚度。
+  </div>
+
+  <div class="panel left-bottom">
+    <div class="section-title">线上线下销售趋势</div>
+    <div class="light-rule"></div>
+    <svg width="302" height="220" viewBox="0 0 302 220" style="position:absolute; left:19px; top:73px;" aria-hidden="true">
+      <line x1="5" y1="32" x2="302" y2="32" stroke="#e3e3e3"/>
+      <line x1="5" y1="82" x2="302" y2="82" stroke="#e3e3e3"/>
+      <line x1="5" y1="132" x2="302" y2="132" stroke="#e3e3e3"/>
+      <line x1="5" y1="182" x2="302" y2="182" stroke="#e3e3e3"/>
+
+      <path d="M0 212 L0 145 L28 136 L55 160 L83 84 L110 146 L138 124 L165 74 L193 63 L220 35 L248 56 L274 128 L300 8 L300 212 Z" fill="#5c86c6"/>
+      <path d="M0 212 L0 176 L28 166 L55 150 L83 118 L110 160 L138 149 L165 157 L193 73 L220 139 L248 133 L274 70 L300 12 L300 212 Z" fill="#13469a"/>
+
+      <g font-size="8" fill="#7d7d7d">
+        <text x="7" y="197" transform="rotate(-90 7 197)">1月</text>
+        <text x="31" y="197" transform="rotate(-90 31 197)">2月</text>
+        <text x="55" y="197" transform="rotate(-90 55 197)">3月</text>
+        <text x="79" y="197" transform="rotate(-90 79 197)">4月</text>
+        <text x="103" y="197" transform="rotate(-90 103 197)">5月</text>
+        <text x="127" y="197" transform="rotate(-90 127 197)">6月</text>
+        <text x="151" y="197" transform="rotate(-90 151 197)">7月</text>
+        <text x="175" y="197" transform="rotate(-90 175 197)">8月</text>
+        <text x="199" y="197" transform="rotate(-90 199 197)">9月</text>
+        <text x="223" y="201" transform="rotate(-90 223 201)">10月</text>
+        <text x="247" y="201" transform="rotate(-90 247 201)">11月</text>
+        <text x="271" y="201" transform="rotate(-90 271 201)">12月</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="panel center-bottom">
+    <div class="quarter-title">季度销售额明细</div>
+    <div class="quarter-row"><span>第一季度</span><span class="quarter-val">+11512</span></div>
+    <div class="quarter-row"><span>第二季度</span><span class="quarter-val">+41376</span></div>
+    <div class="quarter-row"><span>第三季度</span><span class="quarter-val">+21145</span></div>
+    <div class="quarter-row"><span>第四季度</span><span class="quarter-val">+14352</span></div>
+  </div>
+
+  <div class="panel right-top">
+    <div class="stat-wrap">
+      <div class="ring-col">
+        <svg width="165" height="177" viewBox="0 0 165 177" aria-hidden="true">
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#eef2f7" stroke-width="30"/>
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#5f8dcd" stroke-width="30" stroke-dasharray="241 174" stroke-dashoffset="-105" stroke-linecap="butt"/>
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#13469a" stroke-width="30" stroke-dasharray="174 241" stroke-dashoffset="-346" stroke-linecap="butt"/>
+          <line x1="92" y1="8" x2="92" y2="140" stroke="#ffffff" stroke-width="3"/>
+          <text x="92" y="88" text-anchor="middle" font-size="28" fill="#13469a">42%</text>
+        </svg>
+        <div class="ring-note">线上销售占比</div>
+      </div>
+      <div class="stat-main">
+        <div class="big-num-row">
+          <div class="big-num">40,614</div>
+          <div class="big-label">线上销售总额</div>
+        </div>
+        <div class="dash-rule"></div>
+        <div class="bullets">
+          <p><strong>全天候开放：</strong>消费者可以随时随地访问在线商店进行购物，不受时间和地点的限制。</p>
+          <p><strong>更广的市场覆盖：</strong>可以覆盖全球范围内的潜在客户，扩展市场份额和增加销售机会。</p>
+          <p><strong>数据驱动决策：</strong>通过分析用户数据，精确了解客户需求和行为，提供个性化推荐和定制服务，提升销售效果。</p>
+        </div>
+      </div>
     </div>
-    <div class="main-row">
-      <div class="left-col">
-        <div class="text-block">过去一年是一个充满挑战和机遇的时期。我通过自身的努力和团队的支持，取得了一定的成绩，并认识到了自己的成长空间。未来，我将继续努力弥补个人销售能力中的不足，不断优化销售策略，以更好地服务客户、实现个人目标和促进企业的长期发展。</div>
-        <div class="chart-box">
-          <div class="chart-title">线上线下销售趋势</div>
-          <svg width="100%" height="100%" viewBox="0 0 200 180" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1a3a6b" stop-opacity="0.7"/>
-                <stop offset="100%" stop-color="#1a3a6b" stop-opacity="0.1"/>
-              </linearGradient>
-            </defs>
-            <path d="M 5,140 Q 20,120 35,110 Q 50,100 65,80 Q 80,60 95,40 Q 110,60 125,70 Q 140,80 155,90 Q 170,100 185,60 L 185,170 L 5,170 Z" fill="url(#areaGrad)"/>
-            <polyline points="5,140 35,110 65,80 95,40 125,70 155,90 185,60" fill="none" stroke="#1a3a6b" stroke-width="2"/>
-            <text x="5" y="180" font-size="7" fill="#888">1月</text>
-            <text x="35" y="180" font-size="7" fill="#888">3月</text>
-            <text x="65" y="180" font-size="7" fill="#888">5月</text>
-            <text x="95" y="180" font-size="7" fill="#888">7月</text>
-            <text x="125" y="180" font-size="7" fill="#888">9月</text>
-            <text x="155" y="180" font-size="7" fill="#888">11月</text>
-            <text x="180" y="180" font-size="7" fill="#888">12月</text>
-          </svg>
-        </div>
+  </div>
+
+  <div class="panel right-bottom">
+    <div class="stat-wrap">
+      <div class="ring-col">
+        <svg width="165" height="177" viewBox="0 0 165 177" aria-hidden="true">
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#eef2f7" stroke-width="30"/>
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#5f8dcd" stroke-width="30" stroke-dasharray="174 241" stroke-dashoffset="-105" stroke-linecap="butt"/>
+          <circle cx="92" cy="74" r="66" fill="none" stroke="#13469a" stroke-width="30" stroke-dasharray="241 174" stroke-dashoffset="-279" stroke-linecap="butt"/>
+          <line x1="92" y1="8" x2="92" y2="140" stroke="#ffffff" stroke-width="3"/>
+          <text x="92" y="88" text-anchor="middle" font-size="28" fill="#13469a">58%</text>
+        </svg>
+        <div class="ring-note">线上销售占比</div>
       </div>
-      <div class="center-col">
-        <div class="blue-block">在过去的一年里，我积极参与销售活动，通过坚定的决心和努力工作，成功达成了个人销售指标。我具备良好的沟通技巧和扎实的产品知识，能够有效地理解客户需求并提供定制化的解决方案。通过建立良好的客户关系，我不仅增加了销售额，还提高了客户满意度和忠诚度。</div>
-        <div class="quarter-table">
-          <div class="quarter-title">季度销售额明细</div>
-          <div class="quarter-row"><span>第一季度</span><span class="quarter-val">+11512</span></div>
-          <div class="quarter-row"><span>第二季度</span><span class="quarter-val">+41376</span></div>
-          <div class="quarter-row"><span>第三季度</span><span class="quarter-val">+21145</span></div>
-          <div class="quarter-row"><span>第四季度</span><span class="quarter-val">+14352</span></div>
+      <div class="stat-main">
+        <div class="big-num-row">
+          <div class="big-num">58,487</div>
+          <div class="big-label">线下销售总额</div>
         </div>
-      </div>
-      <div class="right-col">
-        <div class="stat-panel">
-          <div class="donut-wrap">
-            <svg width="90" height="90" viewBox="0 0 90 90">
-              <circle cx="45" cy="45" r="35" fill="none" stroke="#e8edf5" stroke-width="14"/>
-              <circle cx="45" cy="45" r="35" fill="none" stroke="#1a3a6b" stroke-width="14"
-                stroke-dasharray="132 88" stroke-dashoffset="-22" stroke-linecap="butt"/>
-              <text x="45" y="50" text-anchor="middle" font-size="16" font-weight="900" fill="#1a3a6b">42%</text>
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-num">40,614</div>
-            <div class="stat-label">线上销售总额</div>
-            <div class="stat-bullets">
-              <div><span class="stat-bullet-title">全天候开放：</span>消费者可以随时随地访问在线商店进行购物，不受时间和地点的限制。</div>
-              <div><span class="stat-bullet-title">更广的市场覆盖：</span>可以覆盖全球范围内的潜在客户，扩展市场份额和销售机会。</div>
-              <div><span class="stat-bullet-title">数据驱动决策：</span>通过分析用户数据，精确了解客户需求和行为，提供个性化推荐和定制服务，提升销售效果。</div>
-            </div>
-          </div>
-        </div>
-        <div class="stat-panel">
-          <div class="donut-wrap">
-            <svg width="90" height="90" viewBox="0 0 90 90">
-              <circle cx="45" cy="45" r="35" fill="none" stroke="#e8edf5" stroke-width="14"/>
-              <circle cx="45" cy="45" r="35" fill="none" stroke="#1a3a6b" stroke-width="14"
-                stroke-dasharray="165 55" stroke-dashoffset="-22" stroke-linecap="butt"/>
-              <text x="45" y="50" text-anchor="middle" font-size="16" font-weight="900" fill="#1a3a6b">58%</text>
-            </svg>
-          </div>
-          <div class="stat-content">
-            <div class="stat-num">58,487</div>
-            <div class="stat-label">线下销售总额</div>
-            <div class="stat-bullets">
-              <div><span class="stat-bullet-title">亲身体验：</span>消费者可以直接触摸、感受和试用产品，有助于消除购买时的疑虑和不确定性。</div>
-              <div><span class="stat-bullet-title">即时满足需求：</span>消费者可以立即获得产品，无需等待物流配送，特别适合一些紧急或特别需求的购物场景。</div>
-              <div><span class="stat-bullet-title">人际互动和服务：</span>提供面对面的服务和咨询，帮助消费者做出更精确的购买决策，增强客户信任度和忠诚度。</div>
-            </div>
-          </div>
+        <div class="dash-rule"></div>
+        <div class="bullets">
+          <p><strong>亲身体验：</strong>消费者可以直接触摸、感受和试用产品，有助于消除购买时的疑虑和不确定性。</p>
+          <p><strong>即时满足需求：</strong>消费者可以立即获得产品，无需等待物流配送，特别适合一些紧急或特别需求的购物场景。</p>
+          <p><strong>人际互动和服务：</strong>提供面对面的服务和咨询，帮助消费者做出更准确的购买决策，增强客户信任度和忠诚度。</p>
         </div>
       </div>
     </div>

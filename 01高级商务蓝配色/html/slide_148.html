@@ -2,131 +2,224 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 16px 30px; gap: 0; }
-  .gantt { width: 100%; flex: 1; display: flex; flex-direction: column; }
-  .gantt-row { display: flex; align-items: stretch; border-bottom: 1px solid #e8edf5; min-height: 80px; }
-  .gantt-row:last-child { border-bottom: none; }
-  .row-label { width: 90px; background: #1a3a6b; color: white; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.4; flex-shrink: 0; }
-  .row-content { flex: 1; display: flex; align-items: center; padding: 8px 10px; gap: 6px; }
-  /* Phase row */
-  .phase-row .row-content { gap: 0; }
-  .phase-pill { flex: 1; background: #c0d4e8; border-radius: 20px; padding: 8px 16px; text-align: center; font-size: 14px; color: #1a3a6b; margin: 0 4px; }
-  .phase-pill:first-child { margin-left: 0; }
-  .phase-pill:last-child { margin-right: 0; }
-  /* Timeline row */
-  .timeline-row .row-content { position: relative; }
-  .timeline-line { position: absolute; top: 50%; left: 10px; right: 10px; height: 2px; background: #1a3a6b; }
-  .timeline-arrow { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 10px solid #1a3a6b; }
-  .week-pills { display: flex; gap: 6px; width: 100%; justify-content: space-around; position: relative; z-index: 1; }
-  .week-pill { background: #1a3a6b; color: white; border-radius: 20px; padding: 8px 20px; font-size: 14px; font-weight: 700; }
-  /* Dept row */
-  .dept-cell { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .dept-box { background: #e8edf5; border-radius: 4px; padding: 6px 12px; font-size: 12px; color: #555; text-align: center; line-height: 1.5; }
-  /* Task row */
-  .task-cell { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .task-block { background: #3a6abf; border-radius: 4px; padding: 8px 12px; font-size: 12px; color: white; line-height: 1.5; width: 90%; }
-  .task-block.wide { width: 190%; }
-  .task-block.light { background: #8ab0d0; }
-  /* Key task row */
-  .key-cell { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .key-block { background: #c0d4e8; border-radius: 4px; padding: 8px 12px; font-size: 12px; color: #1a3a6b; line-height: 1.5; width: 90%; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .header-title {
+    position: absolute;
+    left: 48px;
+    top: 30px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .header-sub {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+
+  .label {
+    position: absolute;
+    left: 48px;
+    width: 86px;
+    background: #0f47a1;
+    color: #fff;
+    font-size: 26px;
+    line-height: 1.22;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+  }
+  .l1 { top: 128px; height: 174px; }
+  .l2 { top: 319px; height: 106px; }
+  .l3 { top: 442px; height: 106px; }
+  .l4 { top: 565px; height: 106px; }
+
+  .phase-pill {
+    position: absolute;
+    top: 128px;
+    height: 62px;
+    border-radius: 31px;
+    background: #bfd3ee;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 62px;
+    text-align: center;
+  }
+  .p1 { left: 149px; width: 374px; }
+  .p2 { left: 532px; width: 343px; }
+  .p3 { left: 884px; width: 349px; }
+
+  .timeline {
+    position: absolute;
+    left: 193px;
+    top: 214px;
+    width: 1038px;
+    height: 4px;
+    background: #1f5f9d;
+  }
+  .timeline::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 11px solid #1f5f9d;
+  }
+
+  .week-pill {
+    position: absolute;
+    top: 238px;
+    width: 164px;
+    height: 63px;
+    border-radius: 31px;
+    background: #0f47a1;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 63px;
+    text-align: center;
+  }
+  .w1 { left: 180px; }
+  .w2 { left: 354px; }
+  .w3 { left: 529px; }
+  .w4 { left: 709px; }
+  .w5 { left: 886px; }
+  .w6 { left: 1068px; }
+
+  .row-bg {
+    position: absolute;
+    left: 182px;
+    width: 1050px;
+  }
+  .dept-bg {
+    top: 319px;
+    height: 106px;
+    background: #f6f6f6;
+  }
+  .task-bg {
+    top: 442px;
+    height: 106px;
+    background: #b8cde7;
+  }
+
+  .box {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .dept-box {
+    width: 126px;
+    height: 90px;
+    background: #c1d6ee;
+    color: #3d3d3d;
+    font-size: 16px;
+    line-height: 1.28;
+  }
+  .d1 { left: 200px; top: 328px; }
+  .d2 { left: 552px; top: 328px; }
+  .d3 { left: 731px; top: 328px; }
+  .d4 { left: 1084px; top: 328px; }
+
+  .task-box {
+    height: 88px;
+    background: #8db2d5;
+    color: #2f2f2f;
+    font-size: 18px;
+    line-height: 1.28;
+  }
+  .t1 { left: 200px; top: 452px; width: 125px; }
+  .t2 { left: 375px; top: 452px; width: 302px; }
+  .t3 { left: 906px; top: 452px; width: 126px; }
+
+  .key-box {
+    width: 125px;
+    height: 90px;
+    background: #c1d6ee;
+    color: #2f2f2f;
+    font-size: 18px;
+    line-height: 1.28;
+  }
+  .k1 { left: 200px; top: 574px; }
+  .k2 { left: 730px; top: 574px; }
+  .k3 { left: 1084px; top: 574px; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">工作汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
-  </div>
-  <div class="body">
-    <div class="gantt">
-      <!-- Phase row -->
-      <div class="gantt-row phase-row" style="min-height:50px;">
-        <div class="row-label" style="background:#1a3a6b;font-size:14px;">时间<br>节点</div>
-        <div class="row-content" style="flex-direction:column; gap:6px;">
-          <div style="display:flex; gap:6px; width:100%;">
-            <div class="phase-pill">第一阶段任务：前期</div>
-            <div class="phase-pill">第二阶段任务：中期</div>
-            <div class="phase-pill">第三阶段任务：后期</div>
-          </div>
-          <div style="position:relative; width:100%; height:36px;">
-            <div style="position:absolute; top:50%; left:0; right:0; height:2px; background:#1a3a6b;"></div>
-            <div style="position:absolute; right:-2px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:10px solid #1a3a6b;"></div>
-            <div style="display:flex; justify-content:space-around; position:relative; z-index:1;">
-              <div class="week-pill">第一周</div>
-              <div class="week-pill">第二周</div>
-              <div class="week-pill">第三周</div>
-              <div class="week-pill">第四周</div>
-              <div class="week-pill">第五周</div>
-              <div class="week-pill">第六周</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Dept row -->
-      <div class="gantt-row" style="min-height:70px;">
-        <div class="row-label">协助<br>部门</div>
-        <div class="row-content">
-          <div class="dept-cell">
-            <div class="dept-box">设计部<br>策划部</div>
-          </div>
-          <div class="dept-cell"></div>
-          <div class="dept-cell">
-            <div class="dept-box">采购部<br>商务部</div>
-          </div>
-          <div class="dept-cell">
-            <div class="dept-box">设计部<br>策划部</div>
-          </div>
-          <div class="dept-cell"></div>
-          <div class="dept-cell">
-            <div class="dept-box">工程部<br>财务部</div>
-          </div>
-        </div>
-      </div>
-      <!-- Task row -->
-      <div class="gantt-row" style="min-height:80px;">
-        <div class="row-label">工作<br>任务</div>
-        <div class="row-content">
-          <div class="task-cell">
-            <div class="task-block">工作任务1<br>工作任务2</div>
-          </div>
-          <div class="task-cell" style="flex:2;">
-            <div class="task-block" style="width:95%; background:#3a6abf;">工作任务1<br>工作任务2</div>
-          </div>
-          <div class="task-cell"></div>
-          <div class="task-cell">
-            <div class="task-block light">工作任务1<br>工作任务2</div>
-          </div>
-          <div class="task-cell"></div>
-        </div>
-      </div>
-      <!-- Key task row -->
-      <div class="gantt-row" style="min-height:80px;">
-        <div class="row-label">重点<br>任务</div>
-        <div class="row-content">
-          <div class="key-cell">
-            <div class="key-block">重点任务1<br>重点任务2</div>
-          </div>
-          <div class="key-cell"></div>
-          <div class="key-cell"></div>
-          <div class="key-cell">
-            <div class="key-block">重点任务1<br>重点任务2</div>
-          </div>
-          <div class="key-cell"></div>
-          <div class="key-cell">
-            <div class="key-block">重点任务1<br>重点任务2</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="header-title">工作汇报 Powerpoint Template</div>
+  <div class="header-sub">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="label l1">时间<br>节点</div>
+  <div class="label l2">协助<br>部门</div>
+  <div class="label l3">工作<br>任务</div>
+  <div class="label l4">重点<br>任务</div>
+
+  <div class="phase-pill p1">第一阶段任务：前期</div>
+  <div class="phase-pill p2">第二阶段任务：中期</div>
+  <div class="phase-pill p3">第三阶段任务：后期</div>
+
+  <div class="timeline"></div>
+
+  <div class="week-pill w1">第一周</div>
+  <div class="week-pill w2">第二周</div>
+  <div class="week-pill w3">第三周</div>
+  <div class="week-pill w4">第四周</div>
+  <div class="week-pill w5">第五周</div>
+  <div class="week-pill w6">第六周</div>
+
+  <div class="row-bg dept-bg"></div>
+  <div class="row-bg task-bg"></div>
+
+  <div class="box dept-box d1">设计部<br>策划部</div>
+  <div class="box dept-box d2">采购部<br>商务部</div>
+  <div class="box dept-box d3">设计部<br>策划部</div>
+  <div class="box dept-box d4">工程部<br>财务部</div>
+
+  <div class="box task-box t1">工作任务1<br>工作任务2</div>
+  <div class="box task-box t2">工作任务1<br>工作任务2</div>
+  <div class="box task-box t3">工作任务1<br>工作任务2</div>
+
+  <div class="box key-box k1">重点任务1<br>重点任务2</div>
+  <div class="box key-box k2">重点任务1<br>重点任务2</div>
+  <div class="box key-box k3">重点任务1<br>重点任务2</div>
 </div>
 </body>
 </html>

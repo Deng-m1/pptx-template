@@ -2,207 +2,336 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  
-  .body { flex: 1; display: flex; flex-direction: column; padding: 0 30px 0; }
-  
-  /* Triangle header */
-  .triangle-header { height: 80px; position: relative; display: flex; align-items: flex-end; justify-content: center; margin-top: 10px; }
-  .triangle-bg { position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
-  .triangle-text { font-size: 20px; font-weight: 700; color: white; position: relative; z-index: 1; padding-bottom: 8px; }
-  
-  /* Quarter columns */
-  .quarters { flex: 1; display: flex; gap: 10px; padding: 10px 0; }
-  .quarter { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; display: flex; flex-direction: column; overflow: hidden; }
-  .q-header { padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; }
-  .q-label { font-size: 14px; font-weight: 700; color: white; }
-  .q-num { font-size: 20px; font-weight: 900; color: rgba(255,255,255,0.7); }
-  .q-body { flex: 1; padding: 10px 12px; display: flex; flex-direction: column; }
-  .q-stats { display: flex; gap: 10px; margin-bottom: 8px; }
-  .q-stat { flex: 1; }
-  .q-stat-label { font-size: 11px; color: #888; }
-  .q-stat-num { font-size: 22px; font-weight: 900; color: #1a3a6b; }
-  .q-divider { height: 1px; background: #eee; margin: 8px 0; }
-  .q-desc { font-size: 11px; color: #666; line-height: 1.6; margin-bottom: 8px; }
-  .q-chart { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
-  
-  /* Bottom bar */
-  .bottom-bar { height: 50px; background: #1a3a6b; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .bottom-bar p { font-size: 14px; color: white; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .title {
+    position: absolute;
+    left: 48px;
+    top: 31px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .subtitle {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+  .hero {
+    position: absolute;
+    left: 48px;
+    top: 122px;
+    width: 1184px;
+    height: 92px;
+  }
+  .hero-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .quarters {
+    position: absolute;
+    left: 48px;
+    top: 221px;
+    width: 1184px;
+    height: 394px;
+    display: flex;
+    gap: 12px;
+  }
+  .quarter {
+    width: 287px;
+    height: 394px;
+    border: 1px solid #ececec;
+    background: #fff;
+  }
+  .q-head {
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 0 28px;
+    color: #fff;
+  }
+  .q-head.q1 { background: #13469a; }
+  .q-head.q2 { background: #5d89ca; }
+  .q-head.q3 { background: #83add0; }
+  .q-head.q4 { background: #c2d3e8; }
+  .q-name {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .q-index {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 300;
+    color: rgba(255,255,255,0.95);
+    letter-spacing: 1px;
+    text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff;
+  }
+  .q-body {
+    position: relative;
+    height: 341px;
+    padding: 20px 16px 0;
+  }
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18px 0 26px;
+  }
+  .stat {
+    width: 49%;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .stat-num {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2f2f2f;
+    letter-spacing: 0.2px;
+  }
+  .desc-rule {
+    width: 240px;
+    margin: 13px auto 0;
+    border-top: 1px dashed #c8c8c8;
+  }
+  .desc {
+    margin: 16px 18px 0;
+    font-size: 12px;
+    line-height: 2;
+    color: #909090;
+  }
+  .chart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .bottom-bar {
+    position: absolute;
+    left: 48px;
+    bottom: 35px;
+    width: 1184px;
+    height: 59px;
+    background: #13469a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 17px;
+  }
+  svg text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">产品销售业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="title">产品销售业绩汇报 Powerpoint Template</div>
+  <div class="subtitle">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="hero">
+    <svg width="1184" height="92" viewBox="0 0 1184 92" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="6,88 592,0 1178,88" fill="#13469a"/>
+    </svg>
+    <div class="hero-text">年度业绩目标分析</div>
   </div>
-  
-  <div class="body">
-    <!-- Triangle header -->
-    <div class="triangle-header">
-      <svg style="position:absolute;top:0;left:0;width:100%;height:80px;" viewBox="0 0 1220 80" preserveAspectRatio="none">
-        <polygon points="0,80 610,0 1220,80" fill="#1a3a6b"/>
-      </svg>
-      <div class="triangle-text">年度业绩目标分析</div>
-    </div>
-    
-    <!-- Quarter columns -->
-    <div class="quarters">
-      <!-- Q1 -->
-      <div class="quarter">
-        <div class="q-header" style="background:#1a3a6b;">
-          <span class="q-label">第一季度</span>
-          <span class="q-num">Q1</span>
-        </div>
-        <div class="q-body">
-          <div class="q-stats">
-            <div class="q-stat">
-              <div class="q-stat-label">目标业绩</div>
-              <div class="q-stat-num">77990</div>
-            </div>
-            <div class="q-stat">
-              <div class="q-stat-label">实际完成</div>
-              <div class="q-stat-num">87990</div>
-            </div>
-          </div>
-          <div class="q-divider"></div>
-          <div class="q-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-          <div class="q-chart">
-            <svg width="120" height="100" viewBox="0 0 120 100">
-              <circle cx="60" cy="50" r="40" fill="none" stroke="#e8edf5" stroke-width="14"/>
-              <circle cx="60" cy="50" r="40" fill="none" stroke="#1a3a6b" stroke-width="14"
-                stroke-dasharray="176 75" stroke-dashoffset="-63" stroke-linecap="butt"/>
-              <text x="60" y="46" text-anchor="middle" font-size="14" font-weight="900" fill="#1a3a6b">销售</text>
-              <text x="60" y="62" text-anchor="middle" font-size="14" font-weight="900" fill="#1a3a6b">占比</text>
-            </svg>
-          </div>
-        </div>
+
+  <div class="quarters">
+    <div class="quarter">
+      <div class="q-head q1">
+        <div class="q-name">第一季度</div>
+        <div class="q-index">Q1</div>
       </div>
-      
-      <!-- Q2 -->
-      <div class="quarter">
-        <div class="q-header" style="background:#3a6abf;">
-          <span class="q-label">第二季度</span>
-          <span class="q-num">Q2</span>
-        </div>
-        <div class="q-body">
-          <div class="q-stats">
-            <div class="q-stat">
-              <div class="q-stat-label">目标业绩</div>
-              <div class="q-stat-num">88230</div>
-            </div>
-            <div class="q-stat">
-              <div class="q-stat-label">实际完成</div>
-              <div class="q-stat-num">66812</div>
-            </div>
+      <div class="q-body">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">目标业绩</div>
+            <div class="stat-num">77990</div>
           </div>
-          <div class="q-divider"></div>
-          <div class="q-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-          <div class="q-chart">
-            <svg width="140" height="100" viewBox="0 0 140 100">
-              <!-- Line chart -->
-              <text x="10" y="15" font-size="9" fill="#888">100%</text>
-              <text x="10" y="50" font-size="9" fill="#888">50%</text>
-              <text x="10" y="85" font-size="9" fill="#888">0%</text>
-              <polyline points="35,20 50,30 65,25 80,35 95,28 110,32 125,22" fill="none" stroke="#1a3a6b" stroke-width="2"/>
-              <polyline points="35,45 50,55 65,48 80,60 95,52 110,58 125,50" fill="none" stroke="#8ab0d0" stroke-width="2"/>
-              <text x="35" y="95" font-size="8" fill="#888">1</text>
-              <text x="50" y="95" font-size="8" fill="#888">2</text>
-              <text x="65" y="95" font-size="8" fill="#888">3</text>
-              <text x="80" y="95" font-size="8" fill="#888">4</text>
-              <text x="95" y="95" font-size="8" fill="#888">5</text>
-              <text x="110" y="95" font-size="8" fill="#888">6</text>
-              <text x="125" y="95" font-size="8" fill="#888">7</text>
-            </svg>
+          <div class="stat">
+            <div class="stat-label">实际完成</div>
+            <div class="stat-num">87990</div>
           </div>
         </div>
-      </div>
-      
-      <!-- Q3 -->
-      <div class="quarter">
-        <div class="q-header" style="background:#6a9ac4;">
-          <span class="q-label">第三季度</span>
-          <span class="q-num">Q3</span>
-        </div>
-        <div class="q-body">
-          <div class="q-stats">
-            <div class="q-stat">
-              <div class="q-stat-label">目标业绩</div>
-              <div class="q-stat-num">79010</div>
-            </div>
-            <div class="q-stat">
-              <div class="q-stat-label">实际完成</div>
-              <div class="q-stat-num">40929</div>
-            </div>
-          </div>
-          <div class="q-divider"></div>
-          <div class="q-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-          <div class="q-chart">
-            <svg width="140" height="100" viewBox="0 0 140 100">
-              <!-- Bar chart -->
-              <text x="10" y="15" font-size="9" fill="#888">40</text>
-              <text x="10" y="50" font-size="9" fill="#888">20</text>
-              <text x="10" y="85" font-size="9" fill="#888">0</text>
-              <rect x="30" y="20" width="20" height="65" fill="#b0c8e0"/>
-              <rect x="55" y="45" width="20" height="40" fill="#1a3a6b"/>
-              <rect x="80" y="55" width="20" height="30" fill="#8a9aaa"/>
-              <rect x="105" y="30" width="20" height="55" fill="#1a3a6b"/>
-              <text x="40" y="95" font-size="8" fill="#888">人力</text>
-              <text x="65" y="95" font-size="8" fill="#888">制作</text>
-              <text x="90" y="95" font-size="8" fill="#888">设计</text>
-              <text x="115" y="95" font-size="8" fill="#888">运输</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Q4 -->
-      <div class="quarter">
-        <div class="q-header" style="background:#9ab8d4;">
-          <span class="q-label">第四季度</span>
-          <span class="q-num">Q4</span>
-        </div>
-        <div class="q-body">
-          <div class="q-stats">
-            <div class="q-stat">
-              <div class="q-stat-label">目标业绩</div>
-              <div class="q-stat-num">80010</div>
-            </div>
-            <div class="q-stat">
-              <div class="q-stat-label">实际完成</div>
-              <div class="q-stat-num">99107</div>
-            </div>
-          </div>
-          <div class="q-divider"></div>
-          <div class="q-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-          <div class="q-chart">
-            <svg width="120" height="100" viewBox="0 0 120 100">
-              <!-- Pie chart -->
-              <path d="M 60,50 L 60,10 A 40,40 0 0,1 94.6,30 Z" fill="#1a3a6b"/>
-              <path d="M 60,50 L 94.6,30 A 40,40 0 0,1 94.6,70 Z" fill="#3a6abf"/>
-              <path d="M 60,50 L 94.6,70 A 40,40 0 0,1 25.4,70 Z" fill="#8ab0d0"/>
-              <path d="M 60,50 L 25.4,70 A 40,40 0 0,1 60,10 Z" fill="#c0d4e8"/>
-              <text x="78" y="40" font-size="9" fill="white">20%</text>
-              <text x="78" y="65" font-size="9" fill="white">20%</text>
-              <text x="55" y="85" font-size="9" fill="#555">30%</text>
-              <text x="20" y="55" font-size="9" fill="#555">30%</text>
-            </svg>
-          </div>
+        <div class="desc-rule"></div>
+        <div class="desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        <div class="chart">
+          <svg width="196" height="178" viewBox="0 0 196 178" aria-hidden="true">
+            <circle cx="98" cy="92" r="63" fill="none" stroke="#eef2f7" stroke-width="28"/>
+            <circle cx="98" cy="92" r="63" fill="none" stroke="#13469a" stroke-width="28" stroke-dasharray="296 100" stroke-dashoffset="-75"/>
+            <circle cx="98" cy="92" r="63" fill="none" stroke="#5f88c8" stroke-width="28" stroke-dasharray="84 312" stroke-dashoffset="-268"/>
+            <text x="98" y="85" text-anchor="middle" font-size="24" fill="#333">销售</text>
+            <text x="98" y="116" text-anchor="middle" font-size="24" fill="#333">占比</text>
+          </svg>
         </div>
       </div>
     </div>
-    
-    <div class="bottom-bar">
-      <p>我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</p>
+
+    <div class="quarter">
+      <div class="q-head q2">
+        <div class="q-name">第二季度</div>
+        <div class="q-index">Q2</div>
+      </div>
+      <div class="q-body">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">目标业绩</div>
+            <div class="stat-num">88230</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">实际完成</div>
+            <div class="stat-num">66812</div>
+          </div>
+        </div>
+        <div class="desc-rule"></div>
+        <div class="desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        <div class="chart">
+          <svg width="246" height="152" viewBox="0 0 246 152" aria-hidden="true">
+            <text x="22" y="22" font-size="11" fill="#7f7f7f">100%</text>
+            <text x="28" y="61" font-size="11" fill="#7f7f7f">50%</text>
+            <text x="36" y="100" font-size="11" fill="#7f7f7f">0%</text>
+            <line x1="48" y1="19" x2="235" y2="19" stroke="#ececec"/>
+            <line x1="48" y1="58" x2="235" y2="58" stroke="#ececec"/>
+            <line x1="48" y1="97" x2="235" y2="97" stroke="#ececec"/>
+            <polyline points="55,36 70,36 85,50 100,46 115,50 130,36 145,36 160,50 175,53 190,36 205,36 220,50" fill="none" stroke="#5f88c8" stroke-width="3"/>
+            <polyline points="55,71 70,87 85,74 100,79 115,68 130,89 145,76 160,82 175,71 190,89 205,76 220,81" fill="none" stroke="#13469a" stroke-width="3"/>
+            <g font-size="9" fill="#7f7f7f">
+              <text x="58" y="128" transform="rotate(-90 58 128)">1月</text>
+              <text x="73" y="128" transform="rotate(-90 73 128)">2月</text>
+              <text x="88" y="128" transform="rotate(-90 88 128)">3月</text>
+              <text x="103" y="128" transform="rotate(-90 103 128)">4月</text>
+              <text x="118" y="128" transform="rotate(-90 118 128)">5月</text>
+              <text x="133" y="128" transform="rotate(-90 133 128)">6月</text>
+              <text x="148" y="128" transform="rotate(-90 148 128)">7月</text>
+              <text x="163" y="128" transform="rotate(-90 163 128)">8月</text>
+              <text x="178" y="128" transform="rotate(-90 178 128)">9月</text>
+              <text x="193" y="132" transform="rotate(-90 193 132)">10月</text>
+              <text x="208" y="132" transform="rotate(-90 208 132)">11月</text>
+              <text x="223" y="132" transform="rotate(-90 223 132)">12月</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <div class="q-head q3">
+        <div class="q-name">第三季度</div>
+        <div class="q-index">Q3</div>
+      </div>
+      <div class="q-body">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">目标业绩</div>
+            <div class="stat-num">79010</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">实际完成</div>
+            <div class="stat-num">40929</div>
+          </div>
+        </div>
+        <div class="desc-rule"></div>
+        <div class="desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        <div class="chart">
+          <svg width="248" height="148" viewBox="0 0 248 148" aria-hidden="true">
+            <text x="25" y="26" font-size="11" fill="#7f7f7f">40</text>
+            <text x="25" y="70" font-size="11" fill="#7f7f7f">20</text>
+            <text x="33" y="113" font-size="11" fill="#7f7f7f">0</text>
+            <line x1="48" y1="22" x2="235" y2="22" stroke="#ececec"/>
+            <line x1="48" y1="66" x2="235" y2="66" stroke="#ececec"/>
+            <line x1="48" y1="110" x2="235" y2="110" stroke="#ececec"/>
+            <rect x="70" y="47" width="22" height="63" fill="#b7cae6"/>
+            <rect x="129" y="78" width="22" height="32" fill="#13469a"/>
+            <rect x="188" y="58" width="22" height="52" fill="#adadad"/>
+            <rect x="247" y="47" width="22" height="63" fill="#13469a" transform="translate(-22 0)"/>
+            <g font-size="11" fill="#7f7f7f">
+              <text x="81" y="136" text-anchor="middle">人力成本</text>
+              <text x="140" y="136" text-anchor="middle">制作成本</text>
+              <text x="199" y="136" text-anchor="middle">设计费用</text>
+              <text x="236" y="136" text-anchor="end">运输成本</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="quarter">
+      <div class="q-head q4">
+        <div class="q-name">第四季度</div>
+        <div class="q-index">Q4</div>
+      </div>
+      <div class="q-body">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">目标业绩</div>
+            <div class="stat-num">80010</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">实际完成</div>
+            <div class="stat-num">99107</div>
+          </div>
+        </div>
+        <div class="desc-rule"></div>
+        <div class="desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+        <div class="chart">
+          <svg width="196" height="178" viewBox="0 0 196 178" aria-hidden="true">
+            <path d="M98 92 L98 29 A63 63 0 0 1 157.9 72.5 Z" fill="#13469a"/>
+            <path d="M98 92 L157.9 72.5 A63 63 0 0 1 150.3 140.9 Z" fill="#5f88c8"/>
+            <path d="M98 92 L150.3 140.9 A63 63 0 0 1 38.1 126.6 Z" fill="#84add0"/>
+            <path d="M98 92 L38.1 126.6 A63 63 0 0 1 98 29 Z" fill="#b0c5df"/>
+            <line x1="98" y1="29" x2="98" y2="92" stroke="#f6f6f6" stroke-width="2"/>
+            <line x1="157.9" y1="72.5" x2="98" y2="92" stroke="#f6f6f6" stroke-width="2"/>
+            <line x1="150.3" y1="140.9" x2="98" y2="92" stroke="#f6f6f6" stroke-width="2"/>
+            <line x1="38.1" y1="126.6" x2="98" y2="92" stroke="#f6f6f6" stroke-width="2"/>
+            <text x="124" y="72" font-size="16" fill="#ffffff">20%</text>
+            <text x="126" y="111" font-size="16" fill="#ffffff">20%</text>
+            <text x="84" y="142" font-size="16" fill="#ffffff">30%</text>
+            <text x="48" y="85" font-size="16" fill="#ffffff">30%</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="bottom-bar">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</div>
 </div>
 </body>
 </html>

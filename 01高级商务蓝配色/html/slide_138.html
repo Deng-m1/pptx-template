@@ -1,153 +1,281 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 24px; gap: 12px; }
-  .top-cards { display: flex; gap: 10px; height: 110px; }
-  .stat-card { flex: 1; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; }
-  .card-title { font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
-  .card-nums { display: flex; gap: 16px; }
-  .card-num-item { display: flex; flex-direction: column; }
-  .card-num { font-size: 24px; font-weight: 900; color: white; }
-  .card-num-label { font-size: 11px; color: rgba(255,255,255,0.75); }
-  .bottom-row { flex: 1; display: flex; gap: 12px; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 10px; }
-  .legend { display: flex; gap: 12px; justify-content: center; margin-top: 6px; }
-  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
-  .right-panel { width: 340px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
-  .target-row { display: flex; gap: 16px; }
-  .target-item { flex: 1; }
-  .target-label { font-size: 13px; color: #888; margin-bottom: 4px; }
-  .target-num { font-size: 28px; font-weight: 900; color: #1a3a6b; }
-  .divider { border: none; border-top: 1px solid #eee; }
-  .section-title { font-size: 16px; font-weight: 700; color: #1a3a6b; }
-  .section-desc { font-size: 12px; color: #555; line-height: 1.7; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .title {
+    position: absolute;
+    left: 48px;
+    top: 31px;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458f;
+  }
+  .subtitle {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #113f83;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+  .top-cards {
+    position: absolute;
+    left: 48px;
+    top: 121px;
+    width: 1184px;
+    height: 142px;
+    display: flex;
+    gap: 14px;
+  }
+  .stat-card {
+    flex: 1;
+    color: #fff;
+    padding: 18px 22px 12px;
+  }
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+  .card-rule {
+    width: 100%;
+    border-top: 1.5px dashed rgba(255,255,255,0.92);
+    margin: 12px 0 12px;
+  }
+  .card-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  .metric {
+    width: 31%;
+  }
+  .metric-num {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .metric-label {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .main-chart {
+    position: absolute;
+    left: 48px;
+    top: 277px;
+    width: 785px;
+    height: 407px;
+    border: 1px solid #ededed;
+    background: #fff;
+  }
+  .chart-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26px;
+    text-align: center;
+    font-size: 24px;
+    color: #666;
+    font-weight: 400;
+  }
+  .chart-svg {
+    position: absolute;
+    left: 16px;
+    top: 61px;
+    width: 750px;
+    height: 320px;
+  }
+  .legend {
+    position: absolute;
+    left: 145px;
+    bottom: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .swatch {
+    width: 32px;
+    height: 8px;
+    background: #ccc;
+  }
+  .swatch.dash {
+    width: 34px;
+    height: 0;
+    border-top: 2px dotted #435878;
+  }
+  .side-panel {
+    position: absolute;
+    right: 48px;
+    top: 277px;
+    width: 387px;
+    height: 407px;
+    background: #12459a;
+    color: #fff;
+    padding: 30px 40px 28px;
+  }
+  .headline-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+  }
+  .headline-block {
+    width: 48%;
+  }
+  .headline-label {
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .headline-num {
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+  .white-rule {
+    border-top: 1.5px dashed rgba(255,255,255,0.88);
+    margin: 22px 8px 20px;
+  }
+  .section-title {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .section-text {
+    font-size: 14px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 28px;
+  }
+  svg text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">部门销售业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="title">部门销售业绩汇报 Powerpoint Template</div>
+  <div class="subtitle">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="top-cards">
+    <div class="stat-card" style="background:#13469a;">
+      <div class="card-title">项目1部2024年季度销售情况</div>
+      <div class="card-rule"></div>
+      <div class="card-stats">
+        <div class="metric"><div class="metric-num">80000</div><div class="metric-label">销售额</div></div>
+        <div class="metric"><div class="metric-num">20000</div><div class="metric-label">成本</div></div>
+        <div class="metric"><div class="metric-num">60000</div><div class="metric-label">利润</div></div>
+      </div>
+    </div>
+    <div class="stat-card" style="background:#608bcc;">
+      <div class="card-title">项目2部2024年季度销售情况</div>
+      <div class="card-rule"></div>
+      <div class="card-stats">
+        <div class="metric"><div class="metric-num">98600</div><div class="metric-label">销售额</div></div>
+        <div class="metric"><div class="metric-num">20000</div><div class="metric-label">成本</div></div>
+        <div class="metric"><div class="metric-num">78600</div><div class="metric-label">利润</div></div>
+      </div>
+    </div>
+    <div class="stat-card" style="background:#86add0;">
+      <div class="card-title">项目3部2024年季度销售情况</div>
+      <div class="card-rule"></div>
+      <div class="card-stats">
+        <div class="metric"><div class="metric-num">54000</div><div class="metric-label">销售额</div></div>
+        <div class="metric"><div class="metric-num">20000</div><div class="metric-label">成本</div></div>
+        <div class="metric"><div class="metric-num">34000</div><div class="metric-label">利润</div></div>
+      </div>
+    </div>
   </div>
-  <div class="body">
-    <div class="top-cards">
-      <div class="stat-card" style="background:#1a3a6b;">
-        <div class="card-title">项目1部2024年季度销售情况</div>
-        <div class="card-nums">
-          <div class="card-num-item">
-            <span class="card-num">80000</span>
-            <span class="card-num-label">销售额</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">20000</span>
-            <span class="card-num-label">成本</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">60000</span>
-            <span class="card-num-label">利润</span>
-          </div>
-        </div>
+
+  <div class="main-chart">
+    <div class="chart-title">项目部2024年季度销售情况</div>
+    <svg class="chart-svg" viewBox="0 0 750 320" preserveAspectRatio="none">
+      <text x="18" y="28" font-size="13" fill="#777">5</text>
+      <text x="18" y="76" font-size="13" fill="#777">4</text>
+      <text x="18" y="123" font-size="13" fill="#777">3</text>
+      <text x="18" y="170" font-size="13" fill="#777">2</text>
+      <text x="18" y="216" font-size="13" fill="#777">1</text>
+      <text x="18" y="264" font-size="13" fill="#777">0</text>
+      <line x1="44" y1="260" x2="736" y2="260" stroke="#e6e6e6" stroke-width="1.2"/>
+      <line x1="44" y1="213" x2="736" y2="213" stroke="#e6e6e6" stroke-width="1.2"/>
+      <line x1="44" y1="166" x2="736" y2="166" stroke="#e6e6e6" stroke-width="1.2"/>
+      <line x1="44" y1="119" x2="736" y2="119" stroke="#e6e6e6" stroke-width="1.2"/>
+      <line x1="44" y1="72" x2="736" y2="72" stroke="#e6e6e6" stroke-width="1.2"/>
+      <polyline points="128,132 386,152 643,171" fill="none" stroke="#465a79" stroke-width="2" stroke-dasharray="2.2,3.4"/>
+      <rect x="92" y="104" width="46" height="156" fill="#13469a"/>
+      <rect x="138" y="158" width="46" height="102" fill="#5f88c8"/>
+      <rect x="184" y="176" width="46" height="84" fill="#aec2df"/>
+      <rect x="337" y="167" width="46" height="93" fill="#13469a"/>
+      <rect x="383" y="100" width="46" height="160" fill="#5f88c8"/>
+      <rect x="429" y="176" width="46" height="84" fill="#aec2df"/>
+      <rect x="582" y="137" width="46" height="123" fill="#13469a"/>
+      <rect x="628" y="184" width="46" height="76" fill="#5f88c8"/>
+      <rect x="674" y="154" width="46" height="106" fill="#aec2df"/>
+      <text x="161" y="290" font-size="16" fill="#666" text-anchor="middle">4月</text>
+      <text x="406" y="290" font-size="16" fill="#666" text-anchor="middle">5月</text>
+      <text x="651" y="290" font-size="16" fill="#666" text-anchor="middle">6月</text>
+    </svg>
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="background:#13469a;"></span><span>项目1部</span></div>
+      <div class="legend-item"><span class="swatch" style="background:#5f88c8;"></span><span>项目2部</span></div>
+      <div class="legend-item"><span class="swatch" style="background:#aec2df;"></span><span>项目2部2</span></div>
+      <div class="legend-item"><span class="swatch dash"></span><span>指数 (项目1部)</span></div>
+    </div>
+  </div>
+
+  <div class="side-panel">
+    <div class="headline-row">
+      <div class="headline-block">
+        <div class="headline-label">目标业绩</div>
+        <div class="headline-num">150,000</div>
       </div>
-      <div class="stat-card" style="background:#3a6abf;">
-        <div class="card-title">项目2部2024年季度销售情况</div>
-        <div class="card-nums">
-          <div class="card-num-item">
-            <span class="card-num">98600</span>
-            <span class="card-num-label">销售额</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">20000</span>
-            <span class="card-num-label">成本</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">78600</span>
-            <span class="card-num-label">利润</span>
-          </div>
-        </div>
-      </div>
-      <div class="stat-card" style="background:#8ab0d0;">
-        <div class="card-title">项目3部2024年季度销售情况</div>
-        <div class="card-nums">
-          <div class="card-num-item">
-            <span class="card-num">54000</span>
-            <span class="card-num-label">销售额</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">20000</span>
-            <span class="card-num-label">成本</span>
-          </div>
-          <div class="card-num-item">
-            <span class="card-num">34000</span>
-            <span class="card-num-label">利润</span>
-          </div>
-        </div>
+      <div class="headline-block">
+        <div class="headline-label">实际完成</div>
+        <div class="headline-num">220,000</div>
       </div>
     </div>
-    <div class="bottom-row">
-      <div class="chart-box">
-        <div class="chart-title">项目部2024年季度销售情况</div>
-        <svg width="100%" height="100%" viewBox="0 0 650 280" preserveAspectRatio="xMidYMid meet">
-          <text x="25" y="20" font-size="10" fill="#888" text-anchor="end">5</text>
-          <text x="25" y="80" font-size="10" fill="#888" text-anchor="end">4</text>
-          <text x="25" y="140" font-size="10" fill="#888" text-anchor="end">3</text>
-          <text x="25" y="200" font-size="10" fill="#888" text-anchor="end">2</text>
-          <text x="25" y="250" font-size="10" fill="#888" text-anchor="end">1</text>
-          <text x="25" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
-          <line x1="30" y1="265" x2="640" y2="265" stroke="#eee" stroke-width="1"/>
-          <!-- Trend line (dotted) -->
-          <polyline points="100,75 330,115 560,135" fill="none" stroke="#1a3a6b" stroke-width="1.5" stroke-dasharray="5,4"/>
-          <!-- 4月 -->
-          <rect x="50" y="70" width="40" height="195" fill="#1a3a6b"/>
-          <rect x="95" y="130" width="40" height="135" fill="#3a6abf"/>
-          <rect x="140" y="165" width="40" height="100" fill="#8ab0d0"/>
-          <!-- 5月 -->
-          <rect x="275" y="130" width="40" height="135" fill="#1a3a6b"/>
-          <rect x="320" y="70" width="40" height="195" fill="#3a6abf"/>
-          <rect x="365" y="165" width="40" height="100" fill="#8ab0d0"/>
-          <!-- 6月 -->
-          <rect x="500" y="90" width="40" height="175" fill="#1a3a6b"/>
-          <rect x="545" y="150" width="40" height="115" fill="#3a6abf"/>
-          <rect x="590" y="115" width="40" height="150" fill="#8ab0d0"/>
-          <text x="120" y="280" font-size="11" fill="#555" text-anchor="middle">4月</text>
-          <text x="345" y="280" font-size="11" fill="#555" text-anchor="middle">5月</text>
-          <text x="570" y="280" font-size="11" fill="#555" text-anchor="middle">6月</text>
-        </svg>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>项目1部</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>项目2部</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>项目2部2</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b; opacity:0.5;"></div>指数 (项目1部)</div>
-        </div>
-      </div>
-      <div class="right-panel">
-        <div class="target-row">
-          <div class="target-item">
-            <div class="target-label">目标业绩</div>
-            <div class="target-num">150,000</div>
-          </div>
-          <div class="target-item">
-            <div class="target-label">实际完成</div>
-            <div class="target-num">220,000</div>
-          </div>
-        </div>
-        <hr class="divider">
-        <div class="section-title">数据总结</div>
-        <div class="section-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-        <hr class="divider">
-        <div class="section-title">数据总结</div>
-        <div class="section-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
-      </div>
-    </div>
+    <div class="white-rule"></div>
+    <div class="section-title">数据总结</div>
+    <div class="section-text">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
+    <div class="section-title">数据总结</div>
+    <div class="section-text" style="margin-bottom:0;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值。我们对原始数据进行了清洗和整理，去除了缺失值和异常值。</div>
   </div>
 </div>
 </body>

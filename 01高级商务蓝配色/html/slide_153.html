@@ -2,82 +2,246 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 50px; gap: 10px; }
-  .title-area { text-align: center; }
-  .main-title { font-size: 26px; font-weight: 900; color: #1a3a6b; margin-bottom: 6px; }
-  .sub-desc { font-size: 13px; color: #888; }
-  .content-area { flex: 1; display: flex; align-items: center; gap: 0; }
-  .left-pills { width: 160px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-  .right-pills { width: 160px; display: flex; flex-direction: column; gap: 14px; align-items: flex-end; }
-  .pill { border-radius: 30px; padding: 10px 24px; font-size: 16px; font-weight: 700; color: white; }
-  .pill.dark { background: #1a3a6b; }
-  .pill.medium { background: #3a6abf; }
-  .pill.light { background: #8ab0d0; }
-  .center-area { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .circles-row { display: flex; align-items: center; justify-content: center; position: relative; }
-  .bottom-flow { display: flex; align-items: center; gap: 0; }
-  .flow-pill { border-radius: 30px; padding: 10px 28px; font-size: 16px; font-weight: 700; }
-  .flow-pill.dark { background: #1a3a6b; color: white; }
-  .flow-pill.light { background: #c0d4e8; color: #1a3a6b; }
-  .flow-arrow { font-size: 20px; color: #3a6abf; padding: 0 8px; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .header-title {
+    position: absolute;
+    left: 48px;
+    top: 30px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .header-sub {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+
+  .title {
+    position: absolute;
+    top: 126px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    color: #2d2d2d;
+  }
+  .subtitle {
+    position: absolute;
+    top: 179px;
+    left: 220px;
+    width: 840px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #9c9c9c;
+  }
+
+  .side-col {
+    position: absolute;
+    top: 267px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .left-col { left: 59px; }
+  .right-col { right: 59px; align-items: flex-end; }
+  .side-pill {
+    width: 190px;
+    height: 54px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+  .deep { background: #1046a0; }
+  .mid { background: #5c8ac9; }
+
+  .center-wrap {
+    position: absolute;
+    left: 249px;
+    top: 230px;
+    width: 782px;
+    height: 345px;
+  }
+  .left-wing,
+  .right-wing {
+    position: absolute;
+    top: 10px;
+    width: 270px;
+    height: 250px;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    opacity: 0.9;
+  }
+  .left-wing {
+    left: 25px;
+    background: linear-gradient(90deg, rgba(227,237,250,0.15) 0%, rgba(212,228,247,0.92) 75%, rgba(201,221,243,0.98) 100%);
+  }
+  .right-wing {
+    right: 25px;
+    transform: scaleX(-1);
+    background: linear-gradient(90deg, rgba(227,237,250,0.15) 0%, rgba(212,228,247,0.92) 75%, rgba(201,221,243,0.98) 100%);
+  }
+
+  .logic-box {
+    position: absolute;
+    left: 194px;
+    top: 43px;
+    width: 404px;
+    height: 164px;
+    border: 2px dashed #225a9c;
+    border-radius: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.1);
+    z-index: 3;
+  }
+  .core-circle {
+    width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: #ffffff;
+    box-shadow: 0 10px 22px rgba(70, 98, 142, 0.18);
+  }
+  .core-circle.left {
+    background: #1247a2;
+  }
+  .core-circle.right {
+    background: #c8c8c8;
+    color: #ffffff;
+  }
+
+  .down-arrow {
+    position: absolute;
+    left: 352px;
+    top: 220px;
+    width: 78px;
+    height: 58px;
+    background: linear-gradient(180deg, #dce8f6 0%, #b5cbea 100%);
+    clip-path: polygon(0 0, 100% 0, 74% 0, 74% 45%, 100% 45%, 50% 100%, 0 45%, 26% 45%, 26% 0);
+    z-index: 2;
+  }
+
+  .flow-row {
+    position: absolute;
+    left: 100px;
+    top: 306px;
+    width: 582px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+  }
+  .flow-pill {
+    height: 58px;
+    border-radius: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .flow-pill.dark {
+    background: #1247a2;
+    width: 290px;
+  }
+  .flow-pill.light {
+    background: #b7cae6;
+    color: #ffffff;
+    width: 292px;
+  }
+  .flow-arrow {
+    width: 46px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 1;
+    color: #9d9d9d;
+    margin-top: -2px;
+  }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">工作汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="header-title">工作汇报 Powerpoint Template</div>
+  <div class="header-sub">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="title">品牌提升逻辑分析</div>
+  <div class="subtitle">打造品牌新形象，以全新产品生态，跨界融合。提升品牌认知度，占领消费者心智，引领行业市场。</div>
+
+  <div class="side-col left-col">
+    <div class="side-pill deep">文化</div>
+    <div class="side-pill deep">形象</div>
+    <div class="side-pill mid">体验</div>
   </div>
-  <div class="body">
-    <div class="title-area">
-      <div class="main-title">品牌提升逻辑分析</div>
-      <div class="sub-desc">打造品牌新形象，以全新产品生态，跨界融合。提升品牌认知度，占领消费者心智，引领行业市场。</div>
+
+  <div class="side-col right-col">
+    <div class="side-pill mid">愿景</div>
+    <div class="side-pill deep">使命</div>
+    <div class="side-pill deep">特征</div>
+  </div>
+
+  <div class="center-wrap">
+    <div class="left-wing"></div>
+    <div class="right-wing"></div>
+
+    <div class="logic-box">
+      <div class="core-circle left">形象</div>
+      <div class="core-circle right">价值</div>
     </div>
-    <div class="content-area">
-      <div class="left-pills">
-        <div class="pill dark">文化</div>
-        <div class="pill medium">形象</div>
-        <div class="pill light">体验</div>
-      </div>
-      <div class="center-area">
-        <div class="circles-row">
-          <svg width="600" height="300" viewBox="0 0 600 300">
-            <!-- Left funnel/cone shape -->
-            <polygon points="0,150 180,80 180,220" fill="#c0d4e8" opacity="0.5"/>
-            <!-- Right funnel/cone shape -->
-            <polygon points="600,150 420,80 420,220" fill="#c0d4e8" opacity="0.5"/>
-            <!-- Dashed outer ellipse -->
-            <ellipse cx="300" cy="150" rx="160" ry="110" fill="none" stroke="#1a3a6b" stroke-width="2" stroke-dasharray="8,6"/>
-            <!-- Left circle (dark blue): 形象 -->
-            <circle cx="260" cy="150" r="90" fill="#1a3a6b"/>
-            <text x="260" y="158" text-anchor="middle" font-size="24" font-weight="900" fill="white">形象</text>
-            <!-- Right circle (gray): 价值 -->
-            <circle cx="340" cy="150" r="90" fill="#c0c8d4" opacity="0.9"/>
-            <text x="340" y="158" text-anchor="middle" font-size="24" font-weight="900" fill="white">价值</text>
-            <!-- Down arrow -->
-            <polygon points="290,240 310,240 310,270 320,270 300,295 280,270 290,270" fill="#c0d4e8"/>
-          </svg>
-        </div>
-        <div class="bottom-flow">
-          <div class="flow-pill dark">品牌资产</div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-pill light">问题优化</div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-pill dark">品牌激活</div>
-        </div>
-      </div>
-      <div class="right-pills">
-        <div class="pill dark">愿景</div>
-        <div class="pill medium">使命</div>
-        <div class="pill dark">特征</div>
-      </div>
+
+    <div class="down-arrow"></div>
+
+    <div class="flow-row">
+      <div class="flow-pill dark">品牌资产</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-pill light">问题优化</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-pill dark">品牌激活</div>
     </div>
   </div>
 </div>

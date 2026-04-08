@@ -2,87 +2,204 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 40px; gap: 10px; }
-  .title-area { text-align: center; }
-  .main-title { font-size: 26px; font-weight: 900; color: #1a3a6b; margin-bottom: 6px; }
-  .sub-desc { font-size: 12px; color: #888; line-height: 1.6; }
-  .content-area { flex: 1; display: flex; align-items: center; gap: 20px; }
-  .left-col { width: 320px; display: flex; flex-direction: column; gap: 10px; }
-  .right-col { width: 320px; display: flex; flex-direction: column; gap: 10px; }
-  .item-card { border-radius: 4px; padding: 14px 16px; }
-  .item-card.dashed { border: 2px dashed #1a3a6b; }
-  .item-card.solid { background: #1a3a6b; }
-  .item-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-  .item-title.dark { color: #1a3a6b; }
-  .item-title.white { color: white; }
-  .item-desc { font-size: 12px; line-height: 1.6; }
-  .item-desc.dark { color: #555; }
-  .item-desc.white { color: rgba(255,255,255,0.85); }
-  .center-circle { width: 280px; height: 280px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .header-title {
+    position: absolute;
+    left: 48px;
+    top: 30px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .header-sub {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+
+  .main-title {
+    position: absolute;
+    top: 128px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    color: #243850;
+  }
+  .sub-desc {
+    position: absolute;
+    top: 178px;
+    left: 180px;
+    width: 920px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2.2;
+    color: #9b9b9b;
+  }
+
+  .card {
+    position: absolute;
+    padding: 28px 34px 0 34px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .card h3 {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.75;
+    white-space: nowrap;
+  }
+
+  .dashed {
+    background: #ffffff;
+    border: 2px dashed #b7b7b7;
+  }
+  .dashed h3,
+  .dashed p { color: #153a71; }
+
+  .solid {
+    background: #0f47a1;
+  }
+  .solid h3,
+  .solid p { color: #ffffff; }
+
+  .left1 { left: 67px; top: 262px; width: 420px; height: 126px; }
+  .left2 { left: 67px; top: 398px; width: 332px; height: 128px; }
+  .left3 { left: 68px; top: 531px; width: 414px; height: 128px; padding-top: 30px; }
+
+  .right1 { left: 792px; top: 262px; width: 420px; height: 125px; padding-top: 30px; }
+  .right2 { left: 881px; top: 397px; width: 332px; height: 128px; }
+  .right3 { left: 797px; top: 531px; width: 414px; height: 128px; padding-top: 30px; }
+
+  .center-wrap {
+    position: absolute;
+    left: 390px;
+    top: 235px;
+    width: 500px;
+    height: 430px;
+    z-index: 3;
+  }
+  .outer-ring {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 430px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0) 0 124px, #ffffff 125px 190px, rgba(244,247,251,0.98) 191px 206px, rgba(255,255,255,0) 207px 100%);
+    filter: drop-shadow(0 10px 22px rgba(36,77,142,0.12));
+  }
+  .center-core {
+    position: absolute;
+    left: 101px;
+    top: 64px;
+    width: 298px;
+    height: 298px;
+    border-radius: 50%;
+    background: #0f47a1;
+    box-shadow: 0 12px 24px rgba(21, 67, 145, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  .icon {
+    font-size: 78px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .center-cn {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .center-en {
+    font-size: 12px;
+    line-height: 1;
+    color: rgba(255,255,255,0.78);
+  }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">工作汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="header-title">工作汇报 Powerpoint Template</div>
+  <div class="header-sub">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="main-title">商务部2024上半年总结</div>
+  <div class="sub-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除<br>此外更重要的是定性的工作成果的衡量。</div>
+
+  <div class="card dashed left1">
+    <h3>项目主要成绩</h3>
+    <p>产品优势详细说明明产品优势详细说明</p>
   </div>
-  <div class="body">
-    <div class="title-area">
-      <div class="main-title">商务部2024上半年总结</div>
-      <div class="sub-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除<br>此外更重要的是定性的工作成果的衡量。</div>
-    </div>
-    <div class="content-area">
-      <div class="left-col">
-        <div class="item-card dashed">
-          <div class="item-title dark">项目主要成绩</div>
-          <div class="item-desc dark">产品优势详细说明产品优势详细说明</div>
-        </div>
-        <div class="item-card dashed">
-          <div class="item-title dark">项目重要任务</div>
-          <div class="item-desc dark">产品优势详细说明产品优势详细说明</div>
-        </div>
-        <div class="item-card solid">
-          <div class="item-title white">项目进度成果</div>
-          <div class="item-desc white">产品优势详细说明产品优势详细说明</div>
-        </div>
-      </div>
-      <div class="center-circle">
-        <svg width="280" height="280" viewBox="0 0 280 280">
-          <!-- Outer circle -->
-          <circle cx="140" cy="140" r="130" fill="#f0f3f8"/>
-          <!-- Inner circle -->
-          <circle cx="140" cy="140" r="100" fill="white" stroke="#e0e8f0" stroke-width="2"/>
-          <!-- Dark blue center -->
-          <circle cx="140" cy="140" r="75" fill="#1a3a6b"/>
-          <!-- Building icon -->
-          <text x="140" y="125" text-anchor="middle" font-size="32" fill="white">🏢</text>
-          <!-- Labels -->
-          <text x="140" y="160" text-anchor="middle" font-size="18" font-weight="900" fill="white">半年度总结</text>
-          <text x="140" y="180" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.7)">Semi-annual summary</text>
-        </svg>
-      </div>
-      <div class="right-col">
-        <div class="item-card solid">
-          <div class="item-title white">部门主要成绩</div>
-          <div class="item-desc white">产品优势详细说明产品优势详细说明</div>
-        </div>
-        <div class="item-card solid">
-          <div class="item-title white">部门主要优势</div>
-          <div class="item-desc white">产品优势详细说明产品优势详细说明</div>
-        </div>
-        <div class="item-card solid">
-          <div class="item-title white">目标达成进度</div>
-          <div class="item-desc white">产品优势详细说明产品优势详细说明</div>
-        </div>
-      </div>
+  <div class="card dashed left2">
+    <h3>项目重要任务</h3>
+    <p>产品优势详细说明产品优势详细说明</p>
+  </div>
+  <div class="card solid left3">
+    <h3>项目进度成果</h3>
+    <p>产品优势详细说明产品优势详细说明</p>
+  </div>
+
+  <div class="card solid right1">
+    <h3>部门主要成绩</h3>
+    <p>产品优势详细说明产品优势详细说明</p>
+  </div>
+  <div class="card dashed right2">
+    <h3>部门主要优势</h3>
+    <p>产品优势详细说明产品优势详细说明</p>
+  </div>
+  <div class="card solid right3">
+    <h3>目标达成进度</h3>
+    <p>产品优势详细说明产品优势详细说明</p>
+  </div>
+
+  <div class="center-wrap">
+    <div class="outer-ring"></div>
+    <div class="center-core">
+      <div class="icon">🏢</div>
+      <div class="center-cn">半年度总结</div>
+      <div class="center-en">Semi-annual summary</div>
     </div>
   </div>
 </div>

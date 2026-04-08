@@ -2,77 +2,154 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px 40px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0; width: 1100px; height: 560px; position: relative; }
-  .cell { padding: 30px 36px; display: flex; flex-direction: column; gap: 12px; position: relative; }
-  .cell-num { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.3); border: 2px solid rgba(255,255,255,0.6); color: white; font-size: 18px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
-  .cell-title { font-size: 28px; font-weight: 900; color: white; }
-  .cell-desc { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; }
-  .cell-header { display: flex; align-items: center; gap: 14px; }
-  /* Arrow SVG overlay */
-  .arrow-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .header-title {
+    position: absolute;
+    left: 48px;
+    top: 30px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .header-sub {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+
+  .stage {
+    position: absolute;
+    width: 462px;
+    height: 226px;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  .s1 { left: 133px; top: 138px; background: #5f8fd0; }
+  .s2 { left: 688px; top: 138px; background: #c7d8ee; }
+  .s3 { left: 688px; top: 436px; background: #5f8fd0; }
+  .s4 { left: 133px; top: 436px; background: #84acd1; }
+
+  .num {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5c8ccf;
+    font-size: 34px;
+    line-height: 64px;
+    text-align: center;
+    font-weight: 900;
+  }
+  .num.dark { color: #4f81c8; }
+  .s1 .num, .s4 .num { left: 34px; }
+  .s2 .num, .s3 .num { right: 24px; }
+  .s1 .num, .s2 .num { top: 30px; }
+  .s3 .num, .s4 .num { top: 144px; }
+
+  .title {
+    position: absolute;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  .desc {
+    position: absolute;
+    width: 290px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.97);
+    text-align: left;
+  }
+
+  .s1 .title { left: 118px; top: 43px; }
+  .s1 .desc { left: 120px; top: 112px; width: 250px; }
+
+  .s2 .title { left: 92px; top: 43px; }
+  .s2 .desc { left: 102px; top: 112px; width: 280px; }
+
+  .s3 .title { left: 90px; top: 160px; }
+  .s3 .desc { left: 102px; top: 62px; width: 280px; }
+
+  .s4 .title { left: 118px; top: 160px; }
+  .s4 .desc { left: 120px; top: 62px; width: 250px; }
+
+  svg text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">工作汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+  <div class="header-title">工作汇报 Powerpoint Template</div>
+  <div class="header-sub">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="stage s1">
+    <div class="num dark">01</div>
+    <div class="title">第一阶段：启动</div>
+    <div class="desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
   </div>
-  <div class="body">
-    <div class="grid">
-      <!-- Top-left: 01 启动 -->
-      <div class="cell" style="background:#1a3a6b;">
-        <div class="cell-header">
-          <div class="cell-num">01</div>
-          <div class="cell-title">第一阶段：启动</div>
-        </div>
-        <div class="cell-desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
-      </div>
-      <!-- Top-right: 02 规划 -->
-      <div class="cell" style="background:#6a9ac4;">
-        <div class="cell-header">
-          <div class="cell-title" style="flex:1;">第二阶段：规划</div>
-          <div class="cell-num">02</div>
-        </div>
-        <div class="cell-desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
-      </div>
-      <!-- Bottom-left: 04 优化 -->
-      <div class="cell" style="background:#3a6abf;">
-        <div class="cell-header">
-          <div class="cell-num">04</div>
-          <div class="cell-title">第四阶段：优化</div>
-        </div>
-        <div class="cell-desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
-      </div>
-      <!-- Bottom-right: 03 执行 -->
-      <div class="cell" style="background:#8ab0d0;">
-        <div class="cell-header">
-          <div class="cell-title" style="flex:1;">第三阶段：执行</div>
-          <div class="cell-num">03</div>
-        </div>
-        <div class="cell-desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
-      </div>
-      <!-- Arrow overlay -->
-      <svg class="arrow-overlay" viewBox="0 0 1100 560">
-        <!-- Right arrow: 01→02 (top center) -->
-        <polygon points="510,240 590,240 590,220 630,280 590,340 590,320 510,320" fill="white" opacity="0.9"/>
-        <!-- Down arrow: 02→03 (right center) -->
-        <polygon points="760,240 760,320 780,320 720,360 660,320 680,320 680,240" fill="white" opacity="0.9"/>
-        <!-- Left arrow: 03→04 (bottom center) -->
-        <polygon points="590,240 510,240 510,220 470,280 510,340 510,320 590,320" fill="white" opacity="0.9" transform="translate(0,0)"/>
-        <!-- Up arrow: 04→01 (left center) -->
-        <polygon points="340,320 340,240 360,240 300,200 240,240 260,240 260,320" fill="white" opacity="0.9"/>
-      </svg>
-    </div>
+
+  <div class="stage s2">
+    <div class="num">02</div>
+    <div class="title">第二阶段：规划</div>
+    <div class="desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
   </div>
+
+  <div class="stage s3">
+    <div class="num">03</div>
+    <div class="title">第三阶段：执行</div>
+    <div class="desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
+  </div>
+
+  <div class="stage s4">
+    <div class="num">04</div>
+    <div class="title">第四阶段：优化</div>
+    <div class="desc">工作完成情况工作完成情况工作完<br>成情况作完成情况工作完成情况</div>
+  </div>
+
+  <svg width="1280" height="720" viewBox="0 0 1280 720" aria-hidden="true" style="position:absolute;left:0;top:0;pointer-events:none;">
+    <defs>
+      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#d7e1ef" flood-opacity="0.75"/>
+      </filter>
+    </defs>
+
+    <polygon points="595,173 686,173 686,147 734,194 686,241 686,215 595,215" fill="#b8cbe4" filter="url(#soft)"/>
+    <polygon points="1066,364 1066,436 1039,436 1108,477 1177,436 1150,436 1150,364" fill="#b8cbe4" filter="url(#soft)"/>
+    <polygon points="688,571 597,571 597,545 551,592 597,639 597,613 688,613" fill="#6a96d0" filter="url(#soft)"/>
+    <polygon points="184,436 184,363 158,363 204,318 250,363 224,363 224,436" fill="#b9cbe3" filter="url(#soft)"/>
+  </svg>
 </div>
 </body>
 </html>

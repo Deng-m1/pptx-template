@@ -4,93 +4,261 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 30px; gap: 14px; }
-  .left-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
-  .desc-text { font-size: 12px; color: #555; line-height: 1.7; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; position: relative; display: flex; flex-direction: column; }
-  .chart-title { font-size: 13px; color: #888; margin-bottom: 8px; }
-  .callout { position: absolute; background: #6a9ac4; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; line-height: 1.5; }
-  .callout::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
-  .right-col { width: 300px; display: flex; flex-direction: column; gap: 12px; }
-  .stat-card { flex: 1; border-radius: 4px; padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; }
-  .stat-header { display: flex; justify-content: space-between; align-items: center; }
-  .stat-label { font-size: 14px; font-weight: 700; color: white; }
-  .stat-icon { width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; font-size: 16px; color: white; }
-  .stat-num { font-size: 32px; font-weight: 900; color: white; }
-  .stat-desc { font-size: 12px; color: rgba(255,255,255,0.8); }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    padding: 22px 48px 24px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .header {
+    height: 62px;
+    border-bottom: 2px solid #0f4e98;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+  }
+  .header-title {
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 900;
+    color: #114c97;
+    letter-spacing: 0.2px;
+  }
+  .header-sub {
+    font-size: 21px;
+    line-height: 1;
+    color: #114c97;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  .body {
+    flex: 1;
+    display: flex;
+    gap: 24px;
+    padding-top: 38px;
+  }
+  .left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-title {
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #114c97;
+    margin-bottom: 16px;
+  }
+  .desc {
+    width: 780px;
+    font-size: 13px;
+    line-height: 2.0;
+    color: #8a8a8a;
+    margin-bottom: 18px;
+  }
+  .chart-card {
+    position: relative;
+    width: 792px;
+    height: 392px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    padding: 18px 18px 12px;
+  }
+  .chart-title {
+    font-size: 16px;
+    color: #4f4f4f;
+    margin-left: 32px;
+    margin-bottom: 8px;
+  }
+  .callout {
+    position: absolute;
+    top: 50px;
+    left: 350px;
+    width: 372px;
+    background: #5c8ccc;
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 18px 16px;
+    font-size: 11px;
+    line-height: 1.7;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+  }
+  .callout strong {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .callout:after {
+    content: '';
+    position: absolute;
+    left: 34px;
+    bottom: -24px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 26px solid #5c8ccc;
+  }
+  .right-col {
+    width: 338px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .stat-card {
+    height: 172px;
+    padding: 18px 24px 18px 24px;
+    color: #fff;
+    position: relative;
+  }
+  .stat-label {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 6px;
+  }
+  .stat-num {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 900;
+    margin-top: 16px;
+    letter-spacing: 0.1px;
+  }
+  .stat-desc {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    font-size: 17px;
+    line-height: 1;
+    color: rgba(255,255,255,0.98);
+  }
+  .icon-ring {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-ring svg {
+    width: 34px;
+    height: 34px;
+    fill: #fff;
+  }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">平台数据分析 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">平台数据分析 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+
   <div class="body">
     <div class="left-col">
       <div class="sub-title">自媒体平台数据分析</div>
-      <div class="desc-text">我们在主要电商平台（如京东、淘宝、天猫）的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，占据了总销售额的约70%。<br>在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续广告投放和促销活动，以及产品品质的保证。</div>
-      <div class="chart-box">
+      <div class="desc">
+        我们在主要电商平台（如京东、淘宝、天猫）的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，
+        占据了总销售额的约70%。<br>
+        在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续
+        广告投放和促销活动，以及产品品质的保证。
+      </div>
+
+      <div class="chart-card">
         <div class="chart-title">周商品笔记销量</div>
-        <div class="callout" style="top:30px; left:30%;">
-          <div style="font-weight:700; margin-bottom:3px;">内容付费服务：</div>
-          我们提供了多种形式的内容付费服务，如会员订阅、独家内容和课程销售等。这些服务在过去一年中得到了显著增长，为我们带来了稳定的收入流。
+
+        <div class="callout">
+          <strong>内容付费服务：</strong> 我们提供了多种形式的内容付费服务，如会<br>
+          员订阅、独家内容和课程销售等。这些服务在过去一年中得
+          到了显著增长，为我们带来了稳定的收入流。
         </div>
-        <svg width="100%" height="100%" viewBox="0 0 720 300" preserveAspectRatio="xMidYMid meet">
-          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">140</text>
-          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">120</text>
-          <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">100</text>
-          <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">80</text>
-          <text x="30" y="240" font-size="10" fill="#888" text-anchor="end">60</text>
-          <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">40</text>
-          <text x="30" y="295" font-size="10" fill="#888" text-anchor="end">0</text>
-          <line x1="40" y1="290" x2="710" y2="290" stroke="#eee" stroke-width="1"/>
-          <line x1="40" y1="235" x2="710" y2="235" stroke="#eee" stroke-width="1"/>
-          <line x1="40" y1="195" x2="710" y2="195" stroke="#eee" stroke-width="1"/>
-          <rect x="50" y="215" width="60" height="75" fill="#1a3a6b"/>
-          <rect x="150" y="195" width="60" height="95" fill="#1a3a6b"/>
-          <rect x="250" y="90" width="60" height="200" fill="#1a3a6b"/>
-          <rect x="350" y="140" width="60" height="150" fill="#1a3a6b"/>
-          <rect x="450" y="155" width="60" height="135" fill="#1a3a6b"/>
-          <rect x="550" y="175" width="60" height="115" fill="#1a3a6b"/>
-          <rect x="650" y="195" width="60" height="95" fill="#1a3a6b"/>
-          <text x="80" y="305" font-size="10" fill="#555" text-anchor="middle">周一</text>
-          <text x="180" y="305" font-size="10" fill="#555" text-anchor="middle">周二</text>
-          <text x="280" y="305" font-size="10" fill="#555" text-anchor="middle">周三</text>
-          <text x="380" y="305" font-size="10" fill="#555" text-anchor="middle">周四</text>
-          <text x="480" y="305" font-size="10" fill="#555" text-anchor="middle">周五</text>
-          <text x="580" y="305" font-size="10" fill="#555" text-anchor="middle">周六</text>
-          <text x="680" y="305" font-size="10" fill="#555" text-anchor="middle">周日</text>
+
+        <svg width="100%" height="318" viewBox="0 0 756 318" preserveAspectRatio="none">
+          <g stroke="#dfe6ef" stroke-width="1">
+            <line x1="32" y1="287" x2="726" y2="287"></line>
+            <line x1="32" y1="249" x2="726" y2="249"></line>
+            <line x1="32" y1="211" x2="726" y2="211"></line>
+            <line x1="32" y1="173" x2="726" y2="173"></line>
+            <line x1="32" y1="135" x2="726" y2="135"></line>
+            <line x1="32" y1="97" x2="726" y2="97"></line>
+            <line x1="32" y1="59" x2="726" y2="59"></line>
+          </g>
+          <g font-size="11" fill="#6b6b6b" text-anchor="end">
+            <text x="18" y="290">0</text>
+            <text x="18" y="252">20</text>
+            <text x="18" y="214">40</text>
+            <text x="18" y="176">60</text>
+            <text x="18" y="138">80</text>
+            <text x="18" y="100">120</text>
+            <text x="18" y="62">140</text>
+          </g>
+
+          <g fill="#163f8f">
+            <rect x="68"  y="225" width="32" height="62"></rect>
+            <rect x="173" y="203" width="32" height="84"></rect>
+            <rect x="278" y="97"  width="32" height="190"></rect>
+            <rect x="383" y="160" width="32" height="127"></rect>
+            <rect x="488" y="176" width="32" height="111"></rect>
+            <rect x="593" y="192" width="32" height="95"></rect>
+            <rect x="698" y="203" width="32" height="84" transform="translate(-4 0)"></rect>
+          </g>
+
+          <g font-size="11" fill="#6c6c6c" text-anchor="middle">
+            <text x="84"  y="305">周一</text>
+            <text x="189" y="305">周二</text>
+            <text x="294" y="305">周三</text>
+            <text x="399" y="305">周四</text>
+            <text x="504" y="305">周五</text>
+            <text x="609" y="305">周六</text>
+            <text x="710" y="305">周日</text>
+          </g>
         </svg>
       </div>
     </div>
+
     <div class="right-col">
-      <div class="stat-card" style="background:#1a3a6b;">
-        <div class="stat-header">
-          <span class="stat-label">新增粉丝量</span>
-          <div class="stat-icon">↑</div>
+      <div class="stat-card" style="background:#123f93;">
+        <div class="stat-label">新增粉丝量</div>
+        <div class="icon-ring">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M14 27V12H9l7-8 7 8h-5v15z"></path>
+          </svg>
         </div>
         <div class="stat-num">46500</div>
         <div class="stat-desc">相比上周环比增长20%</div>
       </div>
-      <div class="stat-card" style="background:#3a6abf;">
-        <div class="stat-header">
-          <span class="stat-label">主页访客</span>
-          <div class="stat-icon">↑</div>
+
+      <div class="stat-card" style="background:#5b88ca;">
+        <div class="stat-label">主页访客</div>
+        <div class="icon-ring">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M14 27V12H9l7-8 7 8h-5v15z"></path>
+          </svg>
         </div>
         <div class="stat-num">5500</div>
         <div class="stat-desc">相比上周环比增长10%</div>
       </div>
-      <div class="stat-card" style="background:#8ab0d0;">
-        <div class="stat-header">
-          <span class="stat-label">观看数量</span>
-          <div class="stat-icon">↑</div>
+
+      <div class="stat-card" style="background:#86add0;">
+        <div class="stat-label">观看数量</div>
+        <div class="icon-ring">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M14 27V12H9l7-8 7 8h-5v15z"></path>
+          </svg>
         </div>
         <div class="stat-num">188000</div>
         <div class="stat-desc">相比上周环比增长20%</div>

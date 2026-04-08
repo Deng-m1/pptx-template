@@ -4,144 +4,393 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 30px; gap: 14px; }
-  .left-col { width: 380px; display: flex; flex-direction: column; gap: 12px; }
-  .stat-card { flex: 1; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between; }
-  .card-header { display: flex; justify-content: space-between; align-items: center; }
-  .card-num { font-size: 30px; font-weight: 900; color: white; }
-  .card-label { font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 4px; }
-  .card-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .card-bottom { display: flex; justify-content: space-between; align-items: center; }
-  .card-sub { font-size: 12px; color: rgba(255,255,255,0.75); }
-  .card-pct { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.9); }
-  .progress-bar { height: 5px; background: rgba(255,255,255,0.3); border-radius: 3px; overflow: hidden; margin-top: 4px; }
-  .progress-fill { height: 100%; border-radius: 3px; background: rgba(255,255,255,0.9); }
-  .right-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .desc-box { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 16px 20px; }
-  .desc-title { font-size: 18px; font-weight: 700; color: #1a3a6b; margin-bottom: 10px; }
-  .desc-text { font-size: 12px; color: #555; line-height: 1.8; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; position: relative; display: flex; flex-direction: column; }
-  .callout { position: absolute; background: #6a9ac4; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; line-height: 1.5; }
-  .callout::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .header {
+    height: 84px;
+    padding: 16px 48px 0;
+    border-bottom: 2px solid #0c468f;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 33px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0c468f;
+  }
+  .header-sub {
+    margin-top: 6px;
+    font-size: 22px;
+    line-height: 1;
+    color: #0c468f;
+    font-style: italic;
+  }
+  .body {
+    flex: 1;
+    display: flex;
+    gap: 18px;
+    padding: 28px 48px 26px;
+  }
+  .left-col {
+    width: 394px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .stat-card {
+    flex: 1;
+    border-radius: 4px;
+    padding: 16px 22px 14px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .card-num {
+    font-size: 37px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  .card-label {
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: rgba(255,255,255,0.98);
+    margin-top: 6px;
+  }
+  .icon-box {
+    width: 60px;
+    height: 54px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .icon-box svg {
+    width: 42px;
+    height: 42px;
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .card-bottom {
+    margin-top: 14px;
+  }
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .card-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.92);
+  }
+  .card-pct {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.98);
+  }
+  .progress-bar {
+    height: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-base {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+  }
+  .progress-fill {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    bottom: 1px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.96);
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .desc-box {
+    border: 1px solid #e5e8ef;
+    padding: 14px 18px 12px 18px;
+  }
+  .desc-title {
+    font-size: 23px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #0c468f;
+    margin-bottom: 10px;
+  }
+  .desc-text {
+    font-size: 12px;
+    color: #7a7a7a;
+    line-height: 2.1;
+  }
+  .chart-box {
+    flex: 1;
+    border: 1px solid #e5e8ef;
+    border-radius: 14px;
+    padding: 20px 18px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout {
+    position: absolute;
+    left: 122px;
+    top: 18px;
+    width: 258px;
+    background: #5b8fd0;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 14px 16px 16px;
+    box-shadow: 0 6px 16px rgba(65,118,191,0.18);
+  }
+  .callout::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 110px;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 14px solid #5b8fd0;
+  }
+  .callout-title {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .callout-text {
+    font-size: 12px;
+    line-height: 1.8;
+  }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">财务数据分析 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">财务数据分析 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+
   <div class="body">
     <div class="left-col">
-      <div class="stat-card" style="background:#1a3a6b;">
+      <div class="stat-card" style="background:#0f4698;">
         <div class="card-header">
           <div>
             <div class="card-num">2,230,000</div>
             <div class="card-label">运营成本</div>
           </div>
-          <div class="card-icon">📷</div>
+          <div class="icon-box">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="7" y="18" width="24" height="16"></rect>
+              <circle cx="19" cy="26" r="5"></circle>
+              <path d="M31 21h8l4 3v7h-4"></path>
+              <path d="M32 18l2-7h7"></path>
+              <path d="M13 14h13"></path>
+            </svg>
+          </div>
         </div>
-        <div>
-          <div class="card-bottom">
+        <div class="card-bottom">
+          <div class="card-info">
             <span class="card-sub">占总支出</span>
             <span class="card-pct">25%</span>
           </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:25%;"></div></div>
+          <div class="progress-bar">
+            <div class="progress-base" style="background:rgba(162,193,232,0.68);"></div>
+            <div class="progress-fill" style="width:71%;"></div>
+          </div>
         </div>
       </div>
-      <div class="stat-card" style="background:#3a6abf;">
+
+      <div class="stat-card" style="background:#5d8dc9;">
         <div class="card-header">
           <div>
             <div class="card-num">2,230,000</div>
             <div class="card-label">运输成本</div>
           </div>
-          <div class="card-icon">📍</div>
+          <div class="icon-box">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M18 38c8-2 14-8 16-16"></path>
+              <path d="M14 7c9 0 18 6 21 15"></path>
+              <path d="M13 16l6-2-2-6"></path>
+              <path d="M33 30l2 6 6-2"></path>
+              <path d="M24 18c4 0 7 3 7 7 0 6-7 11-7 11s-7-5-7-11c0-4 3-7 7-7z"></path>
+              <circle cx="24" cy="25" r="2.5"></circle>
+            </svg>
+          </div>
         </div>
-        <div>
-          <div class="card-bottom">
+        <div class="card-bottom">
+          <div class="card-info">
             <span class="card-sub">占总支出</span>
             <span class="card-pct">25%</span>
           </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:25%;"></div></div>
+          <div class="progress-bar">
+            <div class="progress-base" style="background:rgba(199,220,244,0.55);"></div>
+            <div class="progress-fill" style="width:71%;"></div>
+          </div>
         </div>
       </div>
-      <div class="stat-card" style="background:#8ab0d0;">
+
+      <div class="stat-card" style="background:#8bb4d6;">
         <div class="card-header">
           <div>
             <div class="card-num">4,460,000</div>
             <div class="card-label">人工成本</div>
           </div>
-          <div class="card-icon">👥</div>
+          <div class="icon-box">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="17" cy="15" r="4"></circle>
+              <circle cx="31" cy="15" r="4"></circle>
+              <circle cx="24" cy="11" r="4"></circle>
+              <path d="M11 33v-7c0-3 2-5 5-5h2c3 0 5 2 5 5v7"></path>
+              <path d="M25 33v-8c0-3 2-5 5-5h2c3 0 5 2 5 5v8"></path>
+              <path d="M18 33v-8c0-3 2-5 6-5s6 2 6 5v8"></path>
+            </svg>
+          </div>
         </div>
-        <div>
-          <div class="card-bottom">
+        <div class="card-bottom">
+          <div class="card-info">
             <span class="card-sub">占总支出</span>
             <span class="card-pct">50%</span>
           </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:50%;"></div></div>
+          <div class="progress-bar">
+            <div class="progress-base" style="background:#0f4698;"></div>
+            <div class="progress-fill" style="width:70%;"></div>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="right-col">
       <div class="desc-box">
         <div class="desc-title">财务支出数据分析概述</div>
         <div class="desc-text">财务支出数据分析是评估企业资金运用效率和成本管理的关键工具。通过深入分析支出的各个方面，可以揭示出企业在不同领域的支出模式、变化趋势以及对整体经营绩效的影响。首先，支出的构成是分析的核心，包括人工成本、运营成本和项目成本等。人工成本主要涵盖员工工资、福利和其他人力资源相关支出，直接关系到员工满意度和生产力。运营成本则涉及设备租赁、能源消耗、设施维护等费用。</div>
       </div>
+
       <div class="chart-box">
-        <div class="callout" style="top:20px; left:15%;">
-          <div style="font-weight:700; margin-bottom:3px;">运营成本分析</div>
-          主要运营成本项：如租赁、设备、能源、维护等
+        <div class="callout">
+          <div class="callout-title">运营成本分析</div>
+          <div class="callout-text">主要运营成本项：如租赁、设备、能源、维护等</div>
         </div>
-        <svg width="100%" height="100%" viewBox="0 0 780 280" preserveAspectRatio="xMidYMid meet">
-          <text x="25" y="20" font-size="10" fill="#888" text-anchor="end">10</text>
-          <text x="25" y="80" font-size="10" fill="#888" text-anchor="end">8</text>
-          <text x="25" y="140" font-size="10" fill="#888" text-anchor="end">6</text>
-          <text x="25" y="200" font-size="10" fill="#888" text-anchor="end">4</text>
-          <text x="25" y="250" font-size="10" fill="#888" text-anchor="end">2</text>
-          <text x="25" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
-          <line x1="30" y1="265" x2="770" y2="265" stroke="#eee" stroke-width="1"/>
-          <!-- 12 months, 2 bars each -->
-          <rect x="38" y="215" width="18" height="50" fill="#1a3a6b"/>
-          <rect x="58" y="205" width="18" height="60" fill="#8ab0d0"/>
-          <rect x="100" y="205" width="18" height="60" fill="#1a3a6b"/>
-          <rect x="120" y="195" width="18" height="70" fill="#8ab0d0"/>
-          <rect x="162" y="185" width="18" height="80" fill="#1a3a6b"/>
-          <rect x="182" y="175" width="18" height="90" fill="#8ab0d0"/>
-          <rect x="224" y="115" width="18" height="150" fill="#1a3a6b"/>
-          <rect x="244" y="125" width="18" height="140" fill="#8ab0d0"/>
-          <rect x="286" y="135" width="18" height="130" fill="#1a3a6b"/>
-          <rect x="306" y="145" width="18" height="120" fill="#8ab0d0"/>
-          <rect x="348" y="125" width="18" height="140" fill="#1a3a6b"/>
-          <rect x="368" y="135" width="18" height="130" fill="#8ab0d0"/>
-          <rect x="410" y="155" width="18" height="110" fill="#1a3a6b"/>
-          <rect x="430" y="145" width="18" height="120" fill="#8ab0d0"/>
-          <rect x="472" y="55" width="18" height="210" fill="#1a3a6b"/>
-          <rect x="492" y="65" width="18" height="200" fill="#8ab0d0"/>
-          <rect x="534" y="135" width="18" height="130" fill="#1a3a6b"/>
-          <rect x="554" y="125" width="18" height="140" fill="#8ab0d0"/>
-          <rect x="596" y="115" width="18" height="150" fill="#1a3a6b"/>
-          <rect x="616" y="125" width="18" height="140" fill="#8ab0d0"/>
-          <rect x="658" y="135" width="18" height="130" fill="#1a3a6b"/>
-          <rect x="678" y="95" width="18" height="170" fill="#8ab0d0"/>
-          <rect x="720" y="55" width="18" height="210" fill="#1a3a6b"/>
-          <rect x="740" y="115" width="18" height="150" fill="#8ab0d0"/>
-          <text x="58" y="280" font-size="9" fill="#555" text-anchor="middle">1月</text>
-          <text x="120" y="280" font-size="9" fill="#555" text-anchor="middle">2月</text>
-          <text x="182" y="280" font-size="9" fill="#555" text-anchor="middle">3月</text>
-          <text x="244" y="280" font-size="9" fill="#555" text-anchor="middle">4月</text>
-          <text x="306" y="280" font-size="9" fill="#555" text-anchor="middle">5月</text>
-          <text x="368" y="280" font-size="9" fill="#555" text-anchor="middle">6月</text>
-          <text x="430" y="280" font-size="9" fill="#555" text-anchor="middle">7月</text>
-          <text x="492" y="280" font-size="9" fill="#555" text-anchor="middle">8月</text>
-          <text x="554" y="280" font-size="9" fill="#555" text-anchor="middle">9月</text>
-          <text x="616" y="280" font-size="9" fill="#555" text-anchor="middle">10月</text>
-          <text x="678" y="280" font-size="9" fill="#555" text-anchor="middle">11月</text>
-          <text x="740" y="280" font-size="9" fill="#555" text-anchor="middle">12月</text>
+
+        <svg width="100%" height="100%" viewBox="0 0 780 300" preserveAspectRatio="xMidYMid meet">
+          <g fill="none" stroke="#d8e0ea" stroke-width="1">
+            <line x1="58" y1="245" x2="758" y2="245"></line>
+            <line x1="58" y1="196" x2="758" y2="196"></line>
+            <line x1="58" y1="147" x2="758" y2="147"></line>
+            <line x1="58" y1="98" x2="758" y2="98"></line>
+            <line x1="58" y1="49" x2="758" y2="49"></line>
+          </g>
+
+          <g font-size="10" fill="#8c8c8c" text-anchor="end">
+            <text x="42" y="248">0</text>
+            <text x="42" y="199">2</text>
+            <text x="42" y="150">4</text>
+            <text x="42" y="101">6</text>
+            <text x="42" y="52">8</text>
+            <text x="42" y="20">10</text>
+          </g>
+
+          <g>
+            <rect x="70" y="208" width="10" height="37" fill="#0f4698"></rect>
+            <rect x="82" y="202" width="10" height="43" fill="#5e8fc9"></rect>
+            <rect x="94" y="196" width="10" height="49" fill="#9ac0de"></rect>
+
+            <rect x="129" y="133" width="10" height="112" fill="#0f4698"></rect>
+            <rect x="141" y="184" width="10" height="61" fill="#5e8fc9"></rect>
+            <rect x="153" y="147" width="10" height="98" fill="#9ac0de"></rect>
+
+            <rect x="188" y="190" width="10" height="55" fill="#0f4698"></rect>
+            <rect x="200" y="177" width="10" height="68" fill="#5e8fc9"></rect>
+            <rect x="212" y="159" width="10" height="86" fill="#9ac0de"></rect>
+
+            <rect x="247" y="128" width="10" height="117" fill="#0f4698"></rect>
+            <rect x="259" y="196" width="10" height="49" fill="#5e8fc9"></rect>
+            <rect x="271" y="147" width="10" height="98" fill="#9ac0de"></rect>
+
+            <rect x="306" y="159" width="10" height="86" fill="#0f4698"></rect>
+            <rect x="318" y="141" width="10" height="104" fill="#5e8fc9"></rect>
+            <rect x="330" y="171" width="10" height="74" fill="#9ac0de"></rect>
+
+            <rect x="365" y="147" width="10" height="98" fill="#0f4698"></rect>
+            <rect x="377" y="177" width="10" height="68" fill="#5e8fc9"></rect>
+            <rect x="389" y="98" width="10" height="147" fill="#9ac0de"></rect>
+
+            <rect x="424" y="159" width="10" height="86" fill="#0f4698"></rect>
+            <rect x="436" y="98" width="10" height="147" fill="#5e8fc9"></rect>
+            <rect x="448" y="128" width="10" height="117" fill="#9ac0de"></rect>
+
+            <rect x="483" y="116" width="10" height="129" fill="#0f4698"></rect>
+            <rect x="495" y="177" width="10" height="68" fill="#5e8fc9"></rect>
+            <rect x="507" y="147" width="10" height="98" fill="#9ac0de"></rect>
+
+            <rect x="542" y="43" width="10" height="202" fill="#0f4698"></rect>
+            <rect x="554" y="116" width="10" height="129" fill="#5e8fc9"></rect>
+            <rect x="566" y="147" width="10" height="98" fill="#9ac0de"></rect>
+
+            <rect x="601" y="73" width="10" height="172" fill="#0f4698"></rect>
+            <rect x="613" y="116" width="10" height="129" fill="#5e8fc9"></rect>
+            <rect x="625" y="98" width="10" height="147" fill="#9ac0de"></rect>
+
+            <rect x="660" y="165" width="10" height="80" fill="#0f4698"></rect>
+            <rect x="672" y="98" width="10" height="147" fill="#5e8fc9"></rect>
+            <rect x="684" y="80" width="10" height="165" fill="#9ac0de"></rect>
+
+            <rect x="719" y="37" width="10" height="208" fill="#0f4698"></rect>
+            <rect x="731" y="177" width="10" height="68" fill="#5e8fc9"></rect>
+            <rect x="743" y="116" width="10" height="129" fill="#9ac0de"></rect>
+          </g>
+
+          <g font-size="10" fill="#666" text-anchor="middle">
+            <text x="88" y="276">1月</text>
+            <text x="147" y="276">2月</text>
+            <text x="206" y="276">3月</text>
+            <text x="265" y="276">4月</text>
+            <text x="324" y="276">5月</text>
+            <text x="383" y="276">6月</text>
+            <text x="442" y="276">7月</text>
+            <text x="501" y="276">8月</text>
+            <text x="560" y="276">9月</text>
+            <text x="619" y="276">10月</text>
+            <text x="678" y="276">11月</text>
+            <text x="737" y="276">12月</text>
+          </g>
         </svg>
       </div>
     </div>

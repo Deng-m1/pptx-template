@@ -2,165 +2,335 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 12px 24px; gap: 10px; }
-  .top-donuts { display: flex; gap: 10px; height: 210px; }
-  .donut-card { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .donut-card-title { font-size: 13px; color: #888; }
-  .donut-label { font-size: 13px; color: #555; }
-  .donut-num { font-size: 20px; font-weight: 700; color: #1a3a6b; }
-  .bottom-row { flex: 1; display: flex; gap: 10px; }
-  .chart-box { width: 480px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 12px; color: #888; margin-bottom: 8px; }
-  .right-cards { flex: 1; display: flex; gap: 10px; }
-  .info-card { flex: 1; border-radius: 4px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
-  .info-title { font-size: 15px; font-weight: 700; color: white; }
-  .info-text { font-size: 11px; color: rgba(255,255,255,0.9); line-height: 1.6; }
-  .info-highlight { font-weight: 700; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+  }
+  .title {
+    position: absolute;
+    left: 48px;
+    top: 31px;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0f458e;
+  }
+  .subtitle {
+    position: absolute;
+    right: 48px;
+    top: 49px;
+    font-size: 19px;
+    line-height: 1;
+    font-style: italic;
+    color: #123f82;
+  }
+  .top-line {
+    position: absolute;
+    left: 48px;
+    top: 83px;
+    width: 1184px;
+    height: 2px;
+    background: #1b5996;
+  }
+  .panel {
+    position: absolute;
+    border: 1px solid #e8edf3;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(240,243,247,0.55) inset;
+  }
+  .donut-panel {
+    top: 121px;
+    width: 384px;
+    height: 278px;
+  }
+  .donut-panel.p1 { left: 48px; }
+  .donut-panel.p2 { left: 452px; }
+  .donut-panel.p3 { left: 856px; }
+  .panel-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 18px;
+    text-align: center;
+    font-size: 22px;
+    color: #6b6b6b;
+  }
+  .donut-wrap {
+    position: absolute;
+    left: 94px;
+    top: 54px;
+    width: 194px;
+    height: 194px;
+  }
+  .donut {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+  }
+  .donut::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 108px;
+    height: 108px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #fff;
+  }
+  .pct {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -52%);
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 500;
+    color: #0f47a1;
+    z-index: 2;
+  }
+  .d40 {
+    background: conic-gradient(from -90deg, #0e48a5 0 40%, #4f83cb 40% 70%, #7fb0d6 70% 100%);
+  }
+  .d30a, .d30b {
+    background: conic-gradient(from -90deg, #0e48a5 0 30%, #4f83cb 30% 60%, #7fb0d6 60% 100%);
+  }
+  .tag {
+    position: absolute;
+    min-width: 132px;
+    height: 56px;
+    padding: 7px 16px 0 16px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    z-index: 3;
+  }
+  .tag .sm {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #5b5b5b;
+  }
+  .tag .lg {
+    margin-top: 2px;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.4px;
+  }
+  .t1 { right: 32px; top: 52px; }
+  .t2 { left: 62px; bottom: 26px; }
+  .t3 { left: 34px; top: 52px; }
+
+  .chart-panel {
+    left: 48px;
+    top: 415px;
+    width: 618px;
+    height: 271px;
+    padding: 12px 14px 0 14px;
+  }
+  .chart-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #114a97;
+    margin-left: 10px;
+    margin-bottom: 4px;
+  }
+
+  .info-card {
+    position: absolute;
+    top: 413px;
+    width: 177px;
+    height: 273px;
+    border-radius: 8px;
+    color: #fff;
+    padding: 14px 16px 12px 16px;
+  }
+  .i1 { left: 679px; background: #0f47a1; }
+  .i2 { left: 872px; background: #5d8fd0; }
+  .i3 { left: 1065px; background: #8bb4d8; }
+  .info-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .info-body {
+    font-size: 10px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.96);
+  }
+  .info-body b {
+    color: #fff;
+    font-weight: 700;
+  }
+  svg text { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <span class="header-title">区域销售业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
-  </div>
-  <div class="body">
-    <div class="top-donuts">
-      <div class="donut-card">
-        <div class="donut-card-title">华中区域销售占比</div>
-        <div style="display:flex; gap:10px; align-items:center;">
-          <svg width="130" height="130" viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#c0d4e8" stroke-width="18"/>
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#1a3a6b" stroke-width="18"
-              stroke-dasharray="188.5 125.7" stroke-dashoffset="-31.4" stroke-linecap="butt"/>
-            <text x="65" y="70" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">40%</text>
-          </svg>
-          <div>
-            <div class="donut-label">全年销售额</div>
-            <div class="donut-num">400,000</div>
-          </div>
-        </div>
-      </div>
-      <div class="donut-card">
-        <div class="donut-card-title">华北区域销售占比</div>
-        <div style="display:flex; gap:10px; align-items:center;">
-          <svg width="130" height="130" viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#c0d4e8" stroke-width="18"/>
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#1a3a6b" stroke-width="18"
-              stroke-dasharray="141.4 172.8" stroke-dashoffset="-31.4" stroke-linecap="butt"/>
-            <text x="65" y="70" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">30%</text>
-          </svg>
-          <div>
-            <div class="donut-label">全年销售额</div>
-            <div class="donut-num">300,000</div>
-          </div>
-        </div>
-      </div>
-      <div class="donut-card">
-        <div class="donut-card-title">华南区域销售占比</div>
-        <div style="display:flex; gap:10px; align-items:center;">
-          <svg width="130" height="130" viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#c0d4e8" stroke-width="18"/>
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#1a3a6b" stroke-width="18"
-              stroke-dasharray="141.4 172.8" stroke-dashoffset="-31.4" stroke-linecap="butt"/>
-            <text x="65" y="70" text-anchor="middle" font-size="24" font-weight="900" fill="#1a3a6b">30%</text>
-          </svg>
-          <div>
-            <div class="donut-label">全年销售额</div>
-            <div class="donut-num">300,000</div>
-          </div>
-        </div>
-      </div>
+  <div class="title">区域销售业绩汇报 Powerpoint Template</div>
+  <div class="subtitle">Work Arrangement</div>
+  <div class="top-line"></div>
+
+  <div class="panel donut-panel p1">
+    <div class="panel-title">华中区域销售占比</div>
+    <div class="donut-wrap">
+      <div class="donut d40"></div>
+      <div class="pct">40%</div>
     </div>
-    <div class="bottom-row">
-      <div class="chart-box">
-        <div class="chart-title">营运部门在华中，华北，华南区域的年度业绩</div>
-        <svg width="100%" height="100%" viewBox="0 0 440 220" preserveAspectRatio="xMidYMid meet">
-          <line x1="30" y1="210" x2="430" y2="210" stroke="#eee" stroke-width="1"/>
-          <text x="25" y="30" font-size="9" fill="#888" text-anchor="end">10</text>
-          <text x="25" y="90" font-size="9" fill="#888" text-anchor="end">6</text>
-          <text x="25" y="150" font-size="9" fill="#888" text-anchor="end">3</text>
-          <text x="25" y="210" font-size="9" fill="#888" text-anchor="end">0</text>
-          <!-- 12 months, 3 bars each -->
-          <rect x="32" y="140" width="9" height="70" fill="#1a3a6b"/>
-          <rect x="43" y="160" width="9" height="50" fill="#3a6abf"/>
-          <rect x="54" y="170" width="9" height="40" fill="#8ab0d0"/>
-          <rect x="68" y="120" width="9" height="90" fill="#1a3a6b"/>
-          <rect x="79" y="140" width="9" height="70" fill="#3a6abf"/>
-          <rect x="90" y="150" width="9" height="60" fill="#8ab0d0"/>
-          <rect x="104" y="130" width="9" height="80" fill="#1a3a6b"/>
-          <rect x="115" y="150" width="9" height="60" fill="#3a6abf"/>
-          <rect x="126" y="160" width="9" height="50" fill="#8ab0d0"/>
-          <rect x="140" y="100" width="9" height="110" fill="#1a3a6b"/>
-          <rect x="151" y="120" width="9" height="90" fill="#3a6abf"/>
-          <rect x="162" y="130" width="9" height="80" fill="#8ab0d0"/>
-          <rect x="176" y="110" width="9" height="100" fill="#1a3a6b"/>
-          <rect x="187" y="130" width="9" height="80" fill="#3a6abf"/>
-          <rect x="198" y="140" width="9" height="70" fill="#8ab0d0"/>
-          <rect x="212" y="80" width="9" height="130" fill="#1a3a6b"/>
-          <rect x="223" y="100" width="9" height="110" fill="#3a6abf"/>
-          <rect x="234" y="110" width="9" height="100" fill="#8ab0d0"/>
-          <rect x="248" y="70" width="9" height="140" fill="#1a3a6b"/>
-          <rect x="259" y="90" width="9" height="120" fill="#3a6abf"/>
-          <rect x="270" y="100" width="9" height="110" fill="#8ab0d0"/>
-          <rect x="284" y="80" width="9" height="130" fill="#1a3a6b"/>
-          <rect x="295" y="100" width="9" height="110" fill="#3a6abf"/>
-          <rect x="306" y="110" width="9" height="100" fill="#8ab0d0"/>
-          <rect x="320" y="90" width="9" height="120" fill="#1a3a6b"/>
-          <rect x="331" y="110" width="9" height="100" fill="#3a6abf"/>
-          <rect x="342" y="120" width="9" height="90" fill="#8ab0d0"/>
-          <rect x="356" y="70" width="9" height="140" fill="#1a3a6b"/>
-          <rect x="367" y="90" width="9" height="120" fill="#3a6abf"/>
-          <rect x="378" y="100" width="9" height="110" fill="#8ab0d0"/>
-          <rect x="392" y="80" width="9" height="130" fill="#1a3a6b"/>
-          <rect x="403" y="100" width="9" height="110" fill="#3a6abf"/>
-          <rect x="414" y="110" width="9" height="100" fill="#8ab0d0"/>
-          <text x="47" y="222" font-size="7" fill="#555" text-anchor="middle">1月</text>
-          <text x="83" y="222" font-size="7" fill="#555" text-anchor="middle">2月</text>
-          <text x="119" y="222" font-size="7" fill="#555" text-anchor="middle">3月</text>
-          <text x="155" y="222" font-size="7" fill="#555" text-anchor="middle">4月</text>
-          <text x="191" y="222" font-size="7" fill="#555" text-anchor="middle">5月</text>
-          <text x="227" y="222" font-size="7" fill="#555" text-anchor="middle">6月</text>
-          <text x="263" y="222" font-size="7" fill="#555" text-anchor="middle">7月</text>
-          <text x="299" y="222" font-size="7" fill="#555" text-anchor="middle">8月</text>
-          <text x="335" y="222" font-size="7" fill="#555" text-anchor="middle">9月</text>
-          <text x="371" y="222" font-size="7" fill="#555" text-anchor="middle">10月</text>
-          <text x="407" y="222" font-size="7" fill="#555" text-anchor="middle">11月</text>
-        </svg>
-      </div>
-      <div class="right-cards">
-        <div class="info-card" style="background:#1a3a6b;">
-          <div class="info-title">华中区域</div>
-          <div class="info-text">
-            <span class="info-highlight">市场辐射广泛：</span>位于中国中部交通枢纽，便利的物流网络和广泛的市场覆盖，有利于迅速响应客户需求。<br><br>
-            <span class="info-highlight">文化背景融合：</span>地处文化多样化地区，能够更好地理解和满足不同文化背景客户的需求。<br><br>
-            <span class="info-highlight">教育资源优势：</span>拥有多所国内知名大学和研究机构，有利于技术支持与市场开发。
-          </div>
-        </div>
-        <div class="info-card" style="background:#3a6abf;">
-          <div class="info-title">华北区域</div>
-          <div class="info-text">
-            <span class="info-highlight">政策支持力度大：</span>作为中国政治与经济中心，政策支持力度大，利于企业发展和市场拓展。<br><br>
-            <span class="info-highlight">高端客户资源：</span>集中了大量的高端客户资源，有利于推广高附加值产品和服务。<br><br>
-            <span class="info-highlight">技术创新领先：</span>区域内科研机构与高等院校众多，技术创新氛围浓厚，为企业带来技术创新的优势。
-          </div>
-        </div>
-        <div class="info-card" style="background:#8ab0d0;">
-          <div class="info-title">华南区域</div>
-          <div class="info-text">
-            <span class="info-highlight">经济发展速度快：</span>作为中国经济增长最快的地区之一，市场需求旺盛，潜力巨大。<br><br>
-            <span class="info-highlight">区位优势显著：</span>临近海外市场，有利于开拓国际市场，具备出口竞争力。<br><br>
-            <span class="info-highlight">创新氛围浓厚：</span>科技产业发达，创新氛围浓厚，对新产品和新技术的接受度高，有利于企业创新发展。
-          </div>
-        </div>
-      </div>
+    <div class="tag t1">
+      <div class="sm">全年销售额</div>
+      <div class="lg">400,000</div>
+    </div>
+  </div>
+
+  <div class="panel donut-panel p2">
+    <div class="panel-title">华北区域销售占比</div>
+    <div class="donut-wrap">
+      <div class="donut d30a"></div>
+      <div class="pct">30%</div>
+    </div>
+    <div class="tag t2">
+      <div class="sm">全年销售额</div>
+      <div class="lg">300,000</div>
+    </div>
+  </div>
+
+  <div class="panel donut-panel p3">
+    <div class="panel-title">华南区域销售占比</div>
+    <div class="donut-wrap">
+      <div class="donut d30b"></div>
+      <div class="pct">30%</div>
+    </div>
+    <div class="tag t3">
+      <div class="sm">全年销售额</div>
+      <div class="lg">300,000</div>
+    </div>
+  </div>
+
+  <div class="panel chart-panel">
+    <div class="chart-title">营运部门在华中、华北、华南区域的年度业绩</div>
+    <svg width="590" height="220" viewBox="0 0 590 220" aria-hidden="true">
+      <g fill="#7a7a7a" font-size="10">
+        <text x="17" y="36">10</text>
+        <text x="17" y="76">8</text>
+        <text x="17" y="116">6</text>
+        <text x="17" y="156">4</text>
+        <text x="17" y="196">2</text>
+        <text x="24" y="214">0</text>
+      </g>
+      <line x1="34" y1="28" x2="584" y2="28" stroke="#e7e7e7"/>
+      <line x1="34" y1="68" x2="584" y2="68" stroke="#e7e7e7"/>
+      <line x1="34" y1="108" x2="584" y2="108" stroke="#e7e7e7"/>
+      <line x1="34" y1="148" x2="584" y2="148" stroke="#e7e7e7"/>
+      <line x1="34" y1="188" x2="584" y2="188" stroke="#e7e7e7"/>
+
+      <line x1="42" y1="174" x2="566" y2="52" stroke="#d8d8d8" stroke-width="1.2" stroke-dasharray="2 3"/>
+
+      <g>
+        <rect x="44" y="162" width="9" height="26" fill="#123f92"/>
+        <rect x="56" y="148" width="9" height="40" fill="#4f80c8"/>
+        <rect x="68" y="141" width="9" height="47" fill="#8ab3d5"/>
+
+        <rect x="88" y="106" width="9" height="82" fill="#123f92"/>
+        <rect x="100" y="156" width="9" height="32" fill="#4f80c8"/>
+        <rect x="112" y="116" width="9" height="72" fill="#8ab3d5"/>
+
+        <rect x="136" y="150" width="9" height="38" fill="#123f92"/>
+        <rect x="148" y="136" width="9" height="52" fill="#4f80c8"/>
+        <rect x="160" y="98" width="9" height="90" fill="#8ab3d5"/>
+
+        <rect x="184" y="90" width="9" height="98" fill="#123f92"/>
+        <rect x="196" y="152" width="9" height="36" fill="#4f80c8"/>
+        <rect x="208" y="116" width="9" height="72" fill="#8ab3d5"/>
+
+        <rect x="232" y="108" width="9" height="80" fill="#123f92"/>
+        <rect x="244" y="96" width="9" height="92" fill="#4f80c8"/>
+        <rect x="256" y="136" width="9" height="52" fill="#8ab3d5"/>
+
+        <rect x="280" y="96" width="9" height="92" fill="#123f92"/>
+        <rect x="292" y="116" width="9" height="72" fill="#4f80c8"/>
+        <rect x="304" y="78" width="9" height="110" fill="#8ab3d5"/>
+
+        <rect x="328" y="116" width="9" height="72" fill="#123f92"/>
+        <rect x="340" y="78" width="9" height="110" fill="#4f80c8"/>
+        <rect x="352" y="98" width="9" height="90" fill="#8ab3d5"/>
+
+        <rect x="376" y="68" width="9" height="120" fill="#123f92"/>
+        <rect x="388" y="136" width="9" height="52" fill="#4f80c8"/>
+        <rect x="400" y="116" width="9" height="72" fill="#8ab3d5"/>
+
+        <rect x="424" y="36" width="9" height="152" fill="#123f92"/>
+        <rect x="436" y="98" width="9" height="90" fill="#4f80c8"/>
+        <rect x="448" y="116" width="9" height="72" fill="#8ab3d5"/>
+
+        <rect x="472" y="56" width="9" height="132" fill="#123f92"/>
+        <rect x="484" y="98" width="9" height="90" fill="#4f80c8"/>
+        <rect x="496" y="78" width="9" height="110" fill="#8ab3d5"/>
+
+        <rect x="520" y="104" width="9" height="84" fill="#123f92"/>
+        <rect x="532" y="78" width="9" height="110" fill="#4f80c8"/>
+        <rect x="544" y="64" width="9" height="124" fill="#8ab3d5"/>
+
+        <rect x="568" y="34" width="9" height="154" fill="#123f92"/>
+        <rect x="580" y="116" width="9" height="72" fill="#4f80c8"/>
+        <rect x="592" y="98" width="9" height="90" fill="#8ab3d5"/>
+      </g>
+
+      <g fill="#666" font-size="12">
+        <text x="58" y="214" text-anchor="middle">1月</text>
+        <text x="102" y="214" text-anchor="middle">2月</text>
+        <text x="146" y="214" text-anchor="middle">3月</text>
+        <text x="194" y="214" text-anchor="middle">4月</text>
+        <text x="242" y="214" text-anchor="middle">5月</text>
+        <text x="290" y="214" text-anchor="middle">6月</text>
+        <text x="338" y="214" text-anchor="middle">7月</text>
+        <text x="386" y="214" text-anchor="middle">8月</text>
+        <text x="434" y="214" text-anchor="middle">9月</text>
+        <text x="482" y="214" text-anchor="middle">10月</text>
+        <text x="530" y="214" text-anchor="middle">11月</text>
+        <text x="578" y="214" text-anchor="middle">12月</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="info-card i1">
+    <div class="info-title">华中区域</div>
+    <div class="info-body">
+      <b>市场辐射广泛：</b>位于中国中部交通枢纽，便利的物流网络和广泛的市场覆盖，有利于迅速响应客户需求。<br>
+      <b>文化背景融合：</b>地处文化多样化地区，能够更好地理解和满足不同文化背景客户的需求。<br>
+      <b>教育资源优势：</b>拥有多所国内知名大学和科研机构，有利于技术支持与市场开发。
+    </div>
+  </div>
+
+  <div class="info-card i2">
+    <div class="info-title">华北区域</div>
+    <div class="info-body">
+      <b>政策支持力度大：</b>作为中国政治与经济中心，政策支持力度大，利于企业发展和市场拓展。<br>
+      <b>高端客户资源：</b>集中了大量的高端客户资源，有利于推广高附加值产品和服务。<br>
+      <b>技术创新领先：</b>区域内科研机构与高等院校众多，技术创新氛围浓厚，为企业带来技术创新的优势。
+    </div>
+  </div>
+
+  <div class="info-card i3">
+    <div class="info-title">华南区域</div>
+    <div class="info-body">
+      <b>经济发展速度快：</b>作为中国经济增长较快的地区之一，市场需求旺盛，潜力巨大。<br>
+      <b>区位优势显著：</b>临近海外市场，有利于开拓国际市场，具备出口竞争力。<br>
+      <b>创新氛围浓厚：</b>科技产业发达，创新氛围浓厚，对新产品和新技术的接受度高，有利于企业创新发展。
     </div>
   </div>
 </div>

@@ -4,175 +4,368 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 24px; gap: 14px; }
-  .left-col { width: 380px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
-  .pie-title { font-size: 14px; color: #888; text-align: center; }
-  .legend { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 4px; }
-  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-  .divider { border: none; border-top: 1px solid #eee; }
-  .stat-label { font-size: 16px; font-weight: 700; color: #1a3a6b; }
-  .stat-num { font-size: 40px; font-weight: 900; color: #1a3a6b; }
-  .stat-desc { font-size: 11px; color: #666; line-height: 1.6; }
-  .right-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .top-banner { background: #1a3a6b; border-radius: 4px; padding: 14px 20px; display: flex; gap: 0; }
-  .banner-item { flex: 1; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid rgba(255,255,255,0.2); padding: 0 20px; }
-  .banner-item:first-child { padding-left: 0; }
-  .banner-item:last-child { border-right: none; }
-  .banner-label { font-size: 14px; color: rgba(255,255,255,0.8); }
-  .banner-num { font-size: 32px; font-weight: 900; color: white; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 8px; }
-  .chart-legend { display: flex; gap: 12px; justify-content: center; margin-top: 6px; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .header {
+    height: 68px;
+    padding: 12px 48px 0;
+    border-bottom: 2px solid #153f97;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 900;
+    color: #153f97;
+  }
+  .header-sub {
+    font-size: 20px;
+    line-height: 1;
+    color: #153f97;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  .body {
+    flex: 1;
+    display: flex;
+    gap: 18px;
+    padding: 38px 48px 34px;
+  }
+  .left-col {
+    width: 430px;
+    border: 1px solid #e6e8ec;
+    padding: 22px 24px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pie-title {
+    text-align: center;
+    font-size: 22px;
+    color: #7a7a7a;
+    margin-bottom: 12px;
+    letter-spacing: 0.2px;
+  }
+  .pie-wrap {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  .divider {
+    height: 1px;
+    background: #1b4c95;
+    margin: 2px 0 18px;
+  }
+  .sales-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #154090;
+    margin-bottom: 14px;
+  }
+  .sales-num {
+    font-size: 74px;
+    line-height: 0.95;
+    font-weight: 900;
+    color: #1550ad;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+  }
+  .sales-desc {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #8b8b8b;
+  }
+
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .banner {
+    height: 128px;
+    background: #153f97;
+    display: flex;
+    color: #fff;
+  }
+  .banner-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .banner-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 26px;
+    width: 1px;
+    height: 76px;
+    background: rgba(255,255,255,0.8);
+  }
+  .banner-label {
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .banner-value {
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+  .banner-value.small {
+    font-size: 50px;
+  }
+  .banner-value.quarter {
+    font-size: 58px;
+  }
+
+  .chart-box {
+    flex: 1;
+    border: 1px solid #e6e8ec;
+    padding: 26px 24px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .chart-title {
+    text-align: center;
+    font-size: 18px;
+    color: #707070;
+    margin-bottom: 10px;
+  }
+  .chart-area {
+    flex: 1;
+  }
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+  }
+  .y-label { font-size: 12px; fill: #777; }
+  .x-label { font-size: 12px; fill: #666; }
+  .grid { stroke: #d9dee6; stroke-width: 1; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">部门销售业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">部门销售业绩汇报 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+
   <div class="body">
     <div class="left-col">
       <div class="pie-title">部门销量占比分析</div>
-      <svg width="100%" height="220" viewBox="0 0 300 220">
-        <!-- Pie chart: 40% dark blue, 20% medium blue, 30% light blue, 10% lightest -->
-        <!-- 40%: 0 to 144deg -->
-        <path d="M 150,110 L 150,30 A 80,80 0 0,1 219,62 Z" fill="#1a3a6b"/>
-        <!-- 20%: 144 to 216deg -->
-        <path d="M 150,110 L 219,62 A 80,80 0 0,1 219,158 Z" fill="#3a6abf"/>
-        <!-- 30%: 216 to 324deg -->
-        <path d="M 150,110 L 219,158 A 80,80 0 0,1 81,158 Z" fill="#6a9ac4"/>
-        <!-- 10%: 324 to 360deg -->
-        <path d="M 150,110 L 81,158 A 80,80 0 0,1 150,30 Z" fill="#c0d4e8"/>
-        <!-- Labels -->
-        <text x="185" y="90" font-size="14" font-weight="700" fill="white">40%</text>
-        <text x="210" y="130" font-size="14" font-weight="700" fill="white">20%</text>
-        <text x="130" y="175" font-size="14" font-weight="700" fill="white">30%</text>
-        <text x="95" y="100" font-size="14" font-weight="700" fill="#555">10%</text>
-      </svg>
-      <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>电商1部</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>电商2部</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#6a9ac4;"></div>电商3部</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>电商4部</div>
+      <div class="pie-wrap">
+        <svg width="342" height="236" viewBox="0 0 360 250" aria-label="3d pie">
+          <defs>
+            <linearGradient id="sideDark" x1="0" x2="1">
+              <stop offset="0%" stop-color="#4a6c8f"/>
+              <stop offset="100%" stop-color="#233a5a"/>
+            </linearGradient>
+            <linearGradient id="sideMid" x1="0" x2="1">
+              <stop offset="0%" stop-color="#6d8eb2"/>
+              <stop offset="100%" stop-color="#355f96"/>
+            </linearGradient>
+            <linearGradient id="sideLight" x1="0" x2="1">
+              <stop offset="0%" stop-color="#89afd1"/>
+              <stop offset="100%" stop-color="#608dc0"/>
+            </linearGradient>
+          </defs>
+
+          <ellipse cx="180" cy="120" rx="172" ry="38" fill="#274970" opacity="0.12"/>
+
+          <path d="M 262 197 A 172 72 0 0 0 344 130 L 344 166 A 172 72 0 0 1 262 233 Z" fill="#0f2554"/>
+          <path d="M 262 197 A 172 72 0 0 1 96 190 L 96 226 A 172 72 0 0 0 262 233 Z" fill="url(#sideMid)"/>
+          <path d="M 96 190 A 172 72 0 0 1 45 148 L 45 184 A 172 72 0 0 0 96 226 Z" fill="url(#sideLight)"/>
+
+          <path d="M180,110 L180,38 A172,72 0 0,1 344,130 Z" fill="#153f97" stroke="#f3f5f8" stroke-width="1.2"/>
+          <path d="M180,110 L344,130 A172,72 0 0,1 262,197 Z" fill="#5a88c7" stroke="#f3f5f8" stroke-width="1.2"/>
+          <path d="M180,110 L262,197 A172,72 0 0,1 96,190 Z" fill="#7eadd3" stroke="#f3f5f8" stroke-width="1.2"/>
+          <path d="M180,110 L96,190 A172,72 0 0,1 180,38 Z" fill="#c9d2df" stroke="#f3f5f8" stroke-width="1.2"/>
+
+          <line x1="180" y1="38" x2="180" y2="110" stroke="#d9dde4" stroke-width="1"/>
+
+          <text x="256" y="107" fill="#ffffff" font-size="24" font-weight="700">40%</text>
+          <text x="180" y="160" fill="#ffffff" font-size="24" font-weight="700">20%</text>
+          <text x="83" y="106" fill="#ffffff" font-size="24" font-weight="700">30%</text>
+          <text x="165" y="73" fill="#ffffff" font-size="22" font-weight="700">10%</text>
+        </svg>
       </div>
-      <hr class="divider">
-      <div class="stat-label">电商部总销售额</div>
-      <div class="stat-num">¥ 668320</div>
-      <div class="stat-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</div>
+
+      <div class="pie-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#153f97"></span>电商1部</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#5a88c7"></span>电商2部</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#7eadd3"></span>电商3部</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#c9d2df"></span>电商4部</div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sales-title">电商部总销售额</div>
+      <div class="sales-num">¥ 668320</div>
+      <div class="sales-desc">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</div>
     </div>
+
     <div class="right-col">
-      <div class="top-banner">
+      <div class="banner">
         <div class="banner-item">
-          <span class="banner-label">全年总销售额</span>
-          <span class="banner-num">668320</span>
+          <div class="banner-label">全年总销售额</div>
+          <div class="banner-value">668320</div>
         </div>
         <div class="banner-item">
-          <span class="banner-label">全年销量增长率</span>
-          <span class="banner-num">37%</span>
+          <div class="banner-label">全年销量增长率</div>
+          <div class="banner-value small">37%</div>
         </div>
         <div class="banner-item">
-          <span class="banner-label">主要增长时间</span>
-          <span class="banner-num">第三季度</span>
+          <div class="banner-label">主要增长时间</div>
+          <div class="banner-value quarter">第三季度</div>
         </div>
       </div>
+
       <div class="chart-box">
         <div class="chart-title">电商部门月度销售表</div>
-        <svg width="100%" height="100%" viewBox="0 0 820 280" preserveAspectRatio="xMidYMid meet">
-          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">10000</text>
-          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">8000</text>
-          <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">6000</text>
-          <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">4000</text>
-          <text x="30" y="250" font-size="10" fill="#888" text-anchor="end">2000</text>
-          <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
-          <line x1="35" y1="265" x2="810" y2="265" stroke="#eee" stroke-width="1"/>
-          <!-- 12 months, 4 bars each, width=12, gap=4 -->
-          <!-- Month positions: 45, 110, 175, 240, 305, 370, 435, 500, 565, 630, 695, 760 -->
-          <!-- 1月 -->
-          <rect x="42" y="125" width="12" height="140" fill="#1a3a6b"/>
-          <rect x="56" y="155" width="12" height="110" fill="#3a6abf"/>
-          <rect x="70" y="165" width="12" height="100" fill="#6a9ac4"/>
-          <rect x="84" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 2月 -->
-          <rect x="107" y="135" width="12" height="130" fill="#1a3a6b"/>
-          <rect x="121" y="145" width="12" height="120" fill="#3a6abf"/>
-          <rect x="135" y="155" width="12" height="110" fill="#6a9ac4"/>
-          <rect x="149" y="185" width="12" height="80" fill="#c0d4e8"/>
-          <!-- 3月 -->
-          <rect x="172" y="195" width="12" height="70" fill="#1a3a6b"/>
-          <rect x="186" y="105" width="12" height="160" fill="#3a6abf"/>
-          <rect x="200" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="214" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 4月 -->
-          <rect x="237" y="85" width="12" height="180" fill="#1a3a6b"/>
-          <rect x="251" y="115" width="12" height="150" fill="#3a6abf"/>
-          <rect x="265" y="155" width="12" height="110" fill="#6a9ac4"/>
-          <rect x="279" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 5月 -->
-          <rect x="302" y="125" width="12" height="140" fill="#1a3a6b"/>
-          <rect x="316" y="195" width="12" height="70" fill="#3a6abf"/>
-          <rect x="330" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="344" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 6月 -->
-          <rect x="367" y="115" width="12" height="150" fill="#1a3a6b"/>
-          <rect x="381" y="125" width="12" height="140" fill="#3a6abf"/>
-          <rect x="395" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="409" y="165" width="12" height="100" fill="#c0d4e8"/>
-          <!-- 7月 -->
-          <rect x="432" y="135" width="12" height="130" fill="#1a3a6b"/>
-          <rect x="446" y="115" width="12" height="150" fill="#3a6abf"/>
-          <rect x="460" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="474" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 8月 -->
-          <rect x="497" y="85" width="12" height="180" fill="#1a3a6b"/>
-          <rect x="511" y="125" width="12" height="140" fill="#3a6abf"/>
-          <rect x="525" y="155" width="12" height="110" fill="#6a9ac4"/>
-          <rect x="539" y="175" width="12" height="90" fill="#c0d4e8"/>
-          <!-- 9月 -->
-          <rect x="562" y="125" width="12" height="140" fill="#1a3a6b"/>
-          <rect x="576" y="145" width="12" height="120" fill="#3a6abf"/>
-          <rect x="590" y="165" width="12" height="100" fill="#6a9ac4"/>
-          <rect x="604" y="185" width="12" height="80" fill="#c0d4e8"/>
-          <!-- 10月 -->
-          <rect x="627" y="115" width="12" height="150" fill="#1a3a6b"/>
-          <rect x="641" y="125" width="12" height="140" fill="#3a6abf"/>
-          <rect x="655" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="669" y="165" width="12" height="100" fill="#c0d4e8"/>
-          <!-- 11月 -->
-          <rect x="692" y="95" width="12" height="170" fill="#1a3a6b"/>
-          <rect x="706" y="115" width="12" height="150" fill="#3a6abf"/>
-          <rect x="720" y="135" width="12" height="130" fill="#6a9ac4"/>
-          <rect x="734" y="155" width="12" height="110" fill="#c0d4e8"/>
-          <!-- 12月 -->
-          <rect x="757" y="125" width="12" height="140" fill="#1a3a6b"/>
-          <rect x="771" y="135" width="12" height="130" fill="#3a6abf"/>
-          <rect x="785" y="145" width="12" height="120" fill="#6a9ac4"/>
-          <rect x="799" y="165" width="12" height="100" fill="#c0d4e8"/>
-          <!-- X labels -->
-          <text x="63" y="280" font-size="9" fill="#555" text-anchor="middle">1月</text>
-          <text x="128" y="280" font-size="9" fill="#555" text-anchor="middle">2月</text>
-          <text x="193" y="280" font-size="9" fill="#555" text-anchor="middle">3月</text>
-          <text x="258" y="280" font-size="9" fill="#555" text-anchor="middle">4月</text>
-          <text x="323" y="280" font-size="9" fill="#555" text-anchor="middle">5月</text>
-          <text x="388" y="280" font-size="9" fill="#555" text-anchor="middle">6月</text>
-          <text x="453" y="280" font-size="9" fill="#555" text-anchor="middle">7月</text>
-          <text x="518" y="280" font-size="9" fill="#555" text-anchor="middle">8月</text>
-          <text x="583" y="280" font-size="9" fill="#555" text-anchor="middle">9月</text>
-          <text x="648" y="280" font-size="9" fill="#555" text-anchor="middle">10月</text>
-          <text x="713" y="280" font-size="9" fill="#555" text-anchor="middle">11月</text>
-          <text x="778" y="280" font-size="9" fill="#555" text-anchor="middle">12月</text>
-        </svg>
+        <div class="chart-area">
+          <svg width="100%" height="100%" viewBox="0 0 820 360" preserveAspectRatio="none">
+            <line class="grid" x1="64" y1="54" x2="736" y2="54"/>
+            <line class="grid" x1="64" y1="112" x2="736" y2="112"/>
+            <line class="grid" x1="64" y1="170" x2="736" y2="170"/>
+            <line class="grid" x1="64" y1="228" x2="736" y2="228"/>
+            <line class="grid" x1="64" y1="286" x2="736" y2="286"/>
+
+            <text class="y-label" x="42" y="58" text-anchor="end">10000</text>
+            <text class="y-label" x="42" y="116" text-anchor="end">8000</text>
+            <text class="y-label" x="42" y="174" text-anchor="end">6000</text>
+            <text class="y-label" x="42" y="232" text-anchor="end">4000</text>
+            <text class="y-label" x="42" y="290" text-anchor="end">2000</text>
+            <text class="y-label" x="42" y="346" text-anchor="end">0</text>
+            <line class="grid" x1="64" y1="340" x2="736" y2="340"/>
+
+            <g>
+              <rect x="74"  y="148" width="8" height="192" fill="#153f97"/>
+              <rect x="87"  y="221" width="8" height="119" fill="#4a74ba"/>
+              <rect x="100" y="260" width="8" height="80"  fill="#88b0d3"/>
+              <rect x="113" y="178" width="8" height="162" fill="#ccd8ea"/>
+
+              <rect x="136" y="188" width="8" height="152" fill="#153f97"/>
+              <rect x="149" y="188" width="8" height="152" fill="#4a74ba"/>
+              <rect x="162" y="260" width="8" height="80"  fill="#88b0d3"/>
+              <rect x="175" y="287" width="8" height="53"  fill="#ccd8ea"/>
+
+              <rect x="198" y="264" width="8" height="76"  fill="#153f97"/>
+              <rect x="211" y="127" width="8" height="213" fill="#4a74ba"/>
+              <rect x="224" y="178" width="8" height="162" fill="#88b0d3"/>
+              <rect x="237" y="252" width="8" height="88"  fill="#ccd8ea"/>
+
+              <rect x="260" y="127" width="8" height="213" fill="#153f97"/>
+              <rect x="273" y="156" width="8" height="184" fill="#4a74ba"/>
+              <rect x="286" y="96"  width="8" height="244" fill="#88b0d3"/>
+              <rect x="299" y="199" width="8" height="141" fill="#ccd8ea"/>
+
+              <rect x="322" y="148" width="8" height="192" fill="#153f97"/>
+              <rect x="335" y="221" width="8" height="119" fill="#4a74ba"/>
+              <rect x="348" y="260" width="8" height="80"  fill="#88b0d3"/>
+              <rect x="361" y="178" width="8" height="162" fill="#ccd8ea"/>
+
+              <rect x="384" y="127" width="8" height="213" fill="#153f97"/>
+              <rect x="397" y="188" width="8" height="152" fill="#4a74ba"/>
+              <rect x="410" y="188" width="8" height="152" fill="#88b0d3"/>
+              <rect x="423" y="252" width="8" height="88"  fill="#ccd8ea"/>
+
+              <rect x="446" y="264" width="8" height="76"  fill="#153f97"/>
+              <rect x="459" y="96"  width="8" height="244" fill="#4a74ba"/>
+              <rect x="472" y="178" width="8" height="162" fill="#88b0d3"/>
+              <rect x="485" y="252" width="8" height="88"  fill="#ccd8ea"/>
+
+              <rect x="508" y="96"  width="8" height="244" fill="#153f97"/>
+              <rect x="521" y="127" width="8" height="213" fill="#4a74ba"/>
+              <rect x="534" y="156" width="8" height="184" fill="#88b0d3"/>
+              <rect x="547" y="199" width="8" height="141" fill="#ccd8ea"/>
+
+              <rect x="570" y="148" width="8" height="192" fill="#153f97"/>
+              <rect x="583" y="221" width="8" height="119" fill="#4a74ba"/>
+              <rect x="596" y="260" width="8" height="80"  fill="#88b0d3"/>
+              <rect x="609" y="178" width="8" height="162" fill="#ccd8ea"/>
+
+              <rect x="632" y="127" width="8" height="213" fill="#153f97"/>
+              <rect x="645" y="188" width="8" height="152" fill="#4a74ba"/>
+              <rect x="658" y="188" width="8" height="152" fill="#88b0d3"/>
+              <rect x="671" y="252" width="8" height="88"  fill="#ccd8ea"/>
+
+              <rect x="694" y="96"  width="8" height="244" fill="#153f97"/>
+              <rect x="707" y="178" width="8" height="162" fill="#4a74ba"/>
+              <rect x="720" y="252" width="8" height="88"  fill="#88b0d3"/>
+              <rect x="733" y="199" width="8" height="141" fill="#ccd8ea"/>
+
+              <rect x="756" y="96"  width="8" height="244" fill="#153f97"/>
+              <rect x="769" y="127" width="8" height="213" fill="#4a74ba"/>
+              <rect x="782" y="156" width="8" height="184" fill="#88b0d3"/>
+              <rect x="795" y="199" width="8" height="141" fill="#ccd8ea"/>
+            </g>
+
+            <g>
+              <text class="x-label" x="96"  y="352" text-anchor="middle">1月</text>
+              <text class="x-label" x="158" y="352" text-anchor="middle">2月</text>
+              <text class="x-label" x="220" y="352" text-anchor="middle">3月</text>
+              <text class="x-label" x="282" y="352" text-anchor="middle">4月</text>
+              <text class="x-label" x="344" y="352" text-anchor="middle">5月</text>
+              <text class="x-label" x="406" y="352" text-anchor="middle">6月</text>
+              <text class="x-label" x="468" y="352" text-anchor="middle">7月</text>
+              <text class="x-label" x="530" y="352" text-anchor="middle">8月</text>
+              <text class="x-label" x="592" y="352" text-anchor="middle">9月</text>
+              <text class="x-label" x="654" y="352" text-anchor="middle">10月</text>
+              <text class="x-label" x="716" y="352" text-anchor="middle">11月</text>
+              <text class="x-label" x="778" y="352" text-anchor="middle">12月</text>
+              <line x1="64" y1="340" x2="808" y2="340" stroke="#d9dee6" stroke-width="1"/>
+            </g>
+          </svg>
+        </div>
+
         <div class="chart-legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>电商1部</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>电商2部</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#6a9ac4;"></div>电商3部</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>电商4部</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#153f97"></span>电商1部</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#4a74ba"></span>电商2部</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#88b0d3"></span>电商3部</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#ccd8ea"></span>电商4部</div>
         </div>
       </div>
     </div>

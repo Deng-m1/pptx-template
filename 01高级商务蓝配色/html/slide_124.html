@@ -4,135 +4,258 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
-  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
-  .top-stats { border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px 20px; display: flex; gap: 0; }
-  .stat-item { flex: 1; padding: 0 20px; border-right: 1px solid #eee; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #fff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .header {
+    height: 78px;
+    padding: 14px 48px 0;
+    border-bottom: 2px solid #1b4a83;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 900;
+    color: #11438d;
+    letter-spacing: -1px;
+  }
+  .header-sub {
+    font-size: 24px;
+    line-height: 1;
+    color: #11438d;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  .body {
+    flex: 1;
+    padding: 26px 48px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sub-title {
+    font-size: 26px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #11438d;
+    margin-bottom: 2px;
+  }
+  .top-stats {
+    height: 166px;
+    border: 1px solid #e3e8ef;
+    display: flex;
+    background: #fff;
+  }
+  .stat-item {
+    flex: 1;
+    padding: 22px 24px 18px;
+    border-right: 1px solid #eceff4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .stat-item:last-child { border-right: none; }
-  .stat-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .stat-num { font-size: 36px; font-weight: 900; color: #1a3a6b; }
-  .stat-tag { padding: 3px 10px; border-radius: 2px; font-size: 12px; font-weight: 700; color: white; }
-  .stat-sub { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-bottom: 6px; }
-  .stat-pct { font-weight: 700; }
-  .progress-bar { height: 5px; background: #e8edf5; border-radius: 3px; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 3px; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 8px; }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .stat-num {
+    font-size: 43px;
+    line-height: 1;
+    font-weight: 900;
+    color: #11438d;
+    letter-spacing: -1px;
+  }
+  .stat-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 82px;
+    height: 38px;
+    padding: 0 13px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .stat-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 15px;
+  }
+  .stat-pct {
+    font-weight: 700;
+  }
+  .progress-bar {
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: #edf2f7;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 10px;
+  }
+  .chart-box {
+    flex: 1;
+    border: 1px solid #e3e8ef;
+    background: #fff;
+    padding: 14px 16px 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .chart-title {
+    font-size: 18px;
+    line-height: 1;
+    color: #8b8b8b;
+    text-align: center;
+    margin: 4px 0 6px;
+  }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">平台数据分析 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">平台数据分析 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+
   <div class="body">
     <div class="sub-title">平台运营数据每周分析</div>
+
     <div class="top-stats">
       <div class="stat-item">
         <div class="stat-row">
           <span class="stat-num">28篇</span>
-          <span class="stat-tag" style="background:#1a3a6b;">笔记发文</span>
+          <span class="stat-tag" style="background:#11438d;">笔记发文</span>
         </div>
         <div class="stat-sub">
           <span>环比增长</span>
-          <span class="stat-pct" style="color:#1a3a6b;">+20%</span>
+          <span class="stat-pct" style="color:#11438d;">+20%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#1a3a6b;"></div></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:98%; background:#11438d;"></div></div>
       </div>
+
       <div class="stat-item">
         <div class="stat-row">
-          <span class="stat-num">+773</span>
-          <span class="stat-tag" style="background:#3a6abf;">新增粉丝</span>
+          <span class="stat-num" style="color:#5e8bc8;">+773</span>
+          <span class="stat-tag" style="background:#5e8bc8;">新增粉丝</span>
         </div>
         <div class="stat-sub">
           <span>环比增长</span>
-          <span class="stat-pct" style="color:#3a6abf;">+20%</span>
+          <span class="stat-pct" style="color:#5e8bc8;">+20%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#3a6abf;"></div></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:98%; background:#5e8bc8;"></div></div>
       </div>
+
       <div class="stat-item">
         <div class="stat-row">
-          <span class="stat-num">-19</span>
-          <span class="stat-tag" style="background:#8ab0d0;">流失粉丝</span>
+          <span class="stat-num" style="color:#a8bfd1; font-weight:800;">-19</span>
+          <span class="stat-tag" style="background:#8cb1d1;">流失粉丝</span>
         </div>
         <div class="stat-sub">
           <span>环比增长</span>
-          <span class="stat-pct" style="color:#8ab0d0;">-10%</span>
+          <span class="stat-pct" style="color:#8cb1d1;">-10%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:10%; background:#8ab0d0;"></div></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:98%; background:#8cb1d1;"></div></div>
       </div>
+
       <div class="stat-item">
         <div class="stat-row">
           <span class="stat-num">336单</span>
-          <span class="stat-tag" style="background:#1a3a6b;">店铺销售</span>
+          <span class="stat-tag" style="background:#11438d;">店铺销售</span>
         </div>
         <div class="stat-sub">
           <span>环比增长</span>
-          <span class="stat-pct" style="color:#1a3a6b;">+20%</span>
+          <span class="stat-pct" style="color:#11438d;">+20%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width:20%; background:#1a3a6b;"></div></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:98%; background:#11438d;"></div></div>
       </div>
     </div>
+
     <div class="chart-box">
       <div class="chart-title">产品周销售总额</div>
-      <svg width="100%" height="100%" viewBox="0 0 1160 340" preserveAspectRatio="xMidYMid meet">
-        <!-- Y axis -->
-        <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">600</text>
-        <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">500</text>
-        <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">400</text>
-        <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">300</text>
-        <text x="30" y="260" font-size="10" fill="#888" text-anchor="end">200</text>
-        <text x="30" y="310" font-size="10" fill="#888" text-anchor="end">100</text>
-        <!-- Grid -->
-        <line x1="40" y1="315" x2="1150" y2="315" stroke="#eee" stroke-width="1"/>
-        <line x1="40" y1="255" x2="1150" y2="255" stroke="#eee" stroke-width="1"/>
-        <line x1="40" y1="195" x2="1150" y2="195" stroke="#eee" stroke-width="1"/>
-        <line x1="40" y1="135" x2="1150" y2="135" stroke="#eee" stroke-width="1"/>
-        <line x1="40" y1="75" x2="1150" y2="75" stroke="#eee" stroke-width="1"/>
-        <!-- Dotted trend line -->
-        <polyline points="80,215 240,115 400,95 560,215 720,215 880,195 1040,95" fill="none" stroke="#3a6abf" stroke-width="1.5" stroke-dasharray="5,5"/>
-        <!-- 周一: 3 bars -->
-        <rect x="50" y="115" width="40" height="200" fill="#1a3a6b"/>
-        <rect x="95" y="195" width="40" height="120" fill="#8ab0d0"/>
-        <rect x="140" y="175" width="40" height="140" fill="#c0d4e8"/>
-        <!-- 周二 -->
-        <rect x="210" y="75" width="40" height="240" fill="#1a3a6b"/>
-        <rect x="255" y="55" width="40" height="260" fill="#8ab0d0"/>
-        <rect x="300" y="135" width="40" height="180" fill="#c0d4e8"/>
-        <!-- 周三 -->
-        <rect x="370" y="55" width="40" height="260" fill="#1a3a6b"/>
-        <rect x="415" y="75" width="40" height="240" fill="#8ab0d0"/>
-        <rect x="460" y="195" width="40" height="120" fill="#c0d4e8"/>
-        <!-- 周四 -->
-        <rect x="530" y="75" width="40" height="240" fill="#1a3a6b"/>
-        <rect x="575" y="195" width="40" height="120" fill="#8ab0d0"/>
-        <rect x="620" y="255" width="40" height="60" fill="#c0d4e8"/>
-        <!-- 周五 -->
-        <rect x="690" y="115" width="40" height="200" fill="#1a3a6b"/>
-        <rect x="735" y="175" width="40" height="140" fill="#8ab0d0"/>
-        <rect x="780" y="135" width="40" height="180" fill="#c0d4e8"/>
-        <!-- 周六 -->
-        <rect x="850" y="175" width="40" height="140" fill="#1a3a6b"/>
-        <rect x="895" y="55" width="40" height="260" fill="#8ab0d0"/>
-        <rect x="940" y="195" width="40" height="120" fill="#c0d4e8"/>
-        <!-- 周日 -->
-        <rect x="1010" y="55" width="40" height="260" fill="#1a3a6b"/>
-        <rect x="1055" y="175" width="40" height="140" fill="#8ab0d0"/>
-        <rect x="1100" y="135" width="40" height="180" fill="#c0d4e8"/>
-        <!-- X labels -->
-        <text x="95" y="330" font-size="11" fill="#555" text-anchor="middle">周一</text>
-        <text x="255" y="330" font-size="11" fill="#555" text-anchor="middle">周二</text>
-        <text x="415" y="330" font-size="11" fill="#555" text-anchor="middle">周三</text>
-        <text x="575" y="330" font-size="11" fill="#555" text-anchor="middle">周四</text>
-        <text x="735" y="330" font-size="11" fill="#555" text-anchor="middle">周五</text>
-        <text x="895" y="330" font-size="11" fill="#555" text-anchor="middle">周六</text>
-        <text x="1055" y="330" font-size="11" fill="#555" text-anchor="middle">周日</text>
+      <svg width="100%" height="100%" viewBox="0 0 1160 316" preserveAspectRatio="xMidYMid meet">
+        <g fill="#7f7f7f" font-size="12" text-anchor="end">
+          <text x="40" y="64">600</text>
+          <text x="40" y="102">500</text>
+          <text x="40" y="140">400</text>
+          <text x="40" y="178">300</text>
+          <text x="40" y="216">200</text>
+          <text x="40" y="254">100</text>
+        </g>
+
+        <g stroke="#e7edf4" stroke-width="1">
+          <line x1="54" y1="258" x2="1138" y2="258" />
+          <line x1="54" y1="220" x2="1138" y2="220" />
+          <line x1="54" y1="182" x2="1138" y2="182" />
+          <line x1="54" y1="144" x2="1138" y2="144" />
+          <line x1="54" y1="106" x2="1138" y2="106" />
+          <line x1="54" y1="68" x2="1138" y2="68" />
+        </g>
+
+        <polyline points="129,170 289,144 449,150 609,178 769,136 929,160 1089,156"
+                  fill="none" stroke="#b7c3cf" stroke-width="1.4" stroke-dasharray="2,5" />
+
+        <rect x="78" y="144" width="34" height="114" fill="#123f8d" />
+        <rect x="112" y="216" width="34" height="42" fill="#5f8ac8" />
+        <rect x="146" y="182" width="34" height="76" fill="#8cb0cf" />
+
+        <rect x="238" y="106" width="34" height="152" fill="#123f8d" />
+        <rect x="272" y="76" width="34" height="182" fill="#5f8ac8" />
+        <rect x="306" y="114" width="34" height="144" fill="#8cb0cf" />
+
+        <rect x="398" y="68" width="34" height="190" fill="#123f8d" />
+        <rect x="432" y="114" width="34" height="144" fill="#5f8ac8" />
+        <rect x="466" y="216" width="34" height="42" fill="#8cb0cf" />
+
+        <rect x="558" y="106" width="34" height="152" fill="#123f8d" />
+        <rect x="592" y="216" width="34" height="42" fill="#5f8ac8" />
+        <rect x="626" y="156" width="34" height="102" fill="#8cb0cf" />
+
+        <rect x="716" y="150" width="38" height="108" fill="#123f8d" />
+        <rect x="754" y="190" width="38" height="68" fill="#5f8ac8" />
+        <rect x="792" y="104" width="38" height="154" fill="#8cb0cf" />
+
+        <rect x="876" y="186" width="38" height="72" fill="#123f8d" />
+        <rect x="914" y="72" width="38" height="186" fill="#5f8ac8" />
+        <rect x="952" y="218" width="38" height="40" fill="#8cb0cf" />
+
+        <rect x="1036" y="68" width="38" height="190" fill="#123f8d" />
+        <rect x="1074" y="190" width="38" height="68" fill="#5f8ac8" />
+        <rect x="1112" y="116" width="38" height="142" fill="#8cb0cf" />
+
+        <g fill="#575757" font-size="12" text-anchor="middle">
+          <text x="129" y="286">周一</text>
+          <text x="289" y="286">周二</text>
+          <text x="449" y="286">周三</text>
+          <text x="609" y="286">周四</text>
+          <text x="769" y="286">周五</text>
+          <text x="929" y="286">周六</text>
+          <text x="1089" y="286">周日</text>
+        </g>
       </svg>
     </div>
   </div>

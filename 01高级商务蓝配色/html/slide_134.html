@@ -4,100 +4,258 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 24px; gap: 14px; }
-  .left-col { width: 500px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
-  .section-title { font-size: 20px; font-weight: 700; color: #1a3a6b; }
-  .desc-text { font-size: 12px; color: #555; line-height: 1.8; }
-  .highlight { color: #1a3a6b; font-weight: 700; }
-  .donuts-row { display: flex; gap: 20px; justify-content: center; margin-top: 8px; }
-  .donut-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .donut-label { font-size: 13px; color: #555; }
-  .right-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .top-banner { background: #1a3a6b; border-radius: 4px; padding: 16px 20px; }
-  .banner-num { font-size: 40px; font-weight: 900; color: white; }
-  .banner-label { font-size: 16px; color: rgba(255,255,255,0.85); margin-left: 12px; }
-  .banner-desc { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-top: 8px; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; position: relative; display: flex; flex-direction: column; }
-  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 10px; }
-  .callout { position: absolute; background: #6a9ac4; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; line-height: 1.5; }
-  .callout::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .header {
+    height: 84px;
+    padding: 18px 48px 0;
+    border-bottom: 2px solid #11489c;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .header-title {
+    font-size: 33px;
+    line-height: 1;
+    font-weight: 900;
+    color: #11489c;
+    letter-spacing: 0.2px;
+  }
+  .header-sub {
+    font-size: 20px;
+    line-height: 1;
+    color: #11489c;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  .body {
+    flex: 1;
+    display: flex;
+    gap: 26px;
+    padding: 36px 48px 34px;
+  }
+  .left-col {
+    width: 648px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 22px 28px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .section-title {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    color: #11489c;
+    margin-bottom: 18px;
+  }
+  .summary-intro,
+  .summary-block {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #8e8e8e;
+  }
+  .summary-intro { margin-bottom: 16px; }
+  .summary-block { margin-bottom: 14px; }
+  .summary-block b {
+    color: #11489c;
+    font-weight: 900;
+  }
+  .donuts-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+  }
+  .donut-card {
+    width: 226px;
+    height: 244px;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+  }
+  .donut-label {
+    font-size: 16px;
+    color: #666;
+    margin-top: 12px;
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .top-banner {
+    height: 180px;
+    background: #1146a4;
+    border-radius: 12px;
+    padding: 22px 28px 18px;
+    color: #fff;
+  }
+  .banner-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .banner-num {
+    font-size: 62px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+  }
+  .banner-label {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .banner-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.96);
+  }
+  .chart-box {
+    flex: 1;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 22px 20px 14px;
+    overflow: hidden;
+  }
+  .chart-title {
+    font-size: 22px;
+    line-height: 1;
+    color: #707070;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .callout {
+    position: absolute;
+    left: 188px;
+    top: 108px;
+    width: 152px;
+    height: 58px;
+    background: #5d92d0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(20,70,164,0.16);
+  }
+  .callout::after {
+    content: '';
+    position: absolute;
+    left: 22px;
+    bottom: -14px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid #5d92d0;
+  }
+  .axis-text { font-size: 11px; fill: #777; }
+  .x-text { font-size: 12px; fill: #666; }
+  .grid { stroke: #dfe3e8; stroke-width: 1; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">个人业绩汇报 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">个人业绩汇报 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+
   <div class="body">
     <div class="left-col">
       <div class="section-title">全年业绩总结</div>
-      <div class="desc-text">
-        今年对我的个人职业发展是一个充满挑战和成长的一年。在过去的12个月里，我在不同方面取得了一些显著的成绩，同时也面对了一些挑战。<br><br>
-        <span class="highlight">业绩突破：</span>我成功地实现了设定的销售目标，销售额比去年同期增长了20%。这归功于我的市场拓展策略和积极的客户沟通能力，有效地扩展了客户群体。<br><br>
-        <span class="highlight">团队合作：</span>在团队合作方面，我积极参与并领导了多个跨部门项目。通过与同事们的协作，我们成功地推动了项目进展，提高了工作效率和团队凝聚力。<br><br>
-        <span class="highlight">客户关系管理：</span>我在客户关系管理方面表现出色，保持了与现有客户的稳固合作关系，并且赢得了新客户的信任。通过定期的客户沟通和需求分析，我能够及时调整销售策略，满足客户的多样化需求。
-      </div>
+      <div class="summary-intro">今年对我的个人职业发展是一个充满挑战和成长的一年。在过去的12个月里，我在不同方面取得了一些显著的成绩，同时也面对了一些挑战。</div>
+      <div class="summary-block"><b>业绩突破：</b>我成功地实现了设定的销售目标，销售额比去年同期增长了20%。这归功于我的市场拓展策略和积极的客户沟通能力，有效地扩展了客户群体。</div>
+      <div class="summary-block"><b>团队合作：</b>在团队合作方面，我积极参与并领导了多个跨部门项目。通过与同事们的协作，我们成功地推动了项目进展，提高了工作效率和团队凝聚力。</div>
+      <div class="summary-block"><b>客户关系管理：</b>我在客户关系管理方面表现出色，保持了与现有客户的稳固合作关系，并且赢得了新客户的信任。通过定期的客户沟通和需求分析，我能够及时调整销售策略，满足客户的多样化需求。</div>
+
       <div class="donuts-row">
-        <div class="donut-item">
-          <svg width="130" height="130" viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#e8edf5" stroke-width="18"/>
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#1a3a6b" stroke-width="18"
-              stroke-dasharray="235.6 78.5" stroke-dashoffset="-39.3" stroke-linecap="butt"/>
-            <text x="65" y="70" text-anchor="middle" font-size="22" font-weight="900" fill="#1a3a6b">75%</text>
+        <div class="donut-card">
+          <svg width="160" height="160" viewBox="0 0 160 160" aria-label="线上销售额占比">
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#edf2fb" stroke-width="22"/>
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#1146a4" stroke-width="22" stroke-dasharray="263.9 87.9" stroke-dashoffset="26"/>
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#5c8dc8" stroke-width="22" stroke-dasharray="96 255.8" stroke-dashoffset="118"/>
+            <circle cx="80" cy="80" r="34" fill="#ffffff"/>
+            <text x="80" y="89" text-anchor="middle" font-size="26" font-weight="900" fill="#123f91">75%</text>
           </svg>
           <div class="donut-label">线上销售额占比</div>
         </div>
-        <div class="donut-item">
-          <svg width="130" height="130" viewBox="0 0 130 130">
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#e8edf5" stroke-width="18"/>
-            <circle cx="65" cy="65" r="50" fill="none" stroke="#1a3a6b" stroke-width="18"
-              stroke-dasharray="78.5 235.6" stroke-dashoffset="-39.3" stroke-linecap="butt"/>
-            <text x="65" y="70" text-anchor="middle" font-size="22" font-weight="900" fill="#1a3a6b">25%</text>
+        <div class="donut-card">
+          <svg width="160" height="160" viewBox="0 0 160 160" aria-label="线下销售额占比">
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#edf2fb" stroke-width="22"/>
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#1146a4" stroke-width="22" stroke-dasharray="87.9 263.9" stroke-dashoffset="26"/>
+            <circle cx="80" cy="80" r="56" fill="none" stroke="#5c8dc8" stroke-width="22" stroke-dasharray="96 255.8" stroke-dashoffset="118"/>
+            <circle cx="80" cy="80" r="34" fill="#ffffff"/>
+            <text x="80" y="89" text-anchor="middle" font-size="26" font-weight="900" fill="#123f91">25%</text>
           </svg>
           <div class="donut-label">线下销售额占比</div>
         </div>
       </div>
     </div>
+
     <div class="right-col">
       <div class="top-banner">
-        <div>
-          <span class="banner-num">22,300,300</span>
-          <span class="banner-label">全年销售总额</span>
+        <div class="banner-head">
+          <div class="banner-num">22,300,300</div>
+          <div class="banner-label">全年销售总额</div>
         </div>
         <div class="banner-desc">今年，我在实现业绩目标和团队合作方面取得了显著进展，同时也意识到了自己在时间管理、市场分析和技术应用方面需要进一步改进的地方。未来，我将继续努力克服挑战，不断提升自己的综合能力。</div>
       </div>
+
       <div class="chart-box">
         <div class="chart-title">季度销售明细</div>
-        <div class="callout" style="top:50px; left:30%;">第二季度业绩<br>销售遇到难点</div>
-        <svg width="100%" height="100%" viewBox="0 0 600 280" preserveAspectRatio="xMidYMid meet">
-          <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">125</text>
-          <text x="30" y="80" font-size="10" fill="#888" text-anchor="end">100</text>
-          <text x="30" y="140" font-size="10" fill="#888" text-anchor="end">75</text>
-          <text x="30" y="200" font-size="10" fill="#888" text-anchor="end">50</text>
-          <text x="30" y="250" font-size="10" fill="#888" text-anchor="end">25</text>
-          <text x="30" y="270" font-size="10" fill="#888" text-anchor="end">0</text>
-          <line x1="35" y1="265" x2="580" y2="265" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="205" x2="580" y2="205" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="145" x2="580" y2="145" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="85" x2="580" y2="85" stroke="#eee" stroke-width="1"/>
-          <!-- Q1: 100 -->
-          <rect x="60" y="65" width="80" height="200" fill="#1a3a6b"/>
-          <!-- Q2: 25 -->
-          <rect x="185" y="215" width="80" height="50" fill="#8ab0d0"/>
-          <!-- Q3: 55 -->
-          <rect x="310" y="155" width="80" height="110" fill="#8ab0d0"/>
-          <!-- Q4: 97 -->
-          <rect x="435" y="70" width="80" height="195" fill="#8ab0d0"/>
-          <text x="100" y="280" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
-          <text x="225" y="280" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
-          <text x="350" y="280" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
-          <text x="475" y="280" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+        <div class="callout">第二季度业绩<br>销售遇到难点</div>
+        <svg width="100%" height="100%" viewBox="0 0 520 310" preserveAspectRatio="none">
+          <line class="grid" x1="44" y1="34" x2="500" y2="34"/>
+          <line class="grid" x1="44" y1="90" x2="500" y2="90"/>
+          <line class="grid" x1="44" y1="146" x2="500" y2="146"/>
+          <line class="grid" x1="44" y1="202" x2="500" y2="202"/>
+          <line class="grid" x1="44" y1="258" x2="500" y2="258"/>
+          <line class="grid" x1="44" y1="302" x2="500" y2="302"/>
+
+          <text class="axis-text" x="30" y="38" text-anchor="end">125</text>
+          <text class="axis-text" x="30" y="94" text-anchor="end">100</text>
+          <text class="axis-text" x="30" y="150" text-anchor="end">75</text>
+          <text class="axis-text" x="30" y="206" text-anchor="end">50</text>
+          <text class="axis-text" x="30" y="262" text-anchor="end">25</text>
+          <text class="axis-text" x="30" y="306" text-anchor="end">0</text>
+
+          <rect x="76"  y="90"  width="42" height="212" fill="#133f95"/>
+          <rect x="188" y="246" width="42" height="56"  fill="#5e8acc"/>
+          <rect x="300" y="190" width="42" height="112" fill="#89b1d7"/>
+          <rect x="412" y="98"  width="42" height="204" fill="#aec6e6"/>
+
+          <text class="x-text" x="97"  y="324" text-anchor="middle">第一季度</text>
+          <text class="x-text" x="209" y="324" text-anchor="middle">第二季度</text>
+          <text class="x-text" x="321" y="324" text-anchor="middle">第三季度</text>
+          <text class="x-text" x="433" y="324" text-anchor="middle">第四季度</text>
         </svg>
       </div>
     </div>

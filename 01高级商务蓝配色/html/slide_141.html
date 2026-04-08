@@ -9,25 +9,26 @@
   .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
   .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
   .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 24px; gap: 14px; }
-  .left-col { width: 280px; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
-  .section-title { font-size: 20px; font-weight: 900; color: #1a3a6b; }
-  .desc-text { font-size: 11px; color: #666; line-height: 1.7; }
-  .tag { background: #1a3a6b; color: white; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 2px; display: inline-block; }
-  .tag-blue { background: #6a9ac4; }
-  .highlight { color: #1a3a6b; font-weight: 700; }
+  .body { flex: 1; display: flex; padding: 16px 24px 14px; gap: 10px; }
+  .left-col { width: 290px; border: 1.5px solid #e2e7f0; border-radius: 10px; padding: 18px 18px 14px; display: flex; flex-direction: column; gap: 12px; }
+  .section-title { font-size: 24px; font-weight: 900; color: #113d88; letter-spacing: 0.5px; }
+  .desc-text { font-size: 11px; color: #8d96a3; line-height: 1.75; }
+  .tag { background: #0f469f; color: white; font-size: 12px; font-weight: 700; padding: 4px 13px; border-radius: 0; display: inline-block; min-width: 74px; }
+  .tag-blue { background: #5f96d3; }
+  .highlight { color: #173f82; font-weight: 700; }
   .right-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .top-cards { display: flex; gap: 10px; height: 130px; }
-  .stat-card { flex: 1; border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; position: relative; }
-  .card-label { font-size: 14px; font-weight: 700; color: white; }
-  .card-num { font-size: 28px; font-weight: 900; color: white; }
-  .card-desc { font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.5; }
-  .card-icon { position: absolute; top: 12px; right: 12px; font-size: 22px; opacity: 0.8; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 8px; }
-  .legend { display: flex; gap: 14px; justify-content: center; margin-top: 6px; }
-  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+  .top-cards { display: flex; gap: 11px; height: 176px; }
+  .stat-card { flex: 1; border-radius: 8px; padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .card-label { font-size: 15px; font-weight: 800; color: white; }
+  .card-num { font-size: 35px; font-weight: 900; color: white; line-height: 1; }
+  .card-desc { font-size: 11px; color: rgba(255,255,255,0.9); line-height: 1.8; max-width: 250px; }
+  .card-icon-badge { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; background: rgba(255,255,255,0.96); border-radius: 7px; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .card-icon { font-size: 16px; color: #7fa9cf; line-height: 1; }
+  .chart-box { flex: 1; border: 1.5px solid #e2e7f0; border-radius: 8px; padding: 16px 16px 10px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 18px; color: #a7a7a7; text-align: center; margin-bottom: 10px; }
+  .legend { display: flex; gap: 18px; justify-content: center; margin-top: 4px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #666; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 0; }
 </style>
 </head>
 <body>
@@ -54,54 +55,49 @@
     </div>
     <div class="right-col">
       <div class="top-cards">
-        <div class="stat-card" style="background:#1a3a6b;">
+        <div class="stat-card" style="background:#0f469f;">
           <div class="card-label">销售一部</div>
           <div class="card-num">6,780,100</div>
           <div class="card-desc">突出的市场定位能力，精准锁定目标客户群体。</div>
-          <div class="card-icon">👥</div>
+          <div class="card-icon-badge"><div class="card-icon">👥</div></div>
         </div>
-        <div class="stat-card" style="background:#3a6abf;">
+        <div class="stat-card" style="background:#5d8fd0;">
           <div class="card-label">销售二部</div>
           <div class="card-num">6,580,100</div>
           <div class="card-desc">创新的市场活动策略，有效提升品牌曝光和市场影响力。</div>
-          <div class="card-icon">👥</div>
+          <div class="card-icon-badge"><div class="card-icon">👥</div></div>
         </div>
-        <div class="stat-card" style="background:#8ab0d0;">
+        <div class="stat-card" style="background:#8bb2d8;">
           <div class="card-label">销售三部</div>
           <div class="card-num">7,680,100</div>
           <div class="card-desc">强大的销售团队协同能力和灵活应对市场竞争的能力。</div>
-          <div class="card-icon">👥</div>
+          <div class="card-icon-badge"><div class="card-icon">👥</div></div>
         </div>
       </div>
       <div class="chart-box">
         <div class="chart-title">各部门季度销售明细</div>
         <svg width="100%" height="100%" viewBox="0 0 860 280" preserveAspectRatio="xMidYMid meet">
-          <line x1="35" y1="265" x2="850" y2="265" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="205" x2="850" y2="205" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="145" x2="850" y2="145" stroke="#eee" stroke-width="1"/>
-          <line x1="35" y1="85" x2="850" y2="85" stroke="#eee" stroke-width="1"/>
-          <!-- Trend line -->
-          <polyline points="100,200 310,160 520,120 730,90" fill="none" stroke="#1a3a6b" stroke-width="1.5" stroke-dasharray="5,4"/>
-          <!-- Q1 -->
-          <rect x="50" y="195" width="40" height="70" fill="#1a3a6b"/>
-          <rect x="95" y="215" width="40" height="50" fill="#3a6abf"/>
-          <rect x="140" y="225" width="40" height="40" fill="#8ab0d0"/>
-          <!-- Q2 -->
-          <rect x="260" y="155" width="40" height="110" fill="#1a3a6b"/>
-          <rect x="305" y="175" width="40" height="90" fill="#3a6abf"/>
-          <rect x="350" y="185" width="40" height="80" fill="#8ab0d0"/>
-          <!-- Q3 -->
-          <rect x="470" y="115" width="40" height="150" fill="#1a3a6b"/>
-          <rect x="515" y="135" width="40" height="130" fill="#3a6abf"/>
-          <rect x="560" y="145" width="40" height="120" fill="#8ab0d0"/>
-          <!-- Q4 -->
-          <rect x="680" y="75" width="40" height="190" fill="#1a3a6b"/>
-          <rect x="725" y="95" width="40" height="170" fill="#3a6abf"/>
-          <rect x="770" y="115" width="40" height="150" fill="#8ab0d0"/>
-          <text x="120" y="280" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
-          <text x="330" y="280" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
-          <text x="540" y="280" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
-          <text x="750" y="280" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+          <line x1="35" y1="242" x2="850" y2="242" stroke="#edf1f5" stroke-width="1"/>
+          <line x1="35" y1="194" x2="850" y2="194" stroke="#edf1f5" stroke-width="1"/>
+          <line x1="35" y1="146" x2="850" y2="146" stroke="#edf1f5" stroke-width="1"/>
+          <line x1="35" y1="98" x2="850" y2="98" stroke="#edf1f5" stroke-width="1"/>
+          <polyline points="115,212 325,182 535,140 745,110" fill="none" stroke="#2d4769" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <rect x="52" y="214" width="48" height="28" fill="#0f469f"/>
+          <rect x="111" y="160" width="48" height="82" fill="#5d8fd0"/>
+          <rect x="170" y="188" width="48" height="54" fill="#8bb2d8"/>
+          <rect x="255" y="204" width="48" height="38" fill="#0f469f"/>
+          <rect x="314" y="178" width="48" height="64" fill="#5d8fd0"/>
+          <rect x="373" y="194" width="48" height="48" fill="#8bb2d8"/>
+          <rect x="458" y="162" width="48" height="80" fill="#0f469f"/>
+          <rect x="517" y="136" width="48" height="106" fill="#5d8fd0"/>
+          <rect x="576" y="152" width="48" height="90" fill="#8bb2d8"/>
+          <rect x="661" y="102" width="48" height="140" fill="#0f469f"/>
+          <rect x="720" y="154" width="48" height="88" fill="#5d8fd0"/>
+          <rect x="779" y="126" width="48" height="116" fill="#8bb2d8"/>
+          <text x="140" y="263" font-size="11" fill="#666" text-anchor="middle">第一季度</text>
+          <text x="343" y="263" font-size="11" fill="#666" text-anchor="middle">第二季度</text>
+          <text x="546" y="263" font-size="11" fill="#666" text-anchor="middle">第三季度</text>
+          <text x="749" y="263" font-size="11" fill="#666" text-anchor="middle">第四季度</text>
         </svg>
         <div class="legend">
           <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>销售一部</div>

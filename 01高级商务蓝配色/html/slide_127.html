@@ -4,174 +4,408 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 14px 30px; gap: 12px; }
-  .sub-title { font-size: 18px; font-weight: 700; color: #1a3a6b; }
-  .top-cards { display: flex; gap: 10px; height: 120px; }
-  .stat-card { flex: 1; border-radius: 4px; padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; }
-  .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
-  .card-label { font-size: 14px; color: rgba(255,255,255,0.85); }
-  .card-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .card-num { font-size: 36px; font-weight: 900; color: white; }
-  .card-sub { font-size: 12px; color: rgba(255,255,255,0.75); }
-  .bottom-row { flex: 1; display: flex; gap: 12px; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 8px; }
-  .donut-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; align-items: center; }
-  .legend { display: flex; gap: 14px; margin-top: 8px; }
-  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-  .activity-box { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; }
-  .activity-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 12px; }
-  .activity-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
-  .activity-dot { width: 10px; height: 10px; border-radius: 50%; background: #1a3a6b; flex-shrink: 0; margin-top: 3px; }
-  .activity-content { flex: 1; }
-  .activity-name { font-size: 14px; font-weight: 700; color: #1a3a6b; margin-bottom: 3px; }
-  .activity-desc { font-size: 11px; color: #888; line-height: 1.5; }
-  .activity-count { font-size: 16px; font-weight: 700; color: #1a3a6b; white-space: nowrap; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  }
+  .slide {
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 48px 28px;
+  }
+  .header {
+    height: 66px;
+    border-bottom: 2px solid #0d4b97;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+  .header-title {
+    font-size: 33px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0d4b97;
+    letter-spacing: 0.2px;
+  }
+  .header-sub {
+    font-size: 21px;
+    line-height: 1;
+    color: #0d4b97;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  .sub-title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+    font-size: 25px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0d4b97;
+  }
+  .top-cards {
+    display: flex;
+    gap: 18px;
+    height: 158px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    flex: 1;
+    padding: 14px 22px 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .card-label {
+    font-size: 15px;
+    line-height: 1;
+    color: rgba(255,255,255,0.96);
+  }
+  .card-value {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 900;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+  .card-value.salary {
+    font-size: 37px;
+    letter-spacing: 0.3px;
+  }
+  .card-sub {
+    font-size: 15px;
+    line-height: 1;
+    color: rgba(255,255,255,0.96);
+    font-weight: 700;
+    margin-top: auto;
+  }
+  .icon-wrap {
+    width: 78px;
+    height: 78px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-wrap svg {
+    width: 48px;
+    height: 48px;
+    stroke: #11479c;
+    fill: none;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icon-wrap .fill {
+    fill: #11479c;
+    stroke: none;
+  }
+  .bottom-row {
+    flex: 1;
+    display: flex;
+    gap: 18px;
+  }
+  .panel {
+    flex: 1;
+    border: 1px solid #ededed;
+    background: #fff;
+    padding: 14px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .panel-title {
+    font-size: 16px;
+    color: #4f4f4f;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #4d4d4d;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+  }
+  .activity-panel {
+    position: relative;
+    padding: 14px 18px 12px 20px;
+  }
+  .timeline {
+    position: absolute;
+    left: 28px;
+    top: 56px;
+    bottom: 24px;
+    width: 1px;
+    background: #b9b9b9;
+  }
+  .activity-title {
+    font-size: 16px;
+    color: #4f4f4f;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .activity-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-left: 18px;
+  }
+  .activity-node {
+    position: absolute;
+    left: -1px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .activity-main {
+    flex: 1;
+  }
+  .activity-name {
+    font-size: 17px;
+    line-height: 1.1;
+    color: #173b73;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .activity-desc {
+    font-size: 11px;
+    line-height: 1.55;
+    color: #9b9b9b;
+    max-width: 255px;
+  }
+  .activity-count {
+    font-size: 18px;
+    line-height: 1;
+    color: #173b73;
+    font-weight: 900;
+    margin-top: 6px;
+    white-space: nowrap;
+  }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">人力资源数据分析 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-title">人力资源数据分析 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
-  <div class="body">
-    <div class="sub-title">人力资源数据汇报 | HR KPI Dashboard</div>
-    <div class="top-cards">
-      <div class="stat-card" style="background:#1a3a6b;">
-        <div class="card-header">
-          <span class="card-label">总员工人数</span>
-          <div class="card-icon">👥</div>
+
+  <div class="sub-title">人力资源数据汇报 | HR KPI Dashboard</div>
+
+  <div class="top-cards">
+    <div class="stat-card" style="background:#11479c;">
+      <div class="card-head">
+        <div>
+          <div class="card-label">总员工人数</div>
+          <div class="card-value">228</div>
         </div>
-        <div class="card-num">228</div>
-        <div class="card-sub">-134 同比上个月</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="15" cy="12" r="3.2"></circle>
+            <circle cx="24" cy="10" r="3.4"></circle>
+            <circle cx="33" cy="12" r="3.2"></circle>
+            <path d="M10 31v-7c0-3 2-5 5-5"></path>
+            <path d="M18 31V22c0-3 2-5 6-5s6 2 6 5v9"></path>
+            <path d="M33 19c3 0 5 2 5 5v7"></path>
+            <path d="M14 20l-3 11"></path>
+            <path d="M34 20l3 11"></path>
+          </svg>
+        </div>
       </div>
-      <div class="stat-card" style="background:#3a6abf;">
-        <div class="card-header">
-          <span class="card-label">部门数</span>
-          <div class="card-icon">🏠</div>
+      <div class="card-sub">-134 同比上个月</div>
+    </div>
+
+    <div class="stat-card" style="background:#5f8fce;">
+      <div class="card-head">
+        <div>
+          <div class="card-label">部门数</div>
+          <div class="card-value">26</div>
         </div>
-        <div class="card-num">26</div>
-        <div class="card-sub">-13 同比上个月</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M8 22L24 8l16 14"></path>
+            <path d="M12 21v18h24V21"></path>
+            <rect x="20" y="26" width="8" height="13" class="fill"></rect>
+          </svg>
+        </div>
       </div>
-      <div class="stat-card" style="background:#6a9ac4;">
-        <div class="card-header">
-          <span class="card-label">工资支出</span>
-          <div class="card-icon">¥</div>
+      <div class="card-sub">-13 同比上个月</div>
+    </div>
+
+    <div class="stat-card" style="background:#11479c;">
+      <div class="card-head">
+        <div>
+          <div class="card-label">工资支出</div>
+          <div class="card-value salary">¥987568</div>
         </div>
-        <div class="card-num">¥987568</div>
-        <div class="card-sub">-25889 同比上个月</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 8v32"></path>
+            <path d="M15 13h18"></path>
+            <path d="M16 22h16"></path>
+            <path d="M18 40h12"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="card-sub">-25889 同比上个月</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="panel">
+      <div class="panel-title">项目概述/Project overview</div>
+      <svg width="100%" height="100%" viewBox="0 0 360 290" preserveAspectRatio="xMidYMid meet">
+        <g stroke="#e4e4e4" stroke-width="1">
+          <line x1="32" y1="248" x2="340" y2="248"></line>
+          <line x1="32" y1="213" x2="340" y2="213"></line>
+          <line x1="32" y1="178" x2="340" y2="178"></line>
+          <line x1="32" y1="143" x2="340" y2="143"></line>
+          <line x1="32" y1="108" x2="340" y2="108"></line>
+          <line x1="32" y1="73" x2="340" y2="73"></line>
+          <line x1="32" y1="38" x2="340" y2="38"></line>
+        </g>
+        <g font-size="9" fill="#838383" text-anchor="end">
+          <text x="18" y="251">0</text>
+          <text x="18" y="216">2</text>
+          <text x="18" y="181">4</text>
+          <text x="18" y="146">6</text>
+          <text x="18" y="111">8</text>
+          <text x="18" y="76">12</text>
+          <text x="18" y="41">14</text>
+        </g>
+
+        <g>
+          <rect x="42" y="143" width="22" height="105" fill="#11479c"></rect>
+          <rect x="42" y="108" width="22" height="35" fill="#4b79c8"></rect>
+          <rect x="42" y="81" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="82" y="161" width="22" height="87" fill="#11479c"></rect>
+          <rect x="82" y="108" width="22" height="53" fill="#4b79c8"></rect>
+          <rect x="82" y="81" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="122" y="152" width="22" height="96" fill="#11479c"></rect>
+          <rect x="122" y="126" width="22" height="26" fill="#4b79c8"></rect>
+          <rect x="122" y="99" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="162" y="135" width="22" height="113" fill="#11479c"></rect>
+          <rect x="162" y="91" width="22" height="44" fill="#4b79c8"></rect>
+          <rect x="162" y="26" width="22" height="65" fill="#90b6d9"></rect>
+
+          <rect x="202" y="143" width="22" height="105" fill="#11479c"></rect>
+          <rect x="202" y="108" width="22" height="35" fill="#4b79c8"></rect>
+          <rect x="202" y="81" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="242" y="161" width="22" height="87" fill="#11479c"></rect>
+          <rect x="242" y="108" width="22" height="53" fill="#4b79c8"></rect>
+          <rect x="242" y="81" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="282" y="152" width="22" height="96" fill="#11479c"></rect>
+          <rect x="282" y="126" width="22" height="26" fill="#4b79c8"></rect>
+          <rect x="282" y="99" width="22" height="27" fill="#90b6d9"></rect>
+
+          <rect x="322" y="135" width="22" height="113" fill="#11479c"></rect>
+          <rect x="322" y="91" width="22" height="44" fill="#4b79c8"></rect>
+          <rect x="322" y="26" width="22" height="65" fill="#90b6d9"></rect>
+        </g>
+
+        <g font-size="9" fill="#757575" text-anchor="middle">
+          <text x="53" y="270">Jan</text>
+          <text x="93" y="270">Feb</text>
+          <text x="133" y="270">Mar</text>
+          <text x="173" y="270">Apr</text>
+          <text x="213" y="270">May</text>
+          <text x="253" y="270">Jun</text>
+          <text x="293" y="270">Jul</text>
+          <text x="333" y="270">Aug</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#11479c;"></span>系列 1</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#4b79c8;"></span>系列 2</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#90b6d9;"></span>系列 3</div>
       </div>
     </div>
-    <div class="bottom-row">
-      <!-- Stacked bar chart -->
-      <div class="chart-box">
-        <div class="chart-title">项目概述/Project overview</div>
-        <svg width="100%" height="100%" viewBox="0 0 340 240" preserveAspectRatio="xMidYMid meet">
-          <text x="25" y="20" font-size="9" fill="#888" text-anchor="end">14</text>
-          <text x="25" y="60" font-size="9" fill="#888" text-anchor="end">12</text>
-          <text x="25" y="100" font-size="9" fill="#888" text-anchor="end">10</text>
-          <text x="25" y="140" font-size="9" fill="#888" text-anchor="end">8</text>
-          <text x="25" y="180" font-size="9" fill="#888" text-anchor="end">6</text>
-          <text x="25" y="210" font-size="9" fill="#888" text-anchor="end">4</text>
-          <line x1="30" y1="215" x2="330" y2="215" stroke="#eee" stroke-width="1"/>
-          <!-- Jan: 8+2+0=10 -->
-          <rect x="40" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="40" y="55" width="25" height="20" fill="#3a6abf"/>
-          <rect x="40" y="35" width="25" height="20" fill="#8ab0d0"/>
-          <!-- Feb: 8+2+2=12 -->
-          <rect x="80" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="80" y="55" width="25" height="20" fill="#3a6abf"/>
-          <rect x="80" y="35" width="25" height="20" fill="#8ab0d0"/>
-          <!-- Mar: 8+0+0=8 -->
-          <rect x="120" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="120" y="55" width="25" height="20" fill="#3a6abf"/>
-          <!-- Apr: 12+2+0=14 -->
-          <rect x="160" y="35" width="25" height="180" fill="#1a3a6b"/>
-          <rect x="160" y="15" width="25" height="20" fill="#3a6abf"/>
-          <!-- May: 8+2+0=10 -->
-          <rect x="200" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="200" y="55" width="25" height="20" fill="#3a6abf"/>
-          <rect x="200" y="35" width="25" height="20" fill="#8ab0d0"/>
-          <!-- Jun: 8+2+0=10 -->
-          <rect x="240" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="240" y="55" width="25" height="20" fill="#3a6abf"/>
-          <rect x="240" y="35" width="25" height="20" fill="#8ab0d0"/>
-          <!-- Jul: 8+0+0=8 -->
-          <rect x="280" y="75" width="25" height="140" fill="#1a3a6b"/>
-          <rect x="280" y="55" width="25" height="20" fill="#3a6abf"/>
-          <!-- Aug: 12+2+0=14 -->
-          <rect x="320" y="35" width="25" height="180" fill="#1a3a6b"/>
-          <rect x="320" y="15" width="25" height="20" fill="#3a6abf"/>
-          <text x="52" y="228" font-size="9" fill="#555" text-anchor="middle">Jan</text>
-          <text x="92" y="228" font-size="9" fill="#555" text-anchor="middle">Feb</text>
-          <text x="132" y="228" font-size="9" fill="#555" text-anchor="middle">Mar</text>
-          <text x="172" y="228" font-size="9" fill="#555" text-anchor="middle">Apr</text>
-          <text x="212" y="228" font-size="9" fill="#555" text-anchor="middle">May</text>
-          <text x="252" y="228" font-size="9" fill="#555" text-anchor="middle">Jun</text>
-          <text x="292" y="228" font-size="9" fill="#555" text-anchor="middle">Jul</text>
-          <text x="332" y="228" font-size="9" fill="#555" text-anchor="middle">Aug</text>
-        </svg>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>系列 1</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>系列 2</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>系列 3</div>
-        </div>
+
+    <div class="panel" style="align-items:center;">
+      <div class="panel-title">员工性别比例/Gender By Employees</div>
+      <svg width="285" height="250" viewBox="0 0 285 250">
+        <g transform="translate(30,10)">
+          <circle cx="112" cy="112" r="76" fill="none" stroke="#d9e6f5" stroke-width="42"></circle>
+          <circle cx="112" cy="112" r="76" fill="none" stroke="#5f8fce" stroke-width="42"
+                  stroke-dasharray="95 382" stroke-linecap="butt"
+                  transform="rotate(-90 112 112)"></circle>
+          <circle cx="112" cy="112" r="76" fill="none" stroke="#11479c" stroke-width="42"
+                  stroke-dasharray="191 286" stroke-dashoffset="-108" stroke-linecap="butt"
+                  transform="rotate(-90 112 112)"></circle>
+          <text x="84" y="86" text-anchor="middle" font-size="20" fill="#ffffff">20%</text>
+          <text x="165" y="168" text-anchor="middle" font-size="22" fill="#ffffff">40%</text>
+        </g>
+      </svg>
+      <div class="legend" style="margin-top:0;">
+        <div class="legend-item"><span class="legend-dot" style="background:#11479c;"></span>男性</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#90b6d9;"></span>女性</div>
       </div>
-      <!-- Donut chart -->
-      <div class="donut-box">
-        <div class="chart-title">员工性别比例/Gender By Employees</div>
-        <svg width="200" height="200" viewBox="0 0 200 200">
-          <!-- Male: 40% -->
-          <path d="M 100,100 L 100,20 A 80,80 0 0,1 180,100 Z" fill="#1a3a6b"/>
-          <!-- Female: 20% -->
-          <path d="M 100,100 L 180,100 A 80,80 0 0,1 100,180 Z" fill="#3a6abf"/>
-          <!-- Rest: 40% -->
-          <path d="M 100,100 L 100,180 A 80,80 0 0,1 20,100 Z" fill="#8ab0d0"/>
-          <path d="M 100,100 L 20,100 A 80,80 0 0,1 100,20 Z" fill="#c0d4e8"/>
-          <!-- Center hole -->
-          <circle cx="100" cy="100" r="45" fill="white"/>
-          <text x="100" y="95" text-anchor="middle" font-size="13" fill="#555">20%</text>
-          <text x="100" y="115" text-anchor="middle" font-size="13" fill="#555">40%</text>
-        </svg>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>男性</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>女性</div>
+    </div>
+
+    <div class="panel activity-panel">
+      <div class="activity-title">近期工作安排/Recent Activity</div>
+      <div class="timeline"></div>
+
+      <div class="activity-item">
+        <span class="activity-node" style="background:#b7b7b7;"></span>
+        <div class="activity-main">
+          <div class="activity-name">设计人员储备</div>
+          <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
         </div>
+        <div class="activity-count">15人</div>
       </div>
-      <!-- Activity list -->
-      <div class="activity-box">
-        <div class="activity-title">近期工作安排/Recent Activity</div>
-        <div class="activity-item">
-          <div class="activity-dot"></div>
-          <div class="activity-content">
-            <div class="activity-name">设计人员储备</div>
-            <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
-          </div>
-          <div class="activity-count">15人</div>
+
+      <div class="activity-item">
+        <span class="activity-node" style="background:#11479c;"></span>
+        <div class="activity-main">
+          <div class="activity-name">市场人员储备</div>
+          <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
         </div>
-        <div class="activity-item">
-          <div class="activity-dot" style="background:#3a6abf;"></div>
-          <div class="activity-content">
-            <div class="activity-name">市场人员储备</div>
-            <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
-          </div>
-          <div class="activity-count">16人</div>
+        <div class="activity-count">16人</div>
+      </div>
+
+      <div class="activity-item" style="margin-bottom:0;">
+        <span class="activity-node" style="background:#b7b7b7;"></span>
+        <div class="activity-main">
+          <div class="activity-name">策划人员储备</div>
+          <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
         </div>
-        <div class="activity-item">
-          <div class="activity-dot" style="background:#8ab0d0;"></div>
-          <div class="activity-content">
-            <div class="activity-name">策划人员储备</div>
-            <div class="activity-desc">包含：人力资源规划、招聘、培训、绩效、薪酬和员工关系六大模块的一种管理工作。</div>
-          </div>
-          <div class="activity-count">17人</div>
-        </div>
+        <div class="activity-count">17人</div>
       </div>
     </div>
   </div>
