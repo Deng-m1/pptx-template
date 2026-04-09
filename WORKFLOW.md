@@ -124,7 +124,90 @@ python3.11 scripts/screenshot_html.py \
 | 已完成修改 | 本轮改了哪些结构、颜色、图表或排版 |
 | 下一步计划 | 还需要继续调整哪些地方 |
 
-## 9. 依赖与环境说明
+## 9. 素材生成与 assets 管理规范
+
+高端品牌类模板中大量使用了产品摄影、人物生活方式照片、背景纹理、装饰图形等视觉素材。这些素材**不能用纯色背景或 SVG 占位符代替**，必须通过 AI 图像生成工具产出与原图风格匹配的真实素材，才能达到视觉还原的目标。
+
+### 9.1 素材生成原则
+
+| 原则 | 说明 |
+| :--- | :--- |
+| 按需生成 | 每张幻灯片在原图分析阶段即识别出所需素材，分析完成后立即生成 |
+| 风格匹配 | 生成提示词应还原原图的摄影风格、光线、色调和主体特征，不得随意替换为不相关图片 |
+| 多素材支持 | 一张幻灯片可能需要多张独立素材（如背景图、产品图、人物图、装饰纹理），每张单独生成 |
+| 不允许 Base64 内嵌大图 | 素材图片必须以独立文件存储，HTML 通过相对路径引用，禁止将大图 Base64 内嵌到 HTML 中 |
+
+### 9.2 assets 目录结构
+
+每个模板的素材统一存放在该模板目录下的 `assets/` 子目录，按幻灯片编号组织：
+
+```
+02高端品牌PPT参考/
+  slides/                          # 原始参考图片（只读，不修改）
+    01_perfume_luxury_brand/
+      slide_01.jpg
+      ...
+  html/                            # 复刻 HTML 文件
+    01_perfume_luxury_brand/
+      slide_01.html
+      ...
+  assets/                          # AI 生成素材
+    01_perfume_luxury_brand/
+      slide_01/                    # 该页所需的所有素材
+        perfume_bottle.png
+        background_texture.jpg
+        ...
+      slide_02/
+        ...
+  screenshots/                     # 截图输出
+    01_perfume_luxury_brand/
+      slide_01.png
+      ...
+```
+
+### 9.3 HTML 本地素材引用规范
+
+HTML 文件中引用素材时，使用相对路径指向 `assets/` 目录，路径格式如下：
+
+```html
+<!-- HTML 位于 html/01_perfume_luxury_brand/slide_01.html -->
+<!-- 素材位于 assets/01_perfume_luxury_brand/slide_01/perfume_bottle.png -->
+<img src="../../assets/01_perfume_luxury_brand/slide_01/perfume_bottle.png" ...>
+```
+
+CSS `background-image` 同理：
+
+```css
+background-image: url('../../assets/01_perfume_luxury_brand/slide_01/background_texture.jpg');
+```
+
+所有素材路径均使用**相对路径**，不使用 CDN 或绝对路径，确保本地截图和 GitHub 仓库中均可正常渲染。
+
+## 10. GitHub 提交规范
+
+本项目所有产出文件（HTML、assets 素材、screenshots 截图）均需提交到 GitHub 仓库，以便持续追踪进度和版本对比。
+
+### 10.1 提交内容
+
+| 目录 | 是否提交 | 说明 |
+| :--- | :--- | :--- |
+| `html/` | ✅ 必须提交 | 所有复刻 HTML 文件 |
+| `assets/` | ✅ 必须提交 | 所有 AI 生成的素材图片 |
+| `screenshots/` | ✅ 必须提交 | 每张幻灯片的截图，用于视觉对比存档 |
+| `slides/` | ✅ 已存在，不修改 | 原始参考图片，只读 |
+| `records/` | ✅ 必须提交 | 分析记录与进度文档 |
+
+### 10.2 提交频率与粒度
+
+- 每完成一个模板（如 `01_perfume_luxury_brand` 全部55张）后，执行一次 `git add + commit + push`
+- commit message 格式：`feat: 完成 {模板名} slide_{起始}~slide_{结束} HTML 复刻`
+- 例如：`feat: 完成 01_perfume_luxury_brand slide_01~slide_55 HTML 复刻`
+
+### 10.3 .gitignore 注意事项
+
+确认 `assets/` 和 `screenshots/` 目录下的图片文件不在 `.gitignore` 排除范围内，若存在排除规则需手动添加例外。
+
+## 11. 依赖与环境说明
 
 本项目的截图流程依赖 Playwright 与 Chromium。若环境缺失，可执行如下命令安装：
 
@@ -135,7 +218,7 @@ python3.11 -m playwright install chromium
 
 这些依赖仅用于**渲染页面和生成截图**，不用于做任何图像相似度分析。
 
-## 10. 最终执行口径
+## 12. 最终执行口径
 
 后续在本项目中执行切片优化任务时，统一采用以下口径：
 
