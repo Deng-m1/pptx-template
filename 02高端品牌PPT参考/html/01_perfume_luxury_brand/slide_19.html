@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 19</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  .corner-tr { position:absolute; top:28px; right:32px; width:60px; height:60px; }
+  .corner-tr::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tr::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .page-title {
+    position: absolute;
+    top: 52px;
+    left: 72px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1.1;
+  }
+  /* 三列布局 */
+  .content-row {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    top: 150px;
+    bottom: 100px;
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+  }
+  /* 左侧文字 */
+  .left-text {
+    width: 200px;
+    flex-shrink: 0;
+    padding-bottom: 40px;
+  }
+  .budget-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1E1810;
+    margin-bottom: 8px;
+  }
+  .budget-desc {
+    font-size: 15px;
+    color: #4A3C2C;
+    line-height: 1.5;
+  }
+  /* 中间柱状图 */
+  .chart-area {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .chart-inner {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 20px 0;
+    position: relative;
+  }
+  /* Y轴刻度线 */
+  .y-axis {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+  .y-tick {
+    font-size: 12px;
+    color: #5C4A32;
+    text-align: right;
+  }
+  /* X轴 */
+  .x-axis {
+    height: 1px;
+    background: #5C4A32;
+    margin: 0 20px;
+  }
+  .x-labels {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 8px 20px 0;
+  }
+  .x-label {
+    font-size: 13px;
+    color: #5C4A32;
+    text-align: center;
+    width: 80px;
+  }
+  /* 柱子 */
+  .bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .bar-body {
+    width: 80px;
+    background: #B8834A;
+    border-radius: 0;
+  }
+  /* 右侧统计数字 */
+  .right-stats {
+    width: 220px;
+    flex-shrink: 0;
+    padding-bottom: 40px;
+    padding-left: 24px;
+  }
+  .stat-item {
+    margin-bottom: 28px;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .stat-number span {
+    font-style: italic;
+    font-size: 28px;
+  }
+  .stat-desc {
+    font-size: 14px;
+    color: #4A3C2C;
+    line-height: 1.4;
+  }
+  /* 底部说明 */
+  .footer-note {
+    position: absolute;
+    bottom: 40px;
+    left: 72px;
+    right: 72px;
+    font-size: 13px;
+    color: #5C4A32;
+    line-height: 1.5;
+  }
+  .footer-note u { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-tr"></div>
+
+  <div class="page-title">Our numbers</div>
+
+  <div class="content-row">
+    <!-- 左侧 -->
+    <div class="left-text">
+      <div class="budget-label">Budget.</div>
+      <div class="budget-desc">Venus is the<br>second planet<br>from the Sun</div>
+    </div>
+
+    <!-- 柱状图 -->
+    <div class="chart-area">
+      <div class="chart-inner">
+        <!-- Y轴刻度 -->
+        <div class="y-axis">
+          <div class="y-tick">100</div>
+          <div class="y-tick">75</div>
+          <div class="y-tick">50</div>
+          <div class="y-tick">25</div>
+          <div class="y-tick">0</div>
+        </div>
+        <!-- 柱子 -->
+        <div class="bar-col">
+          <div class="bar-body" style="height:210px;"></div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-body" style="height:180px;"></div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-body" style="height:285px;"></div>
+        </div>
+      </div>
+      <div class="x-axis"></div>
+      <div class="x-labels">
+        <div class="x-label">2010</div>
+        <div class="x-label">2020</div>
+        <div class="x-label">2022</div>
+      </div>
+    </div>
+
+    <!-- 右侧统计 -->
+    <div class="right-stats">
+      <div class="stat-item">
+        <div class="stat-number">97 <span>shops.</span></div>
+        <div class="stat-desc">Perfumeries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">128,098</div>
+        <div class="stat-desc">Total number of<br>perfumes sold</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Follow the link in the graph to modify its data and then paste the new one here. <strong>For more info, <u>click here</u></strong>
+  </div>
+</body>
+</html>

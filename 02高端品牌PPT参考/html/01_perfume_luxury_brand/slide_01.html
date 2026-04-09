@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  /* 纸张纹理背景 */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  /* 右上角 L 形装饰线 */
+  .corner-deco {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 60px;
+    height: 60px;
+  }
+  .corner-deco::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 1px;
+    background: #5C4A32;
+  }
+  .corner-deco::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 1px; height: 60px;
+    background: #5C4A32;
+  }
+  /* 左侧文字区 */
+  .left-text {
+    position: absolute;
+    left: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+  }
+  .main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 74px;
+    font-weight: 500;
+    line-height: 1.05;
+    color: #1E1810;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .main-title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 74px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    color: #1E1810;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3A2E22;
+    line-height: 1.5;
+    max-width: 320px;
+  }
+  /* 右侧拱形图片区 */
+  .right-arch {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 600px;
+  }
+  /* 拱形边框 SVG */
+  .arch-border {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+  /* 拱形图片容器 */
+  .arch-img-wrap {
+    position: absolute;
+    top: 2px; left: 2px; right: 2px; bottom: 2px;
+    overflow: hidden;
+    border-radius: 190px 190px 0 0;
+    z-index: 1;
+  }
+  .arch-img-wrap .arch-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #F5D5C0 0%, #EDB898 40%, #E8A98A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  /* 香水瓶 SVG 占位 */
+  .perfume-bottle {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 360px;
+  }
+  /* est. 1987 底部文字 */
+  .est-label {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #3A2E22;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    z-index: 3;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-deco"></div>
+
+  <!-- 左侧文字 -->
+  <div class="left-text">
+    <div class="main-title">Perfume<br>Luxury Brand</div>
+    <div class="main-title-italic">Company Profile.</div>
+    <div class="subtitle">Here is where your<br>presentation begins</div>
+  </div>
+
+  <!-- 右侧拱形图片 -->
+  <div class="right-arch">
+    <!-- 拱形边框 -->
+    <svg class="arch-border" viewBox="0 0 396 596" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 596 L2 198 Q2 2 198 2 Q394 2 394 198 L394 596" stroke="#5C4A32" stroke-width="1.5" fill="none"/>
+    </svg>
+    <!-- 拱形内容 -->
+    <div class="arch-img-wrap">
+      <div class="arch-bg">
+        <!-- 香水瓶 SVG -->
+        <svg class="perfume-bottle" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 瓶盖 -->
+          <rect x="55" y="0" width="50" height="32" rx="4" fill="#1A1208"/>
+          <!-- 瓶颈 -->
+          <rect x="65" y="32" width="30" height="18" rx="2" fill="#C8A882"/>
+          <!-- 瓶身 -->
+          <rect x="28" y="50" width="104" height="140" rx="6" fill="rgba(220,180,130,0.55)" stroke="#C8A882" stroke-width="1.5"/>
+          <!-- 瓶身内液体 -->
+          <rect x="32" y="54" width="96" height="132" rx="4" fill="rgba(200,160,100,0.35)"/>
+          <!-- 花朵装饰 - 白色花 -->
+          <circle cx="80" cy="110" r="18" fill="white" opacity="0.9"/>
+          <circle cx="62" cy="98" r="12" fill="white" opacity="0.85"/>
+          <circle cx="100" cy="102" r="10" fill="white" opacity="0.8"/>
+          <circle cx="75" cy="130" r="8" fill="white" opacity="0.75"/>
+          <!-- 花蕊 -->
+          <circle cx="80" cy="110" r="5" fill="#F5C4A8"/>
+          <circle cx="62" cy="98" r="3" fill="#F5C4A8"/>
+          <circle cx="100" cy="102" r="3" fill="#F5C4A8"/>
+          <!-- 绿叶 -->
+          <ellipse cx="50" cy="120" rx="14" ry="6" fill="#8B9E6A" transform="rotate(-30 50 120)"/>
+          <ellipse cx="112" cy="118" rx="12" ry="5" fill="#8B9E6A" transform="rotate(25 112 118)"/>
+        </svg>
+      </div>
+    </div>
+    <!-- est. 1987 -->
+    <div class="est-label">est. 1987</div>
+  </div>
+</body>
+</html>

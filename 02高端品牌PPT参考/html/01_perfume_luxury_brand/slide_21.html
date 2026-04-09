@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 21</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  .corner-tl { position:absolute; top:28px; left:32px; width:60px; height:60px; }
+  .corner-tl::before { content:''; position:absolute; top:0; left:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tl::after  { content:''; position:absolute; top:0; left:0; width:1px; height:60px; background:#5C4A32; }
+  .corner-tr { position:absolute; top:28px; right:32px; width:60px; height:60px; }
+  .corner-tr::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tr::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .page-title {
+    position: absolute;
+    top: 48px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #1E1810;
+  }
+  /* 内容区 */
+  .content-row {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    top: 140px;
+    bottom: 80px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+  /* 折线图区 */
+  .chart-area {
+    flex: 1;
+    position: relative;
+  }
+  /* 右侧分隔线 */
+  .divider {
+    width: 1px;
+    background: #8A7A6A;
+    margin: 0 32px;
+    flex-shrink: 0;
+  }
+  /* 右侧统计 */
+  .right-stats {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: right;
+  }
+  .stat-item {}
+  .stat-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #1E1810;
+    margin-bottom: 4px;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-desc {
+    font-size: 14px;
+    color: #4A3C2C;
+    line-height: 1.4;
+  }
+  /* 底部说明 */
+  .footer-note {
+    position: absolute;
+    bottom: 28px;
+    left: 72px;
+    right: 72px;
+    font-size: 13px;
+    color: #5C4A32;
+    border-top: 1px solid #8A7A6A;
+    padding-top: 10px;
+  }
+  .footer-note u { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+
+  <div class="page-title">Our growth</div>
+
+  <div class="content-row">
+    <!-- 折线图 SVG -->
+    <div class="chart-area">
+      <svg width="100%" height="100%" viewBox="0 0 680 420" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 网格线 -->
+        <line x1="60" y1="20" x2="660" y2="20" stroke="#8A7A6A" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="95" x2="660" y2="95" stroke="#8A7A6A" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="170" x2="660" y2="170" stroke="#8A7A6A" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="245" x2="660" y2="245" stroke="#8A7A6A" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <line x1="60" y1="320" x2="660" y2="320" stroke="#8A7A6A" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <!-- X轴 -->
+        <line x1="60" y1="320" x2="660" y2="320" stroke="#5C4A32" stroke-width="1"/>
+        <!-- Y轴刻度 -->
+        <text x="48" y="24" text-anchor="end" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">100</text>
+        <text x="48" y="99" text-anchor="end" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">75</text>
+        <text x="48" y="174" text-anchor="end" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">50</text>
+        <text x="48" y="249" text-anchor="end" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">25</text>
+        <text x="48" y="324" text-anchor="end" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">0</text>
+        <!-- X轴标签 -->
+        <text x="60"  y="345" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">2005</text>
+        <text x="210" y="345" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">2010</text>
+        <text x="360" y="345" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">2015</text>
+        <text x="510" y="345" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#5C4A32">2020</text>
+        <!-- 折线 (y=320 - value*3) -->
+        <!-- 2005:20, 2010:40, 2008:25, 2012:30, 2015:55, 2017:60, 2019:50, 2020:70 -->
+        <polyline
+          points="60,260 160,200 210,245 310,230 360,155 435,140 510,170 660,110"
+          stroke="#B8834A" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        <!-- 数据点 -->
+        <circle cx="60"  cy="260" r="4" fill="#B8834A"/>
+        <circle cx="160" cy="200" r="4" fill="#B8834A"/>
+        <circle cx="210" cy="245" r="4" fill="#B8834A"/>
+        <circle cx="310" cy="230" r="4" fill="#B8834A"/>
+        <circle cx="360" cy="155" r="4" fill="#B8834A"/>
+        <circle cx="435" cy="140" r="4" fill="#B8834A"/>
+        <circle cx="510" cy="170" r="4" fill="#B8834A"/>
+        <circle cx="660" cy="110" r="4" fill="#B8834A"/>
+      </svg>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 右侧统计 -->
+    <div class="right-stats">
+      <div class="stat-item">
+        <div class="stat-label">Venus.</div>
+        <div class="stat-desc">Venus is the second planet<br>from the Sun</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">500</div>
+        <div class="stat-desc">New employees for 2022</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$2 million</div>
+        <div class="stat-desc">Expected income for 2022</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Follow the link in the graph to modify its data and then paste the new one here. <strong>For more info, <u>click here</u></strong>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 09</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  /* 四角细线装饰框 */
+  .frame-tl, .frame-tr, .frame-bl, .frame-br {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+  }
+  .frame-tl { top: 28px; left: 32px; }
+  .frame-tr { top: 28px; right: 32px; }
+  .frame-bl { bottom: 28px; left: 32px; }
+  .frame-br { bottom: 28px; right: 32px; }
+
+  .frame-tl::before { content:''; position:absolute; top:0; left:0; width:60px; height:1px; background:#5C4A32; }
+  .frame-tl::after  { content:''; position:absolute; top:0; left:0; width:1px; height:60px; background:#5C4A32; }
+
+  .frame-tr::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .frame-tr::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .frame-bl::before { content:''; position:absolute; bottom:0; left:0; width:60px; height:1px; background:#5C4A32; }
+  .frame-bl::after  { content:''; position:absolute; bottom:0; left:0; width:1px; height:60px; background:#5C4A32; }
+
+  .frame-br::before { content:''; position:absolute; bottom:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .frame-br::after  { content:''; position:absolute; bottom:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .center-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .big-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1.0;
+    display: block;
+  }
+  .big-word-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1E1810;
+    line-height: 1.0;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="frame-tl"></div>
+  <div class="frame-tr"></div>
+  <div class="frame-bl"></div>
+  <div class="frame-br"></div>
+
+  <div class="center-text">
+    <span class="big-word">Awesome</span>
+    <span class="big-word-italic">words.</span>
+  </div>
+</body>
+</html>

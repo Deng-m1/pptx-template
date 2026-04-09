@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 17</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  /* 左侧拱形 */
+  .left-arch {
+    position: absolute;
+    left: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 500px;
+  }
+  .arch-border { position: absolute; inset: 0; z-index: 2; }
+  .arch-img-wrap {
+    position: absolute;
+    top: 2px; left: 2px; right: 2px; bottom: 2px;
+    overflow: hidden;
+    border-radius: 160px 160px 0 0;
+    z-index: 1;
+  }
+  .arch-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #E8C89A 0%, #D4A870 40%, #C09050 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .arch-label {
+    position: absolute;
+    bottom: -28px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: #3A2E22;
+    letter-spacing: 1px;
+    z-index: 3;
+  }
+  /* 右侧文字区 */
+  .right-content {
+    position: absolute;
+    left: 460px;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #1E1810;
+    text-align: right;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+  .strength-item {
+    padding: 20px 24px 20px 0;
+    text-align: center;
+  }
+  .strength-item:nth-child(1),
+  .strength-item:nth-child(2) {
+    border-bottom: 1px solid #8A7A6A;
+  }
+  .strength-item:nth-child(1),
+  .strength-item:nth-child(3) {
+    border-right: 1px solid #8A7A6A;
+  }
+  .strength-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1E1810;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .strength-desc {
+    font-size: 15px;
+    color: #4A3C2C;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <!-- 左侧拱形 -->
+  <div class="left-arch">
+    <svg class="arch-border" viewBox="0 0 316 496" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 496 L2 158 Q2 2 158 2 Q314 2 314 158 L314 496" stroke="#5C4A32" stroke-width="1.5" fill="none"/>
+    </svg>
+    <div class="arch-img-wrap">
+      <div class="arch-bg">
+        <!-- 香水瓶组合 SVG -->
+        <svg style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:200px;height:220px;" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 布料背景 -->
+          <rect x="0" y="140" width="200" height="80" rx="4" fill="#C8A060" opacity="0.4"/>
+          <!-- 小瓶1（左） -->
+          <rect x="20" y="80" width="36" height="60" rx="4" fill="rgba(220,180,120,0.7)" stroke="#C8A882" stroke-width="1"/>
+          <rect x="24" y="40" width="28" height="40" rx="3" fill="rgba(220,180,120,0.5)" stroke="#C8A882" stroke-width="1"/>
+          <rect x="30" y="30" width="16" height="12" rx="2" fill="#8B7040"/>
+          <!-- 主瓶（中） -->
+          <rect x="72" y="20" width="56" height="34" rx="4" fill="#1A1208"/>
+          <rect x="80" y="54" width="40" height="16" rx="2" fill="#C8A882"/>
+          <rect x="60" y="70" width="80" height="110" rx="5" fill="rgba(220,180,130,0.65)" stroke="#C8A882" stroke-width="1.2"/>
+          <rect x="64" y="74" width="72" height="102" rx="3" fill="rgba(200,160,100,0.35)"/>
+          <!-- 小瓶2（右） -->
+          <rect x="148" y="90" width="32" height="50" rx="3" fill="rgba(220,180,120,0.6)" stroke="#C8A882" stroke-width="1"/>
+          <rect x="152" y="60" width="24" height="32" rx="2" fill="rgba(220,180,120,0.5)" stroke="#C8A882" stroke-width="1"/>
+          <rect x="156" y="50" width="16" height="12" rx="2" fill="#8B7040"/>
+          <!-- 铅笔 -->
+          <rect x="100" y="155" width="4" height="40" rx="1" fill="#2C2416" transform="rotate(15 100 155)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="arch-label">Perfume luxury brand</div>
+  </div>
+
+  <!-- 右侧内容 -->
+  <div class="right-content">
+    <div class="page-title">Our strengths</div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-name">Loyalty.</div>
+        <div class="strength-desc">Venus is the second<br>planet from the Sun</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-name">Reliability.</div>
+        <div class="strength-desc">Despite being red, Mars<br>is a cold place</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-name">Commitment.</div>
+        <div class="strength-desc">Jupiter is the biggest<br>planet of them all</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-name">Efficiency.</div>
+        <div class="strength-desc">Saturn is a gas giant and<br>has several rings</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

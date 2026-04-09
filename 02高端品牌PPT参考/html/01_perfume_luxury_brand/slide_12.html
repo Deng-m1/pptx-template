@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 12</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  .corner-deco {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+  }
+  .corner-deco::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-deco::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .page-title {
+    position: absolute;
+    top: 60px;
+    left: 72px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1.1;
+  }
+  /* 地图区域 */
+  .map-wrap {
+    position: absolute;
+    left: 72px;
+    top: 160px;
+    width: 700px;
+    height: 420px;
+  }
+  /* 右侧地点列表 */
+  .locations-list {
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+  }
+  .location-item {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .location-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1E1810;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .dot-filled {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #B8834A;
+    flex-shrink: 0;
+  }
+  .dot-empty {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1.5px solid #5C4A32;
+    flex-shrink: 0;
+  }
+  .location-desc {
+    font-size: 15px;
+    color: #4A3C2C;
+    line-height: 1.5;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-deco"></div>
+
+  <div class="page-title">Our locations</div>
+
+  <!-- 世界地图 SVG（简化轮廓） -->
+  <div class="map-wrap">
+    <svg viewBox="0 0 700 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+      <!-- 简化世界地图轮廓 -->
+      <!-- 北美 -->
+      <path d="M 60 80 L 80 70 L 120 65 L 150 75 L 170 90 L 175 110 L 160 130 L 140 145 L 120 155 L 100 160 L 80 150 L 65 135 L 55 115 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 中美 -->
+      <path d="M 140 145 L 155 155 L 150 175 L 140 185 L 130 175 L 125 160 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 南美 -->
+      <path d="M 140 185 L 160 190 L 175 210 L 180 240 L 170 280 L 155 310 L 140 320 L 125 310 L 115 280 L 118 240 L 125 210 L 130 190 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 欧洲 -->
+      <path d="M 310 60 L 340 55 L 360 60 L 370 75 L 360 90 L 340 95 L 320 90 L 305 80 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 法国标注点 -->
+      <circle cx="328" cy="78" r="6" fill="#B8834A"/>
+      <!-- 非洲 -->
+      <path d="M 310 100 L 360 95 L 380 110 L 385 140 L 375 180 L 360 220 L 340 250 L 320 255 L 300 245 L 285 210 L 280 170 L 285 135 L 295 110 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 亚洲 -->
+      <path d="M 380 55 L 450 45 L 530 50 L 580 65 L 600 85 L 590 110 L 560 130 L 520 140 L 480 145 L 440 135 L 400 120 L 375 100 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 东南亚 -->
+      <path d="M 530 130 L 560 135 L 575 155 L 565 175 L 545 180 L 525 165 L 520 145 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 澳大利亚 -->
+      <path d="M 530 230 L 580 220 L 620 230 L 635 260 L 625 290 L 600 305 L 565 300 L 540 280 L 525 255 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+      <!-- 格陵兰 -->
+      <path d="M 200 30 L 240 25 L 260 35 L 255 55 L 230 60 L 205 50 Z" stroke="#5C4A32" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- 右侧地点 -->
+  <div class="locations-list">
+    <div class="location-item">
+      <div class="location-name">
+        France.
+        <span class="dot-filled"></span>
+      </div>
+      <div class="location-desc">Mercury is the closest<br>planet to the Sun</div>
+    </div>
+    <div class="location-item">
+      <div class="location-name">
+        Italy.
+        <span class="dot-empty"></span>
+      </div>
+      <div class="location-desc">Venus is the second<br>planet from the Sun</div>
+    </div>
+  </div>
+</body>
+</html>

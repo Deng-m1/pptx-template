@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 14</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    position: relative;
+  }
+  /* 全屏背景（模拟橙粉色香水场景） */
+  .full-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #F5C4A8 0%, #E8A882 30%, #D4906A 60%, #C87850 100%);
+  }
+  /* 模拟香水瓶大图 */
+  .bottle-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* 左上角文字框 */
+  .text-box {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    background: rgba(240, 232, 220, 0.92);
+    padding: 28px 32px;
+    max-width: 320px;
+    z-index: 2;
+  }
+  .text-box-content {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #1E1810;
+    line-height: 1.35;
+  }
+  /* 右下角 L 形装饰线 */
+  .corner-deco-br {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+  }
+  .corner-deco-br::before { content:''; position:absolute; bottom:0; right:0; width:60px; height:1px; background:rgba(92,74,50,0.7); }
+  .corner-deco-br::after  { content:''; position:absolute; bottom:0; right:0; width:1px; height:60px; background:rgba(92,74,50,0.7); }
+</style>
+</head>
+<body>
+  <div class="full-bg"></div>
+
+  <!-- 香水瓶场景 SVG -->
+  <div class="bottle-scene">
+    <svg width="700" height="600" viewBox="0 0 700 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 桌面 -->
+      <rect x="0" y="420" width="700" height="180" fill="#C87850" opacity="0.6"/>
+      <!-- 香水瓶主体（大号，倾斜） -->
+      <g transform="translate(350,300) rotate(-8)">
+        <!-- 瓶盖 -->
+        <rect x="-45" y="-160" width="90" height="55" rx="6" fill="#1A1208"/>
+        <!-- 瓶颈 -->
+        <rect x="-28" y="-105" width="56" height="22" rx="3" fill="#C8A882"/>
+        <!-- 瓶身 -->
+        <rect x="-80" y="-83" width="160" height="200" rx="8" fill="rgba(220,160,80,0.65)" stroke="rgba(200,140,60,0.8)" stroke-width="2"/>
+        <!-- 瓶身内液体 -->
+        <rect x="-74" y="-77" width="148" height="188" rx="6" fill="rgba(200,140,60,0.4)"/>
+        <!-- 高光 -->
+        <rect x="-60" y="-70" width="30" height="170" rx="4" fill="rgba(255,220,160,0.25)"/>
+      </g>
+      <!-- 花朵装饰 -->
+      <circle cx="180" cy="400" r="28" fill="white" opacity="0.85"/>
+      <circle cx="160" cy="380" r="18" fill="white" opacity="0.75"/>
+      <circle cx="200" cy="385" r="15" fill="white" opacity="0.7"/>
+      <circle cx="180" cy="400" r="8" fill="#F5C4A8"/>
+      <!-- 茎叶 -->
+      <path d="M 180 428 Q 160 460 140 480" stroke="#8B9E6A" stroke-width="2.5" fill="none"/>
+      <path d="M 180 428 Q 200 460 220 475" stroke="#8B9E6A" stroke-width="2.5" fill="none"/>
+      <!-- 右侧花朵 -->
+      <circle cx="520" cy="410" r="22" fill="white" opacity="0.8"/>
+      <circle cx="540" cy="395" r="14" fill="white" opacity="0.7"/>
+      <circle cx="505" cy="398" r="12" fill="white" opacity="0.65"/>
+      <circle cx="520" cy="410" r="6" fill="#F5C4A8"/>
+      <path d="M 520 432 Q 540 455 555 470" stroke="#8B9E6A" stroke-width="2" fill="none"/>
+      <path d="M 520 432 Q 500 455 485 468" stroke="#8B9E6A" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- 左上角文字框 -->
+  <div class="text-box">
+    <div class="text-box-content">A picture is<br>worth a<br>thousand words</div>
+  </div>
+
+  <div class="corner-deco-br"></div>
+</body>
+</html>

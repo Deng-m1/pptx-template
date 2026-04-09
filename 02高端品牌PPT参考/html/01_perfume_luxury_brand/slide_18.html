@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 18</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  .corner-tl { position:absolute; top:28px; left:32px; width:60px; height:60px; }
+  .corner-tl::before { content:''; position:absolute; top:0; left:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tl::after  { content:''; position:absolute; top:0; left:0; width:1px; height:60px; background:#5C4A32; }
+  .corner-tr { position:absolute; top:28px; right:32px; width:60px; height:60px; }
+  .corner-tr::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tr::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .page-title {
+    position: absolute;
+    top: 52px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #1E1810;
+  }
+  /* 左侧区域 */
+  .left-section {
+    position: absolute;
+    left: 72px;
+    top: 140px;
+    width: 520px;
+    bottom: 60px;
+  }
+  /* 右侧区域 */
+  .right-section {
+    position: absolute;
+    right: 72px;
+    top: 140px;
+    width: 520px;
+    bottom: 60px;
+  }
+  /* 分隔线 */
+  .divider {
+    position: absolute;
+    left: 640px;
+    top: 140px;
+    bottom: 60px;
+    width: 1px;
+    background: #8A7A6A;
+  }
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: #1E1810;
+    margin-bottom: 20px;
+  }
+  /* Gender 圆形图标 */
+  .gender-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+  .gender-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .gender-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #B8834A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gender-pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #B8834A;
+  }
+  /* Salary */
+  .salary-section { margin-top: 8px; }
+  .salary-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #B8834A;
+    margin-top: 4px;
+  }
+  /* 条形图 */
+  .bar-chart { margin-bottom: 20px; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  .bar-label {
+    font-size: 14px;
+    color: #3A2E22;
+    width: 50px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    height: 10px;
+    background: rgba(92,74,50,0.15);
+    border-radius: 0;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    background: #B8834A;
+    border-radius: 0;
+  }
+  .bar-pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #B8834A;
+    width: 40px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+
+  <div class="page-title">Customer profile</div>
+  <div class="divider"></div>
+
+  <!-- 左侧 -->
+  <div class="left-section">
+    <div class="section-label">Gender.</div>
+    <div class="gender-row">
+      <div class="gender-item">
+        <div class="gender-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="10" r="6" stroke="#B8834A" stroke-width="1.5"/>
+            <path d="M14 16 L14 26 M10 21 L18 21" stroke="#B8834A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="gender-pct">70%</div>
+      </div>
+      <div class="gender-item">
+        <div class="gender-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="10" r="6" stroke="#B8834A" stroke-width="1.5"/>
+            <path d="M14 16 L14 26" stroke="#B8834A" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 22 L18 22" stroke="#B8834A" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 26 L18 26" stroke="#B8834A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="gender-pct">20%</div>
+      </div>
+      <div class="gender-item">
+        <div class="gender-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="11" cy="11" r="5" stroke="#B8834A" stroke-width="1.5"/>
+            <path d="M15 7 L22 14 M19 14 L22 14 L22 11" stroke="#B8834A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="gender-pct">10%</div>
+      </div>
+    </div>
+    <div class="salary-section">
+      <div class="section-label">Annual salary.</div>
+      <div class="salary-value">$100,000</div>
+    </div>
+  </div>
+
+  <!-- 右侧 -->
+  <div class="right-section">
+    <div class="section-label">Age.</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">25-35</div>
+        <div class="bar-track"><div class="bar-fill" style="width:20%"></div></div>
+        <div class="bar-pct">20%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">36-45</div>
+        <div class="bar-track"><div class="bar-fill" style="width:30%"></div></div>
+        <div class="bar-pct">30%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">46-55</div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+        <div class="bar-pct">50%</div>
+      </div>
+    </div>
+    <div class="section-label" style="margin-top:16px;">Interests.</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Design</div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+        <div class="bar-pct">80%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Travel</div>
+        <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+        <div class="bar-pct">75%</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

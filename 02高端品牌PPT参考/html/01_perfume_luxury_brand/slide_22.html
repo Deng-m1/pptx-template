@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Perfume Luxury Brand - Slide 22</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background-color: #F2EDE6;
+    position: relative;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-color: #F2EDE6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.10'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+  .corner-tr { position:absolute; top:28px; right:32px; width:60px; height:60px; }
+  .corner-tr::before { content:''; position:absolute; top:0; right:0; width:60px; height:1px; background:#5C4A32; }
+  .corner-tr::after  { content:''; position:absolute; top:0; right:0; width:1px; height:60px; background:#5C4A32; }
+
+  .page-title {
+    position: absolute;
+    top: 52px;
+    left: 72px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #1E1810;
+  }
+  /* 时间轴容器 */
+  .timeline-wrap {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* 上方项目行 */
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 0 80px;
+  }
+  .top-item {
+    width: 280px;
+    text-align: center;
+  }
+  .project-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #1E1810;
+    margin-bottom: 6px;
+  }
+  .project-desc {
+    font-size: 15px;
+    color: #4A3C2C;
+    line-height: 1.5;
+  }
+  /* 时间轴主轴 */
+  .axis-row {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 0;
+  }
+  .axis-line {
+    flex: 1;
+    height: 1px;
+    background: #5C4A32;
+  }
+  .axis-node {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid #5C4A32;
+    background: #F2EDE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .axis-node-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #B8834A;
+  }
+  /* 下方项目行 */
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding: 0 80px;
+  }
+  .bottom-item {
+    width: 280px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="corner-tr"></div>
+
+  <div class="page-title">Future projects</div>
+
+  <div class="timeline-wrap">
+    <!-- 上方 -->
+    <div class="top-row">
+      <div class="top-item">
+        <div class="project-name">Project 1.</div>
+        <div class="project-desc">Venus is the second planet<br>from the Sun</div>
+      </div>
+      <div class="top-item" style="margin-left:auto;">
+        <div class="project-name">Project 3.</div>
+        <div class="project-desc">Jupiter is the biggest<br>planet of them all</div>
+      </div>
+    </div>
+
+    <!-- 时间轴 -->
+    <div class="axis-row">
+      <div class="axis-line"></div>
+      <div class="axis-node"><span class="axis-node-num">1</span></div>
+      <div class="axis-line"></div>
+      <div class="axis-node"><span class="axis-node-num">2</span></div>
+      <div class="axis-line"></div>
+      <div class="axis-node"><span class="axis-node-num">3</span></div>
+      <div class="axis-line"></div>
+      <div class="axis-node"><span class="axis-node-num">4</span></div>
+      <div class="axis-line"></div>
+    </div>
+
+    <!-- 下方 -->
+    <div class="bottom-row">
+      <div class="bottom-item" style="margin-left:280px;">
+        <div class="project-name">Project 2.</div>
+        <div class="project-desc">Saturn is a gas giant and<br>has several rings</div>
+      </div>
+      <div class="bottom-item" style="margin-left:auto;">
+        <div class="project-name">Project 4.</div>
+        <div class="project-desc">Despite being red, Mars is<br>a cold place</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
