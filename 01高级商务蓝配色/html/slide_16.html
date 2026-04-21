@@ -2,64 +2,46 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1280">
-<title>slide_16</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html,body { width:1280px; height:720px; overflow:hidden;
-    font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
-    background:#fff; }
-  .slide { width:1280px; height:720px; position:relative; background:#fff; padding:28px 40px 16px 40px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC',sans-serif; background:#fff; }
+.slide { width:1280px; height:720px; display:flex; flex-direction:column; padding:22px 30px 10px; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; font-style:italic; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
 
-  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:6px; }
-  .header-title { font-size:32px; font-weight:900; color:#1a3a9e; letter-spacing:0.5px; }
-  .header-sub { font-size:16px; font-weight:700; color:#3a6aaa; letter-spacing:1px; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+.gantt { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; flex:1; }
+.gantt th {
+  background:#1a3a9e; color:#fff;
+  text-align:center; padding:10px 2px;
+  font-size:14px; font-weight:700;
+  border:1px solid #fff;
+}
+.gantt td {
+  border:1px solid #dde3ef;
+  padding:0 2px;
+  height:52px;
+  vertical-align:middle;
+}
+.gantt td.label {
+  text-align:left; padding-left:10px;
+  font-size:13px; color:#333;
+  background:#f0f3fa;
+  white-space:nowrap;
+}
+.gantt td.label.bold { font-weight:900; color:#1a3a9e; background:#e8ecf8; }
+.gantt tr:nth-child(odd) td:not(.label) { background:#f8f9fd; }
+.gantt tr:nth-child(even) td:not(.label) { background:#fff; }
 
-  .gantt { width:100%; border-collapse:collapse; font-size:12px; table-layout:fixed; }
-  .gantt th {
-    background:#1a3a9e; color:#fff;
-    text-align:center; padding:8px 2px;
-    font-size:13px; font-weight:700;
-    border:1px solid #fff;
-  }
-  .gantt th.label-col { width:110px; }
-  .gantt th.month-col { width:calc((1280px - 80px - 110px) / 12); }
-  .gantt td {
-    border:1px solid #dde3ef;
-    padding:0 2px;
-    text-align:center;
-    height:46px;
-    vertical-align:middle;
-  }
-  .gantt td.label {
-    text-align:left; padding-left:10px;
-    font-size:13px; color:#333;
-    background:#f0f3fa;
-    white-space:nowrap;
-  }
-  .gantt td.label.bold { font-weight:900; color:#1a3a9e; background:#e8ecf8; }
-  .gantt tr:nth-child(odd) td:not(.label) { background:#f8f9fd; }
-  .gantt tr:nth-child(even) td:not(.label) { background:#fff; }
-  .gantt tr:nth-child(odd) td.label { background:#eef1f9; }
-  .gantt tr:nth-child(even) td.label { background:#f4f6fc; }
-  .gantt tr:nth-child(odd) td.label.bold { background:#e4e9f5; }
-  .gantt tr:nth-child(even) td.label.bold { background:#e8ecf8; }
-
-  .bar-wrap { display:flex; align-items:center; padding:0 3px; }
-  .bar {
-    display:inline-block;
-    height:22px; border-radius:11px;
-    flex-shrink:0;
-  }
-  .bar-dark { background:#1a3a9e; }
-  .bar-mid { background:#4a7ac8; }
-  .bar-light { background:#a8c4e8; }
-  .bar-lbl {
-    font-size:11px; color:#555; margin-left:6px;
-    white-space:nowrap; flex-shrink:0;
-  }
-  .bar-lbl-bold { font-size:11px; color:#1a3a9e; font-weight:700; margin-right:6px; white-space:nowrap; flex-shrink:0; }
+.bar-wrap { display:flex; align-items:center; padding:0 3px; gap:5px; }
+.bar { display:inline-block; height:24px; border-radius:12px; flex-shrink:0; }
+.bar-dark { background:#1a3a9e; }
+.bar-mid  { background:#4a7ac8; }
+.bar-light{ background:#a8c4e8; }
+.lbl { font-size:11px; color:#555; white-space:nowrap; }
+.lbl-bold { font-size:11px; color:#1a3a9e; font-weight:700; white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -72,137 +54,164 @@
 
   <table class="gantt">
     <colgroup>
-      <col style="width:110px">
-      <col><col><col><col><col><col>
-      <col><col><col><col><col><col>
+      <col style="width:105px">
+      <!-- 12 equal month cols: (1280-30-30-105)/12 = 92.9px -->
+      <col style="width:93px"><col style="width:93px"><col style="width:93px">
+      <col style="width:93px"><col style="width:93px"><col style="width:93px">
+      <col style="width:93px"><col style="width:93px"><col style="width:93px">
+      <col style="width:93px"><col style="width:93px"><col style="width:92px">
     </colgroup>
     <thead>
       <tr>
-        <th class="label-col"></th>
+        <th></th>
         <th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th>
         <th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月</th><th>12月</th>
       </tr>
     </thead>
     <tbody>
-      <!-- 项目计划 跨1~3月 -->
+      <!-- 项目计划：1月~3月初 -->
       <tr>
         <td class="label bold">项目计划</td>
-        <td colspan="3" style="padding:0 4px;">
+        <td colspan="2" style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-dark" style="width:75%;"></div>
-            <span class="bar-lbl">1月1日——3月3日</span>
+            <div class="bar bar-dark" style="width:100%;"></div>
+            <span class="lbl">1月1日——3月3日</span>
+          </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap">
+            <div class="bar bar-dark" style="width:20%;"></div>
           </div>
         </td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
-      <!-- 市场研究 跨1~2月 -->
+      <!-- 市场研究：1月~2月 -->
       <tr>
         <td class="label">市场研究</td>
-        <td colspan="2" style="padding:0 4px;">
+        <td style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-dark" style="width:65%;"></div>
-            <span class="bar-lbl">1月1日——2月2日</span>
+            <div class="bar bar-dark" style="width:100%;"></div>
+            <span class="lbl">1月1日——2月2日</span>
+          </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap">
+            <div class="bar bar-dark" style="width:15%;"></div>
           </div>
         </td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
-      <!-- 项目范围界定 跨2~3月 -->
+      <!-- 项目范围界定：2月中~3月 -->
       <tr>
         <td class="label bold">项目范围界定</td>
         <td></td>
-        <td colspan="2" style="padding:0 4px;">
+        <td style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-light" style="width:35%;"></div>
-            <span class="bar-lbl">2月2日——3月3日</span>
+            <div class="bar bar-light" style="width:55%;"></div>
+            <span class="lbl">2月2日——3月3日</span>
           </div>
         </td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
-      <!-- 资源分配 跨3~8月 -->
+      <!-- 资源分配：3月~8月 -->
       <tr>
         <td class="label">资源分配</td>
         <td></td><td></td>
-        <td colspan="6" style="padding:0 4px;">
+        <td colspan="5" style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-dark" style="width:80%;"></div>
-            <span class="bar-lbl">3月3日——8月8日</span>
+            <div class="bar bar-dark" style="width:100%;"></div>
+            <span class="lbl">3月3日——8月8日</span>
           </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap"><div class="bar bar-dark" style="width:25%;"></div></div>
         </td>
         <td></td><td></td><td></td><td></td>
       </tr>
-      <!-- 项目启动 跨3~5月 -->
+      <!-- 项目启动：3月~5月 -->
       <tr>
         <td class="label bold">项目启动</td>
         <td></td><td></td>
-        <td colspan="3" style="padding:0 4px;">
+        <td colspan="2" style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-light" style="width:70%;"></div>
-            <span class="bar-lbl">3月3日——5月5日</span>
+            <div class="bar bar-light" style="width:100%;"></div>
+            <span class="lbl">3月3日——5月5日</span>
           </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap"><div class="bar bar-light" style="width:15%;"></div></div>
         </td>
         <td></td><td></td><td></td><td></td><td></td><td></td>
       </tr>
-      <!-- 开发阶段 跨5~8月 -->
+      <!-- 开发阶段：5月~8月 -->
       <tr>
         <td class="label">开发阶段</td>
         <td></td><td></td><td></td><td></td>
-        <td colspan="4" style="padding:0 4px;">
+        <td colspan="3" style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-mid" style="width:75%;"></div>
-            <span class="bar-lbl">5月5日——8月8日</span>
+            <div class="bar bar-mid" style="width:100%;"></div>
+            <span class="lbl">5月5日——8月8日</span>
           </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap"><div class="bar bar-mid" style="width:25%;"></div></div>
         </td>
         <td></td><td></td><td></td>
       </tr>
-      <!-- 产品品控 跨8~9月 -->
+      <!-- 产品品控：8月~9月 -->
       <tr>
         <td class="label">产品品控</td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td colspan="2" style="padding:0 4px;">
+        <td style="padding:0 4px;">
           <div class="bar-wrap">
-            <div class="bar bar-light" style="width:55%;"></div>
-            <span class="bar-lbl">8月8日——9月9日</span>
+            <div class="bar bar-light" style="width:100%;"></div>
+            <span class="lbl">8月8日——9月9日</span>
           </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar-wrap"><div class="bar bar-light" style="width:30%;"></div></div>
         </td>
         <td></td><td></td><td></td>
       </tr>
-      <!-- 合规检查 跨9~12月 -->
+      <!-- 合规检查：9月~12月 -->
       <tr>
         <td class="label">合规检查</td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td style="padding:0 4px;font-size:11px;color:#555;white-space:nowrap;text-align:left;">9月9日——12月12日</td>
+        <td style="padding:0 4px; font-size:11px; color:#555; white-space:nowrap;">9月9日——12月12日</td>
         <td colspan="3" style="padding:0 4px;">
-          <div class="bar bar-light" style="width:100%;height:22px;border-radius:11px;"></div>
+          <div class="bar bar-light" style="width:100%;height:24px;border-radius:12px;"></div>
         </td>
       </tr>
-      <!-- 项目结束 跨10~11月 -->
+      <!-- 项目结束：10月~11月 -->
       <tr>
         <td class="label bold">项目结束</td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td colspan="2" style="padding:0 4px;">
+        <td style="padding:0 4px;">
           <div class="bar-wrap">
-            <span class="bar-lbl-bold">10月10日——11月11日</span>
-            <div class="bar bar-light" style="width:55%;"></div>
+            <span class="lbl-bold">10月10日——11月11日</span>
           </div>
+        </td>
+        <td style="padding:0 4px;">
+          <div class="bar bar-light" style="width:70%;height:24px;border-radius:12px;"></div>
         </td>
         <td></td>
       </tr>
-      <!-- 项目复盘 跨10~11月 -->
+      <!-- 项目复盘：10月末~11月 -->
       <tr>
         <td class="label">项目复盘</td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td style="font-size:11px;color:#555;white-space:nowrap;padding:0 4px;text-align:left;">10月20日——11月30日</td>
+        <td style="padding:0 4px; font-size:11px; color:#555; white-space:nowrap;">10月20日——11月30日</td>
         <td colspan="2" style="padding:0 4px;">
-          <div class="bar bar-light" style="width:75%;height:22px;border-radius:11px;"></div>
+          <div class="bar bar-light" style="width:80%;height:24px;border-radius:12px;"></div>
         </td>
       </tr>
-      <!-- 项目总结 跨11~12月 -->
+      <!-- 项目总结：11月~12月 -->
       <tr>
         <td class="label">项目总结</td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        <td style="font-size:11px;color:#555;white-space:nowrap;padding:0 4px;text-align:left;">11月11日——12月12日</td>
+        <td style="padding:0 4px; font-size:11px; color:#555; white-space:nowrap;">11月11日——12月12日</td>
         <td style="padding:0 4px;">
-          <div class="bar bar-light" style="width:85%;height:22px;border-radius:11px;"></div>
+          <div class="bar bar-light" style="width:90%;height:24px;border-radius:12px;"></div>
         </td>
       </tr>
     </tbody>

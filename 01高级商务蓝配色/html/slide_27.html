@@ -9,163 +9,183 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 30px 16px 30px; display:flex; flex-direction:column; }
+  .slide { width:1280px; height:720px; background:#fff; position:relative; }
 
-  .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
-  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
-  .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
+  /* Header */
+  .hdr { position:absolute; top:14px; left:30px; right:30px; }
+  .hdr-row { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
+  .hdr-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+  .hdr-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+  .hdr-line { height:2px; background:#1a3a9e; }
 
-  .content { display:flex; flex:1; gap:0; padding-top:6px; min-height:0; }
+  /* Left big title - top left under header */
+  .big-title {
+    position:absolute; left:30px; top:72px;
+    font-size:32px; font-weight:900; color:#1a3a9e; line-height:1.25;
+  }
 
-  .left-title { width:170px; display:flex; align-items:center; flex-shrink:0; }
-  .left-title-text { font-size:32px; font-weight:900; color:#1a3a9e; line-height:1.2; }
+  /* Timeline area: positioned to fill from header bottom to slide bottom */
+  .tl-area {
+    position:absolute; left:185px; right:20px; top:68px; bottom:8px;
+    display:flex; flex-direction:column;
+  }
 
-  .tl-main { flex:1; display:flex; flex-direction:column; min-height:0; }
+  /* Top text section */
+  .top-sec { flex:1; display:flex; min-height:0; }
+  .col { flex:1; display:flex; flex-direction:column; padding:0 4px; justify-content:flex-start; }
+  .col.hidden-col { visibility:hidden; }
+  .col-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-bottom:6px; flex-shrink:0; }
+  .col-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:4px; }
+  .col-desc { font-size:10px; color:#555; line-height:1.65; }
 
-  .top-texts { flex:1; display:flex; min-height:0; }
-  .top-item { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:8px; }
-  .top-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-bottom:4px; flex-shrink:0; }
-  .top-text-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:3px; text-align:center; }
-  .top-text-desc { font-size:10px; color:#555; line-height:1.5; text-align:center; max-width:110px; }
-  .top-item.even { visibility:hidden; }
-
-  .axis-row { display:flex; align-items:center; position:relative; flex-shrink:0; height:76px; }
-  .start-arrow-inner {
+  /* Axis */
+  .axis-sec { flex-shrink:0; height:68px; display:flex; align-items:center; }
+  .start-btn {
     width:30px; height:30px; background:#c8d4e8; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    font-size:16px; font-weight:900; color:#1a3a9e; flex-shrink:0;
+    font-size:14px; font-weight:900; color:#1a3a9e; flex-shrink:0;
   }
-  .axis-line { flex:1; height:8px; background:#c8d8e8; }
-  .axis-arrow { width:0; height:0; flex-shrink:0;
-    border-top:14px solid transparent;
-    border-bottom:14px solid transparent;
-    border-left:22px solid #c8d8e8; }
-
+  .ax-line { flex:1; height:8px; background:#c8d8e8; }
+  .ax-arrow { width:0; height:0; flex-shrink:0;
+    border-top:13px solid transparent; border-bottom:13px solid transparent;
+    border-left:20px solid #c8d8e8; }
   .node {
-    width:68px; height:68px; border-radius:50%; flex-shrink:0;
+    width:62px; height:62px; border-radius:50%; flex-shrink:0;
     display:flex; align-items:center; justify-content:center;
-    font-size:14px; font-weight:900; color:#fff;
-    position:relative; z-index:2;
+    font-size:13px; font-weight:900; color:#fff; z-index:2;
   }
-  .n1,.n2 { background:#1a3a9e; }
-  .n3,.n4 { background:#4a7ac8; }
-  .n5,.n6 { background:#6a9ad0; }
-  .n7,.n8 { background:#8ab0d8; }
-  .n9,.n10 { background:#a8c4e8; }
+  /* Colors: deep→mid→light→mid→deep pattern */
+  .nd1 { background:#1a3a9e; }
+  .nd2 { background:#1a3a9e; }
+  .nd3 { background:#4a7ac8; }
+  .nd4 { background:#6a9ad0; }
+  .nd5 { background:#8ab0d8; }
+  .nd6 { background:#8ab0d8; }
+  .nd7 { background:#6a9ad0; }
+  .nd8 { background:#4a7ac8; }
+  .nd9 { background:#1a3a9e; }
+  .nd10 { background:#1a3a9e; }
 
-  .bot-texts { flex:1; display:flex; min-height:0; }
-  .bot-item { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding-top:8px; }
-  .bot-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-top:4px; flex-shrink:0; }
-  .bot-text-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:3px; text-align:center; }
-  .bot-text-desc { font-size:10px; color:#555; line-height:1.5; text-align:center; max-width:110px; }
-  .bot-item.odd { visibility:hidden; }
+  /* Bottom text section */
+  .bot-sec { flex:1; display:flex; min-height:0; }
+  .bot-col { flex:1; display:flex; flex-direction:column; padding:0 4px; padding-top:6px; }
+  .bot-col.hidden-col { visibility:hidden; }
+  .bot-dot { width:8px; height:8px; border-radius:50%; background:#c8d4e8; margin-top:6px; flex-shrink:0; }
+
+  /* Dashed vertical lines from dots */
+  .col-dot-wrap { display:flex; flex-direction:column; align-items:flex-start; }
 </style>
 </head>
 <body>
 <div class="slide">
-  <div class="header">
-    <div class="header-title">工作汇报-时间轴 Powerpoint Template</div>
-    <div class="header-sub">Work Arrangement</div>
+  <div class="hdr">
+    <div class="hdr-row">
+      <div class="hdr-title">工作汇报-时间轴 Powerpoint Template</div>
+      <div class="hdr-sub">Work Arrangement</div>
+    </div>
+    <div class="hdr-line"></div>
   </div>
-  <div class="header-line"></div>
 
-  <div class="content">
-    <div class="left-title">
-      <div class="left-title-text">年度项目<br>时间安排</div>
+  <div class="big-title">年度项目<br>时间安排</div>
+
+  <div class="tl-area">
+    <!-- Top texts: cols 1,3,5,7,9 visible (2012,2014,2016,2018,2020) -->
+    <div class="top-sec">
+      <div class="col">
+        <div class="col-title">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div style="flex:1;"></div>
+        <div class="col-dot"></div>
+      </div>
+      <div class="col hidden-col"></div>
+      <div class="col">
+        <div class="col-title">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div style="flex:1;"></div>
+        <div class="col-dot"></div>
+      </div>
+      <div class="col hidden-col"></div>
+      <div class="col">
+        <div class="col-title">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div style="flex:1;"></div>
+        <div class="col-dot"></div>
+      </div>
+      <div class="col hidden-col"></div>
+      <div class="col">
+        <div class="col-title">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div style="flex:1;"></div>
+        <div class="col-dot"></div>
+      </div>
+      <div class="col hidden-col"></div>
+      <div class="col">
+        <div class="col-title">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+        <div style="flex:1;"></div>
+        <div class="col-dot"></div>
+      </div>
+      <div class="col hidden-col"></div>
     </div>
 
-    <div class="tl-main">
-      <div class="top-texts">
-        <div class="top-item odd">
-          <div class="top-dot"></div>
-          <div class="top-text-title">工作计划</div>
-          <div class="top-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-        </div>
-        <div class="top-item even"></div>
-        <div class="top-item odd">
-          <div class="top-dot"></div>
-          <div class="top-text-title">工作计划</div>
-          <div class="top-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-        </div>
-        <div class="top-item even"></div>
-        <div class="top-item odd">
-          <div class="top-dot"></div>
-          <div class="top-text-title">工作计划</div>
-          <div class="top-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-        </div>
-        <div class="top-item even"></div>
-        <div class="top-item odd">
-          <div class="top-dot"></div>
-          <div class="top-text-title">工作计划</div>
-          <div class="top-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-        </div>
-        <div class="top-item even"></div>
-        <div class="top-item odd">
-          <div class="top-dot"></div>
-          <div class="top-text-title">工作计划</div>
-          <div class="top-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-        </div>
-        <div class="top-item even"></div>
-      </div>
+    <!-- Axis -->
+    <div class="axis-sec">
+      <div class="start-btn">»</div>
+      <div class="ax-line" style="flex:0.3;"></div>
+      <div class="node nd1">2012</div>
+      <div class="ax-line"></div>
+      <div class="node nd2">2013</div>
+      <div class="ax-line"></div>
+      <div class="node nd3">2014</div>
+      <div class="ax-line"></div>
+      <div class="node nd4">2015</div>
+      <div class="ax-line"></div>
+      <div class="node nd5">2016</div>
+      <div class="ax-line"></div>
+      <div class="node nd6">2017</div>
+      <div class="ax-line"></div>
+      <div class="node nd7">2018</div>
+      <div class="ax-line"></div>
+      <div class="node nd8">2019</div>
+      <div class="ax-line"></div>
+      <div class="node nd9">2020</div>
+      <div class="ax-line"></div>
+      <div class="node nd10">2021</div>
+      <div class="ax-line" style="flex:0.3;"></div>
+      <div class="ax-arrow"></div>
+    </div>
 
-      <div class="axis-row">
-        <div class="start-arrow-inner">»</div>
-        <div class="axis-line" style="flex:0.5;"></div>
-        <div class="node n1">2012</div>
-        <div class="axis-line"></div>
-        <div class="node n2">2013</div>
-        <div class="axis-line"></div>
-        <div class="node n3">2014</div>
-        <div class="axis-line"></div>
-        <div class="node n4">2015</div>
-        <div class="axis-line"></div>
-        <div class="node n5">2016</div>
-        <div class="axis-line"></div>
-        <div class="node n6">2017</div>
-        <div class="axis-line"></div>
-        <div class="node n7">2018</div>
-        <div class="axis-line"></div>
-        <div class="node n8">2019</div>
-        <div class="axis-line"></div>
-        <div class="node n9">2020</div>
-        <div class="axis-line"></div>
-        <div class="node n10">2021</div>
-        <div class="axis-line" style="flex:0.5;"></div>
-        <div class="axis-arrow"></div>
+    <!-- Bottom texts: cols 2,4,6,8,10 visible (2013,2015,2017,2019,2021) -->
+    <div class="bot-sec">
+      <div class="bot-col hidden-col"></div>
+      <div class="bot-col">
+        <div class="bot-dot"></div>
+        <div class="col-title" style="margin-top:6px;">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
       </div>
-
-      <div class="bot-texts">
-        <div class="bot-item odd"></div>
-        <div class="bot-item even">
-          <div class="bot-text-title">工作计划</div>
-          <div class="bot-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-          <div class="bot-dot"></div>
-        </div>
-        <div class="bot-item odd"></div>
-        <div class="bot-item even">
-          <div class="bot-text-title">工作计划</div>
-          <div class="bot-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-          <div class="bot-dot"></div>
-        </div>
-        <div class="bot-item odd"></div>
-        <div class="bot-item even">
-          <div class="bot-text-title">工作计划</div>
-          <div class="bot-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-          <div class="bot-dot"></div>
-        </div>
-        <div class="bot-item odd"></div>
-        <div class="bot-item even">
-          <div class="bot-text-title">工作计划</div>
-          <div class="bot-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-          <div class="bot-dot"></div>
-        </div>
-        <div class="bot-item odd"></div>
-        <div class="bot-item even">
-          <div class="bot-text-title">工作计划</div>
-          <div class="bot-text-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
-          <div class="bot-dot"></div>
-        </div>
+      <div class="bot-col hidden-col"></div>
+      <div class="bot-col">
+        <div class="bot-dot"></div>
+        <div class="col-title" style="margin-top:6px;">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="bot-col hidden-col"></div>
+      <div class="bot-col">
+        <div class="bot-dot"></div>
+        <div class="col-title" style="margin-top:6px;">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="bot-col hidden-col"></div>
+      <div class="bot-col">
+        <div class="bot-dot"></div>
+        <div class="col-title" style="margin-top:6px;">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="bot-col hidden-col"></div>
+      <div class="bot-col">
+        <div class="bot-dot"></div>
+        <div class="col-title" style="margin-top:6px;">工作计划</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
       </div>
     </div>
   </div>

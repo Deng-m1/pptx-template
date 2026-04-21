@@ -9,20 +9,20 @@
 html,body { width:1280px; height:720px; overflow:hidden;
   font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
   background:#fff; }
-.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px;
+.slide { width:1280px; height:720px; background:#fff; padding:16px 40px 10px 40px;
   display:flex; flex-direction:column; }
 
 .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
 .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
 .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
 .header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
-.page-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:10px; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
 
 .body { flex:1; display:flex; flex-direction:column; min-height:0; }
 
-.col-headers { display:flex; gap:4px; margin-bottom:8px; flex-shrink:0; }
+.col-headers { display:flex; gap:4px; margin-bottom:5px; flex-shrink:0; }
 .col-header {
-  flex:1; height:58px; position:relative;
+  flex:1; height:52px; position:relative;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
 }
@@ -33,12 +33,12 @@ html,body { width:1280px; height:720px; overflow:hidden;
 .col-header-date { font-size:15px; font-weight:900; color:#fff; }
 .col-header-sub { font-size:8.5px; font-weight:700; color:rgba(255,255,255,0.85); letter-spacing:1px; margin-top:2px; }
 
-.tasks-area { flex:1; display:flex; gap:4px; min-height:0; }
+.tasks-area { flex:1; display:flex; gap:4px; min-height:0; max-height:480px; }
 .task-col { flex:1; display:flex; flex-direction:column; gap:5px; }
 .task-card {
-  border-radius:4px; padding:9px 12px 9px 12px;
+  border-radius:4px; padding:8px 12px 8px 12px;
   display:flex; flex-direction:column; position:relative;
-  height:120px; flex-shrink:0;
+  flex:1; flex-shrink:0;
 }
 .tc-dark { background:#3a5aae; }
 .tc-mid { background:#5a7ab8; }
@@ -55,7 +55,7 @@ html,body { width:1280px; height:720px; overflow:hidden;
 }
 .task-check svg { width:11px; height:11px; stroke:#fff; fill:none; stroke-width:2.5; }
 
-.bottom-labels { display:flex; gap:4px; margin-top:8px; flex-shrink:0; }
+.bottom-labels { display:flex; gap:4px; margin-top:5px; flex-shrink:0; }
 .bottom-label {
   flex:1; height:36px;
   clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);

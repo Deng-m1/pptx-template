@@ -9,15 +9,15 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:24px 50px 16px 50px; }
+  .slide { width:1280px; height:720px; background:#fff; display:flex; flex-direction:column; padding:20px 40px 8px 40px; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
-  .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
+  .header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-  .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+  .header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
 
   /* 甘特表格 */
-  .gantt { width:100%; border-collapse:collapse; font-size:12px; }
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; flex:1; }
   .gantt th {
     text-align:center; padding:6px 2px;
     font-size:13px; font-weight:900;
@@ -28,7 +28,7 @@
   .gantt th.month-highlight { background:#1a3a9e; color:#fff; }
   .gantt td {
     border:1px solid #dde3ef;
-    padding:3px 2px; height:52px;
+    padding:3px 2px; height:60px;
     vertical-align:middle; text-align:center;
     background:#eef2fa;
   }

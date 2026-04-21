@@ -9,73 +9,115 @@
 html,body { width:1280px; height:720px; overflow:hidden;
   font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
   background:#fff; }
-.slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px;
+.slide { width:1280px; height:720px; background:#fff; padding:16px 40px 10px 40px;
   display:flex; flex-direction:column; }
 
 .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
 .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
 .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-.header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
 
 .body { flex:1; display:flex; flex-direction:column; min-height:0; }
 
-/* 顶部月份行 - 有灰色背景条 */
+/* 月份箭头行 */
 .month-row {
-  display:flex; align-items:center; gap:0; margin-bottom:10px;
-  background:#e8ecf4; border-radius:4px; padding:4px 8px; flex-shrink:0;
+  display:flex; align-items:center; height:72px; flex-shrink:0;
+  background:#e8eef8; margin-bottom:0;
 }
-.month-label { font-size:13px; font-weight:900; color:#1a3a9e; margin-right:8px; white-space:nowrap; }
+.month-label {
+  width:160px; flex-shrink:0; font-size:14px; font-weight:900; color:#1a3a9e;
+  padding-left:10px; display:flex; align-items:center;
+}
 .month-arrow-btn {
-  width:36px; height:28px; background:#1a3a9e;
-  clip-path:polygon(0 30%,80% 30%,80% 0,100% 50%,80% 100%,80% 70%,0 70%);
-  margin-right:6px; flex-shrink:0;
+  width:0; height:0;
+  border-top:20px solid transparent;
+  border-bottom:20px solid transparent;
+  border-left:24px solid #1a3a9e;
+  flex-shrink:0; margin-right:4px;
 }
-.month-arrow-wrap { display:flex; gap:3px; flex:1; }
+.month-arrow-wrap {
+  flex:1; display:flex; gap:3px; height:100%; align-items:center;
+}
 .month-arrow {
-  flex:1; height:52px; position:relative;
-  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  flex:1; height:62px; position:relative;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
+  clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+  cursor:pointer;
 }
 .ma1 { background:#1a3a9e; }
 .ma2 { background:#2a4aae; }
 .ma3 { background:#4a6ab8; }
-.ma4 { background:#1a1a2a; }
-.ma5 { background:#6a8ab8; }
-.ma6 { background:#8aaac8; }
-.ma7 { background:#aabcd8; }
-.month-num { font-size:20px; font-weight:900; color:#fff; line-height:1; }
-.month-unit { font-size:10px; color:rgba(255,255,255,0.9); }
+.ma4 { background:#2a2a2a; }
+.ma5 { background:#8aaac8; }
+.ma6 { background:#aabcd8; }
+.ma7 { background:#c0cce0; }
+.month-num { font-size:22px; font-weight:900; color:#fff; line-height:1; }
+.month-unit { font-size:11px; color:rgba(255,255,255,0.9); margin-top:1px; }
 
-/* 主体两行 */
-.main-area { flex:1; display:flex; flex-direction:column; gap:0; position:relative; min-height:0; }
-.project-row { flex:1; display:flex; align-items:stretch; border-bottom:1px solid #e0e4f0; min-height:0; }
-.project-row:last-child { border-bottom:none; }
-.proj-label { width:100px; display:flex; flex-direction:column; justify-content:flex-start; padding-top:10px; flex-shrink:0; }
-.proj-name { font-size:16px; font-weight:900; color:#1a3a9e; }
-.proj-desc { font-size:10px; color:#555; line-height:1.6; margin-top:4px; }
-.proj-cols { flex:1; display:flex; gap:0; }
-.proj-col { flex:1; display:flex; flex-direction:column; justify-content:space-between; padding:8px 6px; border-left:1px dashed #c0c8d8; position:relative; }
-.proj-col:first-child { border-left:none; }
-.col-text { font-size:10px; color:#444; line-height:1.6; }
-.col-check { display:flex; justify-content:center; margin-top:6px; }
-.check-icon { width:22px; height:22px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center; }
+/* 主内容区 */
+.main-area { flex:1; display:flex; flex-direction:column; min-height:0; }
+
+/* 项目行 */
+.project-row {
+  flex:1; display:flex; border-top:1px solid #d0d8e8; min-height:0;
+}
+.proj-label {
+  width:160px; flex-shrink:0; padding:14px 10px 10px 10px;
+  border-right:1px solid #d0d8e8;
+}
+.proj-name { font-size:16px; font-weight:900; color:#1a3a9e; margin-bottom:8px; }
+.proj-desc { font-size:10px; color:#555; line-height:1.6; }
+
+.proj-cols { flex:1; display:flex; }
+.proj-col {
+  flex:1; border-right:1px dashed #c0c8d8; padding:10px 8px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  position:relative; min-height:0;
+}
+.proj-col:last-child { border-right:none; }
+.col-text { font-size:10px; color:#444; line-height:1.6; flex:1; }
+.col-check {
+  display:flex; justify-content:center; margin-top:6px; flex-shrink:0;
+}
+.check-icon {
+  width:22px; height:22px; border-radius:50%; background:#1a3a9e;
+  display:flex; align-items:center; justify-content:center;
+}
 .check-icon svg { width:12px; height:12px; stroke:#fff; fill:none; stroke-width:2.5; }
 
-/* 弹出卡片（88%） */
+/* 弹出卡片 - 从第4月列弹出，覆盖在第3-5月列上方 */
 .popup-card {
-  position:absolute; top:-8px; left:50%; transform:translateX(-50%);
-  width:260px; background:#fff; border:2px solid #1a3a9e; border-radius:8px;
-  padding:14px 16px; z-index:10;
+  position:absolute;
+  top:-10px; left:-10px;
+  width:340px; z-index:10;
+  background:#fff; border:2px solid #1a3a9e; border-radius:8px;
+  padding:16px 18px 14px 18px;
   box-shadow:0 4px 16px rgba(26,58,158,0.15);
 }
-.popup-line {
-  position:absolute; top:-28px; left:50%; transform:translateX(-50%);
-  width:2px; height:28px; background:#1a3a9e;
+.popup-card::before {
+  content:'';
+  position:absolute; top:-14px; left:60px;
+  width:0; height:0;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-bottom:14px solid #1a3a9e;
 }
-.popup-pct { font-size:48px; font-weight:900; color:#1a3a9e; line-height:1; }
-.popup-icon { position:absolute; top:14px; right:14px; width:38px; height:38px; border-radius:50%; border:2px solid #1a3a9e; display:flex; align-items:center; justify-content:center; }
-.popup-icon svg { width:20px; height:20px; stroke:#1a3a9e; fill:none; stroke-width:1.8; }
-.popup-desc { font-size:10px; color:#444; line-height:1.6; margin-top:6px; }
+.popup-card::after {
+  content:'';
+  position:absolute; top:-11px; left:62px;
+  width:0; height:0;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:12px solid #fff;
+}
+.popup-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.popup-pct { font-size:42px; font-weight:900; color:#1a3a9e; line-height:1; }
+.popup-icon {
+  width:48px; height:48px; border-radius:50%; border:2px solid #1a3a9e;
+  display:flex; align-items:center; justify-content:center;
+}
+.popup-icon svg { width:26px; height:26px; stroke:#1a3a9e; fill:none; stroke-width:1.5; }
+.popup-desc { font-size:11px; color:#444; line-height:1.7; }
 </style>
 </head>
 <body>
@@ -85,7 +127,6 @@ html,body { width:1280px; height:720px; overflow:hidden;
     <div class="header-sub">Work Arrangement</div>
   </div>
   <div class="header-line"></div>
-
   <div class="body">
     <div class="month-row">
       <div class="month-label">项目阶段目标</div>
@@ -100,7 +141,6 @@ html,body { width:1280px; height:720px; overflow:hidden;
         <div class="month-arrow ma7"><div class="month-num">7</div><div class="month-unit">月</div></div>
       </div>
     </div>
-
     <div class="main-area">
       <!-- 公司项目A -->
       <div class="project-row">
@@ -114,12 +154,14 @@ html,body { width:1280px; height:720px; overflow:hidden;
             <div class="col-text">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
             <div class="col-check"><div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div></div>
           </div>
-          <div class="proj-col" style="position:relative;">
+          <!-- 第3列：弹出卡片从这里展开 -->
+          <div class="proj-col" style="overflow:visible;">
             <div class="popup-card">
-              <div class="popup-line"></div>
-              <div class="popup-pct">88%</div>
-              <div class="popup-icon">
-                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              <div class="popup-top">
+                <div class="popup-pct">88%</div>
+                <div class="popup-icon">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                </div>
               </div>
               <div class="popup-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
             </div>
@@ -133,7 +175,6 @@ html,body { width:1280px; height:720px; overflow:hidden;
           <div class="proj-col"></div>
         </div>
       </div>
-
       <!-- 公司项目B -->
       <div class="project-row">
         <div class="proj-label">
