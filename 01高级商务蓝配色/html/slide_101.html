@@ -9,33 +9,33 @@
   .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
 
   /* Header */
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0 44px; display: flex; align-items: flex-start; justify-content: space-between; }
-  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; line-height: 1; }
-  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; line-height: 1; margin-top: 6px; }
-  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 64px; padding: 14px 44px 0 44px; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; line-height: 1; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; line-height: 1; margin-top: 4px; }
+  .header-line { position: absolute; top: 64px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
 
   /* Tabs */
-  .tabs { position: absolute; top: 80px; left: 44px; right: 44px; height: 38px; display: flex; gap: 2px; }
+  .tabs { position: absolute; top: 76px; left: 44px; right: 44px; height: 40px; display: flex; gap: 3px; }
   .tab { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
   .tab.active { background: #0f3d8c; color: #fff; }
-  .tab.t2 { background: #f2f4f8; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
+  .tab.t2 { background: #f0f2f7; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
   .tab.t3 { background: #c8d4e4; color: #1a3a6b; border: 1.5px solid #aab8cc; }
   .tab.t4 { background: #dce6f0; color: #1a3a6b; border: 1.5px solid #c0ccda; }
-  .tab.t5 { background: #f5f7fa; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
+  .tab.t5 { background: #f0f2f7; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
 
   /* Top desc row */
-  .top-desc { position: absolute; top: 124px; left: 44px; right: 44px; height: 60px; display: flex; }
+  .top-desc { position: absolute; top: 122px; left: 44px; right: 44px; height: 66px; display: flex; }
   .td-col { flex: 1; font-size: 11.5px; color: #444; line-height: 1.65; padding: 0 6px; }
-  .td-col:nth-child(2), .td-col:nth-child(4) { flex: 0.3; }
+  .td-col.empty { flex: 0.25; }
 
   /* Bottom cards */
-  .bottom-cards { position: absolute; top: 458px; left: 44px; right: 44px; height: 118px; display: flex; gap: 2px; }
+  .bottom-cards { position: absolute; top: 462px; left: 44px; right: 44px; height: 120px; display: flex; gap: 3px; }
   .bc { flex: 1; font-size: 10.5px; color: #444; line-height: 1.6; padding: 8px 10px; border: 1px solid #ddd; }
   .bc.active { background: #0f3d8c; color: #fff; border-color: #0f3d8c; }
   .bc.gray { background: #c8d4e4; color: #333; border-color: #aab8cc; }
 
   /* Timeline */
-  .timeline { position: absolute; top: 582px; left: 44px; right: 44px; height: 30px; display: flex; align-items: center; gap: 0; }
+  .timeline { position: absolute; top: 590px; left: 44px; right: 44px; height: 28px; display: flex; align-items: center; }
   .tl-label { font-size: 15px; font-weight: 700; color: #0f3d8c; white-space: nowrap; }
   .tl-line { flex: 1; height: 2.5px; background: #0f3d8c; }
   .tl-arrow { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 16px solid #0f3d8c; }
@@ -62,34 +62,36 @@
 
   <div class="top-desc">
     <div class="td-col">通过多种渠道进行活动推广，包括<br>社交媒体广告、电子邮件营销、搜<br>索引擎优化等。</div>
-    <div class="td-col"></div>
+    <div class="td-col empty"></div>
     <div class="td-col" style="text-align:center;">我们保障了客户的满意度，<br>增强了客户的忠诚度。</div>
-    <div class="td-col"></div>
+    <div class="td-col empty"></div>
     <div class="td-col" style="text-align:right;">统一品牌策略是指企业将经营的所有系<br>列产品使用同一品牌的</div>
   </div>
 
-  <!-- Diamonds + Arrows SVG -->
-  <svg style="position:absolute;top:178px;left:0;width:1280px;height:278px;" viewBox="0 0 1280 278" overflow="visible">
-    <!-- Left large dark blue diamond -->
-    <polygon points="248,8 448,139 248,270 48,139" fill="#0f3d8c"/>
-    <text x="248" y="122" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销策</text>
-    <text x="248" y="160" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">略</text>
-    <text x="248" y="198" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">规划</text>
+  <!-- Diamonds + Arrows SVG — 5 diamonds with arrows between them -->
+  <!-- Diamond centers: 220, 460, 700, 940, 1140 -->
+  <!-- Diamond half-width: 190, half-height: 130 -->
+  <svg style="position:absolute;top:184px;left:0;width:1280px;height:272px;" viewBox="0 0 1280 272" overflow="visible">
+    <!-- Diamond 1: deep blue, center(220,136), hw=190, hh=130 -->
+    <polygon points="220,6 410,136 220,266 30,136" fill="#0f3d8c"/>
+    <text x="220" y="116" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销策</text>
+    <text x="220" y="150" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">略</text>
+    <text x="220" y="184" text-anchor="middle" font-size="30" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">规划</text>
 
-    <!-- Arrow 1 (dark blue) -->
-    <polygon points="458,113 538,113 538,97 572,139 538,181 538,165 458,165" fill="#5c82b8" opacity="0.9"/>
+    <!-- Arrow 1 between D1 and D2 — chunky blue arrow -->
+    <polygon points="418,106 490,106 490,88 528,136 490,184 490,166 418,166" fill="#4a78b8"/>
 
-    <!-- Middle light blue diamond -->
-    <polygon points="730,8 930,139 730,270 530,139" fill="#8aafd8"/>
-    <text x="730" y="122" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销推</text>
-    <text x="730" y="160" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">广</text>
-    <text x="730" y="198" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">执行</text>
+    <!-- Diamond 2: medium blue, center(640,136), hw=190, hh=130 -->
+    <polygon points="640,6 830,136 640,266 450,136" fill="#7aa4d0"/>
+    <text x="640" y="116" text-anchor="middle" font-size="30" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销推</text>
+    <text x="640" y="150" text-anchor="middle" font-size="30" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">广</text>
+    <text x="640" y="184" text-anchor="middle" font-size="30" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">执行</text>
 
-    <!-- Arrow 2 (light blue) -->
-    <polygon points="940,113 1020,113 1020,97 1054,139 1020,181 1020,165 940,165" fill="#b8cfe8" opacity="0.85"/>
+    <!-- Arrow 2 between D2 and D3 — lighter blue arrow -->
+    <polygon points="838,106 910,106 910,88 948,136 910,184 910,166 838,166" fill="#a8c4e0"/>
 
-    <!-- Right very light small diamond -->
-    <polygon points="1168,69 1268,139 1168,209 1068,139" fill="#d8e8f4" opacity="0.8"/>
+    <!-- Diamond 3: very light blue, center(1090,136), hw=140, hh=96 -->
+    <polygon points="1090,40 1230,136 1090,232 950,136" fill="#ccddf0"/>
   </svg>
 
   <div class="bottom-cards">

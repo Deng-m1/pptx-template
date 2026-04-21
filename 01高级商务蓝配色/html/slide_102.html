@@ -8,19 +8,27 @@
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
 
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
-  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; }
-  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; margin-top: 6px; }
-  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 64px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  .header-line { position: absolute; top: 64px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
 
   /* Left blue vertical bar */
-  .left-bar { position: absolute; left: 44px; top: 88px; width: 6px; height: 590px; background: #8aafd8; }
+  .left-bar { position: absolute; left: 44px; top: 80px; width: 6px; bottom: 0; background: #8aafd8; }
 
-  /* Left cards - positioned absolutely to align with funnel layers */
-  .lcard { position: absolute; left: 58px; width: 268px; padding: 10px 14px; font-size: 11px; line-height: 1.7; }
-  .lcard.c1 { top: 92px; border: 1.5px solid #c0cce0; background: #fff; color: #555; }
-  .lcard.c2 { top: 320px; background: #0f3d8c; color: #fff; }
-  .lcard.c3 { top: 530px; background: #0f3d8c; color: #fff; }
+  /* Left cards */
+  .lcard { position: absolute; left: 58px; width: 272px; padding: 10px 14px; font-size: 11px; line-height: 1.7; }
+  /* Card 1: dashed border, white bg */
+  .lcard.c1 { border: 1.5px dashed #a0b8d0; background: #fff; color: #555; }
+  /* Card 2 & 3: deep blue bg with left accent bar */
+  .lcard.c2, .lcard.c3 { background: #0f3d8c; color: #fff; padding-left: 18px; }
+  .lcard.c2::before, .lcard.c3::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: #5c9ad4;
+  }
 </style>
 </head>
 <body>
@@ -33,45 +41,51 @@
 
   <div class="left-bar"></div>
 
-  <!-- Left cards -->
-  <div class="lcard c1">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
-  <div class="lcard c2">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
-  <div class="lcard c3">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
+  <!-- Left card 1: dashed border, top ~88px, height ~110px -->
+  <div class="lcard c1" style="top:82px;">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
 
-  <!-- Center funnel SVG -->
-  <svg style="position:absolute;left:340px;top:82px;" width="620" height="610" viewBox="0 0 620 610" overflow="visible">
-    <!-- A: Attention - widest, dark navy -->
-    <polygon points="10,0 610,0 585,100 35,100" fill="#0f3d8c"/>
-    <text x="310" y="57" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A：Attention（引起注意）</text>
-    <line x1="585" y1="50" x2="640" y2="50" stroke="#0f3d8c" stroke-width="1.5"/>
+  <!-- Left card 2: blue bg, aligned to D:Desire layer -->
+  <div class="lcard c2" style="top:310px;">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
 
-    <!-- I: Interest -->
-    <polygon points="42,106 578,106 553,206 67,206" fill="#2d5f96"/>
-    <text x="310" y="163" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">I:Interest （引起兴趣）</text>
-    <line x1="553" y1="156" x2="640" y2="156" stroke="#2d5f96" stroke-width="1.5"/>
+  <!-- Left card 3: blue bg, aligned to A:Action layer -->
+  <div class="lcard c3" style="top:530px;">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</div>
 
-    <!-- D: Desire -->
-    <polygon points="74,212 546,212 521,312 99,312" fill="#5580b0"/>
-    <text x="310" y="269" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">D:Desire（唤起欲望）</text>
-    <line x1="521" y1="262" x2="640" y2="262" stroke="#5580b0" stroke-width="1.5"/>
+  <!-- Center funnel SVG — positioned center-right -->
+  <!-- Funnel top: y=82, each layer height=106px, 5 layers = 530px total, bottom at 612 -->
+  <svg style="position:absolute;left:348px;top:78px;" width="600" height="540" viewBox="0 0 600 540">
+    <!-- A: Attention - widest, dark navy, y=0..100 -->
+    <polygon points="0,0 600,0 572,100 28,100" fill="#0f3d8c"/>
+    <text x="300" y="57" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A：Attention（引起注意）</text>
+    <line x1="572" y1="50" x2="610" y2="50" stroke="#0f3d8c" stroke-width="1.5"/>
 
-    <!-- M: Memory -->
-    <polygon points="106,318 514,318 489,418 131,418" fill="#8aafd8"/>
-    <text x="310" y="375" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">M:Memory（留下记忆）</text>
-    <line x1="489" y1="368" x2="640" y2="368" stroke="#8aafd8" stroke-width="1.5"/>
+    <!-- I: Interest, y=104..204 -->
+    <polygon points="32,104 568,104 540,204 60,204" fill="#2d5f96"/>
+    <text x="300" y="161" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">I:Interest （引起兴趣）</text>
+    <line x1="540" y1="154" x2="610" y2="154" stroke="#2d5f96" stroke-width="1.5"/>
 
-    <!-- A: Action - narrowest, lightest -->
-    <polygon points="138,424 482,424 457,524 163,524" fill="#b8d0e8"/>
-    <text x="310" y="481" text-anchor="middle" font-size="18" font-weight="700" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A:Action（购买行动）</text>
-    <line x1="457" y1="474" x2="640" y2="474" stroke="#8aafd8" stroke-width="1.5"/>
+    <!-- D: Desire, y=208..308 -->
+    <polygon points="64,208 536,208 508,308 92,308" fill="#5580b0"/>
+    <text x="300" y="265" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">D:Desire（唤起欲望）</text>
+    <line x1="508" y1="258" x2="610" y2="258" stroke="#5580b0" stroke-width="1.5"/>
+
+    <!-- M: Memory, y=312..412 -->
+    <polygon points="96,312 504,312 476,412 124,412" fill="#8aafd8"/>
+    <text x="300" y="369" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">M:Memory（留下记忆）</text>
+    <line x1="476" y1="362" x2="610" y2="362" stroke="#8aafd8" stroke-width="1.5"/>
+
+    <!-- A: Action - narrowest, lightest, y=416..516 -->
+    <polygon points="128,416 472,416 444,516 156,516" fill="#b8d0e8"/>
+    <text x="300" y="473" text-anchor="middle" font-size="17" font-weight="700" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A:Action（购买行动）</text>
+    <line x1="444" y1="466" x2="610" y2="466" stroke="#8aafd8" stroke-width="1.5"/>
   </svg>
 
   <!-- Right panel text - aligned to funnel layers -->
-  <div style="position:absolute;right:44px;top:92px;width:188px;font-size:11px;color:#444;line-height:1.65;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
-  <div style="position:absolute;right:44px;top:198px;width:188px;font-size:11px;color:#444;line-height:1.65;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
-  <div style="position:absolute;right:44px;top:304px;width:188px;font-size:11px;color:#444;line-height:1.65;">推销茶叶的要随时准备茶具，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
-  <div style="position:absolute;right:44px;top:410px;width:188px;font-size:11px;color:#444;line-height:1.65;">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
-  <div style="position:absolute;right:44px;top:516px;width:188px;font-size:11px;color:#444;line-height:1.65;">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。</div>
+  <!-- Layer centers at: 50, 154, 258, 362, 466 → absolute tops: 78+50-30=98, 78+154-30=202... -->
+  <div style="position:absolute;right:44px;top:90px;width:190px;font-size:11px;color:#444;line-height:1.65;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+  <div style="position:absolute;right:44px;top:200px;width:190px;font-size:11px;color:#444;line-height:1.65;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+  <div style="position:absolute;right:44px;top:310px;width:190px;font-size:11px;color:#444;line-height:1.65;">推销茶叶的要随时准备茶具，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
+  <div style="position:absolute;right:44px;top:418px;width:190px;font-size:11px;color:#444;line-height:1.65;">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
+  <div style="position:absolute;right:44px;top:524px;width:190px;font-size:11px;color:#444;line-height:1.65;">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。</div>
 </div>
 </body>
 </html>

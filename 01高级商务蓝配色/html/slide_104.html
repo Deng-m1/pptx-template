@@ -7,12 +7,12 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
-  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; }
-  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; margin-top: 6px; }
-  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
-  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: #0f3d8c; display: flex; align-items: center; justify-content: center; padding: 0 80px; }
-  .bottom-bar p { font-size: 16px; color: #fff; text-align: center; line-height: 1.75; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 64px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  .header-line { position: absolute; top: 64px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 90px; background: #0f3d8c; display: flex; align-items: center; justify-content: center; padding: 0 80px; }
+  .bottom-bar p { font-size: 17px; color: #fff; text-align: center; line-height: 1.8; }
 </style>
 </head>
 <body>
@@ -23,112 +23,113 @@
   </div>
   <div class="header-line"></div>
 
-  <!-- 
-    Layout (original):
-    Top row:    A(Attention) cx=128  |  text box cx=310  |  I(Interest) cx=512  |  text box cx=694  |  D(Desire) cx=1152
-    Bottom row: text box cx=128      |  M(Memory) cx=310 |  text box cx=512     |  A(Action) cx=830 |  text box cx=1152
+  <!--
+    Original layout analysis:
+    - Top row circles: A(Attention) left, I(Interest) center, D(Desire) right
+    - Bottom row circles: M(Memory) center-left, A(Action) center-right
+    - Text boxes with dashed borders between circles
+    - Arrows: A→M (down), M→I (up), I→A (down), A→D (up)
     
-    Top circles: A at x=128, I at x=512, D at x=1152  (y=175, r=110)
-    Bottom circles: M at x=350, A at x=830             (y=390, r=110)
+    Positions (approx from original):
+    Top circles: A cx=155, I cx=640, D cx=1125, cy=230, r=115
+    Bottom circles: M cx=395, A cx=880, cy=460, r=115
     
-    Between-circle text boxes (dashed border):
-    - Right of A: x=248, y=200, w=170
-    - Right of I: x=632, y=200, w=170
-    - Below A: x=48, y=370, w=170
-    - Below I: x=432, y=370, w=170
-    - Below D: x=1072, y=370, w=170
-    
-    Arrows: A→M (down-right), M→I (up-right), I→A (down-right), A→D (up-right)
+    Text boxes (dashed):
+    - Between A and I (top): x=285, y=170, w=200, h=90
+    - Between I and D (top): x=770, y=170, w=200, h=90
+    - Below A left: x=30, y=390, w=200, h=90
+    - Between M and A (bottom): x=510, y=395, w=200, h=90
+    - Below D right: x=1040, y=390, w=200, h=90
   -->
-  <svg style="position:absolute;top:70px;left:0;width:1280px;height:570px;" viewBox="0 0 1280 570" overflow="visible">
+  <svg style="position:absolute;top:64px;left:0;width:1280px;height:566px;" viewBox="0 0 1280 566">
     <defs>
-      <marker id="arr1" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
-        <polygon points="0 0,9 3.5,0 7" fill="#0f3d8c"/>
+      <marker id="arrd" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0,10 4,0 8" fill="#0f3d8c"/>
       </marker>
-      <marker id="arr2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
-        <polygon points="0 0,9 3.5,0 7" fill="#2d6ab0"/>
+      <marker id="arru" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0,10 4,0 8" fill="#5888bc"/>
       </marker>
-      <marker id="arr3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
-        <polygon points="0 0,9 3.5,0 7" fill="#8aafd8"/>
+      <marker id="arrd2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0,10 4,0 8" fill="#8aafd8"/>
       </marker>
-      <marker id="arr4" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
-        <polygon points="0 0,9 3.5,0 7" fill="#8aafd8"/>
+      <marker id="arru2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+        <polygon points="0 0,10 4,0 8" fill="#8aafd8"/>
       </marker>
     </defs>
 
-    <!-- Arrows connecting circles: A→M (down), M→I (up), I→A (down), A→D (up) -->
-    <!-- A(128,175) → M(350,390): down-right -->
-    <line x1="200" y1="260" x2="278" y2="305" stroke="#0f3d8c" stroke-width="2.2" marker-end="url(#arr1)"/>
-    <!-- M(350,390) → I(512,175): up-right -->
-    <line x1="422" y1="305" x2="440" y2="260" stroke="#2d6ab0" stroke-width="2.2" marker-end="url(#arr2)"/>
-    <!-- I(512,175) → A(830,390): down-right -->
-    <line x1="584" y1="260" x2="758" y2="305" stroke="#8aafd8" stroke-width="2.2" marker-end="url(#arr3)"/>
-    <!-- A(830,390) → D(1152,175): up-right -->
-    <line x1="902" y1="305" x2="1080" y2="260" stroke="#8aafd8" stroke-width="2.2" marker-end="url(#arr4)"/>
+    <!-- Arrow A→M: from bottom of A(155,230+115=345) to top of M(395,460-115=345) -->
+    <!-- Actually diagonal: A bottom-right to M top-left -->
+    <line x1="230" y1="320" x2="322" y2="368" stroke="#0f3d8c" stroke-width="2.5" marker-end="url(#arrd)"/>
+    <!-- Arrow M→I: from M top-right to I bottom-left -->
+    <line x1="468" y1="368" x2="565" y2="320" stroke="#5888bc" stroke-width="2.5" marker-end="url(#arru)"/>
+    <!-- Arrow I→A: from I bottom-right to A top-left -->
+    <line x1="715" y1="320" x2="808" y2="368" stroke="#8aafd8" stroke-width="2.5" marker-end="url(#arrd2)"/>
+    <!-- Arrow A→D: from A top-right to D bottom-left -->
+    <line x1="952" y1="368" x2="1050" y2="320" stroke="#8aafd8" stroke-width="2.5" marker-end="url(#arru2)"/>
 
-    <!-- Circle 1: A Attention (dark navy) top-left, cx=128, cy=175, r=110 -->
-    <circle cx="128" cy="175" r="110" fill="#0f3d8c"/>
-    <text x="128" y="148" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A</text>
-    <text x="128" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Attention</text>
-    <text x="128" y="213" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起注意）</text>
+    <!-- Circle 1: A Attention (dark navy) top-left, cx=155, cy=230, r=115 -->
+    <circle cx="155" cy="230" r="115" fill="#0f3d8c"/>
+    <text x="155" y="200" text-anchor="middle" font-size="58" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A</text>
+    <text x="155" y="244" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Attention</text>
+    <text x="155" y="270" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起注意）</text>
 
-    <!-- Text box right of A (between A and I, top area) -->
-    <rect x="252" y="100" width="178" height="90" fill="none" stroke="#c0ccd8" stroke-width="1.5" stroke-dasharray="5,3"/>
-    <foreignObject x="260" y="106" width="162" height="80">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#666;line-height:1.6;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+    <!-- Text box right of A (between A and I, top) -->
+    <rect x="284" y="155" width="200" height="100" fill="none" stroke="#b0c4d8" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <foreignObject x="292" y="163" width="184" height="86">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#666;line-height:1.65;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
     </foreignObject>
 
-    <!-- Text box below A -->
-    <rect x="38" y="368" width="178" height="90" fill="none" stroke="#c0ccd8" stroke-width="1.5" stroke-dasharray="5,3"/>
-    <foreignObject x="46" y="374" width="162" height="80">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#666;line-height:1.6;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    <!-- Circle 2: I Interest (medium blue) top-center, cx=640, cy=230, r=115 -->
+    <circle cx="640" cy="230" r="115" fill="#5888bc"/>
+    <text x="640" y="200" text-anchor="middle" font-size="58" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">I</text>
+    <text x="640" y="244" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Interest</text>
+    <text x="640" y="270" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起兴趣）</text>
+
+    <!-- Text box right of I (between I and D, top) -->
+    <rect x="769" y="155" width="200" height="100" fill="none" stroke="#b0c4d8" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <foreignObject x="777" y="163" width="184" height="86">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#666;line-height:1.65;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
     </foreignObject>
 
-    <!-- Circle 2: I Interest (medium blue) top-center, cx=512, cy=175, r=110 -->
-    <circle cx="512" cy="175" r="110" fill="#5888bc"/>
-    <text x="512" y="148" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">I</text>
-    <text x="512" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Interest</text>
-    <text x="512" y="213" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起兴趣）</text>
+    <!-- Circle 3: D Desire (gray) top-right, cx=1125, cy=230, r=115 -->
+    <circle cx="1125" cy="230" r="115" fill="#a8b8c8"/>
+    <text x="1125" y="200" text-anchor="middle" font-size="58" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">D</text>
+    <text x="1125" y="244" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Desire</text>
+    <text x="1125" y="270" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（唤起欲望）</text>
 
-    <!-- Text box right of I (between I and D, top area) -->
-    <rect x="636" y="100" width="178" height="90" fill="none" stroke="#c0ccd8" stroke-width="1.5" stroke-dasharray="5,3"/>
-    <foreignObject x="644" y="106" width="162" height="80">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#666;line-height:1.6;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+    <!-- Text box below A left -->
+    <rect x="30" y="360" width="200" height="100" fill="none" stroke="#b0c4d8" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <foreignObject x="38" y="368" width="184" height="86">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#666;line-height:1.65;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
     </foreignObject>
 
-    <!-- Text box between M and A (bottom area) -->
-    <rect x="470" y="420" width="178" height="90" fill="none" stroke="#c0ccd8" stroke-width="1.5" stroke-dasharray="5,3"/>
-    <foreignObject x="478" y="426" width="162" height="80">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#666;line-height:1.6;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    <!-- Circle 4: M Memory (medium-light blue) bottom-left, cx=395, cy=460, r=115 -->
+    <circle cx="395" cy="460" r="115" fill="#2d6ab0"/>
+    <text x="395" y="430" text-anchor="middle" font-size="58" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">M</text>
+    <text x="395" y="474" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Memory</text>
+    <text x="395" y="500" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（留下记忆）</text>
+
+    <!-- Text box between M and A (bottom center) -->
+    <rect x="515" y="395" width="200" height="100" fill="none" stroke="#b0c4d8" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <foreignObject x="523" y="403" width="184" height="86">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#666;line-height:1.65;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
     </foreignObject>
 
-    <!-- Circle 3: M Memory (light blue) bottom-center-left, cx=350, cy=390, r=110 -->
-    <circle cx="350" cy="390" r="110" fill="#2d6ab0"/>
-    <text x="350" y="363" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">M</text>
-    <text x="350" y="403" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Memory</text>
-    <text x="350" y="428" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（留下记忆）</text>
+    <!-- Circle 5: A Action (light gray-blue) bottom-right, cx=880, cy=460, r=115 -->
+    <circle cx="880" cy="460" r="115" fill="#8aafd8"/>
+    <text x="880" y="430" text-anchor="middle" font-size="58" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A</text>
+    <text x="880" y="474" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Action</text>
+    <text x="880" y="500" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（购买行动）</text>
 
-    <!-- Circle 4: A Action (light gray-blue) bottom-right, cx=830, cy=390, r=110 -->
-    <circle cx="830" cy="390" r="110" fill="#8aafd8"/>
-    <text x="830" y="363" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">A</text>
-    <text x="830" y="403" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Action</text>
-    <text x="830" y="428" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（购买行动）</text>
-
-    <!-- Circle 5: D Desire (gray) top-right, cx=1152, cy=175, r=110 -->
-    <circle cx="1152" cy="175" r="110" fill="#a8b8c8"/>
-    <text x="1152" y="148" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">D</text>
-    <text x="1152" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Desire</text>
-    <text x="1152" y="213" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（唤起欲望）</text>
-
-    <!-- Text box below D -->
-    <rect x="1062" y="368" width="178" height="90" fill="none" stroke="#c0ccd8" stroke-width="1.5" stroke-dasharray="5,3"/>
-    <foreignObject x="1070" y="374" width="162" height="80">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#666;line-height:1.6;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    <!-- Text box below D right -->
+    <rect x="1050" y="360" width="200" height="100" fill="none" stroke="#b0c4d8" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <foreignObject x="1058" y="368" width="184" height="86">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#666;line-height:1.65;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
     </foreignObject>
   </svg>
 
   <div class="bottom-bar">
-    <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段</p>
+    <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该<br>理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段</p>
   </div>
 </div>
 </body>

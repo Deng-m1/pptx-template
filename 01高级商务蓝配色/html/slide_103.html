@@ -7,14 +7,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
-  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; }
-  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; margin-top: 6px; }
-  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
-  .subtitle { position: absolute; top: 76px; left: 44px; font-size: 28px; font-weight: 900; color: #0f3d8c; }
-  .subtitle-desc { position: absolute; top: 116px; left: 44px; right: 44px; font-size: 12px; color: #666; line-height: 1.6; }
-  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 48px; display: flex; }
-  .bar-item { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: #fff; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 64px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  .header-line { position: absolute; top: 64px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
+  .subtitle { position: absolute; top: 74px; left: 44px; font-size: 28px; font-weight: 900; color: #0f3d8c; }
+  .subtitle-desc { position: absolute; top: 112px; left: 44px; right: 44px; font-size: 12px; color: #666; line-height: 1.6; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 50px; display: flex; }
+  .bar-item { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 900; color: #fff; }
 </style>
 </head>
 <body>
@@ -25,83 +25,96 @@
   </div>
   <div class="header-line"></div>
   <div class="subtitle">AIDMA消费理论模型</div>
-  <div class="subtitle-desc">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段：</div>
+  <div class="subtitle-desc">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者<br>从接触到信息到最后达成购买，会经历这5个阶段：</div>
 
-  <!-- Main SVG: arrows + cylinders + desc texts -->
-  <!-- Layout: top=140, available height to bottom bar = 720-48-140 = 532px -->
-  <!-- Arrow area: 60px, Cylinder: 160px, Text: 120px, gap: ~192px total -->
-  <svg style="position:absolute;top:140px;left:0;width:1280px;height:530px;" viewBox="0 0 1280 530" overflow="visible">
+  <!-- Main SVG: arrows + cylinders + desc cards -->
+  <!-- Available area: top=148, bottom=670 (above bottom bar), height=522px -->
+  <!-- 5 columns, each 256px wide. Cylinder cx at 128, 384, 640, 896, 1152 -->
+  <!-- Arrow area: y=148..210 (62px), Cylinder top: y=210, cylinder body height=150px, bottom y=360 -->
+  <!-- Desc cards: y=365..620 (255px) -->
+  <svg style="position:absolute;top:148px;left:0;width:1280px;height:522px;" viewBox="0 0 1280 522">
     <defs>
-      <marker id="arr1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0,10 3.5,0 7" fill="#2d5f96"/>
+      <marker id="arr1" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto">
+        <polygon points="0 0,12 4.5,0 9" fill="#2d5f96"/>
       </marker>
-      <marker id="arr2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0,10 3.5,0 7" fill="#5580b0"/>
+      <marker id="arr2" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto">
+        <polygon points="0 0,12 4.5,0 9" fill="#5580b0"/>
       </marker>
-      <marker id="arr3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0,10 3.5,0 7" fill="#8aafd8"/>
+      <marker id="arr3" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto">
+        <polygon points="0 0,12 4.5,0 9" fill="#8aafd8"/>
       </marker>
-      <marker id="arr4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-        <polygon points="0 0,10 3.5,0 7" fill="#aabccc"/>
+      <marker id="arr4" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto">
+        <polygon points="0 0,12 4.5,0 9" fill="#a0aab8"/>
       </marker>
     </defs>
 
-    <!-- Curved arrows between cylinders (above cylinders, y=60 area) -->
-    <path d="M 195,62 Q 256,20 317,62" fill="none" stroke="#2d5f96" stroke-width="2.5" marker-end="url(#arr1)"/>
-    <path d="M 451,62 Q 512,20 573,62" fill="none" stroke="#5580b0" stroke-width="2.5" marker-end="url(#arr2)"/>
-    <path d="M 707,62 Q 768,20 829,62" fill="none" stroke="#8aafd8" stroke-width="2.5" marker-end="url(#arr3)"/>
-    <path d="M 963,62 Q 1024,20 1085,62" fill="none" stroke="#aabccc" stroke-width="2.5" marker-end="url(#arr4)"/>
+    <!-- Curved arrows between cylinders (above cylinders, y=0..55 area) -->
+    <!-- Arrow from col1 to col2: from x=190 to x=322, arc top at y=10 -->
+    <path d="M 190,52 Q 256,8 322,52" fill="none" stroke="#2d5f96" stroke-width="3" marker-end="url(#arr1)"/>
+    <path d="M 446,52 Q 512,8 578,52" fill="none" stroke="#5580b0" stroke-width="3" marker-end="url(#arr2)"/>
+    <path d="M 702,52 Q 768,8 834,52" fill="none" stroke="#8aafd8" stroke-width="3" marker-end="url(#arr3)"/>
+    <path d="M 958,52 Q 1024,8 1090,52" fill="none" stroke="#a0aab8" stroke-width="3" marker-end="url(#arr4)"/>
 
-    <!-- Cylinder 1: Attention (dark navy) cx=128 -->
-    <ellipse cx="128" cy="240" rx="66" ry="22" fill="#0a2a5e"/>
-    <rect x="62" y="70" width="132" height="170" fill="#0f3d8c"/>
-    <ellipse cx="128" cy="70" rx="66" ry="22" fill="#1a4ea0"/>
-    <text x="128" y="148" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Attention</text>
-    <text x="128" y="174" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起注意）</text>
+    <!-- Cylinder 1: Attention (dark navy) cx=128, top=60, body height=140, total bottom=200+28=228 -->
+    <!-- Cylinder = top ellipse + rect body + bottom ellipse -->
+    <!-- Ellipse ry=22, rx=90 -->
+    <ellipse cx="128" cy="200" rx="90" ry="24" fill="#0a2a5e"/>
+    <rect x="38" y="60" width="180" height="140" fill="#0f3d8c"/>
+    <ellipse cx="128" cy="60" rx="90" ry="24" fill="#1a4ea0"/>
+    <text x="128" y="130" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Attention</text>
+    <text x="128" y="158" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起注意）</text>
 
-    <!-- Cylinder 2: Interest (medium blue) cx=384 -->
-    <ellipse cx="384" cy="240" rx="66" ry="22" fill="#1e4a80"/>
-    <rect x="318" y="70" width="132" height="170" fill="#2d6ab0"/>
-    <ellipse cx="384" cy="70" rx="66" ry="22" fill="#3a7ac0"/>
-    <text x="384" y="148" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Interest</text>
-    <text x="384" y="174" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起兴趣）</text>
+    <!-- Cylinder 2: Interest cx=384 -->
+    <ellipse cx="384" cy="200" rx="90" ry="24" fill="#1e4a80"/>
+    <rect x="294" y="60" width="180" height="140" fill="#2d6ab0"/>
+    <ellipse cx="384" cy="60" rx="90" ry="24" fill="#3a7ac0"/>
+    <text x="384" y="130" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Interest</text>
+    <text x="384" y="158" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（引起兴趣）</text>
 
-    <!-- Cylinder 3: Desire (light blue) cx=640 -->
-    <ellipse cx="640" cy="240" rx="66" ry="22" fill="#4070a0"/>
-    <rect x="574" y="70" width="132" height="170" fill="#5888bc"/>
-    <ellipse cx="640" cy="70" rx="66" ry="22" fill="#6898cc"/>
-    <text x="640" y="148" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Desire</text>
-    <text x="640" y="174" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（唤起欲望）</text>
+    <!-- Cylinder 3: Desire cx=640 -->
+    <ellipse cx="640" cy="200" rx="90" ry="24" fill="#4070a0"/>
+    <rect x="550" y="60" width="180" height="140" fill="#5888bc"/>
+    <ellipse cx="640" cy="60" rx="90" ry="24" fill="#6898cc"/>
+    <text x="640" y="130" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Desire</text>
+    <text x="640" y="158" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（唤起欲望）</text>
 
-    <!-- Cylinder 4: Memory (lighter blue) cx=896 -->
-    <ellipse cx="896" cy="240" rx="66" ry="22" fill="#6888a8"/>
-    <rect x="830" y="70" width="132" height="170" fill="#88a8c4"/>
-    <ellipse cx="896" cy="70" rx="66" ry="22" fill="#98b8d4"/>
-    <text x="896" y="148" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Memory</text>
-    <text x="896" y="174" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（留下记忆）</text>
+    <!-- Cylinder 4: Memory cx=896 -->
+    <ellipse cx="896" cy="200" rx="90" ry="24" fill="#6888a8"/>
+    <rect x="806" y="60" width="180" height="140" fill="#88a8c4"/>
+    <ellipse cx="896" cy="60" rx="90" ry="24" fill="#98b8d4"/>
+    <text x="896" y="130" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Memory</text>
+    <text x="896" y="158" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（留下记忆）</text>
 
     <!-- Cylinder 5: Action (gray) cx=1152 -->
-    <ellipse cx="1152" cy="240" rx="66" ry="22" fill="#8090a0"/>
-    <rect x="1086" y="70" width="132" height="170" fill="#a0aab8"/>
-    <ellipse cx="1152" cy="70" rx="66" ry="22" fill="#b0bac8"/>
-    <text x="1152" y="148" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Action</text>
-    <text x="1152" y="174" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（购买行动）</text>
+    <ellipse cx="1152" cy="200" rx="90" ry="24" fill="#8090a0"/>
+    <rect x="1062" y="60" width="180" height="140" fill="#a0aab8"/>
+    <ellipse cx="1152" cy="60" rx="90" ry="24" fill="#b0bac8"/>
+    <text x="1152" y="130" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">Action</text>
+    <text x="1152" y="158" text-anchor="middle" font-size="14" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">（购买行动）</text>
 
-    <!-- Description texts below cylinders -->
-    <foreignObject x="30" y="262" width="196" height="110">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.6;text-align:center;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    <!-- Description cards below cylinders (light gray bg) -->
+    <!-- Card y=220, height=240 -->
+    <rect x="14" y="222" width="228" height="240" fill="#f2f5f8" rx="2"/>
+    <rect x="270" y="222" width="228" height="240" fill="#f2f5f8" rx="2"/>
+    <rect x="526" y="222" width="228" height="240" fill="#f2f5f8" rx="2"/>
+    <rect x="782" y="222" width="228" height="240" fill="#f2f5f8" rx="2"/>
+    <rect x="1038" y="222" width="228" height="240" fill="#f2f5f8" rx="2"/>
+
+    <!-- Description texts inside cards -->
+    <foreignObject x="14" y="228" width="228" height="234">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#555;line-height:1.7;padding:10px 14px;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
     </foreignObject>
-    <foreignObject x="286" y="262" width="196" height="110">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.6;text-align:center;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+    <foreignObject x="270" y="228" width="228" height="234">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#555;line-height:1.7;padding:10px 14px;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
     </foreignObject>
-    <foreignObject x="542" y="262" width="196" height="110">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.6;text-align:center;">推销茶叶的要随时准备茶具，给顾客沏上一杯香气扑鼻的浓茶，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
+    <foreignObject x="526" y="228" width="228" height="234">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#555;line-height:1.7;padding:10px 14px;">推销茶叶的要随时准备茶具，给顾客沏上一杯香气扑鼻的浓茶，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
     </foreignObject>
-    <foreignObject x="798" y="262" width="196" height="110">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.6;text-align:center;">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
+    <foreignObject x="782" y="228" width="228" height="234">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#555;line-height:1.7;padding:10px 14px;">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
     </foreignObject>
-    <foreignObject x="1054" y="262" width="196" height="130">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.6;text-align:center;">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。过分自信也会引起顾客的反感，以为你在说大话、吹牛皮，从而不信任你的话。</div>
+    <foreignObject x="1038" y="228" width="228" height="234">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11.5px;color:#555;line-height:1.7;padding:10px 14px;">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。过分自信也会引起顾客的反感，以为你在说大话、吹牛皮，从而不信任你的话。</div>
     </foreignObject>
   </svg>
 
