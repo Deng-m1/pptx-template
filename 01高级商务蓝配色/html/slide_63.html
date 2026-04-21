@@ -2,56 +2,55 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_63</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:8px 20px 0 20px;overflow:hidden;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 0 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
 /* 顶部4列 */
-.top-row{display:flex;flex-direction:row;gap:0;flex-shrink:0;height:110px;}
-.top-col{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 8px;}
-.top-col-title{font-size:22px;font-weight:900;color:#1a3a7a;margin-bottom:6px;text-align:center;}
-.top-col-desc{font-size:11px;color:#555;text-align:center;line-height:1.5;}
-
+.top-row { display:flex; flex-direction:row; gap:0; flex-shrink:0; height:100px; }
+.top-col { flex:1; display:flex; flex-direction:column; align-items:center; padding:0 8px; }
+.top-col-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:4px; text-align:center; }
+.top-col-desc { font-size:10.5px; color:#555; text-align:center; line-height:1.5; }
 /* 弧形时间轴 */
-.arc-row{height:36px;position:relative;flex-shrink:0;}
-
+.arc-row { height:34px; position:relative; flex-shrink:0; }
 /* 4列卡片 */
-.cards-row{flex:1;display:flex;flex-direction:row;gap:8px;overflow:hidden;}
-.card{flex:1;display:flex;flex-direction:column;padding:14px 14px 12px 14px;position:relative;overflow:hidden;}
-/* 折角效果 */
-.card::before{content:'';position:absolute;top:0;right:0;width:0;height:0;border-style:solid;}
-.card.c1{background:#1a3a7a;}
-.card.c1::before{border-width:0 28px 28px 0;border-color:transparent #fff transparent transparent;}
-.card.c2{background:#2d5fa8;}
-.card.c2::before{border-width:0 28px 28px 0;border-color:transparent #fff transparent transparent;}
-.card.c3{background:#4a7bc4;}
-.card.c3::before{border-width:0 28px 28px 0;border-color:transparent #fff transparent transparent;}
-.card.c4{background:#7baee0;}
-.card.c4::before{border-width:0 28px 28px 0;border-color:transparent #fff transparent transparent;}
-.card-num{font-size:16px;font-weight:900;color:rgba(255,255,255,0.8);margin-bottom:4px;}
-.card-title{font-size:15px;font-weight:900;color:#fff;margin-bottom:8px;}
-.card-divider{height:1px;background:rgba(255,255,255,0.4);margin-bottom:8px;}
-.card-desc{font-size:10.5px;color:rgba(255,255,255,0.9);line-height:1.6;flex:1;}
-.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
-.card-tag{padding:4px 10px;border:1px solid rgba(255,255,255,0.6);color:#fff;font-size:11px;border-radius:12px;}
-
+.cards-row { flex:1; display:flex; flex-direction:row; gap:8px; overflow:hidden; min-height:0; }
+.card { flex:1; display:flex; flex-direction:column; padding:14px 14px 12px 14px; position:relative; overflow:hidden; border-radius:2px; }
+.card::before { content:''; position:absolute; top:0; right:0; width:0; height:0; border-style:solid; }
+.card.c1 { background:#1a3a9e; }
+.card.c1::before { border-width:0 28px 28px 0; border-color:transparent #fff transparent transparent; }
+.card.c2 { background:#2d5fa8; }
+.card.c2::before { border-width:0 28px 28px 0; border-color:transparent #fff transparent transparent; }
+.card.c3 { background:#5b8dd9; }
+.card.c3::before { border-width:0 28px 28px 0; border-color:transparent #fff transparent transparent; }
+.card.c4 { background:#9abde8; }
+.card.c4::before { border-width:0 28px 28px 0; border-color:transparent #fff transparent transparent; }
+.card-num-title { font-size:16px; font-weight:900; color:#fff; margin-bottom:8px; }
+.card-divider { height:2px; background:rgba(255,255,255,0.5); margin-bottom:10px; flex-shrink:0; }
+.card-desc { font-size:10.5px; color:rgba(255,255,255,0.95); line-height:1.65; flex:1; }
+.card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; }
+.card-tag { padding:4px 10px; border:1.5px solid rgba(255,255,255,0.7); color:#fff; font-size:11px; border-radius:14px; }
 /* 底部说明栏 */
-.footer{background:#1a3a7a;color:#fff;font-size:13px;text-align:center;padding:10px 20px;flex-shrink:0;margin:6px -20px 0 -20px;}
+.footer { background:#1a3a9e; color:#fff; font-size:13px; text-align:center; padding:10px 20px; flex-shrink:0; margin:6px -20px 0 -20px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">工作计划 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">工作计划 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <!-- 顶部4列 -->
     <div class="top-row">
@@ -72,23 +71,20 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         <div class="top-col-desc">这里请放入您需要替换的文字内容，这里请放入。</div>
       </div>
     </div>
-
     <!-- 弧形时间轴 -->
     <div class="arc-row">
-      <svg viewBox="0 0 1240 36" preserveAspectRatio="none" style="width:100%;height:100%;">
-        <path d="M 20 32 Q 620 -8 1220 32" fill="none" stroke="#ccc" stroke-width="1.5"/>
-        <circle cx="20" cy="32" r="6" fill="#aaa"/>
-        <circle cx="430" cy="8" r="6" fill="#aaa"/>
-        <circle cx="810" cy="8" r="6" fill="#aaa"/>
-        <circle cx="1220" cy="32" r="6" fill="#aaa"/>
+      <svg viewBox="0 0 1240 34" preserveAspectRatio="none" style="width:100%;height:100%;">
+        <path d="M 20 30 Q 620 -6 1220 30" fill="none" stroke="#ccc" stroke-width="1.5"/>
+        <circle cx="20" cy="30" r="5" fill="#aaa"/>
+        <circle cx="430" cy="7" r="5" fill="#aaa"/>
+        <circle cx="810" cy="7" r="5" fill="#aaa"/>
+        <circle cx="1220" cy="30" r="5" fill="#aaa"/>
       </svg>
     </div>
-
     <!-- 4列卡片 -->
     <div class="cards-row">
       <div class="card c1">
-        <div class="card-num">01</div>
-        <div class="card-title">提升工作技能</div>
+        <div class="card-num-title">01.提升工作技能</div>
         <div class="card-divider"></div>
         <div class="card-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
         <div class="card-tags">
@@ -99,8 +95,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
       <div class="card c2">
-        <div class="card-num">02</div>
-        <div class="card-title">加强沟通协作</div>
+        <div class="card-num-title">02.加强沟通协作</div>
         <div class="card-divider"></div>
         <div class="card-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
         <div class="card-tags">
@@ -111,8 +106,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
       <div class="card c3">
-        <div class="card-num">03</div>
-        <div class="card-title">强化部门交流</div>
+        <div class="card-num-title">03.强化部门交流</div>
         <div class="card-divider"></div>
         <div class="card-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
         <div class="card-tags">
@@ -123,8 +117,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
       <div class="card c4">
-        <div class="card-num">04</div>
-        <div class="card-title">提高工作效率</div>
+        <div class="card-num-title">04.提高工作效率</div>
         <div class="card-divider"></div>
         <div class="card-desc">这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容，这里请放入您需要替换的文字内容。</div>
         <div class="card-tags">
@@ -135,7 +128,6 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
     </div>
-
     <!-- 底部说明栏 -->
     <div class="footer">认真学习领会和全面贯彻落实公司经营工作的一系列指示精神和决策部署，完成各项工作任务，完成公司确定的指标。</div>
   </div>

@@ -3,74 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 70px; padding: 12px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 28px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 20px 40px; gap: 40px; }
-  /* 左侧大圆形 */
-  .left { width: 380px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .big-circle { width: 320px; height: 320px; border-radius: 50%; background: #1a3a6b; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
-  .big-circle-inner { width: 260px; height: 260px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .circle-num { font-size: 64px; font-weight: 900; color: #fff; line-height: 1; }
-  .circle-label { font-size: 16px; color: rgba(255,255,255,0.85); margin-top: 6px; }
-  /* 右侧4个卡片 */
-  .right { flex: 1; display: flex; flex-direction: column; gap: 14px; justify-content: center; }
-  .card { display: flex; gap: 14px; align-items: flex-start; padding: 14px; border: 1.5px solid #dde4f0; border-radius: 6px; }
-  .card-num { font-size: 28px; font-weight: 900; color: #1a3a6b; min-width: 44px; line-height: 1; }
-  .card-content h3 { font-size: 15px; font-weight: 700; color: #1a3a6b; margin-bottom: 6px; }
-  .card-content p { font-size: 11px; color: #555; line-height: 1.6; }
-  .card.active { background: #1a3a6b; border-color: #1a3a6b; }
-  .card.active .card-num { color: #fff; }
-  .card.active .card-content h3 { color: #fff; }
-  .card.active .card-content p { color: rgba(255,255,255,0.8); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden; font-family:'Microsoft YaHei','PingFang SC',sans-serif; background:#fff; }
+.slide { width:1280px; height:720px; display:flex; flex-direction:column; }
+.header { padding:14px 20px 0 20px; flex-shrink:0; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.body { flex:1; display:flex; flex-direction:row; padding:12px 20px 12px 20px; gap:14px; min-height:0; }
+/* 左侧 */
+.left { width:330px; flex-shrink:0; display:flex; flex-direction:column; gap:10px; }
+.left-top { border:1.5px solid #1a3a9e; border-radius:6px; padding:14px; flex-shrink:0; }
+.pct { font-size:52px; font-weight:900; color:#1a3a9e; display:flex; align-items:center; gap:10px; }
+.pct-icon { width:52px; height:52px; border:2px solid #1a3a9e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; color:#1a3a9e; }
+.pct-desc { font-size:10px; color:#555; line-height:1.6; margin-top:6px; }
+.left-card { border:1.5px solid #dde4f0; border-radius:4px; overflow:hidden; flex:1; }
+.left-card-title { background:#1a3a9e; color:#fff; font-size:13px; font-weight:700; padding:8px 12px; }
+.left-card-body { padding:10px 12px; font-size:10px; color:#555; line-height:1.6; }
+/* 中间房屋 */
+.center { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:0; }
+/* 右侧 */
+.right { width:330px; flex-shrink:0; display:flex; flex-direction:column; gap:10px; }
+.right-top { border:1.5px solid #1a3a9e; border-radius:6px; padding:14px; flex-shrink:0; }
+.right-card { border:1.5px solid #dde4f0; border-radius:4px; overflow:hidden; flex:1; }
+.right-card-title { background:#1a3a9e; color:#fff; font-size:13px; font-weight:700; padding:8px 12px; }
+.right-card-body { padding:10px 12px; font-size:10px; color:#555; line-height:1.6; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">项目规划 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-row">
+      <div class="header-title">项目规划 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="body">
+    <!-- 左侧 -->
     <div class="left">
-      <div class="big-circle">
-        <div class="big-circle-inner">
-          <div class="circle-num">80%</div>
-          <div class="circle-label">品牌营销</div>
-        </div>
+      <div class="left-top">
+        <div class="pct">88% <div class="pct-icon">🛒</div></div>
+        <div class="pct-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      </div>
+      <div class="left-card">
+        <div class="left-card-title">品牌决策 BRAND DECISION</div>
+        <div class="left-card-body">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      </div>
+      <div class="left-card">
+        <div class="left-card-title">品牌决策 BRAND DECISION</div>
+        <div class="left-card-body">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
       </div>
     </div>
+
+    <!-- 中间房屋形状+4个节点 -->
+    <div class="center">
+      <svg width="340" height="580" viewBox="0 0 340 580" xmlns="http://www.w3.org/2000/svg">
+        <!-- 房屋三角形屋顶 -->
+        <polygon points="170,20 320,160 20,160" fill="#1a3a9e"/>
+        <!-- 房屋矩形主体 -->
+        <rect x="40" y="158" width="260" height="340" fill="#1a3a9e" opacity="0.85"/>
+        <!-- 节点01 -->
+        <circle cx="170" cy="200" r="30" fill="#fff" stroke="#1a3a9e" stroke-width="2"/>
+        <text x="170" y="196" text-anchor="middle" fill="#1a3a9e" font-size="13" font-weight="900" font-family="Microsoft YaHei">01</text>
+        <text x="210" y="194" fill="#fff" font-size="15" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+        <text x="210" y="212" fill="#c8d8f0" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+        <!-- 分隔线 -->
+        <line x1="40" y1="245" x2="300" y2="245" stroke="#4a6abf" stroke-width="1" opacity="0.5"/>
+        <!-- 节点02 -->
+        <circle cx="170" cy="310" r="30" fill="#4a7abf" stroke="#fff" stroke-width="2" opacity="0.9"/>
+        <text x="170" y="306" text-anchor="middle" fill="#fff" font-size="13" font-weight="900" font-family="Microsoft YaHei">02</text>
+        <text x="210" y="304" fill="#fff" font-size="15" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+        <text x="210" y="322" fill="#c8d8f0" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+        <!-- 分隔线 -->
+        <line x1="40" y1="355" x2="300" y2="355" stroke="#4a6abf" stroke-width="1" opacity="0.5"/>
+        <!-- 节点03 -->
+        <circle cx="170" cy="418" r="30" fill="#6a9ad4" stroke="#fff" stroke-width="2" opacity="0.9"/>
+        <text x="170" y="414" text-anchor="middle" fill="#fff" font-size="13" font-weight="900" font-family="Microsoft YaHei">03</text>
+        <text x="210" y="412" fill="#fff" font-size="15" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+        <text x="210" y="430" fill="#c8d8f0" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+        <!-- 分隔线 -->
+        <line x1="40" y1="462" x2="300" y2="462" stroke="#4a6abf" stroke-width="1" opacity="0.5"/>
+        <!-- 节点04 -->
+        <circle cx="170" cy="510" r="30" fill="#8ab0d8" stroke="#fff" stroke-width="2" opacity="0.9"/>
+        <text x="170" y="506" text-anchor="middle" fill="#fff" font-size="13" font-weight="900" font-family="Microsoft YaHei">04</text>
+        <text x="210" y="504" fill="#fff" font-size="15" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+        <text x="210" y="522" fill="#c8d8f0" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+      </svg>
+    </div>
+
+    <!-- 右侧 -->
     <div class="right">
-      <div class="card active">
-        <div class="card-num">01</div>
-        <div class="card-content">
-          <h3>市场调研</h3>
-          <p>按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</p>
-        </div>
+      <div class="right-top">
+        <div class="pct">78% <div class="pct-icon">🛒</div></div>
+        <div class="pct-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
       </div>
-      <div class="card">
-        <div class="card-num">02</div>
-        <div class="card-content">
-          <h3>营销策划</h3>
-          <p>按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</p>
-        </div>
+      <div class="right-card">
+        <div class="right-card-title">品牌决策 BRAND DECISION</div>
+        <div class="right-card-body">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
       </div>
-      <div class="card">
-        <div class="card-num">03</div>
-        <div class="card-content">
-          <h3>执行监控</h3>
-          <p>按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-num">04</div>
-        <div class="card-content">
-          <h3>细节优化</h3>
-          <p>按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</p>
-        </div>
+      <div class="right-card">
+        <div class="right-card-title">品牌决策 BRAND DECISION</div>
+        <div class="right-card-body">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
       </div>
     </div>
   </div>

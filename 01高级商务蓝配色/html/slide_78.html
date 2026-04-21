@@ -2,44 +2,51 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_78</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:14px 30px 0 30px;flex-shrink:0;}
-.main-title{font-size:30px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:14px;color:#2563c0;font-weight:600;text-align:right;margin-top:-26px;}
-.divider{height:2px;background:#1a3a7a;margin-top:4px;}
-.body{flex:1;display:flex;flex-direction:row;padding:10px 20px 10px 20px;gap:16px;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; display:flex; flex-direction:column; }
+.header { padding:14px 20px 0 20px; flex-shrink:0; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.body { flex:1; display:flex; flex-direction:row; padding:10px 20px 12px 20px; gap:14px; min-height:0; }
 /* 左侧 */
-.left-col{width:380px;display:flex;flex-direction:column;gap:10px;}
-.page-title{font-size:26px;font-weight:900;color:#1a3a7a;}
-.page-desc{font-size:10px;color:#666;line-height:1.6;margin-top:4px;}
-.text-card{border:1.5px solid #dde4f0;border-radius:4px;padding:12px;}
-.text-card-title{font-size:15px;font-weight:700;color:#1a3a7a;}
-.text-card-desc{font-size:10px;color:#555;line-height:1.6;margin-top:4px;}
+.left-col { width:360px; display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; }
+.page-desc { font-size:10px; color:#666; line-height:1.6; margin-top:4px; }
+.text-card { border:1.5px solid #dde4f0; border-radius:4px; padding:12px; }
+.text-card-title { font-size:15px; font-weight:700; color:#1a3a9e; }
+.text-card-desc { font-size:10px; color:#555; line-height:1.6; margin-top:4px; }
 /* 中间折线图 */
-.chart-col{flex:1;position:relative;}
+.chart-col { flex:1; position:relative; min-width:0; }
 /* 右侧 */
-.right-col{width:300px;display:flex;flex-direction:column;gap:10px;}
-.right-top-card{border:1.5px solid #dde4f0;border-radius:4px;padding:12px;font-size:10px;color:#555;line-height:1.6;}
-.pct-card{border:1.5px solid #1a3a7a;border-radius:4px;padding:12px;}
-.pct-row{display:flex;flex-direction:row;align-items:center;gap:10px;}
-.pct-num{font-size:52px;font-weight:900;color:#1a3a7a;line-height:1;}
-.pct-icon{font-size:32px;color:#8a9ab0;}
-.pct-desc{font-size:10px;color:#555;line-height:1.6;margin-top:6px;}
-.formula-row{display:flex;flex-direction:row;align-items:center;gap:6px;margin-top:8px;}
-.formula-tag{background:#1a3a7a;color:#fff;font-size:10px;padding:4px 8px;border-radius:2px;}
-.formula-tag-gray{background:#8a9ab0;color:#fff;font-size:10px;padding:4px 8px;border-radius:2px;}
-.formula-op{font-size:14px;color:#333;font-weight:700;}
+.right-col { width:290px; display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+.right-top-card { border:1.5px solid #dde4f0; border-radius:4px; padding:12px; font-size:10px; color:#555; line-height:1.6; }
+.pct-card { border:1.5px solid #1a3a9e; border-radius:4px; padding:12px; flex:1; }
+.pct-row { display:flex; flex-direction:row; align-items:center; gap:10px; }
+.pct-num { font-size:52px; font-weight:900; color:#1a3a9e; line-height:1; }
+.pct-icon { font-size:28px; color:#8a9ab0; }
+.pct-desc { font-size:10px; color:#555; line-height:1.6; margin-top:6px; }
+.formula-row { display:flex; flex-direction:row; align-items:center; gap:6px; margin-top:8px; }
+.formula-tag { background:#1a3a9e; color:#fff; font-size:10px; padding:5px 8px; border-radius:2px; text-align:center; }
+.formula-tag-gray { background:#8a9ab0; color:#fff; font-size:10px; padding:5px 8px; border-radius:2px; text-align:center; }
+.formula-op { font-size:14px; color:#333; font-weight:700; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">逻辑架构 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-row">
+      <div class="header-title">逻辑架构 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="body">
     <!-- 左侧 -->
@@ -57,40 +64,38 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         <div class="text-card-desc">品牌决策是企业的整个产品战略的一个固有方面，企业给其产品起适当的名字，正确设计品牌。</div>
       </div>
     </div>
+
     <!-- 中间折线图 -->
     <div class="chart-col">
-      <svg width="100%" height="100%" viewBox="0 0 580 560" preserveAspectRatio="xMidYMid meet">
+      <svg width="100%" height="100%" viewBox="0 0 580 580" preserveAspectRatio="xMidYMid meet">
         <!-- 背景面积图（浅蓝山形） -->
-        <polygon points="0,500 100,400 200,350 300,250 400,150 500,80 580,50 580,500" fill="#dde8f5" opacity="0.7"/>
-        <polygon points="0,500 100,450 200,430 300,380 400,300 500,220 580,180 580,500" fill="#c0d4ec" opacity="0.5"/>
+        <polygon points="0,520 100,420 200,370 300,280 420,170 520,90 580,60 580,520" fill="#dde8f5" opacity="0.8"/>
+        <polygon points="0,520 100,470 200,450 300,400 420,320 520,240 580,200 580,520" fill="#c0d4ec" opacity="0.5"/>
         <!-- 深蓝折线（3个节点上升） -->
-        <polyline points="80,460 280,300 480,100" fill="none" stroke="#1a3a7a" stroke-width="4"/>
+        <polyline points="90,480 290,310 490,110" fill="none" stroke="#1a3a9e" stroke-width="4"/>
         <!-- 节点01 -->
-        <circle cx="80" cy="460" r="28" fill="#8a9ab0"/>
-        <text x="80" y="465" text-anchor="middle" fill="white" font-size="16" font-weight="bold">01</text>
-        <!-- 节点01标签 -->
-        <rect x="10" y="380" width="120" height="50" rx="4" fill="white" stroke="#dde4f0" stroke-width="1.5"/>
-        <text x="70" y="400" text-anchor="middle" fill="#1a3a7a" font-size="13" font-weight="bold" font-family="Microsoft YaHei">品牌决策</text>
-        <text x="70" y="418" text-anchor="middle" fill="#555" font-size="9" font-family="Microsoft YaHei">品牌决策是企业的整个产品</text>
+        <circle cx="90" cy="480" r="28" fill="#8a9ab0"/>
+        <text x="90" y="485" text-anchor="middle" fill="white" font-size="16" font-weight="bold">01</text>
+        <!-- 节点01标签（向上弹出） -->
+        <line x1="90" y1="452" x2="90" y2="420" stroke="#1a3a9e" stroke-width="1.5"/>
         <!-- 节点02 -->
-        <circle cx="280" cy="300" r="28" fill="#4a78c4"/>
-        <text x="280" y="305" text-anchor="middle" fill="white" font-size="16" font-weight="bold">02</text>
-        <!-- 节点02标签 -->
-        <rect x="200" y="220" width="120" height="50" rx="4" fill="white" stroke="#dde4f0" stroke-width="1.5"/>
-        <text x="260" y="240" text-anchor="middle" fill="#1a3a7a" font-size="13" font-weight="bold" font-family="Microsoft YaHei">品牌决策</text>
-        <text x="260" y="258" text-anchor="middle" fill="#555" font-size="9" font-family="Microsoft YaHei">品牌决策是企业的整个产品</text>
+        <circle cx="290" cy="310" r="28" fill="#4a78c4"/>
+        <text x="290" y="315" text-anchor="middle" fill="white" font-size="16" font-weight="bold">02</text>
+        <!-- 节点02标签（向上弹出） -->
+        <line x1="290" y1="282" x2="290" y2="250" stroke="#1a3a9e" stroke-width="1.5"/>
         <!-- 节点03 -->
-        <circle cx="480" cy="100" r="28" fill="#1a3a7a"/>
-        <text x="480" y="105" text-anchor="middle" fill="white" font-size="16" font-weight="bold">03</text>
+        <circle cx="490" cy="110" r="28" fill="#1a3a9e"/>
+        <text x="490" y="115" text-anchor="middle" fill="white" font-size="16" font-weight="bold">03</text>
         <!-- 底部标签 -->
-        <rect x="160" y="510" width="100" height="26" rx="2" fill="#8ab0d0"/>
-        <text x="210" y="527" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
-        <rect x="280" y="510" width="100" height="26" rx="2" fill="#1a3a7a"/>
-        <text x="330" y="527" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
-        <rect x="400" y="510" width="100" height="26" rx="2" fill="#1a3a7a"/>
-        <text x="450" y="527" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
+        <rect x="160" y="530" width="100" height="28" rx="3" fill="#8ab0d0"/>
+        <text x="210" y="549" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
+        <rect x="280" y="530" width="100" height="28" rx="3" fill="#1a3a9e"/>
+        <text x="330" y="549" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
+        <rect x="400" y="530" width="100" height="28" rx="3" fill="#1a3a9e"/>
+        <text x="450" y="549" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">市场化名词</text>
       </svg>
     </div>
+
     <!-- 右侧 -->
     <div class="right-col">
       <div class="right-top-card">品牌决策是企业的整个产品战略的一个固有方面，企业给其产品起适当的名字，正确设计品牌。</div>

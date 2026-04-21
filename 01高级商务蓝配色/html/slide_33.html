@@ -17,60 +17,54 @@ html,body { width:1280px; height:720px; overflow:hidden;
 .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
 .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
 
-.body { flex:1; display:flex; gap:16px; overflow:hidden; }
+.body { flex:1; display:flex; gap:16px; min-height:0; }
 
-/* 左侧标签 */
-.left-panel { width:160px; display:flex; flex-direction:column; justify-content:space-between; }
+.left-panel { width:160px; display:flex; flex-direction:column; justify-content:space-between; flex-shrink:0; }
 .info-box { background:#f0f4fc; border:1.5px solid #c0cce8; border-radius:6px; padding:12px; }
 .info-title { font-size:14px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
 .info-desc { font-size:10px; color:#444; line-height:1.7; }
 .tl-label-wrap { display:flex; align-items:center; justify-content:center; }
 .tl-label {
-  background:#1a3a9e; color:#fff; font-size:15px; font-weight:900;
-  padding:10px 16px; border-radius:4px; display:flex; align-items:center; gap:8px;
+  background:#1a3a9e; color:#fff; font-size:14px; font-weight:900;
+  padding:10px 24px 10px 16px; border-radius:4px; display:flex; align-items:center; gap:6px;
   clip-path:polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
-  padding-right:24px;
 }
-.tl-arrows { display:flex; gap:2px; }
-.tl-arrow { font-size:18px; color:#fff; font-weight:900; }
 
-/* 右侧时间轴区 */
-.right-panel { flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+.right-panel { flex:1; display:flex; flex-direction:column; justify-content:space-between; min-height:0; }
 
-/* 单条时间轴 */
-.timeline-row { flex:1; display:flex; flex-direction:column; justify-content:center; }
-.tl-header { display:flex; align-items:center; gap:0; margin-bottom:6px; }
+.timeline-row { flex:1; display:flex; flex-direction:column; min-height:0; }
+.tl-header { display:flex; align-items:center; gap:0; margin-bottom:4px; flex-shrink:0; }
 .tl-label-a {
   width:30px; height:30px; border-radius:50%; background:#1a3a9e;
   display:flex; align-items:center; justify-content:center;
-  font-size:14px; font-weight:900; color:#fff; flex-shrink:0;
+  font-size:13px; font-weight:900; color:#fff; flex-shrink:0;
 }
 .tl-bar {
-  flex:1; height:46px; background:#1a3a9e;
+  flex:1; height:44px; background:#1a3a9e; margin-left:4px;
   clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
-  display:flex; align-items:center; padding-left:12px; gap:8px;
+  display:flex; align-items:center; padding-left:12px; gap:0;
 }
 .tl-bar-light { background:#6a8ab8; }
-.tl-bar-text { font-size:11px; font-weight:700; color:#fff; }
+.tl-bar-dates { display:flex; flex:1; }
+.tl-bar-date { flex:1; font-size:11px; font-weight:700; color:#fff; text-align:center; }
 
-/* 节点区 */
-.nodes-row { display:flex; gap:0; margin-top:4px; }
-.node-col { flex:1; display:flex; flex-direction:column; align-items:center; }
+.nodes-row { display:flex; gap:0; flex:1; }
+.node-col { flex:1; display:flex; flex-direction:column; align-items:center; padding-top:2px; }
 .node-month {
-  font-size:10px; color:#1a3a9e; font-weight:700;
+  font-size:9px; color:#1a3a9e; font-weight:700;
   writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
-  height:40px; letter-spacing:1px;
+  height:36px; letter-spacing:1px; flex-shrink:0;
 }
 .node-circle {
-  width:32px; height:32px; border-radius:50%; background:#fff;
+  width:30px; height:30px; border-radius:50%; background:#fff;
   border:2.5px solid #1a3a9e; display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:900; color:#1a3a9e; margin:4px 0;
+  font-size:12px; font-weight:900; color:#1a3a9e; margin:3px 0; flex-shrink:0;
 }
 .node-circle-light { border-color:#8aaac8; color:#8aaac8; }
 .node-title { font-size:12px; font-weight:900; color:#1a3a9e; text-align:center; }
 .node-desc { font-size:9px; color:#666; line-height:1.5; text-align:center; margin-top:2px; }
 
-.divider { height:1px; background:#e0e4f0; margin:6px 0; }
+.divider { height:1px; background:#e0e4f0; margin:6px 0; flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -82,17 +76,13 @@ html,body { width:1280px; height:720px; overflow:hidden;
   <div class="header-line"></div>
 
   <div class="body">
-    <!-- 左侧 -->
     <div class="left-panel">
       <div class="info-box">
         <div class="info-title">项目重点工作</div>
         <div class="info-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际项目进度表。</div>
       </div>
       <div class="tl-label-wrap">
-        <div class="tl-label">
-          二拆分时间线
-          <div class="tl-arrows"><span class="tl-arrow">»</span></div>
-        </div>
+        <div class="tl-label">二拆分时间线 »</div>
       </div>
       <div class="info-box">
         <div class="info-title">项目重点工作</div>
@@ -100,14 +90,20 @@ html,body { width:1280px; height:720px; overflow:hidden;
       </div>
     </div>
 
-    <!-- 右侧 -->
     <div class="right-panel">
       <!-- A 时间轴 -->
       <div class="timeline-row">
         <div class="tl-header">
           <div class="tl-label-a">A</div>
-          <div class="tl-bar" style="margin-left:4px;">
-            <span class="tl-bar-text">2024年1月 &nbsp;&nbsp;&nbsp; 2024年2月 &nbsp;&nbsp;&nbsp; 2024年3月 &nbsp;&nbsp;&nbsp; 2024年4月 &nbsp;&nbsp;&nbsp; 2024年5月 &nbsp;&nbsp;&nbsp; 2024年6月</span>
+          <div class="tl-bar">
+            <div class="tl-bar-dates">
+              <div class="tl-bar-date">2024年1月</div>
+              <div class="tl-bar-date">2024年2月</div>
+              <div class="tl-bar-date">2024年3月</div>
+              <div class="tl-bar-date">2024年4月</div>
+              <div class="tl-bar-date">2024年5月</div>
+              <div class="tl-bar-date">2024年6月</div>
+            </div>
           </div>
         </div>
         <div class="nodes-row">
@@ -156,8 +152,15 @@ html,body { width:1280px; height:720px; overflow:hidden;
       <div class="timeline-row">
         <div class="tl-header">
           <div class="tl-label-a" style="background:#6a8ab8;">B</div>
-          <div class="tl-bar tl-bar-light" style="margin-left:4px;">
-            <span class="tl-bar-text">2024年1月 &nbsp;&nbsp;&nbsp; 2024年2月 &nbsp;&nbsp;&nbsp; 2024年3月 &nbsp;&nbsp;&nbsp; 2024年4月 &nbsp;&nbsp;&nbsp; 2024年5月 &nbsp;&nbsp;&nbsp; 2024年6月</span>
+          <div class="tl-bar tl-bar-light">
+            <div class="tl-bar-dates">
+              <div class="tl-bar-date">2024年1月</div>
+              <div class="tl-bar-date">2024年2月</div>
+              <div class="tl-bar-date">2024年3月</div>
+              <div class="tl-bar-date">2024年4月</div>
+              <div class="tl-bar-date">2024年5月</div>
+              <div class="tl-bar-date">2024年6月</div>
+            </div>
           </div>
         </div>
         <div class="nodes-row">

@@ -2,40 +2,42 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_68</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:10px 30px 10px 30px;overflow:hidden;}
-.center-title{font-size:30px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
-.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:12px;line-height:1.6;}
-.main-row{flex:1;display:flex;flex-direction:row;gap:20px;align-items:stretch;overflow:hidden;}
-
-/* 左侧卡片 */
-.side-card{width:300px;flex-shrink:0;display:flex;flex-direction:column;border:1.5px solid #dde4f0;border-radius:4px;overflow:hidden;}
-.card-header{background:#1a3a7a;color:#fff;font-size:14px;font-weight:700;padding:10px 14px;}
-.card-body{flex:1;padding:14px;display:flex;flex-direction:column;gap:0;}
-.card-item{padding:10px 0;border-bottom:1px dashed #dde4f0;}
-.card-item:last-child{border-bottom:none;}
-.card-item-title{font-size:13px;font-weight:700;color:#1a3a7a;margin-bottom:4px;}
-.card-item-desc{font-size:10.5px;color:#555;line-height:1.6;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 10px 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+.center-title { font-size:28px; font-weight:900; color:#1a3a9e; text-align:center; flex-shrink:0; margin-bottom:4px; }
+.center-desc { font-size:11px; color:#666; text-align:center; flex-shrink:0; margin-bottom:8px; line-height:1.6; }
+.main-row { flex:1; display:flex; flex-direction:row; gap:16px; align-items:stretch; overflow:hidden; min-height:0; }
+/* 左右卡片 */
+.side-card { width:290px; flex-shrink:0; display:flex; flex-direction:column; border:1.5px solid #dde4f0; border-radius:4px; overflow:hidden; }
+.card-header { background:#1a3a9e; color:#fff; font-size:13px; font-weight:700; padding:10px 14px; }
+.card-body { flex:1; padding:12px; display:flex; flex-direction:column; justify-content:space-around; }
+.card-item { padding:8px 0; border-bottom:1px dashed #dde4f0; }
+.card-item:last-child { border-bottom:none; }
+.card-item-title { font-size:13px; font-weight:700; color:#1a3a9e; margin-bottom:4px; }
+.card-item-desc { font-size:10.5px; color:#555; line-height:1.6; }
 /* 中间韦恩图 */
-.venn{flex:1;display:flex;align-items:center;justify-content:center;}
-.venn svg{width:100%;height:320px;}
+.venn { flex:1; display:flex; align-items:center; justify-content:center; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">问题与解决 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">问题与解决 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <div class="center-title">工作中遇到问题与解决方案</div>
     <div class="center-desc">关于公司发展的问题与解决方案，通过以下三点，可以帮助公司在面对市场挑战和快速发展时，有效制定战略和措施，实现可持续的增长和竞争优势。</div>
@@ -58,27 +60,27 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
           </div>
         </div>
       </div>
-
       <!-- 中间韦恩图 -->
       <div class="venn">
-        <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet">
+        <svg viewBox="0 0 560 420" width="560" height="420" preserveAspectRatio="xMidYMid meet">
           <!-- 虚线外圆 -->
-          <circle cx="250" cy="150" r="140" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <circle cx="280" cy="210" r="195" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="6,4"/>
           <!-- 左圆 -->
-          <circle cx="185" cy="150" r="110" fill="#1a3a7a" opacity="0.85"/>
+          <circle cx="200" cy="210" r="155" fill="#1a3a9e" opacity="0.85"/>
           <!-- 右圆 -->
-          <circle cx="315" cy="150" r="110" fill="#7baee0" opacity="0.75"/>
+          <circle cx="360" cy="210" r="155" fill="#9abde8" opacity="0.75"/>
           <!-- 左圆文字 -->
-          <text x="155" y="138" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Microsoft YaHei">问题</text>
-          <text x="155" y="163" text-anchor="middle" fill="white" font-size="13" font-family="Microsoft YaHei">公司发展</text>
-          <text x="155" y="182" text-anchor="middle" fill="white" font-size="13" font-family="Microsoft YaHei">面临的挑战</text>
+          <text x="168" y="195" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">问题</text>
+          <text x="168" y="225" text-anchor="middle" fill="white" font-size="14" font-family="Microsoft YaHei">公司发展</text>
+          <text x="168" y="245" text-anchor="middle" fill="white" font-size="14" font-family="Microsoft YaHei">面临的挑战</text>
           <!-- 右圆文字 -->
-          <text x="345" y="138" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Microsoft YaHei">解决</text>
-          <text x="345" y="163" text-anchor="middle" fill="white" font-size="13" font-family="Microsoft YaHei">公司发展</text>
-          <text x="345" y="182" text-anchor="middle" fill="white" font-size="13" font-family="Microsoft YaHei">的三大步骤</text>
+          <text x="392" y="195" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="Microsoft YaHei">解决</text>
+          <text x="392" y="225" text-anchor="middle" fill="white" font-size="14" font-family="Microsoft YaHei">公司发展</text>
+          <text x="392" y="245" text-anchor="middle" fill="white" font-size="14" font-family="Microsoft YaHei">的三大步骤</text>
+          <!-- 中间分隔线 -->
+          <line x1="280" y1="20" x2="280" y2="400" stroke="#aac4e0" stroke-width="1.5" stroke-dasharray="6,4"/>
         </svg>
       </div>
-
       <!-- 右侧 -->
       <div class="side-card">
         <div class="card-header">解决：公司发展的三大步骤</div>

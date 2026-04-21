@@ -2,131 +2,122 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_70</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 10px 20px;overflow:hidden;}
-.center-title{font-size:28px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
-.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:8px;line-height:1.6;}
-.main-row{flex:1;display:flex;flex-direction:row;gap:10px;align-items:center;overflow:hidden;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 10px 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+.center-title { font-size:28px; font-weight:900; color:#1a3a9e; text-align:center; flex-shrink:0; margin-bottom:4px; }
+.center-desc { font-size:11px; color:#666; text-align:center; flex-shrink:0; margin-bottom:8px; line-height:1.6; max-width:900px; margin-left:auto; margin-right:auto; }
+.main-row { flex:1; display:flex; flex-direction:row; gap:10px; align-items:center; overflow:hidden; min-height:0; }
 /* 左侧时间轴 */
-.timeline{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:0;position:relative;padding:0 10px;}
-.tl-item{display:flex;flex-direction:column;gap:4px;padding:8px 0;position:relative;}
-.tl-item::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:#dde4f0;z-index:0;}
-.tl-dot{width:10px;height:10px;border-radius:50%;background:#1a3a7a;position:absolute;left:50%;transform:translateX(-50%);top:14px;z-index:1;}
-.tl-label{padding:4px 10px;font-size:12px;font-weight:700;color:#fff;border-radius:2px;text-align:center;display:inline-block;}
-.tl-text{font-size:10px;color:#555;line-height:1.6;text-align:center;}
-.tl-item.dark .tl-label{background:#1a3a7a;}
-.tl-item.light .tl-label{background:#7baee0;}
-
+.timeline { width:230px; flex-shrink:0; display:flex; flex-direction:column; justify-content:space-around; height:100%; padding:0 10px 0 0; position:relative; }
+.timeline::after { content:''; position:absolute; right:0; top:10%; bottom:10%; width:1px; background:#dde4f0; }
+.tl-item { display:flex; flex-direction:column; align-items:flex-end; gap:5px; position:relative; }
+.tl-dot { width:10px; height:10px; border-radius:50%; background:#aab8cc; position:absolute; right:-15px; top:8px; z-index:1; }
+.tl-label { padding:4px 12px; font-size:12px; font-weight:700; color:#fff; border-radius:2px; display:inline-block; }
+.tl-text { font-size:10px; color:#555; line-height:1.6; text-align:right; }
 /* 右侧时间轴 */
-.timeline-right{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:0;position:relative;padding:0 10px;}
-
+.timeline-right { width:230px; flex-shrink:0; display:flex; flex-direction:column; justify-content:space-around; height:100%; padding:0 0 0 10px; position:relative; }
+.timeline-right::before { content:''; position:absolute; left:0; top:10%; bottom:10%; width:1px; background:#dde4f0; }
+.tl-item-r { display:flex; flex-direction:column; align-items:flex-start; gap:5px; position:relative; }
+.tl-dot-r { width:10px; height:10px; border-radius:50%; background:#aab8cc; position:absolute; left:-15px; top:8px; z-index:1; }
 /* 中间韦恩图 */
-.venn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
-.venn-circles{position:relative;width:380px;height:280px;}
-.venn-circles svg{width:100%;height:100%;}
-.venn-bottom{display:flex;gap:10px;justify-content:center;}
-.venn-btn{background:#1a3a7a;color:#fff;font-size:13px;font-weight:700;padding:8px 20px;border-radius:3px;}
+.venn { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+.venn-bottom { display:flex; gap:10px; justify-content:center; }
+.venn-btn { background:#1a3a9e; color:#fff; font-size:13px; font-weight:700; padding:8px 22px; border-radius:3px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">计划与总结 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">计划与总结 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <div class="center-title">上半年工作总结和下半年工作计划</div>
     <div class="center-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除此外更重要的是定性的工作成果的衡量。</div>
     <div class="main-row">
       <!-- 左侧时间轴 -->
       <div class="timeline">
-        <div class="tl-item dark" style="padding-left:0;">
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-            <div class="tl-label" style="background:#1a3a7a;">成果展示</div>
-            <div class="tl-text" style="text-align:right;">这里请放入您需要替换的文字内容，这里请放入。</div>
-          </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-label" style="background:#1a3a9e;">成果展示</div>
+          <div class="tl-text">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;position:relative;"><div style="position:absolute;left:calc(100% - 5px);top:0;bottom:0;width:1px;background:#dde4f0;"></div></div>
-        <div class="tl-item light" style="padding-left:0;">
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-            <div class="tl-label" style="background:#7baee0;">主要业绩</div>
-            <div class="tl-text" style="text-align:right;">这里请放入您需要替换的文字内容，这里请放入。</div>
-          </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-label" style="background:#7baee0;">主要业绩</div>
+          <div class="tl-text">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;"></div>
-        <div class="tl-item dark" style="padding-left:0;">
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-            <div class="tl-label" style="background:#1a3a7a;">成果展示</div>
-            <div class="tl-text" style="text-align:right;">这里请放入您需要替换的文字内容，这里请放入。</div>
-          </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-label" style="background:#1a3a9e;">成果展示</div>
+          <div class="tl-text">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;"></div>
-        <div class="tl-item light" style="padding-left:0;">
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-            <div class="tl-label" style="background:#7baee0;">主要业绩</div>
-            <div class="tl-text" style="text-align:right;">这里请放入您需要替换的文字内容，这里请放入。</div>
-          </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-label" style="background:#7baee0;">主要业绩</div>
+          <div class="tl-text">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
       </div>
-
       <!-- 中间韦恩图 -->
       <div class="venn">
-        <div class="venn-circles">
-          <svg viewBox="0 0 380 280" preserveAspectRatio="xMidYMid meet">
-            <!-- 左圆（深蓝） -->
-            <circle cx="145" cy="130" r="120" fill="#1a3a7a"/>
-            <!-- 右圆（浅蓝） -->
-            <circle cx="235" cy="130" r="120" fill="#7baee0" opacity="0.85"/>
-            <!-- 左圆内容 -->
-            <text x="108" y="108" text-anchor="middle" fill="white" font-size="36" font-weight="bold" font-family="Microsoft YaHei">100%</text>
-            <text x="108" y="140" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，这</text>
-            <text x="108" y="158" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">里请放入您需要替换的文字内容。</text>
-            <!-- 左圆图标 -->
-            <circle cx="108" cy="195" r="18" fill="rgba(255,255,255,0.2)"/>
-            <text x="108" y="201" text-anchor="middle" fill="white" font-size="18">🛍</text>
-            <!-- 右圆内容 -->
-            <text x="272" y="108" text-anchor="middle" fill="white" font-size="36" font-weight="bold" font-family="Microsoft YaHei">80%</text>
-            <text x="272" y="140" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，这</text>
-            <text x="272" y="158" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">里请放入您需要替换的文字内容。</text>
-            <!-- 右圆图标 -->
-            <circle cx="272" cy="195" r="18" fill="rgba(255,255,255,0.2)"/>
-            <text x="272" y="201" text-anchor="middle" fill="white" font-size="18">🛍</text>
-          </svg>
-        </div>
+        <svg viewBox="0 0 500 360" width="500" height="360" preserveAspectRatio="xMidYMid meet">
+          <!-- 左圆（深蓝） -->
+          <circle cx="185" cy="170" r="155" fill="#1a3a9e"/>
+          <!-- 右圆（浅蓝） -->
+          <circle cx="315" cy="170" r="155" fill="#9abde8" opacity="0.85"/>
+          <!-- 左圆内容 -->
+          <text x="148" y="145" text-anchor="middle" fill="white" font-size="42" font-weight="bold" font-family="Microsoft YaHei">100%</text>
+          <text x="148" y="175" text-anchor="middle" fill="white" font-size="11.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，这</text>
+          <text x="148" y="193" text-anchor="middle" fill="white" font-size="11.5" font-family="Microsoft YaHei">里请放入您需要替换的文字内容。</text>
+          <!-- 左圆图标圆圈 -->
+          <circle cx="148" cy="235" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="148" y="243" text-anchor="middle" fill="white" font-size="22">🛍</text>
+          <!-- 右圆内容 -->
+          <text x="352" y="145" text-anchor="middle" fill="white" font-size="42" font-weight="bold" font-family="Microsoft YaHei">80%</text>
+          <text x="352" y="175" text-anchor="middle" fill="white" font-size="11.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，这</text>
+          <text x="352" y="193" text-anchor="middle" fill="white" font-size="11.5" font-family="Microsoft YaHei">里请放入您需要替换的文字内容。</text>
+          <!-- 右圆图标圆圈 -->
+          <circle cx="352" cy="235" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="352" y="243" text-anchor="middle" fill="white" font-size="22">🛍</text>
+        </svg>
         <div class="venn-bottom">
           <div class="venn-btn">市场化名词</div>
           <div class="venn-btn">市场化名词</div>
           <div class="venn-btn">市场化名词</div>
         </div>
       </div>
-
       <!-- 右侧时间轴 -->
       <div class="timeline-right">
-        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:8px 0;">
-          <div class="tl-label" style="background:#1a3a7a;">成果展示</div>
+        <div class="tl-item-r">
+          <div class="tl-dot-r"></div>
+          <div class="tl-label" style="background:#1a3a9e;">成果展示</div>
           <div class="tl-text" style="text-align:left;">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;"></div>
-        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:8px 0;">
+        <div class="tl-item-r">
+          <div class="tl-dot-r"></div>
           <div class="tl-label" style="background:#7baee0;">主要业绩</div>
           <div class="tl-text" style="text-align:left;">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;"></div>
-        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:8px 0;">
-          <div class="tl-label" style="background:#1a3a7a;">成果展示</div>
+        <div class="tl-item-r">
+          <div class="tl-dot-r"></div>
+          <div class="tl-label" style="background:#1a3a9e;">成果展示</div>
           <div class="tl-text" style="text-align:left;">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
-        <div style="height:16px;"></div>
-        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:8px 0;">
+        <div class="tl-item-r">
+          <div class="tl-dot-r"></div>
           <div class="tl-label" style="background:#7baee0;">主要业绩</div>
           <div class="tl-text" style="text-align:left;">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>

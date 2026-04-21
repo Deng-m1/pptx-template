@@ -6,28 +6,28 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .header { height: 60px; padding: 10px 20px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 28px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
   .body { flex: 1; display: flex; flex-direction: column; }
-  .main { flex: 1; display: flex; align-items: stretch; padding: 8px 30px; gap: 10px; }
+  .main { flex: 1; display: flex; align-items: stretch; padding: 10px 20px; gap: 10px; }
 
   .side-col { width: 270px; display: flex; flex-direction: column; gap: 0; justify-content: space-around; }
-  .side-item h4 { font-size: 15px; font-weight: 900; color: #1a3a6b; margin-bottom: 4px; }
+  .side-item h4 { font-size: 15px; font-weight: 900; color: #1a3a6b; margin-bottom: 5px; }
   .side-item.dim h4 { color: #aaa; }
-  .side-item p { font-size: 11px; color: #666; line-height: 1.7; }
+  .side-item p { font-size: 11.5px; color: #666; line-height: 1.7; }
   .side-item.dim p { color: #bbb; }
   .right-col .side-item { text-align: right; }
 
   .center { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
 
   /* 底部 */
-  .footer { height: 110px; display: flex; gap: 10px; padding: 0 30px 12px; flex-shrink: 0; }
+  .footer { height: 100px; display: flex; gap: 10px; padding: 0 20px 10px; flex-shrink: 0; }
   .num-card { flex: 1; border: 1.5px solid #1a3a6b; border-radius: 4px; padding: 10px 16px; display: flex; flex-direction: column; justify-content: center; }
   .num-card.filled { background: #1a3a6b; }
-  .num-card .num { font-size: 20px; font-weight: 900; color: #1a3a6b; }
+  .num-card .num { font-size: 22px; font-weight: 900; color: #1a3a6b; }
   .num-card.filled .num { color: #fff; }
-  .num-card p { font-size: 10px; color: #888; line-height: 1.4; }
+  .num-card p { font-size: 10.5px; color: #888; line-height: 1.4; }
   .num-card.filled p { color: rgba(255,255,255,0.8); }
   .num-card .arrow { color: #e74c3c; font-size: 12px; margin-right: 4px; }
 </style>
@@ -56,21 +56,29 @@
       </div>
 
       <div class="center">
-        <!-- 4瓣花形 SVG（4个圆叠加） -->
-        <svg width="320" height="320" viewBox="0 0 320 320">
-          <!-- 上方圆（浅蓝） -->
-          <circle cx="160" cy="110" r="90" fill="#7aa0d4" opacity="0.85"/>
-          <!-- 右方圆（深灰炭） -->
-          <circle cx="210" cy="160" r="90" fill="#3d3d5c" opacity="0.88"/>
-          <!-- 下方圆（深蓝） -->
-          <circle cx="160" cy="210" r="90" fill="#1a3a6b" opacity="0.9"/>
-          <!-- 左方圆（浅灰蓝） -->
-          <circle cx="110" cy="160" r="90" fill="#b0c4d8" opacity="0.85"/>
-          <!-- 图标 -->
-          <text x="160" y="118" text-anchor="middle" font-size="34" fill="white">🚀</text>
-          <text x="210" y="168" text-anchor="middle" font-size="34" fill="white">👥</text>
-          <text x="160" y="218" text-anchor="middle" font-size="34" fill="white">💡</text>
-          <text x="110" y="168" text-anchor="middle" font-size="34" fill="white">🧩</text>
+        <!-- 4瓣花形 SVG：用4个扇形圆弧组成花瓣形，每个扇形是180度半圆 -->
+        <svg width="340" height="340" viewBox="0 0 340 340">
+          <!-- 上方花瓣（浅蓝，半圆向上） -->
+          <path d="M170,170 A85,85 0 0,1 170,0 A85,85 0 0,1 170,170 Z" fill="#7aa0d4"/>
+          <!-- 右方花瓣（深炭，半圆向右） -->
+          <path d="M170,170 A85,85 0 0,1 340,170 A85,85 0 0,1 170,170 Z" fill="#3d3d5c"/>
+          <!-- 下方花瓣（深蓝，半圆向下） -->
+          <path d="M170,170 A85,85 0 0,1 170,340 A85,85 0 0,1 170,170 Z" fill="#1a3a6b"/>
+          <!-- 左方花瓣（浅灰蓝，半圆向左） -->
+          <path d="M170,170 A85,85 0 0,1 0,170 A85,85 0 0,1 170,170 Z" fill="#b0c4d8"/>
+
+          <!-- 图标：上方（火箭） -->
+          <circle cx="170" cy="85" r="28" fill="rgba(255,255,255,0.15)"/>
+          <text x="170" y="96" text-anchor="middle" font-size="28" fill="white">&#128640;</text>
+          <!-- 图标：右方（人群） -->
+          <circle cx="255" cy="170" r="28" fill="rgba(255,255,255,0.15)"/>
+          <text x="255" y="181" text-anchor="middle" font-size="28" fill="white">&#128101;</text>
+          <!-- 图标：下方（灯泡） -->
+          <circle cx="170" cy="255" r="28" fill="rgba(255,255,255,0.15)"/>
+          <text x="170" y="266" text-anchor="middle" font-size="28" fill="white">&#128161;</text>
+          <!-- 图标：左方（拼图） -->
+          <circle cx="85" cy="170" r="28" fill="rgba(255,255,255,0.15)"/>
+          <text x="85" y="181" text-anchor="middle" font-size="28" fill="white">&#129513;</text>
         </svg>
       </div>
 

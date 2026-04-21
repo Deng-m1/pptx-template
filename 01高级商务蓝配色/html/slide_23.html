@@ -9,28 +9,26 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; display:flex; flex-direction:column; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 40px 14px 40px; display:flex; flex-direction:column; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
   .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
   .header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
-  .sub-title { font-size:24px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+  .sub-title { font-size:24px; font-weight:900; color:#1a3a9e; margin-bottom:8px; }
 
-  /* 甘特表格 */
-  .gantt-wrap { flex:1; overflow:hidden; }
-  .gantt { width:100%; border-collapse:collapse; font-size:11px; }
+  .gantt-wrap { flex:1; min-height:0; }
+  .gantt { width:100%; border-collapse:collapse; font-size:11px; height:100%; table-layout:fixed; }
   .gantt th {
     text-align:center; padding:5px 1px;
     font-size:11px; font-weight:700;
     border:1px solid #dde3ef;
     background:#1a3a9e; color:#fff;
-    min-width:28px;
   }
-  .gantt th.label-col { width:90px; background:#1a3a9e; }
+  .gantt th.label-col { width:90px; }
   .gantt td {
     border:1px solid #e8ecf4;
-    padding:2px 1px; height:38px;
+    padding:2px 1px; height:36px;
     vertical-align:middle; text-align:center;
   }
   .gantt td.label {
@@ -42,19 +40,18 @@
   .gantt tr:nth-child(even) td { background:#fff; }
   .gantt tr:nth-child(even) td.label { background:#e8edf8; }
 
-  .bar-cell { padding:1px 1px; }
-  .bar { height:20px; border-radius:3px; display:inline-block; vertical-align:middle; }
+  .bar-cell { padding:2px 1px; }
+  .bar { height:20px; border-radius:3px; display:block; }
   .bar-dark { background:#1a3a9e; }
   .bar-light { background:#a8c4e8; }
 
-  /* 底部4卡 */
-  .bottom-row { display:flex; gap:12px; margin-top:8px; flex-shrink:0; }
+  .bottom-row { display:flex; gap:12px; margin-top:10px; flex-shrink:0; }
   .card { flex:1; border-radius:6px; padding:10px 14px; }
   .card-1 { background:#1a3a9e; }
   .card-2 { background:#4a7ac8; }
   .card-3 { background:#a8c4e8; }
   .card-4 { background:#d4dff0; }
-  .card-title { font-size:15px; font-weight:900; margin-bottom:4px; }
+  .card-title { font-size:15px; font-weight:900; margin-bottom:5px; }
   .card-1 .card-title, .card-2 .card-title { color:#fff; }
   .card-3 .card-title, .card-4 .card-title { color:#1a3a9e; }
   .card-desc { font-size:10px; line-height:1.6; }
@@ -73,6 +70,13 @@
 
   <div class="gantt-wrap">
     <table class="gantt">
+      <colgroup>
+        <col style="width:90px">
+        <col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col>
+      </colgroup>
       <thead>
         <tr>
           <th class="label-col">工作任务</th>
@@ -85,59 +89,59 @@
       <tbody>
         <tr>
           <td class="label">工作任务01</td>
-          <td colspan="2" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="2" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务02</td>
           <td></td><td></td><td></td><td></td><td></td><td></td>
-          <td colspan="4" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="6" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
-          <td colspan="2" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="6" class="bar-cell"><div class="bar bar-dark"></div></td>
+          <td colspan="2" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务03</td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          <td colspan="5" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="5" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务04</td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务05</td>
           <td></td><td></td><td></td>
-          <td colspan="5" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="6" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="5" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="6" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务06</td>
           <td></td><td></td><td></td><td></td>
-          <td colspan="4" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="7" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="7" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务07</td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td class="label">工作任务08</td>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-          <td colspan="3" class="bar-cell"><div class="bar bar-light" style="width:100%;"></div></td>
-          <td colspan="4" class="bar-cell"><div class="bar bar-dark" style="width:100%;"></div></td>
+          <td colspan="3" class="bar-cell"><div class="bar bar-light"></div></td>
+          <td colspan="4" class="bar-cell"><div class="bar bar-dark"></div></td>
           <td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
       </tbody>

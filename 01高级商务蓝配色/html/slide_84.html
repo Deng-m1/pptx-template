@@ -2,87 +2,115 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_84</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 70px; padding: 12px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 28px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 20px 30px 0; }
-  .cols { flex: 1; display: flex; gap: 12px; align-items: flex-end; }
-  .col { flex: 1; display: flex; flex-direction: column; align-items: center; }
-  .col-card { width: 100%; border-radius: 6px 6px 0 0; display: flex; flex-direction: column; padding: 14px; }
-  .col-num { font-size: 32px; font-weight: 900; color: #fff; text-align: center; margin-bottom: 6px; }
-  .col-title { font-size: 14px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 8px; }
-  .col-desc { font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; }
-  .timeline { height: 50px; display: flex; align-items: center; flex-shrink: 0; position: relative; margin: 0 -30px; padding: 0 30px; background: #f0f4fa; }
-  .tl-line { position: absolute; left: 30px; right: 30px; top: 50%; height: 2px; background: #1a3a6b; }
-  .tl-dots { display: flex; width: 100%; justify-content: space-between; position: relative; z-index: 1; }
-  .tl-dot { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-  .tl-dot-circle { width: 12px; height: 12px; border-radius: 50%; background: #1a3a6b; }
-  .tl-dot-label { font-size: 11px; color: #1a3a6b; font-weight: 700; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; display:flex; flex-direction:column; }
+.header { padding:14px 20px 0 20px; flex-shrink:0; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.body { flex:1; display:flex; flex-direction:column; padding:6px 20px 8px 20px; min-height:0; }
+.top-row { display:flex; flex-direction:row; gap:10px; align-items:flex-start; flex-shrink:0; margin-bottom:6px; }
+.brand-label { font-size:18px; font-weight:900; color:#1a3a9e; width:100px; flex-shrink:0; }
+.top-desc { flex:1; font-size:10px; color:#555; line-height:1.5; text-align:center; }
+.top-card { width:290px; background:#fff; border:1.5px solid #1a3a9e; border-radius:6px; padding:10px 12px; font-size:10px; color:#333; line-height:1.6; flex-shrink:0; }
+.mid-row { flex:1; display:flex; flex-direction:row; gap:10px; align-items:center; min-height:0; }
+.left-nodes { display:flex; flex-direction:column; gap:8px; flex-shrink:0; }
+.node-circle { width:88px; height:88px; border-radius:50%; background:#1a3a9e; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; }
+.node-circle.light { background:#8ab0d0; }
+.node-circle.lighter { background:#b0c8e0; }
+.node-title { font-size:13px; font-weight:700; }
+.node-sub { font-size:9px; opacity:0.85; }
+.dna-area { flex:1; position:relative; min-width:0; }
+.right-info { width:220px; flex-shrink:0; display:flex; flex-direction:column; gap:8px; }
+.pct-text { font-size:48px; font-weight:900; color:#1a3a9e; }
+.pct-sub { font-size:12px; color:#1a3a9e; text-align:center; }
+.tag-row { display:flex; gap:8px; }
+.tag-btn { flex:1; background:#1a3a9e; color:#fff; font-size:11px; padding:7px 0; text-align:center; border-radius:3px; }
+.tag-btn-light { flex:1; background:#e8eef8; color:#1a3a9e; font-size:11px; padding:7px 0; text-align:center; border-radius:3px; border:1px solid #c0d0e8; }
+.footer-row { display:flex; flex-direction:row; gap:10px; align-items:center; flex-shrink:0; margin-top:6px; }
+.footer-pct { background:#1a3a9e; color:#fff; font-size:42px; font-weight:900; padding:10px 20px; border-radius:4px; min-width:140px; text-align:center; }
+.footer-icon { width:60px; height:60px; background:#e8eef8; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0; }
+.footer-desc { flex:1; border:1.5px solid #dde4f0; border-radius:4px; padding:10px 14px; font-size:10px; color:#555; line-height:1.6; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <span class="header-title">项目规划 Powerpoint Template</span>
-    <span class="header-sub">Work Arrangement</span>
+    <div class="header-row">
+      <div class="header-title">项目规划 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="body">
-    <div class="cols">
-      <!-- 列1：最矮，深蓝 -->
-      <div class="col">
-        <div class="col-card" style="background:#1a3a6b; height:200px;">
-          <div class="col-num">01</div>
-          <div class="col-title">市场调研</div>
-          <div class="col-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
-        </div>
+    <div class="top-row">
+      <div class="brand-label">BRAND</div>
+      <div class="top-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      <div class="top-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+      <div class="top-card">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    </div>
+    <div class="mid-row">
+      <div class="left-nodes">
+        <div class="node-circle"><div class="node-title">品牌决策</div><div class="node-sub">BRAND DECISION</div></div>
+        <div class="node-circle light"><div class="node-title">品牌决策</div><div class="node-sub">BRAND DECISION</div></div>
+        <div class="node-circle lighter"><div class="node-title">品牌决策</div><div class="node-sub">BRAND DECISION</div></div>
       </div>
-      <!-- 列2：稍高，中深蓝 -->
-      <div class="col">
-        <div class="col-card" style="background:#2a5090; height:270px;">
-          <div class="col-num">02</div>
-          <div class="col-title">营销策划</div>
-          <div class="col-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
-        </div>
+      <div class="dna-area">
+        <svg width="100%" height="100%" viewBox="0 0 680 280" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="arrowGrad84" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#3a6abf;stop-opacity:0.9"/>
+              <stop offset="100%" style="stop-color:#1a3a9e;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <polygon points="0,100 560,100 560,60 640,140 560,220 560,180 0,180" fill="url(#arrowGrad84)"/>
+          <circle cx="130" cy="140" r="90" fill="none" stroke="#8ab0d0" stroke-width="18" opacity="0.7"/>
+          <circle cx="130" cy="140" r="90" fill="none" stroke="#1a3a9e" stroke-width="18" opacity="0.5" stroke-dasharray="283 0" stroke-dashoffset="141"/>
+          <circle cx="290" cy="140" r="90" fill="none" stroke="#8ab0d0" stroke-width="18" opacity="0.7"/>
+          <circle cx="290" cy="140" r="90" fill="none" stroke="#b0c8e0" stroke-width="18" opacity="0.5" stroke-dasharray="283 0" stroke-dashoffset="141"/>
+          <circle cx="450" cy="140" r="90" fill="none" stroke="#8ab0d0" stroke-width="18" opacity="0.7"/>
+          <circle cx="450" cy="140" r="90" fill="none" stroke="#b0c8e0" stroke-width="18" opacity="0.5" stroke-dasharray="283 0" stroke-dashoffset="141"/>
+          <circle cx="130" cy="140" r="24" fill="#fff" stroke="#1a3a9e" stroke-width="2"/>
+          <text x="130" y="136" text-anchor="middle" fill="#1a3a9e" font-size="13" font-weight="900" font-family="Microsoft YaHei">01</text>
+          <text x="170" y="128" fill="#fff" font-size="14" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+          <text x="170" y="145" fill="#fff" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+          <circle cx="290" cy="140" r="24" fill="#fff" stroke="#1a3a9e" stroke-width="2"/>
+          <text x="290" y="136" text-anchor="middle" fill="#1a3a9e" font-size="13" font-weight="900" font-family="Microsoft YaHei">02</text>
+          <text x="330" y="128" fill="#fff" font-size="14" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+          <text x="330" y="145" fill="#fff" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+          <circle cx="450" cy="140" r="24" fill="#fff" stroke="#1a3a9e" stroke-width="2"/>
+          <text x="450" y="136" text-anchor="middle" fill="#1a3a9e" font-size="13" font-weight="900" font-family="Microsoft YaHei">03</text>
+          <text x="490" y="128" fill="#fff" font-size="14" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+          <text x="490" y="145" fill="#fff" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+          <text x="575" y="133" fill="#fff" font-size="16" font-weight="700" font-family="Microsoft YaHei">品牌决策</text>
+          <text x="575" y="153" fill="#c8d8f0" font-size="10" font-family="Microsoft YaHei">BRAND DECISION</text>
+        </svg>
       </div>
-      <!-- 列3：中等，中蓝 -->
-      <div class="col">
-        <div class="col-card" style="background:#3a6abf; height:340px;">
-          <div class="col-num">03</div>
-          <div class="col-title">执行监控</div>
-          <div class="col-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+      <div class="right-info">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div><div class="pct-text">68%</div><div class="pct-sub">同比增长</div></div>
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#e8eef8" stroke-width="10"/>
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#1a3a9e" stroke-width="10" stroke-dasharray="134 80" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+          </svg>
         </div>
-      </div>
-      <!-- 列4：较高，浅中蓝 -->
-      <div class="col">
-        <div class="col-card" style="background:#5a8ad4; height:410px;">
-          <div class="col-num">04</div>
-          <div class="col-title">细节优化</div>
-          <div class="col-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
-        </div>
-      </div>
-      <!-- 列5：最高，浅蓝灰 -->
-      <div class="col">
-        <div class="col-card" style="background:#8ab0d8; height:480px;">
-          <div class="col-num">05</div>
-          <div class="col-title">总结复盘</div>
-          <div class="col-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+        <div class="tag-row">
+          <div class="tag-btn">市场化名词</div>
+          <div class="tag-btn-light">市场化名词</div>
         </div>
       </div>
     </div>
-    <!-- 底部时间轴 -->
-    <div class="timeline">
-      <div class="tl-line"></div>
-      <div class="tl-dots">
-        <div class="tl-dot"><div class="tl-dot-circle"></div><div class="tl-dot-label">2024.4</div></div>
-        <div class="tl-dot"><div class="tl-dot-circle"></div><div class="tl-dot-label">2024.5</div></div>
-        <div class="tl-dot"><div class="tl-dot-circle"></div><div class="tl-dot-label">2024.6</div></div>
-        <div class="tl-dot"><div class="tl-dot-circle"></div><div class="tl-dot-label">2024.7</div></div>
-        <div class="tl-dot"><div class="tl-dot-circle"></div><div class="tl-dot-label">2024.8</div></div>
-      </div>
+    <div class="footer-row">
+      <div class="footer-pct">98%</div>
+      <div class="footer-icon">👥</div>
+      <div class="footer-desc">Brand planning is to make the corporate image and product brand form a personalized distinction in the minds of consumers, and make consumers form a unified value between the corporate brand and product brand, so as to establish their own brand sound.</div>
     </div>
   </div>
 </div>

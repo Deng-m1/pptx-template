@@ -2,149 +2,131 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_69</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:0;overflow:hidden;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 0 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:0; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
 /* 顶部箭头标题栏 */
-.arrow-bar{display:flex;align-items:center;padding:0 30px;height:70px;flex-shrink:0;position:relative;margin-top:10px;}
-.arrow-shape{position:relative;display:inline-flex;align-items:center;height:50px;}
-.arrow-bg{background:#1a3a7a;height:50px;padding:0 30px 0 20px;display:flex;align-items:center;clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);}
-.arrow-text{font-size:22px;font-weight:900;color:#fff;white-space:nowrap;}
-.trophy{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:36px;color:#9aa8b8;}
-
+.arrow-bar { display:flex; align-items:center; justify-content:space-between; height:60px; flex-shrink:0; margin-top:8px; }
+.arrow-bg { background:#1a3a9e; height:50px; padding:0 40px 0 20px; display:inline-flex; align-items:center;
+  clip-path:polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%); }
+.arrow-text { font-size:22px; font-weight:900; color:#fff; white-space:nowrap; }
+.trophy { font-size:32px; color:#9aa8b8; }
 /* 5列区域 */
-.cols-area{display:flex;flex-direction:row;flex:1;overflow:hidden;}
-.col{flex:1;display:flex;flex-direction:column;border-right:1px dashed #dde4f0;}
-.col:last-child{border-right:none;}
-
+.cols-area { flex:1; display:flex; flex-direction:row; overflow:hidden; min-height:0; }
+.col { flex:1; display:flex; flex-direction:column; border-right:1px dashed #dde4f0; }
+.col:last-child { border-right:none; }
 /* 上方阶梯卡片 */
-.step-cards{display:flex;flex-direction:column;gap:0;}
-.step-card{padding:12px 14px;display:flex;flex-direction:column;gap:4px;}
-.step-icon{font-size:22px;margin-bottom:4px;}
-.step-cn{font-size:15px;font-weight:900;color:#fff;line-height:1.3;}
-.step-en{font-size:10px;color:rgba(255,255,255,0.8);line-height:1.3;}
-
+.step-card { padding:12px 14px; display:flex; flex-direction:column; gap:4px; flex-shrink:0; }
+.step-icon { font-size:20px; margin-bottom:2px; }
+.step-cn { font-size:14px; font-weight:900; color:#fff; line-height:1.3; }
+.step-en { font-size:9.5px; color:rgba(255,255,255,0.85); line-height:1.3; }
 /* 下方解决方案 */
-.solution{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:6px;background:#fff;}
-.sol-title{font-size:13px;font-weight:900;color:#1a3a7a;padding:4px 8px;border-left:3px solid #1a3a7a;background:#eef2fa;margin-bottom:4px;}
-.sol-divider{height:1px;background:#dde4f0;margin:4px 0;}
-.sol-text{font-size:10px;color:#444;line-height:1.7;}
-
-/* 各列颜色（从深到浅） */
-.col:nth-child(1) .step-card{background:#1a3a7a;height:160px;}
-.col:nth-child(2) .step-card{background:#2a5298;height:140px;margin-top:20px;}
-.col:nth-child(3) .step-card{background:#4a78c4;height:120px;margin-top:40px;}
-.col:nth-child(4) .step-card{background:#7baee0;height:100px;margin-top:60px;}
-.col:nth-child(5) .step-card{background:#9db8cc;height:80px;margin-top:80px;}
+.solution { flex:1; padding:10px 12px; display:flex; flex-direction:column; gap:4px; background:#fff; overflow:hidden; }
+.sol-title { font-size:12px; font-weight:900; color:#1a3a9e; padding:3px 8px; border-left:3px solid #1a3a9e; background:#eef2fa; margin-bottom:3px; flex-shrink:0; }
+.sol-divider { height:1px; background:#dde4f0; margin:3px 0; flex-shrink:0; }
+.sol-brief { font-size:10px; color:#333; line-height:1.6; font-weight:600; flex-shrink:0; }
+.sol-text { font-size:9.5px; color:#555; line-height:1.65; flex:1; overflow:hidden; }
+/* 各列颜色（从深到浅）和高度 */
+.col:nth-child(1) .step-card { background:#1a3a9e; height:170px; }
+.col:nth-child(2) .step-card { background:#2a5298; height:145px; margin-top:25px; }
+.col:nth-child(3) .step-card { background:#4a78c4; height:120px; margin-top:50px; }
+.col:nth-child(4) .step-card { background:#7baee0; height:95px; margin-top:75px; }
+.col:nth-child(5) .step-card { background:#9db8cc; height:70px; margin-top:100px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">问题与解决 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">问题与解决 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <div class="arrow-bar">
-      <div class="arrow-shape">
-        <div class="arrow-bg">
-          <div class="arrow-text">工作中遇到问题与解决方案</div>
-        </div>
+      <div class="arrow-bg">
+        <div class="arrow-text">工作中遇到问题与解决方案</div>
       </div>
       <div class="trophy">🏆</div>
     </div>
-
     <div class="cols-area">
       <!-- 列1 -->
       <div class="col">
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-icon">📊</div>
-            <div class="step-cn">沟通障碍</div>
-            <div class="step-en">Communication barrier</div>
-          </div>
+        <div class="step-card">
+          <div class="step-icon">📊</div>
+          <div class="step-cn">沟通障碍</div>
+          <div class="step-en">Communication barrier</div>
         </div>
         <div class="solution">
           <div class="sol-title">解决方案</div>
-          <div class="sol-divider"></div>
-          <div class="sol-text">定期举行团队会议，建立明确的沟通渠道和沟通准则。</div>
+          <div class="sol-brief">定期举行团队会议，建立明确的沟通渠道和沟通准则。</div>
           <div class="sol-divider"></div>
           <div class="sol-text">在面对沟通障碍时，定期举行团队会议是保持所有成员了解项目进展和任务分配的关键步骤。通过固定的会议时间表和清晰的议程，团队成员可以及时更新彼此的工作进展，并就任何问题进行讨论和解决。此外，明确的沟通渠道则能够确保信息共享，提高团队工作效率，减少沟通误解的可能性。</div>
         </div>
       </div>
       <!-- 列2 -->
       <div class="col">
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-icon">⏰</div>
-            <div class="step-cn">时间管理问题</div>
-            <div class="step-en">Time management problem</div>
-          </div>
+        <div class="step-card">
+          <div class="step-icon">⏰</div>
+          <div class="step-cn">时间管理问题</div>
+          <div class="step-en">Time management problem</div>
         </div>
         <div class="solution">
           <div class="sol-title">解决方案</div>
+          <div class="sol-brief">采用番茄工作法和时间块管理法，设定专注工作时间和休息间隔。</div>
           <div class="sol-divider"></div>
-          <div class="sol-text">采用番茄工作法和时间块管理法，设定专注工作时间和休息间隔。</div>
-          <div class="sol-divider"></div>
-          <div class="sol-text">解决时间管理问题的有效策略包括采用番茄工作法通过设定固定的工作时间（通常为25分钟）和短暂的休息时间（5分钟），帮助员工集中注意力，增强工作效率。同时，时间块管理法则帮助将工作分成较大的时间块，每个时间块专注处理特定类型的任务，如策划、执行和评估，以确保每步骤有序进行。</div>
+          <div class="sol-text">解决时间管理问题的有效策略包括采用番茄工作法通过设定固定的工作时间（通常为25分钟）和短暂的休息时间（5分钟），帮助员工集中注意力，增强工作效率。同时，时间块管理法则帮助将工作分成较大的时间块，每个时间块专注处理特定类型的任务，以确保每步骤有序进行。</div>
         </div>
       </div>
       <!-- 列3 -->
       <div class="col">
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-icon">🎯</div>
-            <div class="step-cn">团队合作不足</div>
-            <div class="step-en">Lack of teamwork</div>
-          </div>
+        <div class="step-card">
+          <div class="step-icon">🎯</div>
+          <div class="step-cn">团队合作不足</div>
+          <div class="step-en">Lack of teamwork</div>
         </div>
         <div class="solution">
           <div class="sol-title">解决方案</div>
+          <div class="sol-brief">组织团队建设活动和跨部门合作项目，加强团队协作和信任。</div>
           <div class="sol-divider"></div>
-          <div class="sol-text">组织团队建设活动和跨部门合作项目，加强团队协作和信任。</div>
-          <div class="sol-divider"></div>
-          <div class="sol-text">解决团队合作不足的关键在于促进团队之间的互动和信任。组织定期的团队建设活动，如团队午餐、户外活动或专项工坊，可以帮助团队成员更好地了解彼此，建立紧密的工作关系。此外，鼓励跨部门合作项目的开展，通过跨功能小组的合作，解决复杂问题，不仅促进了知识和经验的分享，还能够提升整体团队的工作效能和创新能力。</div>
+          <div class="sol-text">解决团队合作不足的关键在于促进团队之间的互动和信任。组织定期的团队建设活动，如团队午餐、户外活动或专项工坊，可以帮助团队成员更好地了解彼此，建立紧密的工作关系。此外，鼓励跨部门合作项目的开展，通过跨功能小组的合作，解决复杂问题，提升整体团队的工作效能和创新能力。</div>
         </div>
       </div>
       <!-- 列4 -->
       <div class="col">
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-icon">⚙️</div>
-            <div class="step-cn">工作压力过大</div>
-            <div class="step-en">Excessive work pressure</div>
-          </div>
+        <div class="step-card">
+          <div class="step-icon">⚙️</div>
+          <div class="step-cn">工作压力过大</div>
+          <div class="step-en">Excessive work pressure</div>
         </div>
         <div class="solution">
           <div class="sol-title">解决方案</div>
+          <div class="sol-brief">实施健康的工作生活平衡政策，支持弹性工作时间和远程工作选项。</div>
           <div class="sol-divider"></div>
-          <div class="sol-text">实施健康的工作生活平衡政策，支持弹性工作时间和远程工作选项。</div>
-          <div class="sol-divider"></div>
-          <div class="sol-text">面对工作压力过大的情况，实施健康的工作生活平衡政策是帮助员工减轻压力和提升工作效能的关键。支持弹性工作时间和远程工作选项，允许员工根据个人需求和生活情况安排工作时间和工作地点，有助于减少通勤时间和工作干扰，从而提高员工注意力和效率。此外，提供员工心理健康支持和压力管理培训，如心理健康资源和提醒部分提出并实施解决方案的员工，可以激励员工积极参与创新活动和改进项目，从而提升整体团队的创新能力和竞争力。</div>
+          <div class="sol-text">面对工作压力过大的情况，实施健康的工作生活平衡政策是帮助员工减轻压力和提升工作效能的关键。支持弹性工作时间和远程工作选项，允许员工根据个人需求和生活情况安排工作时间和工作地点，有助于减少通勤时间和工作干扰，从而提高员工注意力和效率。</div>
         </div>
       </div>
       <!-- 列5 -->
       <div class="col">
-        <div class="step-cards">
-          <div class="step-card">
-            <div class="step-cn">缺乏创新思维</div>
-            <div class="step-en">Lack of innovative thinking</div>
-          </div>
+        <div class="step-card">
+          <div class="step-cn">缺乏创新思维</div>
+          <div class="step-en">Lack of innovative thinking</div>
         </div>
         <div class="solution">
           <div class="sol-title">解决方案</div>
+          <div class="sol-brief">推广创新文化和创意工坊，设立创新奖励制度和提案箱。</div>
           <div class="sol-divider"></div>
-          <div class="sol-text">推广创新文化和创意工坊，设立创新奖励制度和提案箱。</div>
-          <div class="sol-divider"></div>
-          <div class="sol-text">面对缺乏创新思维的挑战，组织推广创新文化和创意工坊是激发员工创新潜力的有效手段。通过定期举办创意工坊和创新项目，鼓励员工跨部门交流和合作，分享新想法和解决方案。同时，设立创新奖励制度和提案箱，鼓励那部分提出并实施解决方案的员工，可以激励员工积极参与创新活动和改进项目，从而提升整体团队的创新能力和竞争力。</div>
+          <div class="sol-text">面对缺乏创新思维的挑战，组织推广创新文化和创意工坊是激发员工创新潜力的有效手段。通过定期举办创意工坊和创新项目，鼓励员工跨部门交流和合作，分享新想法和解决方案。同时，设立创新奖励制度和提案箱，激励员工积极参与创新活动和改进项目，从而提升整体团队的创新能力和竞争力。</div>
         </div>
       </div>
     </div>

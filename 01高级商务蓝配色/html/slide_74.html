@@ -2,43 +2,49 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_74</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;position:relative;}
-.header{position:absolute;top:18px;left:30px;right:30px;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin-top:6px;}
-.page-title{position:absolute;top:90px;left:30px;font-size:24px;font-weight:900;color:#1a3a7a;}
-.page-desc{position:absolute;top:124px;left:30px;width:380px;font-size:10.5px;color:#555;line-height:1.7;}
-/* 标签 */
-.tags{position:absolute;top:170px;left:30px;display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;width:380px;}
-.tag-solid{background:#1a3a7a;color:#fff;font-size:11px;padding:4px 12px;border-radius:2px;}
-.tag-outline{border:1.5px solid #9aa8b8;color:#555;font-size:11px;padding:4px 12px;border-radius:2px;}
-/* 波浪SVG区域 */
-.wave-area{position:absolute;left:0;top:80px;width:900px;height:380px;}
-.wave-area svg{width:100%;height:100%;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; position:relative; }
+.header { position:absolute; top:14px; left:20px; right:20px; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.page-title { position:absolute; top:78px; left:20px; font-size:24px; font-weight:900; color:#1a3a9e; }
+.page-desc { position:absolute; top:112px; left:20px; width:380px; font-size:10.5px; color:#555; line-height:1.7; }
+.tags { position:absolute; top:162px; left:20px; display:flex; flex-direction:row; flex-wrap:wrap; gap:6px; width:380px; }
+.tag-solid { background:#1a3a9e; color:#fff; font-size:11px; padding:4px 12px; border-radius:2px; }
+.tag-outline { border:1.5px solid #9aa8b8; color:#555; font-size:11px; padding:4px 12px; border-radius:2px; }
+/* 波浪区域 */
+.wave-area { position:absolute; left:0; top:75px; width:920px; height:390px; }
 /* 右侧弹出卡片 */
-.popup-card{position:absolute;right:30px;top:120px;width:300px;border:1.5px solid #1a3a7a;border-radius:4px;padding:14px;}
-.popup-title{font-size:16px;font-weight:900;color:#1a3a7a;margin-bottom:6px;}
-.popup-desc{font-size:10.5px;color:#555;line-height:1.7;}
-/* 80%卡片 */
-.big-num-area{position:absolute;right:30px;top:310px;width:300px;}
-.big-num{font-size:52px;font-weight:900;color:#1a3a7a;line-height:1;}
-.big-num-desc{font-size:10px;color:#555;line-height:1.6;}
-.big-num-en{font-size:9px;color:#888;line-height:1.6;margin-top:4px;font-style:italic;}
+.popup-card { position:absolute; right:20px; top:110px; width:310px; border:1.5px solid #1a3a9e; border-radius:4px; padding:14px; }
+.popup-title { font-size:16px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+.popup-desc { font-size:10.5px; color:#555; line-height:1.7; }
+/* 80%区域 */
+.big-num-area { position:absolute; right:20px; top:300px; width:310px; }
+.big-num { font-size:52px; font-weight:900; color:#1a3a9e; line-height:1; display:flex; align-items:center; gap:12px; }
+.big-num-side { font-size:10px; color:#555; line-height:1.6; flex:1; }
+.big-num-en { font-size:9px; color:#888; line-height:1.6; margin-top:6px; font-style:italic; }
 /* 底部4卡片 */
-.bottom-cards{position:absolute;bottom:20px;left:30px;right:30px;display:flex;flex-direction:row;gap:10px;height:140px;}
-.bottom-card{flex:1;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;font-size:10.5px;color:#555;line-height:1.7;}
+.bottom-cards { position:absolute; bottom:16px; left:20px; right:20px; display:flex; flex-direction:row; gap:10px; height:155px; }
+.bottom-card { flex:1; border:1.5px solid #dde4f0; border-radius:4px; padding:12px; font-size:10.5px; color:#555; line-height:1.7; }
+.bottom-card-title { font-weight:700; color:#1a3a9e; margin-bottom:4px; font-size:13px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">逻辑架构 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-row">
+      <div class="header-title">逻辑架构 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="page-title">品牌营销逻辑策划报告</div>
   <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
@@ -50,32 +56,32 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
     <div class="tag-outline">市场化名词</div>
   </div>
 
-  <!-- 波浪路径 SVG -->
+  <!-- 波浪路径 SVG - 更有立体感 -->
   <div class="wave-area">
-    <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMid meet">
-      <!-- 灰色波浪（背景） -->
-      <path d="M 60,320 Q 160,200 280,280 Q 400,360 520,240 Q 640,120 760,200 Q 820,240 860,220" 
-            fill="none" stroke="#c8d8e8" stroke-width="60" stroke-linecap="round"/>
-      <!-- 蓝色波浪（前景） -->
-      <path d="M 60,300 Q 160,180 280,260 Q 400,340 520,220 Q 640,100 760,180 Q 820,220 860,200" 
-            fill="none" stroke="#4a78c4" stroke-width="50" stroke-linecap="round"/>
-      <!-- 深蓝波浪（顶部） -->
-      <path d="M 60,285 Q 160,165 280,245 Q 400,325 520,205 Q 640,85 760,165 Q 820,205 860,185" 
-            fill="none" stroke="#1a3a7a" stroke-width="30" stroke-linecap="round"/>
+    <svg viewBox="0 0 920 390" width="920" height="390" preserveAspectRatio="xMidYMid meet">
+      <!-- 灰色波浪底层（阴影效果） -->
+      <path d="M 50,350 C 120,350 180,230 280,290 C 380,350 440,350 520,270 C 600,190 660,130 760,190 C 810,220 850,230 880,220"
+            fill="none" stroke="#d0dae8" stroke-width="80" stroke-linecap="round"/>
+      <!-- 蓝色波浪中层 -->
+      <path d="M 50,335 C 120,335 180,215 280,275 C 380,335 440,335 520,255 C 600,175 660,115 760,175 C 810,205 850,215 880,205"
+            fill="none" stroke="#7baee0" stroke-width="65" stroke-linecap="round"/>
+      <!-- 深蓝波浪顶层 -->
+      <path d="M 50,320 C 120,320 180,200 280,260 C 380,320 440,320 520,240 C 600,160 660,100 760,160 C 810,190 850,200 880,190"
+            fill="none" stroke="#1a3a9e" stroke-width="48" stroke-linecap="round"/>
 
-      <!-- 节点01 -->
-      <circle cx="100" cy="295" r="36" fill="white" stroke="#1a3a7a" stroke-width="3"/>
-      <text x="100" y="300" text-anchor="middle" fill="#1a3a7a" font-size="20" font-weight="bold" font-family="Arial">01</text>
+      <!-- 节点01 - 左侧波谷 -->
+      <circle cx="90" cy="318" r="38" fill="white" stroke="#9aa8b8" stroke-width="3"/>
+      <text x="90" y="324" text-anchor="middle" fill="#1a3a9e" font-size="20" font-weight="bold" font-family="Arial">01</text>
 
-      <!-- 节点02 -->
-      <circle cx="380" cy="250" r="36" fill="white" stroke="#4a78c4" stroke-width="3"/>
-      <text x="380" y="255" text-anchor="middle" fill="#4a78c4" font-size="20" font-weight="bold" font-family="Arial">02</text>
+      <!-- 节点02 - 中间波峰 -->
+      <circle cx="440" cy="248" r="38" fill="white" stroke="#7baee0" stroke-width="3"/>
+      <text x="440" y="254" text-anchor="middle" fill="#4a78c4" font-size="20" font-weight="bold" font-family="Arial">02</text>
 
-      <!-- 节点03（高亮，深蓝） -->
-      <circle cx="660" cy="160" r="44" fill="#1a3a7a"/>
-      <text x="660" y="165" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Arial">03</text>
+      <!-- 节点03 - 右侧高点，深蓝实心 -->
+      <circle cx="750" cy="155" r="46" fill="#1a3a9e"/>
+      <text x="750" y="162" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">03</text>
       <!-- 连线到右侧卡片 -->
-      <line x1="700" y1="145" x2="860" y2="80" stroke="#1a3a7a" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="793" y1="138" x2="880" y2="80" stroke="#1a3a9e" stroke-width="1.5" stroke-dasharray="4,3"/>
     </svg>
   </div>
 
@@ -87,8 +93,10 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
 
   <!-- 80%大数字 -->
   <div class="big-num-area">
-    <div class="big-num">80%</div>
-    <div class="big-num-desc">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    <div class="big-num">
+      <span>80%</span>
+      <div class="big-num-side">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
+    </div>
     <div class="big-num-en">Brand planning is to make the corporate image and product brand form a personalized.</div>
   </div>
 
@@ -96,15 +104,15 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
   <div class="bottom-cards">
     <div class="bottom-card">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
     <div class="bottom-card">
-      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">01 – 品牌策划推广</div>
+      <div class="bottom-card-title">01 – 品牌策划推广</div>
       品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
     </div>
     <div class="bottom-card">
-      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">02 – 品牌策划推广</div>
+      <div class="bottom-card-title">02 – 品牌策划推广</div>
       品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
     </div>
     <div class="bottom-card" style="background:#e8edf5;">
-      <div style="font-weight:700;color:#1a3a7a;margin-bottom:4px;">03 – 品牌策划推广</div>
+      <div class="bottom-card-title">03 – 品牌策划推广</div>
       品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。
     </div>
   </div>

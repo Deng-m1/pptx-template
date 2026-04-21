@@ -9,22 +9,22 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 14px 50px; display:flex; flex-direction:column; }
+  .slide { width:1280px; height:720px; background:#fff; padding:22px 50px 16px 50px; display:flex; flex-direction:column; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
   .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
   .header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
 
-  .gantt-wrap { flex:1; overflow:hidden; }
-  .gantt { width:100%; border-collapse:collapse; font-size:11px; }
+  .gantt-wrap { flex:1; min-height:0; }
+  .gantt { width:100%; height:100%; border-collapse:collapse; font-size:11px; table-layout:fixed; }
   .gantt th {
-    text-align:center; padding:4px 1px;
+    text-align:center; padding:5px 1px;
     font-size:11px; font-weight:700;
     border:1px solid #dde3ef;
   }
   .gantt th.label-col { width:90px; background:#1a3a9e; color:#fff; }
-  .gantt th.day-h { background:#1a3a9e; color:#fff; min-width:28px; }
+  .gantt th.day-h { background:#1a3a9e; color:#fff; }
   .gantt th.week-h { background:#4a7ac8; color:#fff; font-size:13px; }
   .gantt td {
     border:1px solid #e8ecf4;
@@ -47,8 +47,8 @@
   .bar-gray { background:#8899aa; }
 
   .bottom-row {
-    display:flex; margin-top:8px; flex-shrink:0;
-    border:1.5px solid #1a3a9e; border-radius:6px; overflow:hidden;
+    display:flex; margin-top:10px; flex-shrink:0;
+    border:1.5px solid #1a3a9e; border-radius:6px; overflow:hidden; height:130px;
   }
   .bottom-left { flex:1; padding:12px 16px; border-right:1.5px solid #1a3a9e; }
   .bottom-left-title { font-size:17px; font-weight:900; color:#1a3a9e; margin-bottom:5px; }
@@ -73,6 +73,13 @@
 
   <div class="gantt-wrap">
     <table class="gantt">
+      <colgroup>
+        <col style="width:90px">
+        <col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col>
+        <col><col><col><col><col><col><col>
+      </colgroup>
       <thead>
         <tr>
           <th class="label-col" rowspan="2">任务 #</th>
@@ -135,37 +142,37 @@
     <div class="bottom-right">
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><circle cx="9" cy="9" r="3"/><path d="M3 20c0-4 3-7 6-7s6 3 6 7"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 20c0-3-2.5-5.5-5-6"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><circle cx="9" cy="9" r="3"/><path d="M3 20c0-4 3-7 6-7s6 3 6 7"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 20c0-3-2.5-5.5-5-6"/></svg>
         </div>
         <div class="dept-name">策划部</div>
       </div>
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5c0 3-2 5-5 7-3-2-5-4-5-7a5 5 0 0 1 5-5z"/><path d="M12 14v8"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5c0 3-2 5-5 7-3-2-5-4-5-7a5 5 0 0 1 5-5z"/><path d="M12 14v8"/></svg>
         </div>
         <div class="dept-name">设计部</div>
       </div>
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         </div>
         <div class="dept-name">采购部</div>
       </div>
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
         <div class="dept-name">销售部</div>
       </div>
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         </div>
         <div class="dept-name">商务部</div>
       </div>
       <div class="dept-item">
         <div class="dept-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a9e" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <div class="dept-name">工程部</div>
       </div>

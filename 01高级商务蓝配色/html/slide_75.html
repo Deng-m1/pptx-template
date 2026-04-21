@@ -2,42 +2,44 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_75</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;position:relative;}
-.header{position:absolute;top:18px;left:30px;right:30px;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin-top:6px;}
-.page-title{position:absolute;top:90px;left:30px;font-size:24px;font-weight:900;color:#1a3a7a;}
-.page-desc{position:absolute;top:124px;left:30px;width:380px;font-size:10.5px;color:#555;line-height:1.7;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; position:relative; }
+.header { position:absolute; top:14px; left:20px; right:20px; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.page-title { position:absolute; top:78px; left:20px; font-size:24px; font-weight:900; color:#1a3a9e; }
+.page-desc { position:absolute; top:112px; left:20px; width:370px; font-size:10.5px; color:#555; line-height:1.7; }
 /* 左侧文字卡片 */
-.left-card1{position:absolute;top:200px;left:30px;width:320px;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;font-size:10.5px;color:#555;line-height:1.7;}
-.left-card2{position:absolute;top:360px;left:30px;width:320px;border:1.5px solid #dde4f0;border-radius:4px;padding:12px;font-size:10.5px;color:#555;line-height:1.7;}
-.market-tag{position:absolute;bottom:30px;left:30px;background:#7baee0;color:#fff;font-size:12px;padding:5px 16px;border-radius:2px;}
-
-/* 右侧4个叠加箭头 */
-.arrows-area{position:absolute;right:30px;top:100px;width:820px;height:480px;}
-.arrows-area svg{width:100%;height:100%;}
-
+.left-card1 { position:absolute; top:210px; left:20px; width:340px; border:1.5px solid #dde4f0; border-radius:4px; padding:12px; font-size:10.5px; color:#555; line-height:1.7; }
+.left-card2 { position:absolute; top:370px; left:20px; width:340px; border:1.5px solid #dde4f0; border-radius:4px; padding:12px; font-size:10.5px; color:#555; line-height:1.7; }
+.market-tag { position:absolute; bottom:22px; left:20px; background:#7baee0; color:#fff; font-size:12px; padding:5px 16px; border-radius:2px; }
+/* 右侧4个叠加箭头区域 */
+.arrows-area { position:absolute; right:0; top:90px; width:840px; height:520px; }
 /* 底部图标 */
-.icons-row{position:absolute;bottom:30px;left:380px;display:flex;flex-direction:row;gap:30px;}
-.icon-circle{width:52px;height:52px;border-radius:50%;background:#1a3a7a;display:flex;align-items:center;justify-content:center;font-size:24px;}
-
+.icons-row { position:absolute; bottom:22px; left:380px; display:flex; flex-direction:row; gap:28px; }
+.icon-circle { width:52px; height:52px; border-radius:50%; background:#1a3a9e; display:flex; align-items:center; justify-content:center; font-size:24px; }
 /* 88%圆形 */
-.big-circle{position:absolute;right:30px;bottom:30px;width:120px;height:120px;border-radius:50%;background:#1a3a7a;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.big-circle-num{font-size:36px;font-weight:900;color:#fff;line-height:1;}
-.big-circle-desc{font-size:10px;color:rgba(255,255,255,0.8);}
+.big-circle { position:absolute; right:20px; bottom:18px; width:125px; height:125px; border-radius:50%; background:#1a3a9e; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.big-circle-num { font-size:38px; font-weight:900; color:#fff; line-height:1; }
+.big-circle-desc { font-size:10px; color:rgba(255,255,255,0.85); }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">逻辑架构 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-row">
+      <div class="header-title">逻辑架构 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="page-title">品牌营销逻辑策划报告</div>
   <div class="page-desc">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
@@ -47,31 +49,28 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
   <div class="left-card2">品牌策划（Brand planning）是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。</div>
   <div class="market-tag">市场化名词</div>
 
-  <!-- 右侧4个叠加箭头 SVG -->
+  <!-- 右侧4个叠加箭头 SVG - 从上到下，每个向右偏移形成阶梯 -->
   <div class="arrows-area">
-    <svg viewBox="0 0 820 480" preserveAspectRatio="xMidYMid meet">
-      <!-- 箭头1（最上，最浅，浅蓝） -->
-      <polygon points="0,0 700,0 820,80 700,160 0,160" fill="#b8cce4"/>
-      <text x="60" y="60" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
-      <text x="60" y="90" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
+    <svg viewBox="0 0 840 520" width="840" height="520" preserveAspectRatio="xMidYMid meet">
+      <!-- 箭头1（最上，最浅，浅蓝，最短） -->
+      <polygon points="120,0 680,0 800,60 680,120 120,120" fill="#b8cce4"/>
+      <text x="200" y="42" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
+      <text x="200" y="70" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
 
-      <!-- 箭头2（中蓝） -->
-      <polygon points="0,140 700,140 820,220 700,300 0,300" fill="#4a78c4"/>
-      <text x="60" y="200" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌推广</text>
-      <text x="60" y="230" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
+      <!-- 箭头2（中蓝，向右偏移少一些） -->
+      <polygon points="60,115 720,115 840,175 720,235 60,235" fill="#4a78c4"/>
+      <text x="130" y="157" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌推广</text>
+      <text x="130" y="185" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
 
-      <!-- 箭头3（深蓝） -->
-      <polygon points="0,280 700,280 820,360 700,440 0,440" fill="#1a3a7a"/>
-      <text x="60" y="340" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌推广</text>
-      <text x="60" y="370" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
+      <!-- 箭头3（深蓝，最宽） -->
+      <polygon points="0,230 740,230 840,290 740,350 0,350" fill="#1a3a9e"/>
+      <text x="60" y="272" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌推广</text>
+      <text x="60" y="300" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
 
-      <!-- 箭头4（灰色，最下） -->
-      <polygon points="0,420 700,420 820,480 700,480 0,480" fill="#8a9ab0"/>
-      <text x="60" y="458" fill="white" font-size="18" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
-      <text x="300" y="458" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
-
-      <!-- 底部图标 -->
-      <circle cx="80" cy="450" r="0" fill="none"/>
+      <!-- 箭头4（灰色，最下，最宽） -->
+      <polygon points="0,345 760,345 840,390 760,435 0,435" fill="#8a9ab0"/>
+      <text x="60" y="380" fill="white" font-size="18" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
+      <text x="260" y="380" fill="white" font-size="11" font-family="Microsoft YaHei">品牌策划（Brand planning）是深层次表达。</text>
     </svg>
   </div>
 

@@ -6,9 +6,9 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 80px; padding: 14px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
+  .header { height: 60px; padding: 10px 20px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 28px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
   .body { flex: 1; display: flex; flex-direction: column; }
   .main { flex: 1; display: flex; align-items: stretch; padding: 10px 20px; gap: 10px; }
 
@@ -62,24 +62,36 @@
         <div class="center-title">项目规划报告</div>
         <div class="center-sub">品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔。</div>
         <!-- X形蝴蝶结 SVG -->
-        <svg width="340" height="280" viewBox="0 0 340 280">
-          <!-- 左上三角（深蓝） -->
-          <polygon points="170,140 20,20 20,260" fill="#1a3a6b" opacity="0.9"/>
-          <!-- 右上三角（浅蓝） -->
-          <polygon points="170,140 320,20 320,260" fill="#7aa0d4" opacity="0.9"/>
-          <!-- 上三角（深蓝） -->
-          <polygon points="170,140 20,20 320,20" fill="#1a3a6b" opacity="0.85"/>
-          <!-- 下三角（浅灰） -->
-          <polygon points="170,140 20,260 320,260" fill="#b0bec5" opacity="0.85"/>
+        <svg width="400" height="320" viewBox="0 0 400 320">
+          <!-- 上三角（深蓝，指向上） -->
+          <polygon points="200,160 40,10 360,10" fill="#1a3a6b"/>
+          <!-- 下三角（浅蓝，指向下） -->
+          <polygon points="200,160 40,310 360,310" fill="#7aa0d4"/>
+          <!-- 左三角（灰蓝，指向左） -->
+          <polygon points="200,160 10,40 10,280" fill="#b0bec5"/>
+          <!-- 右三角（中蓝，指向右） -->
+          <polygon points="200,160 390,40 390,280" fill="#3a6abf"/>
           <!-- 中心圆 -->
-          <circle cx="170" cy="140" r="44" fill="#fff"/>
-          <circle cx="170" cy="140" r="38" fill="#1a3a6b"/>
-          <text x="170" y="148" text-anchor="middle" font-size="26" fill="white">💡</text>
+          <circle cx="200" cy="160" r="46" fill="#fff"/>
+          <circle cx="200" cy="160" r="38" fill="#1a3a6b"/>
+          <text x="200" y="168" text-anchor="middle" font-size="26" fill="white">&#128161;</text>
+          <!-- 左侧图标（时钟） -->
+          <circle cx="60" cy="160" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="60" y="168" text-anchor="middle" font-size="18" fill="white">&#9200;</text>
+          <!-- 右侧图标（齿轮） -->
+          <circle cx="340" cy="160" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="340" y="168" text-anchor="middle" font-size="18" fill="white">&#9881;</text>
+          <!-- 上方图标（灯泡） -->
+          <circle cx="200" cy="50" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="200" y="58" text-anchor="middle" font-size="18" fill="white">&#128161;</text>
+          <!-- 下方图标（图表） -->
+          <circle cx="200" cy="270" r="22" fill="rgba(255,255,255,0.2)"/>
+          <text x="200" y="278" text-anchor="middle" font-size="18" fill="white">&#128202;</text>
           <!-- BRAND PLANNING 文字（斜向） -->
-          <text x="80" y="75" font-size="11" fill="white" transform="rotate(-40,80,75)" font-weight="bold" opacity="0.8">BRAND PLANNING</text>
-          <text x="240" y="75" font-size="11" fill="white" transform="rotate(40,240,75)" font-weight="bold" opacity="0.8">BRAND PLANNING</text>
-          <text x="80" y="210" font-size="11" fill="white" transform="rotate(40,80,210)" font-weight="bold" opacity="0.8">BRAND PLANNING</text>
-          <text x="240" y="210" font-size="11" fill="white" transform="rotate(-40,240,210)" font-weight="bold" opacity="0.8">BRAND PLANNING</text>
+          <text x="110" y="70" font-size="10" fill="white" transform="rotate(-50,110,70)" font-weight="bold" opacity="0.85" letter-spacing="1">BRAND PLANNING</text>
+          <text x="290" y="70" font-size="10" fill="white" transform="rotate(50,290,70)" font-weight="bold" opacity="0.85" letter-spacing="1">BRAND PLANNING</text>
+          <text x="110" y="255" font-size="10" fill="white" transform="rotate(50,110,255)" font-weight="bold" opacity="0.85" letter-spacing="1">BRAND PLANNING</text>
+          <text x="290" y="255" font-size="10" fill="white" transform="rotate(-50,290,255)" font-weight="bold" opacity="0.85" letter-spacing="1">BRAND PLANNING</text>
         </svg>
       </div>
 

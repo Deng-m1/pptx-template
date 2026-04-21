@@ -2,47 +2,50 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_76</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;position:relative;display:flex;flex-direction:column;}
-.header{padding:14px 30px 0 30px;flex-shrink:0;}
-.main-title{font-size:30px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:14px;color:#2563c0;font-weight:600;text-align:right;margin-top:-26px;}
-.divider{height:2px;background:#1a3a7a;margin-top:4px;}
-/* 顶部标题区 */
-.top-section{flex-shrink:0;text-align:center;padding:10px 200px 0 200px;}
-.page-title{font-size:26px;font-weight:900;color:#1a3a7a;}
-.page-desc{font-size:10px;color:#666;line-height:1.6;margin-top:4px;}
-/* 主体区 */
-.body{flex:1;position:relative;display:flex;flex-direction:row;}
-/* 左侧标签 */
-.left-tags{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:8px;}
-.right-tags{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:8px;}
-.tag-dark{background:#1a3a7a;color:#fff;font-size:11px;padding:5px 12px;border-radius:2px;}
-.tag-gray{background:#8a9ab0;color:#fff;font-size:11px;padding:5px 12px;border-radius:2px;}
-/* 中间S形区 */
-.center-area{position:absolute;left:110px;right:110px;top:0;bottom:100px;display:flex;align-items:center;justify-content:center;}
-.center-area svg{width:100%;height:100%;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; position:relative; display:flex; flex-direction:column; }
+.header { padding:14px 20px 0 20px; flex-shrink:0; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.top-section { flex-shrink:0; text-align:center; padding:8px 180px 0 180px; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; }
+.page-desc { font-size:10px; color:#666; line-height:1.6; margin-top:4px; }
+.body { flex:1; position:relative; }
+/* 左右标签 */
+.left-tags { position:absolute; left:8px; top:8px; display:flex; flex-direction:column; gap:8px; }
+.right-tags { position:absolute; right:8px; top:8px; display:flex; flex-direction:column; gap:8px; }
+.tag-dark { background:#1a3a9e; color:#fff; font-size:11px; padding:5px 12px; border-radius:2px; }
+.tag-gray { background:#8a9ab0; color:#fff; font-size:11px; padding:5px 12px; border-radius:2px; }
+/* 中间蛇形区域 */
+.center-area { position:absolute; left:100px; right:100px; top:0; bottom:100px; }
 /* 左右折线图 */
-.chart-left{position:absolute;left:10px;bottom:100px;width:100px;height:200px;}
-.chart-right{position:absolute;right:10px;bottom:100px;width:100px;height:200px;}
-.chart-left svg,.chart-right svg{width:100%;height:100%;}
+.chart-left { position:absolute; left:8px; bottom:100px; width:95px; height:190px; }
+.chart-right { position:absolute; right:8px; bottom:100px; width:95px; height:190px; }
 /* 底部4卡片 */
-.bottom-cards{position:absolute;bottom:0;left:110px;right:110px;height:90px;display:flex;flex-direction:row;gap:0;}
-.bcard{flex:1;display:flex;flex-direction:column;justify-content:center;padding:10px 14px;border:1px solid #dde4f0;}
-.bcard-dark{background:#1a3a7a;color:#fff;}
-.bcard-white{background:#fff;color:#1a3a7a;border:1.5px solid #1a3a7a;}
-.bcard-title{font-size:14px;font-weight:700;}
-.bcard-desc{font-size:9.5px;line-height:1.5;margin-top:3px;opacity:0.85;}
+.bottom-cards { position:absolute; bottom:0; left:100px; right:100px; height:95px; display:flex; flex-direction:row; gap:0; }
+.bcard { flex:1; display:flex; flex-direction:column; justify-content:center; padding:10px 14px; border:1px solid #dde4f0; }
+.bcard-dark { background:#1a3a9e; color:#fff; }
+.bcard-white { background:#fff; color:#1a3a9e; border:1.5px solid #1a3a9e; }
+.bcard-title { font-size:15px; font-weight:700; }
+.bcard-desc { font-size:9.5px; line-height:1.5; margin-top:3px; opacity:0.85; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">逻辑架构 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-row">
+      <div class="header-title">逻辑架构 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="top-section">
     <div class="page-title">品牌营销逻辑策划报告</div>
@@ -61,76 +64,88 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
       <div class="tag-gray">市场化名词</div>
       <div class="tag-dark">市场化名词</div>
     </div>
+
     <!-- 左侧折线图 -->
     <div class="chart-left">
-      <svg viewBox="0 0 100 200" preserveAspectRatio="none">
-        <text x="8" y="15" font-size="9" fill="#999">14</text>
-        <text x="8" y="55" font-size="9" fill="#999">10</text>
-        <text x="8" y="95" font-size="9" fill="#999">6</text>
-        <text x="8" y="135" font-size="9" fill="#999">2</text>
-        <text x="8" y="175" font-size="9" fill="#999">0</text>
-        <polyline points="30,170 45,130 55,100 65,60 75,30 85,50" fill="none" stroke="#1a3a7a" stroke-width="2"/>
-        <polygon points="30,170 45,130 55,100 65,60 75,30 85,50 85,170" fill="#b8cce4" opacity="0.5"/>
-        <polygon points="30,170 40,150 50,140 60,120 70,110 80,130 85,170" fill="#dde8f5" opacity="0.5"/>
+      <svg viewBox="0 0 95 190" width="95" height="190" preserveAspectRatio="none">
+        <text x="2" y="14" font-size="9" fill="#999">14</text>
+        <text x="2" y="52" font-size="9" fill="#999">10</text>
+        <text x="2" y="90" font-size="9" fill="#999">6</text>
+        <text x="2" y="128" font-size="9" fill="#999">2</text>
+        <text x="2" y="166" font-size="9" fill="#999">0</text>
+        <polygon points="25,170 35,120 45,90 55,55 65,25 75,45 75,170" fill="#b8cce4" opacity="0.6"/>
+        <polygon points="25,170 35,150 45,140 55,115 65,100 75,125 75,170" fill="#dde8f5" opacity="0.5"/>
+        <polyline points="25,170 35,120 45,90 55,55 65,25 75,45" fill="none" stroke="#1a3a9e" stroke-width="2"/>
       </svg>
     </div>
     <!-- 右侧折线图 -->
     <div class="chart-right">
-      <svg viewBox="0 0 100 200" preserveAspectRatio="none">
-        <text x="8" y="15" font-size="9" fill="#999">14</text>
-        <text x="8" y="55" font-size="9" fill="#999">10</text>
-        <text x="8" y="95" font-size="9" fill="#999">6</text>
-        <text x="8" y="135" font-size="9" fill="#999">2</text>
-        <text x="8" y="175" font-size="9" fill="#999">0</text>
-        <polyline points="30,170 45,130 55,100 65,60 75,30 85,50" fill="none" stroke="#1a3a7a" stroke-width="2"/>
-        <polygon points="30,170 45,130 55,100 65,60 75,30 85,50 85,170" fill="#b8cce4" opacity="0.5"/>
-        <polygon points="30,170 40,150 50,140 60,120 70,110 80,130 85,170" fill="#dde8f5" opacity="0.5"/>
+      <svg viewBox="0 0 95 190" width="95" height="190" preserveAspectRatio="none">
+        <text x="2" y="14" font-size="9" fill="#999">14</text>
+        <text x="2" y="52" font-size="9" fill="#999">10</text>
+        <text x="2" y="90" font-size="9" fill="#999">6</text>
+        <text x="2" y="128" font-size="9" fill="#999">2</text>
+        <text x="2" y="166" font-size="9" fill="#999">0</text>
+        <polygon points="25,170 35,120 45,90 55,55 65,25 75,45 75,170" fill="#b8cce4" opacity="0.6"/>
+        <polygon points="25,170 35,150 45,140 55,115 65,100 75,125 75,170" fill="#dde8f5" opacity="0.5"/>
+        <polyline points="25,170 35,120 45,90 55,55 65,25 75,45" fill="none" stroke="#1a3a9e" stroke-width="2"/>
       </svg>
     </div>
-    <!-- 中间S形蛇形路径 -->
+
+    <!-- 中间蛇形路径 SVG -->
     <div class="center-area">
-      <svg viewBox="0 0 1060 320" preserveAspectRatio="xMidYMid meet">
-        <!-- 左箭头 -->
-        <polygon points="0,130 60,100 60,120 200,120 200,140 60,140 60,160" fill="#b0c4de"/>
-        <!-- 第1个椭圆节点 -->
-        <ellipse cx="280" cy="130" rx="80" ry="110" fill="#c8d8ec"/>
-        <ellipse cx="280" cy="130" rx="60" ry="90" fill="#1a3a7a"/>
-        <text x="280" y="115" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
-        <text x="280" y="133" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">名词</text>
-        <circle cx="280" cy="175" r="22" fill="white" opacity="0.9"/>
-        <text x="280" y="180" text-anchor="middle" font-size="18" fill="#1a3a7a">💼</text>
-        <!-- 连接线1→2（向右） -->
-        <line x1="360" y1="130" x2="440" y2="130" stroke="#1a3a7a" stroke-width="3"/>
-        <!-- 第2个椭圆节点 -->
-        <ellipse cx="520" cy="130" rx="80" ry="110" fill="#c8d8ec"/>
-        <ellipse cx="520" cy="130" rx="60" ry="90" fill="#4a78c4"/>
-        <text x="520" y="115" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
-        <text x="520" y="133" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">名词</text>
-        <circle cx="520" cy="175" r="22" fill="white" opacity="0.9"/>
-        <text x="520" y="180" text-anchor="middle" font-size="18" fill="#4a78c4">📊</text>
-        <!-- 连接线2→3（向右） -->
-        <line x1="600" y1="130" x2="680" y2="130" stroke="#1a3a7a" stroke-width="3"/>
-        <!-- 第3个椭圆节点 -->
-        <ellipse cx="760" cy="130" rx="80" ry="110" fill="#c8d8ec"/>
-        <ellipse cx="760" cy="130" rx="60" ry="90" fill="#6a9ad4"/>
-        <text x="760" y="115" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
-        <text x="760" y="133" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">名词</text>
-        <circle cx="760" cy="175" r="22" fill="white" opacity="0.9"/>
-        <text x="760" y="180" text-anchor="middle" font-size="18" fill="#6a9ad4">🗂</text>
-        <!-- 连接线3→4（向右） -->
-        <line x1="840" y1="130" x2="920" y2="130" stroke="#1a3a7a" stroke-width="3"/>
-        <!-- 第4个椭圆节点 -->
-        <ellipse cx="1000" cy="130" rx="80" ry="110" fill="#c8d8ec"/>
-        <ellipse cx="1000" cy="130" rx="60" ry="90" fill="#8ab0d0"/>
-        <text x="1000" y="115" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
-        <text x="1000" y="133" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Microsoft YaHei">名词</text>
-        <circle cx="1000" cy="175" r="22" fill="white" opacity="0.9"/>
-        <text x="1000" y="180" text-anchor="middle" font-size="18" fill="#8ab0d0">🔵</text>
-        <!-- 右箭头 -->
-        <polygon points="1060,130 1000,100 1000,120 1000,120 1000,140 1000,160" fill="none"/>
-        <polygon points="1060,130 1010,105 1010,125 1010,125 1010,135 1010,155" fill="#b0c4de"/>
+      <svg viewBox="0 0 1080 290" width="1080" height="290" preserveAspectRatio="xMidYMid meet" style="position:absolute;top:10px;left:0;">
+        <!-- 左侧箭头（向左） -->
+        <polygon points="0,125 50,100 50,115 120,115 120,135 50,135 50,150" fill="#b0c4de"/>
+
+        <!-- 蛇形路径背景（浅蓝色大路径） -->
+        <!-- 第1段：从左向右（上半段） -->
+        <path d="M 120,90 C 180,60 220,60 260,90 L 260,170 C 220,200 180,200 120,170 Z" fill="#c8d8ec"/>
+        <!-- 第2段 -->
+        <path d="M 380,90 C 440,60 480,60 520,90 L 520,170 C 480,200 440,200 380,170 Z" fill="#c8d8ec"/>
+        <!-- 第3段 -->
+        <path d="M 620,90 C 680,60 720,60 760,90 L 760,170 C 720,200 680,200 620,170 Z" fill="#c8d8ec"/>
+        <!-- 第4段 -->
+        <path d="M 860,90 C 920,60 960,60 1000,90 L 1000,170 C 960,200 920,200 860,170 Z" fill="#c8d8ec"/>
+
+        <!-- 连接线（横向） -->
+        <line x1="260" y1="130" x2="380" y2="130" stroke="#1a3a9e" stroke-width="4"/>
+        <line x1="520" y1="130" x2="620" y2="130" stroke="#1a3a9e" stroke-width="4"/>
+        <line x1="760" y1="130" x2="860" y2="130" stroke="#1a3a9e" stroke-width="4"/>
+
+        <!-- 节点1（深蓝） -->
+        <ellipse cx="190" cy="130" rx="70" ry="95" fill="#1a3a9e"/>
+        <text x="190" y="112" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
+        <text x="190" y="130" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">名词</text>
+        <circle cx="190" cy="170" r="20" fill="white" opacity="0.9"/>
+        <text x="190" y="176" text-anchor="middle" font-size="16" fill="#1a3a9e">💼</text>
+
+        <!-- 节点2（中蓝） -->
+        <ellipse cx="450" cy="130" rx="70" ry="95" fill="#4a78c4"/>
+        <text x="450" y="112" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
+        <text x="450" y="130" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">名词</text>
+        <circle cx="450" cy="170" r="20" fill="white" opacity="0.9"/>
+        <text x="450" y="176" text-anchor="middle" font-size="16" fill="#4a78c4">📊</text>
+
+        <!-- 节点3（浅蓝） -->
+        <ellipse cx="690" cy="130" rx="70" ry="95" fill="#6a9ad4"/>
+        <text x="690" y="112" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
+        <text x="690" y="130" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">名词</text>
+        <circle cx="690" cy="170" r="20" fill="white" opacity="0.9"/>
+        <text x="690" y="176" text-anchor="middle" font-size="16" fill="#6a9ad4">🗂</text>
+
+        <!-- 节点4（最浅蓝） -->
+        <ellipse cx="930" cy="130" rx="70" ry="95" fill="#8ab0d0"/>
+        <text x="930" y="112" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">市场化</text>
+        <text x="930" y="130" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="Microsoft YaHei">名词</text>
+        <circle cx="930" cy="170" r="20" fill="white" opacity="0.9"/>
+        <text x="930" y="176" text-anchor="middle" font-size="16" fill="#8ab0d0">🔵</text>
+
+        <!-- 右侧箭头（向右） -->
+        <polygon points="1080,125 1030,100 1030,115 1000,115 1000,135 1030,135 1030,150" fill="#b0c4de"/>
       </svg>
     </div>
+
     <!-- 底部4卡片 -->
     <div class="bottom-cards">
       <div class="bcard bcard-dark">

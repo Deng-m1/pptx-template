@@ -2,37 +2,41 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_77</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:14px 30px 0 30px;flex-shrink:0;}
-.main-title{font-size:30px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:14px;color:#2563c0;font-weight:600;text-align:right;margin-top:-26px;}
-.divider{height:2px;background:#1a3a7a;margin-top:4px;}
-/* 顶部标题行 */
-.top-row{display:flex;flex-direction:row;align-items:flex-start;padding:10px 30px 0 30px;flex-shrink:0;}
-.top-left{flex:1;}
-.page-title{font-size:28px;font-weight:900;color:#1a3a7a;}
-.page-desc{font-size:10px;color:#666;line-height:1.6;margin-top:4px;max-width:700px;}
-.top-right{display:flex;flex-direction:row;align-items:center;gap:6px;}
-.pct-num{font-size:72px;font-weight:900;color:#1a3a7a;line-height:1;}
-.pct-arrow{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:60px solid #1a3a7a;margin-left:4px;}
-/* 圆柱区 */
-.cylinders-section{flex:1;position:relative;padding:0 30px;}
-/* 底部卡片 */
-.bottom-cards{flex-shrink:0;display:flex;flex-direction:row;height:100px;margin:0 30px 10px 30px;gap:0;}
-.bcard{flex:1;display:flex;flex-direction:column;justify-content:center;padding:10px 14px;border:1px solid #dde4f0;}
-.bcard-dot{width:10px;height:10px;border-radius:50%;background:#1a3a7a;display:inline-block;margin-right:6px;flex-shrink:0;}
-.bcard-text{font-size:10.5px;color:#333;line-height:1.6;display:flex;align-items:flex-start;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; display:flex; flex-direction:column; }
+.header { padding:14px 20px 0 20px; flex-shrink:0; }
+.header-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-top:4px; }
+.top-row { display:flex; flex-direction:row; align-items:flex-start; padding:10px 20px 0 20px; flex-shrink:0; }
+.top-left { flex:1; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; }
+.page-desc { font-size:10px; color:#666; line-height:1.6; margin-top:4px; max-width:660px; }
+.top-right { display:flex; flex-direction:row; align-items:center; gap:6px; }
+.pct-num { font-size:72px; font-weight:900; color:#1a3a9e; line-height:1; }
+.pct-arrow { width:0; height:0; border-left:28px solid transparent; border-right:28px solid transparent; border-bottom:56px solid #1a3a9e; margin-left:4px; }
+.cylinders-section { flex:1; position:relative; padding:0 20px; min-height:0; }
+.bottom-cards { flex-shrink:0; display:flex; flex-direction:row; height:110px; margin:0 20px 12px 20px; gap:0; }
+.bcard { flex:1; display:flex; flex-direction:column; justify-content:center; padding:10px 14px; border:1px solid #dde4f0; }
+.bcard-text { font-size:10.5px; color:#333; line-height:1.6; display:flex; align-items:flex-start; }
+.bcard-dot { width:10px; height:10px; border-radius:50%; background:#1a3a9e; display:inline-block; margin-right:6px; flex-shrink:0; margin-top:3px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">逻辑架构 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-row">
+      <div class="header-title">逻辑架构 Powerpoint Template</div>
+      <div class="header-sub">Work Arrangement</div>
+    </div>
+    <div class="header-line"></div>
   </div>
   <div class="top-row">
     <div class="top-left">
@@ -45,48 +49,43 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
     </div>
   </div>
 
-  <!-- 圆柱区（SVG） -->
+  <!-- 圆柱区（SVG）- 更细长的圆柱 -->
   <div class="cylinders-section">
-    <svg width="100%" height="100%" viewBox="0 0 1220 280" preserveAspectRatio="xMidYMid meet">
+    <svg width="100%" height="100%" viewBox="0 0 1240 260" preserveAspectRatio="xMidYMid meet">
       <!-- 背景大箭头 -->
-      <polygon points="0,100 1140,100 1140,60 1220,140 1140,220 1140,180 0,180" fill="#dde8f5"/>
+      <polygon points="0,90 1160,90 1160,50 1240,130 1160,210 1160,170 0,170" fill="#dde8f5"/>
 
       <!-- 圆柱1（深蓝） -->
-      <!-- 左椭圆面 -->
-      <ellipse cx="160" cy="140" rx="50" ry="130" fill="#0d2050"/>
-      <!-- 圆柱体 -->
-      <rect x="160" y="10" width="160" height="260" fill="#1a3a7a"/>
-      <!-- 右椭圆面 -->
-      <ellipse cx="320" cy="140" rx="50" ry="130" fill="#2a4a8a"/>
-      <!-- 节点圆 -->
-      <circle cx="240" cy="50" r="28" fill="white" stroke="#1a3a7a" stroke-width="2"/>
-      <text x="240" y="55" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei">01</text>
-      <!-- 文字 -->
-      <text x="240" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌调研</text>
+      <ellipse cx="145" cy="130" rx="40" ry="115" fill="#0d2050"/>
+      <rect x="145" y="15" width="155" height="230" fill="#1a3a9e"/>
+      <ellipse cx="300" cy="130" rx="40" ry="115" fill="#2a4a9e"/>
+      <circle cx="222" cy="38" r="26" fill="white" stroke="#1a3a9e" stroke-width="2"/>
+      <text x="222" y="43" text-anchor="middle" fill="#1a3a9e" font-size="15" font-weight="bold" font-family="Microsoft YaHei">01</text>
+      <text x="222" y="135" text-anchor="middle" fill="white" font-size="21" font-weight="bold" font-family="Microsoft YaHei">品牌调研</text>
 
       <!-- 圆柱2（中深蓝） -->
-      <ellipse cx="420" cy="140" rx="50" ry="130" fill="#1a4a8a"/>
-      <rect x="420" y="10" width="160" height="260" fill="#2a5a9a"/>
-      <ellipse cx="580" cy="140" rx="50" ry="130" fill="#3a6aaa"/>
-      <circle cx="500" cy="50" r="28" fill="white" stroke="#2a5a9a" stroke-width="2"/>
-      <text x="500" y="55" text-anchor="middle" fill="#2a5a9a" font-size="16" font-weight="bold" font-family="Microsoft YaHei">02</text>
-      <text x="500" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
+      <ellipse cx="380" cy="130" rx="40" ry="115" fill="#1a4a9e"/>
+      <rect x="380" y="15" width="155" height="230" fill="#2a5aae"/>
+      <ellipse cx="535" cy="130" rx="40" ry="115" fill="#3a6abe"/>
+      <circle cx="457" cy="38" r="26" fill="white" stroke="#2a5aae" stroke-width="2"/>
+      <text x="457" y="43" text-anchor="middle" fill="#2a5aae" font-size="15" font-weight="bold" font-family="Microsoft YaHei">02</text>
+      <text x="457" y="135" text-anchor="middle" fill="white" font-size="21" font-weight="bold" font-family="Microsoft YaHei">品牌策划</text>
 
       <!-- 圆柱3（浅蓝） -->
-      <ellipse cx="680" cy="140" rx="50" ry="130" fill="#4a78b4"/>
-      <rect x="680" y="10" width="160" height="260" fill="#5a8ac4"/>
-      <ellipse cx="840" cy="140" rx="50" ry="130" fill="#6a9ad4"/>
-      <circle cx="760" cy="50" r="28" fill="white" stroke="#5a8ac4" stroke-width="2"/>
-      <text x="760" y="55" text-anchor="middle" fill="#5a8ac4" font-size="16" font-weight="bold" font-family="Microsoft YaHei">03</text>
-      <text x="760" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌设计</text>
+      <ellipse cx="615" cy="130" rx="40" ry="115" fill="#4a78b4"/>
+      <rect x="615" y="15" width="155" height="230" fill="#5a8ac4"/>
+      <ellipse cx="770" cy="130" rx="40" ry="115" fill="#6a9ad4"/>
+      <circle cx="692" cy="38" r="26" fill="white" stroke="#5a8ac4" stroke-width="2"/>
+      <text x="692" y="43" text-anchor="middle" fill="#5a8ac4" font-size="15" font-weight="bold" font-family="Microsoft YaHei">03</text>
+      <text x="692" y="135" text-anchor="middle" fill="white" font-size="21" font-weight="bold" font-family="Microsoft YaHei">品牌设计</text>
 
       <!-- 圆柱4（灰蓝） -->
-      <ellipse cx="940" cy="140" rx="50" ry="130" fill="#8aa0b8"/>
-      <rect x="940" y="10" width="160" height="260" fill="#9ab0c8"/>
-      <ellipse cx="1100" cy="140" rx="50" ry="130" fill="#aac0d8"/>
-      <circle cx="1020" cy="50" r="28" fill="white" stroke="#9ab0c8" stroke-width="2"/>
-      <text x="1020" y="55" text-anchor="middle" fill="#9ab0c8" font-size="16" font-weight="bold" font-family="Microsoft YaHei">04</text>
-      <text x="1020" y="140" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">品牌升级</text>
+      <ellipse cx="850" cy="130" rx="40" ry="115" fill="#8aa0b8"/>
+      <rect x="850" y="15" width="155" height="230" fill="#9ab0c8"/>
+      <ellipse cx="1005" cy="130" rx="40" ry="115" fill="#aac0d8"/>
+      <circle cx="927" cy="38" r="26" fill="white" stroke="#9ab0c8" stroke-width="2"/>
+      <text x="927" y="43" text-anchor="middle" fill="#9ab0c8" font-size="15" font-weight="bold" font-family="Microsoft YaHei">04</text>
+      <text x="927" y="135" text-anchor="middle" fill="white" font-size="21" font-weight="bold" font-family="Microsoft YaHei">品牌升级</text>
     </svg>
   </div>
 
@@ -98,8 +97,8 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
     <div class="bcard" style="background:#fff;border:1.5px solid #dde4f0;">
       <div class="bcard-text"><span class="bcard-dot"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略。</div>
     </div>
-    <div class="bcard" style="background:#1a3a7a;">
-      <div class="bcard-text" style="color:#fff;"><span style="width:10px;height:10px;border-radius:50%;background:#fff;display:inline-block;margin-right:6px;flex-shrink:0;"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略。</div>
+    <div class="bcard" style="background:#1a3a9e;">
+      <div class="bcard-text" style="color:#fff;"><span style="width:10px;height:10px;border-radius:50%;background:#fff;display:inline-block;margin-right:6px;flex-shrink:0;margin-top:3px;"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略。使用同一策略。</div>
     </div>
     <div class="bcard" style="background:#fff;border:1.5px solid #dde4f0;">
       <div class="bcard-text"><span class="bcard-dot"></span>统一品牌策略是指企业将经营的所有系列产品使用同一品牌的策略，有利于建立"企业识别系统"</div>

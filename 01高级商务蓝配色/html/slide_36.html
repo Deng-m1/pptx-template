@@ -15,53 +15,59 @@ html,body { width:1280px; height:720px; overflow:hidden;
 .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
 .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
 .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
-.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
 
-.page-title { font-size:28px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
-.page-desc { font-size:11px; color:#444; line-height:1.7; margin-bottom:14px; max-width:700px; }
+.page-title { font-size:26px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
+.page-desc { font-size:10.5px; color:#444; line-height:1.7; margin-bottom:10px; max-width:680px; }
 
-.body { flex:1; display:flex; gap:0; overflow:hidden; }
+.body { flex:1; display:flex; gap:0; min-height:0; }
 
-/* 左侧5列区域 */
-.left-area { flex:1; display:flex; gap:0; }
+/* 左侧区域 - 3列文字 + 右侧阶梯 */
+.left-cols { display:flex; flex:1; gap:0; }
 
-/* 每列 */
 .col { flex:1; display:flex; flex-direction:column; border-right:1px dashed #d0d8ee; padding:0 10px; }
 .col:last-child { border-right:none; }
 
-/* 图标+箭头行 */
-.icon-arrow-row { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
-.icon-circle { width:52px; height:52px; border-radius:50%; border:2px solid #1a3a9e; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.icon-circle svg { width:26px; height:26px; stroke:#1a3a9e; fill:none; stroke-width:1.8; }
-.big-arrow { flex:1; height:36px; background:#1a3a9e; position:relative;
+.icon-arrow-row { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-shrink:0; }
+.icon-circle { width:50px; height:50px; border-radius:50%; border:2px solid #1a3a9e; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.icon-circle svg { width:24px; height:24px; stroke:#1a3a9e; fill:none; stroke-width:1.8; }
+.big-arrow { flex:1; height:34px; background:#1a3a9e;
   clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%); }
 
-/* 标题 */
-.col-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+.col-title { font-size:20px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
 .col-desc { font-size:10px; color:#444; line-height:1.7; }
 
-/* 阶梯箭头（右侧2列） */
-.stair-col { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:0 0 0 10px; position:relative; }
+/* 右侧区域 */
+.right-area { width:420px; flex-shrink:0; display:flex; flex-direction:column; padding-left:10px; }
 
-/* 阶梯箭头形状 */
+/* 右侧上方两个图标+文字 */
+.right-top { display:flex; gap:10px; margin-bottom:10px; flex-shrink:0; }
+.right-top-col { flex:1; display:flex; flex-direction:column; gap:6px; }
+.right-icon-row { display:flex; align-items:center; gap:8px; }
+.right-col-title { font-size:18px; font-weight:900; color:#1a3a9e; }
+.right-col-desc { font-size:10px; color:#444; line-height:1.7; }
+
+/* 阶梯箭头 - 从下到上，宽度递增 */
+.stair-area { flex:1; display:flex; flex-direction:column; justify-content:flex-end; gap:4px; }
+.stair-row { display:flex; justify-content:flex-end; }
 .stair-arrow {
-  height:56px; border-radius:2px; display:flex; align-items:center; padding:0 20px;
-  clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
-  margin-bottom:4px;
+  height:46px; display:flex; align-items:center; padding:0 16px;
+  clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+  gap:10px;
 }
-.sa-dark { background:#1a3a9e; }
-.sa-mid { background:#3a6aae; }
-.sa-light { background:#6a8ac8; }
-.sa-lighter { background:#9aaad8; }
-.sa-lightest { background:#c0cce8; }
-.stair-num { font-size:20px; font-weight:900; color:rgba(255,255,255,0.5); margin-right:12px; }
-.stair-title { font-size:16px; font-weight:900; color:#fff; }
-.stair-sub { font-size:9px; color:rgba(255,255,255,0.8); letter-spacing:1px; }
+.sa1 { background:#1a3a9e; }
+.sa2 { background:#3a5ab8; }
+.sa3 { background:#6a8ab8; }
+.sa4 { background:#8aaac8; }
+.sa5 { background:#b0c0d8; }
+.stair-num { font-size:16px; font-weight:900; color:rgba(255,255,255,0.4); }
+.stair-name { font-size:14px; font-weight:900; color:#fff; }
+.stair-sub { font-size:8.5px; color:rgba(255,255,255,0.8); letter-spacing:1px; }
 
-/* 88%大字 */
-.big-pct-box { width:220px; flex-shrink:0; display:flex; flex-direction:column; justify-content:flex-end; padding:0 0 0 20px; }
-.big-num { font-size:80px; font-weight:900; color:#1a3a9e; line-height:1; }
-.big-desc { font-size:10px; color:#555; line-height:1.7; margin-top:6px; }
+/* 88%区域 */
+.pct-row { display:flex; align-items:flex-end; gap:16px; margin-top:8px; flex-shrink:0; }
+.big-num { font-size:72px; font-weight:900; color:#1a3a9e; line-height:1; }
+.pct-desc { font-size:10px; color:#555; line-height:1.7; padding-bottom:6px; }
 </style>
 </head>
 <body>
@@ -75,20 +81,8 @@ html,body { width:1280px; height:720px; overflow:hidden;
   <div class="page-desc">品牌策划 (Brand planning) 是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观。</div>
 
   <div class="body">
-    <!-- 左侧3列文字区 -->
-    <div class="left-area">
-      <!-- 列1 -->
-      <div class="col">
-        <div class="icon-arrow-row">
-          <div class="icon-circle">
-            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
-          </div>
-          <div class="big-arrow"></div>
-        </div>
-        <div class="col-title">工作任务</div>
-        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
-      </div>
-      <!-- 列2 -->
+    <!-- 左侧3列 -->
+    <div class="left-cols">
       <div class="col">
         <div class="icon-arrow-row">
           <div class="icon-circle">
@@ -99,7 +93,16 @@ html,body { width:1280px; height:720px; overflow:hidden;
         <div class="col-title">工作任务</div>
         <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
       </div>
-      <!-- 列3 -->
+      <div class="col">
+        <div class="icon-arrow-row">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
+          </div>
+          <div class="big-arrow"></div>
+        </div>
+        <div class="col-title">工作任务</div>
+        <div class="col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。项目建设进度安排是项目。</div>
+      </div>
       <div class="col">
         <div class="icon-arrow-row">
           <div class="icon-circle">
@@ -112,75 +115,64 @@ html,body { width:1280px; height:720px; overflow:hidden;
       </div>
     </div>
 
-    <!-- 右侧阶梯箭头区（04和05）+88% -->
-    <div style="display:flex;flex-direction:column;justify-content:flex-end;width:400px;flex-shrink:0;gap:0;">
-      <!-- 上方两个图标+箭头（04,05的图标行） -->
-      <div style="display:flex;gap:10px;margin-bottom:8px;align-items:flex-end;">
-        <!-- 04图标区 -->
-        <div style="flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-left:10px;">
-          <div class="icon-circle"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#1a3a9e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;">04</div>
-            <div>
-              <div style="font-size:18px;font-weight:900;color:#1a3a9e;">工作任务</div>
-            </div>
+    <!-- 右侧区域 -->
+    <div class="right-area">
+      <!-- 右侧上方两个图标+文字 -->
+      <div class="right-top">
+        <div class="right-top-col">
+          <div class="right-icon-row">
+            <div class="icon-circle"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
           </div>
-          <div style="font-size:10px;color:#444;line-height:1.7;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          <div class="right-col-title">工作任务</div>
+          <div class="right-col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分。</div>
         </div>
-        <!-- 05图标区 -->
-        <div style="flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-left:10px;">
-          <div class="icon-circle"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#1a3a9e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;">05</div>
-            <div>
-              <div style="font-size:18px;font-weight:900;color:#1a3a9e;">工作任务</div>
-            </div>
+        <div class="right-top-col">
+          <div class="right-icon-row">
+            <div class="icon-circle"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></div>
           </div>
-          <div style="font-size:10px;color:#444;line-height:1.7;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+          <div class="right-col-title">工作任务</div>
+          <div class="right-col-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
         </div>
       </div>
 
       <!-- 阶梯箭头 -->
-      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
-        <!-- 5步阶梯，宽度递增 -->
-        <div style="display:flex;justify-content:flex-end;">
-          <div style="width:100%;height:48px;background:#1a3a9e;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);display:flex;align-items:center;padding:0 20px;gap:12px;">
-            <span style="font-size:16px;font-weight:900;color:rgba(255,255,255,0.4);">05</span>
-            <div><div style="font-size:15px;font-weight:900;color:#fff;">品牌策划</div><div style="font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:1px;">BRAND PLANNING</div></div>
+      <div class="stair-area">
+        <div class="stair-row">
+          <div class="stair-arrow sa1" style="width:100%;">
+            <span class="stair-num">05</span>
+            <div><div class="stair-name">品牌策划</div><div class="stair-sub">BRAND PLANNING</div></div>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end;">
-          <div style="width:85%;height:48px;background:#3a5ab8;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);display:flex;align-items:center;padding:0 20px;gap:12px;">
-            <span style="font-size:16px;font-weight:900;color:rgba(255,255,255,0.4);">04</span>
-            <div><div style="font-size:15px;font-weight:900;color:#fff;">品牌策划</div><div style="font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:1px;">BRAND PLANNING</div></div>
+        <div class="stair-row">
+          <div class="stair-arrow sa2" style="width:82%;">
+            <span class="stair-num">04</span>
+            <div><div class="stair-name">品牌策划</div><div class="stair-sub">BRAND PLANNING</div></div>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end;">
-          <div style="width:70%;height:48px;background:#6a8ab8;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);display:flex;align-items:center;padding:0 20px;gap:12px;">
-            <span style="font-size:16px;font-weight:900;color:rgba(255,255,255,0.4);">03</span>
-            <div><div style="font-size:15px;font-weight:900;color:#fff;">品牌策划</div><div style="font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:1px;">BRAND PLANNING</div></div>
+        <div class="stair-row">
+          <div class="stair-arrow sa3" style="width:64%;">
+            <span class="stair-num">03</span>
+            <div><div class="stair-name">品牌策划</div><div class="stair-sub">BRAND PLANNING</div></div>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end;">
-          <div style="width:55%;height:48px;background:#8aaac8;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);display:flex;align-items:center;padding:0 20px;gap:12px;">
-            <span style="font-size:16px;font-weight:900;color:rgba(255,255,255,0.4);">02</span>
-            <div><div style="font-size:15px;font-weight:900;color:#fff;">品牌策划</div><div style="font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:1px;">BRAND PLANNING</div></div>
+        <div class="stair-row">
+          <div class="stair-arrow sa4" style="width:46%;">
+            <span class="stair-num">02</span>
+            <div><div class="stair-name">品牌策划</div><div class="stair-sub">BRAND PLANNING</div></div>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end;">
-          <div style="width:40%;height:48px;background:#b0c0d8;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%);display:flex;align-items:center;padding:0 20px;gap:12px;">
-            <span style="font-size:16px;font-weight:900;color:rgba(255,255,255,0.4);">01</span>
-            <div><div style="font-size:15px;font-weight:900;color:#fff;">品牌策划</div><div style="font-size:9px;color:rgba(255,255,255,0.8);letter-spacing:1px;">BRAND PLANNING</div></div>
+        <div class="stair-row">
+          <div class="stair-arrow sa5" style="width:28%;">
+            <span class="stair-num">01</span>
+            <div><div class="stair-name">品牌策划</div><div class="stair-sub">BRAND PLANNING</div></div>
           </div>
         </div>
       </div>
 
       <!-- 88% -->
-      <div style="display:flex;align-items:flex-end;gap:20px;padding-left:10px;">
-        <div>
-          <div style="font-size:80px;font-weight:900;color:#1a3a9e;line-height:1;">88%</div>
-        </div>
-        <div style="font-size:10px;color:#555;line-height:1.7;padding-bottom:8px;">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
+      <div class="pct-row">
+        <div class="big-num">88%</div>
+        <div class="pct-desc">项目建设进度安排是项目可行性研究中的一个重要组成部分，其任务是对项目建设的投资时期议订出实际进度表。</div>
       </div>
     </div>
   </div>

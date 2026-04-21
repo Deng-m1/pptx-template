@@ -2,47 +2,48 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_71</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:10px 20px 10px 20px;overflow:hidden;}
-.center-title{font-size:28px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
-.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:8px;line-height:1.6;}
-
-.main-row{flex:1;display:flex;flex-direction:row;gap:0;align-items:stretch;overflow:hidden;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 10px 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+.center-title { font-size:28px; font-weight:900; color:#1a3a9e; text-align:center; flex-shrink:0; margin-bottom:4px; }
+.center-desc { font-size:11px; color:#666; text-align:center; flex-shrink:0; margin-bottom:6px; line-height:1.6; max-width:900px; margin-left:auto; margin-right:auto; }
+.main-row { flex:1; display:flex; flex-direction:row; gap:0; align-items:stretch; overflow:hidden; min-height:0; }
 /* 左侧时间轴 */
-.left-tl{width:200px;flex-shrink:0;display:flex;flex-direction:column;justify-content:space-around;padding:0 10px 0 0;position:relative;}
-.left-tl::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:2px;background:#dde4f0;}
-.tl-dot-left{position:absolute;right:-5px;width:10px;height:10px;border-radius:50%;background:#9aa8b8;}
-.tl-item-left{display:flex;flex-direction:column;align-items:flex-end;gap:4px;position:relative;}
-.tl-label-dark{background:#1a3a7a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:2px;display:inline-block;}
-.tl-label-light{background:#7baee0;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:2px;display:inline-block;}
-.tl-desc{font-size:10px;color:#555;line-height:1.6;text-align:right;}
-
+.left-tl { width:200px; flex-shrink:0; display:flex; flex-direction:column; justify-content:space-around; padding:0 14px 0 0; position:relative; }
+.left-tl::after { content:''; position:absolute; right:0; top:8%; bottom:8%; width:1px; background:#dde4f0; }
+.tl-item-left { display:flex; flex-direction:column; align-items:flex-end; gap:4px; position:relative; }
+.tl-dot-left { position:absolute; right:-19px; top:8px; width:10px; height:10px; border-radius:50%; background:#9aa8b8; z-index:1; }
+.tl-label-dark { background:#1a3a9e; color:#fff; font-size:12px; font-weight:700; padding:4px 12px; border-radius:2px; display:inline-block; }
+.tl-label-light { background:#7baee0; color:#fff; font-size:12px; font-weight:700; padding:4px 12px; border-radius:2px; display:inline-block; }
+.tl-desc { font-size:10px; color:#555; line-height:1.6; text-align:right; }
 /* 中间蝴蝶结 */
-.butterfly{flex:1;display:flex;align-items:center;justify-content:center;position:relative;}
-.butterfly svg{width:100%;height:100%;}
-
+.butterfly { flex:1; display:flex; align-items:center; justify-content:center; }
 /* 右侧时间轴 */
-.right-tl{width:200px;flex-shrink:0;display:flex;flex-direction:column;justify-content:space-around;padding:0 0 0 10px;position:relative;}
-.right-tl::before{content:'';position:absolute;left:0;top:10%;bottom:10%;width:2px;background:#dde4f0;}
-.tl-item-right{display:flex;flex-direction:column;align-items:flex-start;gap:4px;position:relative;}
-.tl-desc-right{font-size:10px;color:#555;line-height:1.6;text-align:left;}
+.right-tl { width:200px; flex-shrink:0; display:flex; flex-direction:column; justify-content:space-around; padding:0 0 0 14px; position:relative; }
+.right-tl::before { content:''; position:absolute; left:0; top:8%; bottom:8%; width:1px; background:#dde4f0; }
+.tl-item-right { display:flex; flex-direction:column; align-items:flex-start; gap:4px; position:relative; }
+.tl-dot-right { position:absolute; left:-19px; top:8px; width:10px; height:10px; border-radius:50%; background:#9aa8b8; z-index:1; }
+.tl-desc-right { font-size:10px; color:#555; line-height:1.6; text-align:left; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">计划与总结 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">计划与总结 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <div class="center-title">上半年工作总结和下半年工作计划</div>
     <div class="center-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除此外更重要的是定性的工作成果的衡量。</div>
@@ -70,75 +71,77 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
           <div class="tl-desc">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
       </div>
-
-      <!-- 中间蝴蝶结 -->
+      <!-- 中间蝴蝶结 SVG -->
       <div class="butterfly">
-        <svg viewBox="0 0 820 480" preserveAspectRatio="xMidYMid meet">
+        <svg viewBox="0 0 760 430" width="760" height="430" preserveAspectRatio="xMidYMid meet">
           <!-- 左侧深蓝三角 -->
-          <polygon points="30,40 400,240 30,440" fill="#1a3a7a"/>
+          <polygon points="20,30 370,215 20,400" fill="#1a3a9e"/>
           <!-- 右侧浅蓝三角 -->
-          <polygon points="790,40 420,240 790,440" fill="#7baee0"/>
+          <polygon points="740,30 390,215 740,400" fill="#9abde8"/>
           <!-- 中间竖条 -->
-          <rect x="395" y="60" width="30" height="360" fill="#b8cce4" rx="4"/>
+          <rect x="368" y="50" width="24" height="330" fill="#b8cce4" rx="3"/>
           <!-- 中间竖排文字 -->
-          <text x="410" y="140" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei" writing-mode="tb">总</text>
-          <text x="410" y="165" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei" writing-mode="tb">结</text>
-          <text x="410" y="195" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei" writing-mode="tb">与</text>
-          <text x="410" y="225" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei" writing-mode="tb">计</text>
-          <text x="410" y="255" text-anchor="middle" fill="#1a3a7a" font-size="16" font-weight="bold" font-family="Microsoft YaHei" writing-mode="tb">划</text>
+          <text x="380" y="120" text-anchor="middle" fill="#1a3a9e" font-size="14" font-weight="bold" font-family="Microsoft YaHei">总</text>
+          <text x="380" y="145" text-anchor="middle" fill="#1a3a9e" font-size="14" font-weight="bold" font-family="Microsoft YaHei">结</text>
+          <text x="380" y="170" text-anchor="middle" fill="#1a3a9e" font-size="14" font-weight="bold" font-family="Microsoft YaHei">与</text>
+          <text x="380" y="195" text-anchor="middle" fill="#1a3a9e" font-size="14" font-weight="bold" font-family="Microsoft YaHei">计</text>
+          <text x="380" y="220" text-anchor="middle" fill="#1a3a9e" font-size="14" font-weight="bold" font-family="Microsoft YaHei">划</text>
           <!-- 目标图标圆 -->
-          <circle cx="410" cy="320" r="28" fill="rgba(255,255,255,0.6)"/>
-          <text x="410" y="328" text-anchor="middle" font-size="26">🎯</text>
-          <!-- 左侧内容 -->
-          <text x="200" y="160" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">工作总结</text>
+          <circle cx="380" cy="305" r="26" fill="rgba(255,255,255,0.6)"/>
+          <text x="380" y="314" text-anchor="middle" font-size="24">🎯</text>
+          <!-- 左侧标题 -->
+          <text x="185" y="130" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">工作总结</text>
           <!-- 左侧3个圆形节点 -->
-          <circle cx="120" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="210" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="300" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <text x="120" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="120" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
-          <text x="210" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="210" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
-          <text x="300" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="300" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
+          <circle cx="100" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="195" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="290" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <text x="100" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="100" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
+          <text x="195" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="195" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
+          <text x="290" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="290" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
           <!-- 左侧底部文字 -->
-          <text x="200" y="330" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
-          <text x="200" y="348" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
-          <text x="200" y="366" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容。</text>
-          <!-- 右侧内容 -->
-          <text x="620" y="160" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">工作计划</text>
+          <text x="185" y="310" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
+          <text x="185" y="328" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
+          <text x="185" y="346" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容。</text>
+          <!-- 右侧标题 -->
+          <text x="575" y="130" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Microsoft YaHei">工作计划</text>
           <!-- 右侧3个圆形节点 -->
-          <circle cx="520" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="610" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="700" cy="240" r="38" fill="rgba(255,255,255,0.2)"/>
-          <text x="520" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="520" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
-          <text x="610" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="610" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
-          <text x="700" y="236" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">完成</text>
-          <text x="700" y="252" text-anchor="middle" fill="white" font-size="11" font-family="Microsoft YaHei">任务</text>
+          <circle cx="470" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="565" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="660" cy="230" r="36" fill="rgba(255,255,255,0.2)"/>
+          <text x="470" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="470" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
+          <text x="565" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="565" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
+          <text x="660" y="226" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">完成</text>
+          <text x="660" y="244" text-anchor="middle" fill="white" font-size="12" font-family="Microsoft YaHei">任务</text>
           <!-- 右侧底部文字 -->
-          <text x="620" y="330" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
-          <text x="620" y="348" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
-          <text x="620" y="366" text-anchor="middle" fill="white" font-size="10" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容。</text>
+          <text x="575" y="310" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
+          <text x="575" y="328" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容，</text>
+          <text x="575" y="346" text-anchor="middle" fill="white" font-size="10.5" font-family="Microsoft YaHei">这里请放入您需要替换的文字内容。</text>
         </svg>
       </div>
-
       <!-- 右侧时间轴 -->
       <div class="right-tl">
         <div class="tl-item-right">
+          <div class="tl-dot-right"></div>
           <div class="tl-label-dark">成果展示</div>
           <div class="tl-desc-right">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
         <div class="tl-item-right">
+          <div class="tl-dot-right"></div>
           <div class="tl-label-light">主要业绩</div>
           <div class="tl-desc-right">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
         <div class="tl-item-right">
+          <div class="tl-dot-right"></div>
           <div class="tl-label-dark">成果展示</div>
           <div class="tl-desc-right">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>
         <div class="tl-item-right">
+          <div class="tl-dot-right"></div>
           <div class="tl-label-light">主要业绩</div>
           <div class="tl-desc-right">这里请放入您需要替换的文字内容，这里请放入。</div>
         </div>

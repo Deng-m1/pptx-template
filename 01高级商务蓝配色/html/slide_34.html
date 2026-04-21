@@ -17,76 +17,94 @@ html,body { width:1280px; height:720px; overflow:hidden;
 .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
 .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
 
-.body { flex:1; display:flex; gap:24px; overflow:hidden; }
+.body { flex:1; display:flex; gap:20px; min-height:0; }
 
 /* 左侧文字区 */
-.left-text { width:220px; display:flex; flex-direction:column; justify-content:center; }
-.left-title { font-size:22px; font-weight:900; color:#1a3a9e; line-height:1.3; margin-bottom:12px; }
-.left-desc { font-size:11px; color:#444; line-height:1.8; }
+.left-text { width:210px; display:flex; flex-direction:column; justify-content:flex-start; padding-top:10px; flex-shrink:0; }
+.left-title { font-size:28px; font-weight:900; color:#1a3a9e; line-height:1.2; margin-bottom:14px; }
+.left-desc { font-size:10.5px; color:#444; line-height:1.8; }
 
 /* 右侧斜向时间轴 */
-.right-area { flex:1; position:relative; }
+.right-area { flex:1; position:relative; overflow:hidden; }
 
-/* 斜向宽箭头背景 */
-.slope-arrow {
+/* 斜向宽箭头背景 - 用绝对定位实现 */
+.slope-bg {
   position:absolute;
-  left:0; bottom:80px;
-  width:100%; height:120px;
-  background:linear-gradient(135deg, #d0daf0 0%, #b0c4e8 100%);
-  transform:skewY(-8deg);
+  left:-20px; right:-20px;
+  bottom:70px;
+  height:90px;
+  background:linear-gradient(to right, #c8d4ec, #a8bce0);
+  transform:skewY(-10deg);
   transform-origin:left bottom;
 }
+/* 箭头头部 */
+.slope-arrow-head {
+  position:absolute;
+  right:0; bottom:70px;
+  width:0; height:0;
+  border-left:40px solid #a8bce0;
+  border-top:45px solid transparent;
+  border-bottom:45px solid transparent;
+  transform:translateY(0);
+}
 
-/* 6个节点 */
+/* 6个节点容器 */
 .nodes-container {
   position:absolute;
-  left:0; right:0; bottom:60px;
+  left:0; right:40px; bottom:0;
+  top:0;
   display:flex; align-items:flex-end;
-  height:480px;
 }
 .node-item {
   flex:1; display:flex; flex-direction:column; align-items:center;
   position:relative;
 }
-/* 节点上方文字 */
-.node-top { display:flex; flex-direction:column; align-items:center; margin-bottom:8px; }
-.node-top-title { font-size:13px; font-weight:900; color:#1a3a9e; }
-.node-top-desc { font-size:9px; color:#555; line-height:1.5; text-align:center; max-width:120px; }
+
+/* 节点上方内容区 */
+.node-content-top {
+  display:flex; flex-direction:column; align-items:center;
+  margin-bottom:8px; text-align:center;
+}
+.node-top-title { font-size:13px; font-weight:900; color:#1a3a9e; margin-bottom:4px; }
+.node-top-desc { font-size:9px; color:#555; line-height:1.5; max-width:120px; }
+
 /* 节点圆形 */
 .node-circle {
-  width:44px; height:44px; border-radius:50%; background:#1a3a9e;
+  width:40px; height:40px; border-radius:50%; background:#1a3a9e;
   display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:900; color:#fff; z-index:2; position:relative;
+  font-size:13px; font-weight:900; color:#fff; z-index:3; position:relative;
+  flex-shrink:0;
 }
-.node-circle-light { background:#8aaac8; }
+.nc-light { background:#8aaac8; }
+.nc-dark { background:#1a1a2a; }
+
 /* 节点下方月份标签 */
-.node-bottom-label {
-  margin-top:8px;
-  background:#1a3a9e; color:#fff; font-size:12px; font-weight:700;
-  padding:4px 14px; border-radius:3px;
+.node-label {
+  margin-top:6px;
+  background:#1a3a9e; color:#fff; font-size:11px; font-weight:700;
+  padding:4px 10px; border-radius:3px; white-space:nowrap;
 }
-.node-bottom-label-light { background:#8aaac8; }
+.nl-light { background:#8aaac8; }
+.nl-dark { background:#1a1a2a; }
 
 /* 弹出高亮卡片（第4个节点） */
 .popup-card {
-  position:absolute; bottom:120px; left:50%; transform:translateX(-50%);
-  width:180px; background:#1a3a9e; border-radius:8px; padding:14px 16px;
-  z-index:10; box-shadow:0 4px 20px rgba(26,58,158,0.3);
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  width:200px; background:#fff; border:2px solid #1a3a9e; border-radius:6px;
+  padding:14px 16px; z-index:10;
+  box-shadow:0 4px 20px rgba(26,58,158,0.2);
 }
-.popup-card::after {
-  content:''; position:absolute; bottom:-12px; left:50%; transform:translateX(-50%);
-  border:6px solid transparent; border-top-color:#1a3a9e;
-}
-.popup-title { font-size:14px; font-weight:900; color:#fff; margin-bottom:6px; }
-.popup-desc { font-size:10px; color:rgba(255,255,255,0.9); line-height:1.6; }
+.popup-title { font-size:14px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+.popup-desc { font-size:10px; color:#444; line-height:1.6; }
 
-/* 各节点高度（模拟斜向上升） */
-.n1 { padding-bottom:0px; }
-.n2 { padding-bottom:40px; }
-.n3 { padding-bottom:80px; }
-.n4 { padding-bottom:120px; }
-.n5 { padding-bottom:160px; }
-.n6 { padding-bottom:200px; }
+/* 各节点底部偏移（模拟斜向上升） */
+.n1 { padding-bottom:10px; }
+.n2 { padding-bottom:55px; }
+.n3 { padding-bottom:100px; }
+.n4 { padding-bottom:145px; }
+.n5 { padding-bottom:190px; }
+.n6 { padding-bottom:235px; }
 </style>
 </head>
 <body>
@@ -98,64 +116,76 @@ html,body { width:1280px; height:720px; overflow:hidden;
   <div class="header-line"></div>
 
   <div class="body">
-    <!-- 左侧文字 -->
     <div class="left-text">
       <div class="left-title">项目进度时间安排</div>
       <div class="left-desc">品牌策划 (Brand planning) 是深层次表达：品牌策划就是使企业形象和产品品牌在消费者脑海中形成一种个性化的区隔，并使消费者与企业品牌和产品品牌之间形成统一的价值观，从而建立起自己的品牌声浪。</div>
+      <br>
+      <div class="left-desc" style="margin-top:20px;">
+        <div style="font-size:13px;font-weight:900;color:#1a3a9e;margin-bottom:6px;">月度重点工作</div>
+        参与内部和外部的销售培训课程，如产品知识、销售技巧、市场趋势等，通过实战演练、角色扮演和导师指导等方式，不断提升销售谈判。
+      </div>
     </div>
 
-    <!-- 右侧斜向时间轴 -->
     <div class="right-area">
-      <div class="slope-arrow"></div>
+      <div class="slope-bg"></div>
       <div class="nodes-container">
         <div class="node-item n1">
-          <div class="node-top">
-            <div class="node-top-title">品牌策划</div>
-            <div class="node-top-desc">按照时间顺序进行工作任务的安排，确保每个环节顺利进行。</div>
+          <div class="node-circle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
           </div>
-          <div class="node-circle">7月</div>
-          <div class="node-bottom-label">2024年7月</div>
+          <div class="node-label">2024年7月</div>
         </div>
         <div class="node-item n2">
-          <div class="node-top">
-            <div class="node-top-title">品牌策划</div>
-            <div class="node-top-desc">按照时间顺序进行工作任务的安排，确保每个环节顺利进行。</div>
+          <div class="node-circle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
           </div>
-          <div class="node-circle">8月</div>
-          <div class="node-bottom-label">2024年8月</div>
+          <div class="node-label">2024年8月</div>
         </div>
         <div class="node-item n3">
-          <div class="node-top">
-            <div class="node-top-title">品牌策划</div>
-            <div class="node-top-desc">按照时间顺序进行工作任务的安排，确保每个环节顺利进行。</div>
+          <div class="node-content-top">
+            <div class="node-top-title">月度重点工作</div>
+            <div class="node-top-desc">积极参与行业会议、网络社区，并分享专业见解和经验，扩展个人在行业内的影响力。主动承担项目领导或团队协调角色，锻炼领导团队能力。</div>
           </div>
-          <div class="node-circle">9月</div>
-          <div class="node-bottom-label">2024年9月</div>
+          <div class="node-circle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
+          </div>
+          <div class="node-label">2024年9月</div>
         </div>
         <div class="node-item n4" style="position:relative;">
-          <!-- 弹出卡片 -->
-          <div class="popup-card">
-            <div class="popup-title">品牌策划</div>
-            <div class="popup-desc">按照时间顺序进行工作任务的安排，确保每个环节的任务顺利进行。</div>
+          <div class="popup-card" style="bottom:110px;">
+            <div class="popup-title">月度重点工作</div>
+            <div class="popup-desc">每季度回顾个人和团队的表现，识别成功的实践和改进的机会。积极寻求领导和同事的反馈，了解自己的盲点和提升空间，持续改进和成长。</div>
           </div>
-          <div class="node-circle" style="background:#1a1a2a;">10月</div>
-          <div class="node-bottom-label" style="background:#1a1a2a;">2024年10月</div>
+          <div class="node-circle nc-dark">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
+          </div>
+          <div class="node-label nl-dark">2024年10月</div>
         </div>
         <div class="node-item n5">
-          <div class="node-top">
-            <div class="node-top-title">品牌策划</div>
-            <div class="node-top-desc">按照时间顺序进行工作任务的安排，确保每个环节顺利进行。</div>
+          <div class="node-content-top">
+            <div class="node-top-title">月度重点工作</div>
+            <div class="node-top-desc">根据个人能力和公司需求，制定未来1至3年的职业发展路径，包括晋升到更高级别的销售管理或战略规划职位。</div>
           </div>
-          <div class="node-circle node-circle-light">11月</div>
-          <div class="node-bottom-label node-bottom-label-light">2024年11月</div>
+          <div class="node-content-top" style="margin-top:8px;">
+            <div class="node-top-desc">根据个人能力和公司需求，制定未来1至3年的职业发展路径，包括晋升到更高级别的销售管理或战略规划职位。</div>
+          </div>
+          <div class="node-circle nc-light">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
+          </div>
+          <div class="node-label nl-light">2024年11月</div>
         </div>
         <div class="node-item n6">
-          <div class="node-top">
-            <div class="node-top-title">品牌策划</div>
-            <div class="node-top-desc">按照时间顺序进行工作任务的安排，确保每个环节顺利进行。</div>
+          <div class="node-content-top">
+            <div class="node-top-title">月度重点工作</div>
+            <div class="node-top-desc">关注身心健康，保持良好的工作与生活平衡，提高工作效率和工作满意度。</div>
           </div>
-          <div class="node-circle node-circle-light">12月</div>
-          <div class="node-bottom-label node-bottom-label-light">2024年12月</div>
+          <div class="node-content-top" style="margin-top:8px;">
+            <div class="node-top-desc">与上级领导沟通，制定实现职业目标的发展计划，包括技能培训、项目经验积累和跨部门协作等。</div>
+          </div>
+          <div class="node-circle nc-light">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="4,10 8,14 16,6" stroke="#fff" stroke-width="2.5"/></svg>
+          </div>
+          <div class="node-label nl-light">2024年12月</div>
         </div>
       </div>
     </div>

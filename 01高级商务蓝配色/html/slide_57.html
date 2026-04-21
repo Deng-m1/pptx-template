@@ -2,105 +2,185 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_57</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:10px 30px 10px 30px;overflow:hidden;}
-/* 顶部4列气泡标题 */
-.top-bubbles{display:flex;flex-direction:row;gap:12px;flex-shrink:0;margin-bottom:0;}
-.bubble{flex:1;padding:10px 14px;font-size:14px;font-weight:700;color:#fff;text-align:center;position:relative;clip-path:polygon(0 0,100% 0,100% 70%,55% 70%,50% 100%,45% 70%,0 70%);}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 0 30px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+
+/* 顶部气泡标题 */
+.top-bubbles { display:flex; flex-direction:row; gap:10px; flex-shrink:0; margin-bottom:0; }
+.bubble-wrap { flex:1; display:flex; flex-direction:column; align-items:center; }
+.bubble-box {
+  width:100%; padding:12px 14px 12px 14px;
+  font-size:14px; font-weight:700; color:#fff;
+  text-align:center; position:relative;
+  border-radius:4px;
+}
+.bubble-box .en { font-size:10px; font-weight:400; letter-spacing:1px; margin-top:3px; }
+/* 气泡下方小三角 */
+.bubble-arrow {
+  width:0; height:0;
+  border-left:12px solid transparent;
+  border-right:12px solid transparent;
+  border-top-width:10px; border-top-style:solid;
+}
+
 /* 中间时间轴 */
-.timeline-row{display:flex;flex-direction:row;align-items:center;flex-shrink:0;height:70px;gap:12px;}
-.tl-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
-.tl-arrow-down{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:14px solid;margin-bottom:2px;}
-.tl-node{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;}
-.tl-line{flex:1;height:3px;background:#ddd;align-self:center;}
+.timeline-row {
+  display:flex; flex-direction:row; align-items:center;
+  flex-shrink:0; height:60px; gap:0; position:relative;
+}
+.tl-segment { flex:1; display:flex; flex-direction:row; align-items:center; }
+.tl-node-wrap { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+.tl-check {
+  width:38px; height:38px; border-radius:50%; border:3px solid;
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; font-weight:700; color:#fff;
+}
+.tl-line { flex:1; height:2px; background:#ccc; }
+.tl-arrow-right { flex:1; height:2px; background:#ccc; position:relative; }
+.tl-arrow-right::after {
+  content:''; position:absolute; right:-8px; top:-5px;
+  width:0; height:0;
+  border-top:6px solid transparent; border-bottom:6px solid transparent;
+  border-left:8px solid #ccc;
+}
+
 /* 内容区 */
-.content-row{flex:1;display:flex;flex-direction:row;gap:12px;overflow:hidden;}
-.content-col{flex:1;display:flex;flex-direction:column;gap:6px;}
-.tag{display:inline-block;padding:3px 10px;font-size:11px;font-weight:700;color:#fff;border-radius:2px;}
-.list-item{font-size:11px;color:#333;padding:3px 0;display:flex;align-items:center;gap:6px;}
-.list-item::before{content:'•';color:#1a3a7a;font-size:14px;}
+.content-row { flex:1; display:flex; flex-direction:row; gap:10px; overflow:hidden; min-height:0; margin-top:4px; }
+.content-col { flex:1; display:flex; flex-direction:column; gap:0; overflow:hidden; }
+.col-title { font-size:14px; font-weight:700; color:#1a3a9e; margin-bottom:6px; }
+.tag { display:inline-block; padding:4px 10px; font-size:12px; font-weight:700; color:#fff; border-radius:2px; margin-bottom:5px; }
+.list-item { font-size:11px; color:#333; padding:2px 0 2px 14px; position:relative; line-height:1.5; }
+.list-item::before { content:'a.'; position:absolute; left:0; color:#555; font-size:10px; }
+.list-item.b::before { content:'b.'; }
+
 /* 底部时间轴 */
-.bottom-tl{height:32px;display:flex;align-items:center;flex-shrink:0;margin:4px 0 0 0;}
-.btl-label{font-size:12px;color:#333;font-weight:600;}
-.btl-line{flex:1;height:3px;background:#1a3a7a;margin:0 10px;}
-.btl-arrow{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #1a3a7a;}
+.bottom-tl { height:30px; display:flex; align-items:center; flex-shrink:0; margin:4px 0 0 0; }
+.btl-label { font-size:12px; color:#333; font-weight:600; }
+.btl-line { flex:1; height:3px; background:#1a3a9e; margin:0 8px; }
+.btl-arrow { width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-left:14px solid #1a3a9e; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">工作成果展示 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">工作成果展示 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <!-- 顶部气泡标题 -->
     <div class="top-bubbles">
-      <div class="bubble" style="background:#1a3a7a;">完成领导安排的工作</div>
-      <div class="bubble" style="background:#2d5fa8;">活动方案的策划内容</div>
-      <div class="bubble" style="background:#5b8dd9;">图文美化的设计工作</div>
-      <div class="bubble" style="background:#7baee0;">落地安装的现场监督</div>
+      <div class="bubble-wrap">
+        <div class="bubble-box" style="background:#1a3a9e;">
+          <div>项目概述</div>
+          <div class="en">PROJECT OVERVIEW</div>
+        </div>
+        <div class="bubble-arrow" style="border-top-color:#1a3a9e;"></div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="bubble-box" style="background:#3a6bc0;">
+          <div>解决方案与方法</div>
+          <div class="en">SOLUTIONS AND METHODS</div>
+        </div>
+        <div class="bubble-arrow" style="border-top-color:#3a6bc0;"></div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="bubble-box" style="background:#7baee0;">
+          <div>关键成果与成效</div>
+          <div class="en">RESULTS AND OUTCOMES</div>
+        </div>
+        <div class="bubble-arrow" style="border-top-color:#7baee0;"></div>
+      </div>
+      <div class="bubble-wrap">
+        <div class="bubble-box" style="background:#1a3a9e;">
+          <div>未来展望与感谢</div>
+          <div class="en">OUTLOOK AND THANKS</div>
+        </div>
+        <div class="bubble-arrow" style="border-top-color:#1a3a9e;"></div>
+      </div>
     </div>
-    <!-- 时间轴节点行 -->
+
+    <!-- 中间时间轴 -->
     <div class="timeline-row">
-      <div class="tl-col">
-        <div class="tl-arrow-down" style="border-top-color:#1a3a7a;"></div>
-        <div class="tl-node" style="background:#1a3a7a;">01</div>
+      <div class="tl-node-wrap">
+        <div class="tl-check" style="border-color:#1a3a9e; background:#1a3a9e;">✓</div>
       </div>
       <div class="tl-line"></div>
-      <div class="tl-col">
-        <div class="tl-arrow-down" style="border-top-color:#2d5fa8;"></div>
-        <div class="tl-node" style="background:#2d5fa8;">02</div>
+      <div class="tl-node-wrap">
+        <div class="tl-check" style="border-color:#3a6bc0; background:#3a6bc0;">✓</div>
       </div>
       <div class="tl-line"></div>
-      <div class="tl-col">
-        <div class="tl-arrow-down" style="border-top-color:#5b8dd9;"></div>
-        <div class="tl-node" style="background:#5b8dd9;">03</div>
+      <div class="tl-node-wrap">
+        <div class="tl-check" style="border-color:#7baee0; background:#7baee0;">✓</div>
       </div>
       <div class="tl-line"></div>
-      <div class="tl-col">
-        <div class="tl-arrow-down" style="border-top-color:#7baee0;"></div>
-        <div class="tl-node" style="background:#7baee0;">04</div>
+      <div class="tl-node-wrap">
+        <div class="tl-check" style="border-color:#1a3a9e; background:#1a3a9e;">✓</div>
+      </div>
+      <div class="tl-line"></div>
+      <div class="tl-node-wrap">
+        <div class="tl-check" style="border-color:#aaa; background:#fff;">✓</div>
       </div>
     </div>
+
     <!-- 内容列 -->
     <div class="content-row">
       <div class="content-col">
-        <div class="tag" style="background:#1a3a7a;">工作成果</div>
-        <div class="list-item">完成领导安排的工作</div>
-        <div class="list-item">完成领导安排的工作</div>
-        <div class="list-item">完成领导安排的工作</div>
-        <div class="list-item">完成领导安排的工作</div>
+        <div class="col-title">项目背景与目标</div>
+        <div class="tag" style="background:#1a3a9e;">项目目标</div>
+        <div class="list-item">明确项目的主要目标，例如提升效率、增加销售量、改进客户满意度等。</div>
+        <div class="list-item b">描述该项目对公司整体战略或业务的重要性。</div>
+        <div class="tag" style="background:#1a3a9e; margin-top:8px;">背景介绍</div>
+        <div class="list-item">简要说明项目启动的背景和初始情况。</div>
+        <div class="list-item b">阐述所面临的主要问题和挑战。</div>
       </div>
       <div class="content-col">
-        <div class="tag" style="background:#2d5fa8;">工作成果</div>
-        <div class="list-item">活动方案的策划内容</div>
-        <div class="list-item">活动方案的策划内容</div>
-        <div class="list-item">活动方案的策划内容</div>
-        <div class="list-item">活动方案的策划内容</div>
+        <div class="col-title">解决方案与实施方法</div>
+        <div class="tag" style="background:#3a6bc0;">解决方案</div>
+        <div class="list-item">概述您为解决问题所采取的方法和策略。</div>
+        <div class="list-item b">包括使用的工具、技术和资源。</div>
+        <div class="tag" style="background:#3a6bc0; margin-top:8px;">实施步骤</div>
+        <div class="list-item">列出具体的实施步骤和里程碑。</div>
+        <div class="list-item b">强调关键行动和决策点。</div>
+        <div class="tag" style="background:#3a6bc0; margin-top:8px;">创新方式</div>
+        <div class="list-item">突出项目中的创新点和独特之处。</div>
+        <div class="list-item b">解释这些创新如何帮助达成目标。</div>
       </div>
       <div class="content-col">
-        <div class="tag" style="background:#5b8dd9;">工作成果</div>
-        <div class="list-item">图文美化的设计工作</div>
-        <div class="list-item">图文美化的设计工作</div>
-        <div class="list-item">图文美化的设计工作</div>
-        <div class="list-item">图文美化的设计工作</div>
+        <div class="col-title">关键成果与数据分析</div>
+        <div class="tag" style="background:#7baee0;">主要成果</div>
+        <div class="list-item">列出项目取得的主要成果和成就。</div>
+        <div class="list-item b">用具体的例子来说明这些成果，例如完成了哪些重要任务、实现了哪些里程碑等。</div>
+        <div class="tag" style="background:#7baee0; margin-top:8px;">数据支持</div>
+        <div class="list-item">提供相关的数据和指标，用数据说话。</div>
+        <div class="list-item b">使用图表（如柱状图、饼图、折线图等）直观展示数据。</div>
       </div>
       <div class="content-col">
-        <div class="tag" style="background:#7baee0;">工作成果</div>
-        <div class="list-item">落地安装的现场监督</div>
-        <div class="list-item">落地安装的现场监督</div>
-        <div class="list-item">落地安装的现场监督</div>
-        <div class="list-item">落地安装的现场监督</div>
+        <div class="col-title">未来展望与团队感谢</div>
+        <div class="tag" style="background:#1a3a9e;">未来计划</div>
+        <div class="list-item">分享项目的下一步计划和长期发展方向。</div>
+        <div class="list-item b">解释如何在当前成果的基础上进一步改进和扩展。</div>
+        <div class="tag" style="background:#1a3a9e; margin-top:8px;">持续改进</div>
+        <div class="list-item">描述将如何继续监控和优化项目效果。</div>
+        <div class="list-item b">强调质量监控和反馈机制的建立。</div>
+        <div class="tag" style="background:#1a3a9e; margin-top:8px;">感谢合作</div>
+        <div class="list-item">感谢所有参与项目的团队成员和支持人员。</div>
+        <div class="list-item b">强调合作精神和团队的重要性。</div>
       </div>
     </div>
+
     <!-- 底部时间轴 -->
     <div class="bottom-tl">
       <div class="btl-label">2024.3</div>

@@ -2,105 +2,96 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_55</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;position:relative;overflow:hidden;}
-/* 鱼形SVG居中 */
-.fish-svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
-/* 上方3列文字 */
-.top-labels{position:absolute;top:10px;left:0;right:0;display:flex;flex-direction:row;}
-.label-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 20px;}
-.label-title{font-size:14px;font-weight:700;color:#1a3a7a;text-align:center;}
-.label-en{font-size:12px;font-weight:600;color:#2563c0;text-align:center;}
-.label-item{font-size:11px;color:#555;text-align:center;}
-/* 下方3列文字 */
-.bottom-labels{position:absolute;bottom:10px;left:0;right:0;display:flex;flex-direction:row;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 10px 30px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:4px; }
+.body { flex:1; position:relative; overflow:hidden; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">工作汇报-鱼骨图 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">工作汇报-鱼骨图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
+
   <div class="body">
-    <!-- 鱼形SVG -->
-    <svg class="fish-svg" width="900" height="280" viewBox="0 0 900 280">
-      <!-- 鱼身 -->
-      <ellipse cx="430" cy="140" rx="380" ry="90" fill="#b0bec5" opacity="0.85"/>
+    <!-- 整体SVG布局 -->
+    <svg width="1220" height="590" viewBox="0 0 1220 590" style="position:absolute;left:0;top:0;">
+      <!-- 鱼身（灰色椭圆） -->
+      <ellipse cx="560" cy="295" rx="420" ry="110" fill="#b0bec5" opacity="0.85"/>
       <!-- 鱼头（右侧圆形） -->
-      <circle cx="820" cy="140" r="65" fill="#90a4ae"/>
+      <circle cx="1000" cy="295" r="80" fill="#90a4ae"/>
       <!-- 鱼眼 -->
-      <circle cx="840" cy="120" r="10" fill="#fff"/>
-      <circle cx="843" cy="118" r="5" fill="#546e7a"/>
-      <!-- 鱼尾（左侧三角） -->
-      <polygon points="50,140 120,60 120,220" fill="#90a4ae"/>
-      <!-- 鱼刺（3对竖线） -->
-      <line x1="280" y1="60" x2="280" y2="220" stroke="#fff" stroke-width="3"/>
-      <line x1="480" y1="50" x2="480" y2="230" stroke="#fff" stroke-width="3"/>
-      <line x1="660" y1="60" x2="660" y2="220" stroke="#fff" stroke-width="3"/>
+      <circle cx="1020" cy="268" r="14" fill="#fff"/>
+      <circle cx="1024" cy="265" r="7" fill="#546e7a"/>
+      <!-- 鱼尾（左侧） -->
+      <polygon points="140,295 220,195 220,395" fill="#90a4ae"/>
       <!-- 主轴 -->
-      <line x1="120" y1="140" x2="755" y2="140" stroke="#fff" stroke-width="4"/>
+      <line x1="220" y1="295" x2="920" y2="295" stroke="#fff" stroke-width="5"/>
+      <!-- 鱼刺竖线（3对） -->
+      <line x1="370" y1="195" x2="370" y2="395" stroke="#fff" stroke-width="3"/>
+      <line x1="560" y1="185" x2="560" y2="405" stroke="#fff" stroke-width="3"/>
+      <line x1="740" y1="195" x2="740" y2="395" stroke="#fff" stroke-width="3"/>
+
+      <!-- 上方列标题 -->
+      <!-- 列1：品牌设计 -->
+      <text x="370" y="80" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌设计</text>
+      <text x="370" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand design</text>
+      <!-- 列1上方文字 -->
+      <text x="370" y="130" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="370" y="152" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="370" y="174" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+
+      <!-- 列2：品牌策划 -->
+      <text x="560" y="70" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌策划</text>
+      <text x="560" y="90" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand planning</text>
+      <!-- 列2上方文字 -->
+      <text x="560" y="120" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="560" y="142" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="560" y="164" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+
+      <!-- 列3：品牌推广 -->
+      <text x="740" y="80" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌推广</text>
+      <text x="740" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand promotion</text>
+      <!-- 列3上方文字 -->
+      <text x="740" y="130" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="740" y="152" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="740" y="174" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+
+      <!-- 下方列文字 -->
+      <!-- 列1下方 -->
+      <text x="370" y="420" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="370" y="442" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="370" y="464" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="370" y="494" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌设计</text>
+      <text x="370" y="514" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand design</text>
+
+      <!-- 列2下方 -->
+      <text x="560" y="430" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="560" y="452" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="560" y="474" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="560" y="504" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌策划</text>
+      <text x="560" y="524" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand planning</text>
+
+      <!-- 列3下方 -->
+      <text x="740" y="420" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="740" y="442" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="740" y="464" text-anchor="middle" font-size="12" fill="#555">品牌推广 Brand promotion</text>
+      <text x="740" y="494" text-anchor="middle" font-size="16" font-weight="700" fill="#1a3a9e">品牌推广</text>
+      <text x="740" y="514" text-anchor="middle" font-size="13" font-weight="600" fill="#3a6aaa">Brand promotion</text>
     </svg>
-
-    <!-- 上方3列标题+文字 -->
-    <div class="top-labels">
-      <div class="label-col">
-        <div class="label-title">品牌设计</div>
-        <div class="label-en">Brand design</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-      </div>
-      <div class="label-col">
-        <div class="label-title">品牌策划</div>
-        <div class="label-en">Brand planning</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-      </div>
-      <div class="label-col">
-        <div class="label-title">品牌推广</div>
-        <div class="label-en">Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-      </div>
-      <div class="label-col"></div><!-- 右侧鱼头占位 -->
-    </div>
-
-    <!-- 下方3列标题+文字 -->
-    <div class="bottom-labels">
-      <div class="label-col">
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-title">品牌设计</div>
-        <div class="label-en">Brand design</div>
-      </div>
-      <div class="label-col">
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-title">品牌策划</div>
-        <div class="label-en">Brand planning</div>
-      </div>
-      <div class="label-col">
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-item">品牌推广 Brand promotion</div>
-        <div class="label-title">品牌推广</div>
-        <div class="label-en">Brand promotion</div>
-      </div>
-      <div class="label-col"></div>
-    </div>
   </div>
 </div>
 </body>

@@ -9,67 +9,65 @@
   html,body { width:1280px; height:720px; overflow:hidden;
     font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
     background:#fff; }
-  .slide { width:1280px; height:720px; background:#fff; padding:24px 50px 16px 50px; }
+  .slide { width:1280px; height:720px; background:#fff; padding:26px 46px 16px 46px; }
 
   .header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:5px; }
   .header-title { font-size:34px; font-weight:900; color:#1a3a9e; }
   .header-sub { font-size:17px; font-weight:700; color:#3a6aaa; }
   .header-line { height:2px; background:#1a3a9e; margin-bottom:10px; }
 
-  /* 甘特图区 */
-  .gantt { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:12px; }
+  .gantt { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:14px; table-layout:fixed; }
   .gantt th {
-    background:#fff; color:#1a3a9e;
-    text-align:center; padding:5px 2px;
-    font-size:12px; font-weight:700;
-    border-bottom:2px solid #dde3ef;
+    background:#1a3a9e; color:#fff;
+    text-align:center; padding:7px 2px;
+    font-size:13px; font-weight:700;
+    border:1px solid #fff;
   }
   .gantt th.label-col { width:100px; }
   .gantt td {
-    border:1px solid #e8ecf4;
-    padding:3px 2px; height:40px;
+    border:1px solid #e0e6f0;
+    padding:0 2px; height:44px;
     vertical-align:middle; text-align:center;
   }
   .gantt td.label {
-    text-align:left; padding-left:10px;
+    text-align:left; padding-left:12px;
     font-size:13px; color:#333;
     background:#fff; white-space:nowrap;
   }
   .gantt tr:nth-child(odd) td { background:#f5f7fc; }
   .gantt tr:nth-child(odd) td.label { background:#f5f7fc; }
   .gantt tr:nth-child(even) td { background:#fff; }
+  .gantt tr:nth-child(even) td.label { background:#fff; }
 
-  /* 进度条 */
-  .progress-cell { padding:0 4px; }
+  .progress-cell { padding:0 6px; }
   .prog-row { display:flex; align-items:center; gap:4px; }
-  .bar-done { height:18px; border-radius:9px; background:#1a3a9e; }
-  .check-icon { width:18px; height:18px; border-radius:50%; background:#1a3a9e;
-    display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .check-icon::after { content:'✓'; color:#fff; font-size:10px; font-weight:900; }
-  .bar-remain { height:18px; border-radius:9px; background:#b8cce8; }
-  .prog-label { font-size:11px; color:#555; white-space:nowrap; margin-left:4px; }
+  .bar-done { height:20px; border-radius:10px; background:#1a3a9e; flex-shrink:0; }
+  .check-icon {
+    width:20px; height:20px; border-radius:50%; background:#1a3a9e;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    color:#fff; font-size:11px; font-weight:900;
+  }
+  .bar-remain { height:20px; border-radius:10px; background:#b8cce8; flex-shrink:0; }
+  .prog-label { font-size:12px; color:#555; white-space:nowrap; margin-left:6px; }
 
-  /* 底部两列卡片 */
-  .bottom-row { display:flex; gap:20px; }
+  .bottom-row { display:flex; gap:18px; }
   .card {
-    flex:1; border:1.5px solid #1a3a9e; border-radius:6px;
-    padding:14px 16px; display:flex; align-items:flex-start; gap:14px;
+    flex:1; border:1.5px solid #1a3a9e; border-radius:4px;
+    padding:14px 16px; display:flex; align-items:center; gap:14px;
   }
   .card-text { flex:1; }
-  .card-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:6px; }
+  .card-title { font-size:22px; font-weight:900; color:#1a3a9e; margin-bottom:8px; }
   .card-desc { font-size:11px; color:#444; line-height:1.7; }
-  /* 圆环图 */
   .ring-wrap { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
-  .ring { position:relative; width:70px; height:70px; }
+  .ring { position:relative; width:72px; height:72px; }
   .ring svg { transform:rotate(-90deg); }
   .ring-label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     font-size:16px; font-weight:900; color:#1a3a9e; }
-  .ring-sub { font-size:10px; color:#888; margin-top:3px; text-align:center; }
-  /* 标签列 */
-  .tags { display:flex; flex-direction:column; gap:5px; flex-shrink:0; }
+  .ring-sub { font-size:10px; color:#888; margin-top:4px; text-align:center; white-space:nowrap; }
+  .tags { display:flex; flex-direction:column; gap:6px; flex-shrink:0; }
   .tag {
-    padding:4px 12px; border-radius:12px;
-    font-size:11px; font-weight:700; color:#fff;
+    padding:5px 14px; border-radius:14px;
+    font-size:12px; font-weight:700; color:#fff;
     white-space:nowrap; text-align:center;
   }
   .tag-dark { background:#1a3a9e; }
@@ -86,6 +84,11 @@
   <div class="header-line"></div>
 
   <table class="gantt">
+    <colgroup>
+      <col style="width:100px">
+      <col><col><col><col><col><col>
+      <col><col><col><col><col><col>
+    </colgroup>
     <thead>
       <tr>
         <th class="label-col"></th>
@@ -96,11 +99,11 @@
     <tbody>
       <tr>
         <td class="label">工作任务01</td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -109,11 +112,11 @@
       <tr>
         <td class="label">工作任务02</td>
         <td></td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -122,11 +125,11 @@
       <tr>
         <td class="label">工作任务03</td>
         <td></td><td></td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -135,11 +138,11 @@
       <tr>
         <td class="label">工作任务04</td>
         <td></td><td></td><td></td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -148,11 +151,11 @@
       <tr>
         <td class="label">工作任务05</td>
         <td></td><td></td><td></td><td></td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -160,11 +163,11 @@
       </tr>
       <tr>
         <td class="label">工作任务06</td>
-        <td colspan="3" class="progress-cell">
+        <td colspan="4" class="progress-cell">
           <div class="prog-row">
-            <div class="bar-done" style="width:110px;"></div>
-            <div class="check-icon"></div>
-            <div class="bar-remain" style="width:90px;"></div>
+            <div class="bar-done" style="width:130px;"></div>
+            <div class="check-icon">✓</div>
+            <div class="bar-remain" style="width:110px;"></div>
             <span class="prog-label">项目进度50%</span>
           </div>
         </td>
@@ -174,7 +177,6 @@
   </table>
 
   <div class="bottom-row">
-    <!-- 左卡 -->
     <div class="card">
       <div class="card-text">
         <div class="card-title">上半年工作目标</div>
@@ -182,9 +184,9 @@
       </div>
       <div class="ring-wrap">
         <div class="ring">
-          <svg width="70" height="70" viewBox="0 0 70 70">
-            <circle cx="35" cy="35" r="28" fill="none" stroke="#e0e8f4" stroke-width="8"/>
-            <circle cx="35" cy="35" r="28" fill="none" stroke="#1a3a9e" stroke-width="8"
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle cx="36" cy="36" r="28" fill="none" stroke="#e0e8f4" stroke-width="8"/>
+            <circle cx="36" cy="36" r="28" fill="none" stroke="#1a3a9e" stroke-width="8"
               stroke-dasharray="87.96 87.96" stroke-linecap="round"/>
           </svg>
           <div class="ring-label">50%</div>
@@ -197,7 +199,6 @@
         <div class="tag tag-light">市场名词</div>
       </div>
     </div>
-    <!-- 右卡 -->
     <div class="card">
       <div class="card-text">
         <div class="card-title">下半年工作目标</div>
@@ -205,9 +206,9 @@
       </div>
       <div class="ring-wrap">
         <div class="ring">
-          <svg width="70" height="70" viewBox="0 0 70 70">
-            <circle cx="35" cy="35" r="28" fill="none" stroke="#e0e8f4" stroke-width="8"/>
-            <circle cx="35" cy="35" r="28" fill="none" stroke="#1a3a9e" stroke-width="8"
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle cx="36" cy="36" r="28" fill="none" stroke="#e0e8f4" stroke-width="8"/>
+            <circle cx="36" cy="36" r="28" fill="none" stroke="#1a3a9e" stroke-width="8"
               stroke-dasharray="87.96 87.96" stroke-linecap="round"/>
           </svg>
           <div class="ring-label">50%</div>

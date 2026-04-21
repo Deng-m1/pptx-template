@@ -2,52 +2,54 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_62</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:8px 20px 8px 20px;overflow:hidden;}
-.center-title{font-size:28px;font-weight:900;color:#1a3a7a;text-align:center;flex-shrink:0;margin-bottom:4px;}
-.center-desc{font-size:11px;color:#666;text-align:center;flex-shrink:0;margin-bottom:8px;}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 20px 0 20px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:6px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+.center-title { font-size:26px; font-weight:900; color:#1a3a9e; text-align:center; flex-shrink:0; margin-bottom:3px; }
+.center-desc { font-size:10.5px; color:#666; text-align:center; flex-shrink:0; margin-bottom:8px; line-height:1.5; }
 /* 圆形区域 */
-.circles-wrap{border:1.5px solid #ddd;border-radius:8px;padding:14px 20px;flex-shrink:0;}
-.circles-row{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0;}
-.circle-item{display:flex;flex-direction:column;align-items:center;flex:1;}
-.circle{width:130px;height:130px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;}
-.circle-icon{font-size:28px;margin-bottom:4px;}
-.circle-cn{font-size:15px;font-weight:900;}
-.circle-en{font-size:10px;opacity:0.85;margin-top:2px;}
-.arrow-right{font-size:22px;color:#1a3a7a;flex-shrink:0;margin:0 4px;}
-
+.circles-wrap { border:1.5px solid #ddd; border-radius:8px; padding:12px 16px; flex-shrink:0; }
+.circles-row { display:flex; flex-direction:row; align-items:center; justify-content:center; gap:0; }
+.circle-item { display:flex; flex-direction:column; align-items:center; flex:1; }
+.circle { width:140px; height:140px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; }
+.circle-icon { font-size:30px; margin-bottom:4px; }
+.circle-cn { font-size:14px; font-weight:900; text-align:center; }
+.circle-en { font-size:9.5px; opacity:0.85; margin-top:2px; text-align:center; }
+.arrow-right { font-size:20px; color:#1a3a9e; flex-shrink:0; margin:0 2px; }
 /* 目标/方法表格 */
-.table-wrap{flex:1;display:flex;flex-direction:column;gap:4px;margin-top:8px;overflow:hidden;}
-.table-row{flex:1;display:flex;flex-direction:row;gap:4px;}
-.row-label{width:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;writing-mode:vertical-rl;letter-spacing:4px;}
-.row-cells{flex:1;display:flex;flex-direction:row;gap:4px;}
-.cell{flex:1;padding:8px 10px;font-size:10.5px;color:#333;line-height:1.6;border-radius:2px;}
+.table-wrap { flex:1; display:flex; flex-direction:column; gap:4px; margin-top:8px; overflow:hidden; min-height:0; }
+.table-row { flex:1; display:flex; flex-direction:row; gap:4px; min-height:0; }
+.row-label { width:44px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; color:#fff; writing-mode:vertical-rl; letter-spacing:4px; border-radius:2px; }
+.row-cells { flex:1; display:flex; flex-direction:row; gap:4px; }
+.cell { flex:1; padding:8px 10px; font-size:10.5px; color:#333; line-height:1.6; border-radius:2px; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">工作计划 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">工作计划 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
   <div class="body">
     <div class="center-title">2024年下半年工作计划</div>
     <div class="center-desc">工作成果是指工作一段时间后最终的产出。可定量的工作成果有搬运工的搬运量、销售员的销售额及交易价格水平等，除此外更重要的是定性的工作成果的衡量。</div>
-
     <!-- 5圆形 -->
     <div class="circles-wrap">
       <div class="circles-row">
         <div class="circle-item">
-          <div class="circle" style="background:#1a3a7a;">
+          <div class="circle" style="background:#1a3a9e;">
             <div class="circle-icon">📊</div>
             <div class="circle-cn">提升业绩表现</div>
             <div class="circle-en">Improve performance</div>
@@ -63,7 +65,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
         <div class="arrow-right">→</div>
         <div class="circle-item">
-          <div class="circle" style="background:#4a7bc4;">
+          <div class="circle" style="background:#5b8dd9;">
             <div class="circle-icon">🔄</div>
             <div class="circle-cn">团队合作意识</div>
             <div class="circle-en">Sense of teamwork</div>
@@ -71,7 +73,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
         <div class="arrow-right">→</div>
         <div class="circle-item">
-          <div class="circle" style="background:#7baee0;">
+          <div class="circle" style="background:#9abde8;">
             <div class="circle-icon">💡</div>
             <div class="circle-cn">创新与改进</div>
             <div class="circle-en">improvement</div>
@@ -79,7 +81,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
         <div class="arrow-right">→</div>
         <div class="circle-item">
-          <div class="circle" style="background:#1a3a7a;">
+          <div class="circle" style="background:#1a3a9e;">
             <div class="circle-icon">📈</div>
             <div class="circle-cn">领导力发展</div>
             <div class="circle-en">Leadership development</div>
@@ -87,11 +89,10 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
     </div>
-
     <!-- 目标/方法表格 -->
     <div class="table-wrap">
       <div class="table-row">
-        <div class="row-label" style="background:#1a3a7a;">目标</div>
+        <div class="row-label" style="background:#1a3a9e;">目标</div>
         <div class="row-cells">
           <div class="cell" style="background:#dce8f5;">实现XXX项目/部门的XXX指标，例如销售增长、市场份额提升、客户满意度等。</div>
           <div class="cell" style="background:#dce8f5;">积极参与各类与XXX领域相关的专业知识和技能培训，持续深化对行业最新趋势水平。</div>
@@ -101,7 +102,7 @@ body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Ari
         </div>
       </div>
       <div class="table-row">
-        <div class="row-label" style="background:#4a7bc4;">方法</div>
+        <div class="row-label" style="background:#5b8dd9;">方法</div>
         <div class="row-cells">
           <div class="cell" style="background:#eef4fb;">制定有效的销售策略、加强客户关系管理、优化服务流程等。</div>
           <div class="cell" style="background:#eef4fb;">参加相关的培训和学习课程、阅读行业最新资讯、与同事交流经验等。</div>

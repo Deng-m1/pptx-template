@@ -2,127 +2,178 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>slide_53</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{width:1280px;height:720px;overflow:hidden;font-family:'Microsoft YaHei',Arial,sans-serif;background:#fff;}
-.slide{width:1280px;height:720px;display:flex;flex-direction:column;}
-.header{padding:18px 30px 8px 30px;flex-shrink:0;}
-.main-title{font-size:32px;font-weight:900;color:#1a2e5a;}
-.sub-title{font-size:15px;color:#2563c0;font-weight:600;text-align:right;margin-top:-28px;}
-.divider{height:2px;background:#1a3a7a;margin:6px 30px 0 30px;}
-.body{flex:1;display:flex;flex-direction:column;padding:8px 30px 8px 30px;overflow:hidden;}
-.section{display:flex;flex-direction:row;flex:1;gap:0;}
-.col{flex:1;display:flex;flex-direction:column;align-items:center;padding:0 5px;}
-.col-header{width:100%;padding:7px 8px;font-size:12px;font-weight:700;color:#fff;text-align:center;clip-path:polygon(0 0,100% 0,92% 100%,0 100%);}
-.col-header.bottom{clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);}
-.col-item{width:95%;font-size:10.5px;color:#333;padding:3px 0;display:flex;align-items:center;justify-content:space-between;}
-.col-item span{color:#1a3a7a;font-size:10px;}
-.main-axis{height:50px;background:#1a3a7a;display:flex;align-items:center;padding:0 20px;position:relative;flex-shrink:0;margin:0 -30px;}
-.axis-label{font-size:15px;font-weight:700;color:#fff;margin-left:auto;}
-.axis-arrow{width:0;height:0;border-top:25px solid transparent;border-bottom:25px solid transparent;border-left:34px solid #1a3a7a;position:absolute;right:-34px;top:0;}
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:1280px; height:720px; overflow:hidden;
+  font-family:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+  background:#fff; }
+.slide { width:1280px; height:720px; background:#fff; padding:14px 30px 10px 30px;
+  display:flex; flex-direction:column; }
+.header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:4px; }
+.header-title { font-size:30px; font-weight:900; color:#1a3a9e; }
+.header-sub { font-size:16px; font-weight:700; color:#3a6aaa; }
+.header-line { height:2px; background:#1a3a9e; margin-bottom:8px; }
+.body { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+
+/* 上下两个section */
+.section { flex:1; display:flex; min-height:0; }
+
+/* 主轴 */
+.main-axis {
+  height:50px; flex-shrink:0; background:#1a3a9e;
+  display:flex; align-items:center; padding:0 20px;
+  position:relative; margin:0 -30px;
+}
+.axis-label { font-size:15px; font-weight:700; color:#fff; margin-left:auto; }
+.main-axis::after {
+  content:''; position:absolute; right:-34px; top:0;
+  width:0; height:0;
+  border-top:25px solid transparent;
+  border-bottom:25px solid transparent;
+  border-left:34px solid #1a3a9e;
+}
+
+/* 每列 */
+.col { flex:1; display:flex; flex-direction:column; padding:0 5px; }
+
+.col-header-box {
+  padding:7px 8px; font-size:13px; font-weight:700; color:#fff;
+  text-align:center; flex-shrink:0;
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+.col-header-box.rev {
+  clip-path:polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+}
+
+.col-items { flex:1; display:flex; flex-direction:column; justify-content:space-around; padding:4px 0; }
+.col-item { font-size:11px; color:#333; display:flex; align-items:center; justify-content:space-between; }
+.col-item span { color:#1a3a9e; font-size:12px; }
+
+/* 斜线SVG */
+.col-line { height:30px; flex-shrink:0; }
 </style>
 </head>
 <body>
 <div class="slide">
   <div class="header">
-    <div class="main-title">工作汇报-鱼骨图 Powerpoint Template</div>
-    <div class="sub-title">Work Arrangement</div>
-    <div class="divider"></div>
+    <div class="header-title">工作汇报-鱼骨图 Powerpoint Template</div>
+    <div class="header-sub">Work Arrangement</div>
   </div>
+  <div class="header-line"></div>
+
   <div class="body">
     <!-- 上半部分5列 -->
     <div class="section">
-      <div class="col">
-        <div class="col-header" style="background:#1a3a7a;">品牌策划</div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <svg width="100%" height="28" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
+      <div class="col" style="flex-direction:column; justify-content:flex-start;">
+        <div class="col-header-box" style="background:#1a3a9e;">品牌策划</div>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <svg class="col-line" width="100%" height="30"><line x1="70%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
       </div>
-      <div class="col">
-        <div class="col-header" style="background:#2d5fa8;">品牌推广</div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <svg width="100%" height="28" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
+      <div class="col" style="flex-direction:column; justify-content:flex-start;">
+        <div class="col-header-box" style="background:#2d5fa8;">品牌推广</div>
+        <div class="col-items">
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+        </div>
+        <svg class="col-line" width="100%" height="30"><line x1="60%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
       </div>
-      <div class="col">
-        <div class="col-header" style="background:#5b8dd9;">品牌策划</div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <svg width="100%" height="28" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
+      <div class="col" style="flex-direction:column; justify-content:flex-start;">
+        <div class="col-header-box" style="background:#5b8dd9;">品牌策划</div>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
       </div>
-      <div class="col">
-        <div class="col-header" style="background:#7baee0;">品牌推广</div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <svg width="100%" height="28" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
+      <div class="col" style="flex-direction:column; justify-content:flex-start;">
+        <div class="col-header-box" style="background:#7baee0;">品牌推广</div>
+        <div class="col-items">
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+        </div>
+        <svg class="col-line" width="100%" height="30"><line x1="40%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
       </div>
-      <div class="col">
-        <div class="col-header" style="background:#a8c4e8;color:#333;">品牌策划</div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <svg width="100%" height="28" style="margin-top:auto;"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
+      <div class="col" style="flex-direction:column; justify-content:flex-start;">
+        <div class="col-header-box" style="background:#a8c4e8; color:#333;">品牌策划</div>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <svg class="col-line" width="100%" height="30"><line x1="30%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
       </div>
     </div>
 
     <!-- 主轴 -->
-    <div style="position:relative;height:50px;flex-shrink:0;">
-      <div class="main-axis">
-        <div class="axis-label">品牌策划</div>
-      </div>
-      <div class="axis-arrow"></div>
+    <div class="main-axis">
+      <div class="axis-label">品牌策划</div>
     </div>
 
     <!-- 下半部分5列 -->
     <div class="section">
-      <div class="col">
-        <svg width="100%" height="28"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-header bottom" style="background:#1a3a7a;margin-top:auto;">品牌策划</div>
+      <div class="col" style="flex-direction:column; justify-content:flex-end;">
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="70%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <div class="col-header-box rev" style="background:#1a3a9e;">品牌策划</div>
       </div>
-      <div class="col">
-        <svg width="100%" height="28"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-header bottom" style="background:#2d5fa8;margin-top:auto;">品牌推广</div>
+      <div class="col" style="flex-direction:column; justify-content:flex-end;">
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="60%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
+        <div class="col-items">
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+        </div>
+        <div class="col-header-box rev" style="background:#2d5fa8;">品牌推广</div>
       </div>
-      <div class="col">
-        <svg width="100%" height="28"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-header bottom" style="background:#5b8dd9;margin-top:auto;">品牌策划</div>
+      <div class="col" style="flex-direction:column; justify-content:flex-end;">
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="50%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <div class="col-header-box rev" style="background:#5b8dd9;">品牌策划</div>
       </div>
-      <div class="col">
-        <svg width="100%" height="28"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-item">品牌推广 <span>→</span></div>
-        <div class="col-header bottom" style="background:#7baee0;margin-top:auto;">品牌推广</div>
+      <div class="col" style="flex-direction:column; justify-content:flex-end;">
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="40%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
+        <div class="col-items">
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+          <div class="col-item">品牌推广 <span>→</span></div>
+        </div>
+        <div class="col-header-box rev" style="background:#7baee0;">品牌推广</div>
       </div>
-      <div class="col">
-        <svg width="100%" height="28"><line x1="50%" y1="0" x2="50%" y2="28" stroke="#1a3a7a" stroke-width="2"/></svg>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-item">品牌策划 <span>→</span></div>
-        <div class="col-header bottom" style="background:#a8c4e8;color:#333;margin-top:auto;">品牌策划</div>
+      <div class="col" style="flex-direction:column; justify-content:flex-end;">
+        <svg class="col-line" width="100%" height="30"><line x1="50%" y1="0" x2="30%" y2="30" stroke="#1a3a9e" stroke-width="2"/></svg>
+        <div class="col-items">
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+          <div class="col-item">品牌策划 <span>→</span></div>
+        </div>
+        <div class="col-header-box rev" style="background:#a8c4e8; color:#333;">品牌策划</div>
       </div>
     </div>
   </div>
