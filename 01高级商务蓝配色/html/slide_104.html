@@ -5,30 +5,11 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  
-  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 30px 0; }
-  
-  /* Main circles area */
-  .circles-area { flex: 1; position: relative; }
-  
-  .circle-item { position: absolute; display: flex; flex-direction: column; align-items: center; }
-  .circle { width: 180px; height: 180px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .circle-letter { font-size: 48px; font-weight: 900; color: white; line-height: 1; }
-  .circle-name { font-size: 16px; font-weight: 700; color: white; }
-  .circle-sub { font-size: 13px; color: white; opacity: 0.9; }
-  
-  .desc-box { border: 1.5px dashed #ccc; padding: 10px 12px; width: 160px; }
-  .desc-box p { font-size: 11px; color: #555; line-height: 1.6; }
-  
-  /* Arrow between circles */
-  .arrow-svg { position: absolute; }
-  
-  /* Bottom bar */
-  .bottom-bar { height: 80px; background: #1a3a6b; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 0 40px; }
+  .slide { width: 1280px; height: 720px; position: relative; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: #1a3a6b; display: flex; align-items: center; justify-content: center; padding: 0 60px; }
   .bottom-bar p { font-size: 16px; color: white; text-align: center; line-height: 1.7; }
 </style>
 </head>
@@ -38,94 +19,102 @@
     <span class="header-title">AIDMA模型 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
-  
-  <div class="body">
-    <div class="circles-area">
-      <!-- SVG arrows -->
-      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 1220 440">
-        <!-- A→I (down-right) -->
-        <path d="M 200,180 Q 280,280 360,180" fill="none" stroke="#2E5C8A" stroke-width="2.5" marker-end="url(#a1)"/>
-        <!-- I→D (up-right) -->
-        <path d="M 560,280 Q 640,180 720,280" fill="none" stroke="#5a8ab4" stroke-width="2.5" marker-end="url(#a2)"/>
-        <!-- D→M (down-right) -->
-        <path d="M 920,180 Q 1000,280 1080,180" fill="none" stroke="#8ab0d0" stroke-width="2.5" marker-end="url(#a3)"/>
-        <defs>
-          <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#2E5C8A"/>
-          </marker>
-          <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#5a8ab4"/>
-          </marker>
-          <marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#8ab0d0"/>
-          </marker>
-        </defs>
-      </svg>
-      
-      <!-- A: Attention - top left -->
-      <div class="circle-item" style="left:20px; top:20px;">
-        <div class="circle" style="background:#1a3a6b;">
-          <div class="circle-letter">A</div>
-          <div class="circle-name">Attention</div>
-          <div class="circle-sub">（引起注意）</div>
-        </div>
-        <div class="desc-box" style="margin-top:10px;">
-          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
-        </div>
-      </div>
-      
-      <!-- I: Interest - bottom second -->
-      <div class="circle-item" style="left:260px; top:140px;">
-        <div class="circle" style="background:#3a6abf;">
-          <div class="circle-letter">I</div>
-          <div class="circle-name">Interest</div>
-          <div class="circle-sub">（引起兴趣）</div>
-        </div>
-        <div class="desc-box" style="margin-top:10px;">
-          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
-        </div>
-      </div>
-      
-      <!-- D: Desire - top middle -->
-      <div class="circle-item" style="left:500px; top:20px;">
-        <div class="circle" style="background:#6a9ac4;">
-          <div class="circle-letter">D</div>
-          <div class="circle-name">Desire</div>
-          <div class="circle-sub">（唤起欲望）</div>
-        </div>
-        <div class="desc-box" style="margin-top:10px;">
-          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
-        </div>
-      </div>
-      
-      <!-- M: Memory - bottom fourth -->
-      <div class="circle-item" style="left:740px; top:140px;">
-        <div class="circle" style="background:#8ab0d0;">
-          <div class="circle-letter">M</div>
-          <div class="circle-name">Memory</div>
-          <div class="circle-sub">（留下记忆）</div>
-        </div>
-        <div class="desc-box" style="margin-top:10px;">
-          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
-        </div>
-      </div>
-      
-      <!-- A: Action - top right -->
-      <div class="circle-item" style="left:980px; top:20px;">
-        <div class="circle" style="background:#b0b8c0;">
-          <div class="circle-letter">A</div>
-          <div class="circle-name">Action</div>
-          <div class="circle-sub">（购买行动）</div>
-        </div>
-        <div class="desc-box" style="margin-top:10px;">
-          <p>花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="bottom-bar">
-      <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段</p>
-    </div>
+
+  <!-- Main SVG: circles + arrows + desc boxes -->
+  <!-- Layout: A(top-left), I(bottom-2nd), D(top-center), M(bottom-4th), A(top-right) -->
+  <!-- Row1 top: A at x=110, D at x=590, Action at x=1070 -->
+  <!-- Row2 bottom: I at x=350, M at x=830 -->
+  <!-- Circle radius: 105 -->
+  <svg style="position:absolute; top:62px; left:0; width:1280px; height:578px;" viewBox="0 0 1280 578" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <!-- Arrow markers -->
+      <marker id="da1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#1a3a6b"/>
+      </marker>
+      <marker id="da2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#3a6abf"/>
+      </marker>
+      <marker id="da3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#6a9ac4"/>
+      </marker>
+      <marker id="da4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#8ab0d0"/>
+      </marker>
+    </defs>
+
+    <!-- Arrows: A→I (down), I→D (up), D→M (down), M→A (up) -->
+    <!-- A center (110,130) → I center (350,290): downward arrow -->
+    <line x1="110" y1="235" x2="350" y2="185" stroke="#1a3a6b" stroke-width="2" marker-end="url(#da1)"/>
+    <!-- I center (350,290) → D center (590,130): upward arrow -->
+    <line x1="350" y1="185" x2="590" y2="235" stroke="#3a6abf" stroke-width="2" marker-end="url(#da2)"/>
+    <!-- D center (590,130) → M center (830,290): downward arrow -->
+    <line x1="590" y1="235" x2="830" y2="185" stroke="#6a9ac4" stroke-width="2" marker-end="url(#da3)"/>
+    <!-- M center (830,290) → Action center (1070,130): upward arrow -->
+    <line x1="830" y1="185" x2="1070" y2="235" stroke="#8ab0d0" stroke-width="2" marker-end="url(#da4)"/>
+
+    <!-- Circle A: Attention (dark blue) top-left, center (110, 130) r=105 -->
+    <circle cx="110" cy="130" r="105" fill="#1a3a6b"/>
+    <text x="110" y="100" text-anchor="middle" font-size="52" font-weight="900" fill="white">A</text>
+    <text x="110" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="white">Attention</text>
+    <text x="110" y="165" text-anchor="middle" font-size="14" fill="white">（引起注意）</text>
+
+    <!-- Desc box below A -->
+    <rect x="20" y="250" width="180" height="80" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <foreignObject x="25" y="255" width="170" height="70">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+
+    <!-- Circle I: Interest (medium blue) bottom-2nd, center (350, 290) r=105 -->
+    <circle cx="350" cy="290" r="105" fill="#3a6abf"/>
+    <text x="350" y="260" text-anchor="middle" font-size="52" font-weight="900" fill="white">I</text>
+    <text x="350" y="300" text-anchor="middle" font-size="18" font-weight="700" fill="white">Interest</text>
+    <text x="350" y="325" text-anchor="middle" font-size="14" fill="white">（引起兴趣）</text>
+
+    <!-- Desc box below I -->
+    <rect x="260" y="408" width="180" height="80" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <foreignObject x="265" y="413" width="170" height="70">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+
+    <!-- Circle D: Desire (light blue) top-center, center (590, 130) r=105 -->
+    <circle cx="590" cy="130" r="105" fill="#6a9ac4"/>
+    <text x="590" y="100" text-anchor="middle" font-size="52" font-weight="900" fill="white">D</text>
+    <text x="590" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="white">Desire</text>
+    <text x="590" y="165" text-anchor="middle" font-size="14" fill="white">（唤起欲望）</text>
+
+    <!-- Desc box below D -->
+    <rect x="500" y="250" width="180" height="80" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <foreignObject x="505" y="255" width="170" height="70">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+
+    <!-- Circle M: Memory (lighter blue) bottom-4th, center (830, 290) r=105 -->
+    <circle cx="830" cy="290" r="105" fill="#8ab0d0"/>
+    <text x="830" y="260" text-anchor="middle" font-size="52" font-weight="900" fill="white">M</text>
+    <text x="830" y="300" text-anchor="middle" font-size="18" font-weight="700" fill="white">Memory</text>
+    <text x="830" y="325" text-anchor="middle" font-size="14" fill="white">（留下记忆）</text>
+
+    <!-- Desc box below M -->
+    <rect x="740" y="408" width="180" height="80" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <foreignObject x="745" y="413" width="170" height="70">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+
+    <!-- Circle A: Action (gray) top-right, center (1070, 130) r=105 -->
+    <circle cx="1070" cy="130" r="105" fill="#b0b8c0"/>
+    <text x="1070" y="100" text-anchor="middle" font-size="52" font-weight="900" fill="white">A</text>
+    <text x="1070" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="white">Action</text>
+    <text x="1070" y="165" text-anchor="middle" font-size="14" fill="white">（购买行动）</text>
+
+    <!-- Desc box below Action -->
+    <rect x="980" y="250" width="180" height="80" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <foreignObject x="985" y="255" width="170" height="70">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+  </svg>
+
+  <div class="bottom-bar">
+    <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段</p>
   </div>
 </div>
 </body>

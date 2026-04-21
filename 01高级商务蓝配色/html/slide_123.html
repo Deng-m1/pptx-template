@@ -6,23 +6,24 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 30px; gap: 14px; }
-  .left-col { width: 260px; display: flex; flex-direction: column; gap: 12px; }
-  .stat-card { border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .header { height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+  .body { flex: 1; display: flex; padding: 12px 28px 12px; gap: 12px; }
+  .left-col { width: 250px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+  .stat-card { border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 5px; }
   .stat-header { display: flex; justify-content: space-between; align-items: center; }
   .stat-label { font-size: 14px; font-weight: 700; color: white; }
-  .stat-icon { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; }
-  .stat-num { font-size: 36px; font-weight: 900; color: white; }
+  .stat-icon { width: 30px; height: 30px; border-radius: 4px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; }
+  .stat-num { font-size: 38px; font-weight: 900; color: white; }
   .stat-growth { font-size: 14px; color: rgba(255,255,255,0.85); }
-  .right-col { flex: 1; border: 1.5px solid #dde4f0; border-radius: 4px; padding: 14px; position: relative; display: flex; flex-direction: column; }
-  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 8px; }
-  .callout { position: absolute; background: #1a3a6b; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; line-height: 1.5; }
-  .callout::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #1a3a6b; border-bottom: 0; }
-  .callout2 { position: absolute; background: #6a9ac4; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; line-height: 1.5; }
-  .callout2::after { content: ''; position: absolute; bottom: -7px; left: 16px; border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
+  .right-col { flex: 1; border: 1.5px solid #dde4f0; padding: 12px 14px; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 4px; flex-shrink: 0; }
+  /* Callout boxes */
+  .callout-dark { position: absolute; background: #1a3a6b; color: white; padding: 8px 12px; border-radius: 4px; font-size: 11px; line-height: 1.55; z-index: 10; }
+  .callout-dark::after { content: ''; position: absolute; bottom: -7px; left: 18px; border: 7px solid transparent; border-top-color: #1a3a6b; border-bottom: 0; }
+  .callout-blue { position: absolute; background: #6a9ac4; color: white; padding: 7px 11px; border-radius: 4px; font-size: 11px; line-height: 1.5; z-index: 10; text-align: center; }
+  .callout-blue::after { content: ''; position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #6a9ac4; border-bottom: 0; }
 </style>
 </head>
 <body>
@@ -36,7 +37,9 @@
       <div class="stat-card" style="background:#1a3a6b; flex:1;">
         <div class="stat-header">
           <span class="stat-label">发布图文/视频</span>
-          <div class="stat-icon">📊</div>
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><rect x="7" y="12" width="3" height="6" fill="white"/><rect x="11" y="9" width="3" height="9" fill="white"/><rect x="15" y="6" width="3" height="12" fill="white"/></svg>
+          </div>
         </div>
         <div class="stat-num">465</div>
         <div class="stat-growth">+120</div>
@@ -44,7 +47,9 @@
       <div class="stat-card" style="background:#3a6abf; flex:1;">
         <div class="stat-header">
           <span class="stat-label">新增粉丝数量</span>
-          <div class="stat-icon">📊</div>
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><rect x="7" y="12" width="3" height="6" fill="white"/><rect x="11" y="9" width="3" height="9" fill="white"/><rect x="15" y="6" width="3" height="12" fill="white"/></svg>
+          </div>
         </div>
         <div class="stat-num">3670</div>
         <div class="stat-growth">+2872</div>
@@ -52,7 +57,9 @@
       <div class="stat-card" style="background:#8ab0d0; flex:1;">
         <div class="stat-header">
           <span class="stat-label">商品成交金额</span>
-          <div class="stat-icon">📊</div>
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><rect x="7" y="12" width="3" height="6" fill="white"/><rect x="11" y="9" width="3" height="9" fill="white"/><rect x="15" y="6" width="3" height="12" fill="white"/></svg>
+          </div>
         </div>
         <div class="stat-num">97890</div>
         <div class="stat-growth">+6780</div>
@@ -60,29 +67,32 @@
     </div>
     <div class="right-col">
       <div class="chart-title">年度月销售额明细</div>
-      <!-- Callouts -->
-      <div class="callout" style="top:30px; left:60px;">
-        <div style="font-weight:700; margin-bottom:3px;">电商平台数据概述：</div>
-        我们在主要电商平台的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，占据了总销售额的70%。在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续广告投放和促销活动，以及产品品质的保证。
+      <!-- Callout: 电商平台数据概述 - positioned over left portion of chart -->
+      <div class="callout-dark" style="top:28px; left:50px; width:280px;">
+        <div style="font-weight:700; margin-bottom:4px;">电商平台数据概述：</div>
+        我们在主要电商平台的销售表现持续增长。截至目前，电商平台仍然是我们最主要的销售渠道之一，占据了总销售额的70%。<br>
+        在2023年上半年，我们通过电商平台实现了XX万元的销售额，同比增长了XX%。这一增长主要归因于我们在平台上的持续广告投放和促销活动，以及产品品质的保证。
       </div>
-      <div class="callout2" style="top:20px; right:40px;">11月份业绩销<br>售达到峰值</div>
-      <div class="callout2" style="top:45%; left:42%;">5月份业绩销售<br>遇到难点</div>
-      <svg width="100%" height="100%" viewBox="0 0 920 440" preserveAspectRatio="xMidYMid meet">
-        <!-- Y axis -->
-        <text x="30" y="20" font-size="10" fill="#888" text-anchor="end">160</text>
-        <text x="30" y="100" font-size="10" fill="#888" text-anchor="end">120</text>
-        <text x="30" y="180" font-size="10" fill="#888" text-anchor="end">80</text>
-        <text x="30" y="260" font-size="10" fill="#888" text-anchor="end">40</text>
-        <text x="30" y="340" font-size="10" fill="#888" text-anchor="end">20</text>
-        <text x="30" y="400" font-size="10" fill="#888" text-anchor="end">0</text>
-        <!-- Grid -->
+      <!-- Callout: 11月份业绩销售达到峰值 - top right -->
+      <div class="callout-blue" style="top:22px; right:55px; width:100px;">11月份业绩销<br>售达到峰值</div>
+      <!-- Callout: 5月份业绩销售遇到难点 - middle area -->
+      <div class="callout-blue" style="top:48%; left:38%; width:100px;">5月份业绩销售<br>遇到难点</div>
+      <svg width="100%" height="100%" viewBox="0 0 920 450" preserveAspectRatio="xMidYMid meet">
+        <!-- Y axis labels -->
+        <text x="32" y="22" font-size="11" fill="#888" text-anchor="end">160</text>
+        <text x="32" y="100" font-size="11" fill="#888" text-anchor="end">120</text>
+        <text x="32" y="178" font-size="11" fill="#888" text-anchor="end">80</text>
+        <text x="32" y="256" font-size="11" fill="#888" text-anchor="end">40</text>
+        <text x="32" y="334" font-size="11" fill="#888" text-anchor="end">20</text>
+        <text x="32" y="400" font-size="11" fill="#888" text-anchor="end">0</text>
+        <!-- Grid lines -->
         <line x1="40" y1="395" x2="910" y2="395" stroke="#eee" stroke-width="1"/>
         <line x1="40" y1="335" x2="910" y2="335" stroke="#eee" stroke-width="1"/>
         <line x1="40" y1="255" x2="910" y2="255" stroke="#eee" stroke-width="1"/>
         <line x1="40" y1="175" x2="910" y2="175" stroke="#eee" stroke-width="1"/>
         <line x1="40" y1="95" x2="910" y2="95" stroke="#eee" stroke-width="1"/>
         <!-- Dotted trend line -->
-        <line x1="50" y1="340" x2="900" y2="240" stroke="#3a6abf" stroke-width="1.5" stroke-dasharray="5,5"/>
+        <line x1="50" y1="345" x2="900" y2="245" stroke="#3a6abf" stroke-width="1.5" stroke-dasharray="5,5"/>
         <!-- Bars: 1月=80, 2月=50, 3月=90, 4月=100, 5月=40, 6月=50, 7月=55, 8月=75, 9月=100, 10月=105, 11月=145, 12月=100 -->
         <rect x="50" y="195" width="50" height="200" fill="#1a3a6b"/>
         <rect x="120" y="270" width="50" height="125" fill="#1a3a6b"/>
@@ -97,18 +107,18 @@
         <rect x="750" y="32" width="50" height="363" fill="#1a3a6b"/>
         <rect x="820" y="145" width="50" height="250" fill="#1a3a6b"/>
         <!-- X labels -->
-        <text x="75" y="415" font-size="10" fill="#555" text-anchor="middle">1月</text>
-        <text x="145" y="415" font-size="10" fill="#555" text-anchor="middle">2月</text>
-        <text x="215" y="415" font-size="10" fill="#555" text-anchor="middle">3月</text>
-        <text x="285" y="415" font-size="10" fill="#555" text-anchor="middle">4月</text>
-        <text x="355" y="415" font-size="10" fill="#555" text-anchor="middle">5月</text>
-        <text x="425" y="415" font-size="10" fill="#555" text-anchor="middle">6月</text>
-        <text x="495" y="415" font-size="10" fill="#555" text-anchor="middle">7月</text>
-        <text x="565" y="415" font-size="10" fill="#555" text-anchor="middle">8月</text>
-        <text x="635" y="415" font-size="10" fill="#555" text-anchor="middle">9月</text>
-        <text x="705" y="415" font-size="10" fill="#555" text-anchor="middle">10月</text>
-        <text x="775" y="415" font-size="10" fill="#555" text-anchor="middle">11月</text>
-        <text x="845" y="415" font-size="10" fill="#555" text-anchor="middle">12月</text>
+        <text x="75" y="415" font-size="11" fill="#555" text-anchor="middle">1月</text>
+        <text x="145" y="415" font-size="11" fill="#555" text-anchor="middle">2月</text>
+        <text x="215" y="415" font-size="11" fill="#555" text-anchor="middle">3月</text>
+        <text x="285" y="415" font-size="11" fill="#555" text-anchor="middle">4月</text>
+        <text x="355" y="415" font-size="11" fill="#555" text-anchor="middle">5月</text>
+        <text x="425" y="415" font-size="11" fill="#555" text-anchor="middle">6月</text>
+        <text x="495" y="415" font-size="11" fill="#555" text-anchor="middle">7月</text>
+        <text x="565" y="415" font-size="11" fill="#555" text-anchor="middle">8月</text>
+        <text x="635" y="415" font-size="11" fill="#555" text-anchor="middle">9月</text>
+        <text x="705" y="415" font-size="11" fill="#555" text-anchor="middle">10月</text>
+        <text x="775" y="415" font-size="11" fill="#555" text-anchor="middle">11月</text>
+        <text x="845" y="415" font-size="11" fill="#555" text-anchor="middle">12月</text>
       </svg>
     </div>
   </div>

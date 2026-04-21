@@ -5,28 +5,31 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  
-  .body { flex: 1; display: flex; padding: 14px 30px 14px; gap: 20px; }
-  
+  .slide { width: 1280px; height: 720px; position: relative; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+
+  /* Body layout */
+  .body { position: absolute; top: 62px; left: 0; right: 0; bottom: 0; display: flex; padding: 16px 30px 16px; gap: 18px; }
+
   /* Left panel */
-  .left-panel { width: 280px; display: flex; flex-direction: column; justify-content: space-around; gap: 10px; }
-  .left-card { border: 1.5px solid #1a3a6b; border-left: 5px solid #1a3a6b; padding: 12px 14px; border-radius: 3px; }
-  .left-card.light { border-color: #7aa0d4; border-left-color: #7aa0d4; }
-  .left-card p { font-size: 11.5px; color: #555; line-height: 1.7; }
-  
+  .left-panel { width: 260px; display: flex; flex-direction: column; justify-content: space-around; flex-shrink: 0; }
+  /* Card 1: white bg, thin border, left blue bar */
+  .lc1 { border: 1.5px solid #c0cce0; border-left: 5px solid #7aa0d4; padding: 10px 12px; background: #fff; }
+  /* Card 2: dark blue bg, white text */
+  .lc2 { background: #1a3a6b; padding: 12px 14px; border-left: 5px solid #0d2147; }
+  /* Card 3: dark blue bg, white text */
+  .lc3 { background: #1a3a6b; padding: 12px 14px; border-left: 5px solid #0d2147; }
+  .lc1 p { font-size: 11px; color: #555; line-height: 1.65; }
+  .lc2 p, .lc3 p { font-size: 11px; color: #fff; line-height: 1.65; }
+
   /* Center funnel */
-  .center-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
-  
-  .funnel-row { display: flex; align-items: center; justify-content: center; }
-  .funnel-shape { display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: white; clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); }
-  
+  .center-panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+
   /* Right panel */
-  .right-panel { width: 220px; display: flex; flex-direction: column; justify-content: space-around; gap: 4px; }
-  .right-item { font-size: 11px; color: #555; line-height: 1.6; padding: 4px 0; }
+  .right-panel { width: 200px; display: flex; flex-direction: column; justify-content: space-around; flex-shrink: 0; }
+  .ri { font-size: 11px; color: #555; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -35,64 +38,59 @@
     <span class="header-title">AIDMA模型 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
-  
+
   <div class="body">
     <!-- Left panel -->
     <div class="left-panel">
-      <div class="left-card">
+      <div class="lc1">
         <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</p>
       </div>
-      <div style="height:20px;"></div>
-      <div class="left-card light">
+      <div class="lc2">
         <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</p>
       </div>
-      <div style="height:20px;"></div>
-      <div class="left-card light" style="border-color:#b0c8e4; border-left-color:#b0c8e4;">
+      <div class="lc3">
         <p>AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段。</p>
       </div>
     </div>
-    
-    <!-- Center funnel -->
+
+    <!-- Center funnel using SVG trapezoids -->
     <div class="center-panel">
-      <!-- A: Attention -->
-      <div class="funnel-row">
-        <div class="funnel-shape" style="width:560px; height:90px; background:#1a3a6b; clip-path:polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%);">
-          A：Attention（引起注意）
-        </div>
-      </div>
-      <!-- I: Interest -->
-      <div class="funnel-row">
-        <div class="funnel-shape" style="width:490px; height:82px; background:#2E5C8A; clip-path:polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%);">
-          I:Interest （引起兴趣）
-        </div>
-      </div>
-      <!-- D: Desire -->
-      <div class="funnel-row">
-        <div class="funnel-shape" style="width:420px; height:82px; background:#5a8ab4; clip-path:polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%);">
-          D:Desire（唤起欲望）
-        </div>
-      </div>
-      <!-- M: Memory -->
-      <div class="funnel-row">
-        <div class="funnel-shape" style="width:350px; height:82px; background:#8ab0d0; clip-path:polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%);">
-          M:Memory（留下记忆）
-        </div>
-      </div>
-      <!-- A: Action -->
-      <div class="funnel-row">
-        <div class="funnel-shape" style="width:280px; height:82px; background:#b0c8e0; clip-path:polygon(2% 0%, 98% 0%, 96% 100%, 4% 100%); color:#1a3a6b;">
-          A:Action（购买行动）
-        </div>
-      </div>
+      <svg width="520" height="580" viewBox="0 0 520 580" style="overflow:visible;">
+        <!-- A: Attention - widest -->
+        <polygon points="20,0 500,0 480,100 40,100" fill="#1a3a6b"/>
+        <text x="260" y="58" text-anchor="middle" font-size="17" font-weight="700" fill="white">A：Attention（引起注意）</text>
+        <!-- line to right -->
+        <line x1="480" y1="50" x2="530" y2="50" stroke="#1a3a6b" stroke-width="1.5"/>
+
+        <!-- I: Interest -->
+        <polygon points="50,106 470,106 450,200 70,200" fill="#2e5c8a"/>
+        <text x="260" y="160" text-anchor="middle" font-size="17" font-weight="700" fill="white">I:Interest （引起兴趣）</text>
+        <line x1="450" y1="153" x2="530" y2="153" stroke="#2e5c8a" stroke-width="1.5"/>
+
+        <!-- D: Desire -->
+        <polygon points="80,206 440,206 420,300 100,300" fill="#5a8ab4"/>
+        <text x="260" y="260" text-anchor="middle" font-size="17" font-weight="700" fill="white">D:Desire（唤起欲望）</text>
+        <line x1="420" y1="253" x2="530" y2="253" stroke="#5a8ab4" stroke-width="1.5"/>
+
+        <!-- M: Memory -->
+        <polygon points="110,306 410,306 390,400 130,400" fill="#8ab0d0"/>
+        <text x="260" y="360" text-anchor="middle" font-size="17" font-weight="700" fill="white">M:Memory（留下记忆）</text>
+        <line x1="390" y1="353" x2="530" y2="353" stroke="#8ab0d0" stroke-width="1.5"/>
+
+        <!-- A: Action - narrowest -->
+        <polygon points="140,406 380,406 360,500 160,500" fill="#b0c8e0"/>
+        <text x="260" y="460" text-anchor="middle" font-size="17" font-weight="700" fill="#1a3a6b">A:Action（购买行动）</text>
+        <line x1="360" y1="453" x2="530" y2="453" stroke="#8ab0d0" stroke-width="1.5"/>
+      </svg>
     </div>
-    
+
     <!-- Right panel -->
     <div class="right-panel">
-      <div class="right-item">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
-      <div class="right-item">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
-      <div class="right-item">推销茶叶的要随时准备茶具，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
-      <div class="right-item">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
-      <div class="right-item">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。</div>
+      <div class="ri">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+      <div class="ri">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+      <div class="ri">推销茶叶的要随时准备茶具，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
+      <div class="ri">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
+      <div class="ri">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。</div>
     </div>
   </div>
 </div>

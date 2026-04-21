@@ -5,32 +5,14 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 65px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 32px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 20px; color: #1a3a6b; font-style: italic; }
-  
-  .body { flex: 1; display: flex; flex-direction: column; padding: 12px 40px 0; }
-  
-  .subtitle { font-size: 28px; font-weight: 900; color: #1a3a6b; margin-bottom: 4px; }
-  .subtitle-desc { font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 10px; }
-  
-  /* Cylinders area */
-  .cylinders-area { flex: 1; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 0; position: relative; }
-  
-  .cyl-item { display: flex; flex-direction: column; align-items: center; width: 200px; }
-  .cyl-top { width: 160px; height: 50px; border-radius: 50%; }
-  .cyl-body { width: 160px; height: 160px; display: flex; align-items: center; justify-content: center; flex-direction: column; }
-  .cyl-bottom { width: 160px; height: 50px; border-radius: 50%; margin-top: -25px; }
-  .cyl-label1 { font-size: 18px; font-weight: 900; color: white; text-align: center; }
-  .cyl-label2 { font-size: 14px; font-weight: 700; color: white; text-align: center; }
-  .cyl-desc { font-size: 11px; color: #555; line-height: 1.6; text-align: center; margin-top: 10px; width: 180px; }
-  
-  /* Arrow between cylinders */
-  .arrow-wrap { display: flex; align-items: center; padding-bottom: 80px; }
-  
+  .slide { width: 1280px; height: 720px; position: relative; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
+  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+  .subtitle { position: absolute; top: 72px; left: 40px; font-size: 26px; font-weight: 900; color: #1a3a6b; }
+  .subtitle-desc { position: absolute; top: 108px; left: 40px; right: 40px; font-size: 12px; color: #666; line-height: 1.6; }
   /* Bottom bar */
-  .bottom-bar { height: 50px; display: flex; flex-shrink: 0; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 46px; display: flex; }
   .bar-item { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: white; }
 </style>
 </head>
@@ -40,111 +22,97 @@
     <span class="header-title">AIDMA模型 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
-  
-  <div class="body">
-    <div class="subtitle">AIDMA消费理论模型</div>
-    <div class="subtitle-desc">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段：</div>
-    
-    <div class="cylinders-area">
-      <!-- Curved arrows (SVG overlay) -->
-      <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 1200 320">
-        <!-- Arrow 1→2 -->
-        <path d="M 200,30 Q 280,0 360,30" fill="none" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arr)"/>
-        <!-- Arrow 2→3 -->
-        <path d="M 440,30 Q 520,0 600,30" fill="none" stroke="#5a8ab4" stroke-width="3" marker-end="url(#arr2)"/>
-        <!-- Arrow 3→4 -->
-        <path d="M 680,30 Q 760,0 840,30" fill="none" stroke="#8ab0d0" stroke-width="3" marker-end="url(#arr3)"/>
-        <!-- Arrow 4→5 -->
-        <path d="M 920,30 Q 1000,0 1080,30" fill="none" stroke="#b0c8e0" stroke-width="3" marker-end="url(#arr4)"/>
-        <defs>
-          <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#2E5C8A"/>
-          </marker>
-          <marker id="arr2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#5a8ab4"/>
-          </marker>
-          <marker id="arr3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#8ab0d0"/>
-          </marker>
-          <marker id="arr4" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#b0c8e0"/>
-          </marker>
-        </defs>
-      </svg>
-      
-      <!-- Cylinder 1: Attention (dark blue) -->
-      <div class="cyl-item">
-        <svg width="160" height="220" viewBox="0 0 160 220">
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#2a4a8b"/>
-          <rect x="5" y="30" width="150" height="160" fill="#1a3a6b"/>
-          <ellipse cx="80" cy="190" rx="75" ry="25" fill="#1a3a6b"/>
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#3a5a9b"/>
-          <text x="80" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">Attention</text>
-          <text x="80" y="135" text-anchor="middle" font-size="15" fill="white">（引起注意）</text>
-        </svg>
-        <div class="cyl-desc">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
-      </div>
-      
-      <!-- Cylinder 2: Interest (medium blue) -->
-      <div class="cyl-item">
-        <svg width="160" height="220" viewBox="0 0 160 220">
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#4a7abf"/>
-          <rect x="5" y="30" width="150" height="160" fill="#3a6abf"/>
-          <ellipse cx="80" cy="190" rx="75" ry="25" fill="#3a6abf"/>
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#5a8acf"/>
-          <text x="80" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">Interest</text>
-          <text x="80" y="135" text-anchor="middle" font-size="15" fill="white">（引起兴趣）</text>
-        </svg>
-        <div class="cyl-desc">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
-      </div>
-      
-      <!-- Cylinder 3: Desire (light blue) -->
-      <div class="cyl-item">
-        <svg width="160" height="220" viewBox="0 0 160 220">
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#7aaad4"/>
-          <rect x="5" y="30" width="150" height="160" fill="#6a9ac4"/>
-          <ellipse cx="80" cy="190" rx="75" ry="25" fill="#6a9ac4"/>
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#8ab8e0"/>
-          <text x="80" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">Desire</text>
-          <text x="80" y="135" text-anchor="middle" font-size="15" fill="white">（唤起欲望）</text>
-        </svg>
-        <div class="cyl-desc">推销茶叶的要随时准备茶具，给顾客沏上一杯香气扑鼻的浓茶，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
-      </div>
-      
-      <!-- Cylinder 4: Memory (lighter blue) -->
-      <div class="cyl-item">
-        <svg width="160" height="220" viewBox="0 0 160 220">
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#a0c0d8"/>
-          <rect x="5" y="30" width="150" height="160" fill="#90b0c8"/>
-          <ellipse cx="80" cy="190" rx="75" ry="25" fill="#90b0c8"/>
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#b0cce0"/>
-          <text x="80" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">Memory</text>
-          <text x="80" y="135" text-anchor="middle" font-size="15" fill="white">（留下记忆）</text>
-        </svg>
-        <div class="cyl-desc">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
-      </div>
-      
-      <!-- Cylinder 5: Action (gray) -->
-      <div class="cyl-item">
-        <svg width="160" height="220" viewBox="0 0 160 220">
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#c0c8d0"/>
-          <rect x="5" y="30" width="150" height="160" fill="#b0b8c0"/>
-          <ellipse cx="80" cy="190" rx="75" ry="25" fill="#b0b8c0"/>
-          <ellipse cx="80" cy="30" rx="75" ry="25" fill="#d0d8e0"/>
-          <text x="80" y="110" text-anchor="middle" font-size="20" font-weight="900" fill="white">Action</text>
-          <text x="80" y="135" text-anchor="middle" font-size="15" fill="white">（购买行动）</text>
-        </svg>
-        <div class="cyl-desc">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。过分自信也会引起顾客的反感，以为你在说大话、吹牛皮，从而不信任你的话。</div>
-      </div>
-    </div>
-    
-    <div class="bottom-bar">
-      <div class="bar-item" style="background:#1a3a6b;">A</div>
-      <div class="bar-item" style="background:#3a6abf;">I</div>
-      <div class="bar-item" style="background:#6a9ac4;">D</div>
-      <div class="bar-item" style="background:#90b0c8;">M</div>
-      <div class="bar-item" style="background:#b0b8c0;">A</div>
-    </div>
+  <div class="subtitle">AIDMA消费理论模型</div>
+  <div class="subtitle-desc">AIDMA是消费者行为学领域很成熟的理论模型之一，由美国广告学家E.S.刘易斯在1898年提出。该理论认为，消费者从接触到信息到最后达成购买，会经历这5个阶段：</div>
+
+  <!-- Main SVG: cylinders + arrows + desc texts -->
+  <svg style="position:absolute; top:130px; left:0; width:1280px; height:540px;" viewBox="0 0 1280 540" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <marker id="a1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#2e5c8a"/>
+      </marker>
+      <marker id="a2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#5a8ab4"/>
+      </marker>
+      <marker id="a3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#8ab0d0"/>
+      </marker>
+      <marker id="a4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#b0c8e0"/>
+      </marker>
+    </defs>
+
+    <!-- Curved arrows between cylinders (above cylinders) -->
+    <!-- Arrow 1→2: from x=190 to x=318 -->
+    <path d="M 192,68 Q 256,30 318,68" fill="none" stroke="#2e5c8a" stroke-width="2.5" marker-end="url(#a1)"/>
+    <!-- Arrow 2→3: from x=446 to x=574 -->
+    <path d="M 448,68 Q 512,30 574,68" fill="none" stroke="#5a8ab4" stroke-width="2.5" marker-end="url(#a2)"/>
+    <!-- Arrow 3→4: from x=702 to x=830 -->
+    <path d="M 704,68 Q 768,30 830,68" fill="none" stroke="#8ab0d0" stroke-width="2.5" marker-end="url(#a3)"/>
+    <!-- Arrow 4→5: from x=958 to x=1086 -->
+    <path d="M 960,68 Q 1024,30 1086,68" fill="none" stroke="#b0c8e0" stroke-width="2.5" marker-end="url(#a4)"/>
+
+    <!-- Cylinder 1: Attention (dark blue) cx=128 -->
+    <!-- bottom ellipse -->
+    <ellipse cx="128" cy="295" rx="62" ry="20" fill="#152e58"/>
+    <!-- body rect -->
+    <rect x="66" y="88" width="124" height="207" fill="#1a3a6b"/>
+    <!-- top ellipse highlight -->
+    <ellipse cx="128" cy="88" rx="62" ry="20" fill="#2a4f8a"/>
+    <text x="128" y="180" text-anchor="middle" font-size="19" font-weight="900" fill="white">Attention</text>
+    <text x="128" y="205" text-anchor="middle" font-size="14" fill="white">（引起注意）</text>
+    <!-- desc -->
+    <foreignObject x="30" y="310" width="196" height="100">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;text-align:center;">花哨的名片、提包上绣着广告词等被经常采用的引起注意的方法。</div>
+    </foreignObject>
+
+    <!-- Cylinder 2: Interest (medium blue) cx=384 -->
+    <ellipse cx="384" cy="295" rx="62" ry="20" fill="#2a508a"/>
+    <rect x="322" y="88" width="124" height="207" fill="#3a6abf"/>
+    <ellipse cx="384" cy="88" rx="62" ry="20" fill="#4a7acf"/>
+    <text x="384" y="180" text-anchor="middle" font-size="19" font-weight="900" fill="white">Interest</text>
+    <text x="384" y="205" text-anchor="middle" font-size="14" fill="white">（引起兴趣）</text>
+    <foreignObject x="286" y="310" width="196" height="100">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;text-align:center;">一般使用的方法是精制的彩色目录、有关商品的新闻简报加以剪贴。</div>
+    </foreignObject>
+
+    <!-- Cylinder 3: Desire (light blue) cx=640 -->
+    <ellipse cx="640" cy="295" rx="62" ry="20" fill="#5a8ab0"/>
+    <rect x="578" y="88" width="124" height="207" fill="#6a9ac4"/>
+    <ellipse cx="640" cy="88" rx="62" ry="20" fill="#7aaad4"/>
+    <text x="640" y="180" text-anchor="middle" font-size="19" font-weight="900" fill="white">Desire</text>
+    <text x="640" y="205" text-anchor="middle" font-size="14" fill="white">（唤起欲望）</text>
+    <foreignObject x="542" y="310" width="196" height="110">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;text-align:center;">推销茶叶的要随时准备茶具，给顾客沏上一杯香气扑鼻的浓茶，顾客一品茶香体会茶的美味，就会产生购买欲。</div>
+    </foreignObject>
+
+    <!-- Cylinder 4: Memory (lighter blue) cx=896 -->
+    <ellipse cx="896" cy="295" rx="62" ry="20" fill="#7898b8"/>
+    <rect x="834" y="88" width="124" height="207" fill="#90b0c8"/>
+    <ellipse cx="896" cy="88" rx="62" ry="20" fill="#a0c0d8"/>
+    <text x="896" y="180" text-anchor="middle" font-size="19" font-weight="900" fill="white">Memory</text>
+    <text x="896" y="205" text-anchor="middle" font-size="14" fill="white">（留下记忆）</text>
+    <foreignObject x="798" y="310" width="196" height="100">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;text-align:center;">每次我在宣传自己公司的产品时，总是拿着别公司的产品目录，一一加以详细说明比较。</div>
+    </foreignObject>
+
+    <!-- Cylinder 5: Action (gray) cx=1152 -->
+    <ellipse cx="1152" cy="295" rx="62" ry="20" fill="#9098a0"/>
+    <rect x="1090" y="88" width="124" height="207" fill="#b0b8c0"/>
+    <ellipse cx="1152" cy="88" rx="62" ry="20" fill="#c0c8d0"/>
+    <text x="1152" y="180" text-anchor="middle" font-size="19" font-weight="900" fill="white">Action</text>
+    <text x="1152" y="205" text-anchor="middle" font-size="14" fill="white">（购买行动）</text>
+    <foreignObject x="1054" y="310" width="196" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#555;line-height:1.55;text-align:center;">从引起注意到付诸购买的整个销售过程，推销员必须始终信心十足。过分自信也会引起顾客的反感，以为你在说大话、吹牛皮，从而不信任你的话。</div>
+    </foreignObject>
+  </svg>
+
+  <div class="bottom-bar">
+    <div class="bar-item" style="background:#1a3a6b;">A</div>
+    <div class="bar-item" style="background:#3a6abf;">I</div>
+    <div class="bar-item" style="background:#6a9ac4;">D</div>
+    <div class="bar-item" style="background:#90b0c8;">M</div>
+    <div class="bar-item" style="background:#b0b8c0;">A</div>
   </div>
 </div>
 </body>
