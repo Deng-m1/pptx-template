@@ -6,33 +6,33 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 12px 28px 12px; gap: 10px; }
+  .header { height: 64px; padding: 12px 44px 0; border-bottom: 2px solid #1a5ca8; display: flex; align-items: flex-start; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 28px 10px; gap: 8px; }
   /* Top row */
-  .top-row { display: flex; gap: 10px; height: 110px; }
-  .store-panel { width: 780px; background: #1a3a6b; padding: 12px 20px; display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+  .top-row { display: flex; gap: 10px; height: 100px; flex-shrink: 0; }
+  .store-panel { width: 780px; background: #0f3d8c; padding: 10px 20px; display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
   .store-item { display: flex; align-items: center; gap: 14px; }
   .store-divider { width: 1px; height: 56px; background: rgba(255,255,255,0.3); margin: 0 6px; }
   .store-name { font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 3px; }
   .store-num { font-size: 30px; font-weight: 900; color: white; }
-  .store-circle { width: 58px; height: 58px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 900; color: #1a3a6b; flex-shrink: 0; }
+  .store-circle { width: 58px; height: 58px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 900; color: #0f3d8c; flex-shrink: 0; }
   .info-panel { flex: 1; border: 1.5px solid #dde4f0; padding: 12px 16px; display: flex; align-items: center; }
   .info-panel p { font-size: 12px; color: #555; line-height: 1.7; }
-  /* Bottom area: left 2 bar charts + bottom area chart + right pie */
-  .bottom-area { flex: 1; display: flex; gap: 10px; }
-  /* Left column: 2 horizontal bar charts stacked */
-  .left-col { width: 290px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
-  .chart-box { border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; }
-  /* Middle column: area chart */
+  /* Bottom area */
+  .bottom-area { flex: 1; display: flex; gap: 8px; min-height: 0; }
+  /* Left: 2 horizontal bar charts side by side */
+  .left-col { width: 580px; display: flex; gap: 8px; flex-shrink: 0; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 8px 10px; display: flex; flex-direction: column; }
+  /* Middle: area chart */
   .mid-col { flex: 1; display: flex; flex-direction: column; }
-  .area-box { flex: 1; border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; }
-  /* Right column: pie chart */
+  .area-box { flex: 1; border: 1.5px solid #dde4f0; padding: 8px 10px; display: flex; flex-direction: column; }
+  /* Right: pie chart */
   .right-col { width: 260px; flex-shrink: 0; }
-  .pie-box { height: 100%; border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 6px; }
-  .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px; }
+  .pie-box { height: 100%; border: 1.5px solid #dde4f0; padding: 8px 10px; display: flex; flex-direction: column; }
+  .chart-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 4px; }
+  .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
   .legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #555; }
   .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 </style>
@@ -63,85 +63,89 @@
         </div>
       </div>
       <div class="info-panel">
-        <p>我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</p>
+        <p>我们对原始数据进行了清洗和整理，去除了缺失值和<br>异常值，确保数据的准确性和可靠性。</p>
       </div>
     </div>
 
     <div class="bottom-area">
-      <!-- Left: 2 horizontal bar charts -->
+      <!-- Left: 2 horizontal bar charts side by side -->
       <div class="left-col">
-        <div class="chart-box" style="flex:1;">
-          <svg width="100%" height="100%" viewBox="0 0 280 190" preserveAspectRatio="xMidYMid meet">
+        <!-- Chart 1 -->
+        <div class="chart-box">
+          <svg width="100%" height="100%" viewBox="0 0 270 200" preserveAspectRatio="xMidYMid meet">
             <text x="62" y="32" font-size="11" fill="#555" text-anchor="end">项目产品C</text>
             <text x="62" y="82" font-size="11" fill="#555" text-anchor="end">项目产品B</text>
             <text x="62" y="132" font-size="11" fill="#555" text-anchor="end">项目产品A</text>
             <text x="68" y="165" font-size="10" fill="#888" text-anchor="middle">0</text>
-            <text x="128" y="165" font-size="10" fill="#888" text-anchor="middle">2</text>
-            <text x="188" y="165" font-size="10" fill="#888" text-anchor="middle">4</text>
-            <text x="248" y="165" font-size="10" fill="#888" text-anchor="middle">6</text>
-            <line x1="68" y1="15" x2="68" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="128" y1="15" x2="128" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="188" y1="15" x2="188" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="248" y1="15" x2="248" y2="150" stroke="#eee" stroke-width="1"/>
+            <text x="118" y="165" font-size="10" fill="#888" text-anchor="middle">2</text>
+            <text x="168" y="165" font-size="10" fill="#888" text-anchor="middle">4</text>
+            <text x="218" y="165" font-size="10" fill="#888" text-anchor="middle">6</text>
+            <line x1="68" y1="15" x2="68" y2="150" stroke="#ddd" stroke-width="1"/>
+            <line x1="118" y1="15" x2="118" y2="150" stroke="#eee" stroke-width="1"/>
+            <line x1="168" y1="15" x2="168" y2="150" stroke="#eee" stroke-width="1"/>
+            <line x1="218" y1="15" x2="218" y2="150" stroke="#eee" stroke-width="1"/>
             <!-- C: beijing=3, shanghai=3.5 -->
-            <rect x="68" y="18" width="90" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="34" width="105" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="18" width="75" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="34" width="88" height="13" fill="#0f3d8c"/>
             <!-- B: beijing=2, shanghai=3.5 -->
-            <rect x="68" y="68" width="60" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="84" width="105" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="68" width="50" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="84" width="88" height="13" fill="#0f3d8c"/>
             <!-- A: beijing=3.5, shanghai=4 -->
-            <rect x="68" y="118" width="105" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="134" width="120" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="118" width="88" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="134" width="100" height="13" fill="#0f3d8c"/>
           </svg>
           <div class="legend">
             <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>北京路店</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>上海路店</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>上海路店</div>
           </div>
         </div>
-        <div class="chart-box" style="flex:1;">
-          <svg width="100%" height="100%" viewBox="0 0 280 190" preserveAspectRatio="xMidYMid meet">
+        <!-- Chart 2 -->
+        <div class="chart-box">
+          <svg width="100%" height="100%" viewBox="0 0 270 200" preserveAspectRatio="xMidYMid meet">
             <text x="62" y="32" font-size="11" fill="#555" text-anchor="end">项目产品C</text>
             <text x="62" y="82" font-size="11" fill="#555" text-anchor="end">项目产品B</text>
             <text x="62" y="132" font-size="11" fill="#555" text-anchor="end">项目产品A</text>
             <text x="68" y="165" font-size="10" fill="#888" text-anchor="middle">0</text>
-            <text x="128" y="165" font-size="10" fill="#888" text-anchor="middle">2</text>
-            <text x="188" y="165" font-size="10" fill="#888" text-anchor="middle">4</text>
-            <text x="248" y="165" font-size="10" fill="#888" text-anchor="middle">6</text>
-            <line x1="68" y1="15" x2="68" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="128" y1="15" x2="128" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="188" y1="15" x2="188" y2="150" stroke="#eee" stroke-width="1"/>
-            <line x1="248" y1="15" x2="248" y2="150" stroke="#eee" stroke-width="1"/>
+            <text x="118" y="165" font-size="10" fill="#888" text-anchor="middle">2</text>
+            <text x="168" y="165" font-size="10" fill="#888" text-anchor="middle">4</text>
+            <text x="218" y="165" font-size="10" fill="#888" text-anchor="middle">6</text>
+            <line x1="68" y1="15" x2="68" y2="150" stroke="#ddd" stroke-width="1"/>
+            <line x1="118" y1="15" x2="118" y2="150" stroke="#eee" stroke-width="1"/>
+            <line x1="168" y1="15" x2="168" y2="150" stroke="#eee" stroke-width="1"/>
+            <line x1="218" y1="15" x2="218" y2="150" stroke="#eee" stroke-width="1"/>
             <!-- C: beijing=2, shanghai=3 -->
-            <rect x="68" y="18" width="60" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="34" width="90" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="18" width="50" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="34" width="75" height="13" fill="#0f3d8c"/>
             <!-- B: beijing=1.5, shanghai=3 -->
-            <rect x="68" y="68" width="45" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="84" width="90" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="68" width="38" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="84" width="75" height="13" fill="#0f3d8c"/>
             <!-- A: beijing=3, shanghai=4 -->
-            <rect x="68" y="118" width="90" height="13" fill="#8ab0d0"/>
-            <rect x="68" y="134" width="120" height="13" fill="#1a3a6b"/>
+            <rect x="68" y="118" width="75" height="13" fill="#8ab0d0"/>
+            <rect x="68" y="134" width="100" height="13" fill="#0f3d8c"/>
           </svg>
           <div class="legend">
             <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>北京路店</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>上海路店</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>上海路店</div>
           </div>
         </div>
       </div>
 
-      <!-- Middle: area chart -->
+      <!-- Middle: area chart (no border, just the chart with x-axis labels) -->
       <div class="mid-col">
-        <div class="area-box">
-          <svg width="100%" height="100%" viewBox="0 0 420 290" preserveAspectRatio="xMidYMid meet">
-            <!-- Area 3 (lightest, widest) -->
-            <path d="M 20,240 L 140,200 L 260,160 L 380,175 L 410,155 L 410,265 L 20,265 Z" fill="#b0c8e0" opacity="0.9"/>
+        <div class="area-box" style="border: none; padding: 0;">
+          <svg width="100%" height="100%" viewBox="0 0 340 240" preserveAspectRatio="xMidYMid meet">
+            <!-- Area 3 (lightest) -->
+            <path d="M 10,160 L 120,120 L 230,80 L 330,100 L 330,210 L 10,210 Z" fill="#b0c8e0" opacity="0.9"/>
             <!-- Area 2 (medium) -->
-            <path d="M 20,245 L 140,215 L 260,185 L 380,195 L 410,178 L 410,265 L 20,265 Z" fill="#3a6abf" opacity="0.85"/>
-            <!-- Area 1 (darkest, bottom) -->
-            <path d="M 20,250 L 140,230 L 260,210 L 380,218 L 410,205 L 410,265 L 20,265 Z" fill="#1a3a6b" opacity="0.9"/>
-            <text x="20" y="282" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
-            <text x="140" y="282" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
-            <text x="260" y="282" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
-            <text x="380" y="282" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
+            <path d="M 10,175 L 120,148 L 230,120 L 330,132 L 330,210 L 10,210 Z" fill="#3a6abf" opacity="0.85"/>
+            <!-- Area 1 (darkest) -->
+            <path d="M 10,190 L 120,172 L 230,155 L 330,162 L 330,210 L 10,210 Z" fill="#0f3d8c" opacity="0.9"/>
+            <!-- X axis line -->
+            <line x1="10" y1="210" x2="330" y2="210" stroke="#ccc" stroke-width="1"/>
+            <text x="10" y="228" font-size="11" fill="#555" text-anchor="middle">第一季度</text>
+            <text x="120" y="228" font-size="11" fill="#555" text-anchor="middle">第二季度</text>
+            <text x="230" y="228" font-size="11" fill="#555" text-anchor="middle">第三季度</text>
+            <text x="330" y="228" font-size="11" fill="#555" text-anchor="middle">第四季度</text>
           </svg>
         </div>
       </div>
@@ -151,24 +155,28 @@
         <div class="pie-box">
           <div class="chart-title">店铺销售额月度占比</div>
           <div style="flex:1; display:flex; align-items:center; justify-content:center;">
-            <svg width="220" height="200" viewBox="0 0 220 200">
-              <!-- Pie: 20%, 20%, 30%, 30% -->
-              <path d="M 110,100 L 110,20 A 80,80 0 0,1 163,50 Z" fill="#1a3a6b"/>
-              <path d="M 110,100 L 163,50 A 80,80 0 0,1 190,100 Z" fill="#3a6abf"/>
-              <path d="M 110,100 L 190,100 A 80,80 0 0,1 110,180 Z" fill="#8ab0d0"/>
-              <path d="M 110,100 L 110,180 A 80,80 0 0,1 110,20 Z" fill="#c0d4e8"/>
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <!-- Pie: 20% dark navy, 20% medium blue, 30% light blue, 30% pale -->
+              <!-- 20%: 0° to 72° (from top) -->
+              <path d="M 100,100 L 100,20 A 80,80 0 0,1 156,44 Z" fill="#0f3d8c"/>
+              <!-- 20%: 72° to 144° -->
+              <path d="M 100,100 L 156,44 A 80,80 0 0,1 180,100 Z" fill="#2d6ab0"/>
+              <!-- 30%: 144° to 252° -->
+              <path d="M 100,100 L 180,100 A 80,80 0 0,1 100,180 Z" fill="#6898cc"/>
+              <!-- 30%: 252° to 360° -->
+              <path d="M 100,100 L 100,180 A 80,80 0 0,1 100,20 Z" fill="#b0cce4"/>
               <!-- Labels -->
-              <text x="148" y="62" font-size="14" font-weight="700" fill="white">20%</text>
-              <text x="162" y="105" font-size="14" font-weight="700" fill="white">20%</text>
-              <text x="118" y="158" font-size="14" font-weight="700" fill="#555">30%</text>
-              <text x="42" y="100" font-size="14" font-weight="700" fill="#555">30%</text>
+              <text x="140" y="58" font-size="13" font-weight="700" fill="white" text-anchor="middle">20%</text>
+              <text x="162" y="100" font-size="13" font-weight="700" fill="white" text-anchor="middle">20%</text>
+              <text x="115" y="158" font-size="13" font-weight="700" fill="#444" text-anchor="middle">30%</text>
+              <text x="40" y="100" font-size="13" font-weight="700" fill="#444" text-anchor="middle">30%</text>
             </svg>
           </div>
           <div class="legend">
-            <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>第一季度</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>第二季度</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>第一季度</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>第二季度</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>第一季度</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#2d6ab0;"></div>第二季度</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#6898cc;"></div>第一季度</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#b0cce4;"></div>第二季度</div>
           </div>
         </div>
       </div>

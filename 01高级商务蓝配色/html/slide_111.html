@@ -6,26 +6,25 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; position: relative; }
-  /* Header */
-  .header { position: absolute; left: 0; top: 0; width: 1280px; height: 62px; padding: 0 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
-  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  /* Left panel: x=30, y=76, w=440, h=610 */
-  .left-panel { position: absolute; left: 30px; top: 76px; width: 440px; height: 610px; display: flex; flex-direction: column; gap: 12px; }
-  .stat-box { background: #1a3a6b; padding: 14px 20px; flex-shrink: 0; }
-  .stat-box-title { font-size: 16px; font-weight: 700; color: white; text-align: center; margin-bottom: 14px; }
+  .header { position: absolute; left: 0; top: 0; width: 1280px; height: 64px; padding: 12px 44px 0; border-bottom: 2px solid #1a5ca8; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  /* Left panel */
+  .left-panel { position: absolute; left: 30px; top: 76px; width: 440px; bottom: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .stat-box { background: #0f3d8c; padding: 14px 20px; flex-shrink: 0; }
+  .stat-box-title { font-size: 16px; font-weight: 700; color: white; text-align: center; margin-bottom: 12px; }
   .stat-row { display: flex; }
   .stat-item { flex: 1; }
-  .stat-divider { width: 1px; background: rgba(255,255,255,0.3); margin: 0 16px; }
+  .stat-divider { width: 1px; background: rgba(255,255,255,0.3); margin: 0 14px; }
   .stat-num { font-size: 46px; font-weight: 900; color: white; line-height: 1; }
   .stat-unit { font-size: 16px; font-weight: 400; }
-  .stat-label-box { background: #3a6abf; padding: 4px 12px; display: inline-block; margin-top: 8px; }
+  .stat-label-box { background: #2d6ab0; padding: 4px 12px; display: inline-block; margin-top: 8px; }
   .stat-label { font-size: 13px; color: white; }
   .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; min-height: 0; }
   .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 4px; flex-shrink: 0; }
-  .chart-svg-wrap { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
-  /* Right panel: x=484, y=76, w=766, h=610 */
-  .right-panel { position: absolute; left: 484px; top: 76px; width: 766px; height: 610px; display: flex; flex-direction: column; gap: 12px; }
+  .chart-svg-wrap { flex: 1; display: flex; align-items: flex-end; justify-content: center; min-height: 0; }
+  /* Right panel */
+  .right-panel { position: absolute; left: 484px; top: 76px; right: 30px; bottom: 18px; display: flex; flex-direction: column; gap: 10px; }
   .pie-box { flex: 1; border: 1.5px solid #dde4f0; padding: 12px 14px 8px; display: flex; flex-direction: column; min-height: 0; }
   .pie-title { font-size: 14px; color: #888; margin-bottom: 4px; flex-shrink: 0; }
   .pie-content { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; overflow: hidden; }
@@ -61,28 +60,25 @@
       <div class="chart-title">活动支出</div>
       <div class="chart-svg-wrap">
         <svg width="400" height="220" viewBox="0 0 400 220">
-          <!-- Y axis labels -->
           <text x="22" y="18" font-size="12" fill="#888" text-anchor="middle">40</text>
           <text x="22" y="68" font-size="12" fill="#888" text-anchor="middle">30</text>
           <text x="22" y="118" font-size="12" fill="#888" text-anchor="middle">20</text>
           <text x="22" y="158" font-size="12" fill="#888" text-anchor="middle">10</text>
           <text x="22" y="188" font-size="12" fill="#888" text-anchor="middle">0</text>
-          <!-- Grid lines -->
           <line x1="36" y1="14" x2="395" y2="14" stroke="#eee" stroke-width="1"/>
           <line x1="36" y1="64" x2="395" y2="64" stroke="#eee" stroke-width="1"/>
           <line x1="36" y1="114" x2="395" y2="114" stroke="#eee" stroke-width="1"/>
           <line x1="36" y1="154" x2="395" y2="154" stroke="#eee" stroke-width="1"/>
-          <line x1="36" y1="184" x2="395" y2="184" stroke="#eee" stroke-width="1"/>
+          <line x1="36" y1="184" x2="395" y2="184" stroke="#ddd" stroke-width="1"/>
           <!-- Bars: 人力成本=30, 制作成本=15, 设计费用=25, 运输成本=30 -->
           <rect x="60" y="64" width="58" height="120" fill="#b0c8e0"/>
-          <rect x="155" y="109" width="58" height="75" fill="#1a3a6b"/>
+          <rect x="155" y="109" width="58" height="75" fill="#0f3d8c"/>
           <rect x="250" y="84" width="58" height="100" fill="#8a9aaa"/>
-          <rect x="345" y="64" width="58" height="120" fill="#1a3a6b"/>
-          <!-- X axis labels -->
+          <rect x="345" y="64" width="58" height="120" fill="#0f3d8c"/>
           <text x="89" y="202" font-size="12" fill="#555" text-anchor="middle">人力成本</text>
           <text x="184" y="202" font-size="12" fill="#555" text-anchor="middle">制作成本</text>
           <text x="279" y="202" font-size="12" fill="#555" text-anchor="middle">设计费用</text>
-          <text x="374" y="202" font-size="12" fill="#555" text-anchor="middle">运输成本</text>
+          <text x="374" y="202" font-size="12" fill="#555" text-anchor="middle">运输陈本</text>
         </svg>
       </div>
     </div>
@@ -92,42 +88,65 @@
     <div class="pie-box">
       <div class="pie-title">市场营销活动成本比例</div>
       <div class="pie-content">
-        <svg width="100%" height="100%" viewBox="0 0 700 430" preserveAspectRatio="xMidYMid meet">
-          <!-- 3D bottom shadow layers -->
-          <path d="M 350,280 L 350,308 A 250,72 0 0,0 578,232 L 578,204 Z" fill="#0d2040"/>
-          <path d="M 350,280 L 578,204 A 250,72 0 0,0 350,196 L 350,224 Z" fill="#1e3a6e"/>
-          <path d="M 350,280 L 350,224 A 250,72 0 0,0 200,230 L 200,258 Z" fill="#3a6090"/>
-          <path d="M 350,280 L 200,258 A 250,72 0 0,0 350,308 L 350,280 Z" fill="#6a9ac4"/>
-          <!-- Top ellipse face segments -->
-          <!-- Segment 1: 30% dark blue (top-right, ~108deg) -->
-          <path d="M 350,210 L 350,78 A 250,72 0 0,1 578,204 Z" fill="#1a3a6b"/>
-          <!-- Segment 2: 30% medium blue (bottom-right, ~108deg) -->
-          <path d="M 350,210 L 578,204 A 250,72 0 0,1 350,282 Z" fill="#3a6abf"/>
-          <!-- Segment 3: 25% light blue (bottom-left, ~90deg) -->
-          <path d="M 350,210 L 350,282 A 250,72 0 0,1 122,204 Z" fill="#6a9ac4"/>
-          <!-- Segment 4: 15% lighter (top-left, ~54deg) -->
-          <path d="M 350,210 L 122,204 A 250,72 0 0,1 350,78 Z" fill="#b0c8e0"/>
+        <!--
+          3D pie chart with ellipse top face + side depth
+          Center: (350, 240), rx=240, ry=70 (top face ellipse)
+          Depth: 40px down
+          Segments: 30% dark navy (top-right), 30% medium blue (bottom-right), 25% light blue (bottom-left), 15% pale blue (top-left)
+          
+          Angles (from top, clockwise):
+          30%: 0° to 108°
+          30%: 108° to 216°
+          25%: 216° to 306°
+          15%: 306° to 360°
+          
+          Top ellipse: cx=350, cy=240, rx=240, ry=70
+          Point on ellipse: x = 350 + 240*cos(θ), y = 240 + 70*sin(θ)
+          θ=-90° (top): (350, 170)
+          θ=18° (108° from top): (350+240*cos(18°), 240+70*sin(18°)) = (578, 262)
+          θ=126° (216° from top): (350+240*cos(126°), 240+70*sin(126°)) = (209, 297)
+          θ=216° (306° from top): (350+240*cos(216°), 240+70*sin(216°)) = (156, 199)
+          θ=-90° = (350, 170)
+        -->
+        <svg width="700" height="420" viewBox="0 0 700 420">
+          <!-- Side depth for visible segments (bottom half) -->
+          <!-- Segment 2 (30% medium blue) side: from 108° to 180° (visible bottom) -->
+          <path d="M 350,240 L 578,262 A 240,70 0 0,1 350,310 L 350,350 L 578,302 A 240,70 0 0,0 578,262 Z" fill="#1e4a80"/>
+          <!-- Segment 3 (25% light blue) side: from 180° to 216° -->
+          <path d="M 350,240 L 350,310 A 240,70 0 0,1 209,297 L 209,337 A 240,70 0 0,0 350,350 Z" fill="#4a7aaa"/>
+          <!-- Segment 4 (15% pale) side: only if bottom portion visible - minimal -->
+
+          <!-- Top face segments -->
+          <!-- Segment 1: 30% dark navy, from top(-90°) to 18° -->
+          <path d="M 350,240 L 350,170 A 240,70 0 0,1 578,262 Z" fill="#0f3d8c"/>
+          <!-- Segment 2: 30% medium blue, from 18° to 126° -->
+          <path d="M 350,240 L 578,262 A 240,70 0 0,1 350,310 Z" fill="#2d6ab0"/>
+          <!-- Segment 3: 25% light blue, from 126° to 216° -->
+          <path d="M 350,240 L 350,310 A 240,70 0 0,1 156,199 Z" fill="#6898cc"/>
+          <!-- Segment 4: 15% pale blue, from 216° to 270°(-90°) -->
+          <path d="M 350,240 L 156,199 A 240,70 0 0,1 350,170 Z" fill="#b0cce4"/>
+
           <!-- Percentage labels -->
-          <text x="490" y="160" font-size="24" font-weight="700" fill="white" text-anchor="middle">30%</text>
-          <text x="510" y="248" font-size="24" font-weight="700" fill="white" text-anchor="middle">30%</text>
-          <text x="170" y="258" font-size="24" font-weight="700" fill="#444" text-anchor="middle">25%</text>
-          <text x="270" y="108" font-size="24" font-weight="700" fill="#444" text-anchor="middle">15%</text>
+          <text x="490" y="210" font-size="26" font-weight="700" fill="white" text-anchor="middle">30%</text>
+          <text x="500" y="290" font-size="26" font-weight="700" fill="white" text-anchor="middle">30%</text>
+          <text x="200" y="285" font-size="26" font-weight="700" fill="#444" text-anchor="middle">25%</text>
+          <text x="250" y="185" font-size="26" font-weight="700" fill="#444" text-anchor="middle">15%</text>
         </svg>
       </div>
       <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>人力成本</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>制作成本</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#6a9ac4;"></div>设计费用</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#b0c8e0;"></div>其他物料</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>人力成本</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#2d6ab0;"></div>制作成本</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#6898cc;"></div>设计费用</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#b0cce4;"></div>其他物料</div>
       </div>
     </div>
     <div class="info-box">
       <svg width="38" height="38" viewBox="0 0 38 38">
-        <circle cx="19" cy="19" r="17" fill="#1a3a6b" opacity="0.12"/>
-        <path d="M 19,4 A 15,15 0 0,1 34,19 L 19,19 Z" fill="#1a3a6b"/>
-        <path d="M 19,4 A 15,15 0 0,0 4,19 L 19,19 Z" fill="#3a6abf"/>
+        <circle cx="19" cy="19" r="17" fill="#0f3d8c" opacity="0.12"/>
+        <path d="M 19,4 A 15,15 0 0,1 34,19 L 19,19 Z" fill="#0f3d8c"/>
+        <path d="M 19,4 A 15,15 0 0,0 4,19 L 19,19 Z" fill="#2d6ab0"/>
       </svg>
-      <span style="font-size:12px; color:#555;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</span>
+      <span style="font-size:12px; color:#555;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保<br>数据的准确性和可靠性。</span>
     </div>
   </div>
 </div>

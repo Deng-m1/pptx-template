@@ -6,32 +6,32 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
   .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
-  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; flex-direction: column; padding: 12px 28px 12px; gap: 10px; }
+  .header { height: 64px; padding: 12px 44px 0; border-bottom: 2px solid #1a5ca8; display: flex; align-items: flex-start; justify-content: space-between; flex-shrink: 0; }
+  .header-title { font-size: 30px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 17px; color: #1a5ca8; font-style: italic; margin-top: 4px; }
+  .body { flex: 1; display: flex; flex-direction: column; padding: 10px 28px 10px; gap: 8px; }
   /* Top row */
-  .top-row { display: flex; gap: 10px; height: 248px; }
+  .top-row { display: flex; gap: 10px; height: 240px; }
   /* Left: 2 donut charts */
-  .donuts-panel { width: 370px; border: 1.5px solid #dde4f0; display: flex; align-items: center; justify-content: space-around; padding: 14px; flex-shrink: 0; }
+  .donuts-panel { width: 370px; border: 1.5px solid #dde4f0; display: flex; align-items: center; justify-content: space-around; padding: 10px 14px; flex-shrink: 0; }
   .donut-item { display: flex; flex-direction: column; align-items: center; }
-  .donut-label { font-size: 14px; font-weight: 700; color: #1a3a6b; margin-top: 6px; }
+  .donut-label { font-size: 14px; font-weight: 700; color: #0f3d8c; margin-top: 4px; }
   .donut-sub { font-size: 11px; color: #888; }
   /* Right: icons + title */
-  .info-panel { flex: 1; border: 1.5px solid #dde4f0; padding: 16px 20px; display: flex; flex-direction: column; }
+  .info-panel { flex: 1; border: 1.5px solid #dde4f0; padding: 14px 20px; display: flex; flex-direction: column; }
   /* Icons row with gradient background strip */
-  .icons-strip { position: relative; height: 72px; display: flex; align-items: center; margin-bottom: 14px; }
-  .icons-bg { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: linear-gradient(to right, #d0dff0 0%, #e4edf8 40%, #f0f4f8 70%, #f8fafc 100%); border-radius: 36px; }
-  .icons-row { position: relative; display: flex; gap: 14px; align-items: center; z-index: 1; padding: 0 10px; }
-  .icon-circle { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-  .info-title { font-size: 26px; font-weight: 900; color: #1a3a6b; margin-bottom: 10px; }
+  .icons-strip { position: relative; height: 68px; display: flex; align-items: center; margin-bottom: 12px; }
+  .icons-bg { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: linear-gradient(to right, #c8d8ec 0%, #d8e6f4 30%, #e8f0f8 60%, #f4f8fc 100%); border-radius: 34px; }
+  .icons-row { position: relative; display: flex; gap: 12px; align-items: center; z-index: 1; padding: 0 12px; }
+  .icon-circle { border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .info-title { font-size: 26px; font-weight: 900; color: #0f3d8c; margin-bottom: 8px; }
   .info-desc { font-size: 12px; color: #555; line-height: 1.7; }
   /* Bottom row: 3 charts */
-  .bottom-row { flex: 1; display: flex; gap: 10px; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; }
-  .chart-box-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 6px; }
+  .bottom-row { flex: 1; display: flex; gap: 8px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 8px 12px; display: flex; flex-direction: column; }
+  .chart-box-title { font-size: 13px; color: #888; text-align: center; margin-bottom: 4px; }
   .chart-content { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
+  .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
   .legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #555; }
   .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 </style>
@@ -48,28 +48,37 @@
     <div class="top-row">
       <!-- 2 donut charts -->
       <div class="donuts-panel">
+        <!-- Donut 1: 35% dark blue -->
         <div class="donut-item">
-          <svg width="140" height="140" viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#e8edf5" stroke-width="20"/>
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#1a3a6b" stroke-width="20"
-              stroke-dasharray="117 210" stroke-dashoffset="-82" stroke-linecap="butt"/>
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#3a6abf" stroke-width="20"
-              stroke-dasharray="82 245" stroke-dashoffset="-199" stroke-linecap="butt"/>
-            <text x="70" y="64" text-anchor="middle" font-size="26" font-weight="900" fill="#1a3a6b">35%</text>
-            <text x="70" y="82" text-anchor="middle" font-size="11" fill="#888">占比</text>
+          <svg width="148" height="148" viewBox="0 0 148 148">
+            <!-- Background circle -->
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#e0e8f4" stroke-width="22"/>
+            <!-- 35% dark navy segment (126°) -->
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#0f3d8c" stroke-width="22"
+              stroke-dasharray="123 229" stroke-dashoffset="0" stroke-linecap="butt"
+              transform="rotate(-90 74 74)"/>
+            <!-- 65% medium blue segment -->
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#5888bc" stroke-width="22"
+              stroke-dasharray="229 123" stroke-dashoffset="-123" stroke-linecap="butt"
+              transform="rotate(-90 74 74)"/>
+            <text x="74" y="68" text-anchor="middle" font-size="24" font-weight="900" fill="#0f3d8c">35%</text>
           </svg>
           <div class="donut-label">项目业绩</div>
           <div class="donut-sub">公司产品A：占比35%</div>
         </div>
+        <!-- Donut 2: 65% light blue -->
         <div class="donut-item">
-          <svg width="140" height="140" viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#e8edf5" stroke-width="20"/>
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#6a9ac4" stroke-width="20"
-              stroke-dasharray="205 122" stroke-dashoffset="-82" stroke-linecap="butt"/>
-            <circle cx="70" cy="70" r="52" fill="none" stroke="#9ab8d4" stroke-width="20"
-              stroke-dasharray="122 205" stroke-dashoffset="-287" stroke-linecap="butt"/>
-            <text x="70" y="64" text-anchor="middle" font-size="26" font-weight="900" fill="#1a3a6b">65%</text>
-            <text x="70" y="82" text-anchor="middle" font-size="11" fill="#888">占比</text>
+          <svg width="148" height="148" viewBox="0 0 148 148">
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#e0e8f4" stroke-width="22"/>
+            <!-- 65% light blue segment (234°) -->
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#6898cc" stroke-width="22"
+              stroke-dasharray="229 123" stroke-dashoffset="0" stroke-linecap="butt"
+              transform="rotate(-90 74 74)"/>
+            <!-- 35% lighter segment -->
+            <circle cx="74" cy="74" r="56" fill="none" stroke="#b0cce4" stroke-width="22"
+              stroke-dasharray="123 229" stroke-dashoffset="-229" stroke-linecap="butt"
+              transform="rotate(-90 74 74)"/>
+            <text x="74" y="68" text-anchor="middle" font-size="24" font-weight="900" fill="#0f3d8c">65%</text>
           </svg>
           <div class="donut-label">项目业绩</div>
           <div class="donut-sub">公司产品B：占比65%</div>
@@ -81,25 +90,55 @@
         <div class="icons-strip">
           <div class="icons-bg"></div>
           <div class="icons-row">
-            <div class="icon-circle" style="background:#1a3a6b; width:56px; height:56px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="white" stroke-width="2"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.5"/><line x1="8" y1="12" x2="16" y2="12" stroke="white" stroke-width="1.5"/><line x1="8" y1="16" x2="12" y2="16" stroke="white" stroke-width="1.5"/><circle cx="18" cy="18" r="5" fill="#1a3a6b" stroke="white" stroke-width="1.5"/><text x="18" y="22" text-anchor="middle" font-size="7" fill="white">✓</text></svg>
+            <!-- Icon 1: dark blue, largest -->
+            <div class="icon-circle" style="background:#0f3d8c; width:56px; height:56px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="14" height="18" rx="1.5" stroke="white" stroke-width="1.8"/>
+                <line x1="7" y1="8" x2="15" y2="8" stroke="white" stroke-width="1.4"/>
+                <line x1="7" y1="12" x2="15" y2="12" stroke="white" stroke-width="1.4"/>
+                <line x1="7" y1="16" x2="11" y2="16" stroke="white" stroke-width="1.4"/>
+                <circle cx="19" cy="19" r="4.5" fill="#0f3d8c" stroke="white" stroke-width="1.5"/>
+                <line x1="17.5" y1="19" x2="20.5" y2="19" stroke="white" stroke-width="1.4"/>
+                <line x1="19" y1="17.5" x2="19" y2="20.5" stroke="white" stroke-width="1.4"/>
+              </svg>
             </div>
-            <div class="icon-circle" style="background:#8a9aaa; width:52px; height:52px;">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><rect x="7" y="12" width="3" height="6" fill="white"/><rect x="11" y="9" width="3" height="9" fill="white"/><rect x="15" y="6" width="3" height="12" fill="white"/></svg>
+            <!-- Icon 2 -->
+            <div class="icon-circle" style="background:#8090a8; width:52px; height:52px;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="1.5" stroke="white" stroke-width="1.8"/>
+                <rect x="6" y="13" width="3" height="5" fill="white"/>
+                <rect x="10.5" y="10" width="3" height="8" fill="white"/>
+                <rect x="15" y="7" width="3" height="11" fill="white"/>
+              </svg>
             </div>
+            <!-- Icon 3 -->
             <div class="icon-circle" style="background:#9aaabb; width:50px; height:50px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="white" stroke-width="2"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.5"/><line x1="8" y1="12" x2="14" y2="12" stroke="white" stroke-width="1.5"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="14" height="18" rx="1.5" stroke="white" stroke-width="1.8"/>
+                <line x1="7" y1="8" x2="15" y2="8" stroke="white" stroke-width="1.4"/>
+                <line x1="7" y1="12" x2="13" y2="12" stroke="white" stroke-width="1.4"/>
+              </svg>
             </div>
+            <!-- Icon 4 -->
             <div class="icon-circle" style="background:#aabbc8; width:48px; height:48px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="white" stroke-width="2"/><line x1="8" y1="8" x2="16" y2="8" stroke="white" stroke-width="1.5"/><line x1="8" y1="12" x2="16" y2="12" stroke="white" stroke-width="1.5"/><line x1="8" y1="16" x2="12" y2="16" stroke="white" stroke-width="1.5"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3" width="14" height="18" rx="1.5" stroke="white" stroke-width="1.8"/>
+                <line x1="7" y1="8" x2="15" y2="8" stroke="white" stroke-width="1.4"/>
+                <line x1="7" y1="12" x2="15" y2="12" stroke="white" stroke-width="1.4"/>
+                <line x1="7" y1="16" x2="11" y2="16" stroke="white" stroke-width="1.4"/>
+              </svg>
             </div>
+            <!-- Icon 5 -->
             <div class="icon-circle" style="background:#bcccd8; width:46px; height:46px;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><polyline points="6,16 10,11 14,14 18,8" stroke="white" stroke-width="1.8" fill="none"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="18" height="18" rx="1.5" stroke="white" stroke-width="1.8"/>
+                <polyline points="5,16 9,11 13,14 18,8" stroke="white" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+              </svg>
             </div>
           </div>
         </div>
         <div class="info-title">总体业绩概览</div>
-        <div class="info-desc">分析当前市场状况，包括竞争对手、市场趋势等，使用图表或图像展示市场份额、销售增长情况等数据</div>
+        <div class="info-desc">分析当前市场状况，包括竞争对手、市场趋势等，使用图表或图像<br>展示市场份额、销售增长情况等数据</div>
       </div>
     </div>
 
@@ -109,27 +148,32 @@
       <div class="chart-box">
         <div class="chart-box-title">季度销售额占比</div>
         <div class="chart-content">
-          <svg width="200" height="160" viewBox="0 0 200 160">
-            <!-- Pie: Q1=15%, Q2=20%, Q3=10%, Q4=60% -->
-            <path d="M 90,80 L 90,12 A 68,68 0 0,1 140,46 Z" fill="#1a3a6b"/>
-            <path d="M 90,80 L 140,46 A 68,68 0 0,1 155,80 Z" fill="#3a6abf"/>
-            <path d="M 90,80 L 155,80 A 68,68 0 0,1 140,114 Z" fill="#8ab0d0"/>
-            <path d="M 90,80 L 140,114 A 68,68 0 1,1 90,12 Z" fill="#c0d4e8"/>
-            <!-- Labels inside/outside -->
-            <text x="118" y="48" font-size="9" fill="white" text-anchor="middle">第一季度</text>
-            <text x="118" y="59" font-size="9" fill="white" text-anchor="middle">占比15%</text>
-            <text x="158" y="82" font-size="9" fill="#555" text-anchor="start">第三季度</text>
-            <text x="158" y="93" font-size="9" fill="#555" text-anchor="start">占比10%</text>
-            <text x="20" y="130" font-size="9" fill="#555" text-anchor="start">第二季度</text>
-            <text x="20" y="141" font-size="9" fill="#555" text-anchor="start">占比20%</text>
-            <text x="5" y="78" font-size="9" fill="#555" text-anchor="start">第四季度</text>
-            <text x="5" y="89" font-size="9" fill="#555" text-anchor="start">占比60%</text>
+          <svg width="220" height="160" viewBox="0 0 220 160">
+            <!-- Pie: Q1=15%(54°), Q2=20%(72°), Q3=10%(36°), Q4=60%(216°) -->
+            <!-- cx=95, cy=82, r=64 -->
+            <!-- Q1: 15% dark navy, from -90° to -36° -->
+            <path d="M 95,82 L 95,18 A 64,64 0 0,1 147.5,50 Z" fill="#0f3d8c"/>
+            <!-- Q2: 20% medium blue, from -36° to 36° -->
+            <path d="M 95,82 L 147.5,50 A 64,64 0 0,1 147.5,114 Z" fill="#2d6ab0"/>
+            <!-- Q3: 10% light blue, from 36° to 72° -->
+            <path d="M 95,82 L 147.5,114 A 64,64 0 0,1 118,140 Z" fill="#8aafd8"/>
+            <!-- Q4: 60% very light, from 72° to 270° -->
+            <path d="M 95,82 L 118,140 A 64,64 0 1,1 95,18 Z" fill="#c0d4e8"/>
+            <!-- Labels -->
+            <text x="118" y="46" font-size="9" fill="#555" text-anchor="start">第三季度</text>
+            <text x="118" y="57" font-size="9" fill="#555" text-anchor="start">占比10%</text>
+            <text x="150" y="84" font-size="9" fill="#555" text-anchor="start">第四季度</text>
+            <text x="150" y="95" font-size="9" fill="#555" text-anchor="start">占比60%</text>
+            <text x="2" y="50" font-size="9" fill="#555" text-anchor="start">第一季度</text>
+            <text x="2" y="61" font-size="9" fill="#555" text-anchor="start">占比15%</text>
+            <text x="2" y="120" font-size="9" fill="#555" text-anchor="start">第二季度</text>
+            <text x="2" y="131" font-size="9" fill="#555" text-anchor="start">占比20%</text>
           </svg>
         </div>
         <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>第一季度</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>第二季度</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>第三季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>第一季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#2d6ab0;"></div>第二季度</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8aafd8;"></div>第三季度</div>
           <div class="legend-item"><div class="legend-dot" style="background:#c0d4e8;"></div>第四季度</div>
         </div>
       </div>
@@ -138,36 +182,37 @@
       <div class="chart-box">
         <div class="chart-box-title">季度销售额明细</div>
         <div class="chart-content">
-          <svg width="280" height="155" viewBox="0 0 280 155">
-            <text x="18" y="18" font-size="10" fill="#888" text-anchor="middle">6</text>
-            <text x="18" y="62" font-size="10" fill="#888" text-anchor="middle">4</text>
-            <text x="18" y="107" font-size="10" fill="#888" text-anchor="middle">2</text>
-            <text x="18" y="140" font-size="10" fill="#888" text-anchor="middle">0</text>
-            <line x1="28" y1="140" x2="275" y2="140" stroke="#ddd" stroke-width="1"/>
+          <svg width="300" height="160" viewBox="0 0 300 160">
+            <text x="18" y="16" font-size="9" fill="#888" text-anchor="middle">6</text>
+            <text x="18" y="57" font-size="9" fill="#888" text-anchor="middle">4</text>
+            <text x="18" y="98" font-size="9" fill="#888" text-anchor="middle">2</text>
+            <text x="18" y="138" font-size="9" fill="#888" text-anchor="middle">0</text>
+            <line x1="28" y1="138" x2="290" y2="138" stroke="#ddd" stroke-width="1"/>
             <!-- Cat1 -->
-            <rect x="35" y="10" width="16" height="130" fill="#1a3a6b"/>
-            <rect x="54" y="55" width="16" height="85" fill="#3a6abf"/>
-            <rect x="73" y="75" width="16" height="65" fill="#8ab0d0"/>
+            <rect x="35" y="11" width="14" height="127" fill="#0f3d8c"/>
+            <rect x="52" y="57" width="14" height="81" fill="#2d6ab0"/>
+            <rect x="69" y="78" width="14" height="60" fill="#8aafd8"/>
             <!-- Cat2 -->
-            <rect x="110" y="55" width="16" height="85" fill="#1a3a6b"/>
-            <rect x="129" y="10" width="16" height="130" fill="#3a6abf"/>
-            <rect x="148" y="75" width="16" height="65" fill="#8ab0d0"/>
+            <rect x="112" y="57" width="14" height="81" fill="#0f3d8c"/>
+            <rect x="129" y="11" width="14" height="127" fill="#2d6ab0"/>
+            <rect x="146" y="78" width="14" height="60" fill="#8aafd8"/>
             <!-- Cat3 -->
-            <rect x="185" y="35" width="16" height="105" fill="#1a3a6b"/>
-            <rect x="204" y="75" width="16" height="65" fill="#3a6abf"/>
-            <rect x="223" y="55" width="16" height="85" fill="#8ab0d0"/>
+            <rect x="189" y="35" width="14" height="103" fill="#0f3d8c"/>
+            <rect x="206" y="78" width="14" height="60" fill="#2d6ab0"/>
+            <rect x="223" y="57" width="14" height="81" fill="#8aafd8"/>
             <!-- Cat4 -->
-            <rect x="248" y="10" width="16" height="130" fill="#1a3a6b"/>
-            <text x="64" y="153" font-size="10" fill="#555" text-anchor="middle">类别 1</text>
-            <text x="139" y="153" font-size="10" fill="#555" text-anchor="middle">类别 2</text>
-            <text x="214" y="153" font-size="10" fill="#555" text-anchor="middle">类别 3</text>
-            <text x="256" y="153" font-size="10" fill="#555" text-anchor="middle">类别 4</text>
+            <rect x="258" y="11" width="14" height="127" fill="#0f3d8c"/>
+            <rect x="275" y="57" width="14" height="81" fill="#2d6ab0"/>
+            <text x="62" y="152" font-size="9" fill="#555" text-anchor="middle">类别 1</text>
+            <text x="139" y="152" font-size="9" fill="#555" text-anchor="middle">类别 2</text>
+            <text x="216" y="152" font-size="9" fill="#555" text-anchor="middle">类别 3</text>
+            <text x="275" y="152" font-size="9" fill="#555" text-anchor="middle">类别 4</text>
           </svg>
         </div>
         <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>系列 1</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>系列 2</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>系列 3</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>系列 1</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#2d6ab0;"></div>系列 2</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8aafd8;"></div>系列 3</div>
         </div>
       </div>
 
@@ -175,28 +220,28 @@
       <div class="chart-box">
         <div class="chart-box-title">业绩销售折线图</div>
         <div class="chart-content">
-          <svg width="280" height="155" viewBox="0 0 280 155">
-            <text x="18" y="18" font-size="10" fill="#888" text-anchor="middle">15</text>
-            <text x="18" y="62" font-size="10" fill="#888" text-anchor="middle">10</text>
-            <text x="18" y="107" font-size="10" fill="#888" text-anchor="middle">5</text>
-            <text x="18" y="140" font-size="10" fill="#888" text-anchor="middle">0</text>
-            <line x1="28" y1="140" x2="275" y2="140" stroke="#ddd" stroke-width="1"/>
-            <!-- Area 3 (lightest, bottom) -->
-            <path d="M 35,115 L 100,110 L 165,112 L 230,105 L 265,103 L 265,140 L 35,140 Z" fill="#8ab0d0" opacity="0.85"/>
-            <!-- Area 2 (medium) -->
-            <path d="M 35,100 L 100,92 L 165,97 L 230,82 L 265,78 L 265,115 L 35,115 Z" fill="#3a6abf" opacity="0.85"/>
-            <!-- Area 1 (dark, top) -->
-            <path d="M 35,88 L 100,72 L 165,82 L 230,62 L 265,55 L 265,100 L 35,100 Z" fill="#1a3a6b" opacity="0.85"/>
-            <text x="35" y="153" font-size="10" fill="#555" text-anchor="middle">类别 1</text>
-            <text x="100" y="153" font-size="10" fill="#555" text-anchor="middle">类别 2</text>
-            <text x="165" y="153" font-size="10" fill="#555" text-anchor="middle">类别 3</text>
-            <text x="230" y="153" font-size="10" fill="#555" text-anchor="middle">类别 4</text>
+          <svg width="300" height="160" viewBox="0 0 300 160">
+            <text x="18" y="16" font-size="9" fill="#888" text-anchor="middle">15</text>
+            <text x="18" y="57" font-size="9" fill="#888" text-anchor="middle">10</text>
+            <text x="18" y="98" font-size="9" fill="#888" text-anchor="middle">5</text>
+            <text x="18" y="138" font-size="9" fill="#888" text-anchor="middle">0</text>
+            <line x1="28" y1="138" x2="290" y2="138" stroke="#ddd" stroke-width="1"/>
+            <!-- Area 3 lightest (bottom) -->
+            <path d="M 35,112 L 115,108 L 195,110 L 265,102 L 265,138 L 35,138 Z" fill="#b8d0e8" opacity="0.9"/>
+            <!-- Area 2 medium -->
+            <path d="M 35,95 L 115,88 L 195,94 L 265,78 L 265,112 L 35,112 Z" fill="#5888bc" opacity="0.85"/>
+            <!-- Area 1 dark (top) -->
+            <path d="M 35,82 L 115,66 L 195,78 L 265,55 L 265,95 L 35,95 Z" fill="#0f3d8c" opacity="0.9"/>
+            <text x="35" y="152" font-size="9" fill="#555" text-anchor="middle">类别 1</text>
+            <text x="115" y="152" font-size="9" fill="#555" text-anchor="middle">类别 2</text>
+            <text x="195" y="152" font-size="9" fill="#555" text-anchor="middle">类别 3</text>
+            <text x="265" y="152" font-size="9" fill="#555" text-anchor="middle">类别 4</text>
           </svg>
         </div>
         <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>系列 1</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>系列 2</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8ab0d0;"></div>系列 3</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0f3d8c;"></div>系列 1</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#5888bc;"></div>系列 2</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#b8d0e8;"></div>系列 3</div>
         </div>
       </div>
     </div>
