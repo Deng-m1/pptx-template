@@ -258,12 +258,16 @@
       <path d="M170 170 L170 328 A158 158 0 0 1 12 170 L90 170 A80 80 0 0 0 170 250 Z" fill="#103f96"/>
       <path d="M170 170 L12 170 A158 158 0 0 1 170 12 L170 90 A80 80 0 0 0 90 170 Z" fill="#103f96"/>
       <circle cx="170" cy="170" r="78" fill="#ffffff"/>
-      <rect x="165" y="8" width="10" height="324" fill="#ffffff"/>
-      <rect x="8" y="165" width="324" height="10" fill="#ffffff"/>
-      <text x="115" y="118" text-anchor="middle" font-size="26" font-weight="900" fill="#ffffff">调研</text>
-      <text x="225" y="118" text-anchor="middle" font-size="26" font-weight="900" fill="#ffffff">设计</text>
-      <text x="115" y="258" text-anchor="middle" font-size="26" font-weight="900" fill="#ffffff">方案</text>
-      <text x="225" y="258" text-anchor="middle" font-size="26" font-weight="900" fill="#ffffff">投放</text>
+      <!-- 用stroke线代替白色rect做分隔线 -->
+      <line x1="170" y1="12" x2="170" y2="88" stroke="#ffffff" stroke-width="8"/>
+      <line x1="170" y1="252" x2="170" y2="328" stroke="#ffffff" stroke-width="8"/>
+      <line x1="12" y1="170" x2="88" y2="170" stroke="#ffffff" stroke-width="8"/>
+      <line x1="252" y1="170" x2="328" y2="170" stroke="#ffffff" stroke-width="8"/>
+      <!-- 文字在分隔线之后绘制 -->
+      <text x="86" y="86" text-anchor="middle" dominant-baseline="middle" font-size="26" font-weight="900" fill="#ffffff">调研</text>
+      <text x="254" y="86" text-anchor="middle" dominant-baseline="middle" font-size="26" font-weight="900" fill="#ffffff">设计</text>
+      <text x="86" y="254" text-anchor="middle" dominant-baseline="middle" font-size="26" font-weight="900" fill="#ffffff">方案</text>
+      <text x="254" y="254" text-anchor="middle" dominant-baseline="middle" font-size="26" font-weight="900" fill="#ffffff">投放</text>
     </svg>
   </div>
 </div>

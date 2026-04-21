@@ -2,39 +2,46 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; position: relative; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+
   /* Header */
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
-  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0 44px; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; line-height: 1; }
+  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; line-height: 1; margin-top: 6px; }
+  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
+
   /* Tabs */
-  .tabs { position: absolute; top: 70px; left: 30px; right: 30px; height: 42px; display: flex; gap: 3px; }
-  .tab { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 700; }
-  .tab.active { background: #1a3a6b; color: white; }
-  .tab.t2 { background: #f0f4f8; color: #1a3a6b; border: 1.5px solid #ccc; }
-  .tab.t3 { background: #d0d8e4; color: #1a3a6b; border: 1.5px solid #bbb; }
-  .tab.t4 { background: #e8edf5; color: #1a3a6b; border: 1.5px solid #ccc; }
-  .tab.t5 { background: #f5f7fa; color: #1a3a6b; border: 1.5px solid #ccc; }
-  /* Top description texts */
-  .top-desc { position: absolute; top: 118px; left: 30px; right: 30px; display: flex; height: 55px; }
-  .td-col { flex: 1; font-size: 11px; color: #555; line-height: 1.55; padding: 0 8px; }
-  /* Diamonds area */
-  .diamonds-area { position: absolute; top: 168px; left: 0; right: 0; height: 280px; display: flex; align-items: center; justify-content: center; }
+  .tabs { position: absolute; top: 80px; left: 44px; right: 44px; height: 38px; display: flex; gap: 2px; }
+  .tab { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+  .tab.active { background: #0f3d8c; color: #fff; }
+  .tab.t2 { background: #f2f4f8; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
+  .tab.t3 { background: #c8d4e4; color: #1a3a6b; border: 1.5px solid #aab8cc; }
+  .tab.t4 { background: #dce6f0; color: #1a3a6b; border: 1.5px solid #c0ccda; }
+  .tab.t5 { background: #f5f7fa; color: #1a3a6b; border: 1.5px solid #c8cdd8; }
+
+  /* Top desc row */
+  .top-desc { position: absolute; top: 124px; left: 44px; right: 44px; height: 60px; display: flex; }
+  .td-col { flex: 1; font-size: 11.5px; color: #444; line-height: 1.65; padding: 0 6px; }
+  .td-col:nth-child(2), .td-col:nth-child(4) { flex: 0.3; }
+
   /* Bottom cards */
-  .bottom-cards { position: absolute; top: 455px; left: 30px; right: 30px; height: 115px; display: flex; gap: 3px; }
-  .bc { flex: 1; font-size: 10px; color: #555; line-height: 1.55; padding: 7px 9px; border: 1px solid #ddd; }
-  .bc.active { background: #1a3a6b; color: white; border-color: #1a3a6b; }
-  .bc.gray { background: #d0d8e4; color: #333; border-color: #bbb; }
+  .bottom-cards { position: absolute; top: 458px; left: 44px; right: 44px; height: 118px; display: flex; gap: 2px; }
+  .bc { flex: 1; font-size: 10.5px; color: #444; line-height: 1.6; padding: 8px 10px; border: 1px solid #ddd; }
+  .bc.active { background: #0f3d8c; color: #fff; border-color: #0f3d8c; }
+  .bc.gray { background: #c8d4e4; color: #333; border-color: #aab8cc; }
+
   /* Timeline */
-  .timeline { position: absolute; top: 576px; left: 30px; right: 30px; height: 34px; display: flex; align-items: center; }
-  .tl-label { font-size: 14px; font-weight: 700; color: #1a3a6b; white-space: nowrap; }
-  .tl-line { flex: 1; height: 2.5px; background: #1a3a6b; }
-  .tl-arrow { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 14px solid #1a3a6b; }
+  .timeline { position: absolute; top: 582px; left: 44px; right: 44px; height: 30px; display: flex; align-items: center; gap: 0; }
+  .tl-label { font-size: 15px; font-weight: 700; color: #0f3d8c; white-space: nowrap; }
+  .tl-line { flex: 1; height: 2.5px; background: #0f3d8c; }
+  .tl-arrow { width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 16px solid #0f3d8c; }
+
   /* Bottom bar */
-  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 32px; background: #1a3a6b; }
+  .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: #0f3d8c; }
 </style>
 </head>
 <body>
@@ -43,6 +50,7 @@
     <span class="header-title">项目规划 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
+  <div class="header-line"></div>
 
   <div class="tabs">
     <div class="tab active">促销策略规划与执行</div>
@@ -55,34 +63,34 @@
   <div class="top-desc">
     <div class="td-col">通过多种渠道进行活动推广，包括<br>社交媒体广告、电子邮件营销、搜<br>索引擎优化等。</div>
     <div class="td-col"></div>
-    <div class="td-col">我们保障了客户的满意度，<br>增强了客户的忠诚度。</div>
+    <div class="td-col" style="text-align:center;">我们保障了客户的满意度，<br>增强了客户的忠诚度。</div>
     <div class="td-col"></div>
-    <div class="td-col">统一品牌策略是指企业将经营的所有系<br>列产品使用同一品牌的</div>
+    <div class="td-col" style="text-align:right;">统一品牌策略是指企业将经营的所有系<br>列产品使用同一品牌的</div>
   </div>
 
-  <!-- Diamonds SVG area -->
-  <div class="diamonds-area">
-    <svg width="1220" height="280" viewBox="0 0 1220 280" style="overflow:visible;">
-      <!-- Left large dark blue diamond -->
-      <polygon points="230,14 420,140 230,266 40,140" fill="#1a3a6b"/>
-      <text x="230" y="126" text-anchor="middle" font-size="30" font-weight="900" fill="white">促销策</text>
-      <text x="230" y="160" text-anchor="middle" font-size="30" font-weight="900" fill="white">略规划</text>
+  <!-- Diamonds + Arrows SVG -->
+  <svg style="position:absolute;top:178px;left:0;width:1280px;height:278px;" viewBox="0 0 1280 278" overflow="visible">
+    <!-- Left large dark blue diamond -->
+    <polygon points="248,8 448,139 248,270 48,139" fill="#0f3d8c"/>
+    <text x="248" y="122" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销策</text>
+    <text x="248" y="160" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">略</text>
+    <text x="248" y="198" text-anchor="middle" font-size="32" font-weight="900" fill="#fff" font-family="'Microsoft YaHei','PingFang SC',sans-serif">规划</text>
 
-      <!-- Arrow 1 -->
-      <polygon points="430,118 500,118 500,104 530,140 500,176 500,162 430,162" fill="#6b90c8" opacity="0.85"/>
+    <!-- Arrow 1 (dark blue) -->
+    <polygon points="458,113 538,113 538,97 572,139 538,181 538,165 458,165" fill="#5c82b8" opacity="0.9"/>
 
-      <!-- Middle light blue diamond -->
-      <polygon points="680,14 870,140 680,266 490,140" fill="#7aa0d4"/>
-      <text x="680" y="126" text-anchor="middle" font-size="30" font-weight="900" fill="#1a3a6b">促销推</text>
-      <text x="680" y="160" text-anchor="middle" font-size="30" font-weight="900" fill="#1a3a6b">广执行</text>
+    <!-- Middle light blue diamond -->
+    <polygon points="730,8 930,139 730,270 530,139" fill="#8aafd8"/>
+    <text x="730" y="122" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">促销推</text>
+    <text x="730" y="160" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">广</text>
+    <text x="730" y="198" text-anchor="middle" font-size="32" font-weight="900" fill="#0f3d8c" font-family="'Microsoft YaHei','PingFang SC',sans-serif">执行</text>
 
-      <!-- Arrow 2 -->
-      <polygon points="880,118 950,118 950,104 980,140 950,176 950,162 880,162" fill="#b0c8e4" opacity="0.75"/>
+    <!-- Arrow 2 (light blue) -->
+    <polygon points="940,113 1020,113 1020,97 1054,139 1020,181 1020,165 940,165" fill="#b8cfe8" opacity="0.85"/>
 
-      <!-- Right very light diamond (small) -->
-      <polygon points="1100,60 1200,140 1100,220 1000,140" fill="#d8e4f0" opacity="0.7"/>
-    </svg>
-  </div>
+    <!-- Right very light small diamond -->
+    <polygon points="1168,69 1268,139 1168,209 1068,139" fill="#d8e8f4" opacity="0.8"/>
+  </svg>
 
   <div class="bottom-cards">
     <div class="bc active">在活动筹备阶段，我们制定了全面的促销策略，包括折扣优惠、满减活动、秒杀抢购等多种形式。</div>

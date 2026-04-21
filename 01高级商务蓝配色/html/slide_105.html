@@ -2,18 +2,20 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; position: relative; }
-  .header { position: absolute; top: 0; left: 0; right: 0; height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
-  .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
-  .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
+  .slide { width: 1280px; height: 720px; position: relative; overflow: hidden; }
+  .header { position: absolute; top: 0; left: 0; right: 0; height: 68px; padding: 12px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
+  .header-title { font-size: 32px; font-weight: 900; color: #0f3d8c; }
+  .header-sub { font-size: 18px; color: #1a5ca8; font-style: italic; margin-top: 6px; }
+  .header-line { position: absolute; top: 68px; left: 44px; right: 44px; height: 2px; background: #1a5ca8; }
   /* Top 4 columns */
-  .top-cols { position: absolute; top: 70px; left: 30px; right: 30px; height: 230px; display: flex; gap: 8px; }
+  .top-cols { position: absolute; top: 76px; left: 30px; right: 30px; height: 240px; display: flex; gap: 6px; }
   .col { flex: 1; display: flex; flex-direction: column; }
-  .col-header { padding: 9px 12px; font-size: 14px; font-weight: 900; color: white; text-align: center; margin-bottom: 8px; }
-  .col-text { font-size: 10.5px; color: #555; line-height: 1.65; padding: 0 4px; }
+  .col-header { padding: 9px 12px; font-size: 13px; font-weight: 900; color: #fff; text-align: center; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .col-text { font-size: 10.5px; color: #555; line-height: 1.7; padding: 0 4px; }
 </style>
 </head>
 <body>
@@ -22,43 +24,48 @@
     <span class="header-title">SWOT模型 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
+  <div class="header-line"></div>
 
   <div class="top-cols">
     <div class="col">
-      <div class="col-header" style="background:#1a3a6b;">STRENGTHS</div>
+      <div class="col-header" style="background:#0f3d8c;">STRENGTHS</div>
       <div class="col-text">所谓SWOT分析，即基于内外部竞争环境和竞争条件下的态势分析，就是将与研究对象密切相关的各种主要内部优势、劣势和外部的机会和威胁等，通过调查列举出来，并依照矩阵形式排列，然后用系统分析的思想，把各种因素相互匹配起来加以分析，从中得出一系列相应的结论，而结论通常带有一定的决策性。</div>
     </div>
     <div class="col">
-      <div class="col-header" style="background:#5a8ab4;">WEAKNESSES</div>
+      <div class="col-header" style="background:#5580b0;">WEAKNESSES</div>
       <div class="col-text">所谓SWOT分析，即基于内外部竞争环境和竞争条件下的态势分析，就是将与研究对象密切相关的各种主要内部优势、劣势和外部的机会和威胁等，通过调查列举出来，并依照矩阵形式排列，然后用系统分析的思想，把各种因素相互匹配起来加以分析，从中得出一系列相应的结论，而结论通常带有一定的决策性。</div>
     </div>
     <div class="col">
-      <div class="col-header" style="background:#8ab0d0;">OPPORTUNITIES</div>
+      <div class="col-header" style="background:#8aafd8;">OPPORTUNITIES</div>
       <div class="col-text">所谓SWOT分析，即基于内外部竞争环境和竞争条件下的态势分析，就是将与研究对象密切相关的各种主要内部优势、劣势和外部的机会和威胁等，通过调查列举出来，并依照矩阵形式排列，然后用系统分析的思想，把各种因素相互匹配起来加以分析，从中得出一系列相应的结论，而结论通常带有一定的决策性。</div>
     </div>
     <div class="col">
-      <div class="col-header" style="background:#b0c8e0; color:#1a3a6b;">THREATS</div>
+      <div class="col-header" style="background:#c0d0e0; color:#0f3d8c;">THREATS</div>
       <div class="col-text">所谓SWOT分析，即基于内外部竞争环境和竞争条件下的态势分析，就是将与研究对象密切相关的各种主要内部优势、劣势和外部的机会和威胁等，通过调查列举出来，并依照矩阵形式排列，然后用系统分析的思想，把各种因素相互匹配起来加以分析，从中得出一系列相应的结论，而结论通常带有一定的决策性。</div>
     </div>
   </div>
 
-  <!-- 3D SWOT letters: large, filling bottom half -->
-  <svg style="position:absolute; top:295px; left:0; width:1280px; height:425px;" viewBox="0 0 1280 425" preserveAspectRatio="xMidYMax meet">
-    <!-- S - gray 3D effect -->
-    <text x="-20" y="400" font-size="380" font-weight="900" fill="#9aabb8" font-family="Arial Black, Impact, sans-serif">S</text>
-    <text x="-10" y="390" font-size="380" font-weight="900" fill="#7a8a98" font-family="Arial Black, Impact, sans-serif" opacity="0.45">S</text>
+  <!-- 3D SWOT letters: positioned to start at y=320, letters extend to bottom -->
+  <!-- Original: letters are large 3D block letters filling the bottom ~55% of slide -->
+  <!-- Each letter has a front face and a side/shadow face to create 3D effect -->
+  <svg style="position:absolute;top:318px;left:0;width:1280px;height:402px;" viewBox="0 0 1280 402" overflow="visible">
+    <!-- S - gray/silver 3D block letter -->
+    <!-- Shadow/side layer (offset right+down) -->
+    <text x="-28" y="390" font-size="340" font-weight="900" fill="#7a8898" font-family="'Arial Black','Impact',sans-serif" opacity="0.5">S</text>
+    <!-- Front face -->
+    <text x="-38" y="380" font-size="340" font-weight="900" fill="#b0bcc8" font-family="'Arial Black','Impact',sans-serif">S</text>
 
-    <!-- W - dark blue 3D effect -->
-    <text x="240" y="400" font-size="380" font-weight="900" fill="#2e5c8a" font-family="Arial Black, Impact, sans-serif">W</text>
-    <text x="250" y="390" font-size="380" font-weight="900" fill="#1a3a6b" font-family="Arial Black, Impact, sans-serif" opacity="0.45">W</text>
+    <!-- W - dark blue 3D block letter -->
+    <text x="228" y="390" font-size="340" font-weight="900" fill="#0f3d8c" font-family="'Arial Black','Impact',sans-serif" opacity="0.55">W</text>
+    <text x="218" y="380" font-size="340" font-weight="900" fill="#2d6ab0" font-family="'Arial Black','Impact',sans-serif">W</text>
 
-    <!-- O - medium blue 3D effect -->
-    <text x="710" y="400" font-size="380" font-weight="900" fill="#7aaad4" font-family="Arial Black, Impact, sans-serif">O</text>
-    <text x="720" y="390" font-size="380" font-weight="900" fill="#5a8ab4" font-family="Arial Black, Impact, sans-serif" opacity="0.45">O</text>
+    <!-- O - medium blue 3D block letter -->
+    <text x="718" y="390" font-size="340" font-weight="900" fill="#5580b0" font-family="'Arial Black','Impact',sans-serif" opacity="0.55">O</text>
+    <text x="708" y="380" font-size="340" font-weight="900" fill="#8aafd8" font-family="'Arial Black','Impact',sans-serif">O</text>
 
-    <!-- T - dark navy 3D effect -->
-    <text x="1020" y="400" font-size="380" font-weight="900" fill="#1a3a6b" font-family="Arial Black, Impact, sans-serif">T</text>
-    <text x="1030" y="390" font-size="380" font-weight="900" fill="#0a2040" font-family="Arial Black, Impact, sans-serif" opacity="0.45">T</text>
+    <!-- T - dark navy 3D block letter -->
+    <text x="1028" y="390" font-size="340" font-weight="900" fill="#0a2a5e" font-family="'Arial Black','Impact',sans-serif" opacity="0.55">T</text>
+    <text x="1018" y="380" font-size="340" font-weight="900" fill="#0f3d8c" font-family="'Arial Black','Impact',sans-serif">T</text>
   </svg>
 </div>
 </body>

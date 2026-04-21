@@ -5,31 +5,34 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1280px; height: 720px; overflow: hidden; background: #fff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
-  .slide { width: 1280px; height: 720px; display: flex; flex-direction: column; }
-  .header { height: 62px; padding: 10px 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .slide { width: 1280px; height: 720px; position: relative; }
+  /* Header */
+  .header { position: absolute; left: 0; top: 0; width: 1280px; height: 62px; padding: 0 40px; border-bottom: 2px solid #1a3a6b; display: flex; align-items: center; justify-content: space-between; }
   .header-title { font-size: 30px; font-weight: 900; color: #1a3a6b; }
   .header-sub { font-size: 18px; color: #1a3a6b; font-style: italic; }
-  .body { flex: 1; display: flex; padding: 14px 30px 14px; gap: 14px; }
-  .left-panel { width: 440px; display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
-  .stat-box { background: #1a3a6b; padding: 14px 20px; }
+  /* Left panel: x=30, y=76, w=440, h=610 */
+  .left-panel { position: absolute; left: 30px; top: 76px; width: 440px; height: 610px; display: flex; flex-direction: column; gap: 12px; }
+  .stat-box { background: #1a3a6b; padding: 14px 20px; flex-shrink: 0; }
   .stat-box-title { font-size: 16px; font-weight: 700; color: white; text-align: center; margin-bottom: 14px; }
-  .stat-row { display: flex; gap: 0; }
+  .stat-row { display: flex; }
   .stat-item { flex: 1; }
   .stat-divider { width: 1px; background: rgba(255,255,255,0.3); margin: 0 16px; }
   .stat-num { font-size: 46px; font-weight: 900; color: white; line-height: 1; }
   .stat-unit { font-size: 16px; font-weight: 400; }
   .stat-label-box { background: #3a6abf; padding: 4px 12px; display: inline-block; margin-top: 8px; }
   .stat-label { font-size: 13px; color: white; }
-  .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 12px; display: flex; flex-direction: column; }
-  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 4px; }
-  .right-panel { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-  .pie-box { flex: 1; border: 1.5px solid #dde4f0; padding: 14px 14px 10px; display: flex; flex-direction: column; }
-  .pie-title { font-size: 14px; color: #888; margin-bottom: 6px; }
-  .pie-content { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .info-box { background: #e8f0f8; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
-  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+  .chart-box { flex: 1; border: 1.5px solid #dde4f0; padding: 10px 12px; display: flex; flex-direction: column; min-height: 0; }
+  .chart-title { font-size: 14px; color: #888; text-align: center; margin-bottom: 4px; flex-shrink: 0; }
+  .chart-svg-wrap { flex: 1; display: flex; align-items: flex-end; justify-content: center; }
+  /* Right panel: x=484, y=76, w=766, h=610 */
+  .right-panel { position: absolute; left: 484px; top: 76px; width: 766px; height: 610px; display: flex; flex-direction: column; gap: 12px; }
+  .pie-box { flex: 1; border: 1.5px solid #dde4f0; padding: 12px 14px 8px; display: flex; flex-direction: column; min-height: 0; }
+  .pie-title { font-size: 14px; color: #888; margin-bottom: 4px; flex-shrink: 0; }
+  .pie-content { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; overflow: hidden; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; flex-shrink: 0; padding-top: 4px; }
   .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #555; }
   .legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+  .info-box { background: #e8f0f8; padding: 12px 16px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -38,88 +41,93 @@
     <span class="header-title">数据分析 Powerpoint Template</span>
     <span class="header-sub">Work Arrangement</span>
   </div>
-  <div class="body">
-    <div class="left-panel">
-      <div class="stat-box">
-        <div class="stat-box-title">活动支出和营收</div>
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-num">226<span class="stat-unit">万元</span></div>
-            <div class="stat-label-box"><span class="stat-label">活动支出</span></div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-num">833<span class="stat-unit">万元</span></div>
-            <div class="stat-label-box"><span class="stat-label">活动收入</span></div>
-          </div>
+
+  <div class="left-panel">
+    <div class="stat-box">
+      <div class="stat-box-title">活动支出和营收</div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-num">226<span class="stat-unit">万元</span></div>
+          <div class="stat-label-box"><span class="stat-label">活动支出</span></div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">833<span class="stat-unit">万元</span></div>
+          <div class="stat-label-box"><span class="stat-label">活动收入</span></div>
         </div>
       </div>
-      <div class="chart-box">
-        <div class="chart-title">活动支出</div>
-        <svg width="100%" height="100%" viewBox="0 0 400 210" preserveAspectRatio="xMidYMid meet">
-          <text x="22" y="22" font-size="12" fill="#888" text-anchor="middle">40</text>
-          <text x="22" y="72" font-size="12" fill="#888" text-anchor="middle">30</text>
-          <text x="22" y="112" font-size="12" fill="#888" text-anchor="middle">20</text>
-          <text x="22" y="152" font-size="12" fill="#888" text-anchor="middle">10</text>
-          <text x="22" y="182" font-size="12" fill="#888" text-anchor="middle">0</text>
-          <line x1="36" y1="178" x2="395" y2="178" stroke="#eee" stroke-width="1"/>
-          <line x1="36" y1="148" x2="395" y2="148" stroke="#eee" stroke-width="1"/>
-          <line x1="36" y1="118" x2="395" y2="118" stroke="#eee" stroke-width="1"/>
-          <line x1="36" y1="88" x2="395" y2="88" stroke="#eee" stroke-width="1"/>
-          <!-- Bars: 人力成本=30, 制作成本=15, 设计费用=25, 运输陈本=30 -->
-          <rect x="60" y="88" width="58" height="90" fill="#b0c8e0"/>
-          <rect x="155" y="133" width="58" height="45" fill="#1a3a6b"/>
-          <rect x="250" y="103" width="58" height="75" fill="#8a9aaa"/>
-          <rect x="345" y="88" width="58" height="90" fill="#1a3a6b"/>
-          <text x="89" y="196" font-size="12" fill="#555" text-anchor="middle">人力成本</text>
-          <text x="184" y="196" font-size="12" fill="#555" text-anchor="middle">制作成本</text>
-          <text x="279" y="196" font-size="12" fill="#555" text-anchor="middle">设计费用</text>
-          <text x="374" y="196" font-size="12" fill="#555" text-anchor="middle">运输陈本</text>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">活动支出</div>
+      <div class="chart-svg-wrap">
+        <svg width="400" height="220" viewBox="0 0 400 220">
+          <!-- Y axis labels -->
+          <text x="22" y="18" font-size="12" fill="#888" text-anchor="middle">40</text>
+          <text x="22" y="68" font-size="12" fill="#888" text-anchor="middle">30</text>
+          <text x="22" y="118" font-size="12" fill="#888" text-anchor="middle">20</text>
+          <text x="22" y="158" font-size="12" fill="#888" text-anchor="middle">10</text>
+          <text x="22" y="188" font-size="12" fill="#888" text-anchor="middle">0</text>
+          <!-- Grid lines -->
+          <line x1="36" y1="14" x2="395" y2="14" stroke="#eee" stroke-width="1"/>
+          <line x1="36" y1="64" x2="395" y2="64" stroke="#eee" stroke-width="1"/>
+          <line x1="36" y1="114" x2="395" y2="114" stroke="#eee" stroke-width="1"/>
+          <line x1="36" y1="154" x2="395" y2="154" stroke="#eee" stroke-width="1"/>
+          <line x1="36" y1="184" x2="395" y2="184" stroke="#eee" stroke-width="1"/>
+          <!-- Bars: 人力成本=30, 制作成本=15, 设计费用=25, 运输成本=30 -->
+          <rect x="60" y="64" width="58" height="120" fill="#b0c8e0"/>
+          <rect x="155" y="109" width="58" height="75" fill="#1a3a6b"/>
+          <rect x="250" y="84" width="58" height="100" fill="#8a9aaa"/>
+          <rect x="345" y="64" width="58" height="120" fill="#1a3a6b"/>
+          <!-- X axis labels -->
+          <text x="89" y="202" font-size="12" fill="#555" text-anchor="middle">人力成本</text>
+          <text x="184" y="202" font-size="12" fill="#555" text-anchor="middle">制作成本</text>
+          <text x="279" y="202" font-size="12" fill="#555" text-anchor="middle">设计费用</text>
+          <text x="374" y="202" font-size="12" fill="#555" text-anchor="middle">运输成本</text>
         </svg>
       </div>
     </div>
-    <div class="right-panel">
-      <div class="pie-box">
-        <div class="pie-title">市场营销活动成本比例</div>
-        <div class="pie-content">
-          <!-- 3D-style pie chart -->
-          <svg width="560" height="340" viewBox="0 0 560 340">
-            <!-- 3D bottom shadows -->
-            <path d="M 280,230 L 280,248 A 200,56 0 0,0 460,194 L 460,176 Z" fill="#0d2040"/>
-            <path d="M 280,230 L 460,176 A 200,56 0 0,0 280,170 L 280,188 Z" fill="#1e3a6e"/>
-            <path d="M 280,230 L 280,188 A 200,56 0 0,0 168,192 L 168,210 Z" fill="#3a6090"/>
-            <path d="M 280,230 L 168,210 A 200,56 0 0,0 280,248 L 280,230 Z" fill="#6a9ac4"/>
-            <!-- Top ellipse segments -->
-            <!-- Segment 1: 30% dark blue (top-right) -->
-            <path d="M 280,180 L 280,80 A 200,56 0 0,1 460,176 Z" fill="#1a3a6b"/>
-            <!-- Segment 2: 30% medium blue (right) -->
-            <path d="M 280,180 L 460,176 A 200,56 0 0,1 280,236 Z" fill="#3a6abf"/>
-            <!-- Segment 3: 25% light blue (left) -->
-            <path d="M 280,180 L 280,236 A 200,56 0 0,1 100,176 Z" fill="#6a9ac4"/>
-            <!-- Segment 4: 15% lighter (top-left) -->
-            <path d="M 280,180 L 100,176 A 200,56 0 0,1 280,80 Z" fill="#b0c8e0"/>
-            <!-- Labels -->
-            <text x="390" y="145" font-size="18" font-weight="700" fill="white">30%</text>
-            <text x="410" y="200" font-size="18" font-weight="700" fill="white">30%</text>
-            <text x="130" y="215" font-size="18" font-weight="700" fill="#444">25%</text>
-            <text x="220" y="110" font-size="18" font-weight="700" fill="#444">15%</text>
-          </svg>
-        </div>
-        <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>人力成本</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>制作成本</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#6a9ac4;"></div>设计费用</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#b0c8e0;"></div>其他物料</div>
-        </div>
-      </div>
-      <div class="info-box">
-        <svg width="38" height="38" viewBox="0 0 38 38">
-          <circle cx="19" cy="19" r="17" fill="#1a3a6b" opacity="0.12"/>
-          <path d="M 19,4 A 15,15 0 0,1 34,19 L 19,19 Z" fill="#1a3a6b"/>
-          <path d="M 19,4 A 15,15 0 0,0 4,19 L 19,19 Z" fill="#3a6abf"/>
+  </div>
+
+  <div class="right-panel">
+    <div class="pie-box">
+      <div class="pie-title">市场营销活动成本比例</div>
+      <div class="pie-content">
+        <svg width="100%" height="100%" viewBox="0 0 700 430" preserveAspectRatio="xMidYMid meet">
+          <!-- 3D bottom shadow layers -->
+          <path d="M 350,280 L 350,308 A 250,72 0 0,0 578,232 L 578,204 Z" fill="#0d2040"/>
+          <path d="M 350,280 L 578,204 A 250,72 0 0,0 350,196 L 350,224 Z" fill="#1e3a6e"/>
+          <path d="M 350,280 L 350,224 A 250,72 0 0,0 200,230 L 200,258 Z" fill="#3a6090"/>
+          <path d="M 350,280 L 200,258 A 250,72 0 0,0 350,308 L 350,280 Z" fill="#6a9ac4"/>
+          <!-- Top ellipse face segments -->
+          <!-- Segment 1: 30% dark blue (top-right, ~108deg) -->
+          <path d="M 350,210 L 350,78 A 250,72 0 0,1 578,204 Z" fill="#1a3a6b"/>
+          <!-- Segment 2: 30% medium blue (bottom-right, ~108deg) -->
+          <path d="M 350,210 L 578,204 A 250,72 0 0,1 350,282 Z" fill="#3a6abf"/>
+          <!-- Segment 3: 25% light blue (bottom-left, ~90deg) -->
+          <path d="M 350,210 L 350,282 A 250,72 0 0,1 122,204 Z" fill="#6a9ac4"/>
+          <!-- Segment 4: 15% lighter (top-left, ~54deg) -->
+          <path d="M 350,210 L 122,204 A 250,72 0 0,1 350,78 Z" fill="#b0c8e0"/>
+          <!-- Percentage labels -->
+          <text x="490" y="160" font-size="24" font-weight="700" fill="white" text-anchor="middle">30%</text>
+          <text x="510" y="248" font-size="24" font-weight="700" fill="white" text-anchor="middle">30%</text>
+          <text x="170" y="258" font-size="24" font-weight="700" fill="#444" text-anchor="middle">25%</text>
+          <text x="270" y="108" font-size="24" font-weight="700" fill="#444" text-anchor="middle">15%</text>
         </svg>
-        <span style="font-size:12px; color:#555;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</span>
       </div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#1a3a6b;"></div>人力成本</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#3a6abf;"></div>制作成本</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#6a9ac4;"></div>设计费用</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#b0c8e0;"></div>其他物料</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <svg width="38" height="38" viewBox="0 0 38 38">
+        <circle cx="19" cy="19" r="17" fill="#1a3a6b" opacity="0.12"/>
+        <path d="M 19,4 A 15,15 0 0,1 34,19 L 19,19 Z" fill="#1a3a6b"/>
+        <path d="M 19,4 A 15,15 0 0,0 4,19 L 19,19 Z" fill="#3a6abf"/>
+      </svg>
+      <span style="font-size:12px; color:#555;">我们对原始数据进行了清洗和整理，去除了缺失值和异常值，确保数据的准确性和可靠性。</span>
     </div>
   </div>
 </div>

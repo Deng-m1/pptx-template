@@ -45,13 +45,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 22px 48px 34px;
+    padding: 16px 48px 0;
   }
   .top-row {
     display: flex;
     align-items: flex-start;
     gap: 28px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
   .sub-title {
     flex-shrink: 0;
@@ -71,8 +71,8 @@
   .charts-row {
     display: flex;
     gap: 14px;
-    height: 348px;
-    margin-bottom: 14px;
+    height: 300px;
+    margin-bottom: 12px;
   }
   .chart-box {
     flex: 1;
@@ -103,7 +103,8 @@
   .bottom-cards {
     display: flex;
     gap: 14px;
-    height: 134px;
+    flex: 1;
+    min-height: 120px;
   }
   .stat-card {
     flex: 1;
@@ -159,7 +160,7 @@
     <div class="charts-row">
       <div class="chart-box">
         <div class="chart-title">年度总销售额</div>
-        <svg width="100%" height="100%" viewBox="0 0 560 280" preserveAspectRatio="none">
+        <svg width="100%" height="100%" viewBox="0 0 560 300" preserveAspectRatio="none">
           <line class="grid" x1="56" y1="28" x2="540" y2="28"/>
           <line class="grid" x1="56" y1="78" x2="540" y2="78"/>
           <line class="grid" x1="56" y1="128" x2="540" y2="128"/>
@@ -179,16 +180,16 @@
           <rect x="338" y="168" width="52" height="104" fill="#143f96"/>
           <rect x="458" y="86"  width="52" height="186" fill="#143f96"/>
 
-          <text class="x-text" x="124" y="294" text-anchor="middle">第一季度</text>
-          <text class="x-text" x="244" y="294" text-anchor="middle">第二季度</text>
-          <text class="x-text" x="364" y="294" text-anchor="middle">第三季度</text>
-          <text class="x-text" x="484" y="294" text-anchor="middle">第四季度</text>
+          <text class="x-text" x="124" y="292" text-anchor="middle">第一季度</text>
+          <text class="x-text" x="244" y="292" text-anchor="middle">第二季度</text>
+          <text class="x-text" x="364" y="292" text-anchor="middle">第三季度</text>
+          <text class="x-text" x="484" y="292" text-anchor="middle">第四季度</text>
         </svg>
       </div>
 
       <div class="chart-box">
         <div class="chart-title">年度总销量</div>
-        <svg width="100%" height="100%" viewBox="0 0 560 280" preserveAspectRatio="none">
+        <svg width="100%" height="100%" viewBox="0 0 560 300" preserveAspectRatio="none">
           <line class="grid" x1="56" y1="28" x2="540" y2="28"/>
           <line class="grid" x1="56" y1="78" x2="540" y2="78"/>
           <line class="grid" x1="56" y1="128" x2="540" y2="128"/>
@@ -205,10 +206,10 @@
 
           <path d="M 108 78 C 146 108, 184 176, 228 190 C 270 202, 316 134, 354 128 C 396 122, 442 168, 494 202" fill="none" stroke="#0f4a98" stroke-width="3.2" stroke-linecap="round"/>
 
-          <text class="x-text" x="108" y="294" text-anchor="middle">第一季度</text>
-          <text class="x-text" x="228" y="294" text-anchor="middle">第二季度</text>
-          <text class="x-text" x="354" y="294" text-anchor="middle">第三季度</text>
-          <text class="x-text" x="494" y="294" text-anchor="middle">第四季度</text>
+          <text class="x-text" x="108" y="292" text-anchor="middle">第一季度</text>
+          <text class="x-text" x="228" y="292" text-anchor="middle">第二季度</text>
+          <text class="x-text" x="354" y="292" text-anchor="middle">第三季度</text>
+          <text class="x-text" x="494" y="292" text-anchor="middle">第四季度</text>
         </svg>
       </div>
     </div>

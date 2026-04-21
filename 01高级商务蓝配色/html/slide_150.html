@@ -48,36 +48,39 @@
 
   .left-deco, .right-deco {
     position: absolute;
-    top: 138px;
+    top: 120px;
     width: 14px;
-    height: 530px;
+    height: 580px;
     background: #0f47a1;
   }
   .left-deco { left: 51px; }
   .right-deco { right: 47px; }
-  .left-deco::after, .right-deco::after {
-    content: '';
-    position: absolute;
-    bottom: -28px;
-    left: 0;
-    width: 14px;
-    height: 168px;
-    background: #c5d8ee;
-  }
 
-  .left-col, .right-col {
+  .left-col {
     position: absolute;
-    top: 138px;
+    top: 120px;
+    left: 74px;
     width: 320px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .left-col { left: 74px; }
-  .right-col { right: 72px; }
+  .right-col {
+    position: absolute;
+    top: 120px;
+    right: 72px;
+    width: 318px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   .progress-card {
+    flex: 1;
     position: relative;
-    width: 320px;
-    height: 168px;
-    margin-bottom: 12px;
+    width: 100%;
     border: 1px solid #e7e7e7;
     padding: 14px 18px 0 18px;
     overflow: hidden;
@@ -93,10 +96,10 @@
   .pct-wrap {
     display: flex;
     align-items: flex-end;
-    gap: 14px;
+    gap: 10px;
   }
   .pct {
-    font-size: 58px;
+    font-size: 52px;
     line-height: 1;
     font-weight: 900;
     letter-spacing: -1px;
@@ -104,43 +107,42 @@
   .pct.dark-t { color: #ffffff; }
   .pct.light-t { color: #8d8d8d; }
   .pct-label {
-    font-size: 17px;
-    line-height: 1.1;
+    font-size: 15px;
+    line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
   }
   .pct-label.dark-t { color: #ffffff; }
   .pct-label.light-t { color: #8f8f8f; }
   .sep {
     width: 28px;
     height: 2px;
-    margin: 12px 0 10px 0;
+    margin: 10px 0 8px 0;
   }
   .sep.dark { background: rgba(255,255,255,0.85); }
   .sep.light { background: #bfbfbf; }
   .progress-desc {
     font-size: 12px;
-    line-height: 1.95;
-    width: 254px;
+    line-height: 1.9;
   }
   .progress-desc.dark-t { color: rgba(255,255,255,0.94); }
   .progress-desc.light-t { color: #9b9b9b; }
 
   .center {
     position: absolute;
-    left: 420px;
-    top: 120px;
-    width: 440px;
-    height: 580px;
+    left: 415px;
+    top: 100px;
+    width: 450px;
+    height: 560px;
   }
   .halo {
     position: absolute;
-    left: 43px;
-    top: 135px;
-    width: 354px;
-    height: 354px;
+    left: 50px;
+    top: 120px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    border: 2px solid #f3f5f8;
+    border: 2px solid #e8eef5;
     opacity: 0.9;
   }
   .center svg {
@@ -150,13 +152,12 @@
   }
 
   .plan-card {
+    flex: 1;
     position: relative;
-    width: 318px;
-    height: 168px;
-    margin-bottom: 12px;
+    width: 100%;
     background: #ffffff;
     border: 1px dashed #cfcfcf;
-    padding: 12px 20px 0 20px;
+    padding: 12px 18px 0 18px;
   }
   .plan-card.dark {
     background: #0f47a1;
@@ -167,34 +168,33 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
-    height: 36px;
-    border-radius: 6px;
+    min-width: 100px;
+    height: 34px;
+    border-radius: 5px;
     background: #0f47a1;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.1;
     text-align: center;
-    padding: 0 18px;
+    padding: 0 14px;
   }
   .plan-card.dark .tag {
     background: #ffffff;
     color: #0f47a1;
   }
   .plan-line {
-    width: 266px;
+    width: 100%;
     height: 1px;
     background: #2a6ca6;
-    margin: 12px 0 10px 0;
+    margin: 10px 0 8px 0;
   }
   .plan-card.dark .plan-line {
     background: rgba(255,255,255,0.8);
   }
   .plan-desc {
     font-size: 12px;
-    line-height: 2.05;
-    width: 258px;
+    line-height: 1.9;
     color: #9a9a9a;
   }
   .plan-card.dark .plan-desc {
@@ -238,38 +238,59 @@
     </div>
   </div>
 
+  <!-- 中间菱形区域：上三角(浅蓝)+下三角(深蓝)+水平双向箭头 -->
   <div class="center">
     <div class="halo"></div>
-    <svg width="440" height="580" viewBox="0 0 440 580" aria-hidden="true">
-      <polygon points="220,2 390,308 246,308 220,258 194,308 52,308" fill="#bed2ea"/>
-      <polygon points="220,558 52,310 194,310 220,358 246,310 390,310" fill="#0f47a1"/>
+    <!-- SVG: 450x560, 中心x=225 -->
+    <!-- 上三角顶点(225,10)，底边y=290，宽度约360 -->
+    <!-- 下三角顶点(225,550)，顶边y=290 -->
+    <svg width="450" height="560" viewBox="0 0 450 560" aria-hidden="true">
+      <!-- 上三角形(浅蓝) -->
+      <polygon points="225,10 400,290 50,290" fill="#bed2ea"/>
+      <!-- 下三角形(深蓝) -->
+      <polygon points="225,550 50,292 400,292" fill="#0f47a1"/>
 
-      <polygon points="108,316 160,288 160,302 220,302 220,330 160,330 160,344" fill="#0f47a1"/>
-      <polygon points="332,316 280,288 280,302 220,302 220,330 280,330 280,344" fill="#0f47a1"/>
+      <!-- 水平双向箭头 - 左箭头（向左） -->
+      <!-- 箭头从x=50到x=165，y中心=291 -->
+      <polygon points="50,291 80,272 80,282 165,282 165,300 80,300 80,310" fill="#0f47a1"/>
+      <!-- 水平双向箭头 - 右箭头（向右） -->
+      <!-- 箭头从x=285到x=400，y中心=291 -->
+      <polygon points="400,291 370,272 370,282 285,282 285,300 370,300 370,310" fill="#0f47a1"/>
 
-      <text x="220" y="128" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">工作总</text>
-      <text x="220" y="176" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">结</text>
-      <!-- Trophy icon (white outline) -->
-      <g transform="translate(185,205)">
-        <path d="M35 8 L35 28 C35 42 25 52 18 56 C11 52 1 42 1 28 L1 8 Z" fill="none" stroke="#ffffff" stroke-width="3"/>
-        <path d="M1 16 L-8 16 C-8 28 -2 34 6 36" fill="none" stroke="#ffffff" stroke-width="3"/>
-        <path d="M35 16 L44 16 C44 28 38 34 30 36" fill="none" stroke="#ffffff" stroke-width="3"/>
-        <line x1="18" y1="56" x2="18" y2="66" stroke="#ffffff" stroke-width="3"/>
-        <line x1="8" y1="66" x2="28" y2="66" stroke="#ffffff" stroke-width="3"/>
+      <!-- 上三角形文字：工作总结 -->
+      <text x="225" y="130" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">工作总</text>
+      <text x="225" y="175" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">结</text>
+
+      <!-- 奖杯图标 (白色线条，在上三角形内部，y约200-250) -->
+      <g transform="translate(197,195)">
+        <!-- 杯身 -->
+        <path d="M8,2 L48,2 L48,30 C48,48 38,58 28,62 C18,58 8,48 8,30 Z" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- 左耳 -->
+        <path d="M8,10 L-4,10 C-4,26 4,34 14,36" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- 右耳 -->
+        <path d="M48,10 L60,10 C60,26 52,34 42,36" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- 杯柄 -->
+        <line x1="28" y1="62" x2="28" y2="74" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- 底座 -->
+        <line x1="14" y1="74" x2="42" y2="74" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
       </g>
 
-      <text x="220" y="462" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">工作计</text>
-      <text x="220" y="510" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">划</text>
-      <!-- Target/goal icon (white outline) -->
-      <g transform="translate(192,360)">
+      <!-- 下三角形文字：工作计划 -->
+      <text x="225" y="430" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">工作计</text>
+      <text x="225" y="478" text-anchor="middle" font-size="34" font-weight="900" fill="#ffffff">划</text>
+
+      <!-- 靶心图标 (白色线条，在下三角形内部，y约330-390) -->
+      <g transform="translate(197,326)">
+        <!-- 靶心同心圆 -->
         <circle cx="28" cy="28" r="26" fill="none" stroke="#ffffff" stroke-width="3"/>
         <circle cx="28" cy="28" r="18" fill="none" stroke="#ffffff" stroke-width="3"/>
         <circle cx="28" cy="28" r="10" fill="none" stroke="#ffffff" stroke-width="3"/>
         <circle cx="28" cy="28" r="4" fill="#ffffff"/>
-        <line x1="28" y1="2" x2="28" y2="14" stroke="#ffffff" stroke-width="3"/>
-        <line x1="28" y1="42" x2="28" y2="54" stroke="#ffffff" stroke-width="3"/>
-        <line x1="2" y1="28" x2="14" y2="28" stroke="#ffffff" stroke-width="3"/>
-        <line x1="42" y1="28" x2="54" y2="28" stroke="#ffffff" stroke-width="3"/>
+        <!-- 十字准线 -->
+        <line x1="28" y1="0" x2="28" y2="12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        <line x1="28" y1="44" x2="28" y2="56" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        <line x1="0" y1="28" x2="12" y2="28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        <line x1="44" y1="28" x2="56" y2="28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
       </g>
     </svg>
   </div>
