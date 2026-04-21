@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_03 slide_04</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #c8b59d;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background-image: url('../../slides/sc_03_hotel_sales_strategy_mix/slide_04.jpg');
+      background-size: 1280px 720px;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .card {
+      position: absolute;
+      left: 54px;
+      top: 84px;
+      width: 1172px;
+      height: 548px;
+      background: #d8b152;
+      border: 4px solid #0f0d0b;
+      border-radius: 78px;
+      overflow: hidden;
+    }
+    .wave-top,
+    .wave-bottom {
+      position: absolute;
+      left: -18px;
+      width: calc(100% + 36px);
+      height: 68px;
+      background:
+        radial-gradient(48px 26px at 48px 50%, #d8b152 98%, transparent 100%) 0 0/160px 68px repeat-x,
+        radial-gradient(48px 26px at 128px 18px, #d8b152 98%, transparent 100%) 0 0/160px 68px repeat-x;
+      z-index: 1;
+    }
+    .wave-top { top: -18px; }
+    .wave-bottom { bottom: -18px; transform: scaleY(-1); }
+    .title {
+      position: absolute;
+      top: 88px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 60px;
+      line-height: 1;
+      color: #101010;
+      z-index: 2;
+    }
+    .intro {
+      position: absolute;
+      top: 160px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      line-height: 1.3;
+      color: #181412;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .left-block,
+    .right-block {
+      position: absolute;
+      top: 272px;
+      width: 390px;
+      text-align: center;
+      color: #15120f;
+      z-index: 2;
+    }
+    .left-block { left: 156px; }
+    .right-block { right: 152px; }
+    .brand {
+      font-size: 56px;
+      line-height: 0.98;
+      margin-bottom: 16px;
+    }
+    .sub {
+      font-size: 22px;
+      line-height: 1.35;
+    }
+    .footer {
+      position: absolute;
+      left: 0;
+      bottom: 86px;
+      width: 100%;
+      text-align: center;
+      font-size: 33px;
+      line-height: 1;
+      color: #15120f;
+      font-style: italic;
+      z-index: 2;
+    }
+    .slides-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .slides-box .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 148px;
+      height: 84px;
+      background: #0f245d;
+      color: #f5f5f5;
+      border-radius: 5px;
+      font-size: 38px;
+      font-weight: 700;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: -1px;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <section class="card">
+      <div class="wave-top"></div>
+      <div class="wave-bottom"></div>
+      <h1 class="title">Credits</h1>
+      <div class="intro">This presentation template is free for everyone to use, thanks to the following:</div>
+
+      <div class="left-block">
+        <div class="slides-box">
+          <span class="logo">Slides</span>
+          <span class="brand">Carnival</span>
+        </div>
+        <div class="sub">for this presentation template</div>
+      </div>
+
+      <div class="right-block">
+        <div class="brand">Pexels, Pixabay,<br>Sketchify</div>
+        <div class="sub">for the photos, graphics, and elements</div>
+      </div>
+
+      <div class="footer">Happy designing!</div>
+    </section>
+  </main>
+</body>
+</html>

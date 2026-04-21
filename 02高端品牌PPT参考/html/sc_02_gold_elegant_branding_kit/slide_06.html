@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_06</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1b1717;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+    }
+    .logo {
+      position: absolute;
+      left: 65px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+      z-index: 5;
+    }
+    .photo-top-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 530px;
+      height: 369px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_06.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: 0 0;
+      z-index: 1;
+    }
+    .photo-bottom-right {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 220px;
+      height: 389px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_06.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -1060px -331px;
+      z-index: 1;
+    }
+    .title-row {
+      position: absolute;
+      left: 536px;
+      top: 118px;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      z-index: 4;
+    }
+    .title {
+      font-size: 82px;
+      line-height: 0.92;
+      font-style: italic;
+      color: #171313;
+      letter-spacing: -1px;
+      font-weight: 400;
+    }
+    .title-arrow {
+      position: relative;
+      width: 68px;
+      border-top: 3px solid #171313;
+      margin-top: 12px;
+    }
+    .title-arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #171313;
+      border-right: 3px solid #171313;
+      transform: rotate(45deg);
+      background: transparent;
+    }
+    .middle-row {
+      position: absolute;
+      left: 71px;
+      top: 451px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      z-index: 4;
+    }
+    .subhead {
+      font-size: 34px;
+      line-height: 1;
+      color: #181414;
+      font-weight: 400;
+    }
+    .line {
+      width: 78px;
+      border-top: 3px solid #171313;
+      margin-top: 4px;
+    }
+    .question {
+      font-size: 64px;
+      line-height: 0.8;
+      color: #d9c35d;
+      font-style: italic;
+      margin-top: -6px;
+    }
+    .text-block {
+      position: absolute;
+      font-size: 17px;
+      line-height: 1.58;
+      color: #262121;
+      z-index: 4;
+    }
+    .text-left {
+      left: 70px;
+      top: 534px;
+      width: 300px;
+    }
+    .text-right {
+      left: 712px;
+      top: 534px;
+      width: 300px;
+    }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 11px;
+      background: #000;
+      z-index: 6;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="photo-top-left"></div>
+    <div class="photo-bottom-right"></div>
+    <div class="logo">Logo</div>
+
+    <div class="title-row">
+      <h1 class="title">Our Company</h1>
+      <div class="title-arrow"></div>
+    </div>
+
+    <div class="middle-row">
+      <div class="subhead">Who we are?</div>
+      <div class="line"></div>
+      <div class="question">?</div>
+      <div class="line"></div>
+      <div class="subhead">What we do?</div>
+    </div>
+
+    <div class="text-block text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst.</div>
+    <div class="text-block text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst.</div>
+
+    <div class="footer"></div>
+  </main>
+</body>
+</html>

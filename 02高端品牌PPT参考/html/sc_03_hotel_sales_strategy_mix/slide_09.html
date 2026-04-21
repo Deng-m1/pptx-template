@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_03 slide_09</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #ab9c74;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #ab9c74;
+    }
+    .bg {
+      position: absolute;
+      inset: -40px;
+      background-image: url('../../slides/sc_03_hotel_sales_strategy_mix/slide_09.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: blur(18px) saturate(0.82) brightness(0.9);
+      transform: scale(1.08);
+      opacity: 0.95;
+    }
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(155,139,91,0.32);
+    }
+    .poster {
+      position: absolute;
+      left: 396px;
+      top: 28px;
+      width: 488px;
+      height: 664px;
+      background-image: url('../../slides/sc_03_hotel_sales_strategy_mix/slide_09.jpg');
+      background-size: 488px 664px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="bg"></div>
+    <div class="poster" aria-label="Credits poster"></div>
+  </main>
+</body>
+</html>

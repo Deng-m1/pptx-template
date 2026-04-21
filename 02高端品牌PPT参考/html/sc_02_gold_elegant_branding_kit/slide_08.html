@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_08</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #5f7062;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_08.jpg');
+      background-size: 1280px 720px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(67, 83, 70, 0.05);
+    }
+    .logo {
+      position: absolute;
+      left: 63px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: rgba(255,255,255,0.92);
+      z-index: 3;
+    }
+    .title-line {
+      position: absolute;
+      font-size: 60px;
+      line-height: 1;
+      color: rgba(255,255,255,0.96);
+      font-style: italic;
+      letter-spacing: -1px;
+      white-space: nowrap;
+      z-index: 3;
+      text-shadow: 0 0 1px rgba(255,255,255,0.12);
+    }
+    .line-1 { left: 88px; top: 218px; }
+    .line-2 { left: 90px; top: 302px; }
+    .line-3 { left: 92px; top: 386px; }
+    .ornament {
+      position: absolute;
+      right: 124px;
+      top: 314px;
+      width: 128px;
+      height: 84px;
+      z-index: 3;
+    }
+    .ornament .circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 84px;
+      height: 84px;
+      border: 3px solid rgba(255,255,255,0.95);
+      border-radius: 50%;
+    }
+    .ornament .dot {
+      position: absolute;
+      left: 40px;
+      top: 38px;
+      width: 8px;
+      height: 8px;
+      border: 3px solid rgba(255,255,255,0.95);
+      border-radius: 50%;
+      background: transparent;
+    }
+    .ornament .line {
+      position: absolute;
+      left: 46px;
+      top: 43px;
+      width: 58px;
+      border-top: 3px solid rgba(255,255,255,0.95);
+    }
+    .ornament .arrow1,
+    .ornament .arrow2 {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-top: 3px solid rgba(255,255,255,0.95);
+      border-right: 3px solid rgba(255,255,255,0.95);
+      transform: rotate(45deg);
+      top: 38px;
+    }
+    .ornament .arrow1 { left: 91px; }
+    .ornament .arrow2 { left: 108px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="overlay"></div>
+    <div class="logo">Logo</div>
+    <div class="title-line line-1">Lorem ipsum dolor sit</div>
+    <div class="title-line line-2">amet, consectetur</div>
+    <div class="title-line line-3">adipiscing elit</div>
+    <div class="ornament">
+      <div class="circle"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+      <div class="arrow1"></div>
+      <div class="arrow2"></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_01 slide_01</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif;
+      background: #aa773a;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background:
+        radial-gradient(44% 44% at 54% 56%, rgba(51,24,11,0.98) 0%, rgba(64,31,15,0.96) 28%, rgba(96,53,21,0.68) 44%, rgba(153,98,39,0.12) 63%, rgba(0,0,0,0) 69%),
+        radial-gradient(36% 68% at 72% 20%, rgba(255,232,176,0.98) 0%, rgba(248,213,144,0.93) 17%, rgba(211,157,76,0.56) 38%, rgba(0,0,0,0) 60%),
+        radial-gradient(30% 18% at 33% 82%, rgba(255,241,197,0.95) 0%, rgba(242,206,127,0.90) 25%, rgba(177,121,47,0.34) 53%, rgba(0,0,0,0) 69%),
+        linear-gradient(90deg, rgba(189,139,68,0.98) 0%, rgba(185,132,63,0.96) 23%, rgba(103,63,32,0.98) 50%, rgba(217,173,99,0.94) 76%, rgba(173,125,58,0.96) 100%),
+        linear-gradient(180deg, #be8a4b 0%, #9d6e37 100%);
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(122deg, rgba(255,255,255,0) 0%, rgba(255,245,218,0.12) 24%, rgba(0,0,0,0) 42%, rgba(255,244,213,0.20) 66%, rgba(0,0,0,0) 100%),
+        radial-gradient(58% 70% at 56% 53%, rgba(0,0,0,0) 0%, rgba(29,12,6,0.10) 48%, rgba(0,0,0,0) 62%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .fold-right {
+      position: absolute;
+      right: -10px;
+      top: 18px;
+      width: 430px;
+      height: 760px;
+      transform: rotate(7deg);
+      z-index: 2;
+    }
+    .fold-right::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-left: 3px solid rgba(255,246,227,0.82);
+      border-radius: 76% 0 0 36% / 94% 0 0 40%;
+      background: linear-gradient(180deg, rgba(130,83,38,0.02) 0%, rgba(111,68,27,0.26) 20%, rgba(90,49,18,0.56) 58%, rgba(198,149,77,0.88) 100%);
+      box-shadow: inset 14px 0 40px rgba(255,232,191,0.20);
+    }
+    .fold-right::after {
+      content: "";
+      position: absolute;
+      left: 28px;
+      top: 20px;
+      width: 36px;
+      height: 680px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,246,223,0.85) 22%, rgba(255,249,235,0.92) 54%, rgba(255,255,255,0.08) 100%);
+      filter: blur(1px);
+      opacity: 0.88;
+    }
+    .fold-bottom-left {
+      position: absolute;
+      left: 208px;
+      bottom: -24px;
+      width: 360px;
+      height: 190px;
+      background: linear-gradient(135deg, rgba(255,248,235,0.56) 0%, rgba(244,219,188,0.40) 32%, rgba(203,163,115,0.08) 88%);
+      clip-path: polygon(0 100%, 0 76%, 39% 38%, 100% 100%);
+      filter: blur(0.15px);
+      opacity: 0.88;
+      z-index: 2;
+    }
+    .content {
+      position: absolute;
+      left: 72px;
+      top: 112px;
+      color: #fff;
+      text-transform: uppercase;
+      z-index: 4;
+    }
+    .title {
+      font-size: 90px;
+      line-height: 0.93;
+      letter-spacing: 0.2px;
+      font-weight: 900;
+      text-shadow: 0 3px 0 rgba(0,0,0,0.10), 0 0 14px rgba(255,255,255,0.06);
+      transform: scaleX(0.86);
+      transform-origin: left top;
+    }
+    .title .line-1,
+    .title .line-2 { display: block; }
+    .title .line-2 { margin-top: 10px; }
+    .subtitle {
+      margin-top: 18px;
+      margin-left: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.7px;
+      font-weight: 300;
+      opacity: 0.98;
+    }
+    .header {
+      position: absolute;
+      right: 34px;
+      top: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.45px;
+      color: rgba(255,255,255,0.92);
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .footer-line {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      height: 2px;
+      background: rgba(255,255,255,0.70);
+      z-index: 5;
+    }
+    .footer-left,
+    .footer-right {
+      position: absolute;
+      bottom: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.94);
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .footer-left { left: 28px; }
+    .footer-right { right: 28px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="fold-right"></div>
+    <div class="fold-bottom-left"></div>
+
+    <div class="header">WHITE &amp; GOLD PROJECT PROPOSAL</div>
+
+    <section class="content">
+      <h1 class="title">
+        <span class="line-1">ELEGANT</span>
+        <span class="line-2">PROJECT PROPOSAL.</span>
+      </h1>
+      <div class="subtitle">A PRESENTATION</div>
+    </section>
+
+    <div class="footer-line"></div>
+    <div class="footer-left">PRESENTED BY JANE DOE</div>
+    <div class="footer-right">11.07 2023</div>
+  </main>
+</body>
+</html>

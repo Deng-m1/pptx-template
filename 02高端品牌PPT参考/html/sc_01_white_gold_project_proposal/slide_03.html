@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_01 slide_03</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #efefef;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #efefef;
+    }
+    .header {
+      position: absolute;
+      right: 28px;
+      top: 10px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.90);
+      letter-spacing: 0.38px;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .right-stone {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 418px;
+      height: 720px;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .right-stone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(88% 108% at 104% 20%, rgba(92,41,8,0.98) 0%, rgba(92,41,8,0.98) 31%, rgba(133,72,14,0.96) 42%, rgba(180,114,24,0.93) 54%, rgba(226,173,56,0.88) 66%, rgba(245,234,214,0.94) 77%, rgba(255,255,255,0) 86%),
+        repeating-radial-gradient(circle at 104% 20%, rgba(112,54,8,0.98) 0 32px, rgba(186,123,25,0.93) 32px 48px, rgba(237,188,66,0.88) 48px 62px, rgba(249,240,220,0.94) 62px 72px, rgba(196,155,83,0.76) 72px 82px, rgba(255,255,255,0) 82px 98px),
+        linear-gradient(180deg, rgba(251,245,233,0.98) 0%, rgba(233,201,136,0.92) 20%, rgba(191,141,43,0.90) 41%, rgba(126,72,19,0.96) 100%);
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 19% 100%, 14% 90%, 17% 77%, 11% 62%, 15% 45%, 9% 29%);
+      transform: translateX(12px);
+    }
+    .right-stone::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(243,220,180,0.88) 18%, rgba(202,154,77,0.86) 37%, rgba(246,232,206,0.92) 55%, rgba(157,97,34,0.84) 74%, rgba(255,247,231,0.88) 100%);
+      clip-path: polygon(0 0, 55% 0, 73% 14%, 65% 32%, 77% 46%, 68% 60%, 79% 79%, 70% 100%, 0 100%);
+      opacity: 0.92;
+      filter: blur(0.2px);
+    }
+    .title {
+      position: absolute;
+      left: 68px;
+      top: 68px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif;
+      font-size: 72px;
+      line-height: 0.95;
+      color: #050505;
+      text-transform: uppercase;
+      transform: scaleX(0.79);
+      transform-origin: left top;
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .title .dot { color: #f1c530; }
+    .title-line {
+      position: absolute;
+      left: 33px;
+      top: 144px;
+      width: 497px;
+      height: 2px;
+      background: #111;
+      z-index: 3;
+    }
+    .toc-grid {
+      position: absolute;
+      left: 68px;
+      top: 278px;
+      width: 640px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 54px;
+      column-gap: 88px;
+      z-index: 3;
+    }
+    .item-title {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif;
+      font-size: 29px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      transform: scaleX(0.82);
+      transform-origin: left center;
+      white-space: nowrap;
+    }
+    .item-body {
+      width: 208px;
+      font-size: 16px;
+      line-height: 1.42;
+      color: #191919;
+    }
+    .footer-line {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 35px;
+      height: 2px;
+      background: #111;
+      z-index: 5;
+    }
+    .footer-left,
+    .footer-right {
+      position: absolute;
+      bottom: 11px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #111;
+      z-index: 5;
+    }
+    .footer-left { left: 28px; }
+    .footer-right { right: 28px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="right-stone"></div>
+    <div class="header">WHITE &amp; GOLD PROJECT PROPOSAL</div>
+
+    <h1 class="title">TABLE OF CONTENTS<span class="dot">.</span></h1>
+    <div class="title-line"></div>
+
+    <section class="toc-grid">
+      <div class="item">
+        <div class="item-title">INTRODUCTION</div>
+        <div class="item-body">Elaborate on what you want to discuss.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">OUR PRODUCTS</div>
+        <div class="item-body">Elaborate on what you want to discuss.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">ABOUT US</div>
+        <div class="item-body">Elaborate on what you want to discuss.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">CHAPTER TITLE</div>
+        <div class="item-body">Elaborate on what you want to discuss.</div>
+      </div>
+    </section>
+
+    <div class="footer-line"></div>
+    <div class="footer-left">PRESENTED BY JANE DOE</div>
+    <div class="footer-right">11.07.2023</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_03 slide_03</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #20490f;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background: #20490f;
+      overflow: hidden;
+    }
+    .frame {
+      position: absolute;
+      inset: 24px;
+      border: 2px solid #c9a64b;
+    }
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(201,166,75,0.9);
+    }
+    .corner {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #c9a64b;
+      border-radius: 0 0 10px 0;
+    }
+    .c1 { left: 32px; top: 32px; border-left: none; border-top: none; transform: rotate(180deg); }
+    .c2 { right: 32px; top: 32px; border-left: none; border-top: none; transform: rotate(270deg); }
+    .c3 { left: 32px; bottom: 32px; border-left: none; border-top: none; transform: rotate(90deg); }
+    .c4 { right: 32px; bottom: 32px; border-left: none; border-top: none; transform: rotate(0deg); }
+    .title {
+      position: absolute;
+      left: 118px;
+      top: 104px;
+      font-size: 78px;
+      line-height: 1;
+      color: #d8ad51;
+      font-weight: 400;
+    }
+    .illustration {
+      position: absolute;
+      left: 118px;
+      top: 250px;
+      width: 360px;
+      height: 340px;
+    }
+    .stroke { position: absolute; border-color: #efe8d9; }
+    .notebook-top {
+      left: 24px; top: 46px; width: 212px; height: 56px; border: 2px solid #efe8d9; border-radius: 8px;
+    }
+    .notebook-side {
+      left: 234px; top: 48px; width: 18px; height: 290px; border: 2px solid #efe8d9; border-left: none; transform: skewY(-8deg);
+    }
+    .page-edge1,.page-edge2,.page-edge3,.page-edge4,.page-edge5,.page-edge6 {
+      position: absolute; left: 34px; height: 0; border-top: 2px solid #efe8d9;
+    }
+    .page-edge1 { top: 106px; width: 200px; }
+    .page-edge2 { top: 132px; width: 198px; }
+    .page-edge3 { top: 176px; width: 194px; }
+    .page-edge4 { top: 220px; width: 188px; }
+    .page-edge5 { top: 264px; width: 182px; }
+    .page-edge6 { top: 308px; width: 176px; }
+    .left-vert {
+      position: absolute; left: 26px; top: 48px; width: 0; height: 286px; border-left: 2px solid #efe8d9;
+    }
+    .base1 {
+      position: absolute; left: 22px; top: 336px; width: 220px; height: 0; border-top: 2px solid #efe8d9;
+    }
+    .base2 {
+      position: absolute; left: 6px; top: 338px; width: 48px; height: 0; border-top: 2px solid #efe8d9;
+      transform: rotate(-68deg); transform-origin: right center;
+    }
+    .rope1,.rope2,.rope3,.rope4,.rope5,.rope6,.rope7 {
+      position: absolute; height: 0; border-top: 2px solid #efe8d9; transform-origin: left center;
+    }
+    .rope1 { left: 130px; top: 20px; width: 80px; transform: rotate(-48deg); }
+    .rope2 { left: 155px; top: 18px; width: 60px; transform: rotate(28deg); }
+    .rope3 { left: 150px; top: 52px; width: 55px; transform: rotate(-62deg); }
+    .rope4 { left: 134px; top: 76px; width: 62px; transform: rotate(84deg); }
+    .rope5 { left: 112px; top: 50px; width: 70px; transform: rotate(41deg); }
+    .rope6 { left: 98px; top: 64px; width: 48px; transform: rotate(2deg); }
+    .rope7 { left: 92px; top: 105px; width: 82px; transform: rotate(-1deg); }
+    .ring1,.ring2 {
+      position: absolute; width: 12px; height: 12px; border: 2px solid #efe8d9; border-radius: 50%;
+    }
+    .ring1 { left: 82px; top: 82px; }
+    .ring2 { left: 194px; top: 80px; }
+    .pen {
+      position: absolute; left: 300px; top: 58px; width: 20px; height: 260px; border: 2px solid #efe8d9; border-radius: 12px;
+    }
+    .pen::before {
+      content: ""; position: absolute; left: -2px; top: 36px; width: 20px; height: 88px; border: 2px solid #efe8d9; border-radius: 10px;
+    }
+    .pen::after {
+      content: ""; position: absolute; left: 4px; bottom: -19px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 19px solid #efe8d9;
+    }
+    .table-head {
+      position: absolute; left: 654px; top: 96px; width: 494px; display: flex; justify-content: space-between; color: #efe6d9; font-size: 32px;
+    }
+    .rows {
+      position: absolute; left: 654px; top: 136px; width: 500px;
+      color: #efe6d9;
+      font-size: 24px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 56px;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0 15px 0;
+      border-top: 1px solid #b4923b;
+    }
+    .row .num { text-align: center; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="frame"></div>
+    <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+    <h1 class="title">Overview</h1>
+    <div class="illustration">
+      <div class="notebook-top"></div>
+      <div class="notebook-side"></div>
+      <div class="left-vert"></div>
+      <div class="page-edge1"></div><div class="page-edge2"></div><div class="page-edge3"></div><div class="page-edge4"></div><div class="page-edge5"></div><div class="page-edge6"></div>
+      <div class="base1"></div><div class="base2"></div>
+      <div class="rope1"></div><div class="rope2"></div><div class="rope3"></div><div class="rope4"></div><div class="rope5"></div><div class="rope6"></div><div class="rope7"></div>
+      <div class="ring1"></div><div class="ring2"></div>
+      <div class="pen"></div>
+    </div>
+    <div class="table-head"><span>Content</span><span>Page</span></div>
+    <div class="rows">
+      <div class="row"><span>Our value proposition</span><span class="num">3</span></div>
+      <div class="row"><span>Who we sell to</span><span class="num">4</span></div>
+      <div class="row"><span>Ideal guest profile</span><span class="num">5</span></div>
+      <div class="row"><span>How we attract demand</span><span class="num">6</span></div>
+      <div class="row"><span>Guest journey funnel</span><span class="num">7</span></div>
+      <div class="row"><span>Prospecting strategy</span><span class="num">8</span></div>
+      <div class="row"><span>Sales action plan</span><span class="num">9</span></div>
+      <div class="row"><span>Sales funnel ownership</span><span class="num">10</span></div>
+    </div>
+  </main>
+</body>
+</html>

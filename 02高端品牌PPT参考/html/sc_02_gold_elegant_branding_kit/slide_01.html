@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_01</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1c1818;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+    }
+    .logo {
+      position: absolute;
+      left: 65px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+    }
+    .title {
+      position: absolute;
+      left: 66px;
+      top: 132px;
+      width: 860px;
+      color: #171313;
+      z-index: 3;
+    }
+    .title .line1,
+    .title .line2 {
+      display: block;
+      font-size: 86px;
+      line-height: 0.88;
+      letter-spacing: -2px;
+      font-weight: 400;
+    }
+    .title .line1 { font-style: italic; }
+    .title .line2 { margin-top: 0; margin-left: 136px; }
+    .question {
+      position: absolute;
+      left: 111px;
+      top: 206px;
+      font-size: 72px;
+      line-height: 0.8;
+      color: #d8c35e;
+      font-style: italic;
+      z-index: 3;
+    }
+    .hero {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 240px;
+      height: 327px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_01.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -1040px 0;
+      z-index: 2;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 103px;
+      background: #e4bd35;
+    }
+    .arrow {
+      position: absolute;
+      left: 981px;
+      top: 261px;
+      width: 174px;
+      height: 0;
+      border-top: 3px solid #252121;
+      z-index: 3;
+    }
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -7px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #252121;
+      border-right: 3px solid #252121;
+      transform: rotate(45deg);
+      background: transparent;
+    }
+    .cols {
+      position: absolute;
+      left: 99px;
+      top: 389px;
+      width: 1072px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 76px;
+    }
+    .col h2 {
+      font-size: 34px;
+      line-height: 1;
+      font-style: italic;
+      font-weight: 400;
+      color: #d6c25e;
+      margin-bottom: 34px;
+    }
+    .col p {
+      width: 250px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      line-height: 1.52;
+      color: #201c1c;
+    }
+    .col p span { display: block; margin-bottom: 6px; }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 11px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="logo">Logo</div>
+
+    <div class="title">
+      <span class="line1">How to Use</span>
+      <span class="line2">This Presentation</span>
+    </div>
+    <div class="question">?</div>
+
+    <div class="hero"></div>
+    <div class="arrow"></div>
+
+    <section class="cols">
+      <article class="col">
+        <h2>Google Slides</h2>
+        <p>
+          <span>1.Click on the "Google Slides"</span>
+          <span>button below this presentation</span>
+          <span>preview.</span>
+          <span>2.Click on "Make a copy."</span>
+          <span>3.Start editing your presentation.</span>
+          <span>4.You need to sign in to your</span>
+          <span>Google account.</span>
+        </p>
+      </article>
+      <article class="col">
+        <h2>PowerPoint</h2>
+        <p>
+          <span>1.Click on the "PowerPoint"</span>
+          <span>button below this presentation</span>
+          <span>preview.</span>
+          <span>2.Start editing your presentation.</span>
+          <span>3.Download and install the fonts</span>
+          <span>used in this presentation as</span>
+          <span>listed on the next page.</span>
+        </p>
+      </article>
+      <article class="col">
+        <h2>Canva</h2>
+        <p>
+          <span>1.Click on the "Canva" button</span>
+          <span>under this presentation preview.</span>
+          <span>2.Start editing your presentation.</span>
+          <span>3.You need to sign in to your</span>
+          <span>Canva account.</span>
+        </p>
+      </article>
+    </section>
+
+    <div class="footer"></div>
+  </main>
+</body>
+</html>

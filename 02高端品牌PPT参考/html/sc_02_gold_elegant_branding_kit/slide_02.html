@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_02</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #e0b63d;
+      color: #171313;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #e0b63d;
+    }
+    .hero {
+      position: absolute;
+      left: 468px;
+      top: 79px;
+      width: 342px;
+      height: 510px;
+      overflow: hidden;
+      border-top-left-radius: 171px;
+      border-top-right-radius: 171px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_02.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -468px -79px;
+      z-index: 1;
+    }
+    .title {
+      position: absolute;
+      left: 375px;
+      top: 281px;
+      width: 555px;
+      font-size: 108px;
+      line-height: 0.88;
+      font-style: italic;
+      letter-spacing: -2px;
+      color: #161212;
+      z-index: 3;
+      text-align: left;
+    }
+    .subtitle {
+      position: absolute;
+      left: 481px;
+      top: 629px;
+      font-size: 35px;
+      line-height: 1;
+      color: #171313;
+      z-index: 3;
+    }
+    .ornament {
+      position: absolute;
+      top: 345px;
+      width: 176px;
+      height: 58px;
+      z-index: 3;
+    }
+    .ornament.left { left: 69px; }
+    .ornament.right { right: 69px; transform: scaleX(-1); }
+    .ornament .circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 58px;
+      height: 58px;
+      border: 3px solid #201b1a;
+      border-radius: 50%;
+    }
+    .ornament .dot {
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      width: 8px;
+      height: 8px;
+      border: 3px solid #201b1a;
+      border-radius: 50%;
+      background: #e0b63d;
+    }
+    .ornament .line {
+      position: absolute;
+      left: 34px;
+      top: 28px;
+      width: 116px;
+      border-top: 3px solid #201b1a;
+    }
+    .ornament .arrow1,
+    .ornament .arrow2 {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-top: 3px solid #201b1a;
+      border-right: 3px solid #201b1a;
+      transform: rotate(45deg);
+      top: 22px;
+    }
+    .ornament .arrow1 { left: 110px; }
+    .ornament .arrow2 { left: 142px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="hero"></div>
+    <div class="title">Elegant</div>
+    <div class="subtitle">Minimal Branding Kit</div>
+
+    <div class="ornament left">
+      <div class="circle"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+      <div class="arrow1"></div>
+      <div class="arrow2"></div>
+    </div>
+
+    <div class="ornament right">
+      <div class="circle"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+      <div class="arrow1"></div>
+      <div class="arrow2"></div>
+    </div>
+  </main>
+</body>
+</html>

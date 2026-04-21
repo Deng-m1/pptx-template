@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_03 slide_02</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #294b32;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #294b32;
+    }
+    .paper {
+      position: absolute;
+      background: #f7f4eb;
+      box-shadow: 0 22px 34px rgba(0,0,0,0.22);
+      overflow: hidden;
+    }
+    .paper.back {
+      left: 6px;
+      top: -38px;
+      width: 388px;
+      height: 718px;
+      transform: rotate(3deg);
+      opacity: 0.94;
+    }
+    .paper.front {
+      left: 208px;
+      top: 69px;
+      width: 438px;
+      height: 606px;
+      transform: rotate(4deg);
+      z-index: 3;
+    }
+    .mock-band {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 118px;
+      background-image: url('../../slides/sc_03_hotel_sales_strategy_mix/slide_02.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -208px -69px;
+    }
+    .mock-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.03);
+    }
+    .mock-logo {
+      position: absolute;
+      left: 38px;
+      top: 16px;
+      width: 98px;
+      height: 70px;
+      border-radius: 50% / 58%;
+      background: #d8b152;
+      border: 2px solid #8f6f25;
+      z-index: 2;
+    }
+    .mock-title {
+      position: absolute;
+      right: 20px;
+      top: 8px;
+      width: 128px;
+      font-size: 27px;
+      line-height: 0.92;
+      color: #f6efe2;
+      text-align: right;
+      z-index: 2;
+    }
+    .meta {
+      position: absolute;
+      left: 28px;
+      top: 130px;
+      width: calc(100% - 56px);
+      font-size: 10px;
+      color: #5a5144;
+      display: flex;
+      justify-content: space-between;
+    }
+    .bar {
+      position: absolute;
+      left: 25px;
+      width: 388px;
+      height: 26px;
+      background: #dab24a;
+      color: #533c0b;
+      font-size: 17px;
+      line-height: 26px;
+      padding-left: 12px;
+      font-weight: 600;
+    }
+    .bar.b1 { top: 158px; }
+    .bar.b2 { top: 304px; }
+    .lineblock {
+      position: absolute;
+      left: 28px;
+      width: 382px;
+      color: #474033;
+      font-size: 10px;
+      line-height: 1.55;
+    }
+    .lineblock.p1 { top: 206px; }
+    .lineblock.p2 { top: 351px; }
+    .thumbs {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 174px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.12fr 0.93fr;
+      gap: 5px;
+      background: #d8b152;
+      padding: 5px;
+    }
+    .thumb {
+      background-image: url('../../slides/sc_03_hotel_sales_strategy_mix/slide_02.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+    }
+    .t1 { background-position: -214px -500px; }
+    .t2 { background-position: -350px -500px; }
+    .t3 { background-position: -500px -500px; }
+    .title {
+      position: absolute;
+      left: 764px;
+      top: 260px;
+      width: 448px;
+      font-size: 86px;
+      line-height: 0.95;
+      color: #f2e9dd;
+      font-weight: 400;
+      letter-spacing: -1.3px;
+    }
+    .subtitle {
+      position: absolute;
+      left: 770px;
+      top: 514px;
+      font-size: 28px;
+      line-height: 1;
+      color: #f0e5d6;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="paper back"></div>
+    <section class="paper front">
+      <div class="mock-band"></div>
+      <div class="mock-logo"></div>
+      <div class="mock-title">Hotel<br>Sales Plan</div>
+      <div class="meta"><span>Prepared by Duke Waldron</span><span>Date June 1, 2030</span></div>
+      <div class="bar b1">Overview</div>
+      <div class="lineblock p1">This sales plan outlines how Luxe Hotel attracts guests, converts interest into bookings, and grows long-term revenue. The strategy supports hotels operating in competitive markets by aligning sales, marketing, and guest experience efforts.</div>
+      <div class="bar b2">Product and value proposition</div>
+      <div class="lineblock p2">Luxe Hotel is a full-service, upscale hotel offering thoughtfully designed accommodations, modern amenities, and personalized guest experiences. Located in a prime urban destination, Luxe Hotel serves leisure travelers, business guests, and small-to-mid-sized groups seeking comfort, convenience, and consistent service quality.</div>
+      <div class="thumbs">
+        <div class="thumb t1"></div>
+        <div class="thumb t2"></div>
+        <div class="thumb t3"></div>
+      </div>
+    </section>
+    <h1 class="title">Hotel<br>Sales Plan</h1>
+    <div class="subtitle">DOC TEMPLATE</div>
+  </main>
+</body>
+</html>

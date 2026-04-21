@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_09</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1b1717;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #f3f1ef 0 64%, #dfb43a 64% 100%);
+    }
+    .logo {
+      position: absolute;
+      left: 63px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+      z-index: 4;
+    }
+    .title-wrap {
+      position: absolute;
+      left: 72px;
+      top: 151px;
+      z-index: 4;
+    }
+    .title {
+      font-size: 84px;
+      line-height: 0.96;
+      color: #171313;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+    .title-arrow {
+      position: absolute;
+      left: 224px;
+      top: 56px;
+      width: 138px;
+      border-top: 3px solid #171313;
+    }
+    .title-arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #171313;
+      border-right: 3px solid #171313;
+      transform: rotate(45deg);
+    }
+    .bio {
+      position: absolute;
+      left: 80px;
+      top: 518px;
+      width: 272px;
+      font-size: 15px;
+      line-height: 1.62;
+      color: rgba(255,255,255,0.94);
+      z-index: 4;
+    }
+    .person {
+      position: absolute;
+      z-index: 4;
+    }
+    .person .photo {
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_09.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      margin-bottom: 14px;
+    }
+    .person .name {
+      font-size: 28px;
+      line-height: 1;
+      color: #171313;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 9px;
+    }
+    .person .role {
+      font-size: 15px;
+      line-height: 1;
+      color: #d8c15d;
+    }
+    .p1 { left: 530px; top: 51px; }
+    .p1 .photo { width: 202px; height: 211px; background-position: -530px -51px; }
+    .p2 { left: 814px; top: 51px; }
+    .p2 .photo { width: 199px; height: 211px; background-position: -814px -51px; }
+    .p3 { left: 442px; top: 391px; }
+    .p3 .photo { width: 197px; height: 204px; background-position: -442px -391px; }
+    .p4 { left: 737px; top: 391px; }
+    .p4 .photo { width: 204px; height: 204px; background-position: -737px -391px; }
+    .ornament {
+      position: absolute;
+      right: 100px;
+      bottom: 102px;
+      width: 134px;
+      height: 86px;
+      z-index: 4;
+    }
+    .ornament .circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 86px;
+      height: 86px;
+      border: 3px solid rgba(255,255,255,0.95);
+      border-radius: 50%;
+    }
+    .ornament .dot {
+      position: absolute;
+      left: 41px;
+      top: 39px;
+      width: 8px;
+      height: 8px;
+      border: 3px solid rgba(255,255,255,0.95);
+      border-radius: 50%;
+      background: transparent;
+    }
+    .ornament .line {
+      position: absolute;
+      left: 46px;
+      top: 44px;
+      width: 60px;
+      border-top: 3px solid rgba(255,255,255,0.95);
+    }
+    .ornament .arrow1,
+    .ornament .arrow2 {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-top: 3px solid rgba(255,255,255,0.95);
+      border-right: 3px solid rgba(255,255,255,0.95);
+      transform: rotate(45deg);
+      top: 39px;
+    }
+    .ornament .arrow1 { left: 94px; }
+    .ornament .arrow2 { left: 112px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="logo">Logo</div>
+    <section class="title-wrap">
+      <h1 class="title">Our<br>Team</h1>
+      <div class="title-arrow"></div>
+    </section>
+
+    <div class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst.</div>
+
+    <article class="person p1">
+      <div class="photo"></div>
+      <div class="name">Petra Flores</div>
+      <div class="role">CTO</div>
+    </article>
+    <article class="person p2">
+      <div class="photo"></div>
+      <div class="name">Kevin Bates</div>
+      <div class="role">Creative Director</div>
+    </article>
+    <article class="person p3">
+      <div class="photo"></div>
+      <div class="name">John Doe</div>
+      <div class="role">CEO</div>
+    </article>
+    <article class="person p4">
+      <div class="photo"></div>
+      <div class="name">Etta Roche</div>
+      <div class="role">Marketing</div>
+    </article>
+
+    <div class="ornament">
+      <div class="circle"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+      <div class="arrow1"></div>
+      <div class="arrow2"></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_05</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1b1717;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+    }
+    .logo {
+      position: absolute;
+      left: 65px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+      z-index: 5;
+    }
+    .gold-block {
+      position: absolute;
+      left: 795px;
+      top: 0;
+      width: 198px;
+      height: 73px;
+      background: #dfb43a;
+      z-index: 1;
+    }
+    .hero {
+      position: absolute;
+      left: 98px;
+      top: 75px;
+      width: 442px;
+      height: 570px;
+      overflow: hidden;
+      border-top-left-radius: 221px;
+      border-top-right-radius: 221px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_05.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -98px -75px;
+      z-index: 2;
+    }
+    .title {
+      position: absolute;
+      left: 472px;
+      top: 201px;
+      font-size: 86px;
+      line-height: 0.92;
+      font-style: italic;
+      color: #171313;
+      letter-spacing: -1px;
+      z-index: 4;
+    }
+    .copy {
+      position: absolute;
+      left: 778px;
+      top: 338px;
+      width: 382px;
+      font-size: 18px;
+      line-height: 1.52;
+      color: #262121;
+      z-index: 4;
+    }
+    .link-row {
+      position: absolute;
+      left: 890px;
+      top: 557px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      z-index: 4;
+    }
+    .arrow {
+      position: relative;
+      width: 112px;
+      border-top: 3px solid #171313;
+    }
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #171313;
+      border-right: 3px solid #171313;
+      transform: rotate(45deg);
+      background: transparent;
+    }
+    .link {
+      font-size: 30px;
+      line-height: 1;
+      color: #d9c35d;
+      font-style: italic;
+    }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 11px;
+      background: #000;
+      z-index: 6;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="gold-block"></div>
+    <div class="logo">Logo</div>
+    <div class="hero"></div>
+    <h1 class="title">Introduction</h1>
+    <div class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst. Curabitur euismod semper augue, ut consequat nunc blandit quis. Phasellus sit amet justo vitae lectus tincidunt sagittis.</div>
+    <div class="link-row">
+      <div class="arrow"></div>
+      <div class="link">www.libretta.com</div>
+    </div>
+    <div class="footer"></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_04</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1b1717;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+    }
+    .logo {
+      position: absolute;
+      left: 65px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+    }
+    .gold-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 228px;
+      height: 458px;
+      background: #dfb43a;
+      z-index: 1;
+    }
+    .hero {
+      position: absolute;
+      right: 98px;
+      top: 114px;
+      width: 430px;
+      height: 434px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_04.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: -752px -114px;
+      z-index: 2;
+    }
+    .title-wrap {
+      position: absolute;
+      left: 74px;
+      top: 176px;
+      width: 560px;
+      z-index: 3;
+    }
+    .heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .num {
+      font-size: 68px;
+      line-height: 0.88;
+      font-style: italic;
+      color: #dccb73;
+      padding-top: 10px;
+    }
+    .title {
+      font-size: 80px;
+      line-height: 0.90;
+      color: #171313;
+      font-style: italic;
+      letter-spacing: -1px;
+      font-weight: 400;
+    }
+    .dash {
+      font-size: 78px;
+      line-height: 0.8;
+      color: #171313;
+      margin-left: 14px;
+      margin-top: 8px;
+    }
+    .arrow-line {
+      position: absolute;
+      left: 256px;
+      top: 418px;
+      width: 648px;
+      border-top: 3px solid #171313;
+      z-index: 3;
+    }
+    .arrow-line::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #171313;
+      border-right: 3px solid #171313;
+      transform: rotate(45deg);
+      background: transparent;
+    }
+    .copy {
+      position: absolute;
+      left: 255px;
+      top: 493px;
+      width: 365px;
+      font-size: 18px;
+      line-height: 1.46;
+      color: #282323;
+      z-index: 3;
+    }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 11px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="logo">Logo</div>
+    <div class="gold-panel"></div>
+    <div class="hero"></div>
+
+    <section class="title-wrap">
+      <div class="heading">
+        <div class="num">01</div>
+        <div class="title">Brand<br>Messaging</div>
+        <div class="dash">—</div>
+      </div>
+    </section>
+
+    <div class="arrow-line"></div>
+    <div class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst. Curabitur euismod semper augue, ut consequat nunc blandit quis. Phasellus sit amet justo vitae lectus tincidunt sagittis.</div>
+
+    <div class="footer"></div>
+  </main>
+</body>
+</html>

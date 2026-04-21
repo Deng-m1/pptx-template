@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1.0" />
+  <title>sc_02 slide_10</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: #f3f1ef;
+      color: #1b1717;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body { position: relative; }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(to right, #f3f1ef 0 53.7%, #dfb43a 53.7% 100%);
+    }
+    .logo {
+      position: absolute;
+      left: 63px;
+      top: 43px;
+      font-size: 24px;
+      font-style: italic;
+      color: #161313;
+      z-index: 4;
+    }
+    .title-row {
+      position: absolute;
+      left: 82px;
+      top: 136px;
+      display: flex;
+      align-items: flex-start;
+      gap: 34px;
+      z-index: 4;
+    }
+    .lead-line {
+      width: 74px;
+      border-top: 3px solid #171313;
+      margin-top: 34px;
+    }
+    .title {
+      font-size: 82px;
+      line-height: 0.98;
+      color: #171313;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+    .main-arrow {
+      position: absolute;
+      left: 370px;
+      top: 328px;
+      width: 345px;
+      border-top: 3px solid #171313;
+      z-index: 4;
+    }
+    .main-arrow::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -8px;
+      width: 14px;
+      height: 14px;
+      border-top: 3px solid #171313;
+      border-right: 3px solid #171313;
+      transform: rotate(45deg);
+    }
+    .copy {
+      position: absolute;
+      left: 323px;
+      top: 446px;
+      width: 288px;
+      font-size: 16px;
+      line-height: 1.62;
+      color: #2a2525;
+      z-index: 4;
+    }
+    .plant {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 170px;
+      height: 399px;
+      overflow: hidden;
+      border-top-right-radius: 72px;
+      background-image: url('../../slides/sc_02_gold_elegant_branding_kit/slide_10.jpg');
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+      background-position: 0 -321px;
+      z-index: 3;
+    }
+    .partner {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      z-index: 4;
+    }
+    .partner .label {
+      font-size: 30px;
+      line-height: 1;
+      color: #171313;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .shape-circle {
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+      background: #f3f1ef;
+    }
+    .shape-square {
+      width: 124px;
+      height: 124px;
+      background: #f3f1ef;
+    }
+    .shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 72px solid transparent;
+      border-right: 72px solid transparent;
+      border-bottom: 118px solid #f3f1ef;
+    }
+    .p1 { left: 764px; top: 96px; }
+    .p2 { left: 874px; top: 287px; }
+    .p3 { left: 772px; top: 485px; }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <div class="logo">Logo</div>
+    <section class="title-row">
+      <div class="lead-line"></div>
+      <h1 class="title">Our<br>Partners</h1>
+    </section>
+
+    <div class="main-arrow"></div>
+    <div class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis nisl vitae leo tincidunt mattis. Fusce id lacus auctor, luctus nisi quis, aliquet eros. In hac habitasse platea dictumst.</div>
+    <div class="plant"></div>
+
+    <div class="partner p1">
+      <div class="shape-circle"></div>
+      <div class="label">Company</div>
+    </div>
+    <div class="partner p2">
+      <div class="label">Company</div>
+      <div class="shape-square"></div>
+    </div>
+    <div class="partner p3">
+      <div class="shape-triangle"></div>
+      <div class="label">Company</div>
+    </div>
+  </main>
+</body>
+</html>
